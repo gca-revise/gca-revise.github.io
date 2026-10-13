@@ -18,6 +18,10 @@ Version 1 is built and committed (`vocab.csv` with 10 sample words, `quiz.py`). 
 - Mastery / completing a set: a word is retired once answered correctly; missed words stay in the deck; when all are retired, show a "Set complete!" screen with stats. Keep the endless mode as "free practice". This changes the plan (the quiz is no longer endless by default), so update `plan.md` once agreed.
 - Open choice: how many correct answers retire a word? Claude suggests once for typed answers, twice for multiple choice.
 
+## Future ideas (discussed, not yet agreed)
+- Topic sets: add a `topic` column to `vocab.csv` (semicolons if a word is in several topics). The quiz asks "Which set?" (all key vocab, or one topic). Each set tracks its own learned progress. Do this when making the real `vocab.csv`.
+- Quote learning: separate `quotes.csv` (quote, gap word(s), source, topic). Test styles: fill the gap, "who said it?", finish the quote (multiple choice). Better suited to the web version than the terminal. Ask the user: which test styles, how many quotes, one text or several.
+
 ## Next step
 The user sends the real ~100 words (paste or spreadsheet) so Claude can make the real `vocab.csv`. Then plan Version 2 (web page) in detail.
 
