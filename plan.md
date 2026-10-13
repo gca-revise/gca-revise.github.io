@@ -9,6 +9,12 @@ A revision game for students, similar to Quizlet, but with features the teacher 
 - The teacher supplies words in a spreadsheet, or pastes them into chat for Claude to turn into `vocab.csv`.
 - Game modes wanted: typed answer, multiple choice, matching game.
 
+## Added after Version 1 was played (agreed)
+- **Mastery:** a word is retired after 1 correct typed answer, or 2 correct multiple-choice answers. Missed words stay in the deck and come back.
+- **Completing a set:** when every word is retired, show a "Set complete!" screen with stats.
+- **Free practice:** the endless mode stays as an optional mode.
+- **Stats (light):** per-word right/wrong counts and a "trickiest words" list at the end. In the web version, saved on the student's device only.
+
 ## Version 1: terminal quiz (the "kitchen": rules only)
 - Endless: runs until the player types `q`.
 - Shows a definition; the player types the word. Capitals and extra spaces ignored; spelling must be correct.
