@@ -1,0 +1,37 @@
+# Plan: Vocab quiz
+
+## Goal
+A revision game for students, similar to Quizlet, but with features the teacher can change. Around 100 words and definitions, entered by the teacher.
+
+## Decisions so far
+- Students use both phones and Chromebooks.
+- No logins. Scores stay on the student's own device (at least in the medium term). No student data in any file.
+- The teacher supplies words in a spreadsheet, or pastes them into chat for Claude to turn into `vocab.csv`.
+- Game modes wanted: typed answer, multiple choice, matching game.
+
+## Version 1: terminal quiz (the "kitchen": rules only)
+- Endless: runs until the player types `q`.
+- Shows a definition; the player types the word. Capitals and extra spaces ignored; spelling must be correct.
+- 1 point per correct answer. A wrong answer shows the right word and scores nothing.
+- Every word is used once before any word comes round again. The same word never appears twice in a row.
+- Score shows after each answer. On quit, a summary: points, right/wrong counts, best streak.
+- Files: `vocab.csv` (columns: word, definition; ~10 sample words), `quiz.py` (a simple `VocabQuiz` class).
+- The quiz reads only from `vocab.csv`, so the real 100 words can be swapped in later.
+
+## Version 2: web page (the "dining room")
+- A web page that works on phones and Chromebooks, hosted free (e.g. GitHub Pages) so students just open a link.
+- Written in JavaScript (the language browsers run), reusing the rules agreed in Version 1.
+- Modes: typed answer first, then multiple choice, then matching.
+- Reads the same `vocab.csv`.
+- Best score and progress saved in the student's own browser only.
+
+## Later ideas
+- Streak bonuses, retrying missed words, quiz by unit.
+- A page where the teacher can type in words directly.
+- Teacher-visible scores (needs a privacy/school-policy conversation first).
+
+## Steps
+1. Teacher approves this plan.
+2. Build Version 1 with ~10 sample words; teacher tries it.
+3. Teacher supplies the real ~100 words; Claude makes `vocab.csv`.
+4. Plan Version 2 in detail, then build it one mode at a time.
