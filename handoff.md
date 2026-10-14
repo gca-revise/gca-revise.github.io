@@ -28,6 +28,12 @@ Version 1 is built and committed (`vocab.csv` with 10 sample words, `quiz.py`). 
 3. Build the working web game (JavaScript) from the approved design.
 4. Quotes later.
 
+## Web design (step 2) in progress
+First draft of the design is published as a private artifact (a Claude design canvas): https://claude.ai/artifact/RKSbat4AkzENCkGG8DST1m
+- Five phone screens: Home (choose set, learn vs free practice), Question (typed answer), Right answer, Wrong answer, Set complete. Screens are linked so they can be clicked through.
+- Uses sample topic names ("Character", "Unit 2") and made-up numbers; not real data.
+- Waiting for the user's feedback on look and feel. Not yet designed: multiple choice, matching, a wider Chromebook layout.
+
 ## Next step
 The user sends the real ~100 words (paste or spreadsheet) so Claude can make the real `vocab.csv`. Then plan Version 2 (web page) in detail.
 
