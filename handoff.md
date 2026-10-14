@@ -32,6 +32,7 @@ Version 1 is built and committed (`vocab.csv` with 10 sample words, `quiz.py`). 
 First draft of the design is published as a private artifact (a Claude design canvas): https://claude.ai/artifact/RKSbat4AkzENCkGG8DST1m
 - Five phone screens: Home (choose set, learn vs free practice), Question (typed answer), Right answer, Wrong answer, Set complete. Screens are linked so they can be clicked through.
 - Uses sample topic names ("Character", "Unit 2") and made-up numbers; not real data.
+- Version 2 of the design (14 Oct): school crest (`GCA school logo.png`, uploaded privately to the artifact) in the Home header and Set complete screen; school navy `#222C69` and yellow `#FDE006`; Home now lists sample sets for each text with its own accent badge (Macbeth crimson `#8E1F37`, An Inspector Calls brown `#8A5316`, Jekyll and Hyde green-grey `#3E5A4F`, Frankenstein teal `#12707E`, Power and Conflict grey `#555C6B`); Question screen shows an "Appears in Macbeth" tag (idea: words tied to texts). All numbers and the word-to-text link are samples.
 - Waiting for the user's feedback on look and feel. Not yet designed: multiple choice, matching, a wider Chromebook layout.
 
 ## Decisions from the design session
