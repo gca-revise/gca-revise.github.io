@@ -22,6 +22,12 @@ Version 1 is built and committed (`vocab.csv` with 10 sample words, `quiz.py`). 
 - Topic sets: add a `topic` column to `vocab.csv` (semicolons if a word is in several topics). The quiz asks "Which set?" (all key vocab, or one topic). Each set tracks its own learned progress. Do this when making the real `vocab.csv`.
 - Quote learning: separate `quotes.csv` (quote, gap word(s), source, topic). Test styles: fill the gap, "who said it?", finish the quote (multiple choice). Better suited to the web version than the terminal. User answered: both fill-the-gap and "who said it?"; about 50 quotes from multiple texts and poems. User agreed quotes come after the web version exists. With several texts, the `source` column (text/poem title) can double as the topic so students can learn one text at a time.
 
+## Agreed order of work
+1. Real `vocab.csv` with topic column; quiz asks "Which set?" (terminal version finished).
+2. Design the web version as an artifact (visual mock-up) and refine it with the user.
+3. Build the working web game (JavaScript) from the approved design.
+4. Quotes later.
+
 ## Next step
 The user sends the real ~100 words (paste or spreadsheet) so Claude can make the real `vocab.csv`. Then plan Version 2 (web page) in detail.
 

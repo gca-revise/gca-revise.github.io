@@ -40,4 +40,5 @@ A revision game for students, similar to Quizlet, but with features the teacher 
 1. Teacher approves this plan.
 2. Build Version 1 with ~10 sample words; teacher tries it.
 3. Teacher supplies the real ~100 words; Claude makes `vocab.csv`.
-4. Plan Version 2 in detail, then build it one mode at a time.
+4. **Design the web version first, as an artifact** (a visual mock-up page): home screen with set choice, the typed-answer screen, the "Set complete!" screen, and later multiple choice and matching. Look and feel on phone and Chromebook. The teacher reviews and changes it until happy. It is a picture of the game, not the working game.
+5. Plan Version 2 in detail from the approved design, then build it one mode at a time.
