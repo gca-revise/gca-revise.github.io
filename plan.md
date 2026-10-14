@@ -34,7 +34,7 @@ A revision game for students, similar to Quizlet, but with features the teacher 
 ## What makes this different from Quizlet (agreed; see `brainstorm-differentiation.md`)
 Focus on three things:
 1. **Exam-skills quotes:** fill the gap and "who said it?", plus context (to whom, which theme, which character, which technique).
-2. **Words tied to the texts:** each word linked to the text it helps with, and the quote it appears in.
+2. **Words tied to the texts:** each word is tagged with the text it helps you write about (e.g. Macbeth), whether or not it appears in the text (hamartia and belittles are examples). Quotes will come from the texts and are dealt with later.
 3. **Text-themed sets and school branding:** school crest and colours form the frame; each text (Macbeth, An Inspector Calls, Jekyll and Hyde, Frankenstein, Power and Conflict) gets its own accent colour. Calm and readable, not childish. The teacher is finding a better crest image and will check the school allows its use.
 
 Order: build the web game with key vocab first; add quotes after that.

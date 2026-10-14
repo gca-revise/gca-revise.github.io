@@ -13,7 +13,7 @@ Plain word-and-definition revision is what Quizlet already does. This project is
 
 ## Ideas that go beyond Quizlet (the real differentiators)
 1. **Exam-skills layer for quotes** (strongest idea). Not just "finish the quote". Also: who said it, to whom, when; which theme does it show; which character does it link to; which technique is used. Builds the knowledge GCSE answers need.
-2. **Words tied to the texts.** Each word links to the text it helps with (e.g. a word that appears in Macbeth), and shows the quote it comes from.
+2. **Words tied to the texts.** Each word is tagged with the text it helps you write about (e.g. Macbeth), whether or not it appears in the text. (Updated: many words, like hamartia, are for analysis and are not from the play.)
 3. **Words in context.** "Which sentence uses *ephemeral* correctly?" Tests use, not just meaning.
 4. **Spaced return.** A retired word comes back after a few days for a quick re-check, so learning sticks.
 5. **Anonymous class-level insight** (later, needs a privacy and school-policy conversation). The teacher sees which words the whole class finds hardest, with no student names. Needs a server, so not before the web version works.
