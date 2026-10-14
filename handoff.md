@@ -45,7 +45,7 @@ It was renamed on 14 Oct: the app is now **GCA Revise** (not "Vocab Quiz"). The 
 - **Character images for quotes** (e.g. a picture of Lady Macbeth on a "who said it?" question). The user has some images in mind; they could also be AI generated. Needs a check on copyright for any existing images, and a consistent style across characters. Do this after the web game and quotes exist.
 
 ## Open questions
-- Matching is worth **1 point in total per round** (agreed 14 Oct). Still open: does a slip lose that point, and does matching retire a word? (Agreed so far: 1 correct typed answer or 2 correct multiple-choice answers retire a word.)
+- Matching is worth **1 point per round, and only for a round with no mistakes** (agreed 14 Oct). Matching does **not** retire a word; only typing (1 correct) or multiple choice (2 correct) does. (Agreed so far: 1 correct typed answer or 2 correct multiple-choice answers retire a word.)
 - School crest: the user is finding a better image and will check the school allows its use.
 
 ## Next step
