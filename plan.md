@@ -31,14 +31,26 @@ A revision game for students, similar to Quizlet, but with features the teacher 
 - Reads the same `vocab.csv`.
 - Best score and progress saved in the student's own browser only.
 
+## What makes this different from Quizlet (agreed; see `brainstorm-differentiation.md`)
+Focus on three things:
+1. **Exam-skills quotes:** fill the gap and "who said it?", plus context (to whom, which theme, which character, which technique).
+2. **Words tied to the texts:** each word linked to the text it helps with, and the quote it appears in.
+3. **Text-themed sets and school branding:** school crest and colours form the frame; each text (Macbeth, An Inspector Calls, Jekyll and Hyde, Frankenstein, Power and Conflict) gets its own accent colour. Calm and readable, not childish. The teacher is finding a better crest image and will check the school allows its use.
+
+Order: build the web game with key vocab first; add quotes after that.
+
 ## Later ideas
-- Streak bonuses, retrying missed words, quiz by unit.
+- Words in context ("which sentence uses it correctly?"), spaced return of learned words, light rewards (per-text badges, daily goal).
+- Streak bonuses, retrying missed words.
 - A page where the teacher can type in words directly.
-- Teacher-visible scores (needs a privacy/school-policy conversation first).
+- Anonymous class-level insight (which words are hardest). Needs a server and a privacy/school-policy conversation first.
+- Teacher-visible scores (same privacy conversation).
 
 ## Steps
 1. Teacher approves this plan.
 2. Build Version 1 with ~10 sample words; teacher tries it.
 3. Teacher supplies the real ~100 words; Claude makes `vocab.csv`.
 4. **Design the web version first, as an artifact** (a visual mock-up page): home screen with set choice, the typed-answer screen, the "Set complete!" screen, and later multiple choice and matching. Look and feel on phone and Chromebook. The teacher reviews and changes it until happy. It is a picture of the game, not the working game.
-5. Plan Version 2 in detail from the approved design, then build it one mode at a time.
+5. Update the design with school branding and per-text accent colours (once the teacher has a good crest image).
+6. Plan Version 2 in detail from the approved design, then build the key-vocab web game one mode at a time.
+7. Then quotes: design, then build.

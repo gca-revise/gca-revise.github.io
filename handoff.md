@@ -34,6 +34,11 @@ First draft of the design is published as a private artifact (a Claude design ca
 - Uses sample topic names ("Character", "Unit 2") and made-up numbers; not real data.
 - Waiting for the user's feedback on look and feel. Not yet designed: multiple choice, matching, a wider Chromebook layout.
 
+## Decisions from the design session
+- The user likes the design. Branding: combine school branding with per-text themes (Macbeth, An Inspector Calls, Jekyll and Hyde, Frankenstein, Power and Conflict). The user is finding a better crest image (needs a transparent PNG or SVG) and will check the school allows its use. The artifact can also be edited on the website (user may change it there; re-read the artifact before editing it).
+- Differentiators to build first: exam-skills quotes, words tied to texts, text-themed sets. Key-vocab web game first, quotes after. See `plan.md` and `brainstorm-differentiation.md`.
+- The user will get the real vocab lists at school.
+
 ## Next step
 The user sends the real ~100 words (paste or spreadsheet) so Claude can make the real `vocab.csv`. Then plan Version 2 (web page) in detail.
 
