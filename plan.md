@@ -66,3 +66,10 @@ Order: build the web game with key vocab first; add quotes after that.
 - **Techniques** (simile, metaphor, repetition and so on): one section across all texts, with its own screen. Same practice styles as vocab. Later feature: "technique analysis", where students learn which technique is used in each quote.
 - **Matching scoring (agreed):** one point in total per matching round, and only if there are no mistakes. Matching does not retire words (practice only).
 - **Design status:** phone screens drafted as an artifact (Home, inside a text, Techniques, typed answer, multiple choice, matching, quotes, set complete). Chromebook/laptop layout is drafted too.
+
+## Data we will need (user, 14 Oct)
+A lot of content eventually. Three simple files, all checked by the teacher before students see them:
+- **`vocab.csv`:** word, definition, texts it is tagged to (one or several), example sentence (optional at first).
+- **`quotes.csv`:** quote, the gap word(s) for fill-the-gap, who said it, text, act/scene (or poem title), technique(s) used. A quote can have more than one technique.
+- **`techniques.csv`:** technique name and a short definition (simile, metaphor, repetition...). Quotes point to these names, which later allows "spot the technique".
+Claude can draft or tidy the files from lists the teacher supplies; the teacher checks every quote, speaker and technique for accuracy, because students will learn from them.
