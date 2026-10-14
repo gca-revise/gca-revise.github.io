@@ -44,14 +44,17 @@ It was renamed on 14 Oct: the app is now **GCA Revise** (not "Vocab Quiz"). The 
 ## Future idea (not agreed yet)
 - **Character images for quotes** (e.g. a picture of Lady Macbeth on a "who said it?" question). The user has some images in mind; they could also be AI generated. Needs a check on copyright for any existing images, and a consistent style across characters. Do this after the web game and quotes exist.
 
+## Set complete screen (14 Oct)
+Shows for a finished key-vocab set: "Practise Macbeth vocab again", "Back to Macbeth" (to choose quotes) and "Back to home". The same screen is needed for finished quotes and Techniques sets, with their own wording; build it that way rather than designing more screens.
+
 ## Open questions
 - Matching is worth **1 point per round, and only for a round with no mistakes** (agreed 14 Oct). Matching does **not** retire a word; only typing (1 correct) or multiple choice (2 correct) does. (Agreed so far: 1 correct typed answer or 2 correct multiple-choice answers retire a word.)
 - School crest: the user is finding a better image and will check the school allows its use.
 
 ## Next step
-1. User looks at the laptop screens and gives feedback (Chrome extension cannot connect from the Chromebook's Linux container, so the user opens the artifact link themselves; screenshots pasted into chat work).
-2. Adjust the design from feedback.
-3. The user sends the real vocab lists (from school) so Claude can make the real `vocab.csv` with a text/topic column. Then plan Version 2 (the working web page) in detail.
+1. The design is finished and the user is happy with it (phone and laptop). The user opens the artifact link to look (the Chrome extension cannot connect from the Chromebook's Linux container).
+2. The user brings the real vocab lists from school (paste or spreadsheet). Claude makes the real `vocab.csv` with a text column (a word can sit in 2 or 3 texts). Also useful: a few real quotes and techniques to test the layout.
+3. Then plan Version 2 (the working web page) in detail and build it one mode at a time: key vocab first, quotes after.
 
 ## Separate from this project
 The user also has a learning plan (Linux terminal basics, object-oriented Python on Codecademy, later CLAUDE.md practice, handoffs, subagents, skills, MCP). Turn it into a plan file only after the user confirms it.
