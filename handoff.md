@@ -42,6 +42,7 @@ It was renamed on 14 Oct: the app is now **GCA Revise** (not "Vocab Quiz"). The 
 **Laptop/Chromebook screens done (14 Oct, sample data):** a second section of the canvas to the right of the phone screens. Home, Inside a text, Techniques, typed question + right/wrong, multiple choice + right/wrong, matching + round complete, quote fill-the-gap and who-said-it, Set complete. All linked so they can be clicked through. The user has seen the first four and likes them; the rest are not yet reviewed.
 
 ## Future idea (not agreed yet)
+- **Example sentences** for key vocab (e.g. "Lady Macbeth belittles Macbeth"). Added to `plan.md` under later ideas; when making the real `vocab.csv`, leave room for an optional `sentence` column.
 - **Character images for quotes** (e.g. a picture of Lady Macbeth on a "who said it?" question). The user has some images in mind; they could also be AI generated. Needs a check on copyright for any existing images, and a consistent style across characters. Do this after the web game and quotes exist.
 
 ## Set complete screen (14 Oct)

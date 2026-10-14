@@ -41,6 +41,7 @@ Order: build the web game with key vocab first; add quotes after that.
 
 ## Later ideas
 - Character images on quote questions (user has images in mind, or AI generated; check copyright and keep one consistent style).
+- **Example sentences (user idea, 14 Oct):** each key vocab word gets a sentence showing it in use, ideally about the text, e.g. "Lady Macbeth belittles Macbeth." Could show after a right or wrong answer, and later power fill-the-gap questions. Needs a sentence per word in `vocab.csv`. Not for the first build.
 - Words in context ("which sentence uses it correctly?"), spaced return of learned words, light rewards (per-text badges, daily goal).
 - Streak bonuses, retrying missed words.
 - A page where the teacher can type in words directly.
