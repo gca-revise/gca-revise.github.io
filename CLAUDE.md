@@ -12,5 +12,6 @@
 - Only read the files you need; don't browse the computer (token cost).
 - Keep context use low. Suggest a handoff when the session is getting long.
 - Commit after each working step with a sensible message, and tell the user what you did.
+- Push to GitHub after every commit, and tell the user it was pushed.
 - At the end of a session, update `handoff.md` with what was done and the next step.
 - No student data in any file.
