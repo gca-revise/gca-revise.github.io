@@ -29,19 +29,26 @@ Version 1 is built and committed (`vocab.csv` with 10 sample words, `quiz.py`). 
 4. Quotes later.
 
 ## Web design (step 2) in progress
-First draft of the design is published as a private artifact (a Claude design canvas): https://claude.ai/artifact/RKSbat4AkzENCkGG8DST1m
-- Five phone screens: Home (choose set, learn vs free practice), Question (typed answer), Right answer, Wrong answer, Set complete. Screens are linked so they can be clicked through.
-- Uses sample topic names ("Character", "Unit 2") and made-up numbers; not real data.
-- Version 2 of the design (14 Oct): school crest (`GCA school logo.png`, uploaded privately to the artifact) in the Home header and Set complete screen; school navy `#222C69` and yellow `#FDE006`; Home now lists sample sets for each text with its own accent badge (Macbeth crimson `#8E1F37`, An Inspector Calls brown `#8A5316`, Jekyll and Hyde green-grey `#3E5A4F`, Frankenstein teal `#12707E`, Power and Conflict grey `#555C6B`); Question screen shows a "Macbeth" tag (idea: words tied to texts; a tag means "useful for writing about this text", not "appears in the text", e.g. hamartia, belittles). All numbers and the word-to-text link are samples.
-- Waiting for the user's feedback on look and feel. Not yet designed: multiple choice, matching, a wider Chromebook layout.
+The design is a private artifact (a Claude design canvas): https://claude.ai/artifact/RKSbat4AkzENCkGG8DST1m
+It was renamed on 14 Oct: the app is now **GCA Revise** (not "Vocab Quiz"). The user can edit the artifact on the website, so always re-read it before changing it.
 
-## Decisions from the design session
-- The user likes the design. Branding: combine school branding with per-text themes (Macbeth, An Inspector Calls, Jekyll and Hyde, Frankenstein, Power and Conflict). The user is finding a better crest image (needs a transparent PNG or SVG) and will check the school allows its use. The artifact can also be edited on the website (user may change it there; re-read the artifact before editing it).
-- Differentiators to build first: exam-skills quotes, words tied to texts, text-themed sets. Key-vocab web game first, quotes after. See `plan.md` and `brainstorm-differentiation.md`.
-- The user will get the real vocab lists at school.
+**Structure (agreed 14 Oct, recorded in `plan.md`):**
+- Home shows the texts first (Macbeth, An Inspector Calls, Jekyll and Hyde, Frankenstein, Power and Conflict), plus a separate **Techniques** card (simile, metaphor, repetition...) across all texts. Word "Techniques" throughout, not "methods" or "writer's techniques".
+- Inside a text: **Quotes** (fill the gap, who said it?) and **Key vocab** (type it, choose it, match them), with a Learn the set / Free practice switch.
+- Key vocab words can sit in 2 or 3 texts; learning one counts everywhere.
+- Later feature: "technique analysis", learning which technique each quote uses.
+
+**Phone screens done (sample data only):** Home, Inside a text, Techniques, typed question + right/wrong + Set complete, multiple choice + right/wrong, matching + round complete, quote fill-the-gap and who-said-it (their answer screens reuse the vocab ones for now).
+**Laptop/Chromebook screens started (14 Oct):** Home, Inside a text, typed question, multiple choice (a second section of the canvas, to the right). Not yet done on laptop: right/wrong screens, matching, quotes, Techniques, Set complete.
+
+## Open questions
+- How does matching score points, and does matching retire a word? (Agreed so far: 1 correct typed answer or 2 correct multiple-choice answers retire a word.)
+- School crest: the user is finding a better image and will check the school allows its use.
 
 ## Next step
-The user sends the real ~100 words (paste or spreadsheet) so Claude can make the real `vocab.csv`. Then plan Version 2 (web page) in detail.
+1. User looks at the laptop screens and gives feedback (Chrome extension cannot connect from the Chromebook's Linux container, so the user opens the artifact link themselves; screenshots pasted into chat work).
+2. Finish the remaining laptop screens.
+3. The user sends the real vocab lists (from school) so Claude can make the real `vocab.csv` with a text/topic column. Then plan Version 2 (the working web page) in detail.
 
 ## Separate from this project
 The user also has a learning plan (Linux terminal basics, object-oriented Python on Codecademy, later CLAUDE.md practice, handoffs, subagents, skills, MCP). Turn it into a plan file only after the user confirms it.

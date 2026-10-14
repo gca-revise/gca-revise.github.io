@@ -1,4 +1,4 @@
-# Plan: Vocab quiz
+# Plan: GCA Revise (started as the vocab quiz)
 
 ## Goal
 A revision game for students, similar to Quizlet, but with features the teacher can change. Around 100 words and definitions, entered by the teacher.
@@ -54,3 +54,13 @@ Order: build the web game with key vocab first; add quotes after that.
 5. Update the design with school branding and per-text accent colours (once the teacher has a good crest image).
 6. Plan Version 2 in detail from the approved design, then build the key-vocab web game one mode at a time.
 7. Then quotes: design, then build.
+
+## App name and structure (agreed 14 Oct)
+- **Name:** GCA Revise. It is bigger than a vocab quiz, so the name is no longer "Vocab Quiz".
+- **Texts first:** Home shows the texts (Macbeth, An Inspector Calls, Jekyll and Hyde, Frankenstein, Power and Conflict). Inside a text the student chooses **Quotes** or **Key vocab**, then the question style.
+  - Quotes: fill the gap, who said it?
+  - Key vocab: type it, choose it, match them.
+- **Key vocab can sit in more than one text** (2 or 3), with no separate set of its own. A word learned in one text should count as learned in the others.
+- **Techniques** (simile, metaphor, repetition and so on): one section across all texts, with its own screen. Same practice styles as vocab. Later feature: "technique analysis", where students learn which technique is used in each quote.
+- **Still to decide:** how matching scores points, and whether matching retires a word.
+- **Design status:** phone screens drafted as an artifact (Home, inside a text, Techniques, typed answer, multiple choice, matching, quotes, set complete). Chromebook/laptop layout is next.
