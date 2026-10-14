@@ -40,6 +40,7 @@ Focus on three things:
 Order: build the web game with key vocab first; add quotes after that.
 
 ## Later ideas
+- Character images on quote questions (user has images in mind, or AI generated; check copyright and keep one consistent style).
 - Words in context ("which sentence uses it correctly?"), spaced return of learned words, light rewards (per-text badges, daily goal).
 - Streak bonuses, retrying missed words.
 - A page where the teacher can type in words directly.
@@ -63,4 +64,4 @@ Order: build the web game with key vocab first; add quotes after that.
 - **Key vocab can sit in more than one text** (2 or 3), with no separate set of its own. A word learned in one text should count as learned in the others.
 - **Techniques** (simile, metaphor, repetition and so on): one section across all texts, with its own screen. Same practice styles as vocab. Later feature: "technique analysis", where students learn which technique is used in each quote.
 - **Still to decide:** how matching scores points, and whether matching retires a word.
-- **Design status:** phone screens drafted as an artifact (Home, inside a text, Techniques, typed answer, multiple choice, matching, quotes, set complete). Chromebook/laptop layout is next.
+- **Design status:** phone screens drafted as an artifact (Home, inside a text, Techniques, typed answer, multiple choice, matching, quotes, set complete). Chromebook/laptop layout is drafted too.

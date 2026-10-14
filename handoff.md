@@ -39,7 +39,10 @@ It was renamed on 14 Oct: the app is now **GCA Revise** (not "Vocab Quiz"). The 
 - Later feature: "technique analysis", learning which technique each quote uses.
 
 **Phone screens done (sample data only):** Home, Inside a text, Techniques, typed question + right/wrong + Set complete, multiple choice + right/wrong, matching + round complete, quote fill-the-gap and who-said-it (their answer screens reuse the vocab ones for now).
-**Laptop/Chromebook screens started (14 Oct):** Home, Inside a text, typed question, multiple choice (a second section of the canvas, to the right). Not yet done on laptop: right/wrong screens, matching, quotes, Techniques, Set complete.
+**Laptop/Chromebook screens done (14 Oct, sample data):** a second section of the canvas to the right of the phone screens. Home, Inside a text, Techniques, typed question + right/wrong, multiple choice + right/wrong, matching + round complete, quote fill-the-gap and who-said-it, Set complete. All linked so they can be clicked through. The user has seen the first four and likes them; the rest are not yet reviewed.
+
+## Future idea (not agreed yet)
+- **Character images for quotes** (e.g. a picture of Lady Macbeth on a "who said it?" question). The user has some images in mind; they could also be AI generated. Needs a check on copyright for any existing images, and a consistent style across characters. Do this after the web game and quotes exist.
 
 ## Open questions
 - How does matching score points, and does matching retire a word? (Agreed so far: 1 correct typed answer or 2 correct multiple-choice answers retire a word.)
@@ -47,7 +50,7 @@ It was renamed on 14 Oct: the app is now **GCA Revise** (not "Vocab Quiz"). The 
 
 ## Next step
 1. User looks at the laptop screens and gives feedback (Chrome extension cannot connect from the Chromebook's Linux container, so the user opens the artifact link themselves; screenshots pasted into chat work).
-2. Finish the remaining laptop screens.
+2. Adjust the design from feedback.
 3. The user sends the real vocab lists (from school) so Claude can make the real `vocab.csv` with a text/topic column. Then plan Version 2 (the working web page) in detail.
 
 ## Separate from this project
