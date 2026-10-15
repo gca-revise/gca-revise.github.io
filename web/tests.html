@@ -302,6 +302,64 @@ const pool = [
   check("nihilism and nihilistic are never in the same round", !together);
 }
 
+// ---- Quotes (Know it level) ----
+{
+  const quotes = [
+    { id: "q1", text: "macbeth", speaker: "Witches", quote: "Fair is foul and foul is fair", gap_word: "foul", note: "n1" },
+    { id: "q2", text: "macbeth", speaker: "Macbeth", quote: "Is this a dagger which I see before me", gap_word: "dagger", note: "" },
+    { id: "q3", text: "macbeth", speaker: "Lady Macbeth", quote: "Out, damned spot! Out, I say!", gap_word: "damned", note: "" },
+    { id: "q4", text: "macbeth", speaker: "Macduff", quote: "He has no children", gap_word: "children", note: "" },
+    { id: "q5", text: "macbeth", speaker: "Banquo", quote: "Give me the daggers", gap_word: "daggers", note: "" },
+    { id: "q6", text: "macbeth", speaker: "Malcolm", quote: "Short one", gap_word: "", note: "" },
+    { id: "p1", text: "power-conflict", speaker: "", poem: "Ozymandias", quote: "Look on my Works, ye Mighty, and despair!", gap_word: "despair", note: "" },
+    { id: "p2", text: "power-conflict", speaker: "", poem: "London", quote: "Marks of weakness, marks of woe", gap_word: "woe", note: "" },
+    { id: "p3", text: "power-conflict", speaker: "", poem: "Remains", quote: "End of story, except not really", gap_word: "story", note: "" },
+    { id: "p4", text: "power-conflict", speaker: "", poem: "Exposure", quote: "All their eyes are ice", gap_word: "ice", note: "" },
+    { id: "p5", text: "power-conflict", speaker: "", poem: "Kamikaze", quote: "Head full of powerful incantations", gap_word: "incantations", note: "" },
+  ];
+  check("gap word is found ignoring capitals", QuoteTools.findGap("Out, DAMNED spot", "damned") !== null);
+  check("a missing gap word is not found", QuoteTools.findGap("Out, damned spot", "candle") === null);
+  const pieces = QuoteTools.gapPieces("Fair is foul and foul is fair", "foul");
+  check("every copy of the gap word becomes a gap", pieces.filter((p) => p.gap).length === 2 && pieces.map((p) => p.text).join("") === "Fair is foul and foul is fair");
+  check("gap options are lower case at the start of a quote", QuoteTools.gapLabel("Unseamed him from nave to chaps", "Unseamed") === "unseamed");
+  check("names in the middle of a quote keep their capital", QuoteTools.gapLabel("Into the mouth of Hell", "Hell") === "Hell");
+  check("gap game uses only quotes with a gap word", QuoteTools.items(quotes, "macbeth", "gap").length === 5);
+  check("who game skips quotes with no speaker and uses poems for Power and Conflict",
+    QuoteTools.items(quotes, "macbeth", "who").length === 6 && QuoteTools.items(quotes, "power-conflict", "who").map((i) => i.word).join() === "Ozymandias,London,Remains,Exposure,Kamikaze");
+  check("learned counts cover every askable quote once", QuoteTools.allItems(quotes, "macbeth").length === 6);
+  const gap = QuoteTools.items(quotes, "macbeth", "gap");
+  const pool = QuoteTools.optionPool(quotes, "macbeth", "gap");
+  const make = QuoteTools.optionsFor(pool);
+  let ok = true, cognate = false;
+  for (let i = 0; i < 40; i++) {
+    const d = gap.find((g) => g.id === "q2");
+    const opts = make(d);
+    if (opts.length !== 4 || !opts.some((o) => o.id === d.answerId) || new Set(opts.map((o) => o.id)).size !== 4) ok = false;
+    if (opts.some((o) => o.word === "daggers")) cognate = true;
+  }
+  check("gap questions get four different options including the right one", ok);
+  check("daggers is never a wrong option for dagger", !cognate);
+  const who = QuoteTools.items(quotes, "macbeth", "who");
+  const whoPool = QuoteTools.optionPool(quotes, "macbeth", "who", ["Banquo", "Duncan", "Ross"]);
+  const whoOpts = QuoteTools.optionsFor(whoPool)(who[0]);
+  check("who questions get four options including the right speaker", whoOpts.length === 4 && whoOpts.some((o) => o.word === "Witches"));
+  const s = new Session({ items: gap, mode: "learn", kind: "choose", optionsFor: make });
+  const q = s.next();
+  const r = s.answerChoice(q.answerId);
+  check("a quote is answered right by choosing its answer option", r.correct && s.choiceCounts[q.id] === 1 && !r.retiredNow);
+  const wrongOpt = s.options.find((o) => o.id !== q.answerId);
+  const q2 = s.next();
+  const r2 = s.answerChoice(s.options.find((o) => o.id !== q2.answerId).id);
+  check("the wrong option is wrong", !r2.correct && s.missed[q2.id] === 1);
+  check("two right answers learn a quote (any mix of games)", (() => {
+    const t = new Session({ items: gap, mode: "learn", kind: "choose", choiceCounts: { q1: 1 }, optionsFor: make });
+    let guard = 0, w = t.next();
+    while (w && w.id !== "q1" && guard++ < 20) { t.answerChoice("zzz"); w = t.next(); }
+    const res = t.answerChoice("gap:foul");
+    return res.correct && res.retiredNow && t.retired.has("q1");
+  })());
+}
+
 // ---- Streak and best streak ----
 {
   const s = new Session({ items: words(5), mode: "learn" });

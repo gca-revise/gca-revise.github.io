@@ -622,3 +622,23 @@ button.choice:focus-visible { outline: 3px solid var(--yellow); outline-offset: 
   .md-btns .fb-btn { width: auto; }
   .md-back { min-height: 64px; padding: 0 40px; border-radius: 18px; background: #fff; text-decoration: none; font-weight: 700; font-size: 20px; color: var(--navy); }
 }
+
+/* ---------- Quotes ---------- */
+.q-quote {
+  font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600;
+  font-size: 24px; line-height: 1.35; overflow-wrap: anywhere;
+}
+.gap-blank {
+  display: inline-block; min-width: 96px;
+  border-bottom: 3px solid var(--accent); vertical-align: bottom;
+}
+.gap-filled { color: var(--accent); font-weight: 800; }
+.fb-quote { background: #fff; border-radius: 20px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.fb-source { font-size: 14px; font-weight: 700; color: var(--accent); }
+@media (min-width: 760px) {
+  .q-quote { font-size: 34px; line-height: 1.25; }
+  .gap-blank { min-width: 140px; border-bottom-width: 4px; }
+  .fb-quote { padding: 24px 28px; border-radius: 24px; }
+  .fb-quote .q-quote { font-size: 28px; }
+  .fb-source { font-size: 15px; }
+}

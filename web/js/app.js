@@ -22,6 +22,22 @@ function startRun(textId, kind, setId) {
   drawRun();
 }
 
+// A quotes game: game is "gap" (pick the missing word) or "who" (who said it / which poem).
+function startQuotes(textId, game) {
+  const { items, optionsFor } = Data.quoteGame(textId, game);
+  const session = new Session({
+    items,
+    mode: Store.getMode(),
+    kind: "choose",
+    retiredIds: Store.retiredIds(),
+    choiceCounts: Store.choiceCounts(),
+    optionsFor,
+  });
+  run = { textId, kind: "choose", subject: "quote", game, session, phase: "question", last: null, sentence: "" };
+  run.phase = session.next() ? "question" : "complete";
+  drawRun();
+}
+
 function startMatch(textId, setId) {
   const game = new MatchGame({
     items: Data.itemsFor(textId, setId),
@@ -61,6 +77,9 @@ function route() {
     return;
   } else if (parts[0] === "text" && parts[2] === "vocab-choose" && Data.text(parts[1])) {
     startRun(parts[1], "choose");
+    return;
+  } else if (parts[0] === "text" && ["quotes-gap", "quotes-who"].includes(parts[2]) && Data.text(parts[1])) {
+    startQuotes(parts[1], parts[2] === "quotes-gap" ? "gap" : "who");
     return;
   } else if (parts[0] === "text" && parts[2] === "vocab-match" && Data.text(parts[1])) {
     startMatch(parts[1]);
@@ -105,7 +124,8 @@ app.addEventListener("click", (event) => {
   } else if (action.dataset.action === "again") {
     // Starting again after finishing a set goes to free practice, so learned words stay learned.
     Store.setMode("free");
-    startRun(run.textId, run.kind, run.setId);
+    if (run.subject === "quote") startQuotes(run.textId, run.game);
+    else startRun(run.textId, run.kind, run.setId);
   }
 });
 

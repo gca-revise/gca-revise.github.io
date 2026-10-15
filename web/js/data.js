@@ -11,8 +11,8 @@ const Data = {
         if (!r.ok) throw new Error(`Could not load ${name}.json`);
         return r.json();
       });
-    [this.texts, this.vocab, this.quotes, this.techniques] = await Promise.all([
-      get("texts"), get("vocab"), get("quotes"), get("techniques"),
+    [this.texts, this.vocab, this.quotes, this.techniques, this.characters] = await Promise.all([
+      get("texts"), get("vocab"), get("quotes"), get("techniques"), get("characters"),
     ]);
   },
 
@@ -73,6 +73,19 @@ const Data = {
 
   wordsFor(textId) {
     return this.vocab.filter((w) => w.texts.includes(textId));
+  },
+
+  // The quotes a student can be asked about in a text, and the questions for a quotes game.
+  quoteItemsAll(textId) {
+    return QuoteTools.allItems(this.quotes, textId);
+  },
+
+  quoteGame(textId, game) {
+    const pool = QuoteTools.optionPool(this.quotes, textId, game, (this.characters || {})[textId] || []);
+    return {
+      items: QuoteTools.items(this.quotes, textId, game),
+      optionsFor: QuoteTools.optionsFor(pool),
+    };
   },
 
   quotesFor(textId) {

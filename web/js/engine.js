@@ -215,12 +215,13 @@ const Engine = {
 class Session {
   static CHOICES_TO_LEARN = 2;   // right multiple-choice answers that retire a word
 
-  constructor({ items, mode, kind = "type", retiredIds = new Set(), choiceCounts = {}, extraPool = [], random = Math.random }) {
+  constructor({ items, mode, kind = "type", retiredIds = new Set(), choiceCounts = {}, extraPool = [], optionsFor = null, random = Math.random }) {
     this.items = items;
     this.mode = mode;
     this.kind = kind;
     this.random = random;
     this.extraPool = extraPool;
+    this.optionsFor = optionsFor;   // optional: builds the options for an item (used for quotes)
     this.retired = new Set(retiredIds);
     this.choiceCounts = Object.assign({}, choiceCounts);
     this.bag = [];          // words still to ask in this pass
@@ -272,9 +273,9 @@ class Session {
     if (this.bag.length === 0) this.refill();
     this.current = this.bag.shift();
     this.lastId = this.current.id;
-    this.options = this.kind === "choose"
-      ? Engine.makeChoices(this.current, this.items, this.extraPool, 4, this.random)
-      : null;
+    if (this.kind !== "choose") this.options = null;
+    else if (this.optionsFor) this.options = this.optionsFor(this.current);
+    else this.options = Engine.makeChoices(this.current, this.items, this.extraPool, 4, this.random);
     return this.current;
   }
 
@@ -312,7 +313,8 @@ class Session {
   // Returns {correct, retiredNow, expected, chosenId, rightSoFar, needed}.
   answerChoice(chosenId) {
     const word = this.current;
-    const correct = chosenId === word.id;
+    // An item can name the id of its right option (quotes do); otherwise the item's own id is right.
+    const correct = chosenId === (word.answerId || word.id);
     this.score(correct, word);
     let retiredNow = false;
     // Two right multiple-choice answers retire a word (learn mode only). A wrong answer
@@ -336,7 +338,7 @@ class Session {
       .filter((w) => this.missed[w.id])
       .sort((a, b) => this.missed[b.id] - this.missed[a.id])
       .slice(0, limit)
-      .map((w) => ({ word: w.word, times: this.missed[w.id] }));
+      .map((w) => ({ word: w.label || w.word, times: this.missed[w.id] }));
   }
 }
 
@@ -457,3 +459,110 @@ class MatchGame {
     }
   }
 }
+
+
+// Questions about quotes ("Know it" level): who said it, which poem, pick the missing word.
+// Pure functions, so they can be tested without a screen.
+const QuoteTools = {
+  // The words in a quote, with their positions.
+  tokens(text) {
+    const out = [];
+    const re = /[\p{L}\p{N}]+/gu;
+    let m;
+    while ((m = re.exec(text))) out.push({ text: m[0], start: m.index, end: m.index + m[0].length });
+    return out;
+  },
+
+  // The first word in the quote that is the gap word (ignoring capitals), or null.
+  findGap(quote, gap) {
+    const want = String(gap).toLowerCase();
+    return QuoteTools.tokens(quote).find((t) => t.text.toLowerCase() === want) || null;
+  },
+
+  // The quote cut into pieces, with the gap word marked: [{text, gap}]. Every copy of the word is a gap.
+  gapPieces(quote, gap) {
+    const want = String(gap).toLowerCase();
+    const pieces = [];
+    let at = 0;
+    for (const t of QuoteTools.tokens(quote)) {
+      if (t.text.toLowerCase() !== want) continue;
+      if (t.start > at) pieces.push({ text: quote.slice(at, t.start), gap: false });
+      pieces.push({ text: t.text, gap: true });
+      at = t.end;
+    }
+    if (at < quote.length) pieces.push({ text: quote.slice(at), gap: false });
+    return pieces;
+  },
+
+  // How a gap word is shown as an option: lower case, unless it is a capitalised name mid-quote.
+  gapLabel(quote, gap) {
+    const found = QuoteTools.findGap(quote, gap);
+    if (!found) return String(gap);
+    const first = QuoteTools.tokens(quote)[0];
+    const capital = found.text[0] !== found.text[0].toLowerCase();
+    return capital && found.start !== first.start ? found.text : found.text.toLowerCase();
+  },
+
+  slug(text) {
+    return String(text).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  },
+
+  // Items for a quotes game on one text. game: "gap" or "who".
+  // Each item is a quote with the right answer attached: {id, word, answerId, quote, ...}.
+  items(quotes, textId, game) {
+    const inText = quotes.filter((q) => q.text === textId);
+    const items = [];
+    for (const q of inText) {
+      let answer = null;
+      if (game === "gap") {
+        if (q.gap_word && QuoteTools.findGap(q.quote, q.gap_word)) {
+          const label = QuoteTools.gapLabel(q.quote, q.gap_word);
+          answer = { id: "gap:" + label.toLowerCase(), word: label };
+        }
+      } else {
+        const who = textId === "power-conflict" ? q.poem : q.speaker;
+        if (who && who.trim()) answer = { id: "who:" + QuoteTools.slug(who), word: who.trim() };
+      }
+      if (!answer) continue;
+      items.push({
+        id: q.id, word: answer.word, answerId: answer.id, label: q.quote, definition: "",
+        quote: q, note: q.note || "", texts: [textId], examples: q.note ? [q.note] : [], examples_high: [], tags: [],
+      });
+    }
+    return items;
+  },
+
+  // Everything students can be asked about in a text (for the "X of N learned" counts).
+  allItems(quotes, textId) {
+    const seen = new Set();
+    const all = [];
+    for (const game of ["gap", "who"]) {
+      for (const item of QuoteTools.items(quotes, textId, game)) {
+        if (!seen.has(item.id)) { seen.add(item.id); all.push(item); }
+      }
+    }
+    return all;
+  },
+
+  // Wrong options for a quote question: other gap words from the text, or other characters / poems.
+  optionPool(quotes, textId, game, characters = []) {
+    const pool = [];
+    const seen = new Set();
+    const add = (id, word) => {
+      if (!seen.has(id)) { seen.add(id); pool.push({ id, word }); }
+    };
+    if (game === "gap") {
+      for (const item of QuoteTools.items(quotes, textId, "gap")) add(item.answerId, item.word);
+    } else {
+      // (The one-off speaker "Title" is never offered as a wrong option.)
+      for (const item of QuoteTools.items(quotes, textId, "who")) if (item.word !== "Title") add(item.answerId, item.word);
+      if (textId !== "power-conflict") for (const name of characters) add("who:" + QuoteTools.slug(name), name);
+    }
+    return pool;
+  },
+
+  // A function that makes the four options for an item.
+  optionsFor(pool, random = Math.random) {
+    return (item) => Engine.makeChoices({ id: item.answerId, word: item.word }, pool, [], 4, random);
+  },
+};

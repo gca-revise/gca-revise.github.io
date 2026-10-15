@@ -160,7 +160,11 @@ def build_quotes():
             "techniques": split(r["techniques"], ";"),
             "technique_notes": split(r["technique_notes"], "|"),
             "context": r["context"].strip(),
+            "note": r["sheet_note"].strip(),
         })
+        gap = r["gap_word"].strip()
+        if gap and gap.lower() not in [t.lower() for t in re.findall(r"[^\W_]+", r["quote"])]:
+            problems.append(f"{where}: gap word '{gap}' is not in the quote")
     return out
 
 
@@ -197,6 +201,18 @@ def build_techniques(quotes):
     return out
 
 
+def build_characters():
+    """Extra character names for 'Who said it?' wrong options: {text id: [names]}."""
+    out = {}
+    for r in read("characters"):
+        text = TEXT_IDS.get(r["text"])
+        if not text:
+            problems.append(f"characters: unknown text '{r['text']}'")
+            continue
+        out.setdefault(text, []).append(r["name"].strip())
+    return out
+
+
 def build_symbols():
     return [{
         "symbol": r["symbol"],
@@ -217,6 +233,7 @@ def main():
         "poems": build_poems(),
         "techniques": build_techniques(read("quotes")),
         "symbols": build_symbols(),
+        "characters": build_characters(),
     }
     for name, value in data.items():
         with open(OUT / f"{name}.json", "w", encoding="utf-8") as f:

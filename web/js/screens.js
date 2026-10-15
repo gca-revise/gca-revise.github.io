@@ -112,16 +112,17 @@ const Screens = {
     const look = TEXT_LOOK[id];
     const retired = Store.retiredIds();
     const words = Data.wordsFor(id);
-    const quotes = Data.quotesFor(id);
+    const quotes = Data.quoteItemsAll(id);
+    const quotesLearned = quotes.filter((qi) => retired.has(qi.id)).length;
     const learned = words.filter((w) => retired.has(w.id)).length;
     return `
       ${Screens.pageHead(t.name, "What do you want to practise?", look.colour, look.tint)}
       <main class="wrap" style="--accent:${look.colour};--tint:${look.tint}">
         ${Screens.modeSwitch(Store.getMode())}
         <div class="card-grid">
-          ${Screens.modeCard("Quotes", 0, quotes.length, "quote", [
+          ${Screens.modeCard("Quotes", quotesLearned, quotes.length, "quote", [
             ["Fill the gap", `#/text/${id}/quotes-gap`],
-            ["Who said it?", `#/text/${id}/quotes-who`],
+            [id === "power-conflict" ? "Which poem?" : "Who said it?", `#/text/${id}/quotes-who`],
           ])}
           ${Screens.modeCard("Key vocab", learned, words.length, "word", [
             ["Type it", `#/text/${id}/vocab-type`],
