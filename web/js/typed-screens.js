@@ -21,6 +21,20 @@ Object.assign(Screens, {
     return set.id === "all" ? "Techniques" : set.name;
   },
 
+  // The sentence box after an answer: an "In context" sentence for words, or the example and
+  // effect for techniques.
+  sentenceBox(run, word, sentenceHtml) {
+    const isTechnique = run.textId === "techniques";
+    const label = isTechnique ? "Example" : "In context";
+    const main = run.sentence
+      ? `<p class="fb-sentence"><span class="fb-sentence-label">${label}</span><span class="fb-sentence-body">${sentenceHtml}</span></p>`
+      : "";
+    const effect = isTechnique && word.effect
+      ? `<p class="fb-sentence"><span class="fb-sentence-label">Effect</span><span class="fb-sentence-body">${esc(word.effect)}</span></p>`
+      : "";
+    return main + effect;
+  },
+
   // "word" for key vocab, "technique" on the Techniques screens.
   noun(run) {
     return run.textId === "techniques" ? "technique" : "word";
@@ -102,9 +116,7 @@ Object.assign(Screens, {
           .map((p) => (p.bold ? `<strong>${esc(p.text)}</strong>` : esc(p.text)))
           .join("")
       : "";
-    const sentence = run.sentence
-      ? `<p class="fb-sentence"><span class="fb-sentence-label">In context</span><span class="fb-sentence-body">${sentenceHtml}</span></p>`
-      : "";
+    const sentence = Screens.sentenceBox(run, w, sentenceHtml);
     const chips = right
       ? `<div class="chips"><span class="chip">+1 point</span><span class="chip">Streak ${s.streak}</span></div>`
       : "";
@@ -273,9 +285,7 @@ Object.assign(Screens, {
     const sentenceHtml = run.sentence
       ? Engine.markWord(run.sentence, w.word).map((p) => (p.bold ? `<strong>${esc(p.text)}</strong>` : esc(p.text))).join("")
       : "";
-    const sentence = run.sentence
-      ? `<p class="fb-sentence"><span class="fb-sentence-label">In context</span><span class="fb-sentence-body">${sentenceHtml}</span></p>`
-      : "";
+    const sentence = Screens.sentenceBox(run, w, sentenceHtml);
     let note;
     if (right && learn) {
       note = r.retiredNow

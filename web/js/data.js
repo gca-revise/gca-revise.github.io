@@ -33,8 +33,9 @@ const Data = {
           definition: t.definition,
           category: t.category,
           inQuotes: t.in_quotes,
+          effect: t.effect || "",
           texts: [],
-          examples: [],
+          examples: t.example ? [t.example] : [],
           examples_high: [],
           tags: [],
         }));

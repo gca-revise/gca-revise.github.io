@@ -2,7 +2,7 @@
  {
   "name": "Imagery",
   "category": "Literary techniques",
-  "definition": "Vivid descriptive language that appeals to the senses to create an image in the reader’s head.",
+  "definition": "Vivid descriptive language and strong images, including symbolism, that appeal to the senses and let the reader picture what is described. It includes similes, metaphors and personification.",
   "example": "When Romeo says: “Juliet is the sun.” (Act 2, Scene 2) light imagery is used to compare Juliet to warmth, beauty, and life.",
   "effect": "Can help to create a more immersive experience by making the writing come alive through sensory details. Similes and metaphors are usually imagery.",
   "texts": [
@@ -13,7 +13,7 @@
  {
   "name": "Metaphor",
   "category": "Literary techniques",
-  "definition": "A metaphor compares two things without using the words “like” or “as”.",
+  "definition": "A comparison without “like” or “as”.",
   "example": "“The moon was a ghostly galleon tossed upon cloudy seas…”",
   "effect": "Metaphors condense and magnify meaning to capture the reader’s imagination.",
   "texts": [
@@ -24,7 +24,7 @@
  {
   "name": "Simile",
   "category": "Literary techniques",
-  "definition": "A simile compares two things using the words “like” or “as”.",
+  "definition": "A comparison using “like” or “as”.",
   "example": "“The mind is like a parachute. It doesn’t work if it’s not open” - Frank Zappa.",
   "effect": "Used to create vivid imagery or to draw surprising connections between two unrelated things.",
   "texts": [
@@ -36,7 +36,7 @@
   "name": "Personification",
   "category": "Literary techniques",
   "definition": "When a writer gives human characteristics to something that is not human.",
-  "example": "“The earth hath swallowed all my hopes but she” - Lord Capulet in Romeo & Juliet.",
+  "example": "“The earth hath swallowed all my hopes but she” - Lord Capulet in Romeo & Juliet. In Frankenstein, nature is presented as prey that is hunted.",
   "effect": "Adds life, energy, and an element of relatability to things that would otherwise be lifeless.",
   "texts": [
    "all"
@@ -91,7 +91,7 @@
   "name": "Semantic field",
   "category": "Literary techniques",
   "definition": "A cluster of words that relate to a particular topic.",
-  "example": "Clusters of words like “grave”, “bone” and “decay” – create a semantic field of death.",
+  "example": "Clusters of words like “grave”, “bone” and “decay” – create a semantic field of death. In ‘Poppies’ the semantic fields include war and pain, and fabric and clothing.",
   "effect": "Used to create a sense of unity/cohesion and to emphasise specific themes or emotions.",
   "texts": [
    "all"
@@ -421,7 +421,7 @@
   "name": "Oxymoron",
   "category": "Advanced literary techniques",
   "definition": "When two contradictory (opposite) words are placed side-by-side.",
-  "example": "“Deafening silence” “Act naturally” “Small crowd”",
+  "example": "“Deafening silence” “Act naturally” “Small crowd” In Frankenstein: “hellish triumph”.",
   "effect": "Oxymorons can be used to create irony, suspense, or to add comedy to a piece of literature.",
   "texts": [
    "all"
@@ -619,7 +619,7 @@
   "name": "Flashback",
   "category": "Structural techniques",
   "definition": "Describing a past event – to help explain the present.",
-  "example": "The film Titanic starts with an old lady. We know she has a secret. The rest of the film flashes back to 1912 and we realise we are being told her story.",
+  "example": "The film Titanic starts with an old lady. We know she has a secret. The rest of the film flashes back to 1912 and we realise we are being told her story. In Frankenstein, Shelley uses a flashback to contrast Victor as a child with Victor close to death.",
   "effect": "Flashbacks provide the background information (including secrets or inner conflicts) to drive the plot.",
   "texts": [
    "all"
@@ -750,7 +750,7 @@
  {
   "name": "Volta",
   "category": "Poetic techniques",
-  "definition": "Turning point in a poem - in terms of the mood/theme.",
+  "definition": "A turning point in a poem.",
   "example": "My Last Duchess, Robert Browning. After praising her portrait, the volta comes when we realise that the Duke gave orders for her to be killed.",
   "effect": "A volta can be used to mark a major shift within a poem. This shift can be an answer to a question, a change in perspective, or a thematic reveal.",
   "texts": [
@@ -783,9 +783,9 @@
  {
   "name": "Rhyme scheme",
   "category": "Poetic techniques",
-  "definition": "Sequence in which rhyme occurs.",
+  "definition": "The pattern or sequence in which rhyme occurs in a poem, found by labelling the end word of each line with a letter.",
   "example": "ABAB (Alternate Rhyme) AABB (Rhyming Couplets) ABBA (Enclosed Rhyme)",
-  "effect": "Rhyme schemes create atmosphere/mood and can shape the way we respond to the themes in the poem.",
+  "effect": "Rhyme schemes create atmosphere/mood and can shape the way we respond to the themes in the poem. A regular rhyme can suggest control, strength and power, repetition, being trapped, or a song; the pattern can also be irregular.",
   "texts": [
    "all"
   ],
@@ -935,9 +935,9 @@
   "in_quotes": 2
  },
  {
-  "name": "Imperative",
+  "name": "Imperative (command)",
   "category": "Rhetorical devices",
-  "definition": "An imperative (command) is a type of sentence that gives a command, instruction, or request. It is directed at the audience to provoke action.",
+  "definition": "A sentence that gives an order (e.g. “Begone, vile insect!”), showing who has the power.",
   "example": "“Close the door”, not “He closed the door”. “Sit down”, not “I am sitting down”. “Make America Great Again!” not “We hope America becomes great again.”",
   "effect": "The imperative conveys urgency, authority, or directness. It commands the audience to take immediate action, often making the message more forceful and compelling.",
   "texts": [
