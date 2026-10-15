@@ -96,7 +96,7 @@ Shows for a finished key-vocab set: "Practise Macbeth vocab again", "Back to Mac
 - Vocab: 83 new rows and 5 merged rows in `vocab.csv` (214 words in total): 13 Key Vocabulary slide words, 8 terms defined in lessons (e.g. Gothic literature, Romantic Movement, Enlightenment, cautionary tale, dehumanise), and 62 words from the "Glossary" boxes on the reading slides. Shared words (Ambition, Embodiment, Transgress, Traumatised, Pivotal moment) now also list Frankenstein. Claude's example sentences are in `examples_draft`. `core` still blank.
 - Also added: 8 techniques in `techniques.csv`, 4 symbols (eyes x3, fire) in `symbols.csv`, technique labels on 15 quotes (`lesson_techniques`).
 - **Not read:** `Lesson 09 & 10 Crime and Justice.pptx` (153 MB) and `Lesson 10 The Creature.pptx` (140 MB) are over the connector's 100 MB limit; Lesson 08 William, 12, 13 (assessment) and the MTP folder were skimmed or skipped. "Miscarriage of justice" is on the lesson 11 slide but its definition is in lessons 9–10. To add it: the teacher can upload a smaller copy of those two lessons, or paste the vocab slides.
-- **Still to decide:** which Frankenstein quotes are core (`master`; suggested start: the 14 midpoint-list items; nothing set yet), wording differences on the 15 `check` quotes, the vocab core list.
+- **Decided 15 Oct:** core Frankenstein quotes = the ones shown as quote explosions or analysed in the slides; the teacher's wording stays where it differs from the novel. Provisional core (18 rows, `master = yes`) comes from lessons 1–7, 11 and 14–18; **re-check once lessons 9, 10 and the Creature lesson are read** (the teacher is downloading shorter copies). Still to decide: the vocab core list.
 - Privacy: no student names copied.
 
 ## Next step
