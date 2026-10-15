@@ -73,6 +73,11 @@ Shows for a finished key-vocab set: "Practise Macbeth vocab again", "Back to Mac
 - **Privacy:** many lesson slides contain class lists and test scores with students' first names. None were copied. Do not copy names from lessons. Also skip “Jekyll & Hyde Key Quotes …docx” (named after a student) and the “Responding to Feedback” sheets.
 - **Done 15 Oct:** the novel text is saved in `source/jekyll-hyde.txt` and every J&H quote's chapter and speaker were checked against it. “Windows barred with iron” moved to Chapter 5. **Decided 15 Oct:** use the novel’s wording for “fell in slavery” and “My devil had been long caged”. **Still to do for J&H:** (done) decide which wording of “My devil had been long caged…” to keep. Decide core lists. Also not read: `Full Novel Quote Sheet.docx` (may hold more quotes) and the revision booklet.
 
+## An Inspector Calls data (15 Oct)
+- Folder: OneDrive, Documents / English Year 11 2026 / 1 An Inspector Calls (17 lessons, homework quote sheets 1-4, mid-point quote sheets). `quotes.csv` has 37 AIC quotes with mid-point analysis; see `plan.md`. Acts/speakers checked against the play text. The text file is git-ignored on purpose (copyright), so it is not on GitHub.
+- **Teacher to choose:** which AIC quotes are `master` (the 12 mid-point key quotes are flagged as a starting point), and wording for 6 quotes marked `matches_source = check`.
+- **Next for AIC:** read the lessons for vocab (lessons 01-17; Key Vocabulary slides) and build the AIC rows of `vocab.csv`. Remember: do not copy student names from class lists on slides.
+
 ## Next step
 1. The design is finished and the user is happy with it (phone and laptop). The user opens the artifact link to look (the Chrome extension cannot connect from the Chromebook's Linux container).
 2. Read the Key Vocabulary slides from the Macbeth lessons and build the real `vocab.csv` (word, definition, example sentence, text). (Data needs are in `plan.md`: `vocab.csv` with text tags and example sentences, `quotes.csv` with text, technique(s) and speaker, `techniques.csv`.) The user brings the real vocab lists from school (paste or spreadsheet). Claude makes the real `vocab.csv` with a text column (a word can sit in 2 or 3 texts). Also useful: a few real quotes and techniques to test the layout.
