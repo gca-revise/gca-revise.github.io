@@ -74,9 +74,12 @@ Shows for a finished key-vocab set: "Practise Macbeth vocab again", "Back to Mac
 - **Done 15 Oct:** the novel text is saved in `source/jekyll-hyde.txt` and every J&H quote's chapter and speaker were checked against it. “Windows barred with iron” moved to Chapter 5. **Decided 15 Oct:** use the novel’s wording for “fell in slavery” and “My devil had been long caged”. **Still to do for J&H:** (done) decide which wording of “My devil had been long caged…” to keep. Decide core lists. Also not read: `Full Novel Quote Sheet.docx` (may hold more quotes) and the revision booklet.
 
 ## An Inspector Calls data (15 Oct)
-- Folder: OneDrive, Documents / English Year 11 2026 / 1 An Inspector Calls (17 lessons, homework quote sheets 1-4, mid-point quote sheets). `quotes.csv` has 37 AIC quotes with mid-point analysis; see `plan.md`. Acts/speakers checked against the play text. The text file is git-ignored on purpose (copyright), so it is not on GitHub.
-- **Teacher to choose:** which AIC quotes are `master` (the 12 mid-point key quotes are flagged as a starting point), and wording for 6 quotes marked `matches_source = check`.
-- **Next for AIC:** read the lessons for vocab (lessons 01-17; Key Vocabulary slides) and build the AIC rows of `vocab.csv`. Remember: do not copy student names from class lists on slides.
+- Folder: OneDrive, Documents / English Year 11 2026 / 1 An Inspector Calls (17 lessons, homework quote sheets 1-4, mid-point quote sheets). All 17 lessons except 12 (assessment prep) were read.
+- `quotes.csv`: 48 AIC quotes, **20 core quotes (22 rows)** agreed with the teacher (listed in `plan.md`), 12 mid-point key quotes flagged. `vocab.csv`: 97 words in total now.
+- The play text is git-ignored on purpose (copyright), so it is not on GitHub. Upload it again for any future checking.
+- **Privacy:** lessons 07 and 11 contain lists of students' first names (“Century” lists). None were copied. The teacher said there is no student data in the files; that is true of the data files, but the lesson slides do contain names. Do not copy names from slides.
+- **Teacher to check:** drafted sentences in `examples_draft` (AIC has 19), quote wording marked `matches_source = check`, and which vocab is core.
+- Not read: Lesson 12 (assessment prep), the extra resources folder, the printable PDFs.
 
 ## Next step
 1. The design is finished and the user is happy with it (phone and laptop). The user opens the artifact link to look (the Chrome extension cannot connect from the Chromebook's Linux container).
