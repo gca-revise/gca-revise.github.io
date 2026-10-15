@@ -52,13 +52,13 @@ Stages 1 to 6 need nothing more from the teacher. Stages 7 and 8 need only the g
 ## Choices Claude recommends (teacher can overrule)
 - **Typing leniency:** ignore capitals, extra spaces and accents (so "facade" is accepted for "façade"); spelling must otherwise be exact, as agreed. Hyphens and spaces treated the same ("self fulfilling prophecy").
 - **While `core` is empty:** the first version uses all words tagged to a text. When the teacher fills `core`, we add a "Core only / All words" choice rather than changing the data.
-- **Example sentences:** show `examples_text` after an answer if there is one. `examples_draft` sentences stay hidden until the teacher approves them (moved to `examples_text`). Words with no approved sentence just show the definition.
+- **Example sentences (decided 15 Oct):** show `examples_text` if there is one, otherwise the `examples_draft` sentences, so every word has a sentence. The teacher approves or weeds out the drafts later. Each sentence carries an "approved" flag in the data so unapproved ones are easy to find and remove.
 - **Hidden from students:** anything with `teacher_checked = no` could be shown with a small flag during testing but not at launch. Decide at stage 9.
 - **Data stays one-way:** the web page never edits the CSVs. All changes go through the CSVs and the prep script.
 
 ## Open decisions (none block stages 1 to 6)
-1. **Where to host.** GitHub Pages is free, but for a *private* repo it needs a paid GitHub plan; on the free plan the repo would have to be public, which would also publish the teacher's lesson-derived wording. Options: (a) keep this repo private and publish only the finished `web/` folder to a separate public repo; (b) use a free host that can publish from a private repo (Netlify or Cloudflare Pages); (c) pay for GitHub. Claude suggests (a) or (b). Check what the school allows.
-2. **Copyright:** the page will show short quotes from copyrighted texts (An Inspector Calls, most poems). Short quotes for teaching are normal, but the full texts in `source/` must **not** be published. Another reason to publish only `web/`.
+1. **Where to host (decided 15 Oct):** make this repo public and use free GitHub Pages. The teacher is happy for the work to be public. Ask again before actually switching the repo to public at stage 9. Before then, re-check that no student names are in any file.
+2. **Copyright:** the page shows short quotes from copyrighted texts (An Inspector Calls, most poems), which is normal for teaching. The copyrighted full texts are git-ignored and must stay that way (`source/inspector-calls.txt`, `source/power-conflict-poems.txt`). The other `source/` texts are public domain or openly available.
 3. **Crest image:** still being chosen; use a plain placeholder until then.
 4. **Teacher checks** (vocab `core`, `examples_draft`, `matches_source = check` quotes, poem summaries) can happen alongside the build; they do not stop it.
 

@@ -1,0 +1,3123 @@
+[
+ {
+  "id": "ambition",
+  "word": "Ambition",
+  "definition": "A strong desire to do or achieve something.",
+  "texts": [
+   "macbeth",
+   "frankenstein"
+  ],
+  "topic": "Hamartia; Scientific Ambition",
+  "examples": [
+   "Macbeth’s ambition to become king drives him to murder Duncan.",
+   "Lady Macbeth’s ambition is just as strong as her husband’s.",
+   "Walton’s ambition makes him say “one man’s life or death were but a small price to pay for the knowledge which I sought”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "hamartia",
+  "word": "Hamartia",
+  "definition": "A character flaw that leads to their downfall in a tragedy.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Hamartia",
+  "examples": [
+   "Shakespeare presents Macbeth’s hamartia as his over-ambitious nature.",
+   "If it was not for his hamartia, Macbeth would not have had a downfall."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "conspire",
+  "word": "Conspire",
+  "definition": "Make secret plans with someone to commit a harmful act.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Supernatural",
+  "examples": [
+   "Witches are conspiring to destroy the natural order.",
+   "In Jacobean times, people feared that witches might conspire against the King."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "devious",
+  "word": "Devious",
+  "definition": "Someone who uses underhand tactics to harm, trick or lead others astray.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Supernatural",
+  "examples": [
+   "Witches are devious creatures.",
+   "Witches use devious methods to corrupt innocent people."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "embodiment-of-masculinity",
+  "word": "Embodiment of masculinity",
+  "definition": "When someone or something seems to represent what it means to be “manly”.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Tragic Hero",
+  "examples": [
+   "When the Captain describes Macbeth, he seems to be an embodiment of masculinity.",
+   "Macbeth is an embodiment of masculinity because he is a brave and fearless fighter in battle."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "tragic-hero",
+  "word": "Tragic hero",
+  "definition": "A character who begins the play in a position of high status in society and is deeply respected by others, but who has a hamartia (fatal flaw) that leads to their downfall.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Tragic Hero",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "thane",
+  "word": "Thane",
+  "definition": "A Scottish lord.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Tragic Hero",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "fate",
+  "word": "Fate",
+  "definition": "An unavoidable future that you cannot control.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Fate and Prophecy",
+  "examples": [
+   "After the prophecy, Macbeth’s fate was sealed."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "free-will",
+  "word": "Free will",
+  "definition": "The power to choose your own path without influence.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Fate and Prophecy",
+  "examples": [
+   "Macbeth acts of his own free will when he chooses to murder Duncan.",
+   "The witches predict the future, but they never force Macbeth to use his free will for evil."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "inevitable",
+  "word": "Inevitable",
+  "definition": "Something that is unavoidable.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Fate and Prophecy",
+  "examples": [
+   "After the witches’ prophecy, Macbeth’s downfall seems inevitable.",
+   "As a tragic hero, Macbeth’s fall is inevitable because of his hamartia."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "prophecy",
+  "word": "Prophecy",
+  "definition": "A prediction of what will happen in the future.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Fate and Prophecy",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "catalyst",
+  "word": "Catalyst",
+  "definition": "Something that prompts and encourages the events to happen.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Ambition",
+  "examples": [
+   "The witches are a catalyst for Macbeth’s downfall.",
+   "Macbeth’s ambition is a catalyst for his downfall because it encourages him to commit evil acts of violence."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "subvert-gender-expectations",
+  "word": "Subvert gender expectations",
+  "definition": "Going against what you expect of how men or women should behave.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Gender",
+  "examples": [
+   "The witches are presented as women, but Shakespeare subverts gender expectations because they have beards too.",
+   "Women in Jacobean times were expected to be submissive and gentle, so women who were dominant and strong subverted the expectations of gender."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "deception",
+  "word": "Deception",
+  "definition": "Lying or tricking someone.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Deception",
+  "examples": [
+   "Macbeth’s deception is when he hides his violent ambition from the characters around him.",
+   "Banquo does not trust the witches and he believes they are being deceptive."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "facade",
+  "word": "Façade",
+  "definition": "Giving a false outward appearance.",
+  "texts": [
+   "macbeth",
+   "jekyll-hyde",
+   "inspector"
+  ],
+  "topic": "Deception; Sin; Façades; Set and Stage Directions",
+  "examples": [
+   "Lady Macbeth tells her husband to put on a façade of friendliness when Duncan arrives at the castle.",
+   "Macbeth keeps up a façade of grief after the murder, even though he killed Duncan."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "the-divine-right-to-rule",
+  "word": "The Divine Right to Rule",
+  "definition": "The belief that God has chosen and anointed the King to rule.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Macbeth’s Doubts",
+  "examples": [
+   "Many Jacobeans believed in the Divine Right to Rule, the belief that the King was chosen by God. This meant an act against the king was an act against God."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "duties-of-hospitality",
+  "word": "Duties of Hospitality",
+  "definition": "The belief that a host should guard and protect their guests from harm.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Macbeth’s Doubts",
+  "examples": [
+   "Medieval society believed in the Duties of Hospitality, the belief that a host should guard and protect their guests. This meant if a host betrayed their duties, they were committing a terrible sin."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "soliloquy",
+  "word": "Soliloquy",
+  "definition": "A speech where the character expresses their inner thoughts and feelings to the audience.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Macbeth’s Doubts",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "kinsman",
+  "word": "Kinsman",
+  "definition": "A relative.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Macbeth’s Doubts",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "emasculate",
+  "word": "Emasculate",
+  "definition": "Make a man feel like they are not “manly” enough.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "The Macbeths’ Relationship",
+  "examples": [
+   "Lady Macbeth emasculates her husband when she commands him to do what she tells him.",
+   "It is ironic that Macbeth feels emasculated by his wife because others view him as an embodiment of masculinity."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "belittle",
+  "word": "Belittle",
+  "definition": "Make someone feel small and worthless.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "The Macbeths’ Relationship",
+  "examples": [
+   "Lady Macbeth belittles her husband by suggesting he is weak and unable to commit the murder like he promised.",
+   "It is ironic that Macbeth feels belittled because he is a powerful and respected thane who others admire and look up to."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "hallucination",
+  "word": "Hallucination",
+  "definition": "Seeing something that is not real but is created by the mind.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Madness",
+  "examples": [
+   "The floating dagger could be a hallucination created by Macbeth’s guilty mind.",
+   "Banquo’s ghost may be a hallucination because only Macbeth can see it."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "conjuration",
+  "word": "Conjuration",
+  "definition": "Using magic to make something appear in physical form.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Madness",
+  "examples": [
+   "The witches conjured an evil spirit to haunt the poor girl and her family."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "consumed",
+  "word": "Consumed",
+  "definition": "Feeling overwhelmed by an emotion, like it is swallowing you.",
+  "texts": [
+   "macbeth",
+   "power-conflict"
+  ],
+  "topic": "Guilt; Remains",
+  "examples": [
+   "In the poem ‘Bayonet Charge’, the soldier is consumed by his fear and trauma."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "suppress",
+  "word": "Suppress",
+  "definition": "Trying to stop or hide an emotion by burying it deep down.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Guilt",
+  "examples": [
+   "Lady Macbeth tries to suppress her guilt by saying “A little water clears us of this deed”.",
+   "In Act 5, Macbeth tries to suppress his fear by telling himself he bears a charmed life."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "the-natural-order",
+  "word": "The natural order",
+  "definition": "The way things should naturally be in the universe.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "The Natural Order",
+  "examples": [
+   "When Duncan is king, the natural order is maintained.",
+   "By murdering Duncan, Macbeth breaks the natural order."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "supernatural",
+  "word": "Supernatural",
+  "definition": "Something that is magical and unnatural.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "The Natural Order",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "paranoid",
+  "word": "Paranoid",
+  "definition": "Feeling like people are trying to get you, making you scared and suspicious.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Paranoia",
+  "examples": [
+   "Macbeth becomes paranoid that Banquo will betray him.",
+   "Paranoid about losing the crown, Macbeth sends murderers to kill Banquo and Fleance."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "exposition",
+  "word": "Exposition",
+  "definition": "This establishes the tragic hero and their hamartia.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Turning Point",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "rising-action",
+  "word": "Rising action",
+  "definition": "Here the situation worsens because of the early decisions of the tragic hero.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Turning Point",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "pivotal-moment",
+  "word": "Pivotal moment",
+  "definition": "This is the turning point where the tragic hero’s plans go wrong.",
+  "texts": [
+   "macbeth",
+   "frankenstein"
+  ],
+  "topic": "Turning Point; Pivotal Moment",
+  "examples": [
+   "A pivotal moment is when Victor creates the monster. Before, he was full of excitement and ambition, but after he was horrified.",
+   "A pivotal moment is when William is murdered because Victor realises there are terrible consequences for his actions."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "falling-action",
+  "word": "Falling action",
+  "definition": "This shows the gradual downfall of the tragic hero.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Turning Point",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "resolution",
+  "word": "Resolution",
+  "definition": "Here the tragic hero finally suffers their tragic fate, usually death.",
+  "texts": [
+   "macbeth",
+   "inspector"
+  ],
+  "topic": "Turning Point; The Ending",
+  "examples": [
+   "Sheila and Eric want a resolution in which the family accepts responsibility, but their parents refuse.",
+   "Priestley does not give the audience a neat resolution at the end of the play."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "embodiment",
+  "word": "Embodiment",
+  "definition": "Giving something a physical form or body.",
+  "texts": [
+   "macbeth",
+   "jekyll-hyde",
+   "frankenstein"
+  ],
+  "topic": "Banquo’s Ghost; Mr Utterson; The True Monster",
+  "examples": [
+   "Banquo’s ghost is the embodiment of Macbeth’s guilt.",
+   "Lady Macbeth wants to become the embodiment of cruelty when she asks the spirits to “unsex” her.",
+   "William is an embodiment of innocence and purity.",
+   "The De Lacey family are an embodiment of a kind and loving family."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "self-fulfilling-prophecy",
+  "word": "Self-fulfilling prophecy",
+  "definition": "This is when you know a prediction of the future, and by knowing it, you cause it to happen.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "The Witches",
+  "examples": [
+   "Some people argue that the witches’ prophecy is a self-fulfilling prophecy because Macbeth murders Duncan to make it come true.",
+   "If Macbeth had not believed the prophecy, he might never have killed Duncan, so it could be a self-fulfilling prophecy."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "tyrant",
+  "word": "Tyrant",
+  "definition": "A cruel ruler who has too much power.",
+  "texts": [
+   "macbeth",
+   "power-conflict"
+  ],
+  "topic": "Tyrant; Power",
+  "examples": [
+   "By the end of the play, Macbeth is a tyrant who orders the murder of Macduff’s family.",
+   "Malcolm calls Macbeth a “tyrant” because he rules through violence and fear."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "body-politic",
+  "word": "Body politic",
+  "definition": "The belief that a country is like a physical body, with the King being the head of the body.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Tyrant",
+  "examples": [
+   "In Jacobean times, some believed in the body politic, meaning they thought that if the King was a tyrant, the whole country would suffer."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "psychological-unravelling",
+  "word": "Psychological unravelling",
+  "definition": "This is when your mind begins to “unravel” and fall apart.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Lady Macbeth",
+  "examples": [
+   "The character in ‘Poppies’ experiences a psychological unravelling when her son is killed in conflict.",
+   "The murder of Duncan caused a psychological unravelling of Macbeth."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "hubris",
+  "word": "Hubris",
+  "definition": "Feeling overconfident.",
+  "texts": [
+   "macbeth",
+   "jekyll-hyde",
+   "power-conflict"
+  ],
+  "topic": "Battle; Dr Jekyll; Ozymandias",
+  "examples": [
+   "Macbeth’s hubris grows when he believes that no man “of woman born” can harm him.",
+   "His hubris in Act 5 makes him ignore the danger of Macduff."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "desensitised",
+  "word": "Desensitised",
+  "definition": "No longer feeling shock, after experiencing something shocking or upsetting many times.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Battle",
+  "examples": [
+   "By Act 5, Macbeth is desensitised to fear and says he has “almost forgot the taste of fears”.",
+   "Macbeth becomes desensitised to violence as he orders more and more murders."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "nihilistic",
+  "word": "Nihilistic",
+  "definition": "Describes a person who believes that life has no meaning or purpose.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "Tomorrow and Tomorrow and Tomorrow",
+  "examples": [
+   "Macbeth sounds nihilistic when he describes life as “signifying nothing”.",
+   "After Lady Macbeth’s death, Macbeth feels nihilistic and believes that life has no meaning."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "anagnorisis",
+  "word": "Anagnorisis",
+  "definition": "When a tragic hero realises something shocking, usually when it is too late to change his fate.",
+  "texts": [
+   "macbeth",
+   "jekyll-hyde",
+   "inspector"
+  ],
+  "topic": "The Ending; Epistolary; Sheila",
+  "examples": [
+   "Macbeth experiences anagnorisis when he learns that Macduff was “untimely ripped” from his mother’s womb.",
+   "His anagnorisis comes too late to change his fate."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "nihilism",
+  "word": "Nihilism",
+  "definition": "The belief that life has no meaning or purpose.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "The Ending",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "patriarchal",
+  "word": "Patriarchal",
+  "definition": "A society ruled and controlled by men.",
+  "texts": [
+   "macbeth",
+   "power-conflict"
+  ],
+  "topic": "The Ending; My Last Duchess",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "third-person-limited",
+  "word": "Third-person limited",
+  "definition": "The story is told in third person (he/she), but the narrator tells it from the point of view of a character.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Mr Utterson",
+  "examples": [
+   "Stevenson writes in third-person limited and the reader sees the events through Mr Utterson’s eyes."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "narration",
+  "word": "Narration",
+  "definition": "The voice that tells the story. It refers to who is telling the events, how much they know, and how the story is presented to the reader.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Mr Utterson",
+  "examples": [
+   "Stevenson uses a third-person narrator to tell the story."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "focalisation",
+  "word": "Focalisation",
+  "definition": "The technique by which a narrative presents information through a specific focal character or viewpoint.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Mr Utterson",
+  "examples": [
+   "Because events are focalised through Utterson, the reader discovers the truth slowly, building suspense."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "vicarious-pleasure",
+  "word": "Vicarious pleasure",
+  "definition": "Getting enjoyment from watching someone else do something.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Mr Utterson",
+  "examples": [
+   "Utterson gets vicarious pleasure from watching his friends give in to temptation, because he refuses to do so himself.",
+   "The reader gets vicarious pleasure from the mystery as Utterson hunts for Hyde."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "duality",
+  "word": "Duality",
+  "definition": "Having two opposite sides.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "The Dark Side of London",
+  "examples": [
+   "Stevenson describes the duality of London. It is respectable and yet under the surface it is dangerous.",
+   "In Chapter One, Stevenson emphasises the dual nature of London."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "physiognomy",
+  "word": "Physiognomy",
+  "definition": "The study of a person’s facial appearance to understand their personality.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Ugliness",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "transgress",
+  "word": "Transgress",
+  "definition": "Go beyond the limits of what is morally, socially, or legally acceptable.",
+  "texts": [
+   "jekyll-hyde",
+   "frankenstein"
+  ],
+  "topic": "Science; The Modern Prometheus",
+  "examples": [
+   "Some Victorians believed that some science was transgressing the laws of nature.",
+   "Some Victorians believed that it was morally wrong for humans to transgress the laws of nature."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "detective-novel",
+  "word": "Detective novel",
+  "definition": "A genre that follows a rational detective solving a crime.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Genre",
+  "examples": [
+   "Dr Jekyll and Mr Hyde is like a detective novel because Utterson investigates who Mr Hyde really is.",
+   "Like a detective novel, the story reveals the truth slowly, through clues such as the letter and the handwriting."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "gothic-literature",
+  "word": "Gothic literature",
+  "definition": "A genre of literature that often explores fears, the way the past haunts the present and may include the supernatural.",
+  "texts": [
+   "jekyll-hyde",
+   "frankenstein"
+  ],
+  "topic": "Genre; The Gothic",
+  "examples": [
+   "Dr Jekyll and Mr Hyde is Gothic literature because it explores fear, the supernatural and the dark side of London.",
+   "Hyde’s sinister house and the foggy streets create the unsettling atmosphere of Gothic literature.",
+   "‘Frankenstein’ is Gothic because it has a monster, an isolated setting, a sense of mystery and characters turned mad."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "inherent",
+  "word": "Inherent",
+  "definition": "An essential characteristic or feature.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Evil",
+  "examples": [
+   "Stevenson suggests that all humans have an inherent evil within them."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "heresy",
+  "word": "Heresy",
+  "definition": "Going against religious laws and beliefs.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Dr Jekyll",
+  "examples": [
+   "Saskia is a heretic because she wants to learn witchcraft."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "graphology",
+  "word": "Graphology",
+  "definition": "Analysing handwriting to determine someone’s personality traits.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Incident of the Letter",
+  "examples": [
+   "Mr Guest uses graphology when he notices that Jekyll’s handwriting looks like Hyde’s.",
+   "Graphology suggests that the matching handwriting reveals a link between the minds of Jekyll and Hyde."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "traumatised",
+  "word": "Traumatised",
+  "definition": "Describes the long-lasting shock caused by a disturbing experience.",
+  "texts": [
+   "jekyll-hyde",
+   "frankenstein"
+  ],
+  "topic": "Dr Lanyon; Frame Narrative",
+  "examples": [
+   "Dr Lanyon is traumatised after he sees Hyde transform into Jekyll.",
+   "Lanyon’s pale face and “deep-seated terror” show how traumatised he is.",
+   "Victor is traumatised by all he has seen, which is why Walton notices his “wildness, and even madness”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "seven-deadly-sins",
+  "word": "Seven deadly sins",
+  "definition": "Wrath, lust, greed, gluttony, pride, envy and sloth.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Sin",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "virtue",
+  "word": "Virtue",
+  "definition": "The opposite of a sin.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Sin",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "the-abject",
+  "word": "The abject",
+  "definition": "A concept describing what is repulsive, degraded, or expelled to maintain personal identity or social rules. It provokes disgust and fascination.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Façades",
+  "examples": [
+   "Hyde embodies the abject: his appearance and actions blur the lines between man and beast, morality and depravity."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "satanic",
+  "word": "Satanic",
+  "definition": "Describes something evil, like the Devil (Satan).",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Hellish Imagery",
+  "examples": [
+   "Victorian society was strictly Christian and therefore would have feared satanic practices."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "hellish-imagery",
+  "word": "Hellish imagery",
+  "definition": "When a writer describes something in a way that makes it seem like Hell.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Hellish Imagery",
+  "examples": [
+   "Stevenson uses hellish imagery when he describes Jekyll’s cabinet, with its “red baize door”.",
+   "The hellish imagery of the barred windows makes the cabinet seem like a prison of suffering."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "pious",
+  "word": "Pious",
+  "definition": "Something religious.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Hellish Imagery",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "blasphemy",
+  "word": "Blasphemy",
+  "definition": "Saying something disrespectful about God.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Hellish Imagery",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "epistolary",
+  "word": "Epistolary",
+  "definition": "A story that is written in the style of diaries, letters or newspaper articles.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Epistolary",
+  "examples": [
+   "Chapter 9 of Dr Jekyll and Mr Hyde is epistolary because it is Dr Lanyon’s letter.",
+   "The epistolary ending splits the narrative into letters, just as Jekyll splits himself in two."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "addiction",
+  "word": "Addiction",
+  "definition": "Being physically and mentally dependent on something.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Addiction",
+  "examples": [
+   "Jekyll’s addiction to becoming Hyde grows until he can no longer control it.",
+   "Jekyll says that his “new power tempted me until I fell into slavery”, which shows how addiction takes over."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "atavism",
+  "word": "Atavism",
+  "definition": "Reverting to a more primitive or animalistic state.",
+  "texts": [
+   "jekyll-hyde"
+  ],
+  "topic": "Jekyll and Hyde vocabulary",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "morality",
+  "word": "Morality",
+  "definition": "Understanding the difference between right and wrong behaviour.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Morality and Society",
+  "examples": [
+   "Mr Birling shows little morality when he sacks Eva Smith for asking for higher pay.",
+   "The Inspector tries to teach the Birlings a stronger sense of morality."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "set",
+  "word": "Set",
+  "definition": "The stage scenery and props used to create a scene.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Set and Stage Directions",
+  "examples": [
+   "The set is a comfortable dining room full of expensive furniture, which suggests the Birlings’ wealth.",
+   "The set includes a small table with a telephone, which is used in the ending."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "stage-directions",
+  "word": "Stage directions",
+  "definition": "The descriptions in the play explaining what happens on stage. This includes the lighting, set changes and costumes.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Set and Stage Directions",
+  "examples": [
+   "The stage directions say the lighting changes from “pink and intimate” to “brighter and harder” when the Inspector arrives.",
+   "Stage directions such as “cutting in, massively” show how the Inspector takes control."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "rose-tinted-spectacles",
+  "word": "Rose-tinted spectacles",
+  "definition": "When you see things in a happy and romantic way that is not the truth.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Set and Stage Directions",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "dramatic-irony",
+  "word": "Dramatic irony",
+  "definition": "When the audience knows something that the characters do not.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Dramatic Irony",
+  "examples": [
+   "Mr Birling’s claim that the Titanic is “unsinkable” is dramatic irony, because the 1945 audience knows that it sank.",
+   "Birling’s confidence that there will be no war creates dramatic irony for an audience who had lived through two world wars."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "ignorant",
+  "word": "Ignorant",
+  "definition": "Lacking knowledge or awareness.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Dramatic Irony",
+  "examples": [
+   "Mr Birling is ignorant of the future when he says the Titanic is unsinkable.",
+   "The Birlings are ignorant of how their actions affected Eva Smith."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "inspect",
+  "word": "Inspect",
+  "definition": "Look at closely to assess the condition and to discover any flaws.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "The Inspector",
+  "examples": [
+   "The Inspector inspects the Birlings’ lives closely and uncovers their secrets.",
+   "Inspector Goole inspects each character’s part in Eva Smith’s death."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "omnipotent",
+  "word": "Omnipotent",
+  "definition": "All powerful.",
+  "texts": [
+   "inspector",
+   "power-conflict"
+  ],
+  "topic": "The Inspector; The Prelude",
+  "examples": [
+   "The Inspector seems omnipotent because he has a powerful presence that intimidates the Birling family."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "omniscient",
+  "word": "Omniscient",
+  "definition": "All knowing.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "The Inspector",
+  "examples": [
+   "The Inspector seems omniscient because he seems to know everything about the Birlings, including their deepest secrets."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "capitalism",
+  "word": "Capitalism",
+  "definition": "An economic system where people own their own property and business.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Capitalism vs Socialism",
+  "examples": [
+   "Mr Birling believes in capitalism and thinks that a man has to “look after himself and his own”.",
+   "Priestley uses Mr Birling to show the greed of capitalism."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "socialism",
+  "word": "Socialism",
+  "definition": "An economic system where the rich help the poor to better the whole of society.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Capitalism vs Socialism",
+  "examples": [
+   "The Inspector represents socialism when he says “We are members of one body”.",
+   "Priestley wrote the play because he believed in socialism."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "exploitation",
+  "word": "Exploitation",
+  "definition": "Using someone for your own benefit, often treating them like an object.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Capitalism vs Socialism",
+  "examples": [
+   "Mr Birling shows how many capitalists will happily exploit their workers.",
+   "Eva Smith is the victim of exploitation."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "didactic-message",
+  "word": "Didactic message",
+  "definition": "A message that uses the characters to make a strongly worded criticism of society.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Capitalism vs Socialism",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "class-system",
+  "word": "Class system",
+  "definition": "A system where society is organised into different classes.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Eva Smith",
+  "examples": [
+   "The class system separates the wealthy Birlings from working-class people like Eva Smith.",
+   "Mrs Birling’s snobbery shows how the class system shaped attitudes in 1912."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "vulnerable",
+  "word": "Vulnerable",
+  "definition": "Being fragile and at risk of harm.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Eva Smith",
+  "examples": [
+   "Eva Smith is vulnerable because she has no family to help her.",
+   "Eva is vulnerable because she depends on her job to survive."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "disempowered",
+  "word": "Disempowered",
+  "definition": "Having your power taken away.",
+  "texts": [
+   "inspector",
+   "power-conflict"
+  ],
+  "topic": "Eva Smith; My Last Duchess",
+  "examples": [
+   "Eva is disempowered because Mr Birling can sack her for asking for more money.",
+   "Women in 1912 were often disempowered by a patriarchal society."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "upper-class",
+  "word": "Upper class",
+  "definition": "Those with the most power and wealth. Often these are aristocracy who have inherited land and titles.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Eva Smith",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "middle-class",
+  "word": "Middle class",
+  "definition": "Those with some power and wealth. They have professional jobs, often working in business, and often enjoy privileges and opportunities not available to the working class.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Eva Smith",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "working-class",
+  "word": "Working class",
+  "definition": "People with low-paying jobs, often manual work. These are often the poorest people in society.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Eva Smith",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "sin",
+  "word": "Sin",
+  "definition": "An immoral act against God.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Sheila",
+  "examples": [
+   "Mr Birling is sinful for keeping his money all to himself."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "morality-play",
+  "word": "Morality play",
+  "definition": "A medieval play that taught the audience how to be good people.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Sheila",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "exploit",
+  "word": "Exploit",
+  "definition": "To use or take advantage of someone (verb).",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Revision of Act 1",
+  "examples": [
+   "Mr Birling exploits the working class to make as much money as he can.",
+   "Priestley highlights how the exploitation of the working class is unfair and immoral."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "degrade",
+  "word": "Degrade",
+  "definition": "To treat someone disrespectfully and make them feel inferior.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Revision of Act 1",
+  "examples": [
+   "Mrs Birling degrades Eva by calling her “a girl of that sort”.",
+   "Mr Birling degrades his workers by treating them as “cheap labour”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "progressive",
+  "word": "Progressive",
+  "definition": "Wants things in society to change and improve for the better.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Younger vs Older Generations",
+  "examples": [
+   "Priestley’s socialist views were very progressive."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "conservative",
+  "word": "Conservative",
+  "definition": "Wants things in society to stay the same and resists change.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Younger vs Older Generations",
+  "examples": [
+   "Mr Birling has conservative views because he wants society to stay the way it is.",
+   "Mrs Birling’s conservative attitudes make her refuse to help Eva Smith."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "prejudice",
+  "word": "Prejudice",
+  "definition": "Judging someone based upon bias without proper reasons or evidence (a thought).",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Mrs Birling",
+  "examples": [
+   "Mrs Birling’s class prejudice makes her assume that Eva is lying.",
+   "The Inspector challenges the Birlings’ prejudice against the working class."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "discrimination",
+  "word": "Discrimination",
+  "definition": "Treating someone differently and unfairly due to a prejudiced view (an action).",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Mrs Birling",
+  "examples": [
+   "Eva Smith experiences discrimination because of her class and her gender.",
+   "Mrs Birling discriminates against Eva by refusing her help at the charity."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "abuse-of-power",
+  "word": "Abuse of power",
+  "definition": "Using your power unfairly to mistreat or hurt others.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Eric",
+  "examples": [
+   "Mr Birling abuses his power when he sacks Eva Smith for asking for higher pay.",
+   "Sheila abuses her power when she gets Eva dismissed from Milwards because she is jealous."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "accountable",
+  "word": "Accountable",
+  "definition": "Taking responsibility for something and accepting that you have a duty to take care of it.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "Accountability",
+  "examples": [
+   "Sheila feels accountable for getting Eva Smith dismissed from Milwards.",
+   "Mr Birling refuses to be held accountable for what happened to Eva Smith."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "cliff-hanger",
+  "word": "Cliff-hanger",
+  "definition": "When the story ends with things being unresolved, often finishing with a dramatic moment.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "The Ending",
+  "examples": [
+   "An Inspector Calls ends with a cliff-hanger when the telephone rings to say a girl has died and an inspector is on his way.",
+   "The final phone call is a cliff-hanger because we do not know what will happen to the Birlings."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "circular-narrative",
+  "word": "Circular narrative",
+  "definition": "When the ending links in some way to the beginning of the story.",
+  "texts": [
+   "inspector"
+  ],
+  "topic": "The Ending",
+  "examples": [
+   "The ending of An Inspector Calls feels like a circular narrative because another inspector is about to arrive, just as the first one did.",
+   "A circular narrative suggests that the Birlings may face the same questions again."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "futile",
+  "word": "Futile",
+  "definition": "Pointless and meaningless (adjective).",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Charge of the Light Brigade",
+  "examples": [
+   "Some war poets explore the futility of conflict in their poems."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "cannon-fodder",
+  "word": "Cannon-fodder",
+  "definition": "People who are sent to their deaths by being told to charge at the enemy’s cannons.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Charge of the Light Brigade",
+  "examples": [
+   "In ‘The Charge of the Light Brigade’, the soldiers are treated as cannon-fodder when they ride into the valley because of a mistake.",
+   "The Light Brigade are cannon-fodder because someone had blundered."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "ballad",
+  "word": "Ballad",
+  "definition": "A narrative poem often spoken aloud (usually to remember famous tragedies, battles or heroes).",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Charge of the Light Brigade",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "disillusioned",
+  "word": "Disillusioned",
+  "definition": "Discovering something is not as good as you thought.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Bayonet Charge",
+  "examples": [
+   "I always dreamed of going to USA, but I became disillusioned when I got there and experienced many rude Americans."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "post-traumatic-stress-disorder-ptsd",
+  "word": "Post-traumatic stress disorder (PTSD)",
+  "definition": "A psychological condition caused by a traumatic event. Long after the event, the person experiences intense, disturbing thoughts and emotions.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Bayonet Charge",
+  "examples": [
+   "The soldier in ‘Remains’ suffers from PTSD because he cannot forget the looter he shot.",
+   "Armitage suggests PTSD when the speaker says “But I blink and he bursts again”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "delusional",
+  "word": "Delusional",
+  "definition": "Having a misplaced belief in things that are clearly not true.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Bayonet Charge",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "patriotism",
+  "word": "Patriotism",
+  "definition": "Pride and love for one’s country.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Bayonet Charge",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "nationalism",
+  "word": "Nationalism",
+  "definition": "Love for one’s country to an extreme (to the detriment of other nations).",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Bayonet Charge",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "disposable",
+  "word": "Disposable",
+  "definition": "Something you can throw away or dispose of easily.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Kamikaze",
+  "examples": [
+   "The pilot in ‘Kamikaze’ is treated as disposable by those who command him.",
+   "The soldiers in ‘The Charge of the Light Brigade’ are disposable to their commanders."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "indoctrinated",
+  "word": "Indoctrinated",
+  "definition": "Repeating a belief to someone until they accept it without question.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Kamikaze",
+  "examples": [
+   "The pilot in ‘Kamikaze’ has been indoctrinated with patriotic ideas, shown by the “powerful incantations”.",
+   "The soldier in ‘Bayonet Charge’ was indoctrinated by propaganda to believe that war was glorious."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "volta",
+  "word": "Volta",
+  "definition": "A turning point in a poem.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Comparing the Poems",
+  "examples": [
+   "Many poets create a volta to show the way that a character changes.",
+   "Samantha thought that the beginning of the poem was dark and depressing but after the volta it became hopeful."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "the-sublime",
+  "word": "The sublime",
+  "definition": "Feeling like you are in the presence of a higher or greater power. It is so great and powerful it is difficult to fully understand.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "The Prelude",
+  "examples": [
+   "The speaker in ‘The Prelude’ experiences the sublime when the mountain towers above him.",
+   "Wordsworth shows the sublime power of nature through the “huge and mighty forms”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "romantic-movement",
+  "word": "Romantic Movement",
+  "definition": "A collection of philosophers, writers and artists in the later 18th century who had shared ideas about humanity and society: nature is supreme, people should follow their emotions and imagination, and people should not be controlled but should be free.",
+  "texts": [
+   "power-conflict",
+   "frankenstein"
+  ],
+  "topic": "The Prelude; The Romantic Movement",
+  "examples": [
+   "Mary Shelley’s own husband, Percy Bysshe Shelley, wrote many famous works of the Romantic Movement, including ‘Ozymandias’ and ‘Prometheus Unbound’."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "epic-poem",
+  "word": "Epic poem",
+  "definition": "A long narrative poem that tells the story of a hero’s journey as they embark on a grand adventure.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "The Prelude",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "war-veteran",
+  "word": "War veteran",
+  "definition": "A person who has once served in the army and has experienced conflict.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Remains",
+  "examples": [
+   "The speaker in ‘Remains’ is a war veteran haunted by a memory.",
+   "Armitage gives a voice to war veterans in ‘Remains’."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "photojournalist",
+  "word": "Photojournalist",
+  "definition": "A photographer who takes images to be used by the news to tell the news story.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "War Photographer",
+  "examples": [
+   "Jerica was a photojournalist who had taken many powerful images of the wars she had witnessed in her career."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "complicit",
+  "word": "Complicit",
+  "definition": "Sharing part-responsibility for wrong-doing with other people.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "War Photographer",
+  "examples": [
+   "In ‘War Photographer’, the readers who ignore the suffering in the photographs are complicit.",
+   "The photographer may feel complicit because he earns his living from other people’s suffering."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "apathy",
+  "word": "Apathy",
+  "definition": "Not feeling concerned or interested in something.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "War Photographer",
+  "examples": [
+   "Duffy suggests apathy when she writes that “they do not care”.",
+   "The apathy of the people reading the newspaper contrasts with the photographer’s trauma."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "grief",
+  "word": "Grief",
+  "definition": "Deep sadness caused by loss, often someone’s death.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Poppies",
+  "examples": [
+   "The mother in ‘Poppies’ is consumed by grief for her son.",
+   "Weir shows her grief through the image of “spasms of paper red”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "fragility",
+  "word": "Fragility",
+  "definition": "Something weak that can be easily broken and destroyed.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Tissue",
+  "examples": [
+   "The poet conveys the fragility of human life when he describes how easily the looter was killed in ‘Remains’."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "transience",
+  "word": "Transience",
+  "definition": "All things (moments, emotions, life and objects) are temporary, fleeting and constantly changing.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Tissue",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "oppression",
+  "word": "Oppression",
+  "definition": "Being unfairly treated or controlled by someone with more power.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "London",
+  "examples": [
+   "Blake shows the oppression of ordinary people in ‘London’ through the “mind-forg’d manacles”.",
+   "Agard explores oppression through education in ‘Checking Out Me History’."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "colonisation",
+  "word": "Colonisation",
+  "definition": "Where a country takes control over the native people of an area.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Checking Out Me History",
+  "examples": [
+   "‘Checking Out Me History’ is about the effects of colonisation on Caribbean identity.",
+   "Agard explores how Britain’s colonisation controlled what the speaker was taught."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "direct-victims-of-war",
+  "word": "Direct victims of war",
+  "definition": "Soldiers directly involved in the fighting.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Poppies",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "indirect-victims-of-war",
+  "word": "Indirect victims of war",
+  "definition": "Other people affected by war who are not soldiers.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Poppies",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "trauma",
+  "word": "Trauma",
+  "definition": "Emotional shock caused by distressing events.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Core concepts across poems",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "guilt",
+  "word": "Guilt",
+  "definition": "Feeling responsible for wrongdoing.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Core concepts across poems",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "conflict",
+  "word": "Conflict",
+  "definition": "A struggle between opposing forces.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Core concepts across poems",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "power",
+  "word": "Power",
+  "definition": "Control or influence over others.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Core concepts across poems",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "identity",
+  "word": "Identity",
+  "definition": "Sense of self shaped by experiences.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Core concepts across poems",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "memory",
+  "word": "Memory",
+  "definition": "How past experiences are remembered (often distorted).",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Core concepts across poems",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "indirect-effects",
+  "word": "Indirect effects",
+  "definition": "Consequences that affect people not directly involved.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "War and conflict vocabulary",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "romanticism",
+  "word": "Romanticism",
+  "definition": "The belief that nature is powerful and should be respected.",
+  "texts": [
+   "power-conflict"
+  ],
+  "topic": "Nature and power",
+  "examples": [],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "appropriate-divine-power",
+  "word": "Appropriate divine power",
+  "definition": "To steal the powers of a God.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The Modern Prometheus",
+  "examples": [
+   "Prometheus appropriates divine power when he steals the fire from Zeus.",
+   "In ‘Frankenstein’, Shelley suggests that appropriating divine power could lead to terrible consequences."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "frame-narrative",
+  "word": "Frame narrative",
+  "definition": "A story within a story.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Frame Narrative; The True Monster",
+  "examples": [
+   "Shelley creates a frame narrative, starting with Walton’s story and then changing to Frankenstein’s story.",
+   "The frame narrative emphasises how Walton and Frankenstein are similar."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "entitled",
+  "word": "Entitled",
+  "definition": "Feeling like you deserve special treatment or privileges.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Victor’s Family",
+  "examples": [
+   "Victor’s parents treat him as their “plaything and their idol”, which may have made him entitled."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "sense-of-superiority",
+  "word": "Sense of superiority",
+  "definition": "Believing that you are better than others.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Victor’s Family",
+  "examples": [
+   "Victor’s sense of superiority grows because his parents treat him like a God."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "scientific-ambition",
+  "word": "Scientific ambition",
+  "definition": "Wanting to achieve great scientific discoveries.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Scientific Ambition",
+  "examples": [
+   "Victor’s scientific ambition drives him to “pursue nature to her hiding places”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "absolute-power",
+  "word": "Absolute power",
+  "definition": "Having power or control without any limits.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Scientific Ambition",
+  "examples": [
+   "Victor wants absolute power over life and death when he hopes “a new species would bless me as its creator”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "displace",
+  "word": "Displace",
+  "definition": "Pushing someone out of the role they should have.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Birth of the Creature",
+  "examples": [
+   "By creating life, Victor tries to displace God, and also displaces women, who normally give birth."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "marginalise",
+  "word": "Marginalise",
+  "definition": "Push someone to the edge of society, making them feel powerless.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The True Monster",
+  "examples": [
+   "The villagers marginalise the Creature by attacking him without trying to speak to him."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "isolation",
+  "word": "Isolation",
+  "definition": "Being lonely and separated from others.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The De Lacey Family",
+  "examples": [
+   "The creature experiences physical isolation because he is cut off from others inside his hovel.",
+   "The creature experiences emotional isolation because there is no one who will show him love.",
+   "The creature feels isolated."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "sense-of-self",
+  "word": "Sense of self",
+  "definition": "The way a person sees themselves.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Pivotal Moment",
+  "examples": [
+   "Victor Frankenstein’s sense of self is influenced by his parents who spoil him and treat him like a God.",
+   "The deaths of William and Justine change Victor’s sense of self because he now sees himself as “the true murderer”."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "dehumanise",
+  "word": "Dehumanise",
+  "definition": "Treat someone as though they’re not human.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The True Monster",
+  "examples": [
+   "Victor Frankenstein dehumanises his creation by refusing to give him a name.",
+   "Shelley suggests that the monster is dehumanised and rejected by Frankenstein.",
+   "Victor dehumanises the creature when he calls him a “vile insect”."
+  ],
+  "examples_approved": true,
+  "core": false
+ },
+ {
+  "id": "enlightenment",
+  "word": "Enlightenment",
+  "definition": "The Age of Enlightenment was a period of scientific discovery and the development of knowledge from the end of the 1600s until 1815.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Scientific Ambition",
+  "examples": [
+   "In the Age of Enlightenment, medicine and technology developed at a rapid pace, which is the world Victor grows up in."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "cautionary-tale",
+  "word": "Cautionary tale",
+  "definition": "A story that warns us of the dangers of doing something, such as transgressing the laws of nature in the hunt for divine power.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The Modern Prometheus",
+  "examples": [
+   "‘Frankenstein’ is a cautionary tale because it warns readers about the dangers of scientific ambition."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "imagery",
+  "word": "Imagery",
+  "definition": "The use of symbolism and strong images to allow the reader to picture what is described. It includes similes, metaphors and personification.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Birth of the Creature",
+  "examples": [
+   "Shelley uses nightmarish imagery such as “demoniacal corpse” to describe the Creature’s birth."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "enterprise",
+  "word": "Enterprise",
+  "definition": "An important project.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Walton’s letters",
+  "examples": [
+   "Walton’s enterprise is to sail to the North Pole."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "desolation",
+  "word": "Desolation",
+  "definition": "Place that’s empty, ruined or destroyed.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Walton’s letters",
+  "examples": [
+   "Walton imagines a land of beauty, not desolation."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "solitudes",
+  "word": "Solitudes",
+  "definition": "Place where you’re alone.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Walton’s letters",
+  "examples": [
+   "Walton sails through “undiscovered solitudes”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "satiate",
+  "word": "Satiate",
+  "definition": "Satisfy your desire.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Walton’s letters",
+  "examples": [
+   "Walton’s voyage will not satiate his thirst for glory."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "laborious",
+  "word": "Laborious",
+  "definition": "Takes lots of hard work.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Walton’s letters",
+  "examples": [
+   "Victor’s experiments were a laborious task."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "encompassed",
+  "word": "Encompassed",
+  "definition": "Completely surrounded.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Walton’s letters",
+  "examples": [
+   "Walton’s ship is encompassed by ice."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "assailed",
+  "word": "Assailed",
+  "definition": "Attacked.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Walton’s letters",
+  "examples": [
+   "Walton’s crew are assailed by storms and ice."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "bitterly",
+  "word": "Bitterly",
+  "definition": "Feeling something with extreme sadness or hatred.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Walton’s letters",
+  "examples": [
+   "Walton bitterly feels the want of a friend."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "emaciated",
+  "word": "Emaciated",
+  "definition": "Extremely thin and weak.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Frame Narrative",
+  "examples": [
+   "Victor’s “body dreadfully emaciated” shows how he has suffered."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "fatigue",
+  "word": "Fatigue",
+  "definition": "Tiredness and exhaustion.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Frame Narrative",
+  "examples": [
+   "Victor collapses from fatigue after the chase over the ice."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "decaying-frame",
+  "word": "Decaying frame",
+  "definition": "A person’s skeletal structure that is weak and crippled.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Frame Narrative",
+  "examples": [
+   "Victor’s decaying frame is the first thing Walton notices."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "rambles",
+  "word": "Rambles",
+  "definition": "Walking for pleasure (usually in the countryside).",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Victor’s Family",
+  "examples": [
+   "As a child, Victor enjoyed rambles in the Swiss countryside."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "inexhaustible",
+  "word": "Inexhaustible",
+  "definition": "Never runs out.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Victor’s Family",
+  "examples": [
+   "Victor’s parents had inexhaustible love for him."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "caresses",
+  "word": "Caresses",
+  "definition": "Lovingly touch or stroke.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Victor’s Family",
+  "examples": [
+   "Victor remembers “my mother’s tender caresses”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "benevolent",
+  "word": "Benevolent",
+  "definition": "All loving.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Victor’s Family",
+  "examples": [
+   "Victor’s parents are benevolent and gentle towards him."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "idol",
+  "word": "Idol",
+  "definition": "Something you love and admire.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Victor’s Family",
+  "examples": [
+   "Victor’s parents treat him as their “idol”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "fervent",
+  "word": "Fervent",
+  "definition": "A strong enthusiasm.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Scientific Ambition",
+  "examples": [
+   "Victor has a fervent longing to learn nature’s secrets."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "longing",
+  "word": "Longing",
+  "definition": "A deep desire.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Scientific Ambition",
+  "examples": [
+   "Victor describes a “fervent longing to penetrate the secrets of nature”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "penetrate",
+  "word": "Penetrate",
+  "definition": "Break into something, usually with a sharp point.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Scientific Ambition",
+  "examples": [
+   "Victor wants to penetrate nature’s secrets."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "invulnerable",
+  "word": "Invulnerable",
+  "definition": "Impossible to hurt.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Scientific Ambition",
+  "examples": [
+   "Victor imagines creating a species that is invulnerable to disease."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "pioneer",
+  "word": "Pioneer",
+  "definition": "Lead people to explore something new.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Scientific Ambition",
+  "examples": [
+   "Victor wants to pioneer a new kind of science."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "charnel-houses",
+  "word": "Charnel-houses",
+  "definition": "A building that stores dead bodies or skeletons.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The Gothic",
+  "examples": [
+   "Victor collects body parts from charnel-houses."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "inherited",
+  "word": "Inherited",
+  "definition": "Handed down something that someone no longer uses.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The Gothic",
+  "examples": [
+   "Victor’s materials are inherited from the dead."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "profane",
+  "word": "Profane",
+  "definition": "Treating something holy and sacred with disrespect.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The Gothic",
+  "examples": [
+   "Victor profanes the human body for his experiment."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "insensible",
+  "word": "Insensible",
+  "definition": "Does not feel it.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The Gothic",
+  "examples": [
+   "Victor becomes insensible to the horror of his work."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "immutable-laws",
+  "word": "Immutable laws",
+  "definition": "The laws of nature that can never be changed.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "William",
+  "examples": [
+   "Victor breaks the immutable laws of nature."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "serene",
+  "word": "Serene",
+  "definition": "Peaceful and calm.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "William",
+  "examples": [
+   "The lake at Geneva looks serene before the storm."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "ecstasy",
+  "word": "Ecstasy",
+  "definition": "Pure and extreme joy.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "William",
+  "examples": [
+   "Victor watches the storm with ecstasy."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "livid",
+  "word": "Livid",
+  "definition": "Heavily bruised.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "William",
+  "examples": [
+   "William’s neck is livid from the murderer’s grasp."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "miniature",
+  "word": "Miniature",
+  "definition": "Small painting of someone’s face.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "William",
+  "examples": [
+   "William’s miniature of his mother is stolen."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "elude-all-pursuit",
+  "word": "Elude all pursuit",
+  "definition": "Escape being captured.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "William",
+  "examples": [
+   "The Creature seems able to elude all pursuit."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "infuse",
+  "word": "Infuse",
+  "definition": "Put into something.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Birth of the Creature",
+  "examples": [
+   "Victor tries to infuse a spark of being into the lifeless thing."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "convulsive",
+  "word": "Convulsive",
+  "definition": "Sudden, violent shaking.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Birth of the Creature",
+  "examples": [
+   "The Creature’s limbs move with a convulsive motion."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "lustrous",
+  "word": "Lustrous",
+  "definition": "Softly shining (reflects light without glittering).",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Birth of the Creature",
+  "examples": [
+   "Victor chose lustrous black hair for the Creature."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "inarticulate",
+  "word": "Inarticulate",
+  "definition": "Unclear words/sounds, unable to communicate.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Birth of the Creature",
+  "examples": [
+   "The Creature mutters “inarticulate sounds”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "demoniacal",
+  "word": "Demoniacal",
+  "definition": "Possessed by a demon.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Birth of the Creature",
+  "examples": [
+   "Victor calls the Creature a “demoniacal corpse”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "wretched",
+  "word": "Wretched",
+  "definition": "Someone unhappy, unfortunate, or disgusting.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The True Monster",
+  "examples": [
+   "The Creature calls himself wretched."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "grievously",
+  "word": "Grievously",
+  "definition": "Seriously and badly.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The True Monster",
+  "examples": [
+   "The villagers grievously injured the Creature."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "refuge",
+  "word": "Refuge",
+  "definition": "Find safety from harm.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The True Monster",
+  "examples": [
+   "The Creature takes refuge in a hovel."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "hovel",
+  "word": "Hovel",
+  "definition": "A small, poor and dirty shelter.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The True Monster",
+  "examples": [
+   "The Creature calls his hovel “my kennel”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "innumerable-chinks",
+  "word": "Innumerable chinks",
+  "definition": "Too many small gaps to count.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The True Monster",
+  "examples": [
+   "Light came through the innumerable chinks in the hovel wall."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "barbarity",
+  "word": "Barbarity",
+  "definition": "Savagery and cruelty.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The True Monster",
+  "examples": [
+   "The Creature suffers “the barbarity of man”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "virtuous",
+  "word": "Virtuous",
+  "definition": "Morally good and pure.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The De Lacey Family",
+  "examples": [
+   "The De Lacey family seem virtuous and kind."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "base",
+  "word": "Base",
+  "definition": "Lacking morals or goodness.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The De Lacey Family",
+  "examples": [
+   "The Creature learns that men can be base and cruel."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "blot",
+  "word": "Blot",
+  "definition": "A terrible stain or flaw.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The De Lacey Family",
+  "examples": [
+   "The Creature asks if he is “a blot upon the earth”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "blot-upon-the-earth",
+  "word": "Blot upon the earth",
+  "definition": "An ugly thing that ruins the world around it.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The De Lacey Family",
+  "examples": [
+   "The Creature calls himself “a blot upon the earth”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "disowned",
+  "word": "Disowned",
+  "definition": "Abandoned.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The De Lacey Family",
+  "examples": [
+   "The Creature feels disowned by all men."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "wretch",
+  "word": "Wretch",
+  "definition": "A person who is terrible, poor and unfortunate.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The De Lacey Family",
+  "examples": [
+   "Victor calls the Creature a “wretch”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "irresolute",
+  "word": "Irresolute",
+  "definition": "Unsure.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Paradise Lost",
+  "examples": [
+   "The Creature is irresolute before he enters the cottage."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "deserted",
+  "word": "Deserted",
+  "definition": "Abandoned.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Paradise Lost",
+  "examples": [
+   "Victor deserted his creation on the night of its birth."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "amiable",
+  "word": "Amiable",
+  "definition": "Kind and friendly.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Paradise Lost",
+  "examples": [
+   "The Creature hopes the family are amiable."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "despair",
+  "word": "Despair",
+  "definition": "Give up hope.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Paradise Lost",
+  "examples": [
+   "The Creature falls into despair after being rejected."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "benefactor",
+  "word": "Benefactor",
+  "definition": "A person who supports someone who needs help.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Paradise Lost",
+  "examples": [
+   "The Creature secretly acts as the De Laceys’ benefactor by gathering wood."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "consternation",
+  "word": "Consternation",
+  "definition": "Alarmed or worried.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Paradise Lost",
+  "examples": [
+   "The family react with “horror and consternation”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "benevolence",
+  "word": "Benevolence",
+  "definition": "Kindness.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Path of Violence",
+  "examples": [
+   "The Creature’s benevolence turns to hatred after he is rejected."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "vengeance",
+  "word": "Vengeance",
+  "definition": "Revenge.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Path of Violence",
+  "examples": [
+   "The Creature swears vengeance on Victor."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "unprejudiced",
+  "word": "Unprejudiced",
+  "definition": "Has no prejudices, will treat him fairly and kindly.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Path of Violence",
+  "examples": [
+   "The Creature thinks William will be unprejudiced."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "imbibed",
+  "word": "Imbibed",
+  "definition": "Swallowed, taken in.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Path of Violence",
+  "examples": [
+   "The Creature has imbibed hatred from the way people treat him."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "desolate",
+  "word": "Desolate",
+  "definition": "Lonely and deserted.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Path of Violence",
+  "examples": [
+   "Victor is left desolate by the deaths of those he loves."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "ogre",
+  "word": "Ogre",
+  "definition": "An ugly monster in fairytales.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Path of Violence",
+  "examples": [
+   "William shouts “You are an ogre!”"
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "loaded-me-with-epithets",
+  "word": "Loaded me with epithets",
+  "definition": "Called me horrible names.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Path of Violence",
+  "examples": [
+   "William loaded the Creature with epithets."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "interchange-of-sympathies",
+  "word": "Interchange of sympathies",
+  "definition": "Show each other kindness and love.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Loneliness",
+  "examples": [
+   "The Creature wants an interchange of sympathies with a companion."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "insurmountable-barriers",
+  "word": "Insurmountable barriers",
+  "definition": "Obstacles that cannot be overcome.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Loneliness",
+  "examples": [
+   "The Creature feels insurmountable barriers separate him from humanity."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "submission-of-abject-slavery",
+  "word": "Submission of abject slavery",
+  "definition": "Allow myself to become a hopeless slave.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Loneliness",
+  "examples": [
+   "The Creature refuses “the submission of abject slavery”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "inextinguishable",
+  "word": "Inextinguishable",
+  "definition": "It will never die.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Loneliness",
+  "examples": [
+   "The Creature’s hatred seems inextinguishable."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "countenances",
+  "word": "Countenances",
+  "definition": "Faces.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Loneliness",
+  "examples": [
+   "The Creature studies the countenances of the De Laceys."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "supplication",
+  "word": "Supplication",
+  "definition": "A heartfelt plea to God.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Loneliness",
+  "examples": [
+   "The Creature’s supplication goes unanswered."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "abhorred",
+  "word": "Abhorred",
+  "definition": "Disgusting and hated.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Loneliness",
+  "examples": [
+   "The Creature feels abhorred by everyone he meets."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "fitter-emblem-of-my-condition",
+  "word": "Fitter emblem of my condition",
+  "definition": "A better representation of my life.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Loneliness",
+  "examples": [
+   "The Creature calls Satan “the fitter emblem of my condition”."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "miscarriage-of-justice",
+  "word": "Miscarriage of justice",
+  "definition": "When an innocent person is punished or a criminal escapes punishment.",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Crime and Justice",
+  "examples": [
+   "Justine’s execution is a miscarriage of justice because the court assumed she was guilty before hearing the evidence."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "justice-system",
+  "word": "The justice system",
+  "definition": "The organisations that create justice in society and punish wrongdoers (the police, courts and prisons).",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Crime and Justice",
+  "examples": [
+   "The justice system fails Justine, who is working-class and relies on it for protection."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "justice",
+  "word": "Justice",
+  "definition": "Something that is fair (fairness). (noun)",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Crime and Justice",
+  "examples": [
+   "Justine is denied justice because the court condemns her before hearing the evidence."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "injustice",
+  "word": "Injustice",
+  "definition": "Something that is not fair (unfairness). (noun)",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Crime and Justice",
+  "examples": [
+   "Justine’s execution is a terrible injustice."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "unjust",
+  "word": "Unjust",
+  "definition": "Describes something that is not fair. (adjective)",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Crime and Justice",
+  "examples": [
+   "Shelley shows an unjust society when Justine is executed."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "just",
+  "word": "Just",
+  "definition": "Describes something that is fair. (adjective)",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "Crime and Justice",
+  "examples": [
+   "A just court would have listened to the evidence before judging Justine."
+  ],
+  "examples_approved": false,
+  "core": false
+ },
+ {
+  "id": "humanity",
+  "word": "Humanity",
+  "definition": "The qualities that make someone human (love, kindness, sympathy).",
+  "texts": [
+   "frankenstein"
+  ],
+  "topic": "The Creature",
+  "examples": [
+   "A monster has no humanity.",
+   "Someone without any humanity is a monster.",
+   "Victor thinks his creation has no humanity.",
+   "Elizabeth shows her humanity when she feels love and sympathy for Justine."
+  ],
+  "examples_approved": true,
+  "core": false
+ }
+]

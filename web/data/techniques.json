@@ -1,0 +1,180 @@
+[
+ {
+  "name": "Semantic field",
+  "definition": "A group of words that are linked to a subject or idea (e.g. in ‘Poppies’: war and pain, and fabric and clothing).",
+  "texts": [
+   "power-conflict"
+  ]
+ },
+ {
+  "name": "Juxtaposition",
+  "definition": "A contrast between ideas, placed side by side.",
+  "texts": [
+   "all",
+   "frankenstein"
+  ]
+ },
+ {
+  "name": "Metaphor",
+  "definition": "A comparison without “like” or “as”.",
+  "texts": [
+   "all",
+   "frankenstein"
+  ]
+ },
+ {
+  "name": "Simile",
+  "definition": "A comparison using “like” or “as”.",
+  "texts": [
+   "all",
+   "frankenstein"
+  ]
+ },
+ {
+  "name": "Alliteration",
+  "definition": "Repetition of initial sounds.",
+  "texts": [
+   "all"
+  ]
+ },
+ {
+  "name": "Sibilance",
+  "definition": "Repeated use of the “s” sound.",
+  "texts": [
+   "all"
+  ]
+ },
+ {
+  "name": "Irony",
+  "definition": "A contrast between expectation and reality.",
+  "texts": [
+   "all"
+  ]
+ },
+ {
+  "name": "Dramatic irony",
+  "definition": "When the audience knows something that the characters do not.",
+  "texts": [
+   "inspector"
+  ]
+ },
+ {
+  "name": "Colloquial language",
+  "definition": "Informal, conversational speech (chatty language that uses informal vocabulary).",
+  "texts": [
+   "power-conflict"
+  ]
+ },
+ {
+  "name": "Dramatic monologue",
+  "definition": "A poem spoken by a single character, told from that character’s point of view, as though speaking to another character.",
+  "texts": [
+   "power-conflict"
+  ]
+ },
+ {
+  "name": "Sonnet (Petrarchan)",
+  "definition": "A 14-line poem structure, traditionally used for love poems.",
+  "texts": [
+   "power-conflict"
+  ]
+ },
+ {
+  "name": "Ballad",
+  "definition": "A narrative poem often spoken aloud, usually to remember famous tragedies, battles or heroes.",
+  "texts": [
+   "power-conflict"
+  ]
+ },
+ {
+  "name": "Dactylic dimeter",
+  "definition": "A rhythm of 6 syllables per line (one stressed, two unstressed), as in The Charge of the Light Brigade; creates the sound of galloping horses.",
+  "texts": [
+   "power-conflict"
+  ]
+ },
+ {
+  "name": "Rhyme scheme",
+  "definition": "The pattern of rhyme in a poem, found by labelling the end word of each line with a letter. A regular rhyme can suggest control, strength and power, repetition, being trapped, or a song; the pattern can also be irregular.",
+  "texts": [
+   "power-conflict"
+  ]
+ },
+ {
+  "name": "Volta",
+  "definition": "A turning point in a poem.",
+  "texts": [
+   "power-conflict"
+  ]
+ },
+ {
+  "name": "In media res",
+  "definition": "Starting in the middle of the action.",
+  "texts": [
+   "power-conflict"
+  ]
+ },
+ {
+  "name": "Extended metaphor",
+  "definition": "A metaphor that continues throughout a poem (e.g. the darkroom in War Photographer; the storm in Storm on the Island; paper in Tissue).",
+  "texts": [
+   "power-conflict"
+  ]
+ },
+ {
+  "name": "Imagery",
+  "definition": "The use of symbolism and strong images to allow the reader to picture what is described. It includes similes, metaphors and personification.",
+  "texts": [
+   "frankenstein"
+  ]
+ },
+ {
+  "name": "Personification",
+  "definition": "Giving human qualities to something that is not human (e.g. nature presented as prey that is hunted).",
+  "texts": [
+   "frankenstein"
+  ]
+ },
+ {
+  "name": "Oxymoron",
+  "definition": "Two opposite ideas put together (e.g. “hellish triumph”).",
+  "texts": [
+   "frankenstein"
+  ]
+ },
+ {
+  "name": "Religious imagery",
+  "definition": "Images taken from religion, such as Adam, angels and hell.",
+  "texts": [
+   "frankenstein"
+  ]
+ },
+ {
+  "name": "Imperative (command)",
+  "definition": "A sentence that gives an order (e.g. “Begone, vile insect!”), showing who has the power.",
+  "texts": [
+   "frankenstein"
+  ]
+ },
+ {
+  "name": "Declarative statement",
+  "definition": "A sentence that states something as a fact (e.g. “I too can create desolation”).",
+  "texts": [
+   "frankenstein"
+  ]
+ },
+ {
+  "name": "Flashback",
+  "definition": "Going back in time to an earlier event; Shelley uses it to contrast Victor as a child with Victor close to death.",
+  "texts": [
+   "frankenstein"
+  ]
+ },
+ {
+  "name": "Frame narrative",
+  "definition": "A story within a story; used to link Walton and Victor.",
+  "texts": [
+   "frankenstein"
+  ]
+ }
+]

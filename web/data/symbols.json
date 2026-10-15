@@ -1,0 +1,42 @@
+[
+ {
+  "symbol": "Blood",
+  "represents": "Guilt",
+  "text": "macbeth"
+ },
+ {
+  "symbol": "Brandished steel",
+  "represents": "Masculine strength (phallic symbol)",
+  "text": "macbeth"
+ },
+ {
+  "symbol": "Dagger",
+  "represents": "Macbeth’s violent ambition",
+  "text": "macbeth"
+ },
+ {
+  "symbol": "Milk",
+  "represents": "Maternal qualities",
+  "text": "macbeth"
+ },
+ {
+  "symbol": "Eyes (William’s “sweet laughing blue eyes”)",
+  "represents": "Innocence",
+  "text": "frankenstein"
+ },
+ {
+  "symbol": "Eyes (the Creature’s “watery eyes”, “yellow eyes”)",
+  "represents": "An unnatural creation",
+  "text": "frankenstein"
+ },
+ {
+  "symbol": "Eyes (Victor’s “wildness, and even madness”)",
+  "represents": "Obsession; becoming monstrous himself",
+  "text": "frankenstein"
+ },
+ {
+  "symbol": "Fire (Prometheus)",
+  "represents": "Divine power and human progress, which humans were not meant to have",
+  "text": "frankenstein"
+ }
+]
