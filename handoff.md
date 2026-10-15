@@ -1,7 +1,7 @@
 # Handoff: Vocab quiz
 
 ## Status
-Folder, git repo and private GitHub repo are set up. `plan.md` is written and the user has approved it. No code yet.
+Folder, git repo and private GitHub repo are set up. `plan.md` is written and approved. Version 1 (terminal quiz) is built. The web design is finished. Real data is now being loaded, starting with Macbeth quotes.
 
 ## What's decided
 See `plan.md` for the full plan. In short:
@@ -52,9 +52,16 @@ Shows for a finished key-vocab set: "Practise Macbeth vocab again", "Back to Mac
 - Matching is worth **1 point per round, and only for a round with no mistakes** (agreed 14 Oct). Matching does **not** retire a word; only typing (1 correct) or multiple choice (2 correct) does. (Agreed so far: 1 correct typed answer or 2 correct multiple-choice answers retire a word.)
 - School crest: the user is finding a better image and will check the school allows its use.
 
+## Quotes data (15 Oct, Macbeth)
+- `quotes.csv` built: 49 quotes from the five homework sheets (OneDrive: Documents / English Year 10 2026 / 7 Macbeth). Columns are listed in `plan.md`. Only 5 are `master = yes` (the 5 in the Year 11 Summer Revision document): mac-1-01, mac-1-06, mac-1-11, mac-3-05, mac-5-01. Techniques, notes and context are filled for those five only.
+- **Teacher still needs to check:** scene numbers for the other 44 (`scene_checked = no`), and the gap words (empty).
+- Two levels agreed: Know it (all quotes, recognition) and Master it (core quotes). Model paragraphs: the teacher will supply her own; Claude does not draft them.
+- The Microsoft 365 connector is read-only and works in cloud sessions. It can see OneDrive; only open the folders the user names. Other Macbeth folders exist on school shared drives; leave them alone.
+- Not yet read: the 25 lesson slideshows (key vocab slides: word, definition, example sentence), the Knowledge Organiser (user does not use it), and the other Year 10 texts.
+
 ## Next step
 1. The design is finished and the user is happy with it (phone and laptop). The user opens the artifact link to look (the Chrome extension cannot connect from the Chromebook's Linux container).
-2. (Data needs are in `plan.md`: `vocab.csv` with text tags and example sentences, `quotes.csv` with text, technique(s) and speaker, `techniques.csv`.) The user brings the real vocab lists from school (paste or spreadsheet). Claude makes the real `vocab.csv` with a text column (a word can sit in 2 or 3 texts). Also useful: a few real quotes and techniques to test the layout.
+2. Read the Key Vocabulary slides from the Macbeth lessons and build the real `vocab.csv` (word, definition, example sentence, text). (Data needs are in `plan.md`: `vocab.csv` with text tags and example sentences, `quotes.csv` with text, technique(s) and speaker, `techniques.csv`.) The user brings the real vocab lists from school (paste or spreadsheet). Claude makes the real `vocab.csv` with a text column (a word can sit in 2 or 3 texts). Also useful: a few real quotes and techniques to test the layout.
 3. Then plan Version 2 (the working web page) in detail and build it one mode at a time: key vocab first, quotes after.
 
 ## Separate from this project

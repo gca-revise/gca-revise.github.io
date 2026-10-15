@@ -71,5 +71,11 @@ Order: build the web game with key vocab first; add quotes after that.
 A lot of content eventually. Three simple files, all checked by the teacher before students see them:
 - **`vocab.csv`:** word, definition, texts it is tagged to (one or several), example sentence (optional at first).
 - **`quotes.csv`:** quote, the gap word(s) for fill-the-gap, who said it, text, act/scene (or poem title), technique(s) used. A quote can have more than one technique.
+- **`quotes.csv` as built (15 Oct, Macbeth):** all 49 quotes from the five homework sheets. Columns: id, text, act, scene, scene_checked, speaker, quote, sheet_note, master, gap_word, techniques, technique_notes, context. Each quote has a stable id (e.g. `mac-3-05`). Techniques, notes and context are filled for the five master quotes only (taken from the teacher's Year 11 revision document). Scenes for the other 44 come from Claude's own knowledge of the play and are marked `scene_checked = no` until the teacher checks them (editions number the last scenes differently). `gap_word` is empty until chosen.
 - **`techniques.csv`:** technique name and a short definition (simile, metaphor, repetition...). Quotes point to these names, which later allows "spot the technique".
 Claude can draft or tidy the files from lists the teacher supplies; the teacher checks every quote, speaker and technique for accuracy, because students will learn from them.
+
+## Quote levels (agreed 15 Oct)
+- **Know it** (all quotes): passive recognition. Who said it, which act, match quote to character or theme, pick the missing word from options. Mostly multiple choice and matching, no typing needed.
+- **Master it** (`master = yes`): the few quotes students must use in essays. Typed gap, finish the quote, spot the technique (technique analysis). Starts with the 5 quotes from the Year 11 revision document; more can be added later by changing `master` from no to yes.
+- **Model paragraph library (later):** a separate file keyed by quote id. The teacher will supply her own paragraphs (right style). Claude does not draft them.
