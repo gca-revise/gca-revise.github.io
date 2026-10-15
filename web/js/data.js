@@ -16,8 +16,33 @@ const Data = {
     ]);
   },
 
+  // "techniques" is treated like a text so the same games work on it.
   text(id) {
+    if (id === "techniques") return { id: "techniques", name: "Techniques" };
     return this.texts.find((t) => t.id === id);
+  },
+
+  // The techniques in the same shape as words, so the games can use them.
+  techniqueItems() {
+    if (!this._techniqueItems) {
+      this._techniqueItems = this.techniques
+        .filter((t) => t.name && t.definition)
+        .map((t) => ({
+          id: "tech-" + t.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""),
+          word: t.name,
+          definition: t.definition,
+          texts: [],
+          examples: [],
+          examples_high: [],
+          tags: [],
+        }));
+    }
+    return this._techniqueItems;
+  },
+
+  // The words (or techniques) to practise for a text.
+  itemsFor(textId) {
+    return textId === "techniques" ? this.techniqueItems() : this.wordsFor(textId);
   },
 
   wordsFor(textId) {

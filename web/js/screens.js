@@ -7,6 +7,7 @@ const TEXT_LOOK = {
   "jekyll-hyde": { badge: "JH", colour: "#3E5A4F", tint: "#E5EEEA" },
   "frankenstein": { badge: "F", colour: "#12707E", tint: "#DFF0F2" },
   "power-conflict": { badge: "P&C", colour: "#555C6B", tint: "#E8EAEE" },
+  "techniques": { badge: "T", colour: "#222C69", tint: "#E3E7F6" },
 };
 const NAVY = "#222C69";
 const NAVY_TINT = "#E3E7F6";
@@ -47,7 +48,8 @@ const Screens = {
         </a>`;
     }).join("");
 
-    const techLearned = 0;
+    const techItems = Data.techniqueItems();
+    const techLearned = techItems.filter((w) => retired.has(w.id)).length;
     return `
       <header class="home-head">
         <img class="crest" src="img/crest.png" alt="School crest">
@@ -64,8 +66,8 @@ const Screens = {
           <div class="tech-icon">${penIcon}</div>
           <div class="tech-name">Techniques</div>
           <div class="tech-tag">simile, metaphor...</div>
-          ${progressBar(techLearned, Data.techniques.length)}
-          <div class="tc-learned">${techLearned} of ${Data.techniques.length} learned</div>
+          ${progressBar(techLearned, techItems.length)}
+          <div class="tc-learned">${techLearned} of ${techItems.length} learned</div>
         </a>
       </main>`;
   },
@@ -138,7 +140,8 @@ const Screens = {
     return `
       ${Screens.pageHead("Techniques", "Useful for every text.", NAVY, NAVY_TINT)}
       <main class="wrap" style="--accent:${NAVY};--tint:${NAVY_TINT}">
-        ${Screens.modeCard("Techniques", 0, Data.techniques.length, "technique", [
+        ${Screens.modeSwitch(Store.getMode())}
+        ${Screens.modeCard("Techniques", Data.techniqueItems().filter((w) => Store.retiredIds().has(w.id)).length, Data.techniqueItems().length, "technique", [
           ["Type it", "#/techniques/type"],
           ["Choose it", "#/techniques/choose"],
           ["Match them", "#/techniques/match"],

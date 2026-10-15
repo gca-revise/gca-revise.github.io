@@ -10,12 +10,12 @@ function pick(list) {
 
 function startRun(textId, kind) {
   const session = new Session({
-    items: Data.wordsFor(textId),
+    items: Data.itemsFor(textId),
     mode: Store.getMode(),
     kind,
     retiredIds: Store.retiredIds(),
     choiceCounts: Store.choiceCounts(),
-    extraPool: Data.vocab,
+    extraPool: textId === "techniques" ? [] : Data.vocab,
   });
   run = { textId, kind, session, phase: "question", last: null, sentence: "" };
   run.phase = session.next() ? "question" : "complete";
@@ -24,7 +24,7 @@ function startRun(textId, kind) {
 
 function startMatch(textId) {
   const game = new MatchGame({
-    items: Data.wordsFor(textId),
+    items: Data.itemsFor(textId),
     mode: Store.getMode(),
     retiredIds: Store.retiredIds(),
   });
@@ -69,6 +69,10 @@ function route() {
     html = Screens.comingSoon(`#/text/${parts[1]}`, "Back to the text");
   } else if (parts[0] === "techniques" && parts.length === 1) {
     html = Screens.techniques();
+  } else if (parts[0] === "techniques" && parts.length === 2 && ["type", "choose", "match"].includes(parts[1])) {
+    if (parts[1] === "match") startMatch("techniques");
+    else startRun("techniques", parts[1] === "type" ? "type" : "choose");
+    return;
   } else if (parts[0] === "techniques") {
     html = Screens.comingSoon("#/techniques", "Back to Techniques");
   } else {

@@ -34,8 +34,8 @@ Object.assign(Screens, {
         <main class="run-main">
           <div class="run-left">
             <div class="m-head">
-              <h1>Match each word to its meaning</h1>
-              <p>Pick a word, then its meaning. No mistakes earns the point. ${g.matched.size} of ${g.words.length} matched.</p>
+              <h1>Match each ${Screens.noun(run)} to its meaning</h1>
+              <p>Pick a ${Screens.noun(run)}, then its meaning. No mistakes earns the point. ${g.matched.size} of ${g.words.length} matched.</p>
             </div>
             <div class="m-grid">${rows}</div>
             <div class="m-status${g.slip ? " m-status-slip" : ""}" role="status"><span class="dot-sm" style="background:${g.slip ? "#B42A47" : "var(--navy)"}"></span>${esc(status)}</div>
@@ -72,7 +72,7 @@ Object.assign(Screens, {
             : `<span class="chip">No point this round</span><span class="chip">Streak 0</span>`}</div>
           <div class="md-btns">
             <button type="button" class="fb-btn md-next" data-action="round">Next round</button>
-            <a class="md-back" href="#/text/${run.textId}">Back to ${esc(Data.text(run.textId).name)}</a>
+            <a class="md-back" href="${Screens.backHref(run)}">Back to ${esc(Data.text(run.textId).name)}</a>
           </div>
         </main>
       </div>`;

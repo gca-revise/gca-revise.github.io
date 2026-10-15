@@ -9,6 +9,16 @@ const crossIconSmall = `<svg width="16" height="16" viewBox="0 0 24 24" fill="no
 const flameIcon = `<svg width="16" height="16" viewBox="0 0 24 24" fill="#B8790A" aria-hidden="true"><path d="M12 2c1 4 5 6 5 11a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-4-1-6 1-10z"/></svg>`;
 
 Object.assign(Screens, {
+  // Where the back arrow and "Stop for now" go.
+  backHref(run) {
+    return run.textId === "techniques" ? "#/techniques" : `#/text/${run.textId}`;
+  },
+
+  // "word" for key vocab, "technique" on the Techniques screens.
+  noun(run) {
+    return run.textId === "techniques" ? "technique" : "word";
+  },
+
   // Top strip with the title and how many words are learned.
   runBar(run, withBack) {
     const t = Data.text(run.textId);
@@ -16,9 +26,9 @@ Object.assign(Screens, {
     const total = s.items.length;
     const learned = s.learnedCount();
     const pct = total ? Math.round((learned / total) * 100) : 0;
-    const title = `${t.name} · Key vocab${s.mode === "free" ? " (free practice)" : ""}`;
+    const title = `${t.name}${run.textId === "techniques" ? "" : " · Key vocab"}${s.mode === "free" ? " (free practice)" : ""}`;
     const back = withBack
-      ? `<a class="back-sq" href="#/text/${run.textId}" aria-label="Back to ${esc(t.name)}">${backIcon}</a>`
+      ? `<a class="back-sq" href="${Screens.backHref(run)}" aria-label="Back to ${esc(t.name)}">${backIcon}</a>`
       : "";
     return `
       <div class="run-bar"><div class="run-bar-inner">
@@ -47,12 +57,12 @@ Object.assign(Screens, {
               <span class="chip">Points ${s.points}</span>
             </div>
             <section class="q-card">
-              <div class="q-label">Which word means</div>
+              <div class="q-label">Which ${Screens.noun(run)} means</div>
               <div class="q-text">${esc(Engine.blankWord(w.definition, w.word))}</div>
               <div class="pill-row"><div class="text-pill"><span class="dot"></span>${esc(t.name)}</div>${Screens.tagPill(w, run.textId)}</div>
             </section>
             <form id="answer-form" class="answer" autocomplete="off">
-              <label for="answer">Type the word</label>
+              <label for="answer">Type the ${Screens.noun(run)}</label>
               <div class="answer-row">
                 <input id="answer" name="answer" type="text" placeholder="Your answer"
                   autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go">
@@ -121,7 +131,7 @@ Object.assign(Screens, {
           ${chips}
           <p class="fb-note">${note}</p>
           <button type="button" class="fb-btn" data-action="next">${finished ? "See your results" : "Next word"}</button>
-          <a class="fb-link" href="#/text/${run.textId}">Stop for now</a>
+          <a class="fb-link" href="${Screens.backHref(run)}">Stop for now</a>
         </main>
       </div>`;
   },
@@ -144,7 +154,7 @@ Object.assign(Screens, {
             <img src="img/crest.png" alt="School crest" class="done-crest">
             <div>
               <h1>Set complete!</h1>
-              <p>You've learned all ${total} key vocab words in ${esc(t.name)}.</p>
+              <p>${run.textId === "techniques" ? `You've learned all ${total} techniques.` : `You've learned all ${total} key vocab words in ${esc(t.name)}.`}</p>
             </div>
           </div>
           ${played ? `
@@ -158,8 +168,8 @@ Object.assign(Screens, {
             <div class="tricky"><div class="side-label">Your trickiest words</div>${trickyRows}</div>
           </div>` : ""}
           <div class="done-btns">
-            <button type="button" class="done-main-btn" data-action="again">Practise ${esc(t.name)} vocab again</button>
-            <a class="done-outline" href="#/text/${run.textId}">Back to ${esc(t.name)}</a>
+            <button type="button" class="done-main-btn" data-action="again">${run.textId === "techniques" ? "Practise techniques again" : `Practise ${esc(t.name)} vocab again`}</button>
+            <a class="done-outline" href="${Screens.backHref(run)}">Back to ${esc(t.name)}</a>
             <a class="done-plain" href="#/">Back to home</a>
           </div>
         </main>
@@ -222,7 +232,7 @@ Object.assign(Screens, {
               <span class="mc-hint">${learn ? "Get it right twice to learn it" : "Free practice"}</span>
             </div>
             <section class="q-card">
-              <div class="q-label">Which word means</div>
+              <div class="q-label">Which ${Screens.noun(run)} means</div>
               <div class="q-text">${esc(Engine.blankWord(w.definition, w.word))}</div>
               <div class="pill-row"><div class="text-pill"><span class="dot"></span>${esc(t.name)}</div>${Screens.tagPill(w, run.textId)}</div>
             </section>
@@ -290,7 +300,7 @@ Object.assign(Screens, {
             <p class="fb-note mc-note">${note}</p>
             <div class="mc-actions">
               <button type="button" class="fb-btn" data-action="next">${finished ? "See your results" : "Next word"}</button>
-              <a class="fb-link" href="#/text/${run.textId}">Stop for now</a>
+              <a class="fb-link" href="${Screens.backHref(run)}">Stop for now</a>
             </div>
           </div>
           ${Screens.choiceSide(run, have)}
