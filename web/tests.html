@@ -36,6 +36,39 @@ check("bracket included also fine", Engine.isCorrect("post-traumatic stress diso
 check("spelling mistake is wrong", !Engine.isCorrect("ambigous", "ambiguous"));
 check("blank is wrong", !Engine.isCorrect("   ", "ambiguous"));
 
+// ---- Leniency: lead-in words, word forms, near misses ----
+check("lead-in 'the' can be left out", Engine.isCorrect("natural order", "The natural order"));
+check("lead-in 'the' can be typed anyway", Engine.isCorrect("the natural order", "The natural order"));
+check("ing form accepted (subverting)", Engine.isCorrect("subverting gender expectations", "Subvert gender expectations"));
+check("s form accepted (subverts)", Engine.isCorrect("subverts gender expectation", "Subvert gender expectations"));
+check("ambiguity accepted for ambiguous", Engine.isCorrect("ambiguity", "Ambiguous"));
+check("conjure accepted for conjuration", Engine.isCorrect("conjure", "Conjuration"));
+check("tyrants accepted for tyrant", Engine.isCorrect("tyrants", "Tyrant"));
+check("short words not mixed up (fat is not fate)", !Engine.isCorrect("fat", "Fate"));
+check("part of a phrase is not enough", !Engine.isCorrect("will", "Free will"));
+check("a different word is wrong", !Engine.isCorrect("banana", "Ambiguous"));
+check("slip of one letter is 'near'", Engine.isNear("ambigous", "Ambiguous") && !Engine.isCorrect("ambigous", "Ambiguous"));
+check("swapped letters are 'near'", Engine.isNear("recieve", "Receive"));
+check("a different word is not 'near'", !Engine.isNear("banana", "Ambiguous"));
+check("a correct answer is not 'near'", !Engine.isNear("ambiguous", "Ambiguous"));
+check("session reports near", (() => {
+  const s = new Session({ items: [{ id: "a", word: "Ambiguous", definition: "d" }], mode: "learn" });
+  s.next();
+  const r = s.answer("ambigous");
+  return r.near && !r.correct && s.points === 0 && !s.retired.has("a");
+})());
+
+// ---- Bold the key word in a sentence ----
+const boldText = (sentence, word) => Engine.markWord(sentence, word).filter((p) => p.bold).map((p) => p.text).join("|");
+check("bold: exact word", boldText("Macbeth shows hubris in Act 5.", "Hubris") === "hubris");
+check("bold: other form of the word", boldText("Lady Macbeth belittles her husband.", "Belittle") === "belittles");
+check("bold: phrase", boldText("Shakespeare breaks the natural order here.", "The natural order") === "natural order");
+check("bold: phrase in another form", boldText("She subverts gender expectations.", "Subvert gender expectations") === "subverts gender expectations");
+check("bold: hyphenated phrase", boldText("It is a self-fulfilling prophecy.", "Self-fulfilling prophecy") === "self-fulfilling prophecy");
+check("bold: accents", boldText("A false facade of grief.", "Façade") === "facade");
+check("bold: nothing found leaves text alone", Engine.markWord("Nothing here.", "Hubris").length === 1 && !Engine.markWord("Nothing here.", "Hubris")[0].bold);
+check("bold: pieces join back to the sentence", Engine.markWord("Macbeth shows hubris in Act 5.", "Hubris").map((p) => p.text).join("") === "Macbeth shows hubris in Act 5.");
+
 // ---- Learn the set ----
 {
   const s = new Session({ items: words(5), mode: "learn" });

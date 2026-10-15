@@ -267,6 +267,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outlin
 }
 .run.right { --run-bg: #E3F4EB; --run-line: #BFE3D0; --run-fill: #17724B; --run-count: #155E3E; }
 .run.wrong { --run-bg: #FCEBEE; --run-line: #F2C9D1; --run-fill: var(--navy); }
+.run.near { --run-bg: #FFF6D6; --run-line: #F1DE9C; --run-fill: var(--navy); }
 .run.done { --run-bg: var(--navy); }
 
 .run-bar { border-bottom: 0; }
@@ -347,12 +348,15 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outlin
 }
 .right .fb-icon { background: #17724B; }
 .wrong .fb-icon { background: #B42A47; }
+.near .fb-icon { background: #B8790A; }
 .fb h1 { font-size: 36px; font-weight: 800; }
 .right h1 { color: #155E3E; }
 .wrong h1 { color: #8E1F37; }
+.near h1 { color: #7A4F00; }
 .fb-def { font-size: 16px; }
 .right .fb-def { color: #2D4A3C; }
 .wrong .fb-def, .wrong .fb-note { color: #5A2A35; }
+.near .fb-def, .near .fb-note, .near .fb-small { color: #5C4208; }
 .fb-small { font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5A2A35; }
 .fb-word {
   font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 32px;
@@ -362,13 +366,14 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outlin
   background: rgba(255, 255, 255, 0.7); border-radius: 16px; padding: 12px 16px;
   font-size: 16px; display: flex; flex-direction: column; gap: 2px; max-width: 520px;
 }
+.fb-sentence strong { font-weight: 800; }
 .fb-sentence span { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
 .right .chip { border-color: transparent; color: #155E3E; }
 .fb-note { font-size: 14px; font-weight: 600; margin-top: auto; padding-top: 12px; }
 .right .fb-note { color: #2D4A3C; }
 .fb-btn { width: 100%; max-width: 420px; color: #fff; }
 .right .fb-btn { background: #17724B; }
-.wrong .fb-btn { background: var(--navy); }
+.wrong .fb-btn, .near .fb-btn { background: var(--navy); }
 .fb-btn:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
 .fb-link { min-height: 44px; display: flex; align-items: center; font-size: 14px; font-weight: 600; color: var(--muted); text-decoration: underline; }
 

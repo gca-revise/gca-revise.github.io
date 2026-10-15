@@ -71,8 +71,9 @@ def build_vocab():
             problems.append(f"{where}: not tagged to any text")
         approved = split(r["examples_text"], "|")
         drafts = split(r["examples_draft"], "|")
-        # Show approved sentences if there are any, otherwise the drafts.
-        # "approved" lets us find and remove unchecked drafts later.
+        high = split(r.get("examples_high", ""), "|")
+        # The game shows `examples_high` (high-level sentences about the text) first,
+        # then approved sentences, then drafts. "approved" lets us find unchecked drafts later.
         out.append({
             "id": r["id"],
             "word": r["word"].strip(),
@@ -80,6 +81,7 @@ def build_vocab():
             "texts": texts,
             "topic": r["topic"].strip(),
             "examples": approved or drafts,
+            "examples_high": high,
             "examples_approved": bool(approved),
             "core": r["core"].strip().lower() == "yes",
         })
@@ -161,13 +163,14 @@ def main():
             json.dump(value, f, ensure_ascii=False, indent=1)
 
     vocab = data["vocab"]
-    no_sentence = sum(1 for w in vocab if not w["examples"])
+    no_sentence = sum(1 for w in vocab if not w["examples"] and not w["examples_high"])
     print(f"Wrote {len(data)} files to {OUT.relative_to(ROOT)}/")
     print(f"  texts {len(data['texts'])}, vocab {len(vocab)}, quotes {len(data['quotes'])}, "
           f"poems {len(data['poems'])}, techniques {len(data['techniques'])}, symbols {len(data['symbols'])}")
     for t in TEXTS:
         n = sum(1 for w in vocab if t["id"] in w["texts"])
         print(f"  {t['name']}: {n} words")
+    print(f"  words with a high-level sentence: {sum(1 for w in vocab if w['examples_high'])}")
     print(f"  words with an approved sentence: {sum(1 for w in vocab if w['examples_approved'])}; "
           f"draft only: {sum(1 for w in vocab if w['examples'] and not w['examples_approved'])}; "
           f"no sentence: {no_sentence}")

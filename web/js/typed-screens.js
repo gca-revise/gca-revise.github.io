@@ -76,8 +76,15 @@ Object.assign(Screens, {
     const w = s.current;
     const right = r.correct;
     const finished = s.isComplete();
+    const near = !right && r.near;
+    // The key word is shown in bold, in whatever form the sentence uses it.
+    const sentenceHtml = run.sentence
+      ? Engine.markWord(run.sentence, w.word)
+          .map((p) => (p.bold ? `<strong>${esc(p.text)}</strong>` : esc(p.text)))
+          .join("")
+      : "";
     const sentence = run.sentence
-      ? `<p class="fb-sentence"><span>In context</span>${esc(run.sentence)}</p>`
+      ? `<p class="fb-sentence"><span>In context</span>${sentenceHtml}</p>`
       : "";
     const chips = right
       ? `<div class="chips"><span class="chip">+1 point</span><span class="chip">Streak ${s.streak}</span></div>`
@@ -87,21 +94,25 @@ Object.assign(Screens, {
       note = s.mode === "learn"
         ? "This word is learned. You won't see it again in this set."
         : "Nice one. Free practice keeps going until you stop.";
+    } else if (near) {
+      note = s.mode === "learn"
+        ? "So close. No points this time, and this word will come back later."
+        : "So close. No points this time.";
     } else {
       note = s.mode === "learn"
         ? "This word will come back later. No points this time."
         : "No points this time.";
     }
     return `
-      <div class="run ${right ? "right" : "wrong"}">
+      <div class="run ${right ? "right" : near ? "near" : "wrong"}">
         ${Screens.runBar(run, false)}
         <main class="fb">
           <div class="fb-icon">${right ? checkIcon : crossIcon}</div>
-          <h1>${right ? "Correct!" : "Not quite"}</h1>
+          <h1>${right ? "Correct!" : near ? "Almost!" : "Not quite"}</h1>
           ${right
             ? `<p class="fb-def">${esc(w.definition)}</p><div class="fb-word">${esc(w.word)}</div>`
             : `<p class="fb-def">You wrote: <del>${esc(r.typed)}</del></p>
-               <div class="fb-small">The word was</div>
+               <div class="fb-small">${near ? "Check the spelling" : "The word was"}</div>
                <div class="fb-word">${esc(w.word)}</div>
                <p class="fb-def">${esc(w.definition)}</p>`}
           ${sentence}

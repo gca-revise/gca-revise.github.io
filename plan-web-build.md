@@ -50,9 +50,9 @@ build_data.py         pantry -> web/data/*.json
 Stages 1 to 6 need nothing more from the teacher. Stages 7 and 8 need only the gap words and the core flags.
 
 ## Choices Claude recommends (teacher can overrule)
-- **Typing leniency:** ignore capitals, extra spaces and accents (so "facade" is accepted for "façade"); spelling must otherwise be exact, as agreed. Hyphens and spaces treated the same ("self fulfilling prophecy").
+- **Typing leniency (decided 16 Oct, replaces the earlier version):** ignore capitals, accents, punctuation, hyphens and spaces; ignore a lead-in "the / a / an / to"; accept other forms of the word (subverting for subvert, ambiguity for ambiguous, conjure for conjuration) by comparing word stems (endings trimmed, stems never under 4 letters). A small spelling slip (one letter, or two in a long answer) gives an amber "Almost!" screen: no point, the word comes back later, but the tone is gentle. The teacher considers form not to matter and spelling to matter only somewhat.
 - **While `core` is empty:** the first version uses all words tagged to a text. When the teacher fills `core`, we add a "Core only / All words" choice rather than changing the data.
-- **Example sentences (decided 15 Oct):** show `examples_text` if there is one, otherwise the `examples_draft` sentences, so every word has a sentence. The teacher approves or weeds out the drafts later. Each sentence carries an "approved" flag in the data so unapproved ones are easy to find and remove.
+- **Example sentences (decided 15-16 Oct):** after every right or wrong answer, show one sentence with the key word in **bold** (any form of the word). Order of preference: `examples_high` (high-level, essay-style sentences about the text, drafted by Claude, **teacher to check**), then `examples_text`, then `examples_draft`. `examples_high` is done for the 44 Macbeth words; the other texts follow once the teacher has judged the Macbeth sample.
 - **Hidden from students:** anything with `teacher_checked = no` could be shown with a small flag during testing but not at launch. Decide at stage 9.
 - **Data stays one-way:** the web page never edits the CSVs. All changes go through the CSVs and the prep script.
 

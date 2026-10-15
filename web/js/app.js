@@ -83,7 +83,9 @@ app.addEventListener("submit", (event) => {
   const result = run.session.answer(typed);
   Store.recordAnswer(run.session.current.id, result.correct, result.retiredNow);
   run.last = result;
-  run.sentence = pick(run.session.current.examples);
+  const word = run.session.current;
+  // High-level sentences about the text come first; otherwise the older example sentences.
+  run.sentence = pick(word.examples_high.length ? word.examples_high : word.examples);
   run.phase = result.correct ? "right" : "wrong";
   drawRun();
 });

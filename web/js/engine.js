@@ -14,13 +14,116 @@ const Engine = {
       .trim();
   },
 
-  // True if the typed answer matches. A word with a bracket, like
-  // "Post-traumatic stress disorder (PTSD)", is also accepted without the bracket.
+  // Lead-in words ignored at the start of an answer ("the natural order" = "natural order").
+  ARTICLES: ["the", "a", "an", "to"],
+
+  // Word endings trimmed when comparing, so different forms of a word match
+  // (subvert / subverting, ambiguous / ambiguity, conjure / conjuration).
+  SUFFIXES: ["ations", "ation", "nesses", "ness", "ments", "ment", "ities", "ity", "ings", "ing",
+             "ious", "ous", "ives", "ive", "ally", "ly", "al", "ed", "es", "s", "e"],
+
+  // Cut one ending off a single word. A stem is never shorter than 4 letters,
+  // so short words like "fate" and "fat" are not mixed up.
+  stem(token) {
+    let word = token;
+    if (word.endsWith("ies") && !word.endsWith("ities") && word.length - 3 >= 3) {
+      word = word.slice(0, -3) + "y";
+    }
+    const ordered = Engine.SUFFIXES.slice().sort((a, b) => b.length - a.length);
+    for (const suffix of ordered) {
+      if (word.endsWith(suffix) && word.length - suffix.length >= 4) {
+        return word.slice(0, -suffix.length);
+      }
+    }
+    return word;
+  },
+
+  // The words of an answer, with lead-in words dropped (not stemmed).
+  plainTokens(text) {
+    const tokens = Engine.normalise(text).split(" ").filter(Boolean);
+    while (tokens.length > 1 && Engine.ARTICLES.includes(tokens[0])) tokens.shift();
+    return tokens;
+  },
+
+  // The stems of an answer: what we compare.
+  keyTokens(text) {
+    return Engine.plainTokens(text).map(Engine.stem);
+  },
+
+  // Words with a bracket, like "Post-traumatic stress disorder (PTSD)", are also accepted without it.
+  variants(answer) {
+    return [String(answer), String(answer).replace(/\(.*?\)/g, "")];
+  },
+
+  // True if the typed answer matches, ignoring lead-in words and the form of the word.
   isCorrect(typed, answer) {
-    const given = Engine.normalise(typed);
+    const given = Engine.keyTokens(typed).join(" ");
     if (!given) return false;
-    const accepted = [Engine.normalise(answer), Engine.normalise(String(answer).replace(/\(.*?\)/g, ""))];
-    return accepted.includes(given);
+    return Engine.variants(answer).some((v) => Engine.keyTokens(v).join(" ") === given);
+  },
+
+  // How many single-letter changes (add, remove, change, swap neighbours) turn a into b.
+  distance(a, b) {
+    const d = Array.from({ length: a.length + 1 }, (_, i) => [i]);
+    for (let j = 1; j <= b.length; j++) d[0][j] = j;
+    for (let i = 1; i <= a.length; i++) {
+      for (let j = 1; j <= b.length; j++) {
+        const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+        d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
+        if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) {
+          d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+        }
+      }
+    }
+    return d[a.length][b.length];
+  },
+
+  // True if the answer is wrong but only slightly misspelt ("Almost!").
+  isNear(typed, answer) {
+    if (Engine.isCorrect(typed, answer)) return false;
+    const plain = Engine.plainTokens(typed).join(" ");
+    if (!plain) return false;
+    const stemmed = Engine.keyTokens(typed).join(" ");
+    return Engine.variants(answer).some((v) => {
+      const target = Engine.plainTokens(v).join(" ");
+      const targetStem = Engine.keyTokens(v).join(" ");
+      const allowed = target.length <= 4 ? 0 : target.length <= 9 ? 1 : 2;
+      return Engine.distance(plain, target) <= allowed || Engine.distance(stemmed, targetStem) <= allowed;
+    });
+  },
+
+  // Split a sentence into pieces so the key word can be shown in bold:
+  // [{text, bold}, ...]. Any form of the word counts ("subverts" for "subvert").
+  markWord(sentence, word) {
+    const text = String(sentence);
+    const keys = Engine.keyTokens(Engine.variants(word)[1].trim() ? Engine.variants(word)[1] : word);
+    const found = [];
+    const re = /[\p{L}\p{N}]+/gu;
+    let m;
+    while ((m = re.exec(text))) {
+      found.push({ start: m.index, end: m.index + m[0].length, stem: Engine.stem(Engine.normalise(m[0])) });
+    }
+    const spans = [];
+    for (let i = 0; i + keys.length <= found.length; i++) {
+      let ok = true;
+      for (let j = 0; j < keys.length && ok; j++) {
+        if (found[i + j].stem !== keys[j]) ok = false;
+        if (ok && j > 0 && !/^[\s\-\u2010-\u2015]+$/.test(text.slice(found[i + j - 1].end, found[i + j].start))) ok = false;
+      }
+      if (ok) {
+        spans.push([found[i].start, found[i + keys.length - 1].end]);
+        i += keys.length - 1;
+      }
+    }
+    const pieces = [];
+    let at = 0;
+    for (const [start, end] of spans) {
+      if (start > at) pieces.push({ text: text.slice(at, start), bold: false });
+      pieces.push({ text: text.slice(start, end), bold: true });
+      at = end;
+    }
+    if (at < text.length) pieces.push({ text: text.slice(at), bold: false });
+    return pieces;
   },
 
   // A fair shuffle (Fisher-Yates). `random` can be swapped in for testing.
@@ -96,7 +199,7 @@ class Session {
   }
 
   // Check a typed answer for the current word.
-  // Returns {correct, retiredNow, expected, typed}.
+  // Returns {correct, near, retiredNow, expected, typed}. "near" = wrong, but only slightly misspelt.
   answer(typed) {
     const word = this.current;
     const correct = Engine.isCorrect(typed, word.word);
@@ -116,7 +219,8 @@ class Session {
       this.streak = 0;
       this.missed[word.id] = (this.missed[word.id] || 0) + 1;
     }
-    return { correct, retiredNow, expected: word.word, typed };
+    const near = !correct && Engine.isNear(typed, word.word);
+    return { correct, near, retiredNow, expected: word.word, typed };
   }
 
   // The words missed most in this session, worst first.
