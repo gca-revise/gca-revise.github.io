@@ -642,3 +642,16 @@ button.choice:focus-visible { outline: 3px solid var(--yellow); outline-offset: 
   .fb-quote .q-quote { font-size: 28px; }
   .fb-source { font-size: 15px; }
 }
+
+/* ---------- Quotes: two levels on the text screen ---------- */
+.level { display: flex; flex-direction: column; gap: 10px; padding-top: 14px; border-top: 2px solid var(--line); }
+.card .card-top + .level { border-top: 0; padding-top: 0; }
+.level h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px; }
+.level-hint { font-size: 14px; color: var(--muted); }
+.gap-long { min-width: 180px; }
+.fb-quote-wide { align-self: stretch; text-align: left; }
+@media (min-width: 760px) {
+  .level h3 { font-size: 22px; }
+  .level-hint { font-size: 15px; }
+  .gap-long { min-width: 260px; }
+}

@@ -88,6 +88,27 @@ const Data = {
     };
   },
 
+  // Master it games (core quotes): "mgap", "mfinish" (both typed) and "mtech" (multiple choice).
+  masterGame(textId, game) {
+    return {
+      items: QuoteTools.masterItems(this.quotes, textId, game, this.techniques),
+      optionsFor: game === "mtech" ? QuoteTools.techOptionsFor(this.techniques) : null,
+    };
+  },
+
+  // How many core quotes are mastered: every Master it task a quote has must be learned.
+  masterProgress(textId, retired) {
+    const tasks = {};
+    for (const game of ["mgap", "mfinish", "mtech"]) {
+      for (const item of QuoteTools.masterItems(this.quotes, textId, game, this.techniques)) {
+        (tasks[item.quote.id] = tasks[item.quote.id] || []).push(item.id);
+      }
+    }
+    const quoteIds = Object.keys(tasks);
+    const mastered = quoteIds.filter((id) => tasks[id].every((t) => retired.has(t))).length;
+    return { mastered, total: quoteIds.length };
+  },
+
   quotesFor(textId) {
     return this.quotes.filter((q) => q.text === textId);
   },

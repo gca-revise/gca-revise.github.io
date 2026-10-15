@@ -134,12 +134,24 @@ def attach_tags(vocab):
             word["tags"].append({"text": text, "tag": r["tag"].strip()})
 
 
+def technique_patterns():
+    """(name, regex) for every technique in techniques.csv, to find them in a quote's labels."""
+    patterns = []
+    for r in read("techniques"):
+        name = r["name"].strip()
+        bare = re.sub(r"\(.*?\)", "", name).strip().lower()
+        patterns.append((name, re.compile(r"\b" + re.escape(bare) + r"s?\b")))
+    return patterns
+
+
 def build_quotes():
     rows = read("quotes")
     check_unique(rows, "id", "quotes")
     out = []
+    patterns = technique_patterns()
     for r in rows:
         where = f"quote '{r['id']}'"
+        labels = " ; ".join([r["techniques"], r["lesson_techniques"]]).lower()
         if not r["quote"].strip():
             problems.append(f"{where}: empty quote")
             continue
@@ -161,6 +173,8 @@ def build_quotes():
             "technique_notes": split(r["technique_notes"], "|"),
             "context": r["context"].strip(),
             "note": r["sheet_note"].strip(),
+            # Techniques from techniques.csv named in this quote's labels (for "Spot the technique").
+            "technique_matches": [name for name, rx in patterns if rx.search(labels)],
         })
         gap = r["gap_word"].strip()
         if gap and gap.lower() not in [t.lower() for t in re.findall(r"[^\W_]+", r["quote"])]:

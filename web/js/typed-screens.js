@@ -54,7 +54,7 @@ Object.assign(Screens, {
     const total = s.items.length;
     const learned = s.learnedCount();
     const pct = total ? Math.round((learned / total) * 100) : 0;
-    const title = `${run.textId === "techniques" ? `Techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " · " + Data.techniqueSet(run.setId).name}` : `${t.name} · ${run.subject === "quote" ? "Quotes" : "Key vocab"}`}${s.mode === "free" ? " (free practice)" : ""}`;
+    const title = `${run.textId === "techniques" ? `Techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " · " + Data.techniqueSet(run.setId).name}` : `${t.name} · ${run.subject === "quote" ? (run.level === "master" ? "Quotes · Master it" : "Quotes") : "Key vocab"}`}${s.mode === "free" ? " (free practice)" : ""}`;
     const back = withBack
       ? `<a class="back-sq" href="${Screens.backHref(run)}" aria-label="Back to ${esc(t.name)}">${backIcon}</a>`
       : "";
@@ -180,7 +180,7 @@ Object.assign(Screens, {
             <img src="img/crest.png" alt="School crest" class="done-crest">
             <div>
               <h1>Set complete!</h1>
-              <p>${run.textId === "techniques" ? `You've learned all ${total} techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " in " + esc(Data.techniqueSet(run.setId).name)}.` : `You've learned all ${total} ${run.subject === "quote" ? "quotes" : "key vocab words"} in ${esc(t.name)}.`}</p>
+              <p>${run.textId === "techniques" ? `You've learned all ${total} techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " in " + esc(Data.techniqueSet(run.setId).name)}.` : `You've ${run.level === "master" ? "mastered" : "learned"} all ${total} ${run.subject === "quote" ? "quotes" : "key vocab words"} in ${esc(t.name)}.`}</p>
             </div>
           </div>
           ${played ? `

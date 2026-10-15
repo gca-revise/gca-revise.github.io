@@ -297,7 +297,8 @@ class Session {
   // Returns {correct, near, retiredNow, expected, typed}. "near" = wrong, but only slightly misspelt.
   answer(typed) {
     const word = this.current;
-    const correct = Engine.isCorrect(typed, word.word);
+    // An item can bring its own checks (used for "Finish the quote"); otherwise the word itself is checked.
+    const correct = word.check ? word.check(typed) : Engine.isCorrect(typed, word.word);
     this.score(correct, word);
     let retiredNow = false;
     // One correct typed answer retires a word (learn mode only).
@@ -305,7 +306,7 @@ class Session {
       this.retired.add(word.id);
       retiredNow = true;
     }
-    const near = !correct && Engine.isNear(typed, word.word);
+    const near = !correct && (word.near ? word.near(typed) : Engine.isNear(typed, word.word));
     return { correct, near, retiredNow, expected: word.word, typed };
   }
 
@@ -565,4 +566,101 @@ const QuoteTools = {
   optionsFor(pool, random = Math.random) {
     return (item) => Engine.makeChoices({ id: item.answerId, word: item.word }, pool, [], 4, random);
   },
+
+  // ---- Master it: the core quotes (master = yes) ----
+
+  // A quote cut in half: the start is shown, the rest is what the student types.
+  splitQuote(quote) {
+    const words = quote.trim().split(/\s+/);
+    const cut = Math.ceil(words.length / 2);
+    return { prompt: words.slice(0, cut).join(" "), rest: words.slice(cut).join(" ") };
+  },
+
+  // Do two single words count as the same? (same stem, or one small spelling slip in a longer word)
+  sameWord(a, b) {
+    return a === b || Engine.stem(a) === Engine.stem(b) || (a.length >= 5 && Engine.distance(a, b) <= 1);
+  },
+
+  // How many words differ between what was typed and the real ending (insert, delete or change a word).
+  wordDistance(typed, expected) {
+    const a = Engine.normalise(typed).split(" ").filter(Boolean);
+    const b = Engine.normalise(expected).split(" ").filter(Boolean);
+    const d = Array.from({ length: a.length + 1 }, (_, i) => [i]);
+    for (let j = 1; j <= b.length; j++) d[0][j] = j;
+    for (let i = 1; i <= a.length; i++) {
+      for (let j = 1; j <= b.length; j++) {
+        const cost = QuoteTools.sameWord(a[i - 1], b[j - 1]) ? 0 : 1;
+        d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
+      }
+    }
+    return d[a.length][b.length];
+  },
+
+  // "right" if the ending is close enough (about 1 word in 7 may be off), "near" for a fair attempt, else "wrong".
+  checkEnding(typed, expected) {
+    if (!Engine.normalise(typed)) return "wrong";
+    const n = Engine.normalise(expected).split(" ").filter(Boolean).length;
+    const slips = QuoteTools.wordDistance(typed, expected);
+    if (slips <= Math.floor(n * 0.15)) return "right";
+    if (slips <= Math.floor(n * 0.35)) return "near";
+    return "wrong";
+  },
+
+  // The techniques a quote is labelled with, best first (word types like "Verb" come last).
+  techniqueChoices(q, techniques) {
+    const info = Object.fromEntries(techniques.map((t) => [t.name, t]));
+    const names = (q.technique_matches || []).filter((n) => info[n]);
+    const plain = names.filter((n) => info[n].category !== "Word types");
+    return plain.length ? plain : names;
+  },
+
+  // Items for a Master it game. game: "mgap" (type the missing word), "mfinish" (type the ending),
+  // "mtech" (choose the technique). Ids start with mg: / mf: / mt: so progress is kept separately
+  // from the Know it level.
+  masterItems(quotes, textId, game, techniques = []) {
+    const items = [];
+    for (const q of quotes) {
+      if (q.text !== textId || !q.master) continue;
+      const base = { label: q.quote, definition: "", quote: q, note: q.note || "", texts: [textId], examples: q.note ? [q.note] : [], examples_high: [], tags: [] };
+      if (game === "mgap") {
+        if (q.gap_word && QuoteTools.findGap(q.quote, q.gap_word)) {
+          items.push({ ...base, id: "mg:" + q.id, word: QuoteTools.gapLabel(q.quote, q.gap_word) });
+        }
+      } else if (game === "mfinish") {
+        if (q.quote.trim().split(/\s+/).length >= 6) {
+          const { prompt, rest } = QuoteTools.splitQuote(q.quote);
+          items.push({
+            ...base, id: "mf:" + q.id, word: rest, prompt, rest,
+            check: (typed) => QuoteTools.checkEnding(typed, rest) === "right",
+            near: (typed) => QuoteTools.checkEnding(typed, rest) === "near",
+          });
+        }
+      } else if (game === "mtech") {
+        if (QuoteTools.techniqueChoices(q, techniques).length) {
+          const analysis = (q.technique_notes || []).find(Boolean);
+          items.push({ ...base, id: "mt:" + q.id, word: "", examples: analysis ? [analysis] : base.examples });
+        }
+      }
+    }
+    return items;
+  },
+
+  // Wrong options for "Spot the technique": other techniques, preferring the same kind
+  // (sound, structural, poetic...), never one the quote is labelled with.
+  techOptionsFor(techniques, random = Math.random) {
+    return (item) => {
+      const choices = QuoteTools.techniqueChoices(item.quote, techniques);
+      const pick = choices[Math.floor(random() * choices.length)];
+      const chosen = techniques.find((t) => t.name === pick);
+      item.word = pick;
+      item.answerId = "tech:" + QuoteTools.slug(pick);
+      const labelled = new Set(item.quote.technique_matches || []);
+      const as = (t) => ({ id: "tech:" + QuoteTools.slug(t.name), word: t.name });
+      const others = techniques.filter((t) => t.name !== pick && !labelled.has(t.name));
+      const sameKind = others.filter((t) => t.category === chosen.category).map(as);
+      const rest = others.filter((t) => t.category !== chosen.category).map(as);
+      return Engine.makeChoices({ id: item.answerId, word: pick }, sameKind, rest, 4, random);
+    };
+  },
 };
+

@@ -360,6 +360,67 @@ const pool = [
   })());
 }
 
+// ---- Master it (core quotes) ----
+{
+  const techniques = [
+    { name: "Metaphor", category: "Literary techniques" }, { name: "Simile", category: "Literary techniques" },
+    { name: "Hyperbole", category: "Advanced literary techniques" }, { name: "Alliteration", category: "Sound techniques" },
+    { name: "Sibilance", category: "Sound techniques" }, { name: "Volta", category: "Poetic techniques" },
+    { name: "Caesura", category: "Poetic techniques" }, { name: "Verb", category: "Word types" },
+  ];
+  const quotes = [
+    { id: "a1", text: "macbeth", master: true, speaker: "Macbeth", quote: "O full of scorpions is my mind dear wife", gap_word: "scorpions", note: "n", technique_matches: ["Metaphor", "Hyperbole", "Verb"], technique_notes: ["Metaphor – scorpions suggest poison."] },
+    { id: "a2", text: "macbeth", master: true, speaker: "Witches", quote: "Fair is foul and foul is fair", gap_word: "foul", note: "", technique_matches: ["Alliteration"], technique_notes: [] },
+    { id: "a3", text: "macbeth", master: false, speaker: "Macbeth", quote: "What's done is done", gap_word: "done", note: "", technique_matches: ["Metaphor"] },
+    { id: "a4", text: "macbeth", master: true, speaker: "Macbeth", quote: "Out out brief candle", gap_word: "", note: "", technique_matches: ["Verb"] },
+  ];
+  check("splitQuote shows the first half", QuoteTools.splitQuote("one two three four five six").prompt === "one two three" && QuoteTools.splitQuote("one two three four five six").rest === "four five six");
+  check("splitQuote rounds the prompt up", QuoteTools.splitQuote("one two three four five six seven").prompt === "one two three four");
+  check("an exact ending is right", QuoteTools.checkEnding("Is my mind dear wife", "is my mind dear wife") === "right");
+  check("capitals and punctuation do not matter", QuoteTools.checkEnding("IS MY MIND, DEAR WIFE!", "is my mind dear wife") === "right");
+  check("one small spelling slip is still right", QuoteTools.checkEnding("is my mynd dear wife", "is my mind dear wife") === "right" || QuoteTools.checkEnding("is my mynd dear wife", "is my mind dear wife") === "near");
+  check("one word off in a short ending is 'near'", QuoteTools.checkEnding("is my mind dear husband", "is my mind dear wife") === "near");
+  check("two words off in a short ending is wrong", QuoteTools.checkEnding("is my head dear husband", "is my mind dear wife") === "wrong");
+  check("a different ending is wrong", QuoteTools.checkEnding("something else entirely", "is my mind dear wife") === "wrong");
+  check("blank is wrong", QuoteTools.checkEnding("   ", "is my mind dear wife") === "wrong");
+  check("a long ending allows a word or two out", QuoteTools.checkEnding("i have almost forgot the taste of fear", "i have almost forgot the taste of fears and") !== "wrong");
+
+  const gapItems = QuoteTools.masterItems(quotes, "macbeth", "mgap", techniques);
+  check("Type the gap uses core quotes with a gap word only", gapItems.length === 2 && gapItems.every((i) => i.id.startsWith("mg:")));
+  const fin = QuoteTools.masterItems(quotes, "macbeth", "mfinish", techniques);
+  check("Finish the quote needs six or more words", fin.length === 1 && fin[0].id === "mf:a1");
+  const f = fin[0];
+  const sf = new Session({ items: fin, mode: "learn", kind: "type" });
+  sf.next();
+  const rf = sf.answer(f.rest);
+  check("typing the ending right learns the quote (one correct typed answer)", rf.correct && rf.retiredNow && sf.retired.has("mf:a1"));
+  const sf2 = new Session({ items: fin, mode: "learn", kind: "type" });
+  sf2.next();
+  const rf2 = sf2.answer("is my mind dear husband");
+  check("a fair attempt at the ending is 'near' and scores nothing", !rf2.correct && rf2.near && sf2.points === 0);
+  const sg = new Session({ items: gapItems, mode: "learn", kind: "type" });
+  sg.next();
+  check("Type the gap checks the gap word", sg.answer(sg.current.word).correct);
+
+  const techItems = QuoteTools.masterItems(quotes, "macbeth", "mtech", techniques);
+  check("Spot the technique uses core quotes with a matching technique", techItems.length === 3);
+  check("word types are only used if nothing else is labelled", QuoteTools.techniqueChoices(quotes[0], techniques).join() === "Metaphor,Hyperbole" && QuoteTools.techniqueChoices(quotes[3], techniques).join() === "Verb");
+  const optionsFor = QuoteTools.techOptionsFor(techniques);
+  let good = true, labelledShown = false;
+  for (let i = 0; i < 60; i++) {
+    const item = techItems.find((t) => t.id === "mt:a1");
+    const opts = optionsFor(item);
+    if (opts.length !== 4 || new Set(opts.map((o) => o.id)).size !== 4 || !opts.some((o) => o.id === item.answerId)) good = false;
+    if (opts.some((o) => o.word !== item.word && ["Metaphor", "Hyperbole", "Verb"].includes(o.word))) labelledShown = true;
+  }
+  check("Spot the technique gives four different options with the right one", good);
+  check("a technique the quote is labelled with is never a wrong option", !labelledShown);
+  const st = new Session({ items: techItems, mode: "learn", kind: "choose", optionsFor });
+  const first = st.next();
+  const rt = st.answerChoice(first.answerId);
+  check("choosing the technique scores and counts toward two right answers", rt.correct && st.choiceCounts[first.id] === 1 && !rt.retiredNow);
+}
+
 // ---- Streak and best streak ----
 {
   const s = new Session({ items: words(5), mode: "learn" });

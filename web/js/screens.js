@@ -106,6 +106,32 @@ const Screens = {
       </section>`;
   },
 
+  // The Quotes card: Know it (every quote) and Master it (the core quotes).
+  quotesCard(id, knowLearned, knowTotal, retired) {
+    const master = Data.masterProgress(id, retired);
+    const pills = (buttons) => buttons.map(([label, href], i) =>
+      `<a class="pill${i === 0 ? " primary" : ""}" href="${href}">${esc(label)}</a>`).join("");
+    const block = (title, hint, done, total, unit, buttons) => `
+      <div class="level">
+        <div class="card-top"><h3>${title}</h3><span class="count">${done} of ${plural(total, unit)} ${unit === "quote" && title === "Master it" ? "mastered" : "learned"}</span></div>
+        <p class="level-hint">${hint}</p>
+        ${progressBar(done, total)}
+        <div class="pills">${pills(buttons)}</div>
+      </div>`;
+    const know = block("Know it", "Every quote. Pick the answer.", knowLearned, knowTotal, "quote", [
+      ["Fill the gap", `#/text/${id}/quotes-gap`],
+      [id === "power-conflict" ? "Which poem?" : "Who said it?", `#/text/${id}/quotes-who`],
+    ]);
+    const mastery = master.total
+      ? block("Master it", "Your core quotes. Type your answers.", master.mastered, master.total, "quote", [
+        ["Type the gap", `#/text/${id}/master-gap`],
+        ["Finish the quote", `#/text/${id}/master-finish`],
+        ["Spot the technique", `#/text/${id}/master-tech`],
+      ])
+      : "";
+    return `<section class="card"><div class="card-top"><h2>Quotes</h2></div>${know}${mastery}</section>`;
+  },
+
   text(id) {
     const t = Data.text(id);
     if (!t) return Screens.notFound();
@@ -120,10 +146,7 @@ const Screens = {
       <main class="wrap" style="--accent:${look.colour};--tint:${look.tint}">
         ${Screens.modeSwitch(Store.getMode())}
         <div class="card-grid">
-          ${Screens.modeCard("Quotes", quotesLearned, quotes.length, "quote", [
-            ["Fill the gap", `#/text/${id}/quotes-gap`],
-            [id === "power-conflict" ? "Which poem?" : "Who said it?", `#/text/${id}/quotes-who`],
-          ])}
+          ${Screens.quotesCard(id, quotesLearned, quotes.length, retired)}
           ${Screens.modeCard("Key vocab", learned, words.length, "word", [
             ["Type it", `#/text/${id}/vocab-type`],
             ["Choose it", `#/text/${id}/vocab-choose`],

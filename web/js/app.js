@@ -22,18 +22,26 @@ function startRun(textId, kind, setId) {
   drawRun();
 }
 
-// A quotes game: game is "gap" (pick the missing word) or "who" (who said it / which poem).
+const QUOTE_ROUTES = {
+  "quotes-gap": "gap", "quotes-who": "who",
+  "master-gap": "mgap", "master-finish": "mfinish", "master-tech": "mtech",
+};
+
+// A quotes game. Know it: "gap" (pick the missing word) or "who" (who said it / which poem).
+// Master it (core quotes): "mgap" and "mfinish" (typed) or "mtech" (pick the technique).
 function startQuotes(textId, game) {
-  const { items, optionsFor } = Data.quoteGame(textId, game);
+  const master = game.startsWith("m");
+  const { items, optionsFor } = master ? Data.masterGame(textId, game) : Data.quoteGame(textId, game);
+  const typed = game === "mgap" || game === "mfinish";
   const session = new Session({
     items,
     mode: Store.getMode(),
-    kind: "choose",
+    kind: typed ? "type" : "choose",
     retiredIds: Store.retiredIds(),
     choiceCounts: Store.choiceCounts(),
     optionsFor,
   });
-  run = { textId, kind: "choose", subject: "quote", game, session, phase: "question", last: null, sentence: "" };
+  run = { textId, kind: typed ? "type" : "choose", subject: "quote", level: master ? "master" : "know", game, session, phase: "question", last: null, sentence: "" };
   run.phase = session.next() ? "question" : "complete";
   drawRun();
 }
@@ -79,8 +87,8 @@ function route() {
   } else if (parts[0] === "text" && parts[2] === "vocab-choose" && Data.text(parts[1])) {
     startRun(parts[1], "choose");
     return;
-  } else if (parts[0] === "text" && ["quotes-gap", "quotes-who"].includes(parts[2]) && Data.text(parts[1])) {
-    startQuotes(parts[1], parts[2] === "quotes-gap" ? "gap" : "who");
+  } else if (parts[0] === "text" && Object.keys(QUOTE_ROUTES).includes(parts[2]) && Data.text(parts[1])) {
+    startQuotes(parts[1], QUOTE_ROUTES[parts[2]]);
     return;
   } else if (parts[0] === "text" && parts[2] === "vocab-match" && Data.text(parts[1])) {
     startMatch(parts[1]);
