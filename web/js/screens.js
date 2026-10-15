@@ -134,20 +134,18 @@ const Screens = {
   },
 
   techniques() {
-    const sample = Data.techniques.filter((t) => t.texts.includes("all")).slice(0, 3);
-    const rows = sample.map((t) =>
-      `<div class="tech-row"><span class="tech-word">${esc(t.name.toLowerCase())}</span><span class="tech-def">${esc(t.definition)}</span></div>`).join("");
+    const retired = Store.retiredIds();
+    const cards = Data.techniqueSets().map((set) =>
+      Screens.modeCard(set.name, set.items.filter((t) => retired.has(t.id)).length, set.items.length, "technique", [
+        ["Type it", `#/techniques/${set.id}/type`],
+        ["Choose it", `#/techniques/${set.id}/choose`],
+        ["Match them", `#/techniques/${set.id}/match`],
+      ])).join("");
     return `
       ${Screens.pageHead("Techniques", "Useful for every text.", NAVY, NAVY_TINT)}
       <main class="wrap" style="--accent:${NAVY};--tint:${NAVY_TINT}">
         ${Screens.modeSwitch(Store.getMode())}
-        ${Screens.modeCard("Techniques", Data.techniqueItems().filter((w) => Store.retiredIds().has(w.id)).length, Data.techniqueItems().length, "technique", [
-          ["Type it", "#/techniques/type"],
-          ["Choose it", "#/techniques/choose"],
-          ["Match them", "#/techniques/match"],
-        ])}
-        <h2 class="label">A few of the techniques</h2>
-        <div class="tech-list">${rows}</div>
+        <div class="card-grid">${cards}</div>
         <div class="later"><strong>Coming later: spot the technique</strong><span>Name the technique used in a quote from any of your texts.</span></div>
       </main>`;
   },

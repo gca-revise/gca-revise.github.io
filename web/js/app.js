@@ -8,28 +8,28 @@ function pick(list) {
   return list.length ? list[Math.floor(Math.random() * list.length)] : "";
 }
 
-function startRun(textId, kind) {
+function startRun(textId, kind, setId) {
   const session = new Session({
-    items: Data.itemsFor(textId),
+    items: Data.itemsFor(textId, setId),
     mode: Store.getMode(),
     kind,
     retiredIds: Store.retiredIds(),
     choiceCounts: Store.choiceCounts(),
     extraPool: textId === "techniques" ? [] : Data.vocab,
   });
-  run = { textId, kind, session, phase: "question", last: null, sentence: "" };
+  run = { textId, kind, setId, session, phase: "question", last: null, sentence: "" };
   run.phase = session.next() ? "question" : "complete";
   drawRun();
 }
 
-function startMatch(textId) {
+function startMatch(textId, setId) {
   const game = new MatchGame({
-    items: Data.itemsFor(textId),
+    items: Data.itemsFor(textId, setId),
     mode: Store.getMode(),
     retiredIds: Store.retiredIds(),
   });
   game.newRound();
-  run = { textId, kind: "match", session: game, phase: "question", last: null, sentence: "" };
+  run = { textId, kind: "match", setId, session: game, phase: "question", last: null, sentence: "" };
   drawRun();
 }
 
@@ -69,9 +69,12 @@ function route() {
     html = Screens.comingSoon(`#/text/${parts[1]}`, "Back to the text");
   } else if (parts[0] === "techniques" && parts.length === 1) {
     html = Screens.techniques();
-  } else if (parts[0] === "techniques" && parts.length === 2 && ["type", "choose", "match"].includes(parts[1])) {
-    if (parts[1] === "match") startMatch("techniques");
-    else startRun("techniques", parts[1] === "type" ? "type" : "choose");
+  } else if (parts[0] === "techniques" && [2, 3].includes(parts.length) && ["type", "choose", "match"].includes(parts[parts.length - 1])) {
+    // #/techniques/<set>/<game>  (or the older #/techniques/<game> for all techniques)
+    const setId = parts.length === 3 ? parts[1] : "all";
+    const game = parts[parts.length - 1];
+    if (game === "match") startMatch("techniques", setId);
+    else startRun("techniques", game === "type" ? "type" : "choose", setId);
     return;
   } else if (parts[0] === "techniques") {
     html = Screens.comingSoon("#/techniques", "Back to Techniques");
@@ -102,7 +105,7 @@ app.addEventListener("click", (event) => {
   } else if (action.dataset.action === "again") {
     // Starting again after finishing a set goes to free practice, so learned words stay learned.
     Store.setMode("free");
-    startRun(run.textId, run.kind);
+    startRun(run.textId, run.kind, run.setId);
   }
 });
 

@@ -14,6 +14,13 @@ Object.assign(Screens, {
     return run.textId === "techniques" ? "#/techniques" : `#/text/${run.textId}`;
   },
 
+  // The name shown on the question and header: the text, or the technique set.
+  contextName(run) {
+    if (run.textId !== "techniques") return Data.text(run.textId).name;
+    const set = Data.techniqueSet(run.setId);
+    return set.id === "all" ? "Techniques" : set.name;
+  },
+
   // "word" for key vocab, "technique" on the Techniques screens.
   noun(run) {
     return run.textId === "techniques" ? "technique" : "word";
@@ -26,7 +33,7 @@ Object.assign(Screens, {
     const total = s.items.length;
     const learned = s.learnedCount();
     const pct = total ? Math.round((learned / total) * 100) : 0;
-    const title = `${t.name}${run.textId === "techniques" ? "" : " · Key vocab"}${s.mode === "free" ? " (free practice)" : ""}`;
+    const title = `${run.textId === "techniques" ? `Techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " · " + Data.techniqueSet(run.setId).name}` : `${t.name} · Key vocab`}${s.mode === "free" ? " (free practice)" : ""}`;
     const back = withBack
       ? `<a class="back-sq" href="${Screens.backHref(run)}" aria-label="Back to ${esc(t.name)}">${backIcon}</a>`
       : "";
@@ -59,7 +66,7 @@ Object.assign(Screens, {
             <section class="q-card">
               <div class="q-label">Which ${Screens.noun(run)} means</div>
               <div class="q-text">${esc(Engine.blankWord(w.definition, w.word))}</div>
-              <div class="pill-row"><div class="text-pill"><span class="dot"></span>${esc(t.name)}</div>${Screens.tagPill(w, run.textId)}</div>
+              <div class="pill-row"><div class="text-pill"><span class="dot"></span>${esc(Screens.contextName(run))}</div>${Screens.tagPill(w, run.textId)}</div>
             </section>
             <form id="answer-form" class="answer" autocomplete="off">
               <label for="answer">Type the ${Screens.noun(run)}</label>
@@ -154,7 +161,7 @@ Object.assign(Screens, {
             <img src="img/crest.png" alt="School crest" class="done-crest">
             <div>
               <h1>Set complete!</h1>
-              <p>${run.textId === "techniques" ? `You've learned all ${total} techniques.` : `You've learned all ${total} key vocab words in ${esc(t.name)}.`}</p>
+              <p>${run.textId === "techniques" ? `You've learned all ${total} techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " in " + esc(Data.techniqueSet(run.setId).name)}.` : `You've learned all ${total} key vocab words in ${esc(t.name)}.`}</p>
             </div>
           </div>
           ${played ? `
@@ -234,7 +241,7 @@ Object.assign(Screens, {
             <section class="q-card">
               <div class="q-label">Which ${Screens.noun(run)} means</div>
               <div class="q-text">${esc(Engine.blankWord(w.definition, w.word))}</div>
-              <div class="pill-row"><div class="text-pill"><span class="dot"></span>${esc(t.name)}</div>${Screens.tagPill(w, run.textId)}</div>
+              <div class="pill-row"><div class="text-pill"><span class="dot"></span>${esc(Screens.contextName(run))}</div>${Screens.tagPill(w, run.textId)}</div>
             </section>
             <div class="choices" role="group" aria-label="Choose the answer">${buttons}</div>
             <p class="hint kbd-hint">Tip for laptops: press 1, 2, 3 or 4 on the keyboard.</p>

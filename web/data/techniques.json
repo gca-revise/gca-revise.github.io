@@ -453,7 +453,7 @@
  {
   "name": "Fricative",
   "category": "Sound techniques",
-  "definition": "Softer, longer sounds created, using sudden release of air: f, s, v, th",
+  "definition": "Softer, longer consonant sounds made by air being forced through a narrow gap: f, s, v, th",
   "example": "“Fair is foul and foul is fair” - The Witches in Macbeth Act 1 Scene 1.",
   "effect": "Creates an airy, breathless sound to convey mystery or a change of atmosphere.",
   "texts": [
@@ -706,7 +706,7 @@
  {
   "name": "Sonnet",
   "category": "Poetic techniques",
-  "definition": "A 14-line poem, traditionally with a set rhyme scheme and meter. Always ends with a rhyming couplet.",
+  "definition": "A 14-line poem, traditionally with a set rhyme scheme and meter. Shakespearean sonnets end with a rhyming couplet, but Petrarchan sonnets do not.",
   "example": "“Shall I compare thee to a summer’s day? Thou art more lovely and more temperate:” Shakespeare Sonnet 18. Sonnets traditionally explore themes of love.",
   "effect": "The sonnet’s compact structure can intensify the emotional impact of a poem. The first eight lines (the octave) present a problem or conflict, the last six (the sestet) provide a resolution or reflection.",
   "texts": [
@@ -971,7 +971,7 @@
   "name": "Soliloquy",
   "category": "Dramatic devices",
   "definition": "A soliloquy is a speech that a character in a play speaks aloud. It can only be heard by that character and the audience.",
-  "example": "Lady Macbeth hallucinating that she is seeing blood on her hands after killing King Duncan. She says: “Out, damned spot! Out, I say!”.",
+  "example": "Lady Macbeth hallucinating that she is seeing blood on her hands after the murder of King Duncan. She says: “Out, damned spot! Out, I say!”.",
   "effect": "Effect is to reveal/highlight internal conflict within characters and to display rapid changes of mood (such as Macbeth admitting that he would be willing to kill the king).",
   "texts": [
    "all"
