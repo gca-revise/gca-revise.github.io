@@ -149,6 +149,24 @@ def technique_patterns():
     return patterns
 
 
+def specific_matches(patterns, text):
+    """Techniques named in `text`, keeping only the most specific: "extended metaphor" counts as
+    Extended metaphor, not also as Metaphor; "religious imagery" is not also Imagery."""
+    found = []
+    for name, rx in patterns:
+        for m in rx.finditer(text):
+            found.append((m.start(), m.end(), name))
+    keep = []
+    for start, end, name in found:
+        inside_longer = any(
+            (s2 <= start and end <= e2) and (e2 - s2) > (end - start) for s2, e2, n2 in found
+        )
+        if not inside_longer and name not in keep:
+            keep.append(name)
+    order = [n for n, _ in patterns]
+    return sorted(keep, key=order.index)
+
+
 def build_quotes():
     rows = read("quotes")
     check_unique(rows, "id", "quotes")
@@ -183,8 +201,7 @@ def build_quotes():
             "technique_matches": [name for name, rx in patterns if rx.search(labels)],
             # The ones in the `techniques` column (the teacher's own analysis) are the answers in
             # Spot the technique when there are any; otherwise all the matches are.
-            "technique_primary": [name for name, rx in patterns if rx.search(official)]
-                                 or [name for name, rx in patterns if rx.search(labels)],
+            "technique_primary": specific_matches(patterns, official) or specific_matches(patterns, labels),
         })
         gap = r["gap_word"].strip()
         if gap and gap.lower() not in [t.lower() for t in re.findall(r"[^\W_]+", r["quote"])]:

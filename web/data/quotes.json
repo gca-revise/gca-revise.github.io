@@ -2079,8 +2079,7 @@
    "Personification",
    "Dramatic irony",
    "Hyperbole",
-   "Emotive language",
-   "Irony"
+   "Emotive language"
   ]
  },
  {
@@ -2605,8 +2604,7 @@
   ],
   "technique_primary": [
    "Repetition",
-   "Dramatic irony",
-   "Irony"
+   "Dramatic irony"
   ]
  },
  {
@@ -3423,8 +3421,7 @@
    "Imagery",
    "Metaphor",
    "Dramatic irony",
-   "Audience",
-   "Irony"
+   "Audience"
   ]
  },
  {
@@ -4863,8 +4860,7 @@
   "master": true,
   "gap_word": "spools",
   "techniques": [
-   "Metaphor",
-   "Juxtaposition"
+   "Extended metaphor"
   ],
   "technique_notes": [
    "“spools of suffering” compares the photographs to containers of human pain; their careful arrangement shows his attempt to impose control over trauma."
@@ -4874,11 +4870,11 @@
   "technique_matches": [
    "Metaphor",
    "Juxtaposition",
-   "Sibilance"
+   "Sibilance",
+   "Extended metaphor"
   ],
   "technique_primary": [
-   "Metaphor",
-   "Juxtaposition"
+   "Extended metaphor"
   ]
  },
  {
@@ -6183,7 +6179,6 @@
    "Religious imagery"
   ],
   "technique_primary": [
-   "Imagery",
    "Metaphor",
    "Religious imagery"
   ]
