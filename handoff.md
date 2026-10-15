@@ -23,7 +23,7 @@ Version 1 is built and committed (`vocab.csv` with 10 sample words, `quiz.py`). 
 - Quote learning: separate `quotes.csv` (quote, gap word(s), source, topic). Test styles: fill the gap, "who said it?", finish the quote (multiple choice). Better suited to the web version than the terminal. User answered: both fill-the-gap and "who said it?"; about 50 quotes from multiple texts and poems. User agreed quotes come after the web version exists. With several texts, the `source` column (text/poem title) can double as the topic so students can learn one text at a time.
 
 ## Agreed order of work
-1. Real `vocab.csv` with topic column; quiz asks "Which set?" (terminal version finished).
+1. (Macbeth vocab done, see above.) Real `vocab.csv` with topic column; quiz asks "Which set?" (terminal version finished).
 2. Design the web version as an artifact (visual mock-up) and refine it with the user.
 3. Build the working web game (JavaScript) from the approved design.
 4. Quotes later.
@@ -60,11 +60,12 @@ Shows for a finished key-vocab set: "Practise Macbeth vocab again", "Back to Mac
 - Not yet read: the 25 lesson slideshows (key vocab slides: word, definition, example sentence), the Knowledge Organiser (user does not use it), and the other Year 10 texts.
 
 ## Vocab data (15 Oct, Macbeth)
-- `vocab.csv` built from the Year 10 Macbeth lessons (read through the Microsoft 365 connector): 44 words, 29 of them from Key Vocabulary slides. `teacher_checked = no` on every row until the teacher approves.
-- **Not read:** Lesson 11 (Guilt): the connector could not extract its text; the user needs to upload it or save it as a PDF. Lessons 12, 14, 14a, 19, 25 have no vocab slides. The printable worksheet PDFs were not read.
-- **Open questions for the teacher:** (1) example sentences use first names (Annette, Daniel, Sophie, Agatha, Tyler, Jared, James) and public figures; confirm none are real students before this is pushed (rule: no student data). (2) Which of the 15 extra defined terms join the game. (3) The slides have small typos (e.g. “Women is Jacobean times”, “He choose to commit a crime”); copied as written.
-- Also saved: `symbols.csv`, and lesson technique labels in `quotes.csv`. “So foul and fair a day I have not seen” (Macbeth’s first line) is analysed in Lesson 04 but is not in `quotes.csv`.
-- Lessons also hold material not yet captured: comprehension questions and answers, the “Ideal Jacobean woman” word sort (Lesson 06), PETAL paragraph models (Lesson 25 PDF/pptx), and context facts. Ask the teacher before adding any of it.
+- `vocab.csv` built from the Year 10 Macbeth lessons 01-24 (read through the Microsoft 365 connector, plus Lesson 11 uploaded): 44 words, 31 from Key Vocabulary slides. `core` and `teacher_checked` are empty/no on every row until the teacher decides.
+- Decided 15 Oct: the example-sentence names are all made up. Only example sentences about the English texts will go in the final game, so each row has `examples_text` and `examples_general` (kept in case they are useful). Typos fixed (“Women in Jacobean times”, “He chose to commit a crime”). A core / not-core list for vocab is to be decided later, like `master` for quotes.
+- **Open:** 15 words have no example sentence about an English text (ambition, free will, inevitable, façade, hallucination, consumed, suppress, paranoid, embodiment, self-fulfilling prophecy, tyrant, hubris, desensitised, nihilistic, anagnorisis). The teacher may want text-based sentences written, which she would check. Also: which of the 13 “defined elsewhere” terms join the game.
+- Not read: Lessons 12, 14, 14a, 19, 25 have no vocab slides; the printable worksheet PDFs were not read.
+- Also saved: `symbols.csv`, and lesson technique labels in `quotes.csv` (19 quotes). “So foul and fair a day I have not seen” (Macbeth’s first line) is analysed in Lesson 04 but is not in `quotes.csv`.
+- Lessons also hold material not yet captured: comprehension questions and answers, the “Ideal Jacobean woman” word sort (Lesson 06), PETAL paragraph models (Lesson 25), and context facts. Ask the teacher before adding any of it.
 
 ## Next step
 1. The design is finished and the user is happy with it (phone and laptop). The user opens the artifact link to look (the Chrome extension cannot connect from the Chromebook's Linux container).
