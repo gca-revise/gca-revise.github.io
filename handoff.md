@@ -81,6 +81,13 @@ Shows for a finished key-vocab set: "Practise Macbeth vocab again", "Back to Mac
 - **Teacher to check:** drafted sentences in `examples_draft` (AIC has 19), quote wording marked `matches_source = check`, and which vocab is core.
 - Not read: Lesson 12 (assessment prep), the extra resources folder, the printable PDFs.
 
+## Power and Conflict poetry data (15 Oct)
+- Sources: the teacher's Easter revision sheet (vocab list plus 33 key quotes with analysis), the Power and Conflict Poetry Revision Guide (8 poems: summaries, context, key quotes), the AQA anthology PDF (scanned; OCR text kept locally and git-ignored), and the poetry lessons for all 15 poems.
+- New: `poems.csv` (15 poems), `techniques.csv` (17 defined techniques), 61 poetry quotes in `quotes.csv`, 33 new poetry words in `vocab.csv` (131 words in total).
+- **Teacher to decide:** core (`master`) poetry quotes (the 33 Easter-sheet quotes are flagged `easter_key = yes`); check the poem summaries and context in `poems.csv` (Claude filled the revision guide's blanks); the `check` quote wordings; the vocab core list.
+- Gaps: no revision guide pages for Remains, War Photographer, Poppies, Tissue, Kamikaze, Charge, Bayonet Charge (their data comes from lessons and the Easter sheet); Tissue and Storm on the Island have few labelled techniques; the Unseen Poetry folder was not read.
+- Privacy: no class-list names were copied from the poetry lessons.
+
 ## Next step
 1. The design is finished and the user is happy with it (phone and laptop). The user opens the artifact link to look (the Chrome extension cannot connect from the Chromebook's Linux container).
 2. Read the Key Vocabulary slides from the Macbeth lessons and build the real `vocab.csv` (word, definition, example sentence, text). (Data needs are in `plan.md`: `vocab.csv` with text tags and example sentences, `quotes.csv` with text, technique(s) and speaker, `techniques.csv`.) The user brings the real vocab lists from school (paste or spreadsheet). Claude makes the real `vocab.csv` with a text column (a word can sit in 2 or 3 texts). Also useful: a few real quotes and techniques to test the layout.
