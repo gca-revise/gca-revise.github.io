@@ -31,6 +31,8 @@ const Data = {
           id: "tech-" + t.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""),
           word: t.name,
           definition: t.definition,
+          category: t.category,
+          inQuotes: t.in_quotes,
           texts: [],
           examples: [],
           examples_high: [],

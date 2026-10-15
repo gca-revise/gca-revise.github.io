@@ -7,6 +7,7 @@ should see into web/data/, and reports any problems it finds.
 """
 import csv
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -175,14 +176,25 @@ def build_poems():
     } for r in rows]
 
 
-def build_techniques():
+def build_techniques(quotes):
     rows = read("techniques")
     check_unique(rows, "name", "techniques")
-    return [{
-        "name": r["name"].strip(),
-        "definition": r["definition"].strip(),
-        "texts": text_ids(r["texts"], f"technique '{r['name']}'"),
-    } for r in rows]
+    labels = [" ".join([q["techniques"], q["lesson_techniques"]]).lower() for q in quotes]
+    out = []
+    for r in rows:
+        name = r["name"].strip()
+        bare = re.sub(r"\(.*?\)", "", name).strip().lower()
+        pattern = re.compile(r"\b" + re.escape(bare) + r"s?\b")
+        out.append({
+            "name": name,
+            "category": r.get("category", "").strip(),
+            "definition": r["definition"].strip(),
+            "example": r.get("example", "").strip(),
+            "effect": r.get("effect", "").strip(),
+            "texts": text_ids(r["texts"], f"technique '{name}'"),
+            "in_quotes": sum(1 for label in labels if pattern.search(label)),
+        })
+    return out
 
 
 def build_symbols():
@@ -203,13 +215,15 @@ def main():
         "vocab": vocab,
         "quotes": build_quotes(),
         "poems": build_poems(),
-        "techniques": build_techniques(),
+        "techniques": build_techniques(read("quotes")),
         "symbols": build_symbols(),
     }
     for name, value in data.items():
         with open(OUT / f"{name}.json", "w", encoding="utf-8") as f:
             json.dump(value, f, ensure_ascii=False, indent=1)
 
+    tech = data["techniques"]
+    print(f"  techniques: {len(tech)}, of which {sum(1 for t in tech if t['in_quotes'])} are named in at least one quote label")
     no_sentence = sum(1 for w in vocab if not w["examples"] and not w["examples_high"])
     print(f"Wrote {len(data)} files to {OUT.relative_to(ROOT)}/")
     print(f"  texts {len(data['texts'])}, vocab {len(vocab)}, quotes {len(data['quotes'])}, "

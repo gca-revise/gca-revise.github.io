@@ -1,180 +1,1311 @@
 [
  {
-  "name": "Semantic field",
-  "definition": "A group of words that are linked to a subject or idea (e.g. in ‘Poppies’: war and pain, and fabric and clothing).",
+  "name": "Imagery",
+  "category": "Literary techniques",
+  "definition": "Vivid descriptive language that appeals to the senses to create an image in the reader’s head.",
+  "example": "When Romeo says: “Juliet is the sun.” (Act 2, Scene 2) light imagery is used to compare Juliet to warmth, beauty, and life.",
+  "effect": "Can help to create a more immersive experience by making the writing come alive through sensory details. Similes and metaphors are usually imagery.",
   "texts": [
-   "power-conflict"
-  ]
- },
- {
-  "name": "Juxtaposition",
-  "definition": "A contrast between ideas, placed side by side.",
-  "texts": [
-   "all",
-   "frankenstein"
-  ]
+   "all"
+  ],
+  "in_quotes": 36
  },
  {
   "name": "Metaphor",
-  "definition": "A comparison without “like” or “as”.",
+  "category": "Literary techniques",
+  "definition": "A metaphor compares two things without using the words “like” or “as”.",
+  "example": "“The moon was a ghostly galleon tossed upon cloudy seas…”",
+  "effect": "Metaphors condense and magnify meaning to capture the reader’s imagination.",
   "texts": [
-   "all",
-   "frankenstein"
-  ]
+   "all"
+  ],
+  "in_quotes": 44
  },
  {
   "name": "Simile",
-  "definition": "A comparison using “like” or “as”.",
-  "texts": [
-   "all",
-   "frankenstein"
-  ]
- },
- {
-  "name": "Alliteration",
-  "definition": "Repetition of initial sounds.",
+  "category": "Literary techniques",
+  "definition": "A simile compares two things using the words “like” or “as”.",
+  "example": "“The mind is like a parachute. It doesn’t work if it’s not open” - Frank Zappa.",
+  "effect": "Used to create vivid imagery or to draw surprising connections between two unrelated things.",
   "texts": [
    "all"
-  ]
- },
- {
-  "name": "Sibilance",
-  "definition": "Repeated use of the “s” sound.",
-  "texts": [
-   "all"
-  ]
- },
- {
-  "name": "Irony",
-  "definition": "A contrast between expectation and reality.",
-  "texts": [
-   "all"
-  ]
- },
- {
-  "name": "Dramatic irony",
-  "definition": "When the audience knows something that the characters do not.",
-  "texts": [
-   "inspector"
-  ]
- },
- {
-  "name": "Colloquial language",
-  "definition": "Informal, conversational speech (chatty language that uses informal vocabulary).",
-  "texts": [
-   "power-conflict"
-  ]
- },
- {
-  "name": "Dramatic monologue",
-  "definition": "A poem spoken by a single character, told from that character’s point of view, as though speaking to another character.",
-  "texts": [
-   "power-conflict"
-  ]
- },
- {
-  "name": "Sonnet (Petrarchan)",
-  "definition": "A 14-line poem structure, traditionally used for love poems.",
-  "texts": [
-   "power-conflict"
-  ]
- },
- {
-  "name": "Ballad",
-  "definition": "A narrative poem often spoken aloud, usually to remember famous tragedies, battles or heroes.",
-  "texts": [
-   "power-conflict"
-  ]
- },
- {
-  "name": "Dactylic dimeter",
-  "definition": "A rhythm of 6 syllables per line (one stressed, two unstressed), as in The Charge of the Light Brigade; creates the sound of galloping horses.",
-  "texts": [
-   "power-conflict"
-  ]
- },
- {
-  "name": "Rhyme scheme",
-  "definition": "The pattern of rhyme in a poem, found by labelling the end word of each line with a letter. A regular rhyme can suggest control, strength and power, repetition, being trapped, or a song; the pattern can also be irregular.",
-  "texts": [
-   "power-conflict"
-  ]
- },
- {
-  "name": "Volta",
-  "definition": "A turning point in a poem.",
-  "texts": [
-   "power-conflict"
-  ]
- },
- {
-  "name": "In media res",
-  "definition": "Starting in the middle of the action.",
-  "texts": [
-   "power-conflict"
-  ]
- },
- {
-  "name": "Extended metaphor",
-  "definition": "A metaphor that continues throughout a poem (e.g. the darkroom in War Photographer; the storm in Storm on the Island; paper in Tissue).",
-  "texts": [
-   "power-conflict"
-  ]
- },
- {
-  "name": "Imagery",
-  "definition": "The use of symbolism and strong images to allow the reader to picture what is described. It includes similes, metaphors and personification.",
-  "texts": [
-   "frankenstein"
-  ]
+  ],
+  "in_quotes": 6
  },
  {
   "name": "Personification",
-  "definition": "Giving human qualities to something that is not human (e.g. nature presented as prey that is hunted).",
+  "category": "Literary techniques",
+  "definition": "When a writer gives human characteristics to something that is not human.",
+  "example": "“The earth hath swallowed all my hopes but she” - Lord Capulet in Romeo & Juliet.",
+  "effect": "Adds life, energy, and an element of relatability to things that would otherwise be lifeless.",
   "texts": [
-   "frankenstein"
-  ]
+   "all"
+  ],
+  "in_quotes": 9
+ },
+ {
+  "name": "Juxtaposition",
+  "category": "Literary techniques",
+  "definition": "When two or more unlike/contrasting things are placed close together.",
+  "example": "“So fair and foul a day I have not seen.” Macbeth’s first line in Act 1 Scene 3.",
+  "effect": "By placing two juxtaposing words or ideas next to one another, a writer can highlight contrasts or add emphasis.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 17
+ },
+ {
+  "name": "Antithesis",
+  "category": "Literary techniques",
+  "definition": "When two opposite, directly contradictory, ideas are placed together for contrast.",
+  "example": "“It was the best of times; it was the worst of times” - Tale of Two Cities, Charles Dickens.",
+  "effect": "Can emphasise conflict or complexity in a situation. Here, Dickens highlights the extreme contrasts of the era, while the paradox intrigues the reader.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 3
+ },
+ {
+  "name": "Repetition",
+  "category": "Literary techniques",
+  "definition": "When a word or phrase is repeated to emphasise an idea.",
+  "example": "“King of my city, king of my country, king of my homeland, king of the filth, king of the fallen” - Black Panther, Kendrick Lamar.",
+  "effect": "Used to emphasise a feeling/idea, create rhythm, and/or develop a sense of urgency.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 10
+ },
+ {
+  "name": "Pathetic fallacy",
+  "category": "Literary techniques",
+  "definition": "When the weather is personified to reflect the feelings of the character, or to give a sense of foreboding.",
+  "example": "“The raindrops wept around him” or “The wind shrieked and cried”. Or from Macbeth “The night has been unruly”.",
+  "effect": "The description of weather (pathetic fallacy) highlights or foreshadows a mood or feeling that usually reflects a character's internal state.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Semantic field",
+  "category": "Literary techniques",
+  "definition": "A cluster of words that relate to a particular topic.",
+  "example": "Clusters of words like “grave”, “bone” and “decay” – create a semantic field of death.",
+  "effect": "Used to create a sense of unity/cohesion and to emphasise specific themes or emotions.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 6
+ },
+ {
+  "name": "Connotation",
+  "category": "Literary techniques",
+  "definition": "Refers to the secondary, implied, or associative meaning of a word that goes beyond its literal definition.",
+  "example": "The connotations of the colour red, could include anger, urgency, blood, death.",
+  "effect": "Allows poets/writers to give deeper meaning to a text - beyond the literal.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Symbol",
+  "category": "Literary techniques",
+  "definition": "An object, person, place or idea that represents something deeper and more meaningful.",
+  "example": "“They don’t do one thing but sing their hearts out for us. That’s why it’s a sin to kill a mockingbird”. To Kill a Mockingbird.",
+  "effect": "Symbols suggest deeper ideas to a reader. They are used to develop a certain mood, feeling or emotion.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 21
+ },
+ {
+  "name": "Theme",
+  "category": "Literary techniques",
+  "definition": "The underlying message of the story or the big idea.",
+  "example": "Themes in Macbeth include: the dangers of ambition; the power of guilt; the nature of good kingship.",
+  "effect": "Themes serve as the underlying messages or central ideas that give depth and cohesion to a story.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Verbal irony",
+  "category": "Literary techniques",
+  "definition": "When a person says or writes one thing but means the complete opposite.",
+  "example": "“Yeah. Quirrell was a great teacher”. Harry Potter and the Order of the Phoenix.",
+  "effect": "Used to convey a meaning that is opposite to, or markedly different from their literal interpretation, often to emphasise a point.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Dramatic irony",
+  "category": "Literary techniques",
+  "definition": "When the audience knows something that the characters do not.",
+  "example": "Romeo thinks Juliet is dead, but the audience knows she is just unconscious.",
+  "effect": "Dramatic irony builds suspense as we start imagining the characters' reactions upon discovering the truth.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 3
+ },
+ {
+  "name": "Pathos",
+  "category": "Literary techniques",
+  "definition": "Used to evoke pity or sadness, in the reader.",
+  "example": "“Do not go gentle into that good night” (poet pleads with father not to die).",
+  "effect": "Pathos is used to evoke a specific feeling in a reader – such as sadness.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Anthropomorphism",
+  "category": "Literary techniques",
+  "definition": "Giving human characteristics to non-human things such as animals or objects.",
+  "example": "Orwell’s Animal Farm, where animals are given human emotions and language.",
+  "effect": "Used to help the reader feel empathy for a ‘thing’, idea or animal.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Allusion",
+  "category": "Literary techniques",
+  "definition": "A reference to a well-known person, place, event or idea.",
+  "example": "Carol Ann Duffy’s Havisham alludes to the character Miss Havisham, created by Charles Dickens in Great Expectations.",
+  "effect": "Used to intensify the intellectual and aesthetic possibilities of a given moment.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 4
+ },
+ {
+  "name": "Understatement",
+  "category": "Literary techniques",
+  "definition": "When something is described as less important than it really is. Often used for humour, to create a sense of irony.",
+  "example": "Romeo and Juliet: “What, art thou hurt? Mercutio: Ay, ay, a scratch, a scratch” Act 3, Scene 1. Mercutio has been stabbed and is dying, but calls it a “scratch”.",
+  "effect": "Mercutio’s casual tone contrasts with the gravity of his wound, making the audience momentarily question the seriousness of the situation. This heightens the emotional impact when we realise Mercutio is dying.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Syntax",
+  "category": "Literary techniques",
+  "definition": "The way words are arranged to form a sentence or convey a thought. Some writers play with syntax.",
+  "example": "“The greatest teacher failure is” (Yoda) (Failure is the greatest teacher)",
+  "effect": "The way words are put together in a sentence can change the tone and affect the meaning of a piece of writing.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 2
+ },
+ {
+  "name": "Telegraphic sentence",
+  "category": "Literary techniques",
+  "definition": "A sentence lacking conjunctions or extra details. Often five words or fewer.",
+  "example": "“The storm raged fiercely throughout the night, shaking the windows and rattling the doors.” Would become: “Storm raged. Windows shook. Doors rattled.”",
+  "effect": "The telegraphic version creates a more urgent, dramatic, and punchy tone by removing unnecessary words and breaking it into short, impactful bursts.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Paradox",
+  "category": "Literary techniques",
+  "definition": "A statement that seems impossible or contradictory, yet still has truth to it.",
+  "example": "“I can resist everything but temptation” – Oscar Wilde.",
+  "effect": "Often used to create temporary confusion – which is then remedied by deeper consideration and thought.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 1
+ },
+ {
+  "name": "Euphemism",
+  "category": "Literary techniques",
+  "definition": "A nice way of saying something harsh, rude or embarrassing.",
+  "example": "“Passed away”, “friendly fire” or “ethnic cleansing”.",
+  "effect": "Allows writers to avoid taboo, and to soften/mask harsh, sensitive, or unpleasant words and concepts.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 1
+ },
+ {
+  "name": "Narrator",
+  "category": "Literary techniques",
+  "definition": "The voice or character that tells the story.",
+  "example": "Christopher Boone narrates The Curious Incident of the Dog in the Night-Time.",
+  "effect": "Controls how the story is perceived, shaping tone, bias, and reader engagement.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Epistolary narrative",
+  "category": "Literary techniques",
+  "definition": "A story told through letters, diary entries, or documents.",
+  "example": "The end of Jekyll and Hyde becomes an epistolary narrative, as we read Lanyon and Jekyll’s letters.",
+  "effect": "Gives an authentic, immersive feel and realism to the story. Also presents different characters’ perspectives.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Unreliable narrator",
+  "category": "Literary techniques",
+  "definition": "A narrator whose version of events is highly questionable. This can be due to bias, deliberate deception, or mental state.",
+  "example": "In The Catcher in the Rye, Holden Caulfield often exaggerates or distorts events, making his narration unreliable as he expresses a skewed view of the world around him.",
+  "effect": "Creates suspense, mystery, or forces the reader to question reality.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "First-person narration",
+  "category": "Literary techniques",
+  "definition": "The story is told from the perspective of a character using ‘I’ or ‘we’.",
+  "example": "“I read a book by the window / until I couldn’t see the words”. The Witches by Vicki Feaver.",
+  "effect": "Provides direct insight into a character’s emotions and biases.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Second-person narration",
+  "category": "Literary techniques",
+  "definition": "The narrator speaks directly to the reader.",
+  "example": "“You walk into the room, and immediately, the atmosphere changes. Everyone turns to look at you.”",
+  "effect": "This can engage the reader and make the communication more intimate, powerful and emotive.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Third-person limited",
+  "category": "Literary techniques",
+  "definition": "The narrator knows the thoughts and feelings of one character, but still narrates in the third person.",
+  "example": "The first 8 chapters of Jekyll & Hyde are third person limited.",
+  "effect": "Allows readers to connect deeply with one character's experiences. In Jekyll & Hyde the narration follows Utterson's perspective but not that of other characters.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Third-person omniscient",
+  "category": "Literary techniques",
+  "definition": "The narrator knows the thoughts and feelings of all characters.",
+  "example": "Animal Farm by George Orwell – the narrator knows everything about all characters.",
+  "effect": "Gives a broad understanding of all characters and events.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Hyperbole",
+  "category": "Advanced literary techniques",
+  "definition": "Extreme exaggeration used to emphasise a point.",
+  "example": "“And when you smile the whole world stops and stares for a while”.",
+  "effect": "Helps the writer to get their point across so we can understand the emotion, seriousness or humour of the situation.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 11
+ },
+ {
+  "name": "Literary chiaroscuro",
+  "category": "Advanced literary techniques",
+  "definition": "Imagery which plays with light and darkness. Primarily used to describe art.",
+  "example": "You could argue that in Macbeth, evil deeds are committed at night, using chiaroscuro.",
+  "effect": "Used to create morally ambiguous characters who exemplify both the light and the shadow. It can also be used to describe a scene of contrasting light and darkness.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Apostrophe",
+  "category": "Advanced literary techniques",
+  "definition": "When a speaker addresses a person, idea or object, which is not there or cannot reply (e.g. absent, dead, not a person).",
+  "example": "Pooh: “Oh, Tigger, where are you?”. Winnie the Pooh is speaking to Tigger who is not there.",
+  "effect": "To personify or bring to life something not living, so the poet is able to address it directly.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Idiom",
+  "category": "Advanced literary techniques",
+  "definition": "An expression or phrase that is not meant literally – but has cultural meaning.",
+  "example": "“I will wear my heart on my sleeve”. Meaning I will be open about my emotions, they will be easy to read.",
+  "effect": "Used to provide a degree of comfort and familiarity to the prose – particularly if the text is challenging.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Anaphora",
+  "category": "Advanced literary techniques",
+  "definition": "Repetition of the opening word, in multiple clauses.",
+  "example": "“With malice toward none, with charity for all, with firmness in the right”.",
+  "effect": "Used to emphasise key words or ideas.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Apotheosis",
+  "category": "Advanced literary techniques",
+  "definition": "Glorification of a person or thing – to divine status.",
+  "example": "“Who died on the wires, and hung there, one of two…” This war poem from 1917 compares the death of a soldier in the trenches to Jesus’ death.",
+  "effect": "Used to elevate a person or thing in the minds of the reader.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Parenthesis",
+  "category": "Advanced literary techniques",
+  "definition": "Punctuation marks used to enclose extra information in a sentence e.g. brackets () or commas.",
+  "example": "“John (this year’s winner) appeared at the foot of the podium” “The experiment — dangerous as it was — had to be done.”",
+  "effect": "Offers extra context or insights into a character/person.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Diction",
+  "category": "Advanced literary techniques",
+  "definition": "The type of words chosen to create a style or voice. E.g. formal, informal, poetic, archaic, colloquial, pedantic.",
+  "example": "Formal: “Respectfully, I disagree” Informal: “No way! Get out of here….” Pedantic: “I have identified some critical errors that I will now expand upon”.",
+  "effect": "Diction can be used to affect the tone in a piece of writing. This can determine how a reader connects to individual characters.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Motif",
+  "category": "Advanced literary techniques",
+  "definition": "A recurring image, idea or symbol that helps develop a theme.",
+  "example": "“O, she doth teach the torches to burn bright” – Romeo and Juliet. Light is often associated with Juliet.",
+  "effect": "Motifs direct readers' attention to larger themes, as well as engaging them on an intuitive level.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 1
  },
  {
   "name": "Oxymoron",
-  "definition": "Two opposite ideas put together (e.g. “hellish triumph”).",
+  "category": "Advanced literary techniques",
+  "definition": "When two contradictory (opposite) words are placed side-by-side.",
+  "example": "“Deafening silence” “Act naturally” “Small crowd”",
+  "effect": "Oxymorons can be used to create irony, suspense, or to add comedy to a piece of literature.",
   "texts": [
-   "frankenstein"
-  ]
+   "all"
+  ],
+  "in_quotes": 2
  },
  {
-  "name": "Religious imagery",
-  "definition": "Images taken from religion, such as Adam, angels and hell.",
+  "name": "Stichomythia",
+  "category": "Advanced literary techniques",
+  "definition": "A rapid exchange of dialogue between two characters, using short lines.",
+  "example": "LADY MACBETH: Did not you speak? MACBETH: When? LADY MACBETH: Now. MACBETH: As I descended? LADY MACBETH: Ay.",
+  "effect": "Here, the quickened pace emphasises their panic and fear. It can also show two characters’ close relationship.",
   "texts": [
-   "frankenstein"
-  ]
+   "all"
+  ],
+  "in_quotes": 0
  },
  {
-  "name": "Imperative (command)",
-  "definition": "A sentence that gives an order (e.g. “Begone, vile insect!”), showing who has the power.",
+  "name": "Alliteration",
+  "category": "Sound techniques",
+  "definition": "When two or more words in a line or phrase begin with the same sound.",
+  "example": "“Whisper words of wisdom, let it be”.",
+  "effect": "Alliteration can create a rhythm to add mood or emphasis. The mood could range from gentle/emotive to brutal.",
   "texts": [
-   "frankenstein"
-  ]
+   "all"
+  ],
+  "in_quotes": 4
  },
  {
-  "name": "Declarative statement",
-  "definition": "A sentence that states something as a fact (e.g. “I too can create desolation”).",
+  "name": "Fricative",
+  "category": "Sound techniques",
+  "definition": "Softer, longer sounds created, using sudden release of air: f, s, v, th",
+  "example": "“Fair is foul and foul is fair” - The Witches in Macbeth Act 1 Scene 1.",
+  "effect": "Creates an airy, breathless sound to convey mystery or a change of atmosphere.",
   "texts": [
-   "frankenstein"
-  ]
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Cacophony",
+  "category": "Sound techniques",
+  "definition": "Repetition of harsh consonant sounds.",
+  "example": "Lady Macbeth: “Out, damned spot! Out I say!”.",
+  "effect": "Adds harshness to a scene or poem – by making the words jarring to the reader.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Onomatopoeia",
+  "category": "Sound techniques",
+  "definition": "When a word sounds like the thing it describes.",
+  "example": "“Tick, tock, tick, tock” “Crash”.",
+  "effect": "To add emphasis/a sense of realism - or to create a sensory effect for the reader.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Plosive",
+  "category": "Sound techniques",
+  "definition": "Sounds created by the consonants p, b, t, d, k, g – for effect.",
+  "example": "“Bullets smacking the belly out of the air –” Bayonet Charge, Ted Hughes.",
+  "effect": "Used to create emphasis or intensify emotions. E.g.: when describing a car crash or a gun shot. Here the harsh ‘b’, ‘ck’ and ‘t’ sounds reflect the noisy, brutal reality of war.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 3
+ },
+ {
+  "name": "Euphony",
+  "category": "Sound techniques",
+  "definition": "A combination of words that sound pleasant to the ears.",
+  "example": "“The mild-eyed melancholy of lotus-eaters come” The Lotos-eaters, Alfred Lord Tennyson",
+  "effect": "The effect is to soothe the reader. By repeating the soft sounds made by “l”, “m”, “r” and “o”, the poet creates a euphonic effect.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Sibilance",
+  "category": "Sound techniques",
+  "definition": "Words or phrases with a hissing or hushing sound. Typically, s, sh, z, or ch sounds.",
+  "example": "“Stormed at with shot and shell, While horse and hero fell.” Charge of the Light Brigade, Alfred Lord Tennyson",
+  "effect": "Hissing sounds can create feelings of calm, safety, and reassurance. Here, they mirror the whizzing or hissing of bullets and shells in battle, adding harshness and aggression to the line.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 5
+ },
+ {
+  "name": "Assonance",
+  "category": "Sound techniques",
+  "definition": "When the same vowel sound (a,e,i,o,u) is repeated in a line or phrase.",
+  "example": "“I must confess that in my quest I felt depressed and restless”. (This is also sibilance).",
+  "effect": "Assonance can evoke specific feelings and emotions. For example, repeated long vowel sounds (e.g. the ‘oo’ in moon) can impart a sense of calm, while repeated short vowel sounds (e.g. the ‘i’ in kit) can create tension.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Consonance",
+  "category": "Sound techniques",
+  "definition": "When the same consonant sound (e.g. ‘s’ or ‘t’) is repeated in a line or phrase.",
+  "example": "“The beauty lies in the struggle, ugliness in the success” (This is also sibilance)",
+  "effect": "By increasing the sonic or “musical” quality of words in a group, the writer is choosing to make particular words stand out to the reader. This is often used to emphasise ideas or themes.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Dissonance",
+  "category": "Sound techniques",
+  "definition": "When a writer arranges words and sounds to make the text difficult or unpleasant to read.",
+  "example": "“A pot is a beginning of a rare bit of trees. Trees tremble.”",
+  "effect": "Used to inject discomfort into the text through inharmonious sounds and uneven rhythms. The intention is to produce strong emotions in the reader.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Exposition",
+  "category": "Structural techniques",
+  "definition": "Establishing important background in the story.",
+  "example": "The narrator in Blood Brothers gives the audience essential information about the mum/dad/twins.",
+  "effect": "Helps enhance the audiences’ appreciation of what is about to happen, so that we are more invested in how the narrative unfolds.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Rising action",
+  "category": "Structural techniques",
+  "definition": "Building tension by describing how the situation is slowly getting worse.",
+  "example": "In Sawbones, Loveday and Ezra risk their lives by sneaking into the Turkish embassy in disguise, before chasing the killer of her father around the Turkish embassy.",
+  "effect": "Pushes the plot along and builds tension to keep us interested in the story.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Climax",
+  "category": "Structural techniques",
+  "definition": "The moment of peak tension.",
+  "example": "When Ezra and Loveday confront the murdering Ahmat on a roof in Sawbones. This leads to a dramatic final showdown.",
+  "effect": "Building to a climax gives the story direction and purpose.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Falling action",
+  "category": "Structural techniques",
+  "definition": "The falling action involves the consequences of the tragic hero’s actions as things begin to unravel.",
+  "example": "After Tybalt’s death, Romeo is banished from Verona, and the tragic consequences of this decision begin to unfold.",
+  "effect": "Shows the consequences of the hero's flaws & mistakes and builds toward the conclusion.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Resolution (denouement)",
+  "category": "Structural techniques",
+  "definition": "When the ‘problems’ in the story are resolved (‘happy ending’).",
+  "example": "After the deaths of their children Romeo and Juliet, Lords Montague and Capulet agree to build statues to honour each other’s children and make peace.",
+  "effect": "The story is finished in a satisfying manner. Peace or the normal state of affairs is usually restored.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Pivotal moment",
+  "category": "Structural techniques",
+  "definition": "The moment when things start to change.",
+  "example": "When Romeo discovers Juliet looking lifeless, he assumes she is dead and decides – spontaneously – to commit suicide.",
+  "effect": "Turning points force characters to confront challenges, make important decisions, or experience profound realisations.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 1
  },
  {
   "name": "Flashback",
-  "definition": "Going back in time to an earlier event; Shelley uses it to contrast Victor as a child with Victor close to death.",
+  "category": "Structural techniques",
+  "definition": "Describing a past event – to help explain the present.",
+  "example": "The film Titanic starts with an old lady. We know she has a secret. The rest of the film flashes back to 1912 and we realise we are being told her story.",
+  "effect": "Flashbacks provide the background information (including secrets or inner conflicts) to drive the plot.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "In medias res",
+  "category": "Structural techniques",
+  "definition": "Plunges the reader into the middle of the action, without pre-amble. Literally translates to “in the middle of things”.",
+  "example": "A thriller that starts in medias res might open with the detective already on the trail of the killer, or with an exciting car chase scene.",
+  "effect": "In medias res helps capture the audience’s attention by bringing them directly into the fray.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Foreshadowing",
+  "category": "Structural techniques",
+  "definition": "Hinting at later events in the story.",
+  "example": "Shakespeare uses the witches’ prophecies to foreshadow Macbeth’s rise to power and ultimate downfall.",
+  "effect": "Builds tension as we anticipate disaster. Is the foreshadowing going to lead to something real – or not?",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 1
+ },
+ {
+  "name": "Cliffhanger",
+  "category": "Structural techniques",
+  "definition": "When the story/chapter ends at a moment of high tension.",
+  "example": "In Star Wars we find out that Darth Vader is Luke’s real father. But we have to wait until the next film to see what happens next….",
+  "effect": "Cliffhangers exist to persuade the reader to keep reading.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Circular narrative",
+  "category": "Structural techniques",
+  "definition": "When the end of the story links back to the beginning.",
+  "example": "At the start of The Wonderful Wizard of Oz, Dorothy is whisked away from her home by a tornado. The story ends with Dorothy waking up – back home.",
+  "effect": "A circular narrative is often used to create a contrast between what was happening at the beginning and what happens at the end.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Point of view",
+  "category": "Structural techniques",
+  "definition": "Refers to the vantage point of the speaker – for example, 1st or 3rd person.",
+  "example": "Sometimes writers switch POVs to add tension to the story or create dramatic irony.",
+  "effect": "Using multiple POVs can make the story richer (and sometimes more confusing!) for the reader.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Sentence length",
+  "category": "Structural techniques",
+  "definition": "Identifying where sentence length is used for effect.",
+  "example": "Havisham by Carol Ann Duffy - “Love’s hate behind a white veil; a red balloon bursting in my face. Bang. I stabbed at a wedding cake.”",
+  "effect": "Having long, then short sentences can build tension then create drama.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Form",
+  "category": "Poetic techniques",
+  "definition": "In poetry, form refers to the structure or organisation of a poem.",
+  "example": "Form can include line length, stanza arrangement, and rhyme scheme. Haikus, sonnets and free verse are all different forms.",
+  "effect": "Determines how the poem is presented, affecting rhythm, pacing, and meaning.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 1
+ },
+ {
+  "name": "Sonnet",
+  "category": "Poetic techniques",
+  "definition": "A 14-line poem, traditionally with a set rhyme scheme and meter. Always ends with a rhyming couplet.",
+  "example": "“Shall I compare thee to a summer’s day? Thou art more lovely and more temperate:” Shakespeare Sonnet 18. Sonnets traditionally explore themes of love.",
+  "effect": "The sonnet’s compact structure can intensify the emotional impact of a poem. The first eight lines (the octave) present a problem or conflict, the last six (the sestet) provide a resolution or reflection.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Meter",
+  "category": "Poetic techniques",
+  "definition": "The pattern of stressed and unstressed syllables in poetry.",
+  "example": "The Charge of the Light Brigade has a meter which sounds like horses galloping (dactylic dimeter).",
+  "effect": "Influences the mood and musicality of a poem, affecting how it is read and perceived.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Iambic pentameter",
+  "category": "Poetic techniques",
+  "definition": "A meter with ten syllables per line, alternating between unstressed and stressed.",
+  "example": "Shakespeare mostly writes in iambic pentameter, e.g. Macbeth Act 1 Scene 3: “So foul and fair a day I have not seen.”",
+  "effect": "Creates a natural, flowing rhythm that mirrors spoken English.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Caesura",
+  "category": "Poetic techniques",
+  "definition": "A pause in the middle of a line of poetry, often marked by punctuation, which disrupts the rhythm.",
+  "example": "Macbeth Act 1 Scene 3: “But how of Cawdor? The Thane of Cawdor lives”",
+  "effect": "The writer disrupts the rhythm with a caesura, mirroring Macbeth’s confusion upon hearing he’s been named Thane of Cawdor, despite the current Thane still being alive.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 3
+ },
+ {
+  "name": "Volta",
+  "category": "Poetic techniques",
+  "definition": "Turning point in a poem - in terms of the mood/theme.",
+  "example": "My Last Duchess, Robert Browning. After praising her portrait, the volta comes when we realise that the Duke gave orders for her to be killed.",
+  "effect": "A volta can be used to mark a major shift within a poem. This shift can be an answer to a question, a change in perspective, or a thematic reveal.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 2
+ },
+ {
+  "name": "Speaker",
+  "category": "Poetic techniques",
+  "definition": "The voice or persona speaking in the poem.",
+  "example": "“My sister’s screams / brought Mummy running” The Witches, Vicki Feaver.",
+  "effect": "Creates a perspective for the reader, shaping how the poem is understood. Here, the speaker is a young girl.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 1
+ },
+ {
+  "name": "Enjambment",
+  "category": "Poetic techniques",
+  "definition": "The continuation of a sentence or phrase from one line of poetry to another.",
+  "example": "“Woman who shines at the head / Of my grandmother’s bed”.",
+  "effect": "Effect depends on context: can create urgency, tension, or rising emotion in a poem. Can also represent overflow of emotion, or freedom.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 1
+ },
+ {
+  "name": "Rhyme scheme",
+  "category": "Poetic techniques",
+  "definition": "Sequence in which rhyme occurs.",
+  "example": "ABAB (Alternate Rhyme) AABB (Rhyming Couplets) ABBA (Enclosed Rhyme)",
+  "effect": "Rhyme schemes create atmosphere/mood and can shape the way we respond to the themes in the poem.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Regular rhyme scheme",
+  "category": "Poetic techniques",
+  "definition": "A consistent pattern of rhyming sounds at the end of lines in a poem.",
+  "example": "“The people along the sand (A) All turn and look one way. (B) They turn their back on the land. (A) They look at the sea all day.” (B)",
+  "effect": "Provides structure and musicality, making the poem more memorable. Can symbolise order and control. But could also represent being trapped.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Irregular rhyme scheme",
+  "category": "Poetic techniques",
+  "definition": "A rhyme pattern that is inconsistent or does not follow a predictable order.",
+  "example": "“They should not have left him there alone, (A) Alone that is except for the cat. (B) He was only nine, not old enough (C) To be left alone in a basement flat, (B) Alone, that is, except for the cat.” (B)",
+  "effect": "May create a sense of unpredictability or tension. Can also represent freedom from structure and rules, or a speaker straining against structure and rules.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "No rhyme scheme",
+  "category": "Poetic techniques",
+  "definition": "A poem that does not rhyme.",
+  "example": "The Witches by Vicki Feaver",
+  "effect": "Can make a poem feel more natural & less structured.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Free verse",
+  "category": "Poetic techniques",
+  "definition": "No set rhyme or rhythm, reflecting natural speech.",
+  "example": "The Waste Land by T.S. Eliot moves between different rhythms and structures.",
+  "effect": "Emphasises ideas or emotions without having to follow a restrictive form.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Direct address",
+  "category": "Rhetorical devices",
+  "definition": "Speaking directly to the audience using ‘you’.",
+  "example": "“You need to act now before it’s too late!”.",
+  "effect": "Engages the reader personally, making them feel involved.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 1
+ },
+ {
+  "name": "Anecdote",
+  "category": "Rhetorical devices",
+  "definition": "A short, personal story used to illustrate a point.",
+  "example": "“I once met a man who lost everything due to climate change.”",
+  "effect": "Makes the argument more relatable and engaging for the reader.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Facts",
+  "category": "Rhetorical devices",
+  "definition": "Proven information that can be verified.",
+  "example": "“Air pollution causes seven million premature deaths annually.”",
+  "effect": "Strengthens arguments by making them seem objective.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Opinions",
+  "category": "Rhetorical devices",
+  "definition": "Personal beliefs presented as truth.",
+  "example": "“This is the only solution for our future.”",
+  "effect": "Persuades the audience by presenting subjective views.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Rhetorical question",
+  "category": "Rhetorical devices",
+  "definition": "A question that doesn’t require an answer, used for effect.",
+  "example": "“If you prick us, do we not bleed? If you tickle us, do we not laugh? If you poison us, do we not die? And if you wrong us, shall we not revenge?” – Merchant of Venice.",
+  "effect": "Encourages the audience to think or reflect on the topic.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 2
+ },
+ {
+  "name": "Emotive language",
+  "category": "Rhetorical devices",
+  "definition": "Words designed to provoke an emotional reaction.",
+  "example": "“This heart-breaking tragedy must never happen again.”",
+  "effect": "Elicits an emotional response, making the message powerful.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 3
+ },
+ {
+  "name": "Statistics",
+  "category": "Rhetorical devices",
+  "definition": "Numerical data used to support an argument.",
+  "example": "“Over 70% of people prefer this product.”",
+  "effect": "Adds authority and makes arguments seem more reliable.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Rule of three",
+  "category": "Rhetorical devices",
+  "definition": "Grouping ideas or adjectives in threes for impact.",
+  "example": "“I came, I saw, I conquered.” Julius Caesar describes conquering modern-day France. This is also a tricolon because it consists of three parallel elements (verbs) that follow the same structure.",
+  "effect": "Enhances memorability and impact, making the message persuasive.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "List",
+  "category": "Rhetorical devices",
+  "definition": "Items, ideas, or actions are presented in a sequence or group.",
+  "example": "“I have a dream that one day every valley shall be exalted, every hill and mountain shall be made low, the rough places will be made plain, and the crooked places will be made straight.” Martin Luther King Jr. lists four symbolic changes he dreams of seeing in his lifetime.",
+  "effect": "The list creates a sense of completeness or thoroughness. It can emphasise the importance of each individual item; or the sheer quantity of things involved.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 2
+ },
+ {
+  "name": "Imperative",
+  "category": "Rhetorical devices",
+  "definition": "An imperative (command) is a type of sentence that gives a command, instruction, or request. It is directed at the audience to provoke action.",
+  "example": "“Close the door”, not “He closed the door”. “Sit down”, not “I am sitting down”. “Make America Great Again!” not “We hope America becomes great again.”",
+  "effect": "The imperative conveys urgency, authority, or directness. It commands the audience to take immediate action, often making the message more forceful and compelling.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 11
+ },
+ {
+  "name": "Chiasmus",
+  "category": "Rhetorical devices",
+  "definition": "Chiasmus is a rhetorical device where two parts of a sentence are flipped around to create a mirror image.",
+  "example": "“Never let a fool kiss you, or a kiss fool you.”",
+  "effect": "Chiasmus reverses the order of words to create balance and symmetry, making the sentence more striking and memorable.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 1
+ },
+ {
+  "name": "Chorus",
+  "category": "Dramatic devices",
+  "definition": "Actors who perform vocally in a group, rather than on their own.",
+  "example": "A Chorus is used in the prologue of Romeo and Juliet to give the audience key bits of context.",
+  "effect": "The chorus analyses/interprets events occurring on stage, often unpacking the motivations or intentions of the characters.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Soliloquy",
+  "category": "Dramatic devices",
+  "definition": "A soliloquy is a speech that a character in a play speaks aloud. It can only be heard by that character and the audience.",
+  "example": "Lady Macbeth hallucinating that she is seeing blood on her hands after killing King Duncan. She says: “Out, damned spot! Out, I say!”.",
+  "effect": "Effect is to reveal/highlight internal conflict within characters and to display rapid changes of mood (such as Macbeth admitting that he would be willing to kill the king).",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Monologue",
+  "category": "Dramatic devices",
+  "definition": "A monologue is a speech given by one character. However, unlike a soliloquy, it is designed to be heard and responded to by the other characters on stage.",
+  "example": "When Macbeth fully commits to killing King Duncan. The monologue marks his descent into darkness and paranoia.",
+  "effect": "Intended to evoke powerful emotions in the audience. Most monologues begin almost gently, soaring to emotional heights before reaching a dramatic and decisive conclusion.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Aside",
+  "category": "Dramatic devices",
+  "definition": "An aside is a short remark made by a character in a play, meant to be heard by the audience but not by other characters.",
+  "example": "In Act 1, Scene 3, Macbeth says, “If chance will have me king, why, chance may crown me without my stir.” This is an aside, as he is speaking to the audience about his thoughts on becoming king.",
+  "effect": "The aside reveals the character’s inner thoughts and feelings, giving the audience insight into their motivations and creating dramatic irony.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Stagecraft",
+  "category": "Dramatic devices",
+  "definition": "Lighting, costume, make-up, props, backdrops, stage machinery.",
+  "example": "A trap door on stage to drop characters into ‘Hell’.",
+  "effect": "Used to enhance the audience experience and make the play come alive.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Act",
+  "category": "Dramatic devices",
+  "definition": "Acts are large portions of the play.",
+  "example": "Tragedies like Romeo & Juliet or Macbeth usually have 5 Acts.",
+  "effect": "Acts organise the play, often into exposition, rising action, climax, falling action and resolution.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Scene",
+  "category": "Dramatic devices",
+  "definition": "Acts are divided into smaller portions called scenes.",
+  "example": "Act 1, scene 2 of Macbeth.",
+  "effect": "Scene changes help move the play on and change the setting/mood on stage.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Tragic hero",
+  "category": "Dramatic devices",
+  "definition": "Noble but flawed protagonist who makes a poor decision and suffers for it.",
+  "example": "Macbeth starts the play as a triumphant hero, but his ambition “overleaps itself, And falls on th’ other”, meaning that he is too ambitious which leads to his downfall.",
+  "effect": "The tragic hero has good qualities but is flawed, which makes them relatable. As a result, we feel pity and experience catharsis during the character’s downfall.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Tragedy",
+  "category": "Dramatic devices",
+  "definition": "A genre of drama built around the sorrowful events that befall a main character.",
+  "example": "Macbeth (bold, much-loved soldier) gets too ambitious and ends up dead.",
+  "effect": "The effect of tragedy is to make the audience feel pity and fear for the characters. As the tragic hero faces a downfall, we connect with their struggles and flaws. This emotional experience leads to catharsis, a sense of relief or emotional cleansing.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Hamartia",
+  "category": "Dramatic devices",
+  "definition": "Hamartia is the tragic flaw or error in judgment that leads to the protagonist’s downfall.",
+  "example": "In Macbeth, Macbeth’s hamartia is his unchecked ambition, which drives him to murder King Duncan.",
+  "effect": "Hamartia causes the protagonist to make critical mistakes, leading to their tragic end.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 1
+ },
+ {
+  "name": "Hubris",
+  "category": "Dramatic devices",
+  "definition": "Hubris is excessive pride or arrogance, often leading the hero to defy the gods or fate, resulting in their downfall.",
+  "example": "In the Greek myth of Icarus, Icarus is so proud of his wings that he thinks he can fly up the heavens and be like the Gods. But he flies too close to the sun, which melts his wings, and Icarus falls into the sea and dies.",
+  "effect": "Hubris leads to the hero’s downfall, illustrating the consequences of overstepping human limitations.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Catharsis",
+  "category": "Dramatic devices",
+  "definition": "Catharsis is the emotional purification or release experienced by the audience after witnessing the tragic hero’s downfall.",
+  "example": "The audience experiences catharsis in Macbeth as they witness his tragic end and reflect on the destructive power of ambition.",
+  "effect": "The audience feels both pity and fear. Pity for the downfall of the tragic hero; and fear because they realise the same thing could happen to them due to their flaws, or due to fate.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Comedy",
+  "category": "Dramatic devices",
+  "definition": "Comedy is a genre which has a happy ending and is often funny.",
+  "example": "Much Ado About Nothing (Shakespeare). We laugh at the folly of men/women in love.",
+  "effect": "Comedy aims to entertain, to engage the audience emotionally, and to provoke thought/discussion.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Audience",
+  "category": "Dramatic devices",
+  "definition": "The group of people who are watching the performance live in the theatre.",
+  "example": "A play aims to create a range of responses in the audience. TOP TIP: When describing the effect of a play, be sure to speak about the audience, not the reader.",
+  "effect": "Plays can have various effects on the audience. They can provoke laughter, shock, silence, grief, or profound reflection from the audience.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 1
+ },
+ {
+  "name": "Noun",
+  "category": "Word types",
+  "definition": "A word that names a person, place, thing or idea.",
+  "example": "“The dog ran through the park.”",
+  "effect": "",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 7
+ },
+ {
+  "name": "Verb",
+  "category": "Word types",
+  "definition": "A word that describes an action, occurrence, or state of being.",
+  "example": "“She sings beautifully.”",
+  "effect": "",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 26
+ },
+ {
+  "name": "Adjective",
+  "category": "Word types",
+  "definition": "A word that describes or modifies a noun.",
+  "example": "“The tall man walked into the room.”",
+  "effect": "",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 29
+ },
+ {
+  "name": "Adverb",
+  "category": "Word types",
+  "definition": "A word that describes or modifies a verb, adjective or another adverb.",
+  "example": "“He ran quickly to catch the bus.”",
+  "effect": "",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 5
+ },
+ {
+  "name": "Pronoun",
+  "category": "Word types",
+  "definition": "A word that takes the place of a noun.",
+  "example": "“She went to the shop.”",
+  "effect": "",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 9
+ },
+ {
+  "name": "Preposition",
+  "category": "Word types",
+  "definition": "A word that shows the relationship between a noun (or pronoun) and another word in the sentence.",
+  "example": "“The book is on the table.”",
+  "effect": "",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Conjunction",
+  "category": "Word types",
+  "definition": "A word that connects words, phrases or clauses.",
+  "example": "“I wanted to go, but I was too tired.”",
+  "effect": "",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Interjection",
+  "category": "Word types",
+  "definition": "A word or phrase that expresses strong emotion or surprise.",
+  "example": "“Wow! That was unexpected.”",
+  "effect": "",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Irony",
+  "category": "From lessons",
+  "definition": "A contrast between expectation and reality.",
+  "example": "",
+  "effect": "",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 4
+ },
+ {
+  "name": "Colloquial language",
+  "category": "From lessons",
+  "definition": "Informal, conversational speech (chatty language that uses informal vocabulary).",
+  "example": "",
+  "effect": "",
+  "texts": [
+   "power-conflict"
+  ],
+  "in_quotes": 1
+ },
+ {
+  "name": "Dramatic monologue",
+  "category": "From lessons",
+  "definition": "A poem spoken by a single character, told from that character’s point of view, as though speaking to another character.",
+  "example": "",
+  "effect": "",
+  "texts": [
+   "power-conflict"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Sonnet (Petrarchan)",
+  "category": "From lessons",
+  "definition": "A 14-line poem structure, traditionally used for love poems.",
+  "example": "",
+  "effect": "",
+  "texts": [
+   "power-conflict"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Ballad",
+  "category": "From lessons",
+  "definition": "A narrative poem often spoken aloud, usually to remember famous tragedies, battles or heroes.",
+  "example": "",
+  "effect": "",
+  "texts": [
+   "power-conflict"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Dactylic dimeter",
+  "category": "From lessons",
+  "definition": "A rhythm of 6 syllables per line (one stressed, two unstressed), as in The Charge of the Light Brigade; creates the sound of galloping horses.",
+  "example": "",
+  "effect": "",
+  "texts": [
+   "power-conflict"
+  ],
+  "in_quotes": 0
+ },
+ {
+  "name": "Extended metaphor",
+  "category": "From lessons",
+  "definition": "A metaphor that continues throughout a poem (e.g. the darkroom in War Photographer; the storm in Storm on the Island; paper in Tissue).",
+  "example": "",
+  "effect": "",
+  "texts": [
+   "power-conflict"
+  ],
+  "in_quotes": 2
+ },
+ {
+  "name": "Religious imagery",
+  "category": "From lessons",
+  "definition": "Images taken from religion, such as Adam, angels and hell.",
+  "example": "",
+  "effect": "",
   "texts": [
    "frankenstein"
-  ]
+  ],
+  "in_quotes": 4
+ },
+ {
+  "name": "Declarative statement",
+  "category": "From lessons",
+  "definition": "A sentence that states something as a fact (e.g. “I too can create desolation”).",
+  "example": "",
+  "effect": "",
+  "texts": [
+   "frankenstein"
+  ],
+  "in_quotes": 3
  },
  {
   "name": "Frame narrative",
+  "category": "From lessons",
   "definition": "A story within a story; used to link Walton and Victor.",
+  "example": "",
+  "effect": "",
   "texts": [
    "frankenstein"
-  ]
+  ],
+  "in_quotes": 0
  }
 ]
