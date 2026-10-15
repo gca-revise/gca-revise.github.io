@@ -67,6 +67,12 @@ Shows for a finished key-vocab set: "Practise Macbeth vocab again", "Back to Mac
 - Also saved: `symbols.csv`, and lesson technique labels in `quotes.csv` (19 quotes). “So foul and fair a day I have not seen” (Macbeth’s first line) is analysed in Lesson 04 but is not in `quotes.csv`.
 - Lessons also hold material not yet captured: comprehension questions and answers, the “Ideal Jacobean woman” word sort (Lesson 06), PETAL paragraph models (Lesson 25), and context facts. Ask the teacher before adding any of it.
 
+## Jekyll and Hyde data (15 Oct)
+- Lessons live in OneDrive: Documents / 2025-6 / Y10 Lessons / 1 Jekyll & Hyde (25 lessons, 4 homework quote sheets). Read through the Microsoft 365 connector. Quote sheets 1-4 and lessons 01-02, 04-09, 12-19, 21, 23 were read; lessons 03, 10, 11, 20, 22, 24, 25 (PETAL/assessment) were not.
+- `quotes.csv`: 42 J&H quotes, 5 master (from the Year 11 document). `vocab.csv`: 22 new J&H words (17 from Key Vocabulary slides, 5 defined elsewhere), 4 shared with Macbeth. `examples_draft` has Claude-written J&H sentences for 9 words; the teacher must check them.
+- **Privacy:** many lesson slides contain class lists and test scores with students' first names. None were copied. Do not copy names from lessons. Also skip “Jekyll & Hyde Key Quotes …docx” (named after a student) and the “Responding to Feedback” sheets.
+- **Still to do for J&H:** the user needs to upload the novel text (public domain; Project Gutenberg is blocked from the cloud session) so chapters, speakers and wording can be checked and saved to `source/`. Decide which wording of “My devil had been long caged…” to keep. Decide core lists. Also not read: `Full Novel Quote Sheet.docx` (may hold more quotes) and the revision booklet.
+
 ## Next step
 1. The design is finished and the user is happy with it (phone and laptop). The user opens the artifact link to look (the Chrome extension cannot connect from the Chromebook's Linux container).
 2. Read the Key Vocabulary slides from the Macbeth lessons and build the real `vocab.csv` (word, definition, example sentence, text). (Data needs are in `plan.md`: `vocab.csv` with text tags and example sentences, `quotes.csv` with text, technique(s) and speaker, `techniques.csv`.) The user brings the real vocab lists from school (paste or spreadsheet). Claude makes the real `vocab.csv` with a text column (a word can sit in 2 or 3 texts). Also useful: a few real quotes and techniques to test the layout.
