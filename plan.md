@@ -85,3 +85,8 @@ Claude can draft or tidy the files from lists the teacher supplies; the teacher 
 - **Know it** (all quotes): passive recognition. Who said it, which act, match quote to character or theme, pick the missing word from options. Mostly multiple choice and matching, no typing needed.
 - **Master it** (`master = yes`): the few quotes students must use in essays. Typed gap, finish the quote, spot the technique (technique analysis). Starts with the 5 quotes from the Year 11 revision document; more can be added later by changing `master` from no to yes.
 - **Model paragraph library (later):** a separate file keyed by quote id. The teacher will supply her own paragraphs (right style). Claude does not draft them.
+
+## Frankenstein (15 Oct)
+- 78 quotes loaded (ids `fk-…`), 14 midpoint items flagged with `midpoint_key = yes`. Core (`master`) not decided yet.
+- Chapter numbers follow the 1818 Gutenberg text (Letters 1–4, chapters 1–24); the teacher's class edition may number differently.
+- Vocab from lessons 1–7, 11 and 14–18 added; lessons 9, 10 and the Creature lesson were too large to read and are still to do.

@@ -88,6 +88,17 @@ Shows for a finished key-vocab set: "Practise Macbeth vocab again", "Back to Mac
 - Gaps: no revision guide pages for Remains, War Photographer, Poppies, Tissue, Kamikaze, Charge, Bayonet Charge (their data comes from lessons and the Easter sheet); Tissue and Storm on the Island have few labelled techniques; the Unseen Poetry folder was not read.
 - Privacy: no class-list names were copied from the poetry lessons.
 
+## Frankenstein data (15 Oct)
+- Sources: the five character quote sheets plus the midpoint list (`1 Quote Sheets`), lessons 1–7, 11 and 14–18 in OneDrive > English Year 10 2026 > 1 Frankenstein, and the Project Gutenberg 1818 text (`source/frankenstein.txt`, public domain, so it is in git).
+- New: 78 Frankenstein quotes in `quotes.csv` (`fk-<sheet>-<nn>`), each with speaker, chapter (letters are "Letter 1" to "Letter 4"; chapters 1 to 24 follow the 1818 numbering), the sheet's note, and `midpoint_number` / `midpoint_key = yes` for the 14 items on the midpoint list. `matches_source = check` on 15 quotes where the teacher's wording differs from the 1818 text (the novel's wording is recorded in `context`).
+- Speaker fix: "I was the slave, not the master, of an impulse…" is Victor in the novel (Chapter 24), though the sheet says the Creature. Changed to Victor and flagged `check`.
+- Chapter note: single words ("Monster", "Fiend", "Demon") are used many times; chapter is "Various". The 1818 text spells "demon" as "dæmon".
+- Vocab: 83 new rows and 5 merged rows in `vocab.csv` (214 words in total): 13 Key Vocabulary slide words, 8 terms defined in lessons (e.g. Gothic literature, Romantic Movement, Enlightenment, cautionary tale, dehumanise), and 62 words from the "Glossary" boxes on the reading slides. Shared words (Ambition, Embodiment, Transgress, Traumatised, Pivotal moment) now also list Frankenstein. Claude's example sentences are in `examples_draft`. `core` still blank.
+- Also added: 8 techniques in `techniques.csv`, 4 symbols (eyes x3, fire) in `symbols.csv`, technique labels on 15 quotes (`lesson_techniques`).
+- **Not read:** `Lesson 09 & 10 Crime and Justice.pptx` (153 MB) and `Lesson 10 The Creature.pptx` (140 MB) are over the connector's 100 MB limit; Lesson 08 William, 12, 13 (assessment) and the MTP folder were skimmed or skipped. "Miscarriage of justice" is on the lesson 11 slide but its definition is in lessons 9–10. To add it: the teacher can upload a smaller copy of those two lessons, or paste the vocab slides.
+- **Still to decide:** which Frankenstein quotes are core (`master`; suggested start: the 14 midpoint-list items; nothing set yet), wording differences on the 15 `check` quotes, the vocab core list.
+- Privacy: no student names copied.
+
 ## Next step
 1. The design is finished and the user is happy with it (phone and laptop). The user opens the artifact link to look (the Chrome extension cannot connect from the Chromebook's Linux container).
 2. Read the Key Vocabulary slides from the Macbeth lessons and build the real `vocab.csv` (word, definition, example sentence, text). (Data needs are in `plan.md`: `vocab.csv` with text tags and example sentences, `quotes.csv` with text, technique(s) and speaker, `techniques.csv`.) The user brings the real vocab lists from school (paste or spreadsheet). Claude makes the real `vocab.csv` with a text column (a word can sit in 2 or 3 texts). Also useful: a few real quotes and techniques to test the layout.
