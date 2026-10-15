@@ -100,9 +100,10 @@ Shows for a finished key-vocab set: "Practise Macbeth vocab again", "Back to Mac
 - Privacy: no student names copied.
 
 ## Next step
-1. The design is finished and the user is happy with it (phone and laptop). The user opens the artifact link to look (the Chrome extension cannot connect from the Chromebook's Linux container).
-2. Read the Key Vocabulary slides from the Macbeth lessons and build the real `vocab.csv` (word, definition, example sentence, text). (Data needs are in `plan.md`: `vocab.csv` with text tags and example sentences, `quotes.csv` with text, technique(s) and speaker, `techniques.csv`.) The user brings the real vocab lists from school (paste or spreadsheet). Claude makes the real `vocab.csv` with a text column (a word can sit in 2 or 3 texts). Also useful: a few real quotes and techniques to test the layout.
-3. Then plan Version 2 (the working web page) in detail and build it one mode at a time: key vocab first, quotes after.
+All five texts' data is loaded (Macbeth, Jekyll and Hyde, An Inspector Calls, Power and Conflict, Frankenstein). Work on the laptop branch `claude/beautiful-dijkstra-9kscbx` (pull it first).
+1. Teacher checks (she does these, Claude helps): choose the vocab `core` list for every text; read the `examples_draft` sentences; check the poem summaries and context in `poems.csv`; look at the `matches_source = check` quotes.
+2. Then plan Version 2 (the working web page) in detail and build it one mode at a time: key vocab first, quotes after. Design is finished (phone and laptop).
+3. Not yet read: Frankenstein lessons 12 and 13 (assessment) and the `MTP Frankenstein` folder; the Unseen Poetry folder.
 
 ## Separate from this project
 The user also has a learning plan (Linux terminal basics, object-oriented Python on Codecademy, later CLAUDE.md practice, handoffs, subagents, skills, MCP). Turn it into a plan file only after the user confirms it.
