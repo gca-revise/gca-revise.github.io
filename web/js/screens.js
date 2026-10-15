@@ -52,11 +52,13 @@ const Screens = {
     const techLearned = techItems.filter((w) => retired.has(w.id)).length;
     return `
       <header class="home-head">
-        <img class="crest" src="img/crest.png" alt="School crest">
-        <div>
-          <h1>GCA Revise</h1>
-          <p class="sub">Pick a text and start revising.</p>
-        </div>
+        <a class="home-link" href="#/" aria-label="GCA Revise home">
+          <img class="crest" src="img/crest.png" alt="School crest">
+          <div>
+            <h1>GCA Revise</h1>
+            <p class="sub">Pick a text and start revising.</p>
+          </div>
+        </a>
       </header>
       <main class="wrap">
         <h2 class="label">Your texts</h2>
@@ -79,8 +81,10 @@ const Screens = {
         <div class="wrap head-inner">
           <div class="head-top">
             <a class="back" href="#/" aria-label="Back to all texts">${backIcon}</a>
-            <img class="crest-small" src="img/crest.png" alt="School crest">
-            <span class="head-brand">GCA Revise</span>
+            <a class="brand-link" href="#/" aria-label="GCA Revise home">
+              <img class="crest-small" src="img/crest.png" alt="School crest">
+              <span class="head-brand">GCA Revise</span>
+            </a>
           </div>
           <h1>${esc(title)}</h1>
           <p class="sub">${esc(subtitle)}</p>

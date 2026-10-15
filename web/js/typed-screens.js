@@ -177,7 +177,7 @@ Object.assign(Screens, {
       <div class="run done">
         <main class="done-main">
           <div class="done-head">
-            <img src="img/crest.png" alt="School crest" class="done-crest">
+            <a href="#/" aria-label="GCA Revise home"><img src="img/crest.png" alt="School crest" class="done-crest"></a>
             <div>
               <h1>Set complete!</h1>
               <p>${run.textId === "techniques" ? `You've learned all ${total} techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " in " + esc(Data.techniqueSet(run.setId).name)}.` : `You've ${run.level === "master" ? "mastered" : "learned"} all ${total} ${run.subject === "quote" ? "quotes" : "key vocab words"} in ${esc(t.name)}.`}</p>

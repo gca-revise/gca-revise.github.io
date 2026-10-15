@@ -142,7 +142,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outlin
   display: flex; align-items: center; justify-content: center;
   flex: none;
 }
-.crest-small, .head-brand { display: none; }
+.brand-link, .home-link { display: flex; align-items: center; gap: 14px; color: inherit; }
+.brand-link:hover .head-brand, .home-link:hover h1 { text-decoration: underline; }
+.crest-small { display: block; width: 32px; height: auto; }
+.head-brand { display: inline; font-weight: 700; color: rgba(255, 255, 255, 0.85); font-size: 15px; }
 .page-head h1 { font-size: 36px; font-weight: 800; line-height: 1.05; }
 .page-head .sub { color: rgba(255, 255, 255, 0.85); }
 
