@@ -25,7 +25,7 @@ function route() {
 app.addEventListener("click", (event) => {
   const button = event.target.closest(".mode-btn");
   if (!button) return;
-  Storage.setMode(button.dataset.mode);
+  Store.setMode(button.dataset.mode);
   route();
 });
 

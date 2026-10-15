@@ -1,17 +1,21 @@
 // Saving things in the student's own browser (nothing is sent anywhere).
 // Every read and write is wrapped so the page still works if the browser blocks saving.
-const Storage = {
+const Store = {
   KEY: "gca-revise-v1",
+
+  // A copy kept in memory, so things still work for this visit if the browser refuses to save.
+  memory: {},
 
   load() {
     try {
-      return JSON.parse(localStorage.getItem(this.KEY)) || {};
+      return JSON.parse(localStorage.getItem(this.KEY)) || this.memory;
     } catch (e) {
-      return {};
+      return this.memory;
     }
   },
 
   save(state) {
+    this.memory = state;
     try {
       localStorage.setItem(this.KEY, JSON.stringify(state));
     } catch (e) {

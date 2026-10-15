@@ -32,7 +32,7 @@ const penIcon = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" str
 
 const Screens = {
   home() {
-    const retired = Storage.retiredIds();
+    const retired = Store.retiredIds();
     const cards = Data.texts.map((t) => {
       const look = TEXT_LOOK[t.id];
       const words = Data.wordsFor(t.id);
@@ -108,14 +108,14 @@ const Screens = {
     const t = Data.text(id);
     if (!t) return Screens.notFound();
     const look = TEXT_LOOK[id];
-    const retired = Storage.retiredIds();
+    const retired = Store.retiredIds();
     const words = Data.wordsFor(id);
     const quotes = Data.quotesFor(id);
     const learned = words.filter((w) => retired.has(w.id)).length;
     return `
       ${Screens.pageHead(t.name, "What do you want to practise?", look.colour, look.tint)}
       <main class="wrap" style="--accent:${look.colour};--tint:${look.tint}">
-        ${Screens.modeSwitch(Storage.getMode())}
+        ${Screens.modeSwitch(Store.getMode())}
         <div class="card-grid">
           ${Screens.modeCard("Quotes", 0, quotes.length, "quote", [
             ["Fill the gap", `#/text/${id}/quotes-gap`],
