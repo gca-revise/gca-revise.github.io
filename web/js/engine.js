@@ -608,7 +608,8 @@ const QuoteTools = {
 
   // The techniques a quote is labelled with, best first (word types like "Verb" come last).
   techniqueChoices(q, techniques) {
-    const info = Object.fromEntries(techniques.map((t) => [t.name, t]));
+    // Terms marked spot: false (Theme, Speaker, Act...) are never offered or used as the answer.
+    const info = Object.fromEntries(techniques.filter((t) => t.spot !== false).map((t) => [t.name, t]));
     const names = (q.technique_matches || []).filter((n) => info[n]);
     const plain = names.filter((n) => info[n].category !== "Word types");
     return plain.length ? plain : names;
@@ -647,7 +648,8 @@ const QuoteTools = {
 
   // Wrong options for "Spot the technique": other techniques, preferring the same kind
   // (sound, structural, poetic...), never one the quote is labelled with.
-  techOptionsFor(techniques, random = Math.random) {
+  techOptionsFor(allTechniques, random = Math.random) {
+    const techniques = allTechniques.filter((t) => t.spot !== false);
     return (item) => {
       const choices = QuoteTools.techniqueChoices(item.quote, techniques);
       const pick = choices[Math.floor(random() * choices.length)];

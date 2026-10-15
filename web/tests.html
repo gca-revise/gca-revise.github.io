@@ -415,6 +415,14 @@ const pool = [
   }
   check("Spot the technique gives four different options with the right one", good);
   check("a technique the quote is labelled with is never a wrong option", !labelledShown);
+  // Terms that are not devices are kept out of Spot the technique.
+  const withTerms = techniques.concat([{ name: "Theme", category: "Literary techniques", spot: false }, { name: "Narrative voice", category: "Literary techniques", spot: true }]);
+  const termQuote = { id: "t1", text: "macbeth", master: true, quote: "A quote with only a theme", gap_word: "", technique_matches: ["Theme"] };
+  check("a quote labelled only with a non-device term has no Spot the technique question", QuoteTools.masterItems([termQuote], "macbeth", "mtech", withTerms).length === 0);
+  const optsFor2 = QuoteTools.techOptionsFor(withTerms);
+  let themeShown = false;
+  for (let i = 0; i < 80; i++) if (optsFor2(techItems.find((t) => t.id === "mt:a1")).some((o) => o.word === "Theme")) themeShown = true;
+  check("a term marked spot: false is never offered as an option", !themeShown);
   const st = new Session({ items: techItems, mode: "learn", kind: "choose", optionsFor });
   const first = st.next();
   const rt = st.answerChoice(first.answerId);

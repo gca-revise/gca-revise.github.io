@@ -211,6 +211,8 @@ def build_techniques(quotes):
             "effect": r.get("effect", "").strip(),
             "texts": text_ids(r["texts"], f"technique '{name}'"),
             "in_quotes": sum(1 for label in labels if pattern.search(label)),
+            # "no" keeps terms that are not devices (Theme, Speaker, Act...) out of the Spot the technique game.
+            "spot": r.get("spot_the_technique", "yes").strip().lower() != "no",
         })
     return out
 
