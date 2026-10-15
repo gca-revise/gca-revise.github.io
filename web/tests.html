@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GCA Revise: rule checks</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 640px; margin: 24px auto; padding: 0 16px; }
+  .pass { color: #17724B; } .fail { color: #B42A47; font-weight: 700; }
+  #summary { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+  li { margin: 4px 0; }
+</style>
+</head>
+<body>
+<h1>Rule checks</h1>
+<div id="summary">Running...</div>
+<ul id="results"></ul>
+<script src="js/engine.js"></script>
+<script>
+const results = [];
+function check(name, condition) { results.push({ name, ok: !!condition }); }
+
+// Make a set of words: w1..wN.
+function words(n) {
+  return Array.from({ length: n }, (_, i) => ({ id: `w${i + 1}`, word: `Word${i + 1}`, definition: `def ${i + 1}` }));
+}
+
+// ---- Typed answers ----
+check("capitals ignored", Engine.isCorrect("AMBITION", "Ambition"));
+check("extra spaces ignored", Engine.isCorrect("  free   will ", "Free will"));
+check("accents ignored (facade)", Engine.isCorrect("facade", "Façade"));
+check("hyphen or space both fine", Engine.isCorrect("self fulfilling prophecy", "Self-fulfilling prophecy"));
+check("hyphen typed, space in word", Engine.isCorrect("cliff-hanger", "Cliff-hanger"));
+check("bracket optional", Engine.isCorrect("post traumatic stress disorder", "Post-traumatic stress disorder (PTSD)"));
+check("bracket included also fine", Engine.isCorrect("post-traumatic stress disorder (ptsd)", "Post-traumatic stress disorder (PTSD)"));
+check("spelling mistake is wrong", !Engine.isCorrect("ambigous", "ambiguous"));
+check("blank is wrong", !Engine.isCorrect("   ", "ambiguous"));
+
+// ---- Learn the set ----
+{
+  const s = new Session({ items: words(5), mode: "learn" });
+  const seen = [];
+  let prev = null, twice = false;
+  for (let i = 0; i < 5; i++) {
+    const w = s.next();
+    seen.push(w.id);
+    if (prev === w.id) twice = true;
+    prev = w.id;
+    s.answer("wrong"); // get it wrong so nothing retires
+  }
+  check("each word asked once before any repeat", new Set(seen).size === 5);
+  check("same word not twice in a row (first pass)", !twice);
+}
+{
+  const s = new Session({ items: words(6), mode: "learn" });
+  let twice = false, prev = null;
+  for (let i = 0; i < 60; i++) {
+    const w = s.next();
+    if (prev === w.id) twice = true;
+    prev = w.id;
+    s.answer("wrong");
+  }
+  check("same word never twice in a row (60 wrong answers)", !twice);
+}
+{
+  const s = new Session({ items: words(3), mode: "learn" });
+  const w = s.next();
+  const r = s.answer(w.word);
+  check("correct typed answer retires the word", r.correct && r.retiredNow && s.retired.has(w.id));
+  check("a point is scored", s.points === 1 && s.right === 1);
+  check("learned count goes up", s.learnedCount() === 1);
+}
+{
+  const s = new Session({ items: words(3), mode: "learn" });
+  const w = s.next();
+  const r = s.answer("nope");
+  check("wrong answer does not retire", !r.correct && !s.retired.has(w.id));
+  check("wrong answer scores nothing and is counted", s.points === 0 && s.wrong === 1);
+  check("missed word is recorded", s.trickiest()[0].word === w.word && s.trickiest()[0].times === 1);
+}
+{
+  // Missed words come back; the set ends only when every word is retired.
+  const s = new Session({ items: words(4), mode: "learn" });
+  let questions = 0, missedOne = false;
+  while (s.next() && questions < 100) {
+    questions++;
+    if (!missedOne) { s.answer("wrong"); missedOne = true; }
+    else s.answer(s.current.word);
+  }
+  check("set completes after all words are right", s.isComplete() && s.learnedCount() === 4);
+  check("a missed word came back (5 questions for 4 words)", questions === 5);
+  check("next() returns nothing when complete", s.next() === null);
+}
+{
+  const s = new Session({ items: words(3), mode: "learn", retiredIds: new Set(["w1", "w2", "w3"]) });
+  check("already-learned set is complete straight away", s.isComplete() && s.next() === null);
+}
+{
+  const s = new Session({ items: words(3), mode: "learn", retiredIds: new Set(["w1"]) });
+  const asked = new Set();
+  for (let i = 0; i < 20; i++) { const w = s.next(); if (!w) break; asked.add(w.id); s.answer("wrong"); }
+  check("learned words are not asked again", !asked.has("w1") && asked.size === 2);
+}
+
+// ---- Streak and best streak ----
+{
+  const s = new Session({ items: words(5), mode: "learn" });
+  const answerRight = () => { s.next(); s.answer(s.current.word); };
+  const answerWrong = () => { s.next(); s.answer("zzz"); };
+  answerRight(); answerRight(); answerRight(); answerWrong(); answerRight();
+  check("streak resets on a wrong answer", s.streak === 1);
+  check("best streak remembered", s.bestStreak === 3);
+}
+
+// ---- Free practice ----
+{
+  const s = new Session({ items: words(3), mode: "free" });
+  let ended = false;
+  for (let i = 0; i < 30; i++) {
+    const w = s.next();
+    if (!w) { ended = true; break; }
+    s.answer(w.word);
+  }
+  check("free practice never ends", !ended && !s.isComplete());
+  check("free practice retires nothing", s.retired.size === 0);
+  check("free practice still scores points", s.points === 30);
+}
+
+// ---- One word only ----
+{
+  const s = new Session({ items: words(1), mode: "free" });
+  check("a one-word set still works", s.next().id === "w1" && s.next().id === "w1");
+}
+
+// ---- Show results ----
+const failed = results.filter((r) => !r.ok).length;
+document.getElementById("summary").textContent =
+  failed === 0 ? `All ${results.length} checks passed` : `${failed} of ${results.length} checks FAILED`;
+document.getElementById("summary").className = failed === 0 ? "pass" : "fail";
+document.getElementById("results").innerHTML = results
+  .map((r) => `<li class="${r.ok ? "pass" : "fail"}">${r.ok ? "PASS" : "FAIL"}: ${r.name}</li>`)
+  .join("");
+</script>
+</body>
+</html>

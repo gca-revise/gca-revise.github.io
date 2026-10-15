@@ -34,8 +34,21 @@ const Store = {
     this.save(state);
   },
 
-  // Ids of words the student has learned (retired). Filled in from stage 3 onwards.
+  // Ids of words the student has learned (retired).
   retiredIds() {
     return new Set(this.load().retired || []);
+  },
+
+  // Save one answer: right/wrong counts per word, and the word as learned if it just retired.
+  recordAnswer(id, correct, retiredNow) {
+    const state = this.load();
+    state.stats = state.stats || {};
+    const entry = state.stats[id] || (state.stats[id] = { right: 0, wrong: 0 });
+    if (correct) entry.right += 1;
+    else entry.wrong += 1;
+    if (retiredNow) {
+      state.retired = Array.from(new Set([...(state.retired || []), id]));
+    }
+    this.save(state);
   },
 };
