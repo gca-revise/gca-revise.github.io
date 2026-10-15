@@ -100,7 +100,7 @@ Shows for a finished key-vocab set: "Practise Macbeth vocab again", "Back to Mac
 - Privacy: no student names copied.
 
 ## Next step
-All five texts' data is loaded (Macbeth, Jekyll and Hyde, An Inspector Calls, Power and Conflict, Frankenstein). Work on the laptop branch `claude/beautiful-dijkstra-9kscbx` (pull it first).
+All five texts' data is loaded (Macbeth, Jekyll and Hyde, An Inspector Calls, Power and Conflict, Frankenstein). The cloud branch was merged into `main` (pull request #1), so work on `main`. **Web build plan drafted 15 Oct: `plan-web-build.md` (waiting for the teacher's approval; stages 1-9, start with the data prep script).**
 1. Teacher checks (she does these, Claude helps): choose the vocab `core` list for every text; read the `examples_draft` sentences; check the poem summaries and context in `poems.csv`; look at the `matches_source = check` quotes.
 2. Then plan Version 2 (the working web page) in detail and build it one mode at a time: key vocab first, quotes after. Design is finished (phone and laptop).
 3. Not yet read: Frankenstein lessons 12 and 13 (assessment) and the `MTP Frankenstein` folder; the Unseen Poetry folder.
