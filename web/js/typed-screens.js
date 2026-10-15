@@ -84,7 +84,7 @@ Object.assign(Screens, {
           .join("")
       : "";
     const sentence = run.sentence
-      ? `<p class="fb-sentence"><span>In context</span>${sentenceHtml}</p>`
+      ? `<p class="fb-sentence"><span class="fb-sentence-label">In context</span><span class="fb-sentence-body">${sentenceHtml}</span></p>`
       : "";
     const chips = right
       ? `<div class="chips"><span class="chip">+1 point</span><span class="chip">Streak ${s.streak}</span></div>`

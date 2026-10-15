@@ -51,6 +51,17 @@ check("slip of one letter is 'near'", Engine.isNear("ambigous", "Ambiguous") && 
 check("swapped letters are 'near'", Engine.isNear("recieve", "Receive"));
 check("a different word is not 'near'", !Engine.isNear("banana", "Ambiguous"));
 check("a correct answer is not 'near'", !Engine.isNear("ambiguous", "Ambiguous"));
+check("nihilist accepted for nihilistic", Engine.isCorrect("nihilist", "Nihilistic"));
+check("nihilism accepted for nihilistic", Engine.isCorrect("nihilism", "Nihilistic"));
+check("nihilistic accepted for nihilist", Engine.isCorrect("nihilistic", "Nihilist"));
+check("patriarchy accepted for patriarchal", Engine.isCorrect("patriarchy", "Patriarchal"));
+check("patriarchal accepted for patriarchy", Engine.isCorrect("patriarchal", "Patriarchy"));
+check("ambition accepted for ambitious", Engine.isCorrect("ambitious", "Ambition"));
+check("power accepted for powerful", Engine.isCorrect("powerful", "Power"));
+check("prophecies accepted for prophecy", Engine.isCorrect("prophecies", "Prophecy"));
+check("tragic is not tragedy-level loose (tragic vs tragedy still rejected)", !Engine.isCorrect("tragedy", "Tragic hero"));
+check("different words stay different (fate / fatal)", !Engine.isCorrect("fatal", "Fate"));
+check("different words stay different (free / freedom is fine, will / wilful not)", !Engine.isCorrect("wilful", "Free will"));
 check("session reports near", (() => {
   const s = new Session({ items: [{ id: "a", word: "Ambiguous", definition: "d" }], mode: "learn" });
   s.next();

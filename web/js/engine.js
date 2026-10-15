@@ -20,7 +20,8 @@ const Engine = {
   // Word endings trimmed when comparing, so different forms of a word match
   // (subvert / subverting, ambiguous / ambiguity, conjure / conjuration).
   SUFFIXES: ["ations", "ation", "nesses", "ness", "ments", "ment", "ities", "ity", "ings", "ing",
-             "ious", "ous", "ives", "ive", "ally", "ly", "al", "ed", "es", "s", "e"],
+             "istic", "ists", "ist", "isms", "ism", "ical", "ic", "ions", "ion",
+             "ious", "ous", "ives", "ive", "ally", "ly", "al", "ed", "es", "s", "e", "y"],
 
   // Cut one ending off a single word. A stem is never shorter than 4 letters,
   // so short words like "fate" and "fat" are not mixed up.
@@ -55,11 +56,24 @@ const Engine = {
     return [String(answer), String(answer).replace(/\(.*?\)/g, "")];
   },
 
+  // Two word stems count as the same word if they are equal, or if one is the start of the
+  // other (at least 5 letters shared, 2 or 3 extra): power / powerful. One extra letter is not
+  // enough, so a slip like "ambigous" for "ambiguous" is still a spelling mistake.
+  sameStem(a, b) {
+    if (a === b) return true;
+    const [short, long] = a.length <= b.length ? [a, b] : [b, a];
+    const extra = long.length - short.length;
+    return short.length >= 5 && long.startsWith(short) && extra >= 2 && extra <= 3;
+  },
+
   // True if the typed answer matches, ignoring lead-in words and the form of the word.
   isCorrect(typed, answer) {
-    const given = Engine.keyTokens(typed).join(" ");
-    if (!given) return false;
-    return Engine.variants(answer).some((v) => Engine.keyTokens(v).join(" ") === given);
+    const given = Engine.keyTokens(typed);
+    if (given.length === 0) return false;
+    return Engine.variants(answer).some((v) => {
+      const target = Engine.keyTokens(v);
+      return target.length === given.length && target.every((t, i) => Engine.sameStem(t, given[i]));
+    });
   },
 
   // How many single-letter changes (add, remove, change, swap neighbours) turn a into b.
@@ -107,7 +121,7 @@ const Engine = {
     for (let i = 0; i + keys.length <= found.length; i++) {
       let ok = true;
       for (let j = 0; j < keys.length && ok; j++) {
-        if (found[i + j].stem !== keys[j]) ok = false;
+        if (!Engine.sameStem(found[i + j].stem, keys[j])) ok = false;
         if (ok && j > 0 && !/^[\s\-\u2010-\u2015]+$/.test(text.slice(found[i + j - 1].end, found[i + j].start))) ok = false;
       }
       if (ok) {
