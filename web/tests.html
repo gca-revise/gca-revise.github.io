@@ -85,6 +85,11 @@ check("bold: phrase", boldText("Shakespeare breaks the natural order here.", "Th
 check("bold: phrase in another form", boldText("She subverts gender expectations.", "Subvert gender expectations") === "subverts gender expectations");
 check("bold: hyphenated phrase", boldText("It is a self-fulfilling prophecy.", "Self-fulfilling prophecy") === "self-fulfilling prophecy");
 check("bold: accents", boldText("A false facade of grief.", "Façade") === "facade");
+check("bold: Inspect does not bold Inspector", boldText("The Inspector inspects their lives.", "Inspect") === "inspects");
+check("bold: Set bolds only the word set", boldText("Priestley’s set is heavy.", "Set") === "set");
+check("transgresses accepted for transgress", Engine.isCorrect("transgresses", "Transgress"));
+check("transgress accepted for transgressed", Engine.isCorrect("transgress", "Transgressed"));
+check("bold: transgresses", boldText("Jekyll transgresses the limits.", "Transgress") === "transgresses");
 check("bold: nothing found leaves text alone", Engine.markWord("Nothing here.", "Hubris").length === 1 && !Engine.markWord("Nothing here.", "Hubris")[0].bold);
 check("bold: pieces join back to the sentence", Engine.markWord("Macbeth shows hubris in Act 5.", "Hubris").map((p) => p.text).join("") === "Macbeth shows hubris in Act 5.");
 

@@ -71,9 +71,8 @@ def build_vocab():
             problems.append(f"{where}: not tagged to any text")
         approved = split(r["examples_text"], "|")
         drafts = split(r["examples_draft"], "|")
-        high = split(r.get("examples_high", ""), "|")
-        # The game shows `examples_high` (high-level sentences about the text) first,
-        # then approved sentences, then drafts. "approved" lets us find unchecked drafts later.
+        # The game shows the high-level sentences from sentences.csv first (one per text the word
+        # belongs to), then approved sentences, then drafts. "approved" lets us find unchecked drafts later.
         out.append({
             "id": r["id"],
             "word": r["word"].strip(),
@@ -81,11 +80,38 @@ def build_vocab():
             "texts": texts,
             "topic": r["topic"].strip(),
             "examples": approved or drafts,
-            "examples_high": high,
+            "examples_high": [],  # filled in from sentences.csv below
             "examples_approved": bool(approved),
             "core": r["core"].strip().lower() == "yes",
         })
     return out
+
+
+def attach_sentences(vocab):
+    """Add the high-level sentences from sentences.csv to each word: [{text, sentence}, ...]."""
+    by_id = {w["id"]: w for w in vocab}
+    seen = set()
+    for r in read("sentences"):
+        where = f"sentence for '{r['id']}' ({r['text']})"
+        word = by_id.get(r["id"])
+        text = TEXT_IDS.get(r["text"], r["text"])
+        if word is None:
+            problems.append(f"{where}: no such word id")
+            continue
+        if text not in word["texts"]:
+            problems.append(f"{where}: the word is not tagged to that text")
+            continue
+        if (r["id"], text) in seen:
+            problems.append(f"{where}: duplicate")
+            continue
+        if not r["sentence"].strip():
+            problems.append(f"{where}: empty sentence")
+            continue
+        seen.add((r["id"], text))
+        word["examples_high"].append({"text": text, "sentence": r["sentence"].strip()})
+    # Report any word/text pair that has no high-level sentence yet.
+    missing = [(w["id"], t) for w in vocab for t in w["texts"] if (w["id"], t) not in seen]
+    return missing
 
 
 def build_quotes():
@@ -150,9 +176,11 @@ def build_symbols():
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
+    vocab = build_vocab()
+    missing_sentences = attach_sentences(vocab)
     data = {
         "texts": TEXTS,
-        "vocab": build_vocab(),
+        "vocab": vocab,
         "quotes": build_quotes(),
         "poems": build_poems(),
         "techniques": build_techniques(),
@@ -162,7 +190,6 @@ def main():
         with open(OUT / f"{name}.json", "w", encoding="utf-8") as f:
             json.dump(value, f, ensure_ascii=False, indent=1)
 
-    vocab = data["vocab"]
     no_sentence = sum(1 for w in vocab if not w["examples"] and not w["examples_high"])
     print(f"Wrote {len(data)} files to {OUT.relative_to(ROOT)}/")
     print(f"  texts {len(data['texts'])}, vocab {len(vocab)}, quotes {len(data['quotes'])}, "
@@ -170,7 +197,8 @@ def main():
     for t in TEXTS:
         n = sum(1 for w in vocab if t["id"] in w["texts"])
         print(f"  {t['name']}: {n} words")
-    print(f"  words with a high-level sentence: {sum(1 for w in vocab if w['examples_high'])}")
+    print(f"  high-level sentences: {sum(len(w['examples_high']) for w in vocab)} "
+          f"(word/text pairs still without one: {len(missing_sentences)})")
     print(f"  words with an approved sentence: {sum(1 for w in vocab if w['examples_approved'])}; "
           f"draft only: {sum(1 for w in vocab if w['examples'] and not w['examples_approved'])}; "
           f"no sentence: {no_sentence}")

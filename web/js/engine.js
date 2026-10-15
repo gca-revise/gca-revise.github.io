@@ -32,6 +32,8 @@ const Engine = {
     }
     const ordered = Engine.SUFFIXES.slice().sort((a, b) => b.length - a.length);
     for (const suffix of ordered) {
+      // A plain "s" is not trimmed from words that end in "ss" (transgress, stress).
+      if (suffix === "s" && word.endsWith("ss")) continue;
       if (word.endsWith(suffix) && word.length - suffix.length >= 4) {
         return word.slice(0, -suffix.length);
       }
@@ -121,7 +123,7 @@ const Engine = {
     for (let i = 0; i + keys.length <= found.length; i++) {
       let ok = true;
       for (let j = 0; j < keys.length && ok; j++) {
-        if (!Engine.sameStem(found[i + j].stem, keys[j])) ok = false;
+        if (found[i + j].stem !== keys[j]) ok = false;
         if (ok && j > 0 && !/^[\s\-\u2010-\u2015]+$/.test(text.slice(found[i + j - 1].end, found[i + j].start))) ok = false;
       }
       if (ok) {
