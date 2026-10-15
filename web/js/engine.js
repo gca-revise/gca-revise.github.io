@@ -339,3 +339,121 @@ class Session {
       .map((w) => ({ word: w.word, times: this.missed[w.id] }));
   }
 }
+
+// A matching game: rounds of word/meaning pairs. Tap a word then its meaning (or the other way round).
+// A round with no slips earns one point; any slip means the round scores nothing.
+// Matching is practice only: it never retires a word.
+class MatchGame {
+  constructor({ items, mode, retiredIds = new Set(), size = 4, random = Math.random }) {
+    this.items = items;
+    this.mode = mode;
+    this.retired = new Set(retiredIds);
+    this.size = size;
+    this.random = random;
+    this.bag = [];
+    this.points = 0;
+    this.streak = 0;
+    this.bestStreak = 0;
+    this.rounds = 0;
+    this.perfectRounds = 0;
+    this.words = [];       // the words in this round
+    this.left = [];        // the words, in the order shown on the left
+    this.right = [];       // the same words, in the order their meanings are shown on the right
+    this.matched = new Set();
+    this.slips = 0;
+    this.pending = null;   // {side: "w" or "m", id} - what the student has tapped so far
+    this.slip = null;      // {wordId, meaningId} for the last wrong pair (cleared on the next tap)
+    this.roundDone = false;
+  }
+
+  // Words to draw rounds from: those not yet learned (if there are enough), otherwise all.
+  pool() {
+    if (this.mode === "learn") {
+      const open = this.items.filter((w) => !this.retired.has(w.id));
+      if (open.length >= this.size) return open;
+    }
+    return this.items;
+  }
+
+  learnedCount() {
+    return this.items.filter((w) => this.retired.has(w.id)).length;
+  }
+
+  // Start a new round. Words that mean almost the same thing (nihilism / nihilistic) never share a round.
+  newRound() {
+    const pool = this.pool();
+    const size = Math.min(this.size, pool.length);
+    const poolIds = new Set(pool.map((w) => w.id));
+    this.bag = this.bag.filter((w) => poolIds.has(w.id));
+    if (this.bag.length < size) {
+      const inBag = new Set(this.bag.map((w) => w.id));
+      this.bag = this.bag.concat(Engine.shuffle(pool.filter((w) => !inBag.has(w.id)), this.random));
+    }
+    const picked = [];
+    const rest = [];
+    for (const w of this.bag) {
+      const clash = picked.some((p) => Engine.isCorrect(p.word, w.word) || Engine.isCorrect(w.word, p.word));
+      if (picked.length < size && !clash) picked.push(w);
+      else rest.push(w);
+    }
+    while (picked.length < size && rest.length) picked.push(rest.shift());
+    this.bag = rest;
+    this.words = picked;
+    this.left = Engine.shuffle(picked, this.random);
+    this.right = Engine.shuffle(picked, this.random);
+    // Avoid the meanings sitting level with their own words.
+    for (let tries = 0; tries < 5 && size > 2 && this.right.every((w, i) => w.id === this.left[i].id); tries++) {
+      this.right = Engine.shuffle(picked, this.random);
+    }
+    this.matched = new Set();
+    this.slips = 0;
+    this.pending = null;
+    this.slip = null;
+    this.roundDone = false;
+    return this.words;
+  }
+
+  // The student taps a word (side "w") or a meaning (side "m").
+  // Returns "ignored", "selected", "unselected", "match" or "slip".
+  select(side, id) {
+    if (this.roundDone || this.matched.has(id)) return "ignored";
+    this.slip = null;
+    if (this.pending && this.pending.side === side) {
+      if (this.pending.id === id) {
+        this.pending = null;
+        return "unselected";
+      }
+      this.pending = { side, id };
+      return "selected";
+    }
+    if (!this.pending) {
+      this.pending = { side, id };
+      return "selected";
+    }
+    const wordId = side === "w" ? id : this.pending.id;
+    const meaningId = side === "m" ? id : this.pending.id;
+    this.pending = null;
+    if (wordId === meaningId) {
+      this.matched.add(wordId);
+      if (this.matched.size === this.words.length) this.finish();
+      return "match";
+    }
+    this.slips += 1;
+    this.slip = { wordId, meaningId };
+    return "slip";
+  }
+
+  // End of a round: one point only if there were no slips.
+  finish() {
+    this.roundDone = true;
+    this.rounds += 1;
+    if (this.slips === 0) {
+      this.perfectRounds += 1;
+      this.points += 1;
+      this.streak += 1;
+      this.bestStreak = Math.max(this.bestStreak, this.streak);
+    } else {
+      this.streak = 0;
+    }
+  }
+}

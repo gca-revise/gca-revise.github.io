@@ -22,6 +22,17 @@ function startRun(textId, kind) {
   drawRun();
 }
 
+function startMatch(textId) {
+  const game = new MatchGame({
+    items: Data.wordsFor(textId),
+    mode: Store.getMode(),
+    retiredIds: Store.retiredIds(),
+  });
+  game.newRound();
+  run = { textId, kind: "match", session: game, phase: "question", last: null, sentence: "" };
+  drawRun();
+}
+
 // A sentence about the text being practised, with the key word in bold when it is drawn.
 function pickSentence(word, textId) {
   const forThisText = word.examples_high.filter((e) => e.text === textId).map((e) => e.sentence);
@@ -29,9 +40,9 @@ function pickSentence(word, textId) {
   return pick(forThisText.length ? forThisText : forAnyText.length ? forAnyText : word.examples);
 }
 
-function drawRun() {
+function drawRun(keepScroll) {
   app.innerHTML = Screens.run(run);
-  window.scrollTo(0, 0);
+  if (!keepScroll) window.scrollTo(0, 0);
   // Put the cursor where the student needs it: the answer box, or the Next button.
   const target = app.querySelector("#answer") || app.querySelector("[data-action='next']");
   if (target) target.focus();
@@ -50,6 +61,9 @@ function route() {
     return;
   } else if (parts[0] === "text" && parts[2] === "vocab-choose" && Data.text(parts[1])) {
     startRun(parts[1], "choose");
+    return;
+  } else if (parts[0] === "text" && parts[2] === "vocab-match" && Data.text(parts[1])) {
+    startMatch(parts[1]);
     return;
   } else if (parts[0] === "text" && parts.length === 3) {
     html = Screens.comingSoon(`#/text/${parts[1]}`, "Back to the text");
@@ -74,7 +88,11 @@ app.addEventListener("click", (event) => {
   }
   const action = event.target.closest("[data-action]");
   if (!action || !run) return;
-  if (action.dataset.action === "next") {
+  if (action.dataset.action === "round") {
+    run.session.newRound();
+    run.phase = "question";
+    drawRun();
+  } else if (action.dataset.action === "next") {
     run.phase = run.session.next() ? "question" : "complete";
     drawRun();
   } else if (action.dataset.action === "again") {
@@ -119,6 +137,13 @@ function chooseOption(wordId) {
 app.addEventListener("click", (event) => {
   const option = event.target.closest("[data-choice]");
   if (option) chooseOption(option.dataset.choice);
+  const cell = event.target.closest("[data-m]");
+  if (cell && run && run.kind === "match" && run.phase === "question") {
+    const [side, id] = cell.dataset.m.split(":");
+    run.session.select(side, id);
+    if (run.session.roundDone) run.phase = "done";
+    drawRun(run.phase === "question");
+  }
 });
 
 // On a keyboard, 1, 2, 3 or 4 picks that option.

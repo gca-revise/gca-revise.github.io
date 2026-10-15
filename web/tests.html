@@ -227,6 +227,81 @@ const pool = [
   check("typed answers still retire after one", s.retired.has(w.id) && s.options === null);
 }
 
+// ---- Matching ----
+{
+  const g = new MatchGame({ items: words(10), mode: "learn" });
+  g.newRound();
+  check("a round has four different words", g.words.length === 4 && new Set(g.words.map((w) => w.id)).size === 4);
+  check("both columns show the same four words", g.left.length === 4 && g.right.length === 4 && g.left.every((w) => g.right.includes(w)));
+  const ids = g.words.map((w) => w.id);
+  check("tapping a word selects it", g.select("w", ids[0]) === "selected" && g.pending.id === ids[0]);
+  check("tapping it again unselects it", g.select("w", ids[0]) === "unselected" && g.pending === null);
+  g.select("w", ids[0]);
+  check("tapping another word moves the selection", g.select("w", ids[1]) === "selected" && g.pending.id === ids[1]);
+  check("a wrong pair is a slip", g.select("m", ids[2]) === "slip" && g.slips === 1 && g.slip.wordId === ids[1] && g.slip.meaningId === ids[2] && g.pending === null);
+  check("the next tap clears the slip marker", g.select("m", ids[0]) === "selected" && g.slip === null);
+  check("meaning first then word works", g.select("w", ids[0]) === "match" && g.matched.has(ids[0]));
+  check("a matched pair cannot be tapped again", g.select("w", ids[0]) === "ignored");
+  g.select("w", ids[1]); g.select("m", ids[1]);
+  g.select("w", ids[2]); g.select("m", ids[2]);
+  g.select("w", ids[3]);
+  const last = g.select("m", ids[3]);
+  check("finishing the round ends it", last === "match" && g.roundDone && g.rounds === 1);
+  check("a round with a slip scores nothing and ends the streak", g.points === 0 && g.streak === 0 && g.perfectRounds === 0);
+  check("nothing is retired by matching", g.retired.size === 0);
+}
+{
+  const g = new MatchGame({ items: words(10), mode: "learn" });
+  const play = (slip) => {
+    g.newRound();
+    const ids = g.words.map((w) => w.id);
+    if (slip) { g.select("w", ids[0]); g.select("m", ids[1]); }
+    for (const id of ids) { g.select("w", id); g.select("m", id); }
+  };
+  play(false); play(false);
+  check("a perfect round scores one point and builds the streak", g.points === 2 && g.streak === 2 && g.perfectRounds === 2);
+  play(true);
+  check("a slip round scores nothing and resets the streak", g.points === 2 && g.streak === 0 && g.bestStreak === 2);
+  play(false);
+  check("a perfect round after a slip starts the streak again", g.points === 3 && g.streak === 1);
+}
+{
+  const g = new MatchGame({ items: words(8), mode: "learn" });
+  const seen = new Set();
+  for (let i = 0; i < 2; i++) { g.newRound(); g.words.forEach((w) => seen.add(w.id)); }
+  check("two rounds cover all eight words before any repeat", seen.size === 8);
+}
+{
+  const g = new MatchGame({ items: words(10), mode: "learn", retiredIds: new Set(["w1", "w2", "w3", "w4", "w5", "w6"]) });
+  g.newRound();
+  const inRound = g.words.map((w) => w.id);
+  check("learned words are skipped while enough unlearned words remain", g.words.length === 4 && inRound.every((id) => !["w1", "w2", "w3", "w4", "w5", "w6"].includes(id)));
+}
+{
+  const g = new MatchGame({ items: words(10), mode: "learn", retiredIds: new Set(["w1", "w2", "w3", "w4", "w5", "w6", "w7", "w8"]) });
+  g.newRound();
+  check("with fewer than four unlearned words, rounds use the whole set", g.words.length === 4);
+}
+{
+  const g = new MatchGame({ items: words(3), mode: "free" });
+  g.newRound();
+  check("a small set gets a smaller round", g.words.length === 3);
+}
+{
+  const similar = [
+    { id: "nihilism", word: "Nihilism", definition: "d1" }, { id: "nihilistic", word: "Nihilistic", definition: "d2" },
+    { id: "a", word: "Aaa", definition: "d3" }, { id: "b", word: "Bbb", definition: "d4" }, { id: "c", word: "Ccc", definition: "d5" },
+  ];
+  let together = false;
+  for (let i = 0; i < 40; i++) {
+    const g = new MatchGame({ items: similar, mode: "free" });
+    g.newRound();
+    const ids = g.words.map((w) => w.id);
+    if (ids.includes("nihilism") && ids.includes("nihilistic")) together = true;
+  }
+  check("nihilism and nihilistic are never in the same round", !together);
+}
+
 // ---- Streak and best streak ----
 {
   const s = new Session({ items: words(5), mode: "learn" });

@@ -548,3 +548,77 @@ button.choice:focus-visible { outline: 3px solid var(--yellow); outline-offset: 
   .mc-actions { flex-direction: row; justify-content: flex-end; margin-top: 0; }
   .mc-note, .mc-actions { align-self: stretch; }
 }
+
+/* ---------- Matching ---------- */
+.m-head h1 { font-size: 26px; font-weight: 700; line-height: 1.2; }
+.m-head p { font-size: 14px; color: var(--muted); margin-top: 6px; }
+.m-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-items: stretch; }
+.m-cell {
+  display: flex; align-items: center; gap: 8px;
+  min-height: 84px; padding: 10px 12px; border-radius: 16px;
+  background: #fff; border: 2px solid var(--line); color: var(--ink);
+  font-family: 'Figtree', sans-serif; text-align: left; cursor: pointer;
+}
+.m-cell:hover:not(:disabled) { border-color: var(--navy); }
+.m-cell:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+.m-word span { font-size: 17px; font-weight: 700; overflow-wrap: anywhere; }
+.m-meaning span { font-size: 14px; font-weight: 600; line-height: 1.25; }
+.m-cell.sel { border: 3px solid var(--navy); padding: 9px 11px; color: var(--navy); }
+.m-cell.done { background: #E3F4EB; border-color: #17724B; opacity: 0.8; color: #155E3E; cursor: default; }
+.m-cell.slip { background: #FCEBEE; border-color: #B42A47; }
+.m-cell svg { flex: none; width: 18px; height: 18px; }
+.m-status {
+  display: flex; align-items: center; gap: 8px; align-self: flex-start;
+  background: #fff; border: 2px solid var(--line); border-radius: 999px;
+  padding: 6px 12px; font-size: 13px; font-weight: 700; color: var(--navy);
+}
+.m-status-slip { color: #8E1F37; border-color: #F2C9D1; background: #FCEBEE; }
+
+.match-done .md-main {
+  max-width: 760px; width: 100%; margin: 0 auto; padding: 40px 20px 28px;
+  display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; flex: 1;
+}
+.match-done .fb-icon { width: 72px; height: 72px; border-radius: 36px; }
+.match-done.right .fb-icon { background: #17724B; }
+.match-done.near .fb-icon { background: #B8790A; }
+.match-done .fb-icon svg { width: 40px; height: 40px; }
+.md-flag { color: #fff; font: 800 38px 'Bricolage Grotesque', sans-serif; }
+.match-done h1 { font-size: 34px; font-weight: 800; }
+.match-done.right h1 { color: #155E3E; }
+.match-done.near h1 { color: #7A4F00; }
+.md-sub { font-size: 16px; }
+.match-done.right .md-sub { color: #2D4A3C; }
+.match-done.near .md-sub { color: #5C4208; }
+.md-list { display: flex; flex-direction: column; gap: 8px; width: 100%; text-align: left; }
+.md-row { display: flex; align-items: center; gap: 12px; background: #fff; border-radius: 14px; padding: 10px 14px; }
+.md-word { width: 104px; flex: none; font-size: 17px; font-weight: 700; overflow-wrap: anywhere; }
+.md-def { font-size: 14px; color: var(--muted); }
+.md-note { font-size: 13px; font-weight: 600; color: var(--muted); }
+.match-done.right .chip { border-color: transparent; color: #155E3E; }
+.md-btns { margin-top: auto; padding-top: 12px; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.md-btns .fb-btn { max-width: none; }
+.match-done.right .fb-btn { background: #17724B; }
+.match-done.near .fb-btn { background: var(--navy); }
+.md-back { min-height: 44px; display: flex; align-items: center; font-weight: 600; font-size: 14px; color: var(--muted); text-decoration: underline; }
+
+@media (min-width: 760px) {
+  .m-head h1 { font-size: 36px; }
+  .m-head p { font-size: 16px; }
+  .m-grid { gap: 14px; }
+  .m-cell { min-height: 76px; padding: 12px 18px; border-radius: 18px; gap: 10px; }
+  .m-cell.sel { padding: 11px 17px; }
+  .m-word span { font-size: 22px; }
+  .m-meaning span { font-size: 17px; line-height: 1.3; }
+  .m-cell svg { width: 20px; height: 20px; }
+  .m-status { font-size: 15px; padding: 8px 16px; }
+  .match-done .md-main { padding: 48px 24px; gap: 18px; }
+  .match-done .fb-icon { width: 96px; height: 96px; border-radius: 48px; }
+  .match-done h1 { font-size: 48px; }
+  .md-sub { font-size: 20px; }
+  .md-row { padding: 14px 20px; border-radius: 16px; gap: 16px; }
+  .md-word { width: 150px; font-size: 20px; }
+  .md-def { font-size: 17px; }
+  .md-btns { flex-direction: row; justify-content: center; margin-top: 0; }
+  .md-btns .fb-btn { width: auto; }
+  .md-back { min-height: 64px; padding: 0 40px; border-radius: 18px; background: #fff; text-decoration: none; font-weight: 700; font-size: 20px; color: var(--navy); }
+}
