@@ -316,6 +316,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outlin
   background: var(--tint); color: var(--accent);
   border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 700;
 }
+.pill-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.text-pill.tag-pill { background: var(--track); color: var(--navy); }
 .text-pill .dot { width: 10px; height: 10px; border-radius: 5px; background: var(--accent); }
 
 .answer { display: flex; flex-direction: column; gap: 8px; }

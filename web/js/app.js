@@ -121,11 +121,11 @@ app.addEventListener("click", (event) => {
   if (option) chooseOption(option.dataset.choice);
 });
 
-// On a keyboard, A, B, C or D picks that option.
+// On a keyboard, 1, 2, 3 or 4 picks that option.
 document.addEventListener("keydown", (event) => {
   if (!run || run.phase !== "question" || run.kind !== "choose") return;
   if (event.ctrlKey || event.metaKey || event.altKey) return;
-  const index = "abcd".indexOf(event.key.toLowerCase());
+  const index = "1234".indexOf(event.key);
   if (index < 0 || !run.session.options[index]) return;
   chooseOption(run.session.options[index].id);
 });

@@ -49,7 +49,7 @@ Object.assign(Screens, {
             <section class="q-card">
               <div class="q-label">Which word means</div>
               <div class="q-text">${esc(Engine.blankWord(w.definition, w.word))}</div>
-              <div class="text-pill"><span class="dot"></span>${esc(t.name)}</div>
+              <div class="pill-row"><div class="text-pill"><span class="dot"></span>${esc(t.name)}</div>${Screens.tagPill(w, run.textId)}</div>
             </section>
             <form id="answer-form" class="answer" autocomplete="off">
               <label for="answer">Type the word</label>
@@ -166,6 +166,12 @@ Object.assign(Screens, {
       </div>`;
   },
 
+  // A small label for words that need one, like "Structure · Act 3" (from tags.csv).
+  tagPill(word, textId) {
+    const found = (word.tags || []).find((t) => t.text === textId);
+    return found ? `<div class="text-pill tag-pill">${esc(found.tag)}</div>` : "";
+  },
+
   // Two small dots showing how many right answers a word has (of the two it needs).
   dots(have, needed, filled, empty) {
     let html = "";
@@ -204,7 +210,7 @@ Object.assign(Screens, {
     const learn = s.mode === "learn";
     const buttons = s.options.map((o, i) => `
       <button type="button" class="choice" data-choice="${esc(o.id)}">
-        <span class="letter">${"ABCD"[i]}</span><span class="choice-text">${esc(o.word)}</span>
+        <span class="letter">${i + 1}</span><span class="choice-text">${esc(o.word)}</span>
       </button>`).join("");
     return `
       <div class="run q mc" style="--accent:${look.colour};--tint:${look.tint}">
@@ -218,10 +224,10 @@ Object.assign(Screens, {
             <section class="q-card">
               <div class="q-label">Which word means</div>
               <div class="q-text">${esc(Engine.blankWord(w.definition, w.word))}</div>
-              <div class="text-pill"><span class="dot"></span>${esc(t.name)}</div>
+              <div class="pill-row"><div class="text-pill"><span class="dot"></span>${esc(t.name)}</div>${Screens.tagPill(w, run.textId)}</div>
             </section>
             <div class="choices" role="group" aria-label="Choose the answer">${buttons}</div>
-            <p class="hint kbd-hint">Tip for laptops: press A, B, C or D on the keyboard.</p>
+            <p class="hint kbd-hint">Tip for laptops: press 1, 2, 3 or 4 on the keyboard.</p>
           </div>
           ${Screens.choiceSide(run, have)}
         </main>
@@ -238,7 +244,7 @@ Object.assign(Screens, {
     const have = s.choiceCounts[w.id] || 0;
     const needed = Session.CHOICES_TO_LEARN;
     const rows = s.options.map((o, i) => {
-      const letter = `<span class="letter">${"ABCD"[i]}</span>`;
+      const letter = `<span class="letter">${i + 1}</span>`;
       if (o.id === w.id) {
         return `<div class="choice is-right"><span class="letter ok">${checkIconSmall}</span><span class="choice-text">${esc(o.word)}</span>${right ? "" : `<span class="choice-tag">Right answer</span>`}</div>`;
       }

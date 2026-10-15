@@ -114,6 +114,25 @@ def attach_sentences(vocab):
     return missing
 
 
+def attach_tags(vocab):
+    """Add the small labels from tags.csv (e.g. "Structure · Act 1") to words: [{text, tag}, ...]."""
+    by_id = {w["id"]: w for w in vocab}
+    for w in vocab:
+        w["tags"] = []
+    for r in read("tags"):
+        where = f"tag for '{r['id']}' ({r['text']})"
+        word = by_id.get(r["id"])
+        text = TEXT_IDS.get(r["text"], r["text"])
+        if word is None:
+            problems.append(f"{where}: no such word id")
+        elif text not in word["texts"]:
+            problems.append(f"{where}: the word is not tagged to that text")
+        elif not r["tag"].strip():
+            problems.append(f"{where}: empty tag")
+        else:
+            word["tags"].append({"text": text, "tag": r["tag"].strip()})
+
+
 def build_quotes():
     rows = read("quotes")
     check_unique(rows, "id", "quotes")
@@ -178,6 +197,7 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     vocab = build_vocab()
     missing_sentences = attach_sentences(vocab)
+    attach_tags(vocab)
     data = {
         "texts": TEXTS,
         "vocab": vocab,
