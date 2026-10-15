@@ -109,5 +109,8 @@ All five texts' data is loaded (Macbeth, Jekyll and Hyde, An Inspector Calls, Po
 2. Then plan Version 2 (the working web page) in detail and build it one mode at a time: key vocab first, quotes after. Design is finished (phone and laptop).
 3. Not yet read: Frankenstein lessons 12 and 13 (assessment) and the `MTP Frankenstein` folder; the Unseen Poetry folder.
 
+## Notes from 17 Oct (techniques)
+- Oxymoron example now holds both “hellish triumph” (Frankenstein) and “trampled calmly” (Jekyll and Hyde). The user played the Techniques games and likes them. **Down the line the user may replace the booklet's technique examples with examples from the GCSE texts** (the `example` column in `techniques.csv`; many are already text-linked).
+
 ## Separate from this project
 The user also has a learning plan (Linux terminal basics, object-oriented Python on Codecademy, later CLAUDE.md practice, handoffs, subagents, skills, MCP). Turn it into a plan file only after the user confirms it.
