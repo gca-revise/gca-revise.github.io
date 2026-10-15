@@ -658,3 +658,15 @@ button.choice:focus-visible { outline: 3px solid var(--yellow); outline-offset: 
   .level-hint { font-size: 15px; }
   .gap-long { min-width: 260px; }
 }
+
+/* ---------- Home footer ---------- */
+.home-foot {
+  max-width: 1100px; margin: 0 auto; padding: 0 20px 28px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px;
+  font-size: 13px; color: var(--muted);
+}
+.link-btn {
+  min-height: 44px; padding: 0; border: 0; background: none; cursor: pointer;
+  font: 600 14px 'Figtree', sans-serif; color: var(--navy); text-decoration: underline;
+}
+@media (min-width: 760px) { .home-foot { padding: 0 24px 32px; } }

@@ -115,6 +115,13 @@ function route() {
 
 // Clicks: the Learn the set / Free practice switch, Next word, and Practise again.
 app.addEventListener("click", (event) => {
+  if (event.target.closest("[data-reset]")) {
+    if (window.confirm("Reset your progress?\n\nThis clears everything you have learned on this device. It cannot be undone.")) {
+      Store.reset();
+      route();
+    }
+    return;
+  }
   const modeButton = event.target.closest(".mode-btn");
   if (modeButton) {
     Store.setMode(modeButton.dataset.mode);

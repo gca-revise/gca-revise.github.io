@@ -1,0 +1,40 @@
+# Publishes the website (the web/ folder) with GitHub Pages.
+#
+# It only runs when started by hand (Actions tab > "Publish website" > Run workflow) until the
+# repository is public and Pages is switched on. To publish automatically after every push to
+# main, add these two lines under "on:":
+#   push:
+#     branches: [main]
+name: Publish website
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copy the website (leaving out the rule-check page)
+        run: |
+          mkdir site
+          cp -r web/. site/
+          rm -f site/tests.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

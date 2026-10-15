@@ -23,6 +23,16 @@ const Store = {
     }
   },
 
+  // Forget everything saved on this device (learned words, counts, the chosen mode).
+  reset() {
+    this.memory = {};
+    try {
+      localStorage.removeItem(this.KEY);
+    } catch (e) {
+      // Nothing saved, nothing to clear.
+    }
+  },
+
   // "learn" (Learn the set) or "free" (Free practice)
   getMode() {
     return this.load().mode === "free" ? "free" : "learn";

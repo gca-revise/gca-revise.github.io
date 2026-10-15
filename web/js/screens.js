@@ -71,7 +71,11 @@ const Screens = {
           ${progressBar(techLearned, techItems.length)}
           <div class="tc-learned">${techLearned} of ${techItems.length} learned</div>
         </a>
-      </main>`;
+      </main>
+      <footer class="home-foot">
+        <span>Your progress is saved only on this device.</span>
+        <button type="button" class="link-btn" data-reset>Reset my progress</button>
+      </footer>`;
   },
 
   // Header shared by "inside a text" and Techniques.
