@@ -69,6 +69,14 @@ check("session reports near", (() => {
   return r.near && !r.correct && s.points === 0 && !s.retired.has("a");
 })());
 
+// ---- Blank out the answer in a definition ----
+check("blank: other form of the word", Engine.blankWord("Something you can throw away or dispose of easily.", "Disposable") === "Something you can throw away or _____ of easily.");
+check("blank: word inside a phrase", Engine.blankWord("Wanting to achieve great scientific discoveries.", "Scientific ambition") === "Wanting to achieve great _____ discoveries.");
+check("blank: two words together share one blank", Engine.blankWord("The story is told in third person (he/she).", "Third-person limited") === "The story is told in _____ (he/she).");
+check("blank: demon for Demoniacal", Engine.blankWord("Possessed by a demon.", "Demoniacal") === "Possessed by a _____.");
+check("blank: directly for Direct victims of war", Engine.blankWord("Soldiers directly involved in the fighting.", "Direct victims of war") === "Soldiers _____ involved in the fighting.");
+check("blank: nothing to blank leaves text alone", Engine.blankWord("A prediction of the future.", "Prophecy") === "A prediction of the future.");
+
 // ---- Bold the key word in a sentence ----
 const boldText = (sentence, word) => Engine.markWord(sentence, word).filter((p) => p.bold).map((p) => p.text).join("|");
 check("bold: exact word", boldText("Macbeth shows hubris in Act 5.", "Hubris") === "hubris");

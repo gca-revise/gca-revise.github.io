@@ -46,7 +46,7 @@ Object.assign(Screens, {
             </div>
             <section class="q-card">
               <div class="q-label">Which word means</div>
-              <div class="q-text">${esc(w.definition)}</div>
+              <div class="q-text">${esc(Engine.blankWord(w.definition, w.word))}</div>
               <div class="text-pill"><span class="dot"></span>${esc(t.name)}</div>
             </section>
             <form id="answer-form" class="answer" autocomplete="off">

@@ -140,6 +140,37 @@ const Engine = {
     return pieces;
   },
 
+  // Hide the answer if a definition gives it away: any form of the word (or of a main word in a
+  // phrase) becomes a blank. "Something you can throw away or dispose of easily." for "Disposable"
+  // becomes "Something you can throw away or _____ of easily."
+  blankWord(text, word, blank = "_____") {
+    const skip = ["the", "a", "an", "to", "of", "and", "in", "on", "for", "or", "by", "with"];
+    const bare = Engine.variants(word)[1].trim() ? Engine.variants(word)[1] : String(word);
+    const keys = Engine.plainTokens(bare)
+      .filter((t) => t.length >= 4 && !skip.includes(t))
+      .map(Engine.stem);
+    const source = String(text);
+    if (keys.length === 0) return source;
+    const spans = [];
+    const re = /[\p{L}\p{N}]+/gu;
+    let m;
+    while ((m = re.exec(source))) {
+      const stem = Engine.stem(Engine.normalise(m[0]));
+      if (!stem || !keys.some((k) => Engine.sameStem(stem, k))) continue;
+      const last = spans[spans.length - 1];
+      // Neighbouring matches ("third person") share one blank.
+      if (last && /^[\s\-\u2010-\u2015]+$/.test(source.slice(last[1], m.index))) last[1] = m.index + m[0].length;
+      else spans.push([m.index, m.index + m[0].length]);
+    }
+    let result = "";
+    let at = 0;
+    for (const [start, end] of spans) {
+      result += source.slice(at, start) + blank;
+      at = end;
+    }
+    return result + source.slice(at);
+  },
+
   // A fair shuffle (Fisher-Yates). `random` can be swapped in for testing.
   shuffle(list, random = Math.random) {
     const copy = list.slice();
