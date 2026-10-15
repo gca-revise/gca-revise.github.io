@@ -59,6 +59,13 @@ Shows for a finished key-vocab set: "Practise Macbeth vocab again", "Back to Mac
 - The Microsoft 365 connector is read-only and works in cloud sessions. It can see OneDrive; only open the folders the user names. Other Macbeth folders exist on school shared drives; leave them alone.
 - Not yet read: the 25 lesson slideshows (key vocab slides: word, definition, example sentence), the Knowledge Organiser (user does not use it), and the other Year 10 texts.
 
+## Vocab data (15 Oct, Macbeth)
+- `vocab.csv` built from the Year 10 Macbeth lessons (read through the Microsoft 365 connector): 44 words, 29 of them from Key Vocabulary slides. `teacher_checked = no` on every row until the teacher approves.
+- **Not read:** Lesson 11 (Guilt): the connector could not extract its text; the user needs to upload it or save it as a PDF. Lessons 12, 14, 14a, 19, 25 have no vocab slides. The printable worksheet PDFs were not read.
+- **Open questions for the teacher:** (1) example sentences use first names (Annette, Daniel, Sophie, Agatha, Tyler, Jared, James) and public figures; confirm none are real students before this is pushed (rule: no student data). (2) Which of the 15 extra defined terms join the game. (3) The slides have small typos (e.g. “Women is Jacobean times”, “He choose to commit a crime”); copied as written.
+- Also saved: `symbols.csv`, and lesson technique labels in `quotes.csv`. “So foul and fair a day I have not seen” (Macbeth’s first line) is analysed in Lesson 04 but is not in `quotes.csv`.
+- Lessons also hold material not yet captured: comprehension questions and answers, the “Ideal Jacobean woman” word sort (Lesson 06), PETAL paragraph models (Lesson 25 PDF/pptx), and context facts. Ask the teacher before adding any of it.
+
 ## Next step
 1. The design is finished and the user is happy with it (phone and laptop). The user opens the artifact link to look (the Chrome extension cannot connect from the Chromebook's Linux container).
 2. Read the Key Vocabulary slides from the Macbeth lessons and build the real `vocab.csv` (word, definition, example sentence, text). (Data needs are in `plan.md`: `vocab.csv` with text tags and example sentences, `quotes.csv` with text, technique(s) and speaker, `techniques.csv`.) The user brings the real vocab lists from school (paste or spreadsheet). Claude makes the real `vocab.csv` with a text column (a word can sit in 2 or 3 texts). Also useful: a few real quotes and techniques to test the layout.
