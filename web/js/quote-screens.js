@@ -60,7 +60,7 @@ Object.assign(Screens, {
           <div class="run-left">
             <div class="mc-row">
               <span class="mc-chip">Choose the answer${learn ? Screens.dots(have, Session.CHOICES_TO_LEARN, "var(--run-fill)", "var(--run-line)") : ""}</span>
-              <span class="mc-hint">${learn ? "Get it right twice to learn it" : "Free practice"}</span>
+              <span class="mc-hint">${learn ? "Get it right twice to learn it" : "Revising everything"}</span>
             </div>
             <section class="q-card">
               <div class="q-label">${Screens.quoteLabel(run)}</div>
@@ -107,7 +107,7 @@ Object.assign(Screens, {
         ? `This quote is ${run.level === "master" ? "mastered" : "learned"}. You won't see it again in this set.`
         : `${needed - have === 1 ? "One more right answer" : `${needed - have} more right answers`} and you know this quote.`;
     } else if (right) {
-      message = "Nice one. Free practice keeps going until you stop.";
+      message = "Nice one. Revise everything keeps going until you stop.";
     } else {
       message = learn ? "This quote will come back later. No points this time." : "No points this time.";
     }
@@ -203,7 +203,7 @@ Object.assign(Screens, {
       : "";
     let message;
     if (right) {
-      message = learn ? "This quote is mastered. You won't see it again in this set." : "Nice one. Free practice keeps going until you stop.";
+      message = learn ? "This quote is mastered. You won't see it again in this set." : "Nice one. Revise everything keeps going until you stop.";
     } else if (near) {
       message = finish ? "So close. A few words are off. " : "So close. Check the spelling. ";
       message += learn ? "No points this time, and this quote will come back later." : "No points this time.";

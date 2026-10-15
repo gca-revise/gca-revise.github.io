@@ -33,7 +33,7 @@ const Store = {
     }
   },
 
-  // "learn" (Learn the set) or "free" (Free practice)
+  // "learn" (Learn the set) or "free" (Revise everything)
   getMode() {
     return this.load().mode === "free" ? "free" : "learn";
   },

@@ -113,7 +113,7 @@ function route() {
   window.scrollTo(0, 0);
 }
 
-// Clicks: the Learn the set / Free practice switch, Next word, and Practise again.
+// Clicks: the Learn the set / Revise everything switch, Next word, and Practise again.
 app.addEventListener("click", (event) => {
   if (event.target.closest("[data-reset]")) {
     if (window.confirm("Reset your progress?\n\nThis clears everything you have learned on this device. It cannot be undone.")) {
@@ -138,7 +138,7 @@ app.addEventListener("click", (event) => {
     run.phase = run.session.next() ? "question" : "complete";
     drawRun();
   } else if (action.dataset.action === "again") {
-    // Starting again after finishing a set goes to free practice, so learned words stay learned.
+    // Starting again after finishing a set goes to "Revise everything", so learned words stay learned.
     Store.setMode("free");
     if (run.subject === "quote") startQuotes(run.textId, run.game);
     else startRun(run.textId, run.kind, run.setId);

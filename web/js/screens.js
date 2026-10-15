@@ -99,7 +99,10 @@ const Screens = {
   modeSwitch(mode) {
     const btn = (value, label) =>
       `<button type="button" class="mode-btn${mode === value ? " on" : ""}" data-mode="${value}" aria-pressed="${mode === value}">${label}</button>`;
-    return `<div class="mode-switch">${btn("learn", "Learn the set")}${btn("free", "Free practice")}</div>`;
+    const help = mode === "learn"
+      ? "Learn the set: asks only about what you haven’t learned yet."
+      : "Revise everything: asks about all of them, even ones you know. Your progress isn’t affected.";
+    return `<div class="mode-wrap"><div class="mode-switch">${btn("learn", "Learn the set")}${btn("free", "Revise everything")}</div><p class="mode-help">${help}</p></div>`;
   },
 
   // A card with a heading, a progress bar and a row of practice buttons.

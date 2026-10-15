@@ -54,7 +54,7 @@ Object.assign(Screens, {
     const total = s.items.length;
     const learned = s.learnedCount();
     const pct = total ? Math.round((learned / total) * 100) : 0;
-    const title = `${run.textId === "techniques" ? `Techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " · " + Data.techniqueSet(run.setId).name}` : `${t.name} · ${run.subject === "quote" ? (run.level === "master" ? "Quotes · Master it" : "Quotes") : "Key vocab"}`}${s.mode === "free" ? " (free practice)" : ""}`;
+    const title = `${run.textId === "techniques" ? `Techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " · " + Data.techniqueSet(run.setId).name}` : `${t.name} · ${run.subject === "quote" ? (run.level === "master" ? "Quotes · Master it" : "Quotes") : "Key vocab"}`}${s.mode === "free" ? " (revise everything)" : ""}`;
     const back = withBack
       ? `<a class="back-sq" href="${Screens.backHref(run)}" aria-label="Back to ${esc(t.name)}">${backIcon}</a>`
       : "";
@@ -131,7 +131,7 @@ Object.assign(Screens, {
     if (right) {
       note = s.mode === "learn"
         ? "This word is learned. You won't see it again in this set."
-        : "Nice one. Free practice keeps going until you stop.";
+        : "Nice one. Revise everything keeps going until you stop.";
     } else if (near) {
       note = s.mode === "learn"
         ? "So close. No points this time, and this word will come back later."
@@ -225,10 +225,10 @@ Object.assign(Screens, {
     return `
       <aside class="run-side">
         <div class="side-card">
-          <div class="side-label">${learn ? "This word needs" : "Free practice"}</div>
+          <div class="side-label">${learn ? "This word needs" : "Revise everything"}</div>
           ${learn
             ? `<div class="side-need">${have} of ${needed} right answers ${Screens.dots(have, needed, "var(--run-fill)", "var(--run-line)")}</div>`
-            : `<div class="side-need">No limit, nothing is retired</div>`}
+            : `<div class="side-need">Asks about everything. Your progress isn’t affected.</div>`}
         </div>
         <div class="side-two">
           <div class="side-card"><div class="side-label">Streak</div><div class="side-num">${s.streak}</div></div>
@@ -255,7 +255,7 @@ Object.assign(Screens, {
           <div class="run-left">
             <div class="mc-row">
               <span class="mc-chip">Choose the answer${learn ? Screens.dots(have, Session.CHOICES_TO_LEARN, "var(--run-fill)", "var(--run-line)") : ""}</span>
-              <span class="mc-hint">${learn ? "Get it right twice to learn it" : "Free practice"}</span>
+              <span class="mc-hint">${learn ? "Get it right twice to learn it" : "Revising everything"}</span>
             </div>
             <section class="q-card">
               <div class="q-label">Which ${Screens.noun(run)} means</div>
@@ -299,7 +299,7 @@ Object.assign(Screens, {
         ? "This word is learned. You won't see it again in this set."
         : `${needed - have === 1 ? "One more right answer" : `${needed - have} more right answers`} and “${esc(w.word)}” is learned.`;
     } else if (right) {
-      note = "Nice one. Free practice keeps going until you stop.";
+      note = "Nice one. Revise everything keeps going until you stop.";
     } else {
       note = learn ? "This word will come back later. No points this time." : "No points this time.";
     }
