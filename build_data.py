@@ -135,12 +135,17 @@ def attach_tags(vocab):
 
 
 def technique_patterns():
-    """(name, regex) for every technique in techniques.csv, to find them in a quote's labels."""
+    """(name, regex) for every technique in techniques.csv, to find them in a quote's labels.
+    A technique can have other names in the `also_called` column (e.g. Symbol: Symbolism)."""
     patterns = []
     for r in read("techniques"):
         name = r["name"].strip()
-        bare = re.sub(r"\(.*?\)", "", name).strip().lower()
-        patterns.append((name, re.compile(r"\b" + re.escape(bare) + r"s?\b")))
+        names = [name] + split(r.get("also_called", ""), ";")
+        parts = []
+        for n in names:
+            bare = re.sub(r"\(.*?\)", "", n).strip().lower()
+            parts.append(re.escape(bare))
+        patterns.append((name, re.compile(r"\b(?:" + "|".join(parts) + r")s?\b")))
     return patterns
 
 
@@ -152,6 +157,7 @@ def build_quotes():
     for r in rows:
         where = f"quote '{r['id']}'"
         labels = " ; ".join([r["techniques"], r["lesson_techniques"]]).lower()
+        official = r["techniques"].lower()
         if not r["quote"].strip():
             problems.append(f"{where}: empty quote")
             continue
@@ -175,6 +181,10 @@ def build_quotes():
             "note": r["sheet_note"].strip(),
             # Techniques from techniques.csv named in this quote's labels (for "Spot the technique").
             "technique_matches": [name for name, rx in patterns if rx.search(labels)],
+            # The ones in the `techniques` column (the teacher's own analysis) are the answers in
+            # Spot the technique when there are any; otherwise all the matches are.
+            "technique_primary": [name for name, rx in patterns if rx.search(official)]
+                                 or [name for name, rx in patterns if rx.search(labels)],
         })
         gap = r["gap_word"].strip()
         if gap and gap.lower() not in [t.lower() for t in re.findall(r"[^\W_]+", r["quote"])]:
@@ -198,11 +208,11 @@ def build_techniques(quotes):
     rows = read("techniques")
     check_unique(rows, "name", "techniques")
     labels = [" ".join([q["techniques"], q["lesson_techniques"]]).lower() for q in quotes]
+    by_name = dict(technique_patterns())
     out = []
     for r in rows:
         name = r["name"].strip()
-        bare = re.sub(r"\(.*?\)", "", name).strip().lower()
-        pattern = re.compile(r"\b" + re.escape(bare) + r"s?\b")
+        pattern = by_name[name]
         out.append({
             "name": name,
             "category": r.get("category", "").strip(),

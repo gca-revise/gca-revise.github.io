@@ -30,6 +30,10 @@
    "Sibilance",
    "Chiasmus",
    "Adjective"
+  ],
+  "technique_primary": [
+   "Paradox",
+   "Alliteration"
   ]
  },
  {
@@ -50,6 +54,10 @@
   "context": "",
   "note": "the Captain describing Macbeth – shows how skilled he was in battle when killing Macdonald",
   "technique_matches": [
+   "Metaphor",
+   "Verb"
+  ],
+  "technique_primary": [
    "Metaphor",
    "Verb"
   ]
@@ -75,6 +83,11 @@
    "Metaphor",
    "Symbol",
    "Verb"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Symbol",
+   "Verb"
   ]
  },
  {
@@ -94,7 +107,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macbeth commanding the witches to stay and give him further prophecies",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-1-05",
@@ -113,7 +127,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Banquo warning Macbeth to not trust the witches, believing they have evil intentions",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-1-06",
@@ -147,6 +162,12 @@
    "Symbol",
    "Imperative (command)",
    "Adjective"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Symbol",
+   "Imperative (command)",
+   "Adjective"
   ]
  },
  {
@@ -167,6 +188,11 @@
   "context": "",
   "note": "this is how Macbeth describes Lady Macbeth in the letter he wrote to her",
   "technique_matches": [
+   "Imagery",
+   "Hyperbole",
+   "Adjective"
+  ],
+  "technique_primary": [
    "Imagery",
    "Hyperbole",
    "Adjective"
@@ -193,6 +219,11 @@
    "Juxtaposition",
    "Symbol",
    "Hyperbole"
+  ],
+  "technique_primary": [
+   "Juxtaposition",
+   "Symbol",
+   "Hyperbole"
   ]
  },
  {
@@ -215,6 +246,10 @@
   "technique_matches": [
    "Symbol",
    "Imperative (command)"
+  ],
+  "technique_primary": [
+   "Symbol",
+   "Imperative (command)"
   ]
  },
  {
@@ -235,6 +270,10 @@
   "context": "",
   "note": "Lady Macbeth telling her husband to hide their violent intentions behind a gentle façade",
   "technique_matches": [
+   "Symbol",
+   "Imperative (command)"
+  ],
+  "technique_primary": [
    "Symbol",
    "Imperative (command)"
   ]
@@ -272,6 +311,12 @@
    "Pivotal moment",
    "Hamartia",
    "Verb"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Personification",
+   "Hamartia",
+   "Verb"
   ]
  },
  {
@@ -292,6 +337,10 @@
   "context": "",
   "note": "Lady Macbeth explaining to her husband how she would never break a promise to him, even if it was to violently murder an innocent baby – she does this to convince him to kill Duncan",
   "technique_matches": [
+   "Symbol",
+   "Verb"
+  ],
+  "technique_primary": [
    "Symbol",
    "Verb"
   ]
@@ -316,6 +365,10 @@
   "technique_matches": [
    "Metaphor",
    "Adjective"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Adjective"
   ]
  },
  {
@@ -338,6 +391,10 @@
   "technique_matches": [
    "Personification",
    "Direct address"
+  ],
+  "technique_primary": [
+   "Personification",
+   "Direct address"
   ]
  },
  {
@@ -357,7 +414,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macbeth describing himself in third person. He has killed Duncan in his sleep",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-2-04",
@@ -381,6 +439,12 @@
    "Hyperbole",
    "Rhetorical question",
    "Extended metaphor"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Hyperbole",
+   "Rhetorical question",
+   "Extended metaphor"
   ]
  },
  {
@@ -400,7 +464,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Lady Macbeth describing how she suppresses her guilt",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-2-06",
@@ -419,7 +484,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Lady Macbeth taking control, taking the daggers to leave them with the sleeping guards",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-2-07",
@@ -438,7 +504,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macbeth describing the body of Duncan – \"silver\" and \"golden\" suggest his life was valuable",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-2-08",
@@ -457,7 +524,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macbeth describing the body of Duncan – suggests his death has broken the natural order",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-2-09",
@@ -476,7 +544,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Donalbain speaking to his brother Malcolm. They know that the murderer may seem friendly",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-2-10",
@@ -495,7 +564,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Lady Macbeth pretending to faint, distracting the lords from Macbeth's suspicious behaviour",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-2-11",
@@ -514,7 +584,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Lennox, a Scottish lord, describing how there was an earthquake the night Duncan was killed",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-2-12",
@@ -533,7 +604,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Ross, a Scottish lord, describing how the Sun went dark after the murder of Duncan",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-3-01",
@@ -552,7 +624,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macbeth describing how he is paranoid and believes Banquo is a threat to his power",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-3-02",
@@ -571,7 +644,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macbeth describing how the witches gave him the crown but it is \"fruitless\" – meaning he has no children to carry on his reign. He worries this makes his reign unstable",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-3-03",
@@ -590,7 +664,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Lady Macbeth explaining how they may have lost everything in pursuing their ambition",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-3-04",
@@ -609,7 +684,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Lady Macbeth instructing Macbeth to forget about their crimes because it is already done",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-3-05",
@@ -640,6 +716,11 @@
    "Imagery",
    "Metaphor",
    "Hyperbole"
+  ],
+  "technique_primary": [
+   "Imagery",
+   "Metaphor",
+   "Hyperbole"
   ]
  },
  {
@@ -659,7 +740,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macbeth refuses to tell Lady Macbeth his plan to murder Banquo",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-3-07",
@@ -678,7 +760,8 @@
   "technique_notes": [],
   "context": "",
   "note": "the murderer describing the terrible wounds they gave Banquo when they murdered him",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-3-08",
@@ -700,6 +783,10 @@
   "technique_matches": [
    "Metaphor",
    "Imperative (command)"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Imperative (command)"
   ]
  },
  {
@@ -719,7 +806,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macbeth considering how violence can often lead to further violence",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-3-10",
@@ -738,7 +826,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macbeth describing how he is surrounded in blood that he feels like he has stepped in it and is wading, meaning swimming, through it",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-4-01",
@@ -757,7 +846,8 @@
   "technique_notes": [],
   "context": "",
   "note": "the witches describing Macbeth as \"wicked\" showing how evil he has truly become",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-4-02",
@@ -776,7 +866,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macbeth deciding to cruelly murder Macduff's wife and family",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-4-03",
@@ -797,7 +888,13 @@
   "note": "Macduff describing how Scotland is suffering terrible violence at the hands of Macbeth",
   "technique_matches": [
    "Personification",
-   "Repetition"
+   "Repetition",
+   "Symbol"
+  ],
+  "technique_primary": [
+   "Personification",
+   "Repetition",
+   "Symbol"
   ]
  },
  {
@@ -817,7 +914,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Malcolm describing how Scotland is suffering terrible violence at the hands of Macbeth",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-4-05",
@@ -836,7 +934,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macduff describing Malcolm's father, Duncan",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-4-06",
@@ -855,7 +954,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Malcolm and Macduff describing Macbeth as an evil tyrant – far from the noble King Duncan",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-4-07",
@@ -874,7 +974,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macduff deciding that he will get revenge upon Macbeth",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-4-08",
@@ -893,7 +994,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Malcolm and Macduff describing Macbeth as an evil tyrant – far from the noble King Duncan",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-4-09",
@@ -912,7 +1014,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Malcolm and Macduff describing Macbeth as an evil tyrant – far from the noble King Duncan",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-5-01",
@@ -942,6 +1045,11 @@
   "context": "Lady Macbeth sleepwalks and hallucinates blood on her hands. Consumed by guilt.",
   "note": "Lady Macbeth sleepwalking, imagining that there is a spot of blood on her hands",
   "technique_matches": [
+   "Symbol",
+   "Imperative (command)"
+  ],
+  "technique_primary": [
+   "Symbol",
    "Imperative (command)"
   ]
  },
@@ -962,7 +1070,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Lady Macbeth sleepwalking, describing how she feels she will never be rid of the blood on her hands – and therefore she will never be rid of her guilt",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-5-03",
@@ -981,7 +1090,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macbeth preparing for battle. He refuses to accept defeat",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-5-04",
@@ -1000,7 +1110,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macbeth describing how he is no longer fearful. He seems desensitised",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-5-05",
@@ -1020,6 +1131,10 @@
   "context": "",
   "note": "Macbeth after hearing of his wife's death. He seems to reflect how fragile life can be and how easily it can be put out, like a candle",
   "technique_matches": [
+   "Metaphor",
+   "Adjective"
+  ],
+  "technique_primary": [
    "Metaphor",
    "Adjective"
   ]
@@ -1045,6 +1160,11 @@
    "Metaphor",
    "Repetition",
    "Imperative (command)"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Repetition",
+   "Imperative (command)"
   ]
  },
  {
@@ -1064,7 +1184,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Macbeth arrogantly believing that he is protected from harm, not realizing that Macduff was \"untimely ripped\" from his mother's womb",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "mac-5-08",
@@ -1086,6 +1207,13 @@
   "technique_matches": [
    "Metaphor",
    "Simile",
+   "Symbol",
+   "Adjective"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Simile",
+   "Symbol",
    "Adjective"
   ]
  },
@@ -1109,6 +1237,10 @@
   "technique_matches": [
    "Symbol",
    "Hyperbole"
+  ],
+  "technique_primary": [
+   "Symbol",
+   "Hyperbole"
   ]
  },
  {
@@ -1128,7 +1260,8 @@
   "technique_notes": [],
   "context": "",
   "note": "describes Mr Utterson – he tries to help people who are sinful and going down the wrong path in life",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-1-03",
@@ -1147,7 +1280,8 @@
   "technique_notes": [],
   "context": "",
   "note": "describes the respectable and pleasant side of London",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-1-04",
@@ -1166,7 +1300,8 @@
   "technique_notes": [],
   "context": "",
   "note": "describes the home of Mr Hyde – it shows the unpleasant and dangerous side of London",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-1-05",
@@ -1186,6 +1321,9 @@
   "context": "",
   "note": "Mr Enfield describing where he was at 3am – shows he perhaps doing something dishonourable that a respectable gentleman should not be doing",
   "technique_matches": [
+   "Imagery"
+  ],
+  "technique_primary": [
    "Imagery"
   ]
  },
@@ -1217,6 +1355,13 @@
   "context": "Mr Enfield sees Mr Hyde walk over a young girl in the street. Hyde shows shocking cruelty without emotion. This is the reader’s first introduction to his violence.",
   "note": "describes Mr Hyde attacking the small girl",
   "technique_matches": [
+   "Symbol",
+   "Oxymoron",
+   "Verb",
+   "Adverb"
+  ],
+  "technique_primary": [
+   "Symbol",
    "Oxymoron",
    "Verb",
    "Adverb"
@@ -1239,7 +1384,8 @@
   "technique_notes": [],
   "context": "",
   "note": "describes the force and aggression of Mr Hyde’s attack on the girl",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-1-08",
@@ -1258,7 +1404,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Mr Enfield describing Mr Hyde’s appearance",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-1-09",
@@ -1277,7 +1424,8 @@
   "technique_notes": [],
   "context": "",
   "note": "describes Dr Lanyon’s appearance in Chapter 2",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-1-10",
@@ -1297,6 +1445,10 @@
   "context": "",
   "note": "Dr Lanyon says this – he is describing his outrage at Dr Jekyll’s experiments",
   "technique_matches": [
+   "Hyperbole",
+   "Adjective"
+  ],
+  "technique_primary": [
    "Hyperbole",
    "Adjective"
   ]
@@ -1321,6 +1473,10 @@
   "technique_matches": [
    "Syntax",
    "Verb"
+  ],
+  "technique_primary": [
+   "Syntax",
+   "Verb"
   ]
  },
  {
@@ -1340,7 +1496,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Mr Utterson describing Mr Hyde’s appearance",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-2-03",
@@ -1374,6 +1531,12 @@
    "Metaphor",
    "Noun",
    "Religious imagery"
+  ],
+  "technique_primary": [
+   "Imagery",
+   "Metaphor",
+   "Noun",
+   "Religious imagery"
   ]
  },
  {
@@ -1393,7 +1556,8 @@
   "technique_notes": [],
   "context": "",
   "note": "describes Mr Utterson thinking about the bad things he has done in his past",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-2-05",
@@ -1412,7 +1576,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Dr Jekyll describing how he feels about Dr Lanyon",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-2-06",
@@ -1431,7 +1596,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Dr Jekyll arrogantly explaining how he has control and can be rid of Hyde if he chooses",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-2-07",
@@ -1450,7 +1616,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Dr Jekyll asking Mr Utterson to stop investigating Mr Hyde",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-2-08",
@@ -1470,6 +1637,10 @@
   "context": "",
   "note": "describes Mr Hyde attacking Sir Danvers Carew",
   "technique_matches": [
+   "Metaphor",
+   "Verb"
+  ],
+  "technique_primary": [
    "Metaphor",
    "Verb"
   ]
@@ -1508,6 +1679,14 @@
    "Semantic field",
    "Motif",
    "Emotive language"
+  ],
+  "technique_primary": [
+   "Imagery",
+   "Metaphor",
+   "Simile",
+   "Semantic field",
+   "Motif",
+   "Emotive language"
   ]
  },
  {
@@ -1529,6 +1708,9 @@
   "note": "the full title of the novel",
   "technique_matches": [
    "Adjective"
+  ],
+  "technique_primary": [
+   "Adjective"
   ]
  },
  {
@@ -1548,7 +1730,8 @@
   "technique_notes": [],
   "context": "",
   "note": "this describes Sir Danvers Carew, suggesting he’s an innocent and respectable gentleman",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-3-02",
@@ -1567,7 +1750,8 @@
   "technique_notes": [],
   "context": "",
   "note": "this describes the dark night on the evening of Carew’s murder",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-3-03",
@@ -1586,7 +1770,8 @@
   "technique_notes": [],
   "context": "",
   "note": "describes the inside of Mr Hyde’s house",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-3-04",
@@ -1605,7 +1790,8 @@
   "technique_notes": [],
   "context": "",
   "note": "describes Dr Jekyll when Mr Utterson visits him after the murder",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-3-05",
@@ -1624,7 +1810,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Dr Jekyll making a promise to God that he will never associate with Mr Hyde again",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-3-06",
@@ -1643,7 +1830,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Mr Guest describing how Dr Jekyll’s handwriting is the same as Mr Hyde’s",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-3-07",
@@ -1663,6 +1851,11 @@
   "context": "",
   "note": "describing the way Dr Lanyon has changed and looks close to death",
   "technique_matches": [
+   "Imagery",
+   "Juxtaposition",
+   "Adjective"
+  ],
+  "technique_primary": [
    "Imagery",
    "Juxtaposition",
    "Adjective"
@@ -1686,6 +1879,12 @@
   "context": "",
   "note": "describes how Dr Lanyon looks traumatised and consumed by fear",
   "technique_matches": [
+   "Symbol",
+   "Emotive language",
+   "Adjective"
+  ],
+  "technique_primary": [
+   "Symbol",
    "Emotive language",
    "Adjective"
   ]
@@ -1707,7 +1906,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Dr Jekyll writes a letter to Mr Utterson asking him to leave him to go down his dark path",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-3-10",
@@ -1726,7 +1926,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Dr Jekyll explaining in a letter that he is suffering for his sins and crimes",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-4-01",
@@ -1746,6 +1947,10 @@
   "context": "",
   "note": "Mr Poole describes seeing Mr Hyde in the laboratory wearing a mask",
   "technique_matches": [
+   "Imagery",
+   "Symbol"
+  ],
+  "technique_primary": [
    "Imagery",
    "Symbol"
   ]
@@ -1770,6 +1975,10 @@
   "technique_matches": [
    "Imagery",
    "Symbol"
+  ],
+  "technique_primary": [
+   "Imagery",
+   "Symbol"
   ]
  },
  {
@@ -1789,7 +1998,8 @@
   "technique_notes": [],
   "context": "",
   "note": "describes a religious book found in the cabinet that has been ruined with blasphemies",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "jh-4-04",
@@ -1809,6 +2019,9 @@
   "context": "",
   "note": "Dr Lanyon describes the supernatural transformation he witnessed",
   "technique_matches": [
+   "Imagery"
+  ],
+  "technique_primary": [
    "Imagery"
   ]
  },
@@ -1832,6 +2045,10 @@
   "technique_matches": [
    "Repetition",
    "Verb"
+  ],
+  "technique_primary": [
+   "Repetition",
+   "Verb"
   ]
  },
  {
@@ -1852,6 +2069,13 @@
   "context": "",
   "note": "Dr Lanyon describes the way he has been traumatised by his experience",
   "technique_matches": [
+   "Personification",
+   "Dramatic irony",
+   "Hyperbole",
+   "Emotive language",
+   "Irony"
+  ],
+  "technique_primary": [
    "Personification",
    "Dramatic irony",
    "Hyperbole",
@@ -1891,6 +2115,12 @@
    "Repetition",
    "Noun",
    "Declarative statement"
+  ],
+  "technique_primary": [
+   "Juxtaposition",
+   "Repetition",
+   "Noun",
+   "Declarative statement"
   ]
  },
  {
@@ -1911,6 +2141,12 @@
   "context": "",
   "note": "Dr Jekyll describing the conflict between good and evil within all humans",
   "technique_matches": [
+   "Metaphor",
+   "Personification",
+   "Verb",
+   "Adverb"
+  ],
+  "technique_primary": [
    "Metaphor",
    "Personification",
    "Verb",
@@ -1937,6 +2173,10 @@
   "technique_matches": [
    "Symbol",
    "Verb"
+  ],
+  "technique_primary": [
+   "Symbol",
+   "Verb"
   ]
  },
  {
@@ -1960,6 +2200,11 @@
    "Metaphor",
    "Hyperbole",
    "Verb"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Hyperbole",
+   "Verb"
   ]
  },
  {
@@ -1980,7 +2225,12 @@
   "context": "",
   "note": "this describes Dr Jekyll’s cabinet. It seems Hellish and cage-like (on the sheet this shares an entry with “Red baize door”). Checked against the novel: this phrase is in Chapter 5, not Chapter 8",
   "technique_matches": [
-   "Semantic field"
+   "Semantic field",
+   "Symbol"
+  ],
+  "technique_primary": [
+   "Semantic field",
+   "Symbol"
   ]
  },
  {
@@ -2019,6 +2269,12 @@
    "Foreshadowing",
    "Verb",
    "Pronoun"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Foreshadowing",
+   "Verb",
+   "Pronoun"
   ]
  },
  {
@@ -2043,6 +2299,9 @@
   "context": "Opening stage directions signalling the shift when Inspector Goole rings the bell.",
   "note": "describes the cosy lighting, representing the comfortable life they lead and the façade of respectability they create",
   "technique_matches": [
+   "Metaphor"
+  ],
+  "technique_primary": [
    "Metaphor"
   ]
  },
@@ -2069,6 +2328,9 @@
   "note": "describes how the lighting changes when the Inspector arrives, representing the harsh and uncomfortable truth he reveals about the Birlings",
   "technique_matches": [
    "Metaphor"
+  ],
+  "technique_primary": [
+   "Metaphor"
   ]
  },
  {
@@ -2094,6 +2356,9 @@
   "note": "describes the set – a very luxurious home but shows how the Birlings who live there lack the warmth and affection of a loving family",
   "technique_matches": [
    "Juxtaposition"
+  ],
+  "technique_primary": [
+   "Juxtaposition"
   ]
  },
  {
@@ -2113,7 +2378,8 @@
   "technique_notes": [],
   "context": "",
   "note": "describes Mr Birling. He’s a wealthy capitalist that owns factories",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-1-05",
@@ -2136,7 +2402,8 @@
   ],
   "context": "Opening stage direction describing Mr Birling’s vocal delivery and manner.",
   "note": "describes Mr Birling’s accent, suggesting he comes from a poorer background, possibly working-class. Shows he is an ambitious, self-made businessman who wants to climb the social ladder. The play text we have reads “rather provincial in this speech” (that copy has typos); the sheet’s “in his speech” is kept",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-1-06",
@@ -2160,6 +2427,9 @@
   "context": "Opening stage direction introducing Sybil Birling.",
   "note": "describes Mrs Birling. Suggests she is cold-hearted and lacks compassion and empathy",
   "technique_matches": [
+   "Adjective"
+  ],
+  "technique_primary": [
    "Adjective"
   ]
  },
@@ -2186,6 +2456,9 @@
   "note": "describes Mrs Birling. She comes from upper-class aristocracy but has had to marry a wealthy middle-class businessman",
   "technique_matches": [
    "Noun"
+  ],
+  "technique_primary": [
+   "Noun"
   ]
  },
  {
@@ -2209,7 +2482,8 @@
   ],
   "context": "Opening stage direction during the engagement dinner.",
   "note": "describes Sheila Birling. It suggests that she is “pleased” with the sheltered, privileged life she leads, and is particularly excited by her engagement to Gerald",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-1-09",
@@ -2232,7 +2506,8 @@
   ],
   "context": "Opening stage direction describing Gerald.",
   "note": "describes Gerald Croft. Highlights how he is a respected gentleman in the community who comes from a highly regarded upper-class family",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-1-10",
@@ -2257,6 +2532,9 @@
   "note": "describes Eric Birling. Highlights how uncomfortable he seems, perhaps because he has a distant relationship with his family or perhaps because he is hiding a secret",
   "technique_matches": [
    "Juxtaposition"
+  ],
+  "technique_primary": [
+   "Juxtaposition"
   ]
  },
  {
@@ -2276,7 +2554,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Mr Birling treats the engagement like a business deal between his family and the Crofts",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-2-02",
@@ -2295,7 +2574,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Mr Birling believes he is practical and sensible, but also shows he does not value sympathy or compassion for others. His only concern is making money, not helping society",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-2-03",
@@ -2319,6 +2599,11 @@
   "context": "Pontificating about industrial progress and the Titanic to Gerald and Eric.",
   "note": "Mr Birling believes that the Titanic will never sink, highlighting his arrogance and foolishness",
   "technique_matches": [
+   "Repetition",
+   "Dramatic irony",
+   "Irony"
+  ],
+  "technique_primary": [
    "Repetition",
    "Dramatic irony",
    "Irony"
@@ -2347,6 +2632,9 @@
   "note": "Mr Birling makes sarcastic comments about socialist ideas, showing how he is capitalist",
   "technique_matches": [
    "Simile"
+  ],
+  "technique_primary": [
+   "Simile"
   ]
  },
  {
@@ -2366,7 +2654,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Mr Birling lectures Gerald and Eric, revealing how he thinks people should be selfish",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-2-06",
@@ -2390,6 +2679,9 @@
   "context": "Justifying refusing Eva Smith and her fellow strikers fair wages.",
   "note": "Mr Birling explaining to the Inspector why he refused to give Eva Smith fairer pay",
   "technique_matches": [
+   "Noun"
+  ],
+  "technique_primary": [
    "Noun"
   ]
  },
@@ -2415,6 +2707,9 @@
   "context": "Defending his decision to discharge Eva Smith.",
   "note": "Mr Birling justifies why he fired Eva Smith, showing a lack of empathy towards her",
   "technique_matches": [
+   "Hyperbole"
+  ],
+  "technique_primary": [
    "Hyperbole"
   ]
  },
@@ -2442,6 +2737,10 @@
   "technique_matches": [
    "Juxtaposition",
    "Verb"
+  ],
+  "technique_primary": [
+   "Juxtaposition",
+   "Verb"
   ]
  },
  {
@@ -2465,7 +2764,8 @@
   ],
   "context": "Admiring her diamond engagement ring.",
   "note": "Sheila describing how beautiful her engagement ring is. Highlights how superficial and spoilt she is. Also, the way she says “Mummy” and “Daddy” highlights how childish and sheltered she is",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-3-02",
@@ -2491,6 +2791,10 @@
   "technique_matches": [
    "Imperative (command)",
    "Verb"
+  ],
+  "technique_primary": [
+   "Imperative (command)",
+   "Verb"
   ]
  },
  {
@@ -2510,7 +2814,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Sheila feeling sorry for Eva. The two characters are foils (contrasting characters), both young women who have faced very different lives because of their social class",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-3-04",
@@ -2533,7 +2838,8 @@
   ],
   "context": "Reacting to the news of Eva Smith’s dismissal from the factory.",
   "note": "Sheila challenges her father’s capitalist views. She humanises the working class and sees them as “people”. This contrasts to Mr Birling who sees them as “labour” to simply use and exploit",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-3-05",
@@ -2552,7 +2858,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Inspector interrogates Sheila. Sheila abused her power to make sure Eva was fired from Milwards. She was jealous and angry that Eva suited a dress that did not look good on her",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-3-06",
@@ -2575,7 +2882,8 @@
   ],
   "context": "Confronting Gerald at the end of Act 1 over Daisy Renton.",
   "note": "Sheila telling Gerald he is foolish if he thinks he can lie to the Inspector. She knows that it is better to be honest and to accept the guilt for what they have done",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-4-01",
@@ -2600,6 +2908,9 @@
   "note": "The Inspector’s name, “Goole” is a homophone for “ghoul”, meaning ghost. This could represent how he has supernatural powers or could be symbolic of God and the Holy Ghost",
   "technique_matches": [
    "Allusion"
+  ],
+  "technique_primary": [
+   "Allusion"
   ]
  },
  {
@@ -2623,7 +2934,8 @@
   ],
   "context": "Repeated stage direction governing Goole’s interruptions of Birling.",
   "note": "stage direction describing how the Inspector interrupts the Birlings and Gerald while they speak. Emphasises how he is a strong, powerful force that cannot be overcome",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-4-03",
@@ -2647,6 +2959,9 @@
   "context": "Opening stage direction introducing the Inspector’s manner of speech.",
   "note": "stage directions describing how the Inspector speaks. He speaks carefully because he is in control of both his words and the situation. Also, his words carry much power and importance",
   "technique_matches": [
+   "Adverb"
+  ],
+  "technique_primary": [
    "Adverb"
   ]
  },
@@ -2674,6 +2989,10 @@
   "technique_matches": [
    "Imagery",
    "Metaphor"
+  ],
+  "technique_primary": [
+   "Imagery",
+   "Metaphor"
   ]
  },
  {
@@ -2697,7 +3016,12 @@
   ],
   "context": "The two names used by the victim across the narrative.",
   "note": "Eva’s name is significant. The surname “Smith” is a common, working-class surname, suggesting she represents the working class. “Eva” is a variation of “Eve”, the first woman created by God in the Bible, suggesting she represents the experiences of working-class women",
-  "technique_matches": []
+  "technique_matches": [
+   "Symbol"
+  ],
+  "technique_primary": [
+   "Symbol"
+  ]
  },
  {
   "id": "aic-4-06",
@@ -2721,6 +3045,9 @@
   "context": "The Inspector bluntly describing Eva Smith’s suicide to the family in Act 1.",
   "note": "The Inspector describing how Eva Smith died. It was a very violent and gruesome suicide",
   "technique_matches": [
+   "Imagery"
+  ],
+  "technique_primary": [
    "Imagery"
   ]
  },
@@ -2747,6 +3074,9 @@
   "note": "The Inspector describing Eva when she was unemployed for two months after Mr Birling fired her from the factory. “Half-starved” shows how impoverished she is, contrasting to the Birlings who are enjoying fine dining to celebrate Sheila and Gerald’s engagement",
   "technique_matches": [
    "Adjective"
+  ],
+  "technique_primary": [
+   "Adjective"
   ]
  },
  {
@@ -2771,6 +3101,9 @@
   "context": "Goole rebuking Birling’s lack of sympathy for his female factory staff.",
   "note": "The Inspector speaking to the Birlings. He suggests that it is important to show empathy to those who are less fortunate in society. The play says “if sometimes we tried to put ourselves in the place of…”; the sheet shortens it",
   "technique_matches": [
+   "Imagery"
+  ],
+  "technique_primary": [
    "Imagery"
   ]
  },
@@ -2797,6 +3130,9 @@
   "note": "Only on the mid-point sheet",
   "technique_matches": [
    "Antithesis"
+  ],
+  "technique_primary": [
+   "Antithesis"
   ]
  },
  {
@@ -2821,6 +3157,10 @@
   "context": "The theological and political climax of Goole’s farewell sermon.",
   "note": "Only on the mid-point sheet",
   "technique_matches": [
+   "Metaphor",
+   "Allusion"
+  ],
+  "technique_primary": [
    "Metaphor",
    "Allusion"
   ]
@@ -2850,6 +3190,9 @@
    "Juxtaposition",
    "Antithesis",
    "Adjective"
+  ],
+  "technique_primary": [
+   "Antithesis"
   ]
  },
  {
@@ -2877,6 +3220,9 @@
    "Juxtaposition",
    "Antithesis",
    "Adjective"
+  ],
+  "technique_primary": [
+   "Antithesis"
   ]
  },
  {
@@ -2900,7 +3246,12 @@
   ],
   "context": "The two names used by the victim across the narrative.",
   "note": "Only on the mid-point sheet (the second name of the victim, part of its quote 17)",
-  "technique_matches": []
+  "technique_matches": [
+   "Symbol"
+  ],
+  "technique_primary": [
+   "Symbol"
+  ]
  },
  {
   "id": "aic-6-01",
@@ -2919,7 +3270,8 @@
   "technique_notes": [],
   "context": "",
   "note": "From Lesson 10 (young vs older generations): Sheila’s reaction, contrasted with Mr Birling’s “asking for the earth” line.",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-6-02",
@@ -2939,6 +3291,10 @@
   "context": "",
   "note": "From Lessons 11 and 14: Sheila to Gerald about his affair with Daisy Renton.",
   "technique_matches": [
+   "Metaphor",
+   "Adjective"
+  ],
+  "technique_primary": [
    "Metaphor",
    "Adjective"
   ]
@@ -2962,6 +3318,9 @@
   "note": "From Lesson 13: Mrs Birling on Eva’s refusal of the charity’s help. The play has “would ever refuse money”; the lesson omits “ever”.",
   "technique_matches": [
    "Imagery"
+  ],
+  "technique_primary": [
+   "Imagery"
   ]
  },
  {
@@ -2984,6 +3343,10 @@
   "technique_matches": [
    "Imagery",
    "Verb"
+  ],
+  "technique_primary": [
+   "Imagery",
+   "Verb"
   ]
  },
  {
@@ -3003,7 +3366,8 @@
   "technique_notes": [],
   "context": "",
   "note": "From Lesson 14: Eric to Mrs Birling.",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-6-06",
@@ -3023,6 +3387,10 @@
   "context": "",
   "note": "From Lesson 15: the Inspector’s final speech. The play continues “of Eva Smiths and John Smiths still left with us”; the lesson shortens it.",
   "technique_matches": [
+   "Hyperbole",
+   "Pronoun"
+  ],
+  "technique_primary": [
    "Hyperbole",
    "Pronoun"
   ]
@@ -3050,6 +3418,13 @@
    "Dramatic irony",
    "Audience",
    "Irony"
+  ],
+  "technique_primary": [
+   "Imagery",
+   "Metaphor",
+   "Dramatic irony",
+   "Audience",
+   "Irony"
   ]
  },
  {
@@ -3069,7 +3444,8 @@
   "technique_notes": [],
   "context": "",
   "note": "From Lesson 16 (accountability).",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-6-09",
@@ -3088,7 +3464,8 @@
   "technique_notes": [],
   "context": "",
   "note": "From Lesson 14 quote quiz. In the play it continues “– but I can’t believe – I won’t believe – it’s simply my fault”.",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-6-10",
@@ -3107,7 +3484,8 @@
   "technique_notes": [],
   "context": "",
   "note": "From Lesson 14 quote quiz. The play has “A girl died tonight. A pretty, lively sort of girl… But she died in misery and agony – hating life”.",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "aic-6-11",
@@ -3126,7 +3504,8 @@
   "technique_notes": [],
   "context": "",
   "note": "From Lesson 14 quote quiz: the stage direction describing the Inspector.",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "pc-oz-01",
@@ -3151,6 +3530,9 @@
   "note": "",
   "technique_matches": [
    "Speaker",
+   "Adjective"
+  ],
+  "technique_primary": [
    "Adjective"
   ]
  },
@@ -3182,6 +3564,10 @@
    "Symbol",
    "Noun",
    "Religious imagery"
+  ],
+  "technique_primary": [
+   "Repetition",
+   "Noun"
   ]
  },
  {
@@ -3209,6 +3595,10 @@
   "technique_matches": [
    "Imperative (command)",
    "Irony"
+  ],
+  "technique_primary": [
+   "Imperative (command)",
+   "Irony"
   ]
  },
  {
@@ -3233,7 +3623,8 @@
   ],
   "context": "",
   "note": "Reveals that all of Ozymandias’ power and achievements have disappeared over time.",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "pc-oz-05",
@@ -3261,6 +3652,10 @@
    "Imagery",
    "Symbol",
    "Alliteration"
+  ],
+  "technique_primary": [
+   "Imagery",
+   "Alliteration"
   ]
  },
  {
@@ -3285,6 +3680,9 @@
   "context": "",
   "note": "",
   "technique_matches": [
+   "Juxtaposition"
+  ],
+  "technique_primary": [
    "Juxtaposition"
   ]
  },
@@ -3311,6 +3709,10 @@
   "context": "",
   "note": "",
   "technique_matches": [
+   "Alliteration",
+   "Adjective"
+  ],
+  "technique_primary": [
    "Alliteration",
    "Adjective"
   ]
@@ -3342,6 +3744,11 @@
    "Repetition",
    "Symbol",
    "Adjective"
+  ],
+  "technique_primary": [
+   "Repetition",
+   "Symbol",
+   "Adjective"
   ]
  },
  {
@@ -3368,6 +3775,10 @@
   "note": "Shows how people are mentally trapped and controlled by society. The anthology spells it “mind-forged” (the original has “mind-forg’d”).",
   "technique_matches": [
    "Imagery",
+   "Metaphor",
+   "Noun"
+  ],
+  "technique_primary": [
    "Metaphor",
    "Noun"
   ]
@@ -3397,6 +3808,10 @@
   "technique_matches": [
    "Imagery",
    "Symbol"
+  ],
+  "technique_primary": [
+   "Imagery",
+   "Symbol"
   ]
  },
  {
@@ -3422,6 +3837,11 @@
   "context": "",
   "note": "Critiques the Church for being corrupt and failing to help the poor.",
   "technique_matches": [
+   "Symbol",
+   "Adjective"
+  ],
+  "technique_primary": [
+   "Symbol",
    "Adjective"
   ]
  },
@@ -3448,6 +3868,9 @@
   "note": "",
   "technique_matches": [
    "Symbol"
+  ],
+  "technique_primary": [
+   "Symbol"
   ]
  },
  {
@@ -3473,8 +3896,13 @@
   "context": "",
   "note": "Shows the speaker’s arrogance at the start of the poem, as he disturbs the stillness of nature without thinking about the consequences.",
   "technique_matches": [
+   "Symbol",
    "Sibilance",
    "Verb"
+  ],
+  "technique_primary": [
+   "Symbol",
+   "Sibilance"
   ]
  },
  {
@@ -3502,8 +3930,13 @@
   "technique_matches": [
    "Imagery",
    "Personification",
+   "Symbol",
    "Volta",
    "Verb"
+  ],
+  "technique_primary": [
+   "Imagery",
+   "Personification"
   ]
  },
  {
@@ -3530,7 +3963,12 @@
   "note": "Shows that the experience has permanently changed the speaker, leaving him haunted and humbled by the power of nature.",
   "technique_matches": [
    "Imagery",
+   "Symbol",
    "Form",
+   "Adjective"
+  ],
+  "technique_primary": [
+   "Symbol",
    "Adjective"
   ]
  },
@@ -3560,6 +3998,10 @@
   "technique_matches": [
    "Adjective",
    "Pronoun"
+  ],
+  "technique_primary": [
+   "Adjective",
+   "Pronoun"
   ]
  },
  {
@@ -3585,6 +4027,9 @@
   "context": "",
   "note": "Shows how the Duke sees the Duchess as his possession rather than an independent person.",
   "technique_matches": [
+   "Pronoun"
+  ],
+  "technique_primary": [
    "Pronoun"
   ]
  },
@@ -3613,6 +4058,10 @@
   "technique_matches": [
    "Euphemism",
    "Caesura"
+  ],
+  "technique_primary": [
+   "Euphemism",
+   "Caesura"
   ]
  },
  {
@@ -3638,6 +4087,11 @@
   "context": "",
   "note": "Shows the Duke’s obsession with control and power.",
   "technique_matches": [
+   "Symbol",
+   "Imperative (command)"
+  ],
+  "technique_primary": [
+   "Symbol",
    "Imperative (command)"
   ]
  },
@@ -3666,7 +4120,12 @@
   "technique_matches": [
    "Imagery",
    "Metaphor",
-   "Personification"
+   "Personification",
+   "Symbol"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Symbol"
   ]
  },
  {
@@ -3696,6 +4155,10 @@
    "Semantic field",
    "Imperative (command)",
    "Adjective"
+  ],
+  "technique_primary": [
+   "Repetition",
+   "Adjective"
   ]
  },
  {
@@ -3723,6 +4186,10 @@
   "technique_matches": [
    "Juxtaposition",
    "Verb"
+  ],
+  "technique_primary": [
+   "Juxtaposition",
+   "Verb"
   ]
  },
  {
@@ -3748,6 +4215,10 @@
   "context": "",
   "note": "Shows shared exhaustion and suffering in harsh war conditions.",
   "technique_matches": [
+   "Verb",
+   "Pronoun"
+  ],
+  "technique_primary": [
    "Verb",
    "Pronoun"
   ]
@@ -3779,6 +4250,10 @@
    "Sibilance",
    "Verb",
    "Pronoun"
+  ],
+  "technique_primary": [
+   "Personification",
+   "Verb"
   ]
  },
  {
@@ -3808,6 +4283,10 @@
    "Symbol",
    "Adjective",
    "Pronoun"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Symbol"
   ]
  },
  {
@@ -3827,7 +4306,8 @@
   "technique_notes": [],
   "context": "",
   "note": "",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "pc-so-02",
@@ -3852,6 +4332,10 @@
   "context": "",
   "note": "",
   "technique_matches": [
+   "Simile",
+   "Juxtaposition"
+  ],
+  "technique_primary": [
    "Simile",
    "Juxtaposition"
   ]
@@ -3881,6 +4365,10 @@
   "technique_matches": [
    "Semantic field",
    "Plosive"
+  ],
+  "technique_primary": [
+   "Semantic field",
+   "Plosive"
   ]
  },
  {
@@ -3906,6 +4394,11 @@
   "context": "",
   "note": "",
   "technique_matches": [
+   "Symbol",
+   "Verb"
+  ],
+  "technique_primary": [
+   "Symbol",
    "Verb"
   ]
  },
@@ -3936,6 +4429,10 @@
    "Juxtaposition",
    "List",
    "Noun"
+  ],
+  "technique_primary": [
+   "Juxtaposition",
+   "Noun"
   ]
  },
  {
@@ -3961,6 +4458,10 @@
   "context": "",
   "note": "Shows the soldier’s panic and instinctive reaction.",
   "technique_matches": [
+   "Verb",
+   "Adverb"
+  ],
+  "technique_primary": [
    "Verb",
    "Adverb"
   ]
@@ -3991,6 +4492,10 @@
    "Metaphor",
    "Alliteration",
    "Adjective"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Adjective"
   ]
  },
  {
@@ -4017,7 +4522,12 @@
   "context": "",
   "note": "",
   "technique_matches": [
-   "Imagery"
+   "Imagery",
+   "Symbol"
+  ],
+  "technique_primary": [
+   "Imagery",
+   "Symbol"
   ]
  },
  {
@@ -4044,7 +4554,12 @@
   "note": "Shows how guilt and trauma follow the soldier after the killing.",
   "technique_matches": [
    "Imagery",
-   "Metaphor"
+   "Metaphor",
+   "Symbol"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Symbol"
   ]
  },
  {
@@ -4073,6 +4588,10 @@
    "Juxtaposition",
    "Repetition",
    "Syntax",
+   "Adverb"
+  ],
+  "technique_primary": [
+   "Juxtaposition",
    "Adverb"
   ]
  },
@@ -4103,6 +4622,11 @@
    "Imagery",
    "Verb",
    "Colloquial language"
+  ],
+  "technique_primary": [
+   "Imagery",
+   "Verb",
+   "Colloquial language"
   ]
  },
  {
@@ -4130,6 +4654,13 @@
   "context": "",
   "note": "",
   "technique_matches": [
+   "Symbol",
+   "Plosive",
+   "Enjambment",
+   "Verb"
+  ],
+  "technique_primary": [
+   "Symbol",
    "Plosive",
    "Enjambment",
    "Verb"
@@ -4158,6 +4689,9 @@
   "note": "",
   "technique_matches": [
    "Volta"
+  ],
+  "technique_primary": [
+   "Volta"
   ]
  },
  {
@@ -4181,7 +4715,8 @@
   ],
   "context": "",
   "note": "",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "pc-pp-01",
@@ -4208,6 +4743,11 @@
   "technique_matches": [
    "Imagery",
    "Metaphor",
+   "Symbol",
+   "Adjective"
+  ],
+  "technique_primary": [
+   "Metaphor",
    "Adjective"
   ]
  },
@@ -4225,7 +4765,6 @@
   "master": true,
   "gap_word": "blackthorns",
   "techniques": [
-   "Metaphor",
    "Symbolism"
   ],
   "technique_notes": [
@@ -4236,7 +4775,11 @@
   "technique_matches": [
    "Imagery",
    "Metaphor",
+   "Symbol",
    "Religious imagery"
+  ],
+  "technique_primary": [
+   "Symbol"
   ]
  },
  {
@@ -4264,7 +4807,12 @@
   "technique_matches": [
    "Imagery",
    "Metaphor",
+   "Symbol",
    "Verb"
+  ],
+  "technique_primary": [
+   "Imagery",
+   "Symbol"
   ]
  },
  {
@@ -4292,8 +4840,13 @@
   "technique_matches": [
    "Metaphor",
    "Juxtaposition",
+   "Symbol",
    "Adjective",
    "Extended metaphor"
+  ],
+  "technique_primary": [
+   "Juxtaposition",
+   "Symbol"
   ]
  },
  {
@@ -4322,6 +4875,10 @@
    "Metaphor",
    "Juxtaposition",
    "Sibilance"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Juxtaposition"
   ]
  },
  {
@@ -4348,6 +4905,11 @@
   "context": "",
   "note": "",
   "technique_matches": [
+   "Plosive",
+   "Caesura",
+   "List"
+  ],
+  "technique_primary": [
    "Plosive",
    "Caesura",
    "List"
@@ -4378,6 +4940,10 @@
   "technique_matches": [
    "Pronoun",
    "Declarative statement"
+  ],
+  "technique_primary": [
+   "Pronoun",
+   "Declarative statement"
   ]
  },
  {
@@ -4397,7 +4963,8 @@
   "technique_notes": [],
   "context": "",
   "note": "",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "pc-ti-02",
@@ -4422,6 +4989,9 @@
   "note": "",
   "technique_matches": [
    "Semantic field"
+  ],
+  "technique_primary": [
+   "Semantic field"
   ]
  },
  {
@@ -4441,7 +5011,8 @@
   "technique_notes": [],
   "context": "",
   "note": "",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "pc-em-01",
@@ -4466,6 +5037,9 @@
   "context": "",
   "note": "The anthology has “There once was a country…”; the revision guide has “There was once a country…”.",
   "technique_matches": [
+   "Caesura"
+  ],
+  "technique_primary": [
    "Caesura"
   ]
  },
@@ -4495,6 +5069,10 @@
    "Imagery",
    "Metaphor",
    "Juxtaposition"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Juxtaposition"
   ]
  },
  {
@@ -4520,7 +5098,12 @@
   "context": "",
   "note": "Shows how the speaker’s identity is shaped by her memories of her homeland.",
   "technique_matches": [
-   "Metaphor"
+   "Metaphor",
+   "Symbol"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Symbol"
   ]
  },
  {
@@ -4540,7 +5123,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The anthology has “It lies down in front of me, docile as paper; / I comb its hair and love its shining eyes.”",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "pc-co-01",
@@ -4565,6 +5149,9 @@
   "context": "",
   "note": "",
   "technique_matches": [
+   "Metaphor"
+  ],
+  "technique_primary": [
    "Metaphor"
   ]
  },
@@ -4593,6 +5180,10 @@
   "technique_matches": [
    "Repetition",
    "Pronoun"
+  ],
+  "technique_primary": [
+   "Repetition",
+   "Pronoun"
   ]
  },
  {
@@ -4618,6 +5209,9 @@
   "note": "",
   "technique_matches": [
    "Metaphor"
+  ],
+  "technique_primary": [
+   "Metaphor"
   ]
  },
  {
@@ -4641,6 +5235,9 @@
   "note": "",
   "technique_matches": [
    "Symbol"
+  ],
+  "technique_primary": [
+   "Symbol"
   ]
  },
  {
@@ -4663,6 +5260,9 @@
   "context": "",
   "note": "",
   "technique_matches": [
+   "Symbol"
+  ],
+  "technique_primary": [
    "Symbol"
   ]
  },
@@ -4690,7 +5290,12 @@
   "note": "Suggests the pilot is brainwashed by patriotic propaganda.",
   "technique_matches": [
    "Metaphor",
+   "Symbol",
    "Hyperbole",
+   "Adjective"
+  ],
+  "technique_primary": [
+   "Metaphor",
    "Adjective"
   ]
  },
@@ -4722,6 +5327,10 @@
    "Symbol",
    "Sibilance",
    "Adjective"
+  ],
+  "technique_primary": [
+   "Symbol",
+   "Adjective"
   ]
  },
  {
@@ -4749,6 +5358,10 @@
   "technique_matches": [
    "Juxtaposition",
    "Rhetorical question"
+  ],
+  "technique_primary": [
+   "Juxtaposition",
+   "Rhetorical question"
   ]
  },
  {
@@ -4770,6 +5383,9 @@
   "note": "The alternative title of the novel. Shelley compares Victor to the myth of Prometheus",
   "technique_matches": [
    "Allusion"
+  ],
+  "technique_primary": [
+   "Allusion"
   ]
  },
  {
@@ -4789,7 +5405,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Walton’s description of Victor when he pulls him onto the ship",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-1-02b",
@@ -4808,7 +5425,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Walton’s description of Victor when he pulls him onto the ship",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-1-02c",
@@ -4829,6 +5447,9 @@
   "note": "Walton’s description of Victor when he pulls him onto the ship",
   "technique_matches": [
    "Symbol"
+  ],
+  "technique_primary": [
+   "Symbol"
   ]
  },
  {
@@ -4848,7 +5469,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor Frankenstein describes how his parents loved and cared for him",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-1-04",
@@ -4869,6 +5491,9 @@
   "note": "Victor describes how his parents gave him a privileged and joyful childhood",
   "technique_matches": [
    "Metaphor"
+  ],
+  "technique_primary": [
+   "Metaphor"
   ]
  },
  {
@@ -4888,7 +5513,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor describing his desire to create life and transgress the laws of nature and religion",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-1-06",
@@ -4907,7 +5533,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor hopes to create a new species of creatures that will recognise him as their God",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-1-07",
@@ -4929,6 +5556,10 @@
   "technique_matches": [
    "Personification",
    "Verb"
+  ],
+  "technique_primary": [
+   "Personification",
+   "Verb"
   ]
  },
  {
@@ -4948,7 +5579,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor describing how isolated he became during the creation of the creature",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-1-09",
@@ -4968,6 +5600,9 @@
   "context": "Frankenstein lesson 7: childbirth imagery for the Creature’s birth.",
   "note": "Victor describing the hard work behind his creation of the creature",
   "technique_matches": [
+   "Imagery"
+  ],
+  "technique_primary": [
    "Imagery"
   ]
  },
@@ -4990,6 +5625,9 @@
   "note": "Victor describing how he is immediately disgusted by the creature and rejects it",
   "technique_matches": [
    "Imagery"
+  ],
+  "technique_primary": [
+   "Imagery"
   ]
  },
  {
@@ -5009,7 +5647,8 @@
   "technique_notes": [],
   "context": "Novel: \"all the portion of happiness that it was in my power to bestow\"",
   "note": "Victor agrees to make a female creature because he believes it’s his duty as his creator",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-1-12",
@@ -5028,7 +5667,8 @@
   "technique_notes": [],
   "context": "Novel: \"the slave of my creature\" (teacher: \"a slave to my creature\")",
   "note": "Victor feels like he is controlled by the creature and must obey him",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-1-13",
@@ -5047,7 +5687,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature demands Victor to make him a female creature and tells him to obey",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-1-14",
@@ -5066,7 +5707,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor believes he is the most miserable living creature in existence",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-1-15",
@@ -5085,7 +5727,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor describes how his loved ones have all been taken by the Creature, leaving him alone",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-1-16",
@@ -5104,7 +5747,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor lists all the victims of the Creature",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-1-17",
@@ -5123,7 +5767,8 @@
   "technique_notes": [],
   "context": "Novel: \"I, not in deed, but in effect, was the true murderer\" (also \"But I, the true murderer\" earlier in Chapter 8)",
   "note": "Victor feels like he is truly responsible for the death of William and Justine",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-1-18",
@@ -5142,7 +5787,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor describing how the guilt he feels for the deaths of William and Justine is unbearable and will never go",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-1-19",
@@ -5161,7 +5807,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor describes how he aspired for power but it led to his downfall",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-01a",
@@ -5181,6 +5828,9 @@
   "context": "Frankenstein lesson 7: nightmarish imagery.",
   "note": "Victor describing the Creature, on the night he creates him",
   "technique_matches": [
+   "Imagery"
+  ],
+  "technique_primary": [
    "Imagery"
   ]
  },
@@ -5204,6 +5854,10 @@
   "technique_matches": [
    "Metaphor",
    "Imperative (command)"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Imperative (command)"
   ]
  },
  {
@@ -5223,7 +5877,8 @@
   "technique_notes": [],
   "context": "Victor uses \"monster\" many times; first in Chapter 5",
   "note": "Victor describing the Creature. The Creature later calls himself this too",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-01d",
@@ -5242,7 +5897,8 @@
   "technique_notes": [],
   "context": "\"fiend\" is used many times (e.g. Chapters 9, 16, 20)",
   "note": "Victor describing the Creature. The Creature later calls himself this too",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-01e",
@@ -5261,7 +5917,8 @@
   "technique_notes": [],
   "context": "1818 text spells it \"dæmon\" (e.g. Chapter 7); used many times",
   "note": "Victor describes the Creature",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-01f",
@@ -5280,7 +5937,8 @@
   "technique_notes": [],
   "context": "William says \"ogre\" in Chapter 16",
   "note": "William describing the Creature",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-02",
@@ -5299,7 +5957,8 @@
   "technique_notes": [],
   "context": "Novel: \"good spirit, wonderful\" (the cottagers' words; Creature overhears)",
   "note": "Felix and Agatha believe that the Creature is a spirit helping their family",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-03",
@@ -5318,7 +5977,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature explains that he was once good, but his painful experiences have made him a monster",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-05",
@@ -5337,7 +5997,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor describing the Creature reaching out to him. He thinks it is trying to attack him",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-06a",
@@ -5356,7 +6017,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature describing the villagers who attacked him",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-06b",
@@ -5375,7 +6037,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature describing the villagers who attacked him",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-07a",
@@ -5394,7 +6057,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature describing the hovel that becomes his home",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-07b",
@@ -5413,7 +6077,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature describing the hovel that becomes his home",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-07c",
@@ -5432,7 +6097,8 @@
   "technique_notes": [],
   "context": "Novel: \"carpeted it with clean straw\"",
   "note": "The Creature describing the hovel that becomes his home",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-08a",
@@ -5451,7 +6117,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature questions who and what he is",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-08b",
@@ -5470,7 +6137,8 @@
   "technique_notes": [],
   "context": "Novel: \"Was I, then, a monster, a blot upon the earth\"",
   "note": "He believes that he must simply be a monster, because this is how he is treated by others",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-09",
@@ -5489,7 +6157,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature explains that he was deprived of loving parents and a family",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-10",
@@ -5512,6 +6181,11 @@
    "Imagery",
    "Metaphor",
    "Religious imagery"
+  ],
+  "technique_primary": [
+   "Imagery",
+   "Metaphor",
+   "Religious imagery"
   ]
  },
  {
@@ -5531,7 +6205,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature explains that when the De Laceys rejected him, this was a turning point",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-12",
@@ -5550,7 +6225,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature explains how he was completely rejected by the whole of society",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-13",
@@ -5569,7 +6245,8 @@
   "technique_notes": [],
   "context": "Novel: \"Shall each man, find a wife for his bosom, and each beast have his mate, and I be alone?\"",
   "note": "The Creature asks Victor why he should be the only living creature to be alone",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-14",
@@ -5588,7 +6265,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature explains to Victor that if he has a female companion to show him love and kindness, he will no longer be a cruel monster",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-15",
@@ -5608,6 +6286,10 @@
   "context": "Frankenstein lessons 15-17: links to Satan’s “Myself am Hell”.",
   "note": "The Creature describes how the rage and hatred turns him into a monster and a devil",
   "technique_matches": [
+   "Metaphor",
+   "Allusion"
+  ],
+  "technique_primary": [
    "Metaphor",
    "Allusion"
   ]
@@ -5631,6 +6313,9 @@
   "note": "The Creature feels a sense of power when murdering William",
   "technique_matches": [
    "Oxymoron"
+  ],
+  "technique_primary": [
+   "Oxymoron"
   ]
  },
  {
@@ -5652,6 +6337,9 @@
   "note": "The Creature feels a sense of power when murdering William",
   "technique_matches": [
    "Declarative statement"
+  ],
+  "technique_primary": [
+   "Declarative statement"
   ]
  },
  {
@@ -5671,7 +6359,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature tells Victor that he is powerful because he has nothing to lose or fear",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-19",
@@ -5690,7 +6379,8 @@
   "technique_notes": [],
   "context": "Sheet says The Creature, but in the novel it is Victor speaking (about his urge for revenge), so speaker changed to Victor Frankenstein",
   "note": "The Creature tells Walton that he was controlled by his rage and hatred",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-2-20",
@@ -5709,7 +6399,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature tells Walton how he feels internally broken and only death will bring him peace",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-3-01",
@@ -5728,7 +6419,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Robert Walton describing the undiscovered and isolated place he travels to",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-3-02",
@@ -5747,7 +6439,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Walton suggesting that he is destined for greatness and feels entitled to success",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-3-03",
@@ -5766,7 +6459,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Walton describing how lonely and isolated he feels on his voyage",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-3-04",
@@ -5785,7 +6479,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Walton describing his deep friendship and connection with Victor",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-3-05",
@@ -5804,7 +6499,8 @@
   "technique_notes": [],
   "context": "Novel: \"for the acquirement of the knowledge which I sought\" (teacher: \"for the knowledge which I sought\")",
   "note": "Walton describing how he is determined to succeed, but this also shows how reckless he is",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-3-06",
@@ -5823,7 +6519,8 @@
   "technique_notes": [],
   "context": "",
   "note": "When Walton asks for details about the creation of the Creature, Victor tells him how foolish he is for wanting to go down the path that he went. Shelley suggests that Walton perhaps has not truly learnt from Victor’s example. However, he does turn his ship back home",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-3-08",
@@ -5842,7 +6539,8 @@
   "technique_notes": [],
   "context": "Creature watching the De Lacey family; check wording against the teacher sheet (not found word-for-word)",
   "note": "The Creature describes how he desperately wants to be part of their family, but fears that they will reject him, like the others who have attacked or rejected him",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-3-09",
@@ -5861,7 +6559,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The creature describes the shock and disgust the De Laceys feel when they see him",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-4-01",
@@ -5882,6 +6581,9 @@
   "note": "In a letter to Victor, Elizabeth describes William’s bright blue eyes",
   "technique_matches": [
    "Symbol"
+  ],
+  "technique_primary": [
+   "Symbol"
   ]
  },
  {
@@ -5901,7 +6603,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature sees William and believes he will be kind to him because he’s an innocent child",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-4-03",
@@ -5920,7 +6623,8 @@
   "technique_notes": [],
   "context": "",
   "note": "William immediately sees the Creature as a monster and treats him cruelly",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-4-05",
@@ -5939,7 +6643,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor describing Justine Moritz as a pure and innocent victim",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-4-06",
@@ -5958,7 +6663,8 @@
   "technique_notes": [],
   "context": "",
   "note": "The Creature assumes Justine will be cruel to him, so decides to make her suffer",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-4-07",
@@ -5977,7 +6683,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor describes how Justine was assumed guilty and not given a fair trial",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-4-08",
@@ -5996,7 +6703,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor describes how he is suffering inside even more than Justine",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-4-09",
@@ -6015,7 +6723,8 @@
   "technique_notes": [],
   "context": "Novel: \"I almost began to think that I was the monster that he said I was\" (the confessor, not the interrogator, says it)",
   "note": "Justine describing how, after being told she was a monster by the interrogator and so many people, she began to believe she was",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-4-10",
@@ -6036,6 +6745,9 @@
   "note": "Elizabeth describes how, after Justine’s trial and execution, she considers society to be the true monster",
   "technique_matches": [
    "Imagery"
+  ],
+  "technique_primary": [
+   "Imagery"
   ]
  },
  {
@@ -6055,7 +6767,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor is haunted by the image of seeing Clerval’s dead body",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-5-02",
@@ -6074,7 +6787,8 @@
   "technique_notes": [],
   "context": "Novel: \"Clerval, my friend and dearest companion, had fallen a victim to me and the monster of my creation\"",
   "note": "Victor believes that he is responsible for the murder of Clerval",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-5-03a",
@@ -6096,6 +6810,10 @@
   "technique_matches": [
    "Metaphor",
    "Adjective"
+  ],
+  "technique_primary": [
+   "Metaphor",
+   "Adjective"
   ]
  },
  {
@@ -6115,7 +6833,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor describes Elizabeth as his gift",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-5-04",
@@ -6134,7 +6853,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor falls in love with Elizabeth and he decides that they will be together forever",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-5-05",
@@ -6153,7 +6873,8 @@
   "technique_notes": [],
   "context": "Appears more than once in the novel; chapter shown is the first.",
   "note": "The Creature promises to get revenge on Victor on his wedding night",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-5-06",
@@ -6172,7 +6893,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor describes the Creature laughing at the dead body of Elizabeth",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-5-07",
@@ -6191,7 +6913,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor describes making the female companion and is disgusted by his work",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-5-08",
@@ -6210,7 +6933,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor worries that the two monsters will have children that will spread across the world",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-5-09",
@@ -6229,7 +6953,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor suddenly changes his mind and believes it is a mistake to make another creature",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-5-10",
@@ -6248,7 +6973,8 @@
   "technique_notes": [],
   "context": "",
   "note": "Victor describes seeing the Creature’s smiling face watching his work through the window",
-  "technique_matches": []
+  "technique_matches": [],
+  "technique_primary": []
  },
  {
   "id": "fk-6-01",
@@ -6268,6 +6994,9 @@
   "context": "Appears more than once in the novel; chapter shown is the first. | Frankenstein lesson 7: childbirth imagery for the Creature’s birth.",
   "note": "The Creature tries to speak to Victor when he is born, but he just makes noises like a baby (on the midpoint list only)",
   "technique_matches": [
+   "Imagery"
+  ],
+  "technique_primary": [
    "Imagery"
   ]
  }

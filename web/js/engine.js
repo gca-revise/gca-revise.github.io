@@ -616,7 +616,9 @@ const QuoteTools = {
   techniqueChoices(q, techniques) {
     // Terms marked spot: false (Theme, Speaker, Act...) are never offered or used as the answer.
     const info = Object.fromEntries(techniques.filter((t) => t.spot !== false).map((t) => [t.name, t]));
-    const names = (q.technique_matches || []).filter((n) => info[n]);
+    // The teacher's own labels come first (technique_primary); the lesson labels are the fallback.
+    const first = q.technique_primary && q.technique_primary.length ? q.technique_primary : (q.technique_matches || []);
+    const names = first.filter((n) => info[n]);
     const plain = names.filter((n) => info[n].category !== "Word types");
     return plain.length ? plain : names;
   },

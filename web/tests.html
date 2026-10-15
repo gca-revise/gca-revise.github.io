@@ -427,6 +427,18 @@ const pool = [
   const verbOpts = optionsFor(verbItem);
   check("when the only technique is a word type it is called 'Verb choice'", verbItem.word === "Verb choice" && verbOpts.some((o) => o.id === verbItem.answerId && o.word === "Verb choice"));
   check("other techniques keep their normal names", techItems.find((t) => t.id === "mt:a2") && (() => { const it = techItems.find((t) => t.id === "mt:a2"); optionsFor(it); return it.word === "Alliteration"; })());
+  // The teacher's own labels (technique_primary) decide the answer; other matches are never wrong options.
+  const primaryQuote = { id: "pp", text: "macbeth", master: true, quote: "The gelled blackthorns of your hair", gap_word: "", technique_matches: ["Metaphor", "Simile", "Hyperbole"], technique_primary: ["Hyperbole"] };
+  const primaryItems = QuoteTools.masterItems([primaryQuote], "macbeth", "mtech", techniques);
+  const primaryOptions = QuoteTools.techOptionsFor(techniques);
+  let answerAlwaysPrimary = true, otherLabelShown = false;
+  for (let i = 0; i < 60; i++) {
+    const opts = primaryOptions(primaryItems[0]);
+    if (primaryItems[0].word !== "Hyperbole") answerAlwaysPrimary = false;
+    if (opts.some((o) => o.word === "Metaphor" || o.word === "Simile")) otherLabelShown = true;
+  }
+  check("the teacher's own label is always the answer", answerAlwaysPrimary);
+  check("her other labels are never offered as wrong options", !otherLabelShown);
   const st = new Session({ items: techItems, mode: "learn", kind: "choose", optionsFor });
   const first = st.next();
   const rt = st.answerChoice(first.answerId);
