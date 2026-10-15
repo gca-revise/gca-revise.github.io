@@ -388,7 +388,7 @@ const pool = [
   const gapItems = QuoteTools.masterItems(quotes, "macbeth", "mgap", techniques);
   check("Type the gap uses core quotes with a gap word only", gapItems.length === 2 && gapItems.every((i) => i.id.startsWith("mg:")));
   const fin = QuoteTools.masterItems(quotes, "macbeth", "mfinish", techniques);
-  check("Finish the quote needs six or more words", fin.length === 1 && fin[0].id === "mf:a1");
+  check("Finish the quote needs six or more words", fin.length === 2 && fin.map((i) => i.id).join() === "mf:a1,mf:a2");
   const f = fin[0];
   const sf = new Session({ items: fin, mode: "learn", kind: "type" });
   sf.next();
@@ -396,7 +396,7 @@ const pool = [
   check("typing the ending right learns the quote (one correct typed answer)", rf.correct && rf.retiredNow && sf.retired.has("mf:a1"));
   const sf2 = new Session({ items: fin, mode: "learn", kind: "type" });
   sf2.next();
-  const rf2 = sf2.answer("is my mind dear husband");
+  const rf2 = sf2.answer("my mind dear husband");  // the ending is "my mind dear wife": one word off
   check("a fair attempt at the ending is 'near' and scores nothing", !rf2.correct && rf2.near && sf2.points === 0);
   const sg = new Session({ items: gapItems, mode: "learn", kind: "type" });
   sg.next();
