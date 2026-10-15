@@ -97,7 +97,7 @@ Object.assign(Screens, {
     }).join("");
     const speaker = run.textId === "power-conflict" ? "" : (q.speaker ? `${esc(q.speaker)}, ` : "");
     const source = `${speaker}${esc(Screens.quoteSource(q))}`
-      + (run.game === "mtech" && (q.technique_matches || []).length ? `<br>Techniques labelled: ${esc(q.technique_matches.join(", "))}` : "");
+      + (run.game === "mtech" && (q.technique_matches || []).length ? `<br>Techniques labelled: ${esc(q.technique_matches.map((n) => QuoteTools.techniqueLabel(Data.techniques.find((t) => t.name === n) || { name: n })).join(", "))}` : "");
     const note = run.sentence
       ? `<p class="fb-sentence"><span class="fb-sentence-label">About this quote</span><span class="fb-sentence-body">${esc(run.sentence)}</span></p>`
       : "";

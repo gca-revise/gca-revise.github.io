@@ -606,6 +606,12 @@ const QuoteTools = {
     return "wrong";
   },
 
+  // How a technique is named in Spot the technique: word types are written the way they are
+  // in the lesson labels ("Verb choice", "Noun choice", "Adverb choice").
+  techniqueLabel(technique) {
+    return technique.category === "Word types" ? technique.name + " choice" : technique.name;
+  },
+
   // The techniques a quote is labelled with, best first (word types like "Verb" come last).
   techniqueChoices(q, techniques) {
     // Terms marked spot: false (Theme, Speaker, Act...) are never offered or used as the answer.
@@ -654,14 +660,14 @@ const QuoteTools = {
       const choices = QuoteTools.techniqueChoices(item.quote, techniques);
       const pick = choices[Math.floor(random() * choices.length)];
       const chosen = techniques.find((t) => t.name === pick);
-      item.word = pick;
+      item.word = QuoteTools.techniqueLabel(chosen);
       item.answerId = "tech:" + QuoteTools.slug(pick);
       const labelled = new Set(item.quote.technique_matches || []);
-      const as = (t) => ({ id: "tech:" + QuoteTools.slug(t.name), word: t.name });
+      const as = (t) => ({ id: "tech:" + QuoteTools.slug(t.name), word: QuoteTools.techniqueLabel(t) });
       const others = techniques.filter((t) => t.name !== pick && !labelled.has(t.name));
       const sameKind = others.filter((t) => t.category === chosen.category).map(as);
       const rest = others.filter((t) => t.category !== chosen.category).map(as);
-      return Engine.makeChoices({ id: item.answerId, word: pick }, sameKind, rest, 4, random);
+      return Engine.makeChoices({ id: item.answerId, word: item.word }, sameKind, rest, 4, random);
     };
   },
 };

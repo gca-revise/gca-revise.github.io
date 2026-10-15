@@ -423,6 +423,10 @@ const pool = [
   let themeShown = false;
   for (let i = 0; i < 80; i++) if (optsFor2(techItems.find((t) => t.id === "mt:a1")).some((o) => o.word === "Theme")) themeShown = true;
   check("a term marked spot: false is never offered as an option", !themeShown);
+  const verbItem = techItems.find((t) => t.id === "mt:a4");
+  const verbOpts = optionsFor(verbItem);
+  check("when the only technique is a word type it is called 'Verb choice'", verbItem.word === "Verb choice" && verbOpts.some((o) => o.id === verbItem.answerId && o.word === "Verb choice"));
+  check("other techniques keep their normal names", techItems.find((t) => t.id === "mt:a2") && (() => { const it = techItems.find((t) => t.id === "mt:a2"); optionsFor(it); return it.word === "Alliteration"; })());
   const st = new Session({ items: techItems, mode: "learn", kind: "choose", optionsFor });
   const first = st.next();
   const rt = st.answerChoice(first.answerId);
