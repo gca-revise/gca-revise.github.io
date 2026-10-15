@@ -8,15 +8,25 @@ function pick(list) {
   return list.length ? list[Math.floor(Math.random() * list.length)] : "";
 }
 
-function startTyped(textId) {
+function startRun(textId, kind) {
   const session = new Session({
     items: Data.wordsFor(textId),
     mode: Store.getMode(),
+    kind,
     retiredIds: Store.retiredIds(),
+    choiceCounts: Store.choiceCounts(),
+    extraPool: Data.vocab,
   });
-  run = { textId, session, phase: "question", last: null, sentence: "" };
+  run = { textId, kind, session, phase: "question", last: null, sentence: "" };
   run.phase = session.next() ? "question" : "complete";
   drawRun();
+}
+
+// A sentence about the text being practised, with the key word in bold when it is drawn.
+function pickSentence(word, textId) {
+  const forThisText = word.examples_high.filter((e) => e.text === textId).map((e) => e.sentence);
+  const forAnyText = word.examples_high.map((e) => e.sentence);
+  return pick(forThisText.length ? forThisText : forAnyText.length ? forAnyText : word.examples);
 }
 
 function drawRun() {
@@ -36,7 +46,10 @@ function route() {
   } else if (parts[0] === "text" && parts.length === 2) {
     html = Screens.text(parts[1]);
   } else if (parts[0] === "text" && parts[2] === "vocab-type" && Data.text(parts[1])) {
-    startTyped(parts[1]);
+    startRun(parts[1], "type");
+    return;
+  } else if (parts[0] === "text" && parts[2] === "vocab-choose" && Data.text(parts[1])) {
+    startRun(parts[1], "choose");
     return;
   } else if (parts[0] === "text" && parts.length === 3) {
     html = Screens.comingSoon(`#/text/${parts[1]}`, "Back to the text");
@@ -67,30 +80,54 @@ app.addEventListener("click", (event) => {
   } else if (action.dataset.action === "again") {
     // Starting again after finishing a set goes to free practice, so learned words stay learned.
     Store.setMode("free");
-    startTyped(run.textId);
+    startRun(run.textId, run.kind);
   }
 });
+
+// After an answer: save it, choose a sentence, and show the right/wrong screen.
+function finishAnswer(result, choiceCount) {
+  const word = run.session.current;
+  Store.recordAnswer(word.id, result.correct, result.retiredNow, choiceCount);
+  run.last = result;
+  run.sentence = pickSentence(word, run.textId);
+  run.phase = result.correct ? "right" : "wrong";
+  drawRun();
+}
 
 // Checking a typed answer (the Check button, or Enter).
 app.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (!run || run.phase !== "question") return;
+  if (!run || run.phase !== "question" || run.kind !== "type") return;
   const typed = app.querySelector("#answer").value;
   if (!typed.trim()) {
     app.querySelector("#answer").focus();
     return;
   }
-  const result = run.session.answer(typed);
-  Store.recordAnswer(run.session.current.id, result.correct, result.retiredNow);
-  run.last = result;
-  const word = run.session.current;
-  // A high-level sentence about the text being practised comes first; then any other text's
-  // sentence for this word; then the older example sentences.
-  const forThisText = word.examples_high.filter((e) => e.text === run.textId).map((e) => e.sentence);
-  const forAnyText = word.examples_high.map((e) => e.sentence);
-  run.sentence = pick(forThisText.length ? forThisText : forAnyText.length ? forAnyText : word.examples);
-  run.phase = result.correct ? "right" : "wrong";
-  drawRun();
+  finishAnswer(run.session.answer(typed));
+});
+
+// Picking a multiple-choice option (tap or click).
+function chooseOption(wordId) {
+  if (!run || run.phase !== "question" || run.kind !== "choose") return;
+  const session = run.session;
+  const wordIdBefore = session.current.id;
+  const result = session.answerChoice(wordId);
+  // Only the learn-the-set mode keeps a running count of right answers.
+  finishAnswer(result, session.mode === "learn" ? session.choiceCounts[wordIdBefore] || 0 : undefined);
+}
+
+app.addEventListener("click", (event) => {
+  const option = event.target.closest("[data-choice]");
+  if (option) chooseOption(option.dataset.choice);
+});
+
+// On a keyboard, A, B, C or D picks that option.
+document.addEventListener("keydown", (event) => {
+  if (!run || run.phase !== "question" || run.kind !== "choose") return;
+  if (event.ctrlKey || event.metaKey || event.altKey) return;
+  const index = "abcd".indexOf(event.key.toLowerCase());
+  if (index < 0 || !run.session.options[index]) return;
+  chooseOption(run.session.options[index].id);
 });
 
 window.addEventListener("hashchange", route);

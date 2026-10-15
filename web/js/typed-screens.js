@@ -4,6 +4,8 @@
 
 const checkIcon = `<svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`;
 const crossIcon = `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>`;
+const checkIconSmall = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`;
+const crossIconSmall = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>`;
 const flameIcon = `<svg width="16" height="16" viewBox="0 0 24 24" fill="#B8790A" aria-hidden="true"><path d="M12 2c1 4 5 6 5 11a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-4-1-6 1-10z"/></svg>`;
 
 Object.assign(Screens, {
@@ -164,8 +166,137 @@ Object.assign(Screens, {
       </div>`;
   },
 
+  // Two small dots showing how many right answers a word has (of the two it needs).
+  dots(have, needed, filled, empty) {
+    let html = "";
+    for (let i = 0; i < needed; i++) {
+      html += `<span class="dot-sm" style="background:${i < have ? filled : empty}"></span>`;
+    }
+    return `<span class="dots" aria-hidden="true">${html}</span>`;
+  },
+
+  // The "This word needs 2 right answers" card on laptops.
+  choiceSide(run, have) {
+    const s = run.session;
+    const needed = Session.CHOICES_TO_LEARN;
+    const learn = s.mode === "learn";
+    return `
+      <aside class="run-side">
+        <div class="side-card">
+          <div class="side-label">${learn ? "This word needs" : "Free practice"}</div>
+          ${learn
+            ? `<div class="side-need">${have} of ${needed} right answers ${Screens.dots(have, needed, "var(--run-fill)", "var(--run-line)")}</div>`
+            : `<div class="side-need">No limit, nothing is retired</div>`}
+        </div>
+        <div class="side-two">
+          <div class="side-card"><div class="side-label">Streak</div><div class="side-num">${s.streak}</div></div>
+          <div class="side-card"><div class="side-label">Points</div><div class="side-num">${s.points}</div></div>
+        </div>
+      </aside>`;
+  },
+
+  choiceQuestion(run) {
+    const s = run.session;
+    const t = Data.text(run.textId);
+    const look = TEXT_LOOK[run.textId];
+    const w = s.current;
+    const have = s.choiceCounts[w.id] || 0;
+    const learn = s.mode === "learn";
+    const buttons = s.options.map((o, i) => `
+      <button type="button" class="choice" data-choice="${esc(o.id)}">
+        <span class="letter">${"ABCD"[i]}</span><span class="choice-text">${esc(o.word)}</span>
+      </button>`).join("");
+    return `
+      <div class="run q mc" style="--accent:${look.colour};--tint:${look.tint}">
+        ${Screens.runBar(run, true)}
+        <main class="run-main">
+          <div class="run-left">
+            <div class="mc-row">
+              <span class="mc-chip">Choose the answer${learn ? Screens.dots(have, Session.CHOICES_TO_LEARN, "var(--run-fill)", "var(--run-line)") : ""}</span>
+              <span class="mc-hint">${learn ? "Get it right twice to learn it" : "Free practice"}</span>
+            </div>
+            <section class="q-card">
+              <div class="q-label">Which word means</div>
+              <div class="q-text">${esc(Engine.blankWord(w.definition, w.word))}</div>
+              <div class="text-pill"><span class="dot"></span>${esc(t.name)}</div>
+            </section>
+            <div class="choices" role="group" aria-label="Choose the answer">${buttons}</div>
+            <p class="hint kbd-hint">Tip for laptops: press A, B, C or D on the keyboard.</p>
+          </div>
+          ${Screens.choiceSide(run, have)}
+        </main>
+      </div>`;
+  },
+
+  choiceFeedback(run) {
+    const s = run.session;
+    const r = run.last;
+    const w = s.current;
+    const right = r.correct;
+    const learn = s.mode === "learn";
+    const finished = s.isComplete();
+    const have = s.choiceCounts[w.id] || 0;
+    const needed = Session.CHOICES_TO_LEARN;
+    const rows = s.options.map((o, i) => {
+      const letter = `<span class="letter">${"ABCD"[i]}</span>`;
+      if (o.id === w.id) {
+        return `<div class="choice is-right"><span class="letter ok">${checkIconSmall}</span><span class="choice-text">${esc(o.word)}</span>${right ? "" : `<span class="choice-tag">Right answer</span>`}</div>`;
+      }
+      if (o.id === r.chosenId) {
+        return `<div class="choice is-wrong"><span class="letter bad">${crossIconSmall}</span><span class="choice-text">${esc(o.word)}</span><span class="choice-tag">Your answer</span></div>`;
+      }
+      return `<div class="choice is-dim">${letter}<span class="choice-text">${esc(o.word)}</span></div>`;
+    }).join("");
+    const sentenceHtml = run.sentence
+      ? Engine.markWord(run.sentence, w.word).map((p) => (p.bold ? `<strong>${esc(p.text)}</strong>` : esc(p.text))).join("")
+      : "";
+    const sentence = run.sentence
+      ? `<p class="fb-sentence"><span class="fb-sentence-label">In context</span><span class="fb-sentence-body">${sentenceHtml}</span></p>`
+      : "";
+    let note;
+    if (right && learn) {
+      note = r.retiredNow
+        ? "This word is learned. You won't see it again in this set."
+        : `${needed - have === 1 ? "One more right answer" : `${needed - have} more right answers`} and “${esc(w.word)}” is learned.`;
+    } else if (right) {
+      note = "Nice one. Free practice keeps going until you stop.";
+    } else {
+      note = learn ? "This word will come back later. No points this time." : "No points this time.";
+    }
+    const chips = right
+      ? `<div class="chips"><span class="chip">+1 point</span><span class="chip">Streak ${s.streak}</span></div>`
+      : "";
+    return `
+      <div class="run ${right ? "right" : "wrong"} mc-fb">
+        ${Screens.runBar(run, false)}
+        <main class="run-main">
+          <div class="run-left">
+            ${learn ? `<div class="mc-row"><span class="mc-chip">Choose the answer${Screens.dots(have, needed, "var(--run-fill)", "var(--run-line)")}</span><span class="mc-hint">${have} of ${needed} right answers</span></div>` : ""}
+            <div class="mc-banner">
+              <span class="mc-banner-icon">${right ? checkIconSmall : crossIconSmall}</span>
+              <span class="mc-banner-text">${right ? "Correct!" : "Not quite"}</span>
+              ${right ? `<span class="mc-banner-side">+1 point · Streak ${s.streak}</span>` : `<span class="mc-banner-side">No points this time</span>`}
+            </div>
+            <p class="mc-def">${esc(w.definition)}</p>
+            <div class="choices">${rows}</div>
+            ${sentence}
+            ${chips}
+            <p class="fb-note mc-note">${note}</p>
+            <div class="mc-actions">
+              <button type="button" class="fb-btn" data-action="next">${finished ? "See your results" : "Next word"}</button>
+              <a class="fb-link" href="#/text/${run.textId}">Stop for now</a>
+            </div>
+          </div>
+          ${Screens.choiceSide(run, have)}
+        </main>
+      </div>`;
+  },
+
   run(run) {
     if (run.phase === "complete") return Screens.complete(run);
+    if (run.kind === "choose") {
+      return run.phase === "question" ? Screens.choiceQuestion(run) : Screens.choiceFeedback(run);
+    }
     if (run.phase === "question") return Screens.question(run);
     return Screens.feedback(run);
   },

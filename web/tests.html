@@ -159,6 +159,74 @@ check("bold: pieces join back to the sentence", Engine.markWord("Macbeth shows h
   check("learned words are not asked again", !asked.has("w1") && asked.size === 2);
 }
 
+// ---- Multiple choice ----
+const pool = [
+  ["belittle", "Belittle"], ["exalt", "Exalt"], ["foreshadow", "Foreshadow"], ["hamartia", "Hamartia"],
+  ["nihilism", "Nihilism"], ["nihilistic", "Nihilistic"], ["free-will", "Free will"], ["fate", "Fate"], ["thane", "Thane"],
+].map(([id, word]) => ({ id, word, definition: "def " + id }));
+{
+  const target = pool.find((w) => w.id === "belittle");
+  const opts = Engine.makeChoices(target, pool, []);
+  check("four options", opts.length === 4);
+  check("the right word is one of the options", opts.some((o) => o.id === "belittle"));
+  check("no option appears twice", new Set(opts.map((o) => o.id)).size === 4);
+  let clash = false;
+  const nih = pool.find((w) => w.id === "nihilistic");
+  for (let i = 0; i < 50; i++) if (Engine.makeChoices(nih, pool, []).some((o) => o.id === "nihilism")) clash = true;
+  check("a cognate (nihilism) is never a wrong option for nihilistic", !clash);
+  const small = pool.slice(0, 2);
+  const padded = Engine.makeChoices(small[0], small, pool);
+  check("a small set borrows options from the extra pool", padded.length === 4);
+  const phrase = pool.find((w) => w.id === "free-will");
+  check("a phrase answer still gets four options", Engine.makeChoices(phrase, pool, []).length === 4);
+}
+{
+  const s = new Session({ items: words(5), mode: "learn", kind: "choose" });
+  const w = s.next();
+  check("options are made for each question", s.options.length === 4 && s.options.some((o) => o.id === w.id));
+  const wrongId = s.options.find((o) => o.id !== w.id).id;
+  const r1 = s.answerChoice(wrongId);
+  check("wrong choice: no point, no retire, no count", !r1.correct && s.points === 0 && !s.retired.has(w.id) && !s.choiceCounts[w.id]);
+  s.next();
+  const second = s.current;
+  const r2 = s.answerChoice(second.id);
+  check("first right choice: point, counted, not yet learned", r2.correct && s.points === 1 && s.choiceCounts[second.id] === 1 && !s.retired.has(second.id) && !r2.retiredNow);
+  check("choice result reports progress", r2.rightSoFar === 1 && r2.needed === 2);
+}
+{
+  const s = new Session({ items: words(2), mode: "learn", kind: "choose", choiceCounts: { w1: 1 } });
+  let found = null;
+  for (let i = 0; i < 6 && !found; i++) { const w = s.next(); if (w.id === "w1") found = w; else s.answerChoice("nope"); }
+  const r = s.answerChoice("w1");
+  check("second right choice retires the word", r.correct && r.retiredNow && s.retired.has("w1"));
+}
+{
+  const s = new Session({ items: words(2), mode: "learn", kind: "choose", choiceCounts: { w1: 1 } });
+  let w = s.next();
+  while (w.id !== "w1") { s.answerChoice("nope"); w = s.next(); }
+  s.answerChoice("nope");
+  check("a wrong choice does not remove an earlier right one", s.choiceCounts.w1 === 1 && !s.retired.has("w1"));
+}
+{
+  const s = new Session({ items: words(3), mode: "free", kind: "choose" });
+  let counted = false;
+  for (let i = 0; i < 10; i++) { const w = s.next(); s.answerChoice(w.id); }
+  check("free practice: choices score points but never retire or count", s.points === 10 && s.retired.size === 0 && Object.keys(s.choiceCounts).length === 0);
+}
+{
+  const s = new Session({ items: words(3), mode: "learn", kind: "choose" });
+  let guard = 0;
+  while (s.next() && guard++ < 50) { s.answerChoice(s.current.id); }
+  const w = s.items[0];
+  check("each word needs two right choices (set ends only after two passes)", s.isComplete() && guard === 6);
+}
+{
+  const s = new Session({ items: words(3), mode: "learn", kind: "type" });
+  const w = s.next();
+  s.answer(w.word);
+  check("typed answers still retire after one", s.retired.has(w.id) && s.options === null);
+}
+
 // ---- Streak and best streak ----
 {
   const s = new Session({ items: words(5), mode: "learn" });

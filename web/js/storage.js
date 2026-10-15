@@ -39,13 +39,25 @@ const Store = {
     return new Set(this.load().retired || []);
   },
 
+  // Right multiple-choice answers so far for each word: {id: count}.
+  choiceCounts() {
+    const stats = this.load().stats || {};
+    const counts = {};
+    for (const id of Object.keys(stats)) {
+      if (stats[id].choiceRight) counts[id] = stats[id].choiceRight;
+    }
+    return counts;
+  },
+
   // Save one answer: right/wrong counts per word, and the word as learned if it just retired.
-  recordAnswer(id, correct, retiredNow) {
+  // `choiceCount` (multiple choice only) is the word's total right multiple-choice answers.
+  recordAnswer(id, correct, retiredNow, choiceCount) {
     const state = this.load();
     state.stats = state.stats || {};
     const entry = state.stats[id] || (state.stats[id] = { right: 0, wrong: 0 });
     if (correct) entry.right += 1;
     else entry.wrong += 1;
+    if (choiceCount !== undefined) entry.choiceRight = choiceCount;
     if (retiredNow) {
       state.retired = Array.from(new Set([...(state.retired || []), id]));
     }
