@@ -54,7 +54,7 @@ Shows for a finished key-vocab set: "Practise Macbeth vocab again", "Back to Mac
 
 ## Quotes data (15 Oct, Macbeth)
 - `quotes.csv` built: 51 quotes from the five homework sheets (OneDrive: Documents / English Year 10 2026 / 7 Macbeth). Columns are listed in `plan.md`. Only 5 are `master = yes` (the 5 in the Year 11 Summer Revision document): mac-1-01, mac-1-06, mac-1-11, mac-3-05, mac-5-01. Techniques, notes and context are filled for those five only.
-- Acts, scenes and speakers are checked against the Folger text saved in `source/macbeth.txt`. **Teacher still needs to decide:** wording for the 18 quotes marked `matches_folger = check` (sheet wording differs from Folger), what to do about "Sinful Macbeth" (not in the play; left out), and the gap words (empty).
+- Acts, scenes and speakers are checked against the Folger text saved in `source/macbeth.txt`. **Decided 15 Oct:** keep the teacher's sheet wording (deliberately modern and simpler) even where it differs from Folger (`matches_folger = check`); gap words come later, when the fill-the-gap mode is built. **Still open:** "Sinful Macbeth" is not in the play and was left out; the teacher may want a replacement.
 - Two levels agreed: Know it (all quotes, recognition) and Master it (core quotes). Model paragraphs: the teacher will supply her own; Claude does not draft them.
 - The Microsoft 365 connector is read-only and works in cloud sessions. It can see OneDrive; only open the folders the user names. Other Macbeth folders exist on school shared drives; leave them alone.
 - Not yet read: the 25 lesson slideshows (key vocab slides: word, definition, example sentence), the Knowledge Organiser (user does not use it), and the other Year 10 texts.
