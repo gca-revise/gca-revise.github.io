@@ -262,7 +262,7 @@
  {
   "id": "subvert-gender-expectations",
   "word": "Subvert gender expectations",
-  "definition": "Going against what you expect of how men or women should behave.",
+  "definition": "Going against the usual ideas about how men or women should behave.",
   "texts": [
    "macbeth"
   ],
@@ -338,7 +338,7 @@
  {
   "id": "the-divine-right-to-rule",
   "word": "The Divine Right to Rule",
-  "definition": "The belief that God has chosen and anointed the King to rule.",
+  "definition": "The belief that God has chosen and anointed the King to govern the country.",
   "texts": [
    "macbeth"
   ],
@@ -553,7 +553,7 @@
  {
   "id": "the-natural-order",
   "word": "The natural order",
-  "definition": "The way things should naturally be in the universe.",
+  "definition": "The way things are meant to be in the universe, with everything and everyone in its proper place.",
   "texts": [
    "macbeth"
   ],
@@ -835,7 +835,7 @@
  {
   "id": "body-politic",
   "word": "Body politic",
-  "definition": "The belief that a country is like a physical body, with the King being the head of the body.",
+  "definition": "The belief that a country is like a living person, with the King as its head.",
   "texts": [
    "macbeth"
   ],
@@ -1029,7 +1029,7 @@
  {
   "id": "third-person-limited",
   "word": "Third-person limited",
-  "definition": "The story is told in third person (he/she), but the narrator tells it from the point of view of a character.",
+  "definition": "The story is told using “he” or “she”, but only shows what one character sees, thinks and feels.",
   "texts": [
    "jekyll-hyde"
   ],
@@ -1071,7 +1071,7 @@
  {
   "id": "focalisation",
   "word": "Focalisation",
-  "definition": "The technique by which a narrative presents information through a specific focal character or viewpoint.",
+  "definition": "The technique of telling a story through the eyes of one particular character or viewpoint.",
   "texts": [
    "jekyll-hyde"
   ],
@@ -1182,7 +1182,7 @@
  {
   "id": "detective-novel",
   "word": "Detective novel",
-  "definition": "A genre that follows a rational detective solving a crime.",
+  "definition": "A genre in which a logical investigator works out who committed a crime.",
   "texts": [
    "jekyll-hyde"
   ],
@@ -1204,7 +1204,7 @@
  {
   "id": "gothic-literature",
   "word": "Gothic literature",
-  "definition": "A genre of literature that often explores fears, the way the past haunts the present and may include the supernatural.",
+  "definition": "A genre of writing that often explores fears, the way the past haunts the present and may include the supernatural.",
   "texts": [
    "jekyll-hyde",
    "frankenstein"
@@ -1383,7 +1383,7 @@
  {
   "id": "satanic",
   "word": "Satanic",
-  "definition": "Describes something evil, like the Devil (Satan).",
+  "definition": "Describes something evil, like the Devil.",
   "texts": [
    "jekyll-hyde"
   ],
@@ -1571,7 +1571,7 @@
  {
   "id": "stage-directions",
   "word": "Stage directions",
-  "definition": "The descriptions in the play explaining what happens on stage. This includes the lighting, set changes and costumes.",
+  "definition": "The descriptions in the script explaining what happens in the performance. This includes the lighting, set changes and costumes.",
   "texts": [
    "inspector"
   ],
@@ -1791,7 +1791,7 @@
  {
   "id": "didactic-message",
   "word": "Didactic message",
-  "definition": "A message that uses the characters to make a strongly worded criticism of society.",
+  "definition": "A lesson that uses the characters to make a strongly worded criticism of society.",
   "texts": [
    "inspector"
   ],
@@ -1810,7 +1810,7 @@
  {
   "id": "class-system",
   "word": "Class system",
-  "definition": "A system where society is organised into different classes.",
+  "definition": "A structure where society is organised into groups based on wealth and status.",
   "texts": [
    "inspector"
   ],
@@ -1900,7 +1900,7 @@
  {
   "id": "middle-class",
   "word": "Middle class",
-  "definition": "Those with some power and wealth. They have professional jobs, often working in business, and often enjoy privileges and opportunities not available to the working class.",
+  "definition": "Those with some power and wealth. They have professional jobs, often working in business, and often enjoy privileges and opportunities not available to people in manual, low-paid jobs.",
   "texts": [
    "inspector"
   ],
@@ -1919,7 +1919,7 @@
  {
   "id": "working-class",
   "word": "Working class",
-  "definition": "People with low-paying jobs, often manual work. These are often the poorest people in society.",
+  "definition": "People with low-paying jobs, often involving physical labour. These are often the poorest people in society.",
   "texts": [
    "inspector"
   ],
@@ -1959,7 +1959,7 @@
  {
   "id": "morality-play",
   "word": "Morality play",
-  "definition": "A medieval play that taught the audience how to be good people.",
+  "definition": "A medieval drama that taught the audience how to be good people.",
   "texts": [
    "inspector"
   ],
@@ -2109,7 +2109,7 @@
  {
   "id": "abuse-of-power",
   "word": "Abuse of power",
-  "definition": "Using your power unfairly to mistreat or hurt others.",
+  "definition": "Using your authority unfairly to mistreat or hurt others.",
   "texts": [
    "inspector"
   ],
@@ -2218,7 +2218,7 @@
  {
   "id": "cannon-fodder",
   "word": "Cannon-fodder",
-  "definition": "People who are sent to their deaths by being told to charge at the enemy’s cannons.",
+  "definition": "People who are sent to their deaths by being told to charge at the enemy’s big guns.",
   "texts": [
    "power-conflict"
   ],
@@ -2280,7 +2280,7 @@
  {
   "id": "post-traumatic-stress-disorder-ptsd",
   "word": "Post-traumatic stress disorder (PTSD)",
-  "definition": "A psychological condition caused by a traumatic event. Long after the event, the person experiences intense, disturbing thoughts and emotions.",
+  "definition": "A psychological condition caused by an extremely shocking or distressing event. Long after the event, the person experiences intense, disturbing thoughts and emotions.",
   "texts": [
    "power-conflict"
   ],
@@ -2340,7 +2340,7 @@
  {
   "id": "nationalism",
   "word": "Nationalism",
-  "definition": "Love for one’s country to an extreme (to the detriment of other nations).",
+  "definition": "Love for one’s country to an extreme (to the detriment of other countries).",
   "texts": [
    "power-conflict"
   ],
@@ -2359,7 +2359,7 @@
  {
   "id": "disposable",
   "word": "Disposable",
-  "definition": "Something you can throw away or dispose of easily.",
+  "definition": "Something you can throw away easily after using it.",
   "texts": [
    "power-conflict"
   ],
@@ -2473,7 +2473,7 @@
  {
   "id": "epic-poem",
   "word": "Epic poem",
-  "definition": "A long narrative poem that tells the story of a hero’s journey as they embark on a grand adventure.",
+  "definition": "A long narrative in verse that tells the story of a hero’s journey as they embark on a grand adventure.",
   "texts": [
    "power-conflict"
   ],
@@ -2685,7 +2685,7 @@
  {
   "id": "direct-victims-of-war",
   "word": "Direct victims of war",
-  "definition": "Soldiers directly involved in the fighting.",
+  "definition": "Soldiers who are personally involved in the fighting.",
   "texts": [
    "power-conflict"
   ],
@@ -2875,7 +2875,7 @@
  {
   "id": "appropriate-divine-power",
   "word": "Appropriate divine power",
-  "definition": "To steal the powers of a God.",
+  "definition": "To steal the abilities and authority of a God.",
   "texts": [
    "frankenstein"
   ],
@@ -2961,7 +2961,7 @@
  {
   "id": "scientific-ambition",
   "word": "Scientific ambition",
-  "definition": "Wanting to achieve great scientific discoveries.",
+  "definition": "Wanting to make great discoveries through experiments and research.",
   "texts": [
    "frankenstein"
   ],
@@ -2982,7 +2982,7 @@
  {
   "id": "absolute-power",
   "word": "Absolute power",
-  "definition": "Having power or control without any limits.",
+  "definition": "Having authority or control without any limits.",
   "texts": [
    "frankenstein"
   ],
@@ -3113,7 +3113,7 @@
  {
   "id": "enlightenment",
   "word": "Enlightenment",
-  "definition": "The Age of Enlightenment was a period of scientific discovery and the development of knowledge from the end of the 1600s until 1815.",
+  "definition": "The Age of Reason: a period of scientific discovery and the development of knowledge from the end of the 1600s until 1815.",
   "texts": [
    "frankenstein"
   ],
@@ -3701,7 +3701,7 @@
  {
   "id": "immutable-laws",
   "word": "Immutable laws",
-  "definition": "The laws of nature that can never be changed.",
+  "definition": "The rules of nature that can never be changed.",
   "texts": [
    "frankenstein"
   ],
@@ -3911,7 +3911,7 @@
  {
   "id": "demoniacal",
   "word": "Demoniacal",
-  "definition": "Possessed by a demon.",
+  "definition": "Possessed by an evil spirit.",
   "texts": [
    "frankenstein"
   ],
@@ -4646,7 +4646,7 @@
  {
   "id": "justice-system",
   "word": "The justice system",
-  "definition": "The organisations that create justice in society and punish wrongdoers (the police, courts and prisons).",
+  "definition": "The organisations that keep fairness in society and punish wrongdoers (the police, courts and prisons).",
   "texts": [
    "frankenstein"
   ],
@@ -4751,7 +4751,7 @@
  {
   "id": "humanity",
   "word": "Humanity",
-  "definition": "The qualities that make someone human (love, kindness, sympathy).",
+  "definition": "The characteristic qualities of people (love, kindness, sympathy).",
   "texts": [
    "frankenstein"
   ],

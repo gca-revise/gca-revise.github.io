@@ -35,6 +35,13 @@ Object.assign(Screens, {
     return main + effect;
   },
 
+  // The definition as a question. Key vocab definitions are written so they do not contain the
+  // answer, so they are shown as they are. Technique definitions still have any form of the
+  // technique's name blanked out.
+  shownDefinition(run, w) {
+    return run.textId === "techniques" ? Engine.blankWord(w.definition, w.word) : w.definition;
+  },
+
   // "word" for key vocab, "technique" on the Techniques screens.
   noun(run) {
     return run.textId === "techniques" ? "technique" : "word";
@@ -79,7 +86,7 @@ Object.assign(Screens, {
             </div>
             <section class="q-card">
               <div class="q-label">Which ${Screens.noun(run)} means</div>
-              <div class="q-text">${esc(Engine.blankWord(w.definition, w.word))}</div>
+              <div class="q-text">${esc(Screens.shownDefinition(run, w))}</div>
               <div class="pill-row"><div class="text-pill"><span class="dot"></span>${esc(Screens.contextName(run))}</div>${Screens.tagPill(w, run.textId)}</div>
             </section>
             <form id="answer-form" class="answer" autocomplete="off">
@@ -252,7 +259,7 @@ Object.assign(Screens, {
             </div>
             <section class="q-card">
               <div class="q-label">Which ${Screens.noun(run)} means</div>
-              <div class="q-text">${esc(Engine.blankWord(w.definition, w.word))}</div>
+              <div class="q-text">${esc(Screens.shownDefinition(run, w))}</div>
               <div class="pill-row"><div class="text-pill"><span class="dot"></span>${esc(Screens.contextName(run))}</div>${Screens.tagPill(w, run.textId)}</div>
             </section>
             <div class="choices" role="group" aria-label="Choose the answer">${buttons}</div>

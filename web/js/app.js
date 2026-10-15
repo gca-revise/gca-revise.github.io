@@ -44,6 +44,7 @@ function startMatch(textId, setId) {
     mode: Store.getMode(),
     retiredIds: Store.retiredIds(),
   });
+  game.blankDefinitions = textId === "techniques";  // vocab definitions no longer contain the answer
   game.newRound();
   run = { textId, kind: "match", setId, session: game, phase: "question", last: null, sentence: "" };
   drawRun();

@@ -8,7 +8,7 @@ Object.assign(Screens, {
     const selected = game.pending && game.pending.side === side && game.pending.id === w.id;
     const slipped = game.slip && (side === "w" ? game.slip.wordId === w.id : game.slip.meaningId === w.id);
     const classes = ["m-cell", side === "w" ? "m-word" : "m-meaning", done ? "done" : "", selected ? "sel" : "", slipped ? "slip" : ""].join(" ");
-    const text = side === "w" ? w.word : (done ? w.definition : Engine.blankWord(w.definition, w.word));
+    const text = side === "w" ? w.word : (done || !game.blankDefinitions ? w.definition : Engine.blankWord(w.definition, w.word));
     const tick = done ? checkIconSmall.replace('stroke="#FFFFFF"', 'stroke="#155E3E"') : "";
     return `<button type="button" class="${classes}" data-m="${side}:${esc(w.id)}" ${done ? "disabled" : ""} aria-pressed="${selected ? "true" : "false"}">${tick}<span>${esc(text)}</span></button>`;
   },
