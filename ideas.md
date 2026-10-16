@@ -16,7 +16,7 @@ Open this only when choosing the next feature. Nothing here is decided. When the
 
 ## Medium builds
 - Spaced repetition: learned items come back after a few days
-- Themes and characters linked across texts, for comparison
+- Themes and characters linked across texts, for comparison. **Teacher-requested (feedback #1):** tag each quote by theme (so students know which essay to use it in) as well as by character; needs a `themes` column in `quotes.csv` and a theme list per text agreed with the teacher
 - Context quiz (Jacobean, Victorian, 1912 vs 1945 facts from the lessons)
 - Unseen poetry (that folder has not been read)
 
