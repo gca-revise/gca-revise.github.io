@@ -28,4 +28,8 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
    - Quick fix: technique spotting in quotes (tidy the labels).
    - Big fixes needing a design decision: a learning path instead of free choice; changes to the game, sets and points system.
 2. Build next (pitch list): model paragraphs (teacher-written; Claude does not draft them), cloze activities, images, dual coding.
-3. Later: buy a domain and point it at the same site; Supabase logins (needs a proper plan first: progress moves from the device to the account, and "Reset my progress" needs rethinking).
+3. **Decisions made 16 Oct (user):**
+   - Domain: choose a **generic, neutral revision-app name** (not the school, not one subject), so subjects can later be subdomains (e.g. english.<name>.co.uk) and other schools or subjects fit. Check availability (.co.uk / .com) and UK trademarks before buying. Do not buy `gcarevise`.
+   - Accounts: aim for **Microsoft sign-in** (via Supabase's Microsoft/Azure login). Needs school IT to approve the app in the school's Microsoft 365 and the school's data protection lead to approve it. Plan: one email to IT and the data protection lead asking (1) will you allow the final domain (feedback #2), (2) would you approve a Microsoft sign-in app and what do you need from us. Draft it once the name is chosen. Supabase data must stay minimal (user id + progress counts), region London/EU, each student can only see their own rows. Fallback if refused: class code + nickname (no emails).
+   - Plan: take in all teacher feedback first, then build one batch.
+4. Later: Supabase logins build (needs a proper plan first: progress moves from the device to the account, and "Reset my progress" needs rethinking). Scope and ownership: before offering it beyond the school, agree with the school who owns the content (it draws on school lesson materials and the crest).
