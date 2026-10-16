@@ -22,6 +22,7 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 - School's OK to show the crest on the public site (swap in a placeholder if refused).
 
 ## Next steps
+0. Teacher feedback is logged in `feedback.md` (1 comment so far; paste new feedback into chat and Claude sorts it there).
 1. Collect the teachers' feedback from the soft launch and turn it into fixes.
    - Quick fix: technique spotting in quotes (tidy the labels).
    - Big fixes needing a design decision: a learning path instead of free choice; changes to the game, sets and points system.
