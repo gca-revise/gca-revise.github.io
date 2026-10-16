@@ -14,8 +14,10 @@ const Store = {
     }
   },
 
-  save(state) {
+  // `fromSync` is true when the save comes from signing in (it is uploaded separately).
+  save(state, fromSync) {
     this.memory = state;
+    if (!fromSync && typeof Account !== "undefined") Account.queuePush(state);
     try {
       localStorage.setItem(this.KEY, JSON.stringify(state));
     } catch (e) {
@@ -31,6 +33,7 @@ const Store = {
     } catch (e) {
       // Nothing saved, nothing to clear.
     }
+    if (typeof Account !== "undefined") Account.queuePush({});
   },
 
   // "learn" (Learn the set) or "free" (Revise everything)

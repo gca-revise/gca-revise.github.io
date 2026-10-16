@@ -675,3 +675,8 @@ button.choice:focus-visible { outline: 3px solid var(--yellow); outline-offset: 
 .mode-wrap { display: flex; flex-direction: column; gap: 8px; }
 .mode-help { font-size: 14px; color: var(--muted); }
 @media (min-width: 760px) { .mode-help { font-size: 15px; } }
+
+/* Optional sign-in (only shown when switched on) */
+.account form { display: inline; }
+.account input[type="email"] { font: inherit; padding: 4px 8px; border: 1px solid #bbb; border-radius: 6px; }
+.account-msg { display: block; margin-top: 4px; }
