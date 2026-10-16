@@ -22,7 +22,7 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 - School's OK to show the crest on the public site (swap in a placeholder if refused).
 
 ## Next steps
-0. Teacher feedback is logged in `feedback.md` (7 comments so far; paste new feedback into chat and Claude sorts it there).
+0. Teacher feedback is logged in `feedback.md` (8 comments so far; paste new feedback into chat and Claude sorts it there).
    - **Blocker (feedback #2):** the school web filter blocks gca-revise.github.io on school desktops ("Security - Domain Sharing"). The user needs to ask school IT to allow it; if they refuse or it drags on, buy the custom domain sooner and ask IT to allow that.
 1. Collect the teachers' feedback from the soft launch and turn it into fixes.
    - Quick fix: technique spotting in quotes (tidy the labels).
