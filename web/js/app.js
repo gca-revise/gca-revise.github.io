@@ -95,6 +95,12 @@ function route() {
     return;
   } else if (parts[0] === "text" && parts.length === 3) {
     html = Screens.comingSoon(`#/text/${parts[1]}`, "Back to the text");
+  } else if (parts[0] === "backup" && parts.length === 1) {
+    html = Backup.screen();
+    app.innerHTML = html;
+    window.scrollTo(0, 0);
+    Backup.fillCode();
+    return;
   } else if (parts[0] === "techniques" && parts.length === 1) {
     html = Screens.techniques();
   } else if (parts[0] === "techniques" && [2, 3].includes(parts.length) && ["type", "choose", "match"].includes(parts[parts.length - 1])) {

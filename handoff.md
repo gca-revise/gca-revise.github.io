@@ -35,10 +35,16 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 - Supabase Site URL and `http://localhost:8765` are set in the dashboard (Authentication, URL Configuration). Two test accounts exist (Gmail and school address); delete them before real use.
 - Branches: only `main` now (two empty leftover branches deleted). Work only on `main`.
 
+## Built 17 Oct (on branch `claude/vocab-quiz-token-saving-n0u1d9`, NOT yet merged or live)
+- Fonts hosted on the site (`web/fonts/`, no more Google Fonts requests; the page makes no outside requests apart from Supabase when sign-in is on).
+- Ding on right answers + Sound button (`web/js/sound.js`, at the foot of every screen; setting kept on the device).
+- Fill the gap: wrong options match the answer's word type (`gap_type` column in `quotes.csv`, drafted by Claude for all 229 gap words: **teacher to check**; `build_data.py` reports a missing type).
+- "Save or restore my progress" screen (`#/backup`, `web/js/backup.js`, link in the home footer): copy a code or save a file; restore merges (nothing lost).
+- **Claude CAN test in a browser here:** Node and Chromium are installed. `npm i playwright-core` in the scratchpad, start `python3 -m http.server 8765` in `web/`, launch `/opt/pw-browsers/chromium-1194/chrome-linux/chrome` with `--no-sandbox`. Used this session for screenshots and checks (tests.html: 157 checks pass). Real-device checks by the user are still wanted (phone, school computer, sound).
+
 ## Next steps
-1. Check the reply from IT / the AP (github.io and *.supabase.co unblocked? route to Microsoft sign-in?). If github.io is refused, buy the generic domain.
-2. Microsoft sign-in: Claude writes step-by-step instructions for the Microsoft (Entra) app registration for the user/IT, then adds a hidden "Sign in with Microsoft" button wired to Supabase's Azure provider. Needs IT admin approval before staff or students can use it.
-3. Short-term fix for progress resets (#8): a "Save my progress" code or file, no sign-in needed. Rethink "Reset my progress" for signed-in users.
-4. Batch of quick fixes: gap-fill wrong options of the same word type (feedback #3, #5: `gap_type` column in `quotes.csv`, Claude drafts for 229 gap words, teacher checks); a ding on right answers with a Sound switch (#6); a streak celebration (#7). Host Google Fonts ourselves.
-5. Decisions waiting on the user: more blanks per quote and for which quotes (#4); theme tags (#1); a learning path; points system changes.
-6. Pitch list (see `ideas.md`): model paragraphs (teacher-written), cloze activities, images, dual coding.
+1. User tries the branch build on phone and Chromebook, then merge to `main` (the site republishes). Then check IT's reply (github.io and *.supabase.co unblocked? route to Microsoft sign-in?).
+2. Microsoft sign-in: Claude writes the Entra app registration steps for IT, then adds a hidden "Sign in with Microsoft" button (Supabase Azure provider). Needs IT admin approval.
+3. Streak celebration (#7): decide milestones and look (suggest 5, 10, 20; simple banner).
+4. Decisions waiting on the user: more blanks per quote and for which quotes (#4); theme tags (#1); a learning path; points system changes.
+5. Pitch list (see `ideas.md`): model paragraphs (teacher-written), cloze activities, images, dual coding.

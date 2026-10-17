@@ -708,3 +708,16 @@ button.choice:focus-visible { outline: 3px solid var(--yellow); outline-offset: 
 }
 .sound-btn[aria-pressed="false"] { color: var(--muted); background: var(--bg); }
 @media (min-width: 760px) { #sound-holder { padding: 4px 24px 32px; } }
+
+/* ---------- Save or restore my progress ---------- */
+.backup-card { display: flex; flex-direction: column; gap: 12px; }
+.backup-card h2 { font-size: 20px; }
+.backup-box {
+  width: 100%; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 12px;
+  font: 14px/1.3 ui-monospace, Menlo, Consolas, monospace; color: var(--ink); background: #fff; resize: vertical;
+  word-break: break-all;
+}
+.backup-msg { min-height: 1.3em; font-weight: 600; color: var(--navy); }
+.backup-note { font-size: 13px; color: var(--muted); }
+.backup-file { cursor: pointer; }
+a.link-btn { display: inline-flex; align-items: center; }

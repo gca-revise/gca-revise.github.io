@@ -16,6 +16,7 @@
 <div id="summary">Running...</div>
 <ul id="results"></ul>
 <script src="js/engine.js"></script>
+<script src="js/backup.js"></script>
 <script>
 const results = [];
 function check(name, condition) { results.push({ name, ok: !!condition }); }
@@ -492,6 +493,18 @@ const pool = [
   check("a rare word type is topped up from other types", rare.length === 4 && rare.filter((o) => o.type === "verb").length === 2);
   const untyped = Engine.makeChoices({ id: "e", word: "blood" }, pool, []);
   check("words with no type still get four options", untyped.length === 4);
+}
+
+// ---- Save / restore my progress ----
+{
+  const good = { v: 1, r: ["w1", "w2"], s: { w1: [3, 1, 2], w3: [0, 2, 0] } };
+  const u = Backup.unpack(good);
+  check("a good progress code unpacks", u && u.retired.length === 2 && u.stats.w1.choiceRight === 2 && u.stats.w3.wrong === 2);
+  check("random text is not progress", Backup.unpack({ hello: 1 }) === null && Backup.unpack(null) === null);
+  check("negative or huge counts are refused", Backup.unpack({ v: 1, r: [], s: { a: [-1, 0, 0] } }) === null && Backup.unpack({ v: 1, r: [], s: { a: [1e9, 0, 0] } }) === null);
+  check("a non-text id is refused", Backup.unpack({ v: 1, r: [5], s: {} }) === null);
+  const bytes = new TextEncoder().encode("café ✓");
+  check("web-safe text round trip", new TextDecoder().decode(Backup.fromBase64Url(Backup.toBase64Url(bytes))) === "café ✓");
 }
 
 // ---- Show results ----
