@@ -114,6 +114,11 @@ function route() {
 }
 
 // Clicks: the Learn the set / Revise everything switch, Next word, and Practise again.
+// The Sound button lives outside the screens, so it listens on the whole page.
+document.addEventListener("click", (event) => {
+  if (event.target.closest("[data-sound]")) Sound.toggle();
+});
+
 app.addEventListener("click", (event) => {
   if (event.target.closest("[data-reset]")) {
     if (window.confirm("Reset your progress?\n\nThis clears everything you have learned on this device. It cannot be undone.")) {
@@ -149,6 +154,7 @@ app.addEventListener("click", (event) => {
 function finishAnswer(result, choiceCount) {
   const word = run.session.current;
   Store.recordAnswer(word.id, result.correct, result.retiredNow, choiceCount);
+  if (result.correct) Sound.ding();
   run.last = result;
   run.sentence = pickSentence(word, run.textId);
   run.phase = result.correct ? "right" : "wrong";
@@ -183,7 +189,7 @@ app.addEventListener("click", (event) => {
   const cell = event.target.closest("[data-m]");
   if (cell && run && run.kind === "match" && run.phase === "question") {
     const [side, id] = cell.dataset.m.split(":");
-    run.session.select(side, id);
+    if (run.session.select(side, id) === "match") Sound.ding();
     if (run.session.roundDone) run.phase = "done";
     drawRun(run.phase === "question");
   }
@@ -200,6 +206,6 @@ document.addEventListener("keydown", (event) => {
 
 window.addEventListener("hashchange", route);
 
-Data.load().then(route).catch((err) => {
+Data.load().then(() => { Sound.draw(); route(); }).catch((err) => {
   app.innerHTML = `<main class="wrap"><div class="card"><h2>Sorry, something went wrong</h2><p>${esc(err.message)}</p></div></main>`;
 });

@@ -1,4 +1,21 @@
 /* GCA Revise: colours, fonts and layout, from the approved design. */
+
+/* Fonts are served from this site (no outside requests). Both are open-source (SIL Open Font License):
+   Bricolage Grotesque and Figtree, variable versions, Latin letters only. */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url(fonts/bricolage-grotesque-latin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/figtree-latin.woff2) format('woff2');
+}
 :root {
   --navy: #222C69;
   --bg: #F3F5FC;
@@ -680,3 +697,14 @@ button.choice:focus-visible { outline: 3px solid var(--yellow); outline-offset: 
 .account form { display: inline; }
 .account input[type="email"] { font: inherit; padding: 4px 8px; border: 1px solid #bbb; border-radius: 6px; }
 .account-msg { display: block; margin-top: 4px; }
+
+/* ---------- Sound button (at the foot of every screen, so it never covers anything) ---------- */
+#sound-holder { max-width: 1100px; margin: 0 auto; padding: 4px 20px 28px; }
+.sound-btn {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid var(--line); background: #fff; color: var(--navy);
+  cursor: pointer;
+}
+.sound-btn[aria-pressed="false"] { color: var(--muted); background: var(--bg); }
+@media (min-width: 760px) { #sound-holder { padding: 4px 24px 32px; } }
