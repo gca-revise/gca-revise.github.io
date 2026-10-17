@@ -475,6 +475,25 @@ const pool = [
   check("a one-word set still works", s.next().id === "w1" && s.next().id === "w1");
 }
 
+// ---- Fill the gap: wrong options match the word type ----
+{
+  const mk = (id, word, type) => ({ id, word, type });
+  const pool = [
+    mk("a", "foul", "adjective"), mk("b", "grim", "adjective"), mk("c", "noble", "adjective"), mk("d", "dapper", "adjective"),
+    mk("e", "blood", "noun"), mk("f", "dagger", "noun"), mk("g", "murder", "verb"), mk("h", "wade", "verb"),
+  ];
+  let allSame = true;
+  for (let i = 0; i < 50; i++) {
+    const opts = Engine.makeChoices(mk("a", "foul", "adjective"), pool, []);
+    if (!opts.every((o) => o.type === "adjective")) allSame = false;
+  }
+  check("gap options are the same word type when enough exist", allSame);
+  const rare = Engine.makeChoices(mk("g", "murder", "verb"), pool, []);
+  check("a rare word type is topped up from other types", rare.length === 4 && rare.filter((o) => o.type === "verb").length === 2);
+  const untyped = Engine.makeChoices({ id: "e", word: "blood" }, pool, []);
+  check("words with no type still get four options", untyped.length === 4);
+}
+
 // ---- Show results ----
 const failed = results.filter((r) => !r.ok).length;
 document.getElementById("summary").textContent =

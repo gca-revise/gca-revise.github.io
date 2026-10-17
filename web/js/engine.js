@@ -188,7 +188,11 @@ const Engine = {
     });
     const size = (w) => Engine.plainTokens(w.word).length;
     const closest = (list) => list.slice().sort((a, b) => Math.abs(size(a) - size(word)) - Math.abs(size(b) - size(word)));
-    let wrong = closest(usable(pool)).slice(0, count - 1);
+    // If the word has a type (noun, verb...), options of the same type come first, so no silly choices.
+    const candidates = usable(pool);
+    const sameType = word.type ? candidates.filter((o) => o.type === word.type) : [];
+    const otherType = word.type ? candidates.filter((o) => o.type !== word.type) : candidates;
+    let wrong = [...closest(sameType), ...closest(otherType)].slice(0, count - 1);
     if (wrong.length < count - 1) wrong = wrong.concat(closest(usable(extra)).slice(0, count - 1 - wrong.length));
     return Engine.shuffle([word, ...wrong], random);
   },
@@ -526,7 +530,7 @@ const QuoteTools = {
       }
       if (!answer) continue;
       items.push({
-        id: q.id, word: answer.word, answerId: answer.id, label: q.quote, definition: "",
+        id: q.id, word: answer.word, answerId: answer.id, type: game === "gap" ? q.gap_type : "", label: q.quote, definition: "",
         quote: q, note: q.note || "", texts: [textId], examples: q.note ? [q.note] : [], examples_high: [], tags: [],
       });
     }
@@ -549,11 +553,11 @@ const QuoteTools = {
   optionPool(quotes, textId, game, characters = []) {
     const pool = [];
     const seen = new Set();
-    const add = (id, word) => {
-      if (!seen.has(id)) { seen.add(id); pool.push({ id, word }); }
+    const add = (id, word, type) => {
+      if (!seen.has(id)) { seen.add(id); pool.push({ id, word, type }); }
     };
     if (game === "gap") {
-      for (const item of QuoteTools.items(quotes, textId, "gap")) add(item.answerId, item.word);
+      for (const item of QuoteTools.items(quotes, textId, "gap")) add(item.answerId, item.word, item.type);
     } else {
       // (The one-off speaker "Title" is never offered as a wrong option.)
       for (const item of QuoteTools.items(quotes, textId, "who")) if (item.word !== "Title") add(item.answerId, item.word);
@@ -564,7 +568,7 @@ const QuoteTools = {
 
   // A function that makes the four options for an item.
   optionsFor(pool, random = Math.random) {
-    return (item) => Engine.makeChoices({ id: item.answerId, word: item.word }, pool, [], 4, random);
+    return (item) => Engine.makeChoices({ id: item.answerId, word: item.word, type: item.type }, pool, [], 4, random);
   },
 
   // ---- Master it: the core quotes (master = yes) ----
