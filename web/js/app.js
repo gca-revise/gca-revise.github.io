@@ -160,7 +160,10 @@ app.addEventListener("click", (event) => {
 function finishAnswer(result, choiceCount) {
   const word = run.session.current;
   Store.recordAnswer(word.id, result.correct, result.retiredNow, choiceCount);
-  if (result.correct) Sound.ding();
+  if (result.correct) {
+    Sound.ding();
+    Celebrate.check(run.session.streak);
+  }
   run.last = result;
   run.sentence = pickSentence(word, run.textId);
   run.phase = result.correct ? "right" : "wrong";
@@ -195,7 +198,10 @@ app.addEventListener("click", (event) => {
   const cell = event.target.closest("[data-m]");
   if (cell && run && run.kind === "match" && run.phase === "question") {
     const [side, id] = cell.dataset.m.split(":");
-    if (run.session.select(side, id) === "match") Sound.ding();
+    const outcome = run.session.select(side, id);
+    if (outcome === "match") Sound.ding();
+    // A perfect round adds one to the streak; celebrate a milestone.
+    if (outcome === "match" && run.session.roundDone && run.session.slips === 0) Celebrate.check(run.session.streak);
     if (run.session.roundDone) run.phase = "done";
     drawRun(run.phase === "question");
   }
