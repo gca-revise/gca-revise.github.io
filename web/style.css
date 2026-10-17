@@ -721,3 +721,27 @@ button.choice:focus-visible { outline: 3px solid var(--yellow); outline-offset: 
 .backup-note { font-size: 13px; color: var(--muted); }
 .backup-file { cursor: pointer; }
 a.link-btn { display: inline-flex; align-items: center; }
+
+/* ---------- Streak celebration ---------- */
+#celebrate { position: fixed; inset: 0; z-index: 50; pointer-events: none; }
+#celebrate canvas { position: absolute; inset: 0; }
+.celebrate-banner {
+  position: absolute; top: 8%; left: 50%; transform: translateX(-50%);
+  background: var(--navy); color: #fff; border: 3px solid var(--yellow);
+  padding: 12px 26px; border-radius: 999px; white-space: nowrap;
+  font: 800 28px/1.1 'Bricolage Grotesque', sans-serif;
+  box-shadow: 0 6px 20px rgba(34, 44, 105, 0.35);
+  animation: celebrate-pop 3.2s ease both;
+}
+.celebrate-num { color: var(--yellow); }
+@keyframes celebrate-pop {
+  0% { opacity: 0; transform: translateX(-50%) scale(0.6); }
+  10% { opacity: 1; transform: translateX(-50%) scale(1.08); }
+  16% { transform: translateX(-50%) scale(1); }
+  85% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .celebrate-banner { animation: celebrate-fade 3.2s ease both; }
+  @keyframes celebrate-fade { 0% { opacity: 0; } 10% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; } }
+}

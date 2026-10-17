@@ -42,6 +42,31 @@ const Sound = {
     }
   },
 
+  // A longer rising run of notes for a streak milestone.
+  cheer() {
+    if (!this.enabled()) return;
+    try {
+      const ctx = this.audio();
+      if (!ctx) return;
+      const start = ctx.currentTime;
+      [523.25, 659.25, 783.99, 1046.5].forEach((pitch, i) => {
+        const delay = i * 0.09;
+        const tone = ctx.createOscillator();
+        const volume = ctx.createGain();
+        tone.type = "triangle";
+        tone.frequency.value = pitch;
+        volume.gain.setValueAtTime(0.0001, start + delay);
+        volume.gain.exponentialRampToValueAtTime(0.12, start + delay + 0.02);
+        volume.gain.exponentialRampToValueAtTime(0.0001, start + delay + (i === 3 ? 0.9 : 0.35));
+        tone.connect(volume).connect(ctx.destination);
+        tone.start(start + delay);
+        tone.stop(start + delay + 1);
+      });
+    } catch (e) {
+      // Sound is a nice extra; carry on without it.
+    }
+  },
+
   // The speaker button.
   buttonHtml() {
     const on = this.enabled();

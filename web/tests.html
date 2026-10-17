@@ -17,6 +17,7 @@
 <ul id="results"></ul>
 <script src="js/engine.js"></script>
 <script src="js/backup.js"></script>
+<script src="js/celebrate.js"></script>
 <script>
 const results = [];
 function check(name, condition) { results.push({ name, ok: !!condition }); }
@@ -505,6 +506,17 @@ const pool = [
   check("a non-text id is refused", Backup.unpack({ v: 1, r: [5], s: {} }) === null);
   const bytes = new TextEncoder().encode("café ✓");
   check("web-safe text round trip", new TextDecoder().decode(Backup.fromBase64Url(Backup.toBase64Url(bytes))) === "café ✓");
+}
+
+// ---- Streak celebration ----
+check("celebration milestones are 5, 10, 20, 50, 100", JSON.stringify(Celebrate.MILESTONES) === "[5,10,20,50,100]");
+{
+  Celebrate.check(4);
+  const none = !document.getElementById("celebrate");
+  Celebrate.check(5);
+  const shown = !!document.getElementById("celebrate");
+  Celebrate.clear();
+  check("a streak of 5 celebrates, 4 does not", none && shown);
 }
 
 // ---- Show results ----
