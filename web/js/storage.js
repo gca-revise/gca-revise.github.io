@@ -47,6 +47,17 @@ const Store = {
     this.save(state);
   },
 
+  // Is the "ding" for right answers on? (On unless the student turned it off.)
+  getSound() {
+    return this.load().sound !== false;
+  },
+
+  setSound(on) {
+    const state = this.load();
+    state.sound = !!on;
+    this.save(state);
+  },
+
   // Ids of words the student has learned (retired).
   retiredIds() {
     return new Set(this.load().retired || []);

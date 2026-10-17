@@ -1,4 +1,21 @@
 /* GCA Revise: colours, fonts and layout, from the approved design. */
+
+/* Fonts are served from this site (no outside requests). Both are open-source (SIL Open Font License):
+   Bricolage Grotesque and Figtree, variable versions, Latin letters only. */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url(fonts/bricolage-grotesque-latin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/figtree-latin.woff2) format('woff2');
+}
 :root {
   --navy: #222C69;
   --bg: #F3F5FC;
@@ -680,3 +697,27 @@ button.choice:focus-visible { outline: 3px solid var(--yellow); outline-offset: 
 .account form { display: inline; }
 .account input[type="email"] { font: inherit; padding: 4px 8px; border: 1px solid #bbb; border-radius: 6px; }
 .account-msg { display: block; margin-top: 4px; }
+
+/* ---------- Sound button (at the foot of every screen, so it never covers anything) ---------- */
+#sound-holder { max-width: 1100px; margin: 0 auto; padding: 4px 20px 28px; }
+.sound-btn {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid var(--line); background: #fff; color: var(--navy);
+  cursor: pointer;
+}
+.sound-btn[aria-pressed="false"] { color: var(--muted); background: var(--bg); }
+@media (min-width: 760px) { #sound-holder { padding: 4px 24px 32px; } }
+
+/* ---------- Save or restore my progress ---------- */
+.backup-card { display: flex; flex-direction: column; gap: 12px; }
+.backup-card h2 { font-size: 20px; }
+.backup-box {
+  width: 100%; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 12px;
+  font: 14px/1.3 ui-monospace, Menlo, Consolas, monospace; color: var(--ink); background: #fff; resize: vertical;
+  word-break: break-all;
+}
+.backup-msg { min-height: 1.3em; font-weight: 600; color: var(--navy); }
+.backup-note { font-size: 13px; color: var(--muted); }
+.backup-file { cursor: pointer; }
+a.link-btn { display: inline-flex; align-items: center; }

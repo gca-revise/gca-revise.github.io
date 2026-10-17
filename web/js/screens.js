@@ -74,6 +74,7 @@ const Screens = {
       </main>
       <footer class="home-foot">
         ${typeof Account !== "undefined" && Account.html() || "<span>Your progress is saved only on this device.</span>"}
+        <a class="link-btn" href="#/backup">Save or restore my progress</a>
         <button type="button" class="link-btn" data-reset>Reset my progress</button>
       </footer>`;
   },

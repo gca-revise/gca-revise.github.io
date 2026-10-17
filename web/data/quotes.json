@@ -12,6 +12,7 @@
   "quote": "Fair is foul and foul is fair",
   "master": true,
   "gap_word": "foul",
+  "gap_type": "adjective",
   "techniques": [
    "Paradox",
    "Alliteration",
@@ -49,6 +50,7 @@
   "quote": "Unseamed him from nave to chaps",
   "master": false,
   "gap_word": "Unseamed",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -75,6 +77,7 @@
   "quote": "His brandished steel, which smoked with bloody execution",
   "master": false,
   "gap_word": "brandished",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -103,6 +106,7 @@
   "quote": "Stay you imperfect speakers, tell me more",
   "master": false,
   "gap_word": "imperfect",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -123,6 +127,7 @@
   "quote": "Instruments of darkness tell us truths to… betray us",
   "master": false,
   "gap_word": "darkness",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -143,6 +148,7 @@
   "quote": "Stars hide your fires, let not light see my black and deep desires",
   "master": true,
   "gap_word": "black",
+  "gap_type": "adjective",
   "techniques": [
    "Imperative",
    "Symbolism",
@@ -183,6 +189,7 @@
   "quote": "My dearest partner of greatness",
   "master": false,
   "gap_word": "partner",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -211,6 +218,7 @@
   "quote": "Too full of the milk of human kindness",
   "master": false,
   "gap_word": "milk",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -239,6 +247,7 @@
   "quote": "Take my milk for gall",
   "master": false,
   "gap_word": "gall",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -265,6 +274,7 @@
   "quote": "Look like the innocent flower, but be the serpent under it",
   "master": false,
   "gap_word": "serpent",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -291,6 +301,7 @@
   "quote": "Vaulting ambition which overleaps itself and falls",
   "master": true,
   "gap_word": "ambition",
+  "gap_type": "noun",
   "techniques": [
    "Personification",
    "Metaphor",
@@ -332,6 +343,7 @@
   "quote": "I would… have plucked my nipple from his boneless gums and dashed the brains out",
   "master": false,
   "gap_word": "boneless",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -358,6 +370,7 @@
   "quote": "A dagger of the mind, a false creation",
   "master": false,
   "gap_word": "dagger",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -384,6 +397,7 @@
   "quote": "Thou marshall'st me the way I was going",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -410,6 +424,7 @@
   "quote": "Macbeth does murder sleep",
   "master": false,
   "gap_word": "murder",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -430,6 +445,7 @@
   "quote": "Will all great Neptune's oceans wash this blood clean from my hand?",
   "master": false,
   "gap_word": "oceans",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -460,6 +476,7 @@
   "quote": "A little water clears us of this deed",
   "master": false,
   "gap_word": "water",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -480,6 +497,7 @@
   "quote": "Give me the daggers",
   "master": false,
   "gap_word": "daggers",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -500,6 +518,7 @@
   "quote": "His silver skin laced with his golden blood",
   "master": false,
   "gap_word": "golden",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -520,6 +539,7 @@
   "quote": "His gashed stabs looked like a breach in nature",
   "master": false,
   "gap_word": "breach",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -540,6 +560,7 @@
   "quote": "There's daggers in men's smiles",
   "master": false,
   "gap_word": "smiles",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -560,6 +581,7 @@
   "quote": "Help me hence, ho!",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -580,6 +602,7 @@
   "quote": "The earth was feverous and did shake",
   "master": false,
   "gap_word": "feverous",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -600,6 +623,7 @@
   "quote": "Dark night strangles the travelling lamp",
   "master": false,
   "gap_word": "strangles",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -620,6 +644,7 @@
   "quote": "Our fears in Banquo stick deep",
   "master": false,
   "gap_word": "fears",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -640,6 +665,7 @@
   "quote": "Upon my head they placed a fruitless crown",
   "master": false,
   "gap_word": "fruitless",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -660,6 +686,7 @@
   "quote": "Nought's had, all's spent where our desire is got without content",
   "master": false,
   "gap_word": "desire",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -680,6 +707,7 @@
   "quote": "What's done is done",
   "master": false,
   "gap_word": "done",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -700,6 +728,7 @@
   "quote": "O full of scorpions is my mind dear wife",
   "master": true,
   "gap_word": "scorpions",
+  "gap_type": "noun",
   "techniques": [
    "Metaphor",
    "Imagery of venom",
@@ -736,6 +765,7 @@
   "quote": "Be innocent of the knowledge, dearest chuck",
   "master": false,
   "gap_word": "chuck",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -756,6 +786,7 @@
   "quote": "Twenty trenched gashes on his head",
   "master": false,
   "gap_word": "trenched",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -776,6 +807,7 @@
   "quote": "Hence, horrible shadow! Unreal mockery, hence!",
   "master": false,
   "gap_word": "shadow",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -802,6 +834,7 @@
   "quote": "Blood will have blood",
   "master": false,
   "gap_word": "blood",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -822,6 +855,7 @@
   "quote": "I am in blood stepp'd in so far that, should I wade no more",
   "master": false,
   "gap_word": "wade",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -842,6 +876,7 @@
   "quote": "By the pricking of my thumbs, something wicked this way comes",
   "master": false,
   "gap_word": "wicked",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -862,6 +897,7 @@
   "quote": "Give to the edge o' the sword, his wife, his babes, and all unfortunate souls",
   "master": false,
   "gap_word": "babes",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -882,6 +918,7 @@
   "quote": "Bleed, bleed, poor country!",
   "master": false,
   "gap_word": "country",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -910,6 +947,7 @@
   "quote": "It weeps, it bleeds; and each new day a gash is added to her wounds",
   "master": false,
   "gap_word": "gash",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -930,6 +968,7 @@
   "quote": "Thy royal father was a most sainted king",
   "master": false,
   "gap_word": "sainted",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -950,6 +989,7 @@
   "quote": "Devilish Macbeth",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -970,6 +1010,7 @@
   "quote": "Bring this fiend of Scotland within my sword's length",
   "master": false,
   "gap_word": "fiend",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -990,6 +1031,7 @@
   "quote": "Black Macbeth",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1010,6 +1052,7 @@
   "quote": "Untitled tyrant",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1030,6 +1073,7 @@
   "quote": "Out, damned spot! out, I say!",
   "master": true,
   "gap_word": "damned",
+  "gap_type": "adjective",
   "techniques": [
    "Imperative",
    "Symbolism",
@@ -1066,6 +1110,7 @@
   "quote": "All the perfumes of Arabia will not sweeten this little hand",
   "master": false,
   "gap_word": "perfumes",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1086,6 +1131,7 @@
   "quote": "I'll fight till from my bones my flesh be hack'd. Give me my armour.",
   "master": false,
   "gap_word": "armour",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1106,6 +1152,7 @@
   "quote": "I have almost forgot the taste of fears",
   "master": false,
   "gap_word": "fears",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1126,6 +1173,7 @@
   "quote": "Out, out, brief candle!",
   "master": false,
   "gap_word": "candle",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1152,6 +1200,7 @@
   "quote": "Turn, hell-hound, turn!",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1180,6 +1229,7 @@
   "quote": "I bear a charmed life, which must not yield to one of woman born",
   "master": false,
   "gap_word": "charmed",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1200,6 +1250,7 @@
   "quote": "This dead butcher and his fiend-like queen",
   "master": false,
   "gap_word": "butcher",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1230,6 +1281,7 @@
   "quote": "Though he enjoyed the theatre, he had not crossed the doors of one in twenty years",
   "master": false,
   "gap_word": "theatre",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1256,6 +1308,7 @@
   "quote": "The last good influence in the lives of down-going men",
   "master": false,
   "gap_word": "influence",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1276,6 +1329,7 @@
   "quote": "Shop fronts stood with an air of invitation",
   "master": false,
   "gap_word": "invitation",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1296,6 +1350,7 @@
   "quote": "Sinister block of building",
   "master": false,
   "gap_word": "sinister",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1316,6 +1371,7 @@
   "quote": "I was coming home from some place at the end of the world",
   "master": false,
   "gap_word": "world",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1340,6 +1396,7 @@
   "quote": "The man trampled calmly over the child’s body",
   "master": true,
   "gap_word": "trampled",
+  "gap_type": "verb",
   "techniques": [
    "Verb",
    "Adverb",
@@ -1380,6 +1437,7 @@
   "quote": "It wasn’t like a man; it was like a damned juggernaut",
   "master": false,
   "gap_word": "juggernaut",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1400,6 +1458,7 @@
   "quote": "He gives a strong feeling of deformity",
   "master": false,
   "gap_word": "deformity",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1420,6 +1479,7 @@
   "quote": "Hearty, healthy, dapper, red-faced gentleman",
   "master": false,
   "gap_word": "dapper",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1440,6 +1500,7 @@
   "quote": "Unscientific balderdash",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1466,6 +1527,7 @@
   "quote": "If he be Mr Hyde, I shall be Mr Seek",
   "master": false,
   "gap_word": "Seek",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1492,6 +1554,7 @@
   "quote": "The man seems hardly human! Something troglodytic",
   "master": false,
   "gap_word": "troglodytic",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1512,6 +1575,7 @@
   "quote": "If ever I read Satan’s signature upon a face",
   "master": true,
   "gap_word": "signature",
+  "gap_type": "noun",
   "techniques": [
    "Metaphor",
    "Hellish imagery",
@@ -1552,6 +1616,7 @@
   "quote": "He was humbled to the dust by the many ill things he had done",
   "master": false,
   "gap_word": "humbled",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1572,6 +1637,7 @@
   "quote": "An ignorant, blatant pedant. I was never more disappointed",
   "master": false,
   "gap_word": "pedant",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1592,6 +1658,7 @@
   "quote": "The moment I choose, I can be rid of Mr Hyde",
   "master": false,
   "gap_word": "choose",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1612,6 +1679,7 @@
   "quote": "This is a private matter, and I beg of you to let it sleep",
   "master": false,
   "gap_word": "sleep",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1632,6 +1700,7 @@
   "quote": "Mr Hyde broke out of all bounds and clubbed him to the earth",
   "master": false,
   "gap_word": "clubbed",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1658,6 +1727,7 @@
   "quote": "With ape-like fury, he was… hailing down a storm of blows",
   "master": true,
   "gap_word": "fury",
+  "gap_type": "noun",
   "techniques": [
    "Simile",
    "Metaphor",
@@ -1702,6 +1772,7 @@
   "quote": "The Strange Case of Dr Jekyll and Mr Hyde",
   "master": false,
   "gap_word": "Strange",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1726,6 +1797,7 @@
   "quote": "An aged beautiful gentleman with white hair… and old-world kindness",
   "master": false,
   "gap_word": "kindness",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1746,6 +1818,7 @@
   "quote": "Mournful reinvasion of darkness",
   "master": false,
   "gap_word": "reinvasion",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1766,6 +1839,7 @@
   "quote": "Furnished with luxury and good taste",
   "master": false,
   "gap_word": "luxury",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1786,6 +1860,7 @@
   "quote": "Dr Jekyll, looking deathly sick",
   "master": false,
   "gap_word": "deathly",
+  "gap_type": "adverb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1806,6 +1881,7 @@
   "quote": "I swear to God I will never set eyes on him again",
   "master": false,
   "gap_word": "swear",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1826,6 +1902,7 @@
   "quote": "There’s a rather singular resemblance",
   "master": false,
   "gap_word": "singular",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1846,6 +1923,7 @@
   "quote": "The rosy man had grown pale; his flesh had fallen away",
   "master": false,
   "gap_word": "rosy",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1874,6 +1952,7 @@
   "quote": "A look in the eye… that seemed to testify to some deep-seated terror",
   "master": false,
   "gap_word": "terror",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1902,6 +1981,7 @@
   "quote": "You must suffer me to go my own dark way",
   "master": false,
   "gap_word": "suffer",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1922,6 +2002,7 @@
   "quote": "If I am the chief of sinners, I am the chief of sufferers also",
   "master": false,
   "gap_word": "sinners",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1942,6 +2023,7 @@
   "quote": "That thing in the mask",
   "master": false,
   "gap_word": "mask",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1968,6 +2050,7 @@
   "quote": "Red baize door",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1994,6 +2077,7 @@
   "quote": "A copy of a pious work, annotated… with startling blasphemies",
   "master": false,
   "gap_word": "blasphemies",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2014,6 +2098,7 @@
   "quote": "His face became suddenly black and the features seemed to melt",
   "master": false,
   "gap_word": "melt",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2038,6 +2123,7 @@
   "quote": "“O God!” I screamed. “O God!”",
   "master": false,
   "gap_word": "God",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2064,6 +2150,7 @@
   "quote": "The deadliest terror sits by my side at all hours",
   "master": false,
   "gap_word": "deadliest",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2095,6 +2182,7 @@
   "quote": "Man is not truly one, but truly two",
   "master": true,
   "gap_word": "truly",
+  "gap_type": "adverb",
   "techniques": [
    "Declarative statement",
    "Repetition",
@@ -2135,6 +2223,7 @@
   "quote": "It was the curse of mankind that these polar twins should be continuously struggling",
   "master": false,
   "gap_word": "polar",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2165,6 +2254,7 @@
   "quote": "The body of Edward Hyde had grown in stature",
   "master": false,
   "gap_word": "stature",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2191,6 +2281,7 @@
   "quote": "My new power tempted me until I fell in slavery",
   "master": false,
   "gap_word": "slavery",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2219,6 +2310,7 @@
   "quote": "Windows barred with iron",
   "master": false,
   "gap_word": "barred",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2245,6 +2337,7 @@
   "quote": "My devil had been long caged, he came out roaring",
   "master": true,
   "gap_word": "caged",
+  "gap_type": "verb",
   "techniques": [
    "Metaphor",
    "Possessive pronoun",
@@ -2289,6 +2382,7 @@
   "quote": "Lighting should be pink and intimate",
   "master": true,
   "gap_word": "intimate",
+  "gap_type": "adjective",
   "techniques": [
    "Symbolic lighting contrast / visual metaphor."
   ],
@@ -2317,6 +2411,7 @@
   "quote": "Brighter and harder",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Symbolic lighting contrast / visual metaphor."
   ],
@@ -2345,6 +2440,7 @@
   "quote": "Substantial and heavily comfortable, but not cosy and homelike",
   "master": false,
   "gap_word": "cosy",
+  "gap_type": "adjective",
   "techniques": [
    "Juxtaposition / setting as characterisation."
   ],
@@ -2373,6 +2469,7 @@
   "quote": "A prosperous manufacturer",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2393,6 +2490,7 @@
   "quote": "Provincial in his speech",
   "master": false,
   "gap_word": "provincial",
+  "gap_type": "adjective",
   "techniques": [
    "Stage direction / linguistic class marker."
   ],
@@ -2417,6 +2515,7 @@
   "quote": "A rather cold woman",
   "master": true,
   "gap_word": "cold",
+  "gap_type": "adjective",
   "techniques": [
    "Sensory adjective choice / emotional detachment."
   ],
@@ -2445,6 +2544,7 @@
   "quote": "Her husband’s social superior",
   "master": false,
   "gap_word": "superior",
+  "gap_type": "noun",
   "techniques": [
    "Noun phrase / social hierarchy."
   ],
@@ -2473,6 +2573,7 @@
   "quote": "Very pleased with life and rather excited",
   "master": false,
   "gap_word": "pleased",
+  "gap_type": "adjective",
   "techniques": [
    "Paired intensifiers / character baseline."
   ],
@@ -2497,6 +2598,7 @@
   "quote": "Easy, well-bred young man-about-town",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Triadic epithet / aristocratic social privilege."
   ],
@@ -2521,6 +2623,7 @@
   "quote": "Not quite at ease, half shy, half assertive",
   "master": true,
   "gap_word": "assertive",
+  "gap_type": "adjective",
   "techniques": [
    "Juxtaposition / psychological fracture."
   ],
@@ -2549,6 +2652,7 @@
   "quote": "We may look forward to the time when Crofts and Birlings are no longer competing but are working together – for lower costs and higher prices",
   "master": false,
   "gap_word": "competing",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2569,6 +2673,7 @@
   "quote": "We hard-headed, practical businessmen",
   "master": false,
   "gap_word": "practical",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2589,6 +2694,7 @@
   "quote": "Unsinkable, absolutely unsinkable",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Dramatic irony / emphatic repetition."
   ],
@@ -2620,6 +2726,7 @@
   "quote": "Like bees in a hive – community and all that nonsense",
   "master": false,
   "gap_word": "hive",
+  "gap_type": "noun",
   "techniques": [
    "Pejorative simile / dismissive colloquial tone."
   ],
@@ -2648,6 +2755,7 @@
   "quote": "A man has to mind his own business and look after himself and his own",
   "master": true,
   "gap_word": "business",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2668,6 +2776,7 @@
   "quote": "Well, it’s my duty to keep labour costs down",
   "master": false,
   "gap_word": "duty",
+  "gap_type": "noun",
   "techniques": [
    "Subversion of the abstract noun “duty” / capitalist ideology."
   ],
@@ -2696,6 +2805,7 @@
   "quote": "If you don’t come down sharply on some of these people, they’d soon be asking for the earth",
   "master": false,
   "gap_word": "earth",
+  "gap_type": "noun",
   "techniques": [
    "Idiomatic hyperbole / authoritarian phrasing."
   ],
@@ -2724,6 +2834,7 @@
   "quote": "It’s better to ask for the earth than to take it",
   "master": false,
   "gap_word": "earth",
+  "gap_type": "noun",
   "techniques": [
    "Juxtaposition / dynamic verb contrast."
   ],
@@ -2754,6 +2865,7 @@
   "quote": "Look – Mummy – isn’t it a beauty?",
   "master": false,
   "gap_word": "beauty",
+  "gap_type": "noun",
   "techniques": [
    "Childish vocative / commercial materialism."
   ],
@@ -2778,6 +2890,7 @@
   "quote": "Nothing to do with you, Sheila. Run along",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Imperative verbs / patriarchal infantilisation."
   ],
@@ -2808,6 +2921,7 @@
   "quote": "I can’t help thinking about this girl destroying herself – and I’ve been so happy tonight",
   "master": false,
   "gap_word": "destroying",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2828,6 +2942,7 @@
   "quote": "But these girls aren’t cheap labour – they’re people",
   "master": true,
   "gap_word": "labour",
+  "gap_type": "noun",
   "techniques": [
    "Direct semantic contrast / humanising correction."
   ],
@@ -2852,6 +2967,7 @@
   "quote": "So you used the power you had… to punish the girl?",
   "master": false,
   "gap_word": "power",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2872,6 +2988,7 @@
   "quote": "(laughs rather hysterically) Why – you fool – he knows. Of course he knows",
   "master": false,
   "gap_word": "hysterically",
+  "gap_type": "adverb",
   "techniques": [
    "Stage direction / sharp colloquial address."
   ],
@@ -2896,6 +3013,7 @@
   "quote": "Inspector Goole",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Homophonic wordplay / supernatural allusion."
   ],
@@ -2924,6 +3042,7 @@
   "quote": "Cutting in, massively",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Adverbial stage direction / dynamic authority."
   ],
@@ -2948,6 +3067,7 @@
   "quote": "He speaks carefully, weightily",
   "master": false,
   "gap_word": "weightily",
+  "gap_type": "adverb",
   "techniques": [
    "Paired adverbs / forensic cadence."
   ],
@@ -2976,6 +3096,7 @@
   "quote": "A chain of events",
   "master": false,
   "gap_word": "chain",
+  "gap_type": "noun",
   "techniques": [
    "Metaphor / mechanistic imagery."
   ],
@@ -3006,6 +3127,7 @@
   "quote": "Eva Smith",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Allegorical onomastics (name symbolism)."
   ],
@@ -3034,6 +3156,7 @@
   "quote": "She’d swallowed a lot of strong disinfectant. Burnt her inside out",
   "master": true,
   "gap_word": "disinfectant",
+  "gap_type": "noun",
   "techniques": [
    "Visceral sensory imagery / graphic physical description."
   ],
@@ -3062,6 +3185,7 @@
   "quote": "No relatives to help her, few friends, lonely, half-starved, she was feeling desperate",
   "master": false,
   "gap_word": "desperate",
+  "gap_type": "adjective",
   "techniques": [
    "Asyndetic listing / emotive adjectives."
   ],
@@ -3090,6 +3214,7 @@
   "quote": "It would do us all a bit of good if we put ourselves in the place of these young women counting their pennies in their dingy little back bedrooms",
   "master": false,
   "gap_word": "dingy",
+  "gap_type": "adjective",
   "techniques": [
    "Visual imagery / didactic appeal for radical empathy."
   ],
@@ -3118,6 +3243,7 @@
   "quote": "Public men, Mr Birling, have responsibilities as well as privileges",
   "master": true,
   "gap_word": "privileges",
+  "gap_type": "noun",
   "techniques": [
    "Balanced antithesis / didactic maxim."
   ],
@@ -3146,6 +3272,7 @@
   "quote": "We are members of one body",
   "master": true,
   "gap_word": "body",
+  "gap_type": "noun",
   "techniques": [
    "Biblical allusion (1 Corinthians 12) / organic metaphor."
   ],
@@ -3176,6 +3303,7 @@
   "quote": "You seem to have made a great impression on this child, Inspector.",
   "master": true,
   "gap_word": "impression",
+  "gap_type": "noun",
   "techniques": [
    "Generational antithesis / patronising epithet vs moral validation."
   ],
@@ -3206,6 +3334,7 @@
   "quote": "We often do on the young ones. They’re more impressionable.",
   "master": true,
   "gap_word": "impressionable",
+  "gap_type": "adjective",
   "techniques": [
    "Generational antithesis / patronising epithet vs moral validation."
   ],
@@ -3236,6 +3365,7 @@
   "quote": "Daisy Renton",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Allegorical onomastics (name symbolism)."
   ],
@@ -3264,6 +3394,7 @@
   "quote": "If I could help her now – I would!",
   "master": false,
   "gap_word": "help",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3284,6 +3415,7 @@
   "quote": "(with sharp sarcasm) You were the wonderful fairy prince",
   "master": true,
   "gap_word": "fairy",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3310,6 +3442,7 @@
   "quote": "As if a girl of that sort would refuse money!",
   "master": true,
   "gap_word": "refuse",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3334,6 +3467,7 @@
   "quote": "You used her… as if she was an animal, a thing, not a person",
   "master": true,
   "gap_word": "animal",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3360,6 +3494,7 @@
   "quote": "You killed her – and the child she’d have had too – my child",
   "master": true,
   "gap_word": "killed",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3380,6 +3515,7 @@
   "quote": "One Eva Smith has gone but there are millions and millions and millions still left with us",
   "master": true,
   "gap_word": "millions",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3406,6 +3542,7 @@
   "quote": "If men will not learn that lesson, they will be taught it in fire and blood and anguish",
   "master": true,
   "gap_word": "anguish",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3437,6 +3574,7 @@
   "quote": "You’ll be able to divide the responsibility between you when I’ve gone",
   "master": true,
   "gap_word": "responsibility",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3457,6 +3595,7 @@
   "quote": "I know I’m to blame – and I’m desperately sorry",
   "master": true,
   "gap_word": "blame",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3477,6 +3616,7 @@
   "quote": "A girl died tonight… Died in misery and agony – hating life",
   "master": false,
   "gap_word": "misery",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3497,6 +3637,7 @@
   "quote": "Impression of massiveness, solidity, and purposefulness",
   "master": false,
   "gap_word": "massiveness",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3517,6 +3658,7 @@
   "quote": "I met a traveller from an antique land",
   "master": false,
   "gap_word": "antique",
+  "gap_type": "adjective",
   "techniques": [
    "Adjective"
   ],
@@ -3546,6 +3688,7 @@
   "quote": "My name is Ozymandias, King of Kings",
   "master": true,
   "gap_word": "Ozymandias",
+  "gap_type": "noun",
   "techniques": [
    "Repetition",
    "Noun phrase"
@@ -3580,6 +3723,7 @@
   "quote": "Look on my Works, ye Mighty, and despair!",
   "master": true,
   "gap_word": "despair",
+  "gap_type": "verb",
   "techniques": [
    "Imperative",
    "Irony"
@@ -3611,6 +3755,7 @@
   "quote": "Nothing beside remains",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Short sentence",
    "Contrast"
@@ -3636,6 +3781,7 @@
   "quote": "The lone and level sands stretch far away",
   "master": true,
   "gap_word": "level",
+  "gap_type": "adjective",
   "techniques": [
    "Imagery",
    "Alliteration"
@@ -3668,6 +3814,7 @@
   "quote": "Round the decay of that colossal wreck",
   "master": false,
   "gap_word": "colossal",
+  "gap_type": "adjective",
   "techniques": [
    "Juxtaposition"
   ],
@@ -3696,6 +3843,7 @@
   "quote": "Sneer of cold command",
   "master": false,
   "gap_word": "sneer",
+  "gap_type": "noun",
   "techniques": [
    "Adjective",
    "Alliteration"
@@ -3727,6 +3875,7 @@
   "quote": "Chartered streets",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Adjective",
    "Repetition",
@@ -3761,6 +3910,7 @@
   "quote": "Mind-forg’d manacles",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Metaphor",
    "Noun choice"
@@ -3793,6 +3943,7 @@
   "quote": "Runs in blood down palace walls",
   "master": true,
   "gap_word": "palace",
+  "gap_type": "noun",
   "techniques": [
    "Imagery",
    "Symbolism"
@@ -3824,6 +3975,7 @@
   "quote": "Blackning Church appalls",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Adjective choice",
    "Symbolism"
@@ -3855,6 +4007,7 @@
   "quote": "Youthful Harlots",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Symbolism"
   ],
@@ -3883,6 +4036,7 @@
   "quote": "Small circles glittering idly",
   "master": true,
   "gap_word": "glittering",
+  "gap_type": "verb",
   "techniques": [
    "Symbolism",
    "Sibilance"
@@ -3915,6 +4069,7 @@
   "quote": "The grim shape towered up between me and the stars",
   "master": true,
   "gap_word": "grim",
+  "gap_type": "adjective",
   "techniques": [
    "Personification",
    "Imagery"
@@ -3949,6 +4104,7 @@
   "quote": "Huge and mighty forms… were a trouble to my dreams",
   "master": true,
   "gap_word": "trouble",
+  "gap_type": "noun",
   "techniques": [
    "Adjective choice",
    "Symbolism"
@@ -3982,6 +4138,7 @@
   "quote": "My Last Duchess",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Possessive pronoun",
    "Adjective",
@@ -4014,6 +4171,7 @@
   "quote": "That’s my last Duchess painted on the wall",
   "master": true,
   "gap_word": "Duchess",
+  "gap_type": "noun",
   "techniques": [
    "Possessive pronoun",
    "Title"
@@ -4043,6 +4201,7 @@
   "quote": "I gave commands; then all smiles stopped together",
   "master": true,
   "gap_word": "commands",
+  "gap_type": "noun",
   "techniques": [
    "Euphemism",
    "Caesura"
@@ -4074,6 +4233,7 @@
   "quote": "Notice Neptune, though, taming a sea-horse",
   "master": true,
   "gap_word": "Neptune",
+  "gap_type": "noun",
   "techniques": [
    "Symbolism",
    "Imperative"
@@ -4105,6 +4265,7 @@
   "quote": "Into the mouth of Hell",
   "master": true,
   "gap_word": "Hell",
+  "gap_type": "noun",
   "techniques": [
    "Metaphor",
    "Symbolism"
@@ -4138,6 +4299,7 @@
   "quote": "Honour the Light Brigade, noble six hundred",
   "master": true,
   "gap_word": "noble",
+  "gap_type": "adjective",
   "techniques": [
    "Repetition",
    "Adjective choice"
@@ -4171,6 +4333,7 @@
   "quote": "Someone had blundered",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Juxtaposition",
    "Verb choice"
@@ -4202,6 +4365,7 @@
   "quote": "Our brains ache",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Collective pronoun",
    "Verb choice"
@@ -4233,6 +4397,7 @@
   "quote": "The merciless iced east winds that knive us",
   "master": true,
   "gap_word": "merciless",
+  "gap_type": "adjective",
   "techniques": [
    "Personification",
    "Verb choice"
@@ -4266,6 +4431,7 @@
   "quote": "All their eyes are ice",
   "master": true,
   "gap_word": "ice",
+  "gap_type": "noun",
   "techniques": [
    "Metaphor",
    "Symbolism"
@@ -4299,6 +4465,7 @@
   "quote": "We are prepared: we build our houses squat",
   "master": true,
   "gap_word": "squat",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -4319,6 +4486,7 @@
   "quote": "Spits like a tame cat turned savage",
   "master": true,
   "gap_word": "savage",
+  "gap_type": "adjective",
   "techniques": [
    "Simile",
    "Juxtaposition"
@@ -4350,6 +4518,7 @@
   "quote": "Blows full blast",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Plosive consonants",
    "Semantic field of war"
@@ -4381,6 +4550,7 @@
   "quote": "Bombarded by the empty air",
   "master": true,
   "gap_word": "Bombarded",
+  "gap_type": "verb",
   "techniques": [
    "Violent verb",
    "Symbolism"
@@ -4412,6 +4582,7 @@
   "quote": "King, honour, human dignity, etcetera",
   "master": true,
   "gap_word": "dignity",
+  "gap_type": "noun",
   "techniques": [
    "Juxtaposition",
    "Noun choice"
@@ -4445,6 +4616,7 @@
   "quote": "Suddenly he awoke and was running",
   "master": true,
   "gap_word": "awoke",
+  "gap_type": "verb",
   "techniques": [
    "Adverb choice",
    "Verb choice"
@@ -4476,6 +4648,7 @@
   "quote": "His terror’s touchy dynamite",
   "master": true,
   "gap_word": "dynamite",
+  "gap_type": "noun",
   "techniques": [
    "Metaphor",
    "Adjective choice"
@@ -4508,6 +4681,7 @@
   "quote": "A yellow hare that rolled like a flame",
   "master": false,
   "gap_word": "hare",
+  "gap_type": "noun",
   "techniques": [
    "Hellish imagery",
    "Violent imagery",
@@ -4540,6 +4714,7 @@
   "quote": "His blood shadow",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Symbolism",
    "Metaphor"
@@ -4572,6 +4747,7 @@
   "quote": "Probably armed, possibly not",
   "master": true,
   "gap_word": "armed",
+  "gap_type": "adjective",
   "techniques": [
    "Juxtaposition",
    "Adverb choice"
@@ -4605,6 +4781,7 @@
   "quote": "Tosses his guts back into his body",
   "master": true,
   "gap_word": "guts",
+  "gap_type": "noun",
   "techniques": [
    "Verb choice",
    "Imagery",
@@ -4639,6 +4816,7 @@
   "quote": "But I blink and he bursts again",
   "master": false,
   "gap_word": "bursts",
+  "gap_type": "verb",
   "techniques": [
    "Symbolism",
    "Enjambment",
@@ -4676,6 +4854,7 @@
   "quote": "End of story, except not really",
   "master": false,
   "gap_word": "story",
+  "gap_type": "noun",
   "techniques": [
    "Volta"
   ],
@@ -4704,6 +4883,7 @@
   "quote": "On another occasion",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "In media res"
   ],
@@ -4728,6 +4908,7 @@
   "quote": "Spasms of paper red",
   "master": true,
   "gap_word": "spasms",
+  "gap_type": "noun",
   "techniques": [
    "Metaphor",
    "Adjective choice"
@@ -4761,6 +4942,7 @@
   "quote": "The gelled blackthorns of your hair",
   "master": true,
   "gap_word": "blackthorns",
+  "gap_type": "noun",
   "techniques": [
    "Symbolism"
   ],
@@ -4792,6 +4974,7 @@
   "quote": "Running children in a nightmare heat",
   "master": true,
   "gap_word": "nightmare",
+  "gap_type": "noun",
   "techniques": [
    "Imagery",
    "Symbolism"
@@ -4825,6 +5008,7 @@
   "quote": "In his darkroom he is finally alone",
   "master": true,
   "gap_word": "darkroom",
+  "gap_type": "noun",
   "techniques": [
    "Symbolism",
    "Juxtaposition"
@@ -4859,6 +5043,7 @@
   "quote": "Spools of suffering set out in ordered rows",
   "master": true,
   "gap_word": "spools",
+  "gap_type": "noun",
   "techniques": [
    "Extended metaphor"
   ],
@@ -4890,6 +5075,7 @@
   "quote": "Belfast. Beirut. Phnom Penh.",
   "master": false,
   "gap_word": "Beirut",
+  "gap_type": "noun",
   "techniques": [
    "Caesura",
    "Plosive consonants",
@@ -4924,6 +5110,7 @@
   "quote": "He earns his living and they do not care",
   "master": false,
   "gap_word": "living",
+  "gap_type": "noun",
   "techniques": [
    "Declarative statement",
    "Collective pronoun"
@@ -4955,6 +5142,7 @@
   "quote": "Paper kites",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -4975,6 +5163,7 @@
   "quote": "Let the daylight break through capitals and monoliths",
   "master": true,
   "gap_word": "daylight",
+  "gap_type": "noun",
   "techniques": [
    "Semantic field"
   ],
@@ -5003,6 +5192,7 @@
   "quote": "Pages smoothed and stroked and turned transparent with attention",
   "master": true,
   "gap_word": "transparent",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5023,6 +5213,7 @@
   "quote": "There was once a country… I left it as a child",
   "master": true,
   "gap_word": "country",
+  "gap_type": "noun",
   "techniques": [
    "Past tense",
    "Caesura"
@@ -5052,6 +5243,7 @@
   "quote": "It may be sick with tyrants, but I am branded by an impression of sunlight",
   "master": true,
   "gap_word": "tyrants",
+  "gap_type": "noun",
   "techniques": [
    "Juxtaposition",
    "Metaphor"
@@ -5084,6 +5276,7 @@
   "quote": "My shadow falls as evidence of sunlight",
   "master": true,
   "gap_word": "evidence",
+  "gap_type": "noun",
   "techniques": [
    "Symbolism",
    "Metaphor"
@@ -5115,6 +5308,7 @@
   "quote": "It lies in front of me, docile as paper / I comb its hair and love its shining eyes",
   "master": false,
   "gap_word": "docile",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5135,6 +5329,7 @@
   "quote": "Bandage up me eye",
   "master": true,
   "gap_word": "Bandage",
+  "gap_type": "verb",
   "techniques": [
    "Metaphor",
    "Creole dialect"
@@ -5164,6 +5359,7 @@
   "quote": "Dem tell me",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Pronoun",
    "Repetition"
@@ -5195,6 +5391,7 @@
   "quote": "I carving out me identity",
   "master": true,
   "gap_word": "carving",
+  "gap_type": "verb",
   "techniques": [
    "Metaphor"
   ],
@@ -5223,6 +5420,7 @@
   "quote": "Toussaint de thorn",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [
    "Lesson slide: “What does this symbol suggest?”"
@@ -5249,6 +5447,7 @@
   "quote": "A healing star… a yellow sunrise",
   "master": false,
   "gap_word": "healing",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [
    "Lesson slide: “What does this symbol suggest?” (about Mary Seacole)."
@@ -5275,6 +5474,7 @@
   "quote": "Head full of powerful incantations",
   "master": true,
   "gap_word": "incantations",
+  "gap_type": "noun",
   "techniques": [
    "Metaphor",
    "Adjective choice"
@@ -5308,6 +5508,7 @@
   "quote": "Fishes flashing silver",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [
    "Symbolism",
    "Adjective choice"
@@ -5342,6 +5543,7 @@
   "quote": "Which had been the better way to die",
   "master": true,
   "gap_word": "better",
+  "gap_type": "adjective",
   "techniques": [
    "Juxtaposition",
    "Rhetorical question"
@@ -5373,6 +5575,7 @@
   "quote": "The Modern Prometheus",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Subtitle on the title page | Frankenstein lesson 1.",
@@ -5397,6 +5600,7 @@
   "quote": "His limbs were nearly frozen",
   "master": true,
   "gap_word": "frozen",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5417,6 +5621,7 @@
   "quote": "His body dreadfully emaciated",
   "master": true,
   "gap_word": "emaciated",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5437,6 +5642,7 @@
   "quote": "His eyes have generally an expression of wildness, even madness",
   "master": true,
   "gap_word": "wildness",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"wildness, and even madness\" | Frankenstein lessons 3 and 7: windows to the soul; Victor’s mind is broken.",
@@ -5461,6 +5667,7 @@
   "quote": "My mother’s tender caresses and my father’s smile",
   "master": false,
   "gap_word": "caresses",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5481,6 +5688,7 @@
   "quote": "I was their plaything and their idol",
   "master": true,
   "gap_word": "idol",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 4: asked of the class.",
@@ -5505,6 +5713,7 @@
   "quote": "Life and death appeared to me ideal bounds, which I should first break through",
   "master": false,
   "gap_word": "bounds",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5525,6 +5734,7 @@
   "quote": "A new species would bless me as its creator and source",
   "master": false,
   "gap_word": "species",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5545,6 +5755,7 @@
   "quote": "I pursued nature to her hiding places",
   "master": true,
   "gap_word": "hiding",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 5: nature is presented as prey to be hunted; Victor hunts down nature’s secrets.",
@@ -5571,6 +5782,7 @@
   "quote": "I shunned my fellow creatures as if I had been guilty of a crime",
   "master": false,
   "gap_word": "shunned",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5591,6 +5803,7 @@
   "quote": "Painful labour",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 7: childbirth imagery for the Creature’s birth.",
@@ -5615,6 +5828,7 @@
   "quote": "The beauty of the dream vanished and breathless horror and disgust filled my heart",
   "master": true,
   "gap_word": "breathless",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 7: Victor’s horror and disgust.",
@@ -5639,6 +5853,7 @@
   "quote": "Did I not as his maker owe him all the happiness that was in my power to bestow?",
   "master": false,
   "gap_word": "maker",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"all the portion of happiness that it was in my power to bestow\"",
@@ -5659,6 +5874,7 @@
   "quote": "I was a slave to my creature",
   "master": false,
   "gap_word": "slave",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"the slave of my creature\" (teacher: \"a slave to my creature\")",
@@ -5679,6 +5895,7 @@
   "quote": "You are my creator, but I am your master. Obey!",
   "master": false,
   "gap_word": "master",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5699,6 +5916,7 @@
   "quote": "No creature had ever been so miserable as I",
   "master": false,
   "gap_word": "miserable",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5719,6 +5937,7 @@
   "quote": "One by one, my friends were snatched away; I was left desolate",
   "master": false,
   "gap_word": "desolate",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5739,6 +5958,7 @@
   "quote": "The death of William, the execution of Justine, the murder of Clerval, and lastly of my wife",
   "master": false,
   "gap_word": "execution",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5759,6 +5979,7 @@
   "quote": "I was the true murderer",
   "master": false,
   "gap_word": "murderer",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"I, not in deed, but in effect, was the true murderer\" (also \"But I, the true murderer\" earlier in Chapter 8)",
@@ -5779,6 +6000,7 @@
   "quote": "I bore a hell within me which nothing could extinguish",
   "master": false,
   "gap_word": "hell",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5799,6 +6021,7 @@
   "quote": "Like the archangel who aspired to omnipotence, I am chained in an eternal hell",
   "master": false,
   "gap_word": "archangel",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5819,6 +6042,7 @@
   "quote": "Demoniacal corpse",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 7: nightmarish imagery.",
@@ -5843,6 +6067,7 @@
   "quote": "Begone! Vile insect!",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 15: Victor holds the power and dehumanises the Creature.",
@@ -5869,6 +6094,7 @@
   "quote": "Monster",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Victor uses \"monster\" many times; first in Chapter 5",
@@ -5889,6 +6115,7 @@
   "quote": "Fiend",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "\"fiend\" is used many times (e.g. Chapters 9, 16, 20)",
@@ -5909,6 +6136,7 @@
   "quote": "Demon",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "1818 text spells it \"dæmon\" (e.g. Chapter 7); used many times",
@@ -5929,6 +6157,7 @@
   "quote": "Ogre",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "William says \"ogre\" in Chapter 16",
@@ -5949,6 +6178,7 @@
   "quote": "Good spirit",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"good spirit, wonderful\" (the cottagers' words; Creature overhears)",
@@ -5969,6 +6199,7 @@
   "quote": "I was benevolent and good; misery made me a fiend",
   "master": false,
   "gap_word": "benevolent",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5989,6 +6220,7 @@
   "quote": "One hand was stretched out, seemingly to detain me",
   "master": false,
   "gap_word": "stretched",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6009,6 +6241,7 @@
   "quote": "Barbarous villagers",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6029,6 +6262,7 @@
   "quote": "The barbarity of man",
   "master": false,
   "gap_word": "barbarity",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6049,6 +6283,7 @@
   "quote": "Low hovel",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6069,6 +6304,7 @@
   "quote": "My kennel",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6089,6 +6325,7 @@
   "quote": "Carpeted with straw",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"carpeted it with clean straw\"",
@@ -6109,6 +6346,7 @@
   "quote": "Who was I? What was I? Whence did I come?",
   "master": false,
   "gap_word": "Whence",
+  "gap_type": "adverb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6129,6 +6367,7 @@
   "quote": "Was I a monster, a blot upon the earth?",
   "master": true,
   "gap_word": "blot",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"Was I, then, a monster, a blot upon the earth\"",
@@ -6149,6 +6388,7 @@
   "quote": "No father had watched my infant days; no mother had blessed me with smiles",
   "master": false,
   "gap_word": "mother",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6169,6 +6409,7 @@
   "quote": "I ought to be thy Adam, but I am rather the fallen angel",
   "master": true,
   "gap_word": "Adam",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 15: the Creature compares himself to Satan.",
@@ -6196,6 +6437,7 @@
   "quote": "Broken the only link that held me to the world",
   "master": false,
   "gap_word": "link",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6216,6 +6458,7 @@
   "quote": "Forced solitude",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6236,6 +6479,7 @@
   "quote": "Shall each man find a wife, and each beast have his mate, and I be alone?",
   "master": false,
   "gap_word": "alone",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"Shall each man, find a wife for his bosom, and each beast have his mate, and I be alone?\"",
@@ -6256,6 +6500,7 @@
   "quote": "The love of another will destroy the cause of my crimes",
   "master": false,
   "gap_word": "crimes",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6276,6 +6521,7 @@
   "quote": "I, like the arch-fiend, bore a hell within me",
   "master": true,
   "gap_word": "hell",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lessons 15-17: links to Satan’s “Myself am Hell”.",
@@ -6302,6 +6548,7 @@
   "quote": "My heart swelled with hellish triumph",
   "master": true,
   "gap_word": "hellish",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"my heart swelled with exultation and hellish triumph\" | Frankenstein lesson 17.",
@@ -6326,6 +6573,7 @@
   "quote": "I too can create desolation",
   "master": true,
   "gap_word": "desolation",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 17: “too” suggests he realises he is like others.",
@@ -6350,6 +6598,7 @@
   "quote": "Beware, for I am fearless and therefore powerful",
   "master": false,
   "gap_word": "fearless",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6370,6 +6619,7 @@
   "quote": "I was the slave, not the master, of an impulse which I detested yet could not disobey",
   "master": false,
   "gap_word": "impulse",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "Sheet says The Creature, but in the novel it is Victor speaking (about his urge for revenge), so speaker changed to Victor Frankenstein",
@@ -6390,6 +6640,7 @@
   "quote": "Polluted by crimes and torn by the bitterest remorse, where can I find rest but in death?",
   "master": false,
   "gap_word": "remorse",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6410,6 +6661,7 @@
   "quote": "Undiscovered solitudes",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6430,6 +6682,7 @@
   "quote": "Dear Margaret, do I not deserve to accomplish some great purpose?",
   "master": true,
   "gap_word": "purpose",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6450,6 +6703,7 @@
   "quote": "I bitterly feel the want of a friend",
   "master": false,
   "gap_word": "bitterly",
+  "gap_type": "adverb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6470,6 +6724,7 @@
   "quote": "The brother of my heart",
   "master": false,
   "gap_word": "brother",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6490,6 +6745,7 @@
   "quote": "One man’s life or death were but a small price to pay for the knowledge which I sought",
   "master": true,
   "gap_word": "knowledge",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"for the acquirement of the knowledge which I sought\" (teacher: \"for the knowledge which I sought\")",
@@ -6510,6 +6766,7 @@
   "quote": "Whither does your senseless curiosity lead you?",
   "master": false,
   "gap_word": "curiosity",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6530,6 +6787,7 @@
   "quote": "I longed to join them, but I dared not",
   "master": false,
   "gap_word": "dared",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "Creature watching the De Lacey family; check wording against the teacher sheet (not found word-for-word)",
@@ -6550,6 +6808,7 @@
   "quote": "Who can describe their horror and consternation on beholding me?",
   "master": false,
   "gap_word": "consternation",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6570,6 +6829,7 @@
   "quote": "Sweet laughing blue eyes",
   "master": true,
   "gap_word": "laughing",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 7: William’s eyes show innocence.",
@@ -6594,6 +6854,7 @@
   "quote": "This little creature was unprejudiced",
   "master": false,
   "gap_word": "unprejudiced",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6614,6 +6875,7 @@
   "quote": "You are an ogre",
   "master": false,
   "gap_word": "ogre",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6634,6 +6896,7 @@
   "quote": "The saintly sufferer",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6654,6 +6917,7 @@
   "quote": "It stirred the fiend within me – not I, but she, shall suffer",
   "master": false,
   "gap_word": "fiend",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6674,6 +6938,7 @@
   "quote": "The judges had already condemned my unhappy victim",
   "master": false,
   "gap_word": "condemned",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6694,6 +6959,7 @@
   "quote": "The tortures of the accused did not equal mine",
   "master": false,
   "gap_word": "tortures",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6714,6 +6980,7 @@
   "quote": "I began to think that I was the monster he said I was",
   "master": true,
   "gap_word": "monster",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"I almost began to think that I was the monster that he said I was\" (the confessor, not the interrogator, says it)",
@@ -6734,6 +7001,7 @@
   "quote": "Men appear to me as monsters thirsting for each other’s blood",
   "master": true,
   "gap_word": "thirsting",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 9: said after Justine’s execution; shows Elizabeth’s realisation that society is cruel.",
@@ -6758,6 +7026,7 @@
   "quote": "The image of Clerval was forever before me, ghastly and murdered",
   "master": false,
   "gap_word": "ghastly",
+  "gap_type": "adjective",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6778,6 +7047,7 @@
   "quote": "My friend and dearest companion had fallen victim to me and the monster of my creation",
   "master": false,
   "gap_word": "victim",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"Clerval, my friend and dearest companion, had fallen a victim to me and the monster of my creation\"",
@@ -6798,6 +7068,7 @@
   "quote": "Pretty present",
   "master": true,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 4: treats Elizabeth as an object.",
@@ -6824,6 +7095,7 @@
   "quote": "Promised gift",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6844,6 +7116,7 @@
   "quote": "Till death she was to be mine only",
   "master": false,
   "gap_word": "mine",
+  "gap_type": "other",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6864,6 +7137,7 @@
   "quote": "I shall be with you on your wedding night",
   "master": false,
   "gap_word": "wedding",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "Appears more than once in the novel; chapter shown is the first.",
@@ -6884,6 +7158,7 @@
   "quote": "He seemed to jeer, as with his fiendish finger he pointed towards the corpse of my wife",
   "master": false,
   "gap_word": "jeer",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6904,6 +7179,7 @@
   "quote": "My heart often sickened at the work of my hands",
   "master": false,
   "gap_word": "sickened",
+  "gap_type": "verb",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6924,6 +7200,7 @@
   "quote": "A race of devils would be propagated upon the earth",
   "master": false,
   "gap_word": "devils",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6944,6 +7221,7 @@
   "quote": "The wickedness of my promise burst upon me",
   "master": false,
   "gap_word": "wickedness",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6964,6 +7242,7 @@
   "quote": "A ghastly grin wrinkled his lips",
   "master": false,
   "gap_word": "grin",
+  "gap_type": "noun",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6984,6 +7263,7 @@
   "quote": "Inarticulate sounds",
   "master": false,
   "gap_word": "",
+  "gap_type": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Appears more than once in the novel; chapter shown is the first. | Frankenstein lesson 7: childbirth imagery for the Creature’s birth.",

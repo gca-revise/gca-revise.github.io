@@ -167,6 +167,10 @@ def specific_matches(patterns, text):
     return sorted(keep, key=order.index)
 
 
+# Word types for gap words: the wrong options in "Fill the gap" are of the same type as the right answer.
+GAP_TYPES = {"noun", "verb", "adjective", "adverb", "other"}
+
+
 def build_quotes():
     rows = read("quotes")
     check_unique(rows, "id", "quotes")
@@ -193,6 +197,7 @@ def build_quotes():
             "quote": r["quote"].strip(),
             "master": r["master"].strip().lower() == "yes",
             "gap_word": r["gap_word"].strip(),
+            "gap_type": r.get("gap_type", "").strip().lower(),
             "techniques": split(r["techniques"], ";"),
             "technique_notes": split(r["technique_notes"], "|"),
             "context": r["context"].strip(),
@@ -206,6 +211,9 @@ def build_quotes():
         gap = r["gap_word"].strip()
         if gap and gap.lower() not in [t.lower() for t in re.findall(r"[^\W_]+", r["quote"])]:
             problems.append(f"{where}: gap word '{gap}' is not in the quote")
+        gap_type = r.get("gap_type", "").strip().lower()
+        if gap and gap_type not in GAP_TYPES:
+            problems.append(f"{where}: gap word '{gap}' needs a gap_type (noun, verb, adjective, adverb or other)")
     return out
 
 
