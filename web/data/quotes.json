@@ -309,7 +309,7 @@
    "Tragic structure (hamartia)"
   ],
   "technique_notes": [
-   "Personification – Ambition is described as something that \"vaults,\" like a rider jumping too far.",
+   "Personification – “Vaulting ambition”: Ambition is personified as something external to Macbeth, driving him upwards.",
    "Metaphor – Suggests ambition pushes him beyond limits.",
    "Verb \"falls\" – Foreshadows his eventual downfall.",
    "Tragic Structure – Reveals Macbeth's hamartia (fatal flaw).",
@@ -1584,11 +1584,11 @@
    "Noun (metaphor)"
   ],
   "technique_notes": [
-   "Metaphor – “Satan’s signature”: Suggests Hyde is branded by the Devil.",
+   "Metaphor – “Satan’s signature”: Suggests Hyde is branded by the Devil. A signature shows who made something, so it implies Satan created Hyde, who therefore embodies evil.",
    "Hellish imagery – “Satan”: Links Hyde to religious evil.",
    "Religious imagery: Victorian readers would fear damnation and moral corruption.",
    "Noun (metaphor) – “signature”: Suggests ownership. Hyde belongs to evil.",
-   "Imagery – “Satan’s signature”: Hellish, religious imagery of the Devil marking a face makes Hyde seem damned and evil."
+   "Imagery – “Satan’s signature”: Hellish, religious imagery of the Devil marking a face makes Hyde seem damned and evil. A signature shows who made something, implying Hyde is Satan’s creation and embodies evil."
   ],
   "context": "Mr Utterson describes Hyde’s face after meeting him. Hyde appears physically marked by evil.",
   "note": "Mr Utterson describing how evil Mr Hyde appears",
@@ -1737,12 +1737,12 @@
    "Motif / semantic field of animal imagery"
   ],
   "technique_notes": [
-   "Simile – “ape-like”: Suggests atavism and regression to a primitive state.",
+   "Simile – “ape-like”: Suggests atavism and regression to a primitive state. Presents Hyde as troglodytic, less evolved than other men.",
    "Metaphor – “storm of blows”: Compares violence to a natural disaster. Uncontrollable and destructive.",
    "Emotive language – “fury”: Highlights Hyde’s rage and lack of control.",
    "Motif / semantic field of animal imagery: Reinforces Hyde’s inhuman nature.",
    "Imagery – “storm of blows”: Violent, natural-disaster imagery shows the attack as wild and unstoppable.",
-   "Semantic field – “ape-like”, “fury”, “storm”: Animal and violent words build a picture of Hyde as inhuman and out of control."
+   "Semantic field – “ape-like”, “fury”, “storm”: Animal and violent words build a picture of Hyde as inhuman, out of control and less evolved, almost troglodytic."
   ],
   "context": "A maid witnesses Hyde murdering Sir Danvers Carew. Hyde’s violence escalates from trampling a child to brutally murdering a respected politician.",
   "note": "describes Mr Hyde attacking Sir Danvers Carew",
@@ -3313,11 +3313,12 @@
   "gap_word": "impression",
   "gap_type": "noun",
   "techniques": [
-   "Generational antithesis / patronising epithet vs moral validation."
+   "Foils (Sheila and Mr Birling)",
+   "Juxtaposition (the two generations’ values)"
   ],
   "technique_notes": [
-   "Juxtaposition – Sheila’s guilt is set against Mr Birling’s lack of guilt, so her moral growth stands out and the older generation looks stubborn.",
-   "Antithesis – Mrs Birling’s patronising “child” is opposed by the Inspector’s view that being “impressionable” is a moral virtue: the two generations’ values clash.",
+   "Foils – Sheila’s guilt is set against Mr Birling’s lack of guilt, so her moral growth stands out and the older generation looks stubborn.",
+   "Juxtaposition – Mrs Birling’s patronising “child” is opposed by the Inspector’s view that being “impressionable” is a moral virtue: the two generations’ values clash.",
    "Adjective – “great”: shows how much Sheila has changed; she has made a real impact on the Inspector.",
    "Mrs Birling uses the noun “child” to infantilise Sheila, attempting to dismiss her moral awakening as mere youthful fragility and keep her silenced within the domestic sphere. Inspector Goole subverts this condescension by reframing being “impressionable” as a vital moral virtue rather than a weakness. In the 1912 setting, Edwardian society demanded total obedience to patriarchal authority; for Priestley’s 1945 audience, Sheila’s generation was the one that lived through two catastrophic world wars caused by the hubris and complacency of men like Arthur Birling, and stood at the ballot box in 1945 to vote in a Labour government and establish the welfare state."
   ],
@@ -3325,11 +3326,12 @@
   "note": "Only on the mid-point sheet (first half of its quote 28)",
   "technique_matches": [
    "Juxtaposition",
-   "Antithesis",
-   "Adjective"
+   "Adjective",
+   "Foil"
   ],
   "technique_primary": [
-   "Antithesis"
+   "Juxtaposition",
+   "Foil"
   ]
  },
  {

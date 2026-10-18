@@ -68,7 +68,7 @@
   "texts": [
    "all"
   ],
-  "in_quotes": 3,
+  "in_quotes": 2,
   "spot": true
  },
  {
@@ -1425,6 +1425,18 @@
    "frankenstein"
   ],
   "in_quotes": 0,
+  "spot": true
+ },
+ {
+  "name": "Foil",
+  "category": "Literary techniques",
+  "definition": "A character who contrasts with another character, so that the qualities of both stand out.",
+  "example": "In An Inspector Calls, Sheila’s guilt is set against Mr Birling’s lack of guilt.",
+  "effect": "Highlights a character’s qualities (for example Sheila’s moral growth) by showing the opposite beside them.",
+  "texts": [
+   "all"
+  ],
+  "in_quotes": 1,
   "spot": true
  }
 ]
