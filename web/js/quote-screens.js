@@ -23,7 +23,7 @@ Object.assign(Screens, {
       const { prompt, rest } = QuoteTools.splitQuote(q.quote);
       return reveal
         ? `${esc(prompt)} <strong class="gap-filled">${esc(rest)}</strong>`
-        : `${esc(prompt)} <span class="gap-blank gap-long">&nbsp;</span>`;
+        : `${esc(prompt)} <span class="gap-ellipsis" aria-label="the rest of the quote">&hellip;</span>`;
     }
     return esc(q.quote);
   },
