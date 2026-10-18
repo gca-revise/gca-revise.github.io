@@ -180,7 +180,7 @@ Object.assign(Screens, {
             <a href="#/" aria-label="GCA Revise home"><img src="img/crest.png" alt="School crest" class="done-crest"></a>
             <div>
               <h1>Set complete!</h1>
-              <p>${run.textId === "techniques" ? `You've learned all ${total} techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " in " + esc(Data.techniqueSet(run.setId).name)}.` : `You've ${run.level === "master" ? "mastered" : "learned"} all ${total} ${run.subject === "quote" ? "quotes" : "key vocab words"} in ${esc(t.name)}.`}</p>
+              <p>${run.textId === "techniques" ? `You've learned all ${total} techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " in " + esc(Data.techniqueSet(run.setId).name)}.` : run.level === "master" ? `You've finished ${{ mgap: "Type the gap", mfinish: "Finish the quote", mtech: "Spot the technique" }[run.game] || "this game"} for all ${total} core quotes in ${esc(t.name)}. A quote is mastered once it is done in all three Master games.` : `You've learned all ${total} ${run.subject === "quote" ? "quotes" : "key vocab words"} in ${esc(t.name)}.`}</p>
             </div>
           </div>
           ${played ? `

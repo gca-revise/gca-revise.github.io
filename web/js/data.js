@@ -99,14 +99,20 @@ const Data = {
   // How many core quotes are mastered: every Master it task a quote has must be learned.
   masterProgress(textId, retired) {
     const tasks = {};
+    const games = {};
     for (const game of ["mgap", "mfinish", "mtech"]) {
-      for (const item of QuoteTools.masterItems(this.quotes, textId, game, this.techniques)) {
+      const items = QuoteTools.masterItems(this.quotes, textId, game, this.techniques);
+      games[game] = { done: items.filter((i) => retired.has(i.id)).length, total: items.length };
+      for (const item of items) {
         (tasks[item.quote.id] = tasks[item.quote.id] || []).push(item.id);
       }
     }
     const quoteIds = Object.keys(tasks);
     const mastered = quoteIds.filter((id) => tasks[id].every((t) => retired.has(t))).length;
-    return { mastered, total: quoteIds.length };
+    // Steps done across all three games, so the bar moves as each game is finished.
+    const stepsDone = Object.values(games).reduce((n, g) => n + g.done, 0);
+    const stepsTotal = Object.values(games).reduce((n, g) => n + g.total, 0);
+    return { mastered, total: quoteIds.length, games, stepsDone, stepsTotal };
   },
 
   quotesFor(textId) {

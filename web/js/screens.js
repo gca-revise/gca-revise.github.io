@@ -121,13 +121,14 @@ const Screens = {
   // The Quotes card: Know it (every quote) and Master it (the core quotes).
   quotesCard(id, knowLearned, knowTotal, retired) {
     const master = Data.masterProgress(id, retired);
-    const pills = (buttons) => buttons.map(([label, href], i) =>
-      `<a class="pill${i === 0 ? " primary" : ""}" href="${href}">${esc(label)}</a>`).join("");
-    const block = (title, hint, done, total, unit, buttons) => `
+    const pills = (buttons) => buttons.map(([label, href, finished], i) =>
+      `<a class="pill${i === 0 ? " primary" : ""}" href="${href}">${esc(label)}${finished ? " \u2713" : ""}</a>`).join("");
+    // The Master it bar counts finished games (a quote is mastered once it is done in all three).
+    const block = (title, hint, done, total, unit, buttons, barDone = done, barTotal = total) => `
       <div class="level">
         <div class="card-top"><h3>${title}</h3><span class="count">${done} of ${plural(total, unit)} ${unit === "quote" && title === "Master it" ? "mastered" : "learned"}</span></div>
         <p class="level-hint">${hint}</p>
-        ${progressBar(done, total)}
+        ${progressBar(barDone, barTotal)}
         <div class="pills">${pills(buttons)}</div>
       </div>`;
     const know = block("Know it", "Every quote. Pick the answer.", knowLearned, knowTotal, "quote", [
@@ -135,11 +136,11 @@ const Screens = {
       [id === "power-conflict" ? "Which poem?" : "Who said it?", `#/text/${id}/quotes-who`],
     ]);
     const mastery = master.total
-      ? block("Master it", "Your core quotes. Type your answers.", master.mastered, master.total, "quote", [
-        ["Type the gap", `#/text/${id}/master-gap`],
-        ["Finish the quote", `#/text/${id}/master-finish`],
-        ["Spot the technique", `#/text/${id}/master-tech`],
-      ])
+      ? block("Master it", "Your core quotes. Do all three games to master a quote.", master.mastered, master.total, "quote", [
+        ["Type the gap", `#/text/${id}/master-gap`, master.games.mgap.total > 0 && master.games.mgap.done === master.games.mgap.total],
+        ["Finish the quote", `#/text/${id}/master-finish`, master.games.mfinish.total > 0 && master.games.mfinish.done === master.games.mfinish.total],
+        ["Spot the technique", `#/text/${id}/master-tech`, master.games.mtech.total > 0 && master.games.mtech.done === master.games.mtech.total],
+      ], master.stepsDone, master.stepsTotal)
       : "";
     return `<section class="card"><div class="card-top"><h2>Quotes</h2></div>${know}${mastery}</section>`;
   },
