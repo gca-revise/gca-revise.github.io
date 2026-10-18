@@ -49,5 +49,5 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 1. Check IT's reply (github.io and *.supabase.co unblocked? route to Microsoft sign-in?).
 2. Microsoft sign-in: Claude writes the Entra app registration steps for IT, then adds a hidden "Sign in with Microsoft" button (Supabase Azure provider). Needs IT admin approval.
 3. Ask teachers for the next batch of feedback.
-4. Decisions waiting on the user: more blanks per quote and for which quotes (#4); theme tags (#1); a learning path; points system changes.
+4. Decisions waiting on the user: more blanks per quote and for which quotes (#4); theme tags (#1); the Duolingo-style plan (sets, lessons, points, path, leaderboard; see `ideas.md`, in priority order); points system changes.
 5. Pitch list (see `ideas.md`): model paragraphs (teacher-written), cloze activities, images, dual coding.
