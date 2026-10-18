@@ -673,7 +673,7 @@ const QuoteTools = {
       item.answerId = "tech:" + QuoteTools.slug(pick);
       // Show the note about the technique being asked (e.g. "Symbolism – child..."), not always the first.
       const notes = (item.quote.technique_notes || []).filter(Boolean);
-      const head = new RegExp("^" + pick.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(ism|s)?(?![a-z])", "i");
+      const head = new RegExp("^" + pick.replace(/\s*\(.*\)$/, "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(ism|s)?(?![a-z])", "i");
       const match = notes.find((n) => head.test(n));
       if (match) item.examples = [match];
       const labelled = new Set(item.quote.technique_matches || []);
