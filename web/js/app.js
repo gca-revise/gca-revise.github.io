@@ -8,16 +8,19 @@ function pick(list) {
   return list.length ? list[Math.floor(Math.random() * list.length)] : "";
 }
 
-function startRun(textId, kind, setId) {
+// `onlyMissed`: practise just the words that were wrong last time (always "learn the set").
+function startRun(textId, kind, setId, onlyMissed) {
+  const missed = Store.missedIds();
   const session = new Session({
-    items: Data.itemsFor(textId, setId),
-    mode: Store.getMode(),
+    items: onlyMissed ? Data.itemsFor(textId, setId).filter((w) => missed.has(w.id)) : Data.itemsFor(textId, setId),
+    mode: onlyMissed ? "learn" : Store.getMode(),
     kind,
     retiredIds: Store.retiredIds(),
+    missedIds: Store.missedIds(),
     choiceCounts: Store.choiceCounts(),
     extraPool: textId === "techniques" ? [] : Data.vocab,
   });
-  run = { textId, kind, setId, session, phase: "question", last: null, sentence: "" };
+  run = { textId, kind, setId, session, phase: "question", last: null, sentence: "", onlyMissed };
   run.phase = session.next() ? "question" : "complete";
   drawRun();
 }
@@ -38,6 +41,7 @@ function startQuotes(textId, game) {
     mode: Store.getMode(),
     kind: typed ? "type" : "choose",
     retiredIds: Store.retiredIds(),
+    missedIds: Store.missedIds(),
     choiceCounts: Store.choiceCounts(),
     optionsFor,
   });
@@ -83,6 +87,9 @@ function route() {
     html = Screens.text(parts[1]);
   } else if (parts[0] === "text" && parts[2] === "vocab-type" && Data.text(parts[1])) {
     startRun(parts[1], "type");
+    return;
+  } else if (parts[0] === "text" && parts[2] === "vocab-revisit" && Data.text(parts[1])) {
+    startRun(parts[1], "choose", undefined, true);
     return;
   } else if (parts[0] === "text" && parts[2] === "vocab-choose" && Data.text(parts[1])) {
     startRun(parts[1], "choose");
@@ -152,7 +159,7 @@ app.addEventListener("click", (event) => {
     // Starting again after finishing a set goes to "Revise everything", so learned words stay learned.
     Store.setMode("free");
     if (run.subject === "quote") startQuotes(run.textId, run.game);
-    else startRun(run.textId, run.kind, run.setId);
+    else startRun(run.textId, run.kind, run.setId, run.onlyMissed);
   }
 });
 

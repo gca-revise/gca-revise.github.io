@@ -214,13 +214,15 @@ const Engine = {
 //               or "free" (endless, nothing retires)
 //   kind:       "type" (type the word) or "choose" (multiple choice)
 //   retiredIds: Set of ids already learned (from earlier visits)
+//   missedIds:  Set of ids that were wrong last time (asked first)
 //   choiceCounts: {id: right multiple-choice answers so far} from earlier visits
 //   extraPool:  more words to borrow wrong options from if the set is small
 class Session {
   static CHOICES_TO_LEARN = 2;   // right multiple-choice answers that retire a word
 
-  constructor({ items, mode, kind = "type", retiredIds = new Set(), choiceCounts = {}, extraPool = [], optionsFor = null, random = Math.random }) {
+  constructor({ items, mode, kind = "type", retiredIds = new Set(), missedIds = new Set(), choiceCounts = {}, extraPool = [], optionsFor = null, random = Math.random }) {
     this.items = items;
+    this.missedIds = new Set(missedIds);   // got wrong last time: asked first in each pass
     this.mode = mode;
     this.kind = kind;
     this.random = random;
@@ -256,11 +258,13 @@ class Session {
 
   // Every word is asked once before any word comes round again.
   refill() {
-    this.bag = Engine.shuffle(this.active(), this.random);
+    // Words missed last time come first (each group is shuffled).
+    const active = this.active();
+    this.bag = Engine.shuffle(active.filter((w) => this.missedIds.has(w.id)), this.random)
+      .concat(Engine.shuffle(active.filter((w) => !this.missedIds.has(w.id)), this.random));
     // Don't start a new pass with the word we just asked.
     if (this.bag.length > 1 && this.bag[0].id === this.lastId) {
-      const last = this.bag.length - 1;
-      [this.bag[0], this.bag[last]] = [this.bag[last], this.bag[0]];
+      [this.bag[0], this.bag[1]] = [this.bag[1], this.bag[0]];
     }
   }
 

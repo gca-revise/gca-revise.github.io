@@ -95,6 +95,15 @@ check("bold: transgresses", boldText("Jekyll transgresses the limits.", "Transgr
 check("bold: nothing found leaves text alone", Engine.markWord("Nothing here.", "Hubris").length === 1 && !Engine.markWord("Nothing here.", "Hubris")[0].bold);
 check("bold: pieces join back to the sentence", Engine.markWord("Macbeth shows hubris in Act 5.", "Hubris").map((p) => p.text).join("") === "Macbeth shows hubris in Act 5.");
 
+// ---- Words missed last time come first ----
+{
+  let firstIsMissed = true;
+  for (let i = 0; i < 30; i++) {
+    const s = new Session({ items: words(6), mode: "learn", missedIds: new Set(["w3"]) });
+    if (s.next().id !== "w3") firstIsMissed = false;
+  }
+  check("a word missed last time is asked first", firstIsMissed);
+}
 // ---- Learn the set ----
 {
   const s = new Session({ items: words(5), mode: "learn" });

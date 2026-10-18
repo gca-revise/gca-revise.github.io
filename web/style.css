@@ -747,3 +747,6 @@ a.link-btn { display: inline-flex; align-items: center; }
   .celebrate-banner { animation: celebrate-fade 3.2s ease both; }
   @keyframes celebrate-fade { 0% { opacity: 0; } 10% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; } }
 }
+
+.revisit-title { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.revisit-list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 15px; }

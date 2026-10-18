@@ -145,6 +145,36 @@ const Screens = {
     return `<section class="card"><div class="card-top"><h2>Quotes</h2></div>${know}${mastery}</section>`;
   },
 
+  // "Got wrong last time": vocab words and core quotes whose latest answer was wrong.
+  revisitCard(id) {
+    const missed = Store.missedIds();
+    if (!missed.size) return "";
+    const words = Data.wordsFor(id).filter((w) => missed.has(w.id));
+    const seen = new Set();
+    const quotes = [];
+    for (const game of ["mgap", "mfinish", "mtech"]) {
+      for (const item of Data.masterGame(id, game).items) {
+        if (missed.has(item.id) && !seen.has(item.quote.id)) { seen.add(item.quote.id); quotes.push(item.quote.quote); }
+      }
+    }
+    if (!words.length && !quotes.length) return "";
+    const short = (q) => (q.length > 70 ? q.slice(0, 67) + "..." : q);
+    const list = (title, entries) => entries.length
+      ? `<p class="revisit-title">${title}</p><ul class="revisit-list">${entries.map((e) => `<li>${esc(e)}</li>`).join("")}</ul>`
+      : "";
+    const button = words.length
+      ? `<div class="pills"><a class="pill primary" href="#/text/${id}/vocab-revisit">Practise these words</a></div>`
+      : "";
+    return `
+      <section class="card">
+        <div class="card-top"><h2>Got wrong last time</h2><span class="count">${words.length + quotes.length} to revisit</span></div>
+        <p class="level-hint">These come first the next time you practise.</p>
+        ${list("Key vocab", words.map((w) => w.word))}
+        ${list("Core quotes", quotes.map(short))}
+        ${button}
+      </section>`;
+  },
+
   text(id) {
     const t = Data.text(id);
     if (!t) return Screens.notFound();
@@ -159,6 +189,7 @@ const Screens = {
       <main class="wrap" style="--accent:${look.colour};--tint:${look.tint}">
         ${Screens.modeSwitch(Store.getMode())}
         <div class="card-grid">
+          ${Screens.revisitCard(id)}
           ${Screens.quotesCard(id, quotesLearned, quotes.length, retired)}
           ${Screens.modeCard("Key vocab", learned, words.length, "word", [
             ["Type it", `#/text/${id}/vocab-type`],

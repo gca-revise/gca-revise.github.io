@@ -63,6 +63,13 @@ const Store = {
     return new Set(this.load().retired || []);
   },
 
+  // Ids of words whose latest answer was wrong and that are not learned yet.
+  missedIds() {
+    const state = this.load();
+    const retired = new Set(state.retired || []);
+    return new Set(Object.keys(state.stats || {}).filter((id) => state.stats[id].last === "w" && !retired.has(id)));
+  },
+
   // Right multiple-choice answers so far for each word: {id: count}.
   choiceCounts() {
     const stats = this.load().stats || {};
@@ -81,6 +88,7 @@ const Store = {
     const entry = state.stats[id] || (state.stats[id] = { right: 0, wrong: 0 });
     if (correct) entry.right += 1;
     else entry.wrong += 1;
+    entry.last = correct ? "r" : "w";   // the latest answer, so we know what to revisit
     if (choiceCount !== undefined) entry.choiceRight = choiceCount;
     if (retiredNow) {
       state.retired = Array.from(new Set([...(state.retired || []), id]));
