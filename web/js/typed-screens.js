@@ -55,6 +55,10 @@ Object.assign(Screens, {
     const learned = s.learnedCount();
     const pct = total ? Math.round((learned / total) * 100) : 0;
     const title = `${run.textId === "techniques" ? `Techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " · " + Data.techniqueSet(run.setId).name}` : `${t.name} · ${run.subject === "quote" ? (run.level === "master" ? "Quotes · Master it" : "Quotes") : "Key vocab"}`}${s.mode === "free" ? " (revise everything)" : ""}`;
+    // Right answers so far this visit (the matching game keeps its own count, so it shows none).
+    const rightSoFar = typeof s.right === "number"
+      ? `<span class="run-count-sub">${s.right} right so far</span>`
+      : "";
     const back = withBack
       ? `<a class="back-sq" href="${Screens.backHref(run)}" aria-label="Back to ${esc(t.name)}">${backIcon}</a>`
       : "";
@@ -65,7 +69,10 @@ Object.assign(Screens, {
           <div class="run-name">${esc(title)}</div>
           <div class="run-track" role="img" aria-label="${learned} of ${total} learned"><span style="width:${pct}%"></span></div>
         </div>
-        <div class="run-count">${learned}/${total}</div>
+        <div class="run-count">
+          <span class="run-count-main">${learned}/${total} <span class="run-count-label">learned</span></span>
+          ${rightSoFar}
+        </div>
       </div></div>`;
   },
 
