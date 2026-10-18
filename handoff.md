@@ -21,7 +21,7 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 - Whether to trim the 95 core quotes (`master` column), and the vocab `core` list.
 - School's OK to show the crest on the public site (swap in a placeholder if refused).
 
-## Where we got to (end of session, 16 Oct 2026)
+## Where we got to (16 Oct 2026; updated 18 Oct)
 - **Teacher pilot only; no students yet.** Feedback is logged in `feedback.md` (8 comments). Paste new feedback into chat and Claude sorts it there. The user wants to take in all feedback first, then build one batch.
 - **Blocker:** the school web filter blocks gca-revise.github.io on school desktops ("Security - Domain Sharing"). The user has emailed the AP (a former head of English, who will mediate with IT). Two requests: (1) allow gca-revise.github.io and *.supabase.co for the teacher pilot, with an offer to buy a domain if IT prefers; (2) agree the route to Microsoft sign-in before students. Waiting on the reply.
 - **Supabase project created** (gca-revise, London `eu-west-2`, free plan; ref `flfywjedhwbvdiukvkoo`, URL https://flfywjedhwbvdiukvkoo.supabase.co). Table `user_progress` applied (one row per user, own-row-only rules; security check clean; SQL in `supabase/migrations/`). **Nothing is connected to the site yet.** The public (publishable) key is safe in the repo; never commit the secret/service key.
@@ -35,17 +35,18 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 - Supabase Site URL and `http://localhost:8765` are set in the dashboard (Authentication, URL Configuration). Two test accounts exist (Gmail and school address); delete them before real use.
 - Branches: only `main` now (two empty leftover branches deleted). Work only on `main`.
 
-## Built 17 Oct (quick fixes merged to `main` in PR #4, live; streak celebration on branch, see below)
+## Built 17 Oct (all merged to `main` in PRs #4 and #5, live; user checked the latest build on phone and Chromebook: all good)
 - Fonts hosted on the site (`web/fonts/`, no more Google Fonts requests; the page makes no outside requests apart from Supabase when sign-in is on).
 - Ding on right answers + Sound button (`web/js/sound.js`, at the foot of every screen; setting kept on the device).
 - Fill the gap: wrong options match the answer's word type (`gap_type` column in `quotes.csv`, drafted by Claude for all 229 gap words: **teacher to check**; `build_data.py` reports a missing type).
 - "Save or restore my progress" screen (`#/backup`, `web/js/backup.js`, link in the home footer): copy a code or save a file; restore merges (nothing lost).
-- Streak celebration (#7): banner + confetti at 5, 10, 20, 50, 100 in a row (`web/js/celebrate.js`; confetti skipped when the device asks for reduced motion; rising cheer when Sound is on). On the branch until merged.
+- Streak celebration (#7): banner + confetti at 5, 10, 20, 50, 100 in a row (`web/js/celebrate.js`; confetti skipped when the device asks for reduced motion; rising cheer when Sound is on). Live.
+- Master it: the progress bar counts finished games, finished games show ticks, clearer "Set complete" message.
 - **Claude CAN test in a browser here:** Node and Chromium are installed. `npm i playwright-core` in the scratchpad, start `python3 -m http.server 8765` in `web/`, launch `/opt/pw-browsers/chromium-1194/chrome-linux/chrome` with `--no-sandbox`. Used this session for screenshots and checks (tests.html: 157 checks pass). Real-device checks by the user are still wanted (phone, school computer, sound).
 
 ## Next steps
-1. User tries the branch build on phone and Chromebook, then merge to `main` (the site republishes). Then check IT's reply (github.io and *.supabase.co unblocked? route to Microsoft sign-in?).
+1. Check IT's reply (github.io and *.supabase.co unblocked? route to Microsoft sign-in?).
 2. Microsoft sign-in: Claude writes the Entra app registration steps for IT, then adds a hidden "Sign in with Microsoft" button (Supabase Azure provider). Needs IT admin approval.
-3. Merge the streak celebration (PR open), then ask teachers for the next batch of feedback.
+3. Ask teachers for the next batch of feedback.
 4. Decisions waiting on the user: more blanks per quote and for which quotes (#4); theme tags (#1); a learning path; points system changes.
 5. Pitch list (see `ideas.md`): model paragraphs (teacher-written), cloze activities, images, dual coding.
