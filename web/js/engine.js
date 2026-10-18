@@ -658,6 +658,9 @@ const QuoteTools = {
     return items;
   },
 
+  // Groups of techniques that overlap so much that one should not be offered as a wrong answer for another.
+  closeTechniques: [["Oxymoron", "Juxtaposition", "Antithesis", "Paradox"]],
+
   // Wrong options for "Spot the technique": other techniques, preferring the same kind
   // (sound, structural, poetic...), never one the quote is labelled with.
   techOptionsFor(allTechniques, random = Math.random) {
@@ -674,6 +677,10 @@ const QuoteTools = {
       const match = notes.find((n) => head.test(n));
       if (match) item.examples = [match];
       const labelled = new Set(item.quote.technique_matches || []);
+      // Techniques too close to a labelled one are never wrong options (e.g. Juxtaposition for an Oxymoron).
+      for (const group of QuoteTools.closeTechniques) {
+        if (group.some((n) => labelled.has(n))) group.forEach((n) => labelled.add(n));
+      }
       const as = (t) => ({ id: "tech:" + QuoteTools.slug(t.name), word: QuoteTools.techniqueLabel(t) });
       const others = techniques.filter((t) => t.name !== pick && !labelled.has(t.name));
       const sameKind = others.filter((t) => t.category === chosen.category).map(as);
