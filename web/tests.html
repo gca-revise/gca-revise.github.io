@@ -417,6 +417,18 @@ const pool = [
   }
   check("Spot the technique gives four different options with the right one", good);
   check("a technique the quote is labelled with is never a wrong option", !labelledShown);
+  // The note shown afterwards is about the technique asked, not always the first note.
+  const noteQuote = { id: "n1", text: "macbeth", master: true, quote: "A quote with two notes", gap_word: "", technique_matches: ["Metaphor", "Symbol"], technique_notes: ["Metaphor - the dagger is a vision", "Symbolism - blood stands for guilt"] };
+  const noteTechs = techniques.concat([{ name: "Symbol", category: "Literary techniques" }]);
+  const noteOptions = QuoteTools.techOptionsFor(noteTechs);
+  let noteOk = true;
+  for (let i = 0; i < 40; i++) {
+    const it = QuoteTools.masterItems([noteQuote], "macbeth", "mtech", noteTechs)[0];
+    noteOptions(it);
+    const want = it.word === "Symbol" ? "Symbolism" : "Metaphor";
+    if (!it.examples[0].startsWith(want)) noteOk = false;
+  }
+  check("Spot the technique shows the note for the technique asked", noteOk);
   // Terms that are not devices are kept out of Spot the technique.
   const withTerms = techniques.concat([{ name: "Theme", category: "Literary techniques", spot: false }, { name: "Narrative voice", category: "Literary techniques", spot: true }]);
   const termQuote = { id: "t1", text: "macbeth", master: true, quote: "A quote with only a theme", gap_word: "", technique_matches: ["Theme"] };

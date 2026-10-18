@@ -668,6 +668,11 @@ const QuoteTools = {
       const chosen = techniques.find((t) => t.name === pick);
       item.word = QuoteTools.techniqueLabel(chosen);
       item.answerId = "tech:" + QuoteTools.slug(pick);
+      // Show the note about the technique being asked (e.g. "Symbolism – child..."), not always the first.
+      const notes = (item.quote.technique_notes || []).filter(Boolean);
+      const head = new RegExp("^" + pick.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(ism|s)?(?![a-z])", "i");
+      const match = notes.find((n) => head.test(n));
+      if (match) item.examples = [match];
       const labelled = new Set(item.quote.technique_matches || []);
       const as = (t) => ({ id: "tech:" + QuoteTools.slug(t.name), word: QuoteTools.techniqueLabel(t) });
       const others = techniques.filter((t) => t.name !== pick && !labelled.has(t.name));
