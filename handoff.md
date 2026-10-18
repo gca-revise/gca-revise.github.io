@@ -21,7 +21,7 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 - Whether to trim the 95 core quotes (`master` column), and the vocab `core` list.
 - School's OK to show the crest on the public site (swap in a placeholder if refused).
 
-## Where we got to (16 Oct 2026; updated 18 Oct)
+## Where we got to (16 Oct 2026; session of 18 Oct below)
 - **Teacher pilot only; no students yet.** Feedback is logged in `feedback.md` (8 comments). Paste new feedback into chat and Claude sorts it there. The user wants to take in all feedback first, then build one batch.
 - **Blocker:** the school web filter blocks gca-revise.github.io on school desktops ("Security - Domain Sharing"). The user has emailed the AP (a former head of English, who will mediate with IT). Two requests: (1) allow gca-revise.github.io and *.supabase.co for the teacher pilot, with an offer to buy a domain if IT prefers; (2) agree the route to Microsoft sign-in before students. Waiting on the reply.
 - **Supabase project created** (gca-revise, London `eu-west-2`, free plan; ref `flfywjedhwbvdiukvkoo`, URL https://flfywjedhwbvdiukvkoo.supabase.co). Table `user_progress` applied (one row per user, own-row-only rules; security check clean; SQL in `supabase/migrations/`). **Nothing is connected to the site yet.** The public (publishable) key is safe in the repo; never commit the secret/service key.
@@ -42,12 +42,15 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 - "Save or restore my progress" screen (`#/backup`, `web/js/backup.js`, link in the home footer): copy a code or save a file; restore merges (nothing lost).
 - Streak celebration (#7): banner + confetti at 5, 10, 20, 50, 100 in a row (`web/js/celebrate.js`; confetti skipped when the device asks for reduced motion; rising cheer when Sound is on). Live.
 - Spot the technique (18 Oct): the "About this quote" note now matches the technique asked (notes in `technique_notes` start with the technique name, e.g. "Symbolism – ..."). Oxymoron, Juxtaposition, Antithesis and Paradox never appear as wrong options for each other (`closeTechniques` in `engine.js`). Claude drafted per-technique notes for 28 more quotes and split aic-5-03 and jh-1-06: **teacher to check**. Quotes with one technique still show their one general note.  `tests.html` passes (160 checks) after reinstalling the browser tools.
+- Feedback #9 and #10 built (18 Oct, from Naomi): top bar shows learned/total and right so far; each word's latest answer is remembered, missed words come first (not in Match them), and the text screen has a "Got wrong last time" card with a Practise button for vocab. Finish the quote now shows an ellipsis. `/tests.html`: 161 checks pass.
 - Master it: the progress bar counts finished games, finished games show ticks, clearer "Set complete" message.
 - **Claude CAN test in a browser here (if the Linux container was reset, reinstall first):** `sudo apt-get install -y nodejs npm chromium` (sudo needs no password), then `npm i playwright-core` in the scratchpad, start `python3 -m http.server 8765` in `web/`, and launch `/usr/bin/chromium` with `--no-sandbox`. Re-done on 18 Oct: `/tests.html` passes all 160 checks. Real-device checks by the user are still wanted (phone, school computer, sound).
 
 ## Next steps
-1. Check IT's reply (github.io and *.supabase.co unblocked? route to Microsoft sign-in?).
-2. Microsoft sign-in: Claude writes the Entra app registration steps for IT, then adds a hidden "Sign in with Microsoft" button (Supabase Azure provider). Needs IT admin approval.
-3. Ask teachers for the next batch of feedback.
-4. Decisions waiting on the user: more blanks per quote and for which quotes (#4); theme tags (#1); the Duolingo-style plan (sets, lessons, points, path, leaderboard; see `ideas.md`, in priority order); points system changes.
-5. Pitch list (see `ideas.md`): model paragraphs (teacher-written), cloze activities, images, dual coding.
+1. Check IT's reply (github.io and *.supabase.co unblocked? route to Microsoft sign-in?). Cannot do sign-in until then.
+2. Backup reminder: a short, occasional "Save your code before you go" prompt at the end of a session, linking to the save screen (school computers wipe progress).
+3. Check on a phone: top bar "learned / right so far" (#9), "Got wrong last time" card (#10), the ellipsis in Finish the quote. Then ask teachers for the next batch of feedback.
+4. Teacher checks waiting: Claude-drafted technique notes (28 quotes, plus aic-5-03, jh-1-06, jh-2-03, jh-2-09), the new Foil technique, and the earlier list above.
+5. Decide, then build: smaller sets per text by character or theme (first step of the Duolingo-style plan in `ideas.md`; the user was to draft the Macbeth sets); more blanks per quote (#4); theme tags (#1).
+6. Possible follow-ups: "Practise these" button for quotes and techniques; split the remaining general technique notes; Microsoft sign-in (Entra steps for IT, then a hidden button).
+7. Pitch list (see `ideas.md`): model paragraphs (teacher-written), cloze activities, images, dual coding.
