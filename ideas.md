@@ -18,6 +18,9 @@ Idea: instead of separate games (Type it, Match them, Choose it...), students do
 
 Why this order: each step builds on the one before. Steps 1 and 3 can be tested early with teachers; steps 4 and 5 should wait until feedback shows students actually use the lessons.
 
+## Leaderboards and leagues: who competes with whom (user unsure, 19 Oct)
+Decide after sign-in and the school's data-protection OK; nothing to build before. Options: (1) class leagues (safest, teacher controls, small groups); (2) year-group leagues (more energy, but bottom of a big table is demoralising and raises safeguarding questions); (3) **both**: class board by default, year-group as a second tab, each student sees the top 10 plus their own position (recommended); (4) Duolingo-style small mixed groups of about 30 by similar weekly points, top few move up (fairest for motivation, least teacher control). Prepare now: store each student's class and year group at sign-in (Microsoft may supply them). Any option is then a different view of the same weekly points. Safeguards for all: nicknames or first name plus initial only; school or teacher can switch leaderboards off per class. To decide: ask 2 or 3 teachers "your class's ranking or the whole year's?", and see after a few weeks of points-only whether students ask to compare.
+
 ## Quick wins
 - "Which act / chapter?" question for Know it
 - Technique analysis: after Spot the technique, show the technique's effect (the booklet has an `effect` for each) as a model answer

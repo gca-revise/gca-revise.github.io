@@ -8,8 +8,8 @@
 const Points = {
   // Ranks by lifetime points: [name, points needed]. Edit the numbers to make ranks easier or harder.
   RANKS: [
-    ["Wood", 0], ["Plate", 50], ["Ivory", 150], ["Stone", 300], ["Iron", 500],
-    ["Bronze", 800], ["Silver", 1200], ["Gold", 2000], ["Platinum", 3000],
+    ["Wood", 0], ["Stone", 50], ["Bronze", 150], ["Silver", 300], ["Gold", 500],
+    ["Emerald", 800], ["Sapphire", 1200], ["Ruby", 2000], ["Diamond", 3000],
   ],
 
   // The rank for a lifetime score, and how far through it the student is.
