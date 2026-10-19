@@ -5355,7 +5355,7 @@
   "master": false,
   "gap_word": "living",
   "gap_type": "noun",
-  "finish_prompt": "",
+  "finish_prompt": "He earns his",
   "techniques": [
    "Declarative statement",
    "Collective pronoun"
