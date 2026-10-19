@@ -698,7 +698,11 @@ const QuoteTools = {
   },
 
   // Groups of techniques that overlap so much that one should not be offered as a wrong answer for another.
-  closeTechniques: [["Oxymoron", "Juxtaposition", "Antithesis", "Paradox"]],
+  closeTechniques: [
+    ["Oxymoron", "Juxtaposition", "Antithesis", "Paradox"],
+    // Repeated consonant sounds overlap: a quote with one of them is never offered another as a wrong answer.
+    ["Alliteration", "Consonance", "Sibilance", "Fricative", "Plosive"],
+  ],
 
   // Wrong options for "Spot the technique": other techniques, preferring the same kind
   // (sound, structural, poetic...), never one the quote is labelled with.

@@ -57,7 +57,7 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 1. The user tries the lessons on a phone and Chromebook, then asks teachers what they think of them (length, order of steps, set choices).
 2. User/teacher: check all the sets (which quotes and words sit where; Claude's first draft). Every quote and every key word is now in at least one set.
 3. Check IT's reply (github.io and *.supabase.co unblocked? route to Microsoft sign-in?). Sign-in cannot start until then.
-4. Teacher checks waiting: Claude-drafted technique notes, the Foil technique, sentences, gap words, word-type labels, definitions.
+4. Teacher checks waiting: Claude-drafted technique notes (including the new Fricative note on mac-1-01), the Foil technique, sentences, gap words, word-type labels, definitions.
 5. Decide, then build: points across lessons, then a learning path (`ideas.md`); more blanks per quote (#4); theme tags are now covered by the theme sets (#1).
 6. Possible follow-ups: Microsoft sign-in (Entra steps for IT, then a hidden button); "Practise these" for quotes and techniques.
 7. Pitch list (see `ideas.md`): model paragraphs (teacher-written), cloze activities, images, dual coding.
