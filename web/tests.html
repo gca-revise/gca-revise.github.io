@@ -566,6 +566,12 @@ check("celebration milestones are 5, 10, 20, 50, 100", JSON.stringify(Celebrate.
   Celebrate.clear();
   check("a streak of 5 celebrates, 4 does not", none && shown);
 }
+{
+  Celebrate.setComplete();
+  const layer = document.getElementById("celebrate");
+  check("finishing a set celebrates with a banner", !!layer && layer.textContent.includes("Set complete!"));
+  Celebrate.clear();
+}
 
 // ---- Sets / lessons ----
 {

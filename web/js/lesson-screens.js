@@ -158,6 +158,11 @@ Object.assign(Screens, {
       : `${tile(s.points, "Points")}${tile(s.bestStreak, "Best streak")}${tile(s.perfectRounds, "Perfect rounds", "#17724B")}${tile(s.rounds, "Rounds")}`;
     const base = `#/text/${run.textId}/set/${lesson.setId}`;
     const tail = lesson.revise ? "/revise" : "";
+    // Celebrate once per run (the screen can be drawn more than once).
+    if (last && !lesson.revise && !run.celebrated) {
+      run.celebrated = true;
+      Celebrate.setComplete();
+    }
     const heading = last ? (lesson.revise ? "Revision finished!" : "Set complete!") : `Step ${lesson.index + 1} done!`;
     const nextName = lesson.next ? Data.STEP_NAMES[lesson.next] : "";
     const message = last

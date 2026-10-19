@@ -15,14 +15,23 @@ const Celebrate = {
   },
 
   show(streak) {
+    this.display(`<span class="celebrate-num">${streak}</span> in a row!`, streak);
+  },
+
+  // Finishing every step of a set: a banner and a big burst of confetti.
+  setComplete() {
+    this.display("Set complete!", 50);
+  },
+
+  display(bannerHtml, size) {
     this.clear();
     const layer = document.createElement("div");
     layer.id = "celebrate";
     layer.setAttribute("role", "status");
-    layer.innerHTML = `<div class="celebrate-banner"><span class="celebrate-num">${streak}</span> in a row!</div>`;
+    layer.innerHTML = `<div class="celebrate-banner">${bannerHtml}</div>`;
     document.body.appendChild(layer);
     if (typeof Sound !== "undefined") Sound.cheer();
-    if (!this.reducedMotion()) this.confetti(layer, streak);
+    if (!this.reducedMotion()) this.confetti(layer, size);
     this.timer = setTimeout(() => this.clear(), 3200);
   },
 
