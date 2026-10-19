@@ -58,6 +58,19 @@ const Store = {
     this.save(state);
   },
 
+  // Which lesson steps are saved as done where that cannot be worked out from learned items
+  // (Match it): {setId: {match: true}}.
+  lessonFlags() {
+    return this.load().lessons || {};
+  },
+
+  setLessonFlag(setId, key) {
+    const state = this.load();
+    state.lessons = state.lessons || {};
+    state.lessons[setId] = Object.assign({}, state.lessons[setId], { [key]: true });
+    this.save(state);
+  },
+
   // Ids of words the student has learned (retired).
   retiredIds() {
     return new Set(this.load().retired || []);

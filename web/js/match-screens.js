@@ -71,8 +71,8 @@ Object.assign(Screens, {
             ? `<span class="chip">+1 point</span><span class="chip">Streak ${g.streak}</span>`
             : `<span class="chip">No point this round</span><span class="chip">Streak 0</span>`}</div>
           <div class="md-btns">
-            <button type="button" class="fb-btn md-next" data-action="round">Next round</button>
-            <a class="md-back" href="${Screens.backHref(run)}">Back to ${esc(Data.text(run.textId).name)}</a>
+            <button type="button" class="fb-btn md-next" data-action="round">${run.lesson && run.covered.size >= g.items.length ? "Finish this step" : "Next round"}</button>
+            <a class="md-back" href="${Screens.backHref(run)}">Back to ${run.lesson ? "the set" : esc(Data.text(run.textId).name)}</a>
           </div>
         </main>
       </div>`;

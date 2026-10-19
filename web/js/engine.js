@@ -220,8 +220,10 @@ const Engine = {
 class Session {
   static CHOICES_TO_LEARN = 2;   // right multiple-choice answers that retire a word
 
-  constructor({ items, mode, kind = "type", retiredIds = new Set(), missedIds = new Set(), choiceCounts = {}, extraPool = [], optionsFor = null, random = Math.random }) {
+  constructor({ items, mode, kind = "type", retiredIds = new Set(), missedIds = new Set(), choiceCounts = {}, extraPool = [], optionsFor = null, onePass = false, random = Math.random }) {
     this.items = items;
+    this.onePass = onePass;   // revising a lesson step: ask each item once, then finish
+    this.asked = new Set();
     this.missedIds = new Set(missedIds);   // got wrong last time: asked first in each pass
     this.mode = mode;
     this.kind = kind;
@@ -253,7 +255,8 @@ class Session {
   }
 
   isComplete() {
-    return this.mode === "learn" && this.active().length === 0;
+    if (this.mode === "learn") return this.active().length === 0;
+    return this.onePass && this.asked.size >= this.items.length;
   }
 
   // Every word is asked once before any word comes round again.
@@ -280,6 +283,7 @@ class Session {
     }
     if (this.bag.length === 0) this.refill();
     this.current = this.bag.shift();
+    this.asked.add(this.current.id);
     this.lastId = this.current.id;
     if (this.kind !== "choose") this.options = null;
     else if (this.optionsFor) this.options = this.optionsFor(this.current);
@@ -634,10 +638,11 @@ const QuoteTools = {
   // Items for a Master it game. game: "mgap" (type the missing word), "mfinish" (type the ending),
   // "mtech" (choose the technique). Ids start with mg: / mf: / mt: so progress is kept separately
   // from the Know it level.
-  masterItems(quotes, textId, game, techniques = []) {
+  // `only` (a Set of quote ids) picks the quotes for a set's lesson instead of the core quotes.
+  masterItems(quotes, textId, game, techniques = [], only = null) {
     const items = [];
     for (const q of quotes) {
-      if (q.text !== textId || !q.master) continue;
+      if (q.text !== textId || (only ? !only.has(q.id) : !q.master)) continue;
       const base = { label: q.quote, definition: "", quote: q, note: q.note || "", texts: [textId], examples: q.note ? [q.note] : [], examples_high: [], tags: [] };
       if (game === "mgap") {
         if (q.gap_word && QuoteTools.findGap(q.quote, q.gap_word)) {

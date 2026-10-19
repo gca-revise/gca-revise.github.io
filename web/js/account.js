@@ -40,6 +40,12 @@ const Account = {
   merge(a, b) {
     const out = { ...a, ...b, stats: {} };
     out.retired = Array.from(new Set([...(a.retired || []), ...(b.retired || [])]));
+    // Lesson steps saved as done (Match it) from either side are kept.
+    const lessons = {};
+    for (const side of [a.lessons || {}, b.lessons || {}]) {
+      for (const [setId, flags] of Object.entries(side)) lessons[setId] = Object.assign({}, lessons[setId], flags);
+    }
+    if (Object.keys(lessons).length) out.lessons = lessons;
     for (const id of new Set([...Object.keys(a.stats || {}), ...Object.keys(b.stats || {})])) {
       const x = (a.stats || {})[id] || {};
       const y = (b.stats || {})[id] || {};

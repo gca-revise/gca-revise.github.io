@@ -11,6 +11,7 @@ const flameIcon = `<svg width="16" height="16" viewBox="0 0 24 24" fill="#B8790A
 Object.assign(Screens, {
   // Where the back arrow and "Stop for now" go.
   backHref(run) {
+    if (run.lesson) return `#/text/${run.textId}/set/${run.lesson.setId}`;
     return run.textId === "techniques" ? "#/techniques" : `#/text/${run.textId}`;
   },
 
@@ -54,7 +55,10 @@ Object.assign(Screens, {
     const total = s.items.length;
     const learned = s.learnedCount();
     const pct = total ? Math.round((learned / total) * 100) : 0;
-    const title = `${run.textId === "techniques" ? `Techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " · " + Data.techniqueSet(run.setId).name}` : `${t.name} · ${run.subject === "quote" ? (run.level === "master" ? "Quotes · Master it" : "Quotes") : "Key vocab"}`}${s.mode === "free" ? " (revise everything)" : ""}`;
+    const lessonTitle = run.lesson
+      ? `${Data.setById(run.lesson.setId).name} · Step ${run.lesson.index + 1} of ${run.lesson.count}: ${run.lesson.name}${run.lesson.revise ? " (revising)" : ""}`
+      : null;
+    const title = lessonTitle || `${run.textId === "techniques" ? `Techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " · " + Data.techniqueSet(run.setId).name}` : `${t.name} · ${run.subject === "quote" ? (run.level === "master" ? "Quotes · Master it" : "Quotes") : "Key vocab"}`}${s.mode === "free" ? " (revise everything)" : ""}`;
     // Right answers so far this visit (the matching game keeps its own count, so it shows none).
     const rightSoFar = typeof s.right === "number"
       ? `<span class="run-count-sub">${s.right} right so far</span>`

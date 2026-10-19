@@ -4,6 +4,7 @@ const Data = {
   vocab: [],
   quotes: [],
   techniques: [],
+  sets: [],
 
   async load() {
     const get = (name) =>
@@ -11,8 +12,8 @@ const Data = {
         if (!r.ok) throw new Error(`Could not load ${name}.json`);
         return r.json();
       });
-    [this.texts, this.vocab, this.quotes, this.techniques, this.characters] = await Promise.all([
-      get("texts"), get("vocab"), get("quotes"), get("techniques"), get("characters"),
+    [this.texts, this.vocab, this.quotes, this.techniques, this.characters, this.sets] = await Promise.all([
+      get("texts"), get("vocab"), get("quotes"), get("techniques"), get("characters"), get("sets"),
     ]);
   },
 
@@ -117,5 +118,54 @@ const Data = {
 
   quotesFor(textId) {
     return this.quotes.filter((q) => q.text === textId);
+  },
+
+  // ---- Sets (lessons by character or theme) ----
+
+  setsFor(textId) {
+    return this.sets.filter((s) => s.text === textId);
+  },
+
+  setById(id) {
+    return this.sets.find((s) => s.id === id);
+  },
+
+  STEP_NAMES: { choose: "Choose it", match: "Match it", type: "Type the gap", finish: "Finish the quote" },
+
+  // The steps of a set's lesson, in order, each with the items it asks about.
+  // A step with nothing to ask is left out (e.g. Match it needs two or more key vocab words).
+  lessonSteps(set) {
+    const quoteIds = new Set(set.quotes);
+    const words = set.vocab.map((id) => this.vocab.find((w) => w.id === id)).filter(Boolean);
+    const gapItems = QuoteTools.items(this.quotes, set.text, "gap").filter((i) => quoteIds.has(i.id));
+    const typed = QuoteTools.masterItems(this.quotes, set.text, "mgap", this.techniques, quoteIds);
+    const finish = QuoteTools.masterItems(this.quotes, set.text, "mfinish", this.techniques, quoteIds);
+    const steps = [
+      { key: "choose", items: [...gapItems, ...words] },
+      { key: "match", items: words.length >= 2 ? words : [] },
+      { key: "type", items: typed },
+      { key: "finish", items: finish },
+    ];
+    return steps.filter((s) => s.items.length).map((s) => ({ ...s, name: this.STEP_NAMES[s.key] }));
+  },
+
+  // Options for the Choose it step: quotes get their gap-word options, vocab gets other words of the text.
+  lessonChooseOptions(textId) {
+    const pool = QuoteTools.optionPool(this.quotes, textId, "gap", (this.characters || {})[textId] || []);
+    const quoteOptions = QuoteTools.optionsFor(pool);
+    const words = this.wordsFor(textId);
+    return (item) => (item.quote ? quoteOptions(item) : Engine.makeChoices(item, words, [], 4));
+  },
+
+  // How far a student is through a set: each step is done when everything in it is learned
+  // (Match it is done once its flag is saved).
+  lessonProgress(set, retired, flags) {
+    const steps = this.lessonSteps(set).map((step) => {
+      const learned = step.items.filter((i) => retired.has(i.id)).length;
+      const done = step.key === "match" ? !!(flags[set.id] && flags[set.id].match) : learned === step.items.length;
+      return { key: step.key, name: step.name, total: step.items.length, learned, done };
+    });
+    const doneCount = steps.filter((s) => s.done).length;
+    return { steps, done: doneCount, total: steps.length, complete: steps.length > 0 && doneCount === steps.length };
   },
 };

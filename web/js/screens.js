@@ -187,6 +187,8 @@ const Screens = {
     return `
       ${Screens.pageHead(t.name, "What do you want to practise?", look.colour, look.tint)}
       <main class="wrap" style="--accent:${look.colour};--tint:${look.tint}">
+        ${Screens.setsSection(id)}
+        ${Data.setsFor(id).length ? `<h2 class="label">Practise everything</h2>` : ""}
         ${Screens.modeSwitch(Store.getMode())}
         <div class="card-grid">
           ${Screens.revisitCard(id)}
