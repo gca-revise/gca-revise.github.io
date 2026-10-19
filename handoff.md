@@ -19,7 +19,7 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 - 241 example sentences (`sentences.csv`), 229 gap words (`quotes.csv`), 30 rewritten vocab definitions (originals in each row's `notes`).
 - Technique labels (`techniques` column of `quotes.csv` decides the Spot the technique answer) and technique examples (may swap for GCSE-text examples).
 - Whether to trim the 95 core quotes (`master` column), and the vocab `core` list.
-- School's OK to show the crest on the public site (swap in a placeholder if refused).
+- ~~Crest~~: the school has okayed showing it on the public site (19 Oct).
 
 ## Where we got to (16 Oct 2026; session of 18 Oct below)
 - **Teacher pilot only; no students yet.** Feedback is logged in `feedback.md` (8 comments). Paste new feedback into chat and Claude sorts it there. The user wants to take in all feedback first, then build one batch.
@@ -63,6 +63,8 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 - **Privacy checker agent (19 Oct):** `.claude/agents/privacy-checker.md` (read-only; writes `privacy-report.md`). First run: no secrets, no student files or copyrighted texts in git, row rules on, device-only pilot stores nothing on a server. Open items: UK GDPR paperwork before any sign-in (high), test accounts still to delete, teacher's first name in `feedback.md`/`handoff.md` (low), crest OK. Re-run before sign-in goes live or when the school's DPO asks.
 
 - **Security review (19 Oct):** whole-repo review found nothing serious. Fixed: escaped the back link built from the web address; added a Content-Security-Policy `<meta>` in `web/index.html` (if a new outside domain or inline script is ever added, update it); progress codes now capped at 1 MB unpacked and reject `__proto__`-style keys. Agents in `.claude/agents/`: `security-reviewer` (code security; run before pushes) and `privacy-checker` (the user's; data handling and UK GDPR, writes `privacy-report.md`; run before sign-in changes or for the school's DPO). Still open: update `web/vendor/supabase.js` (2.45.4) when building Microsoft sign-in; pin GitHub Actions versions.
+
+- **Paperwork started (19 Oct):** `paperwork/privacy-notice-draft.md` (student-facing) and `paperwork/data-protection-pack.md` (for the school DPO: data map, roles, risks, retention, breach plan, questions). Drafts with [brackets] for the school to fill. Teacher's first name removed from current files (still in 3 old commits). Test accounts NOT yet deleted (user to delete in Supabase dashboard, Authentication, Users). Commit-email rewrite: waiting on user's decision.
 
 ## Next steps
 0. Optional: run the `privacy-checker` agent for a baseline report. Find the stray 404 seen in the browser console (a missing file; harmless).
