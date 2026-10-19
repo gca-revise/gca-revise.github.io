@@ -209,6 +209,7 @@ Object.assign(Screens, {
             </div>
             <div class="tricky"><div class="side-label">Your trickiest words</div>${trickyRows}</div>
           </div>` : ""}
+          ${s.mode === "learn" ? `<p class="points-line">Points this week: <b>${Points.weekly()}</b> · Lifetime: <b>${Points.lifetime()}</b></p>` : ""}
           <div class="done-btns">
             <button type="button" class="done-main-btn" data-action="again">${run.textId === "techniques" ? "Practise techniques again" : `Practise ${esc(t.name)} ${run.subject === "quote" ? "quotes" : "vocab"} again`}</button>
             <a class="done-outline" href="${Screens.backHref(run)}">Back to ${esc(t.name)}</a>

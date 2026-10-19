@@ -190,6 +190,7 @@ Object.assign(Screens, {
             </div>
           </div>
           ${tiles ? `<div class="done-grid"><div class="tiles">${tiles}</div></div>` : ""}
+          ${lesson.revise ? "" : `<p class="points-line">Points this week: <b>${Points.weekly()}</b> · Lifetime: <b>${Points.lifetime()}</b></p>`}
           <div class="done-btns">${buttons}</div>
         </main>
       </div>`;

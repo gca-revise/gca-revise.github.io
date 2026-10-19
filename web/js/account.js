@@ -46,6 +46,7 @@ const Account = {
       for (const [setId, flags] of Object.entries(side)) lessons[setId] = Object.assign({}, lessons[setId], flags);
     }
     if (Object.keys(lessons).length) out.lessons = lessons;
+    if (a.pts || b.pts) out.pts = Points.merge(a.pts, b.pts);
     for (const id of new Set([...Object.keys(a.stats || {}), ...Object.keys(b.stats || {})])) {
       const x = (a.stats || {})[id] || {};
       const y = (b.stats || {})[id] || {};

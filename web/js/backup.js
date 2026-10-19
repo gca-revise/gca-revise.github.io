@@ -30,7 +30,11 @@ const Backup = {
     for (const [setId, flags] of Object.entries(state.lessons || {})) {
       for (const key of Object.keys(flags)) if (flags[key]) l.push(`${setId}:${key}`);
     }
-    return l.length ? { v: 1, r: state.retired || [], s: stats, l } : { v: 1, r: state.retired || [], s: stats };
+    const out = { v: 1, r: state.retired || [], s: stats };
+    if (l.length) out.l = l;
+    // Points: [lifetime, week (Monday), this week].
+    if (state.pts) out.p = [state.pts.life || 0, state.pts.week || "", state.pts.wk || 0];
+    return out;
   },
 
   // Checks a restored code really is progress data, and turns it back into a saved state.
@@ -54,6 +58,11 @@ const Backup = {
         const [setId, key] = x.split(":");
         out.lessons[setId] = Object.assign({}, out.lessons[setId], { [key]: true });
       }
+    }
+    if (data.p !== undefined) {
+      const p = data.p;
+      if (!Array.isArray(p) || p.length !== 3 || !goodCount(p[0]) || !goodCount(p[2]) || !/^(\d{4}-\d{2}-\d{2})?$/.test(p[1])) return null;
+      out.pts = { life: p[0], week: p[1], wk: p[2], earned: [] };
     }
     return out;
   },

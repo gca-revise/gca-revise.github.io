@@ -233,6 +233,11 @@ app.addEventListener("click", (event) => {
 function finishAnswer(result, choiceCount) {
   const word = run.session.current;
   Store.recordAnswer(word.id, result.correct, result.retiredNow, choiceCount);
+  // Points: nothing in Revise everything; a retry after a miss scores nothing.
+  const session = run.session;
+  const gained = session.mode === "learn" ? Points.forAnswer(word.id, result.correct, !session.missed[word.id], session.streak) : 0;
+  run.earned = (run.earned || 0) + gained;
+  session.points = run.earned;
   if (result.correct) {
     Sound.ding();
     Celebrate.check(run.session.streak);
@@ -278,7 +283,11 @@ app.addEventListener("click", (event) => {
     }
     if (outcome === "match") Sound.ding();
     // A perfect round adds one to the streak; celebrate a milestone.
-    if (outcome === "match" && run.session.roundDone && run.session.slips === 0) Celebrate.check(run.session.streak);
+    if (outcome === "match" && run.session.roundDone && run.session.slips === 0) {
+      if (run.session.mode === "learn") run.earned = (run.earned || 0) + Points.forMatchRound(run.session.words.map((w) => w.id), run.session.streak);
+      run.session.points = run.earned || 0;
+      Celebrate.check(run.session.streak);
+    }
     if (run.session.roundDone && run.lesson) run.session.words.forEach((w) => run.covered.add(w.id));
     if (run.session.roundDone) run.phase = "done";
     drawRun(run.phase === "question");
