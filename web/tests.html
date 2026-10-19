@@ -397,7 +397,9 @@ const pool = [
   check("two words off in a short ending is wrong", QuoteTools.checkEnding("is my head dear husband", "is my mind dear wife") === "wrong");
   check("a different ending is wrong", QuoteTools.checkEnding("something else entirely", "is my mind dear wife") === "wrong");
   check("blank is wrong", QuoteTools.checkEnding("   ", "is my mind dear wife") === "wrong");
-  check("a long ending allows a word or two out", QuoteTools.checkEnding("i have almost forgot the taste of fear", "i have almost forgot the taste of fears and") !== "wrong");
+  check("a missing word is never fully right", QuoteTools.checkEnding("i have almost forgot the taste of fear", "i have almost forgot the taste of fears and") === "near");
+  check("a missing word in a short ending is 'near', not right", QuoteTools.checkEnding("living and they do not", "living and they do not care") === "near");
+  check("two words out in a long ending is not right", QuoteTools.checkEnding("i have almost forgot taste of fears", "i have almost forgot the taste of fears and") !== "right");
 
   const gapItems = QuoteTools.masterItems(quotes, "macbeth", "mgap", techniques);
   check("Type the gap uses core quotes with a gap word only", gapItems.length === 2 && gapItems.every((i) => i.id.startsWith("mg:")));

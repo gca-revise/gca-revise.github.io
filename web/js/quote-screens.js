@@ -173,7 +173,7 @@ Object.assign(Screens, {
                   autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go">
                 <button type="submit" class="check-btn">Check</button>
               </div>
-              <p class="hint">${finish ? "Capital letters and punctuation don't matter. A word or two out is fine." : "Capital letters don't matter. Spelling does."}</p>
+              ${finish ? "" : `<p class="hint">Capital letters don't matter. Spelling does.</p>`}
             </form>
           </div>
           <aside class="run-side">
