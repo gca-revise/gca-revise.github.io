@@ -59,10 +59,18 @@ Object.assign(Screens, {
       ? `${Data.setById(run.lesson.setId).name} · Step ${run.lesson.index + 1} of ${run.lesson.count}: ${run.lesson.name}${run.lesson.revise ? " (revising)" : ""}`
       : null;
     const title = lessonTitle || `${run.textId === "techniques" ? `Techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " · " + Data.techniqueSet(run.setId).name}` : `${t.name} · ${run.subject === "quote" ? (run.level === "master" ? "Quotes · Master it" : "Quotes") : "Key vocab"}`}${s.mode === "free" ? " (revise everything)" : ""}`;
-    // Right answers so far this visit (the matching game keeps its own count, so it shows none).
-    const rightSoFar = typeof s.right === "number"
-      ? `<span class="run-count-sub">${s.right} right so far</span>`
-      : "";
+    // Revising (nothing is saved): no progress bar, just how it is going this visit.
+    const revising = s.mode === "free";
+    const counts = typeof s.right === "number"
+      ? (revising
+        ? `<span class="run-count-main">${s.right} <span class="run-count-label">right</span></span><span class="run-count-sub">${s.wrong} wrong</span>`
+        : `<span class="run-count-main">${learned}/${total} <span class="run-count-label">learned</span></span><span class="run-count-sub">${s.right} right so far</span>`)
+      : (revising
+        ? `<span class="run-count-main"><span class="run-count-label">Revising</span></span>`
+        : `<span class="run-count-main">${learned}/${total} <span class="run-count-label">learned</span></span>`);
+    const track = revising
+      ? ""
+      : `<div class="run-track" role="img" aria-label="${learned} of ${total} learned"><span style="width:${pct}%"></span></div>`;
     const back = withBack
       ? `<a class="back-sq" href="${Screens.backHref(run)}" aria-label="Back to ${esc(t.name)}">${backIcon}</a>`
       : "";
@@ -71,12 +79,9 @@ Object.assign(Screens, {
         ${back}
         <div class="run-title">
           <div class="run-name">${esc(title)}</div>
-          <div class="run-track" role="img" aria-label="${learned} of ${total} learned"><span style="width:${pct}%"></span></div>
+          ${track}
         </div>
-        <div class="run-count">
-          <span class="run-count-main">${learned}/${total} <span class="run-count-label">learned</span></span>
-          ${rightSoFar}
-        </div>
+        <div class="run-count">${counts}</div>
       </div></div>`;
   },
 

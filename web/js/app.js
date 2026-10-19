@@ -80,7 +80,7 @@ function startLessonStep(textId, setId, stepKey, revise) {
   if (stepKey === "match") {
     const game = new MatchGame({ items: step.items, mode, retiredIds: Store.retiredIds() });
     game.newRound();
-    run = { textId, kind: "match", session: game, phase: "question", last: null, sentence: "", lesson, covered: new Set() };
+    run = { textId, kind: "match", session: game, phase: "question", last: null, sentence: "", lesson, covered: new Set(), wrongIds: new Set() };
   } else {
     const typed = stepKey === "type" || stepKey === "finish";
     const session = new Session({
@@ -101,6 +101,17 @@ function startLessonStep(textId, setId, stepKey, revise) {
     run.phase = session.next() ? "question" : "complete";
   }
   drawRun();
+}
+
+// When a lesson step ends, remember what was got wrong in it (shown on the set's page).
+// A step that asked nothing (everything already learned) leaves the last result alone.
+function recordLessonResult() {
+  if (!run || !run.lesson) return;
+  const s = run.session;
+  const isMatch = run.kind === "match";
+  const played = isMatch ? s.rounds > 0 : s.right + s.wrong > 0;
+  if (!played) return;
+  Store.setLessonWrong(run.lesson.setId, run.lesson.key, isMatch ? Array.from(run.wrongIds) : Object.keys(s.missed));
 }
 
 // A sentence about the text being practised, with the key word in bold when it is drawn.
@@ -199,6 +210,7 @@ app.addEventListener("click", (event) => {
     if (run.lesson && run.covered.size >= run.session.items.length) {
       if (!run.lesson.revise) Store.setLessonFlag(run.lesson.setId, "match");
       run.phase = "complete";
+      recordLessonResult();
       drawRun();
       return;
     }
@@ -207,6 +219,7 @@ app.addEventListener("click", (event) => {
     drawRun();
   } else if (action.dataset.action === "next") {
     run.phase = run.session.next() ? "question" : "complete";
+    if (run.phase === "complete") recordLessonResult();
     drawRun();
   } else if (action.dataset.action === "again") {
     // Starting again after finishing a set goes to "Revise everything", so learned words stay learned.
@@ -259,6 +272,10 @@ app.addEventListener("click", (event) => {
   if (cell && run && run.kind === "match" && run.phase === "question") {
     const [side, id] = cell.dataset.m.split(":");
     const outcome = run.session.select(side, id);
+    if (outcome === "slip" && run.lesson) {
+      run.wrongIds.add(run.session.slip.wordId);
+      run.wrongIds.add(run.session.slip.meaningId);
+    }
     if (outcome === "match") Sound.ding();
     // A perfect round adds one to the streak; celebrate a milestone.
     if (outcome === "match" && run.session.roundDone && run.session.slips === 0) Celebrate.check(run.session.streak);
