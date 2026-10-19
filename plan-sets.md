@@ -25,7 +25,7 @@
 - A finished set can be revised again (one pass through each step, nothing changes in the saved progress).
 - Set progress is worked out from learned items (plus a saved flag for Match it), so there is nothing extra to store apart from that flag.
 
-## Power and Conflict (poetry): plan, 19 Oct (not built yet)
+## Power and Conflict (poetry): decided and built 19 Oct (user said yes to the structure and to "Which poem?")
 Poems have no characters, and most poems have only 2-7 quotes (Poppies 2; Prelude, Charge, Exposure, Tissue, Kamikaze 3), so one set per poem would be too small for a four-step lesson. The 39 vocab words are general (Trauma, Patriotism, Futile...), not tied to one poem.
 
 **Proposed structure (mirrors the other texts: "by poem group" in place of "by character", plus "by theme")**
@@ -39,7 +39,7 @@ Poems have no characters, and most poems have only 2-7 quotes (Poppies 2; Prelud
 - **Theme sets (about 7, quotes drawn from several poems, so students compare):** the power of rulers; the power of nature; the reality of battle; memory and trauma; duty, honour and patriotism; identity and culture; families, loss and the home front.
 - Key vocab is shared out so every set has at least 5 words (Match it needs 2 or more).
 
-**Open decisions for the user**
+**Decisions (user, 19 Oct): yes to poem groups plus themes; yes to "Which poem?" in the Choose step.** (Original open questions below.)
 1. Structure: poem groups plus themes (recommended), or themes only, or single poems.
 2. "Which poem is this from?" in the Choose step. Poem recall matters most for poetry. Option: each quote is asked as a gap question or as "Which poem?" (picked at random) in Choose it. Needs a small code change. 12 of the 61 quotes have no gap word, so they could only be asked as "Which poem?".
 3. Whether the teacher wants a different grouping of poems (e.g. by anthology cluster, or pairs for comparison questions).

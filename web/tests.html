@@ -574,6 +574,35 @@ check("celebration milestones are 5, 10, 20, 50, 100", JSON.stringify(Celebrate.
   check("a bad lesson entry is refused", Backup.unpack({ v: 1, r: [], s: {}, l: ["<script>"] }) === null);
 }
 
+// ---- Poetry lessons: "Which poem?" as well as "Fill the gap" ----
+{
+  const quotes = [
+    { id: "p1", text: "power-conflict", poem: "Ozymandias", speaker: "", quote: "Look on my Works ye Mighty and despair", gap_word: "despair" },
+    { id: "p2", text: "power-conflict", poem: "London", speaker: "", quote: "Mind-forg'd manacles", gap_word: "" },
+    { id: "p3", text: "power-conflict", poem: "Exposure", speaker: "", quote: "Our brains ache", gap_word: "" },
+  ];
+  const ids = new Set(["p1", "p2"]);
+  const items = QuoteTools.lessonQuoteItems(quotes, "power-conflict", ids);
+  check("a poetry set has one choose item per quote", items.length === 2);
+  const p1 = items.find((i) => i.id === "p1");
+  const p2 = items.find((i) => i.id === "p2");
+  check("a quote with a gap word can be asked both ways", p1.variants.gap && p1.variants.who);
+  check("a quote with no gap word is only asked as which poem", !p2.variants.gap && p2.variants.who);
+  const gapPool = QuoteTools.optionPool(quotes, "power-conflict", "gap", []);
+  const whoPool = QuoteTools.optionPool(quotes, "power-conflict", "who", []);
+  let sawGap = false, sawWho = false, ok = true;
+  for (let i = 0; i < 60; i++) {
+    const opts = QuoteTools.variantOptionsFor(gapPool, whoPool)(p1);
+    if (p1.variant === "gap") { sawGap = true; if (p1.answerId !== "gap:despair" || !opts.some((o) => o.id === "gap:despair")) ok = false; }
+    if (p1.variant === "who") { sawWho = true; if (p1.answerId !== "who:ozymandias" || !opts.some((o) => o.id === "who:ozymandias")) ok = false; }
+  }
+  check("a poetry quote is asked as a gap and as which poem, each with the right answer among the options", sawGap && sawWho && ok);
+  QuoteTools.variantOptionsFor(gapPool, whoPool)(p2);
+  check("a quote with no gap is always which poem", p2.variant === "who" && p2.word === "London");
+  const other = QuoteTools.lessonQuoteItems([{ id: "m1", text: "macbeth", speaker: "Macbeth", quote: "Out damned spot out I say", gap_word: "spot" }], "macbeth", new Set(["m1"]));
+  check("other texts are unchanged (fill the gap only)", other.length === 1 && !other[0].variants);
+}
+
 // ---- Show results ----
 const failed = results.filter((r) => !r.ok).length;
 document.getElementById("summary").textContent =

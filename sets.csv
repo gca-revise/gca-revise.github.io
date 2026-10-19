@@ -43,3 +43,17 @@ fk-t-isolation,Frankenstein,theme,Isolation and loneliness,Everyone in the novel
 fk-t-monster,Frankenstein,theme,Who is the monster?,"Names, looks and actions.",10,no
 fk-t-justice,Frankenstein,theme,Justice and guilt,"Who is blamed, and who is guilty.",11,no
 fk-t-gothic,Frankenstein,theme,"Religion, the devil and the Gothic","Angels, fiends and hell.",12,no
+pc-g-oz-lo,Power and Conflict,character,Ozymandias and London,"Rulers who fall, and a city in chains.",1,no
+pc-g-ml-lb,Power and Conflict,character,My Last Duchess and The Charge of the Light Brigade,"Men in command, and the people who pay.",2,no
+pc-g-nature,Power and Conflict,character,"The Prelude, Storm on the Island and Exposure",Nature as a force that humbles people.,3,no
+pc-g-soldiers,Power and Conflict,character,Bayonet Charge and Remains,"Soldiers in the moment, and soldiers afterwards.",4,no
+pc-g-aftermath,Power and Conflict,character,"Poppies, War Photographer and Kamikaze","War seen from home, from behind a camera, and from the sky.",5,no
+pc-g-identity,Power and Conflict,character,"Tissue, The Emigree and Checking Out Me History","Who we are, where we come from, and what we are told.",6,no
+pc-t-rulers,Power and Conflict,theme,The power of rulers,"Kings, dukes and the people they crush.",7,no
+pc-t-nature,Power and Conflict,theme,The power of nature,"Storms, sands and stars.",8,no
+pc-t-battle,Power and Conflict,theme,The reality of battle,"Fear, cold and chaos on the front line.",9,no
+pc-t-memory,Power and Conflict,theme,Memory and trauma,What stays in the mind after the war.,10,no
+pc-t-duty,Power and Conflict,theme,"Duty, honour and patriotism","Doing what you are told, and what it costs.",11,no
+pc-t-identity,Power and Conflict,theme,Identity and culture,"Language, history and belonging.",12,no
+pc-t-family,Power and Conflict,theme,"Families, loss and the home front",The people left behind.,13,no
+fk-t-creation,Frankenstein,theme,The night of creation,Chapter 5: the moment the dream turns to horror.,13,no

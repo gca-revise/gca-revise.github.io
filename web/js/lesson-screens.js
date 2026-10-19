@@ -162,7 +162,7 @@ Object.assign(Screens, {
     // Choose it mixes quotes and key vocab: draw each question with the right kind of screen.
     if (run.lesson.key === "choose" && run.session.current) {
       const isQuote = !!run.session.current.quote;
-      return otherScreens({ ...run, subject: isQuote ? "quote" : undefined, game: isQuote ? "gap" : undefined });
+      return otherScreens({ ...run, subject: isQuote ? "quote" : undefined, game: isQuote ? (run.session.current.variant === "who" ? "who" : "gap") : undefined });
     }
     return otherScreens(run);
   };
