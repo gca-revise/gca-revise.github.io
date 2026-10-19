@@ -1,7 +1,7 @@
-// A little celebration (banner + confetti) when a streak reaches 5, 10, 20, 50 or 100 in a row.
+// A little celebration (banner + confetti) when a streak reaches 5, 10, 20, 50 or 100 in a row, then every 50 up to 5,000.
 // Drawn on top of the page and removed after a few seconds, so it never gets in the way of playing.
 const Celebrate = {
-  MILESTONES: [5, 10, 20, 50, 100],
+  MILESTONES: [5, 10, 20, 50, 100, ...Array.from({ length: 98 }, (_, i) => 150 + i * 50)],
   COLOURS: ["#222C69", "#FDE006", "#8E1F37", "#12707E", "#3E5A4F", "#8A5316", "#FFFFFF"],
   timer: null,
 
@@ -55,7 +55,7 @@ const Celebrate = {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
     ctx.scale(ratio, ratio);
-    const count = { 5: 70, 10: 100, 20: 140, 50: 190, 100: 260 }[streak] || 100;
+    const count = { 5: 70, 10: 100, 20: 140, 50: 190, 100: 260 }[streak] || (streak > 100 ? 260 : 100);
     const pieces = Array.from({ length: count }, () => ({
       x: width * (0.5 + (Math.random() - 0.5) * 0.4),
       y: height * 0.35,

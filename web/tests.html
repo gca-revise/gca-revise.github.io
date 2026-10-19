@@ -559,7 +559,8 @@ const pool = [
 }
 
 // ---- Streak celebration ----
-check("celebration milestones are 5, 10, 20, 50, 100", JSON.stringify(Celebrate.MILESTONES) === "[5,10,20,50,100]");
+const ms = Celebrate.MILESTONES;
+check("celebration milestones are 5, 10, 20, 50, 100, then every 50 up to 5000", JSON.stringify(ms.slice(0, 6)) === "[5,10,20,50,100,150]" && ms[ms.length - 1] === 5000 && ms.length === 103 && !ms.includes(125));
 {
   Celebrate.check(4);
   const none = !document.getElementById("celebrate");

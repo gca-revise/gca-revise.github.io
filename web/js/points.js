@@ -1,7 +1,8 @@
 // Points across the whole game: a weekly score (resets every Monday) and a lifetime score (never goes down).
 // Saved on the student's own device with the rest of their progress.
 //   +1 for a right answer at the first attempt, once per word per week (so easy words cannot be farmed)
-//   +1 extra at each streak milestone (5, 10, 20, 50, 100 in a row)
+//   +1 extra at each streak milestone (5, 10, 20, 50, 100, then every 50 up to 5,000)
+
 //   a perfect Match them round earns +1 if it holds a word that has not earned a point this week
 //   nothing in "Revise everything"; a wrong answer never takes points away
 const Points = {
