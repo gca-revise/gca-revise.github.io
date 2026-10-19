@@ -13,6 +13,7 @@
   "master": true,
   "gap_word": "foul",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Paradox",
    "Alliteration",
@@ -59,6 +60,7 @@
   "master": false,
   "gap_word": "Unseamed",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -86,6 +88,7 @@
   "master": false,
   "gap_word": "brandished",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -115,6 +118,7 @@
   "master": false,
   "gap_word": "imperfect",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -136,6 +140,7 @@
   "master": false,
   "gap_word": "darkness",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -157,6 +162,7 @@
   "master": true,
   "gap_word": "black",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Imperative",
    "Symbolism",
@@ -198,6 +204,7 @@
   "master": false,
   "gap_word": "partner",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -227,6 +234,7 @@
   "master": false,
   "gap_word": "milk",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -256,6 +264,7 @@
   "master": false,
   "gap_word": "gall",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -283,6 +292,7 @@
   "master": false,
   "gap_word": "serpent",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -310,6 +320,7 @@
   "master": true,
   "gap_word": "ambition",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Personification",
    "Metaphor",
@@ -353,6 +364,7 @@
   "master": false,
   "gap_word": "boneless",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -380,6 +392,7 @@
   "master": false,
   "gap_word": "dagger",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -407,6 +420,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -434,6 +448,7 @@
   "master": false,
   "gap_word": "murder",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -455,6 +470,7 @@
   "master": false,
   "gap_word": "oceans",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -486,6 +502,7 @@
   "master": false,
   "gap_word": "water",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -507,6 +524,7 @@
   "master": false,
   "gap_word": "daggers",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -528,6 +546,7 @@
   "master": false,
   "gap_word": "golden",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -549,6 +568,7 @@
   "master": false,
   "gap_word": "breach",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -570,6 +590,7 @@
   "master": false,
   "gap_word": "smiles",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -591,6 +612,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -612,6 +634,7 @@
   "master": false,
   "gap_word": "feverous",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -633,6 +656,7 @@
   "master": false,
   "gap_word": "strangles",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -654,6 +678,7 @@
   "master": false,
   "gap_word": "fears",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -675,6 +700,7 @@
   "master": false,
   "gap_word": "fruitless",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -696,6 +722,7 @@
   "master": false,
   "gap_word": "desire",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -717,6 +744,7 @@
   "master": false,
   "gap_word": "done",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -738,6 +766,7 @@
   "master": true,
   "gap_word": "scorpions",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Metaphor",
    "Imagery of venom",
@@ -775,6 +804,7 @@
   "master": false,
   "gap_word": "chuck",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -796,6 +826,7 @@
   "master": false,
   "gap_word": "trenched",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -817,6 +848,7 @@
   "master": false,
   "gap_word": "shadow",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -844,6 +876,7 @@
   "master": false,
   "gap_word": "blood",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -865,6 +898,7 @@
   "master": false,
   "gap_word": "wade",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -886,6 +920,7 @@
   "master": false,
   "gap_word": "wicked",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -907,6 +942,7 @@
   "master": false,
   "gap_word": "babes",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -928,6 +964,7 @@
   "master": false,
   "gap_word": "country",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -957,6 +994,7 @@
   "master": false,
   "gap_word": "gash",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -978,6 +1016,7 @@
   "master": false,
   "gap_word": "sainted",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -999,6 +1038,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1020,6 +1060,7 @@
   "master": false,
   "gap_word": "fiend",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1041,6 +1082,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1062,6 +1104,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1083,6 +1126,7 @@
   "master": true,
   "gap_word": "damned",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Imperative",
    "Symbolism",
@@ -1120,6 +1164,7 @@
   "master": false,
   "gap_word": "perfumes",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1141,6 +1186,7 @@
   "master": false,
   "gap_word": "armour",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1162,6 +1208,7 @@
   "master": false,
   "gap_word": "fears",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1183,6 +1230,7 @@
   "master": false,
   "gap_word": "candle",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1210,6 +1258,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1239,6 +1288,7 @@
   "master": false,
   "gap_word": "charmed",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1260,6 +1310,7 @@
   "master": false,
   "gap_word": "butcher",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1291,6 +1342,7 @@
   "master": false,
   "gap_word": "theatre",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1318,6 +1370,7 @@
   "master": false,
   "gap_word": "influence",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1339,6 +1392,7 @@
   "master": false,
   "gap_word": "invitation",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1360,6 +1414,7 @@
   "master": false,
   "gap_word": "sinister",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1381,6 +1436,7 @@
   "master": false,
   "gap_word": "world",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1406,6 +1462,7 @@
   "master": true,
   "gap_word": "trampled",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [
    "Verb",
    "Adverb",
@@ -1447,6 +1504,7 @@
   "master": false,
   "gap_word": "juggernaut",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1468,6 +1526,7 @@
   "master": false,
   "gap_word": "deformity",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1489,6 +1548,7 @@
   "master": false,
   "gap_word": "dapper",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1510,6 +1570,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1537,6 +1598,7 @@
   "master": false,
   "gap_word": "Seek",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1564,6 +1626,7 @@
   "master": false,
   "gap_word": "troglodytic",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1585,6 +1648,7 @@
   "master": true,
   "gap_word": "signature",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Metaphor",
    "Hellish imagery",
@@ -1627,6 +1691,7 @@
   "master": false,
   "gap_word": "humbled",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1648,6 +1713,7 @@
   "master": false,
   "gap_word": "pedant",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1669,6 +1735,7 @@
   "master": false,
   "gap_word": "choose",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1690,6 +1757,7 @@
   "master": false,
   "gap_word": "sleep",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1711,6 +1779,7 @@
   "master": false,
   "gap_word": "clubbed",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1738,6 +1807,7 @@
   "master": true,
   "gap_word": "fury",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Simile",
    "Metaphor",
@@ -1785,6 +1855,7 @@
   "master": false,
   "gap_word": "Strange",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1810,6 +1881,7 @@
   "master": false,
   "gap_word": "kindness",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1831,6 +1903,7 @@
   "master": false,
   "gap_word": "reinvasion",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1852,6 +1925,7 @@
   "master": false,
   "gap_word": "luxury",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1873,6 +1947,7 @@
   "master": false,
   "gap_word": "deathly",
   "gap_type": "adverb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1894,6 +1969,7 @@
   "master": false,
   "gap_word": "swear",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1915,6 +1991,7 @@
   "master": false,
   "gap_word": "singular",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1936,6 +2013,7 @@
   "master": false,
   "gap_word": "rosy",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1965,6 +2043,7 @@
   "master": false,
   "gap_word": "terror",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -1994,6 +2073,7 @@
   "master": false,
   "gap_word": "suffer",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2015,6 +2095,7 @@
   "master": false,
   "gap_word": "sinners",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2036,6 +2117,7 @@
   "master": false,
   "gap_word": "mask",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2063,6 +2145,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2090,6 +2173,7 @@
   "master": false,
   "gap_word": "blasphemies",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2111,6 +2195,7 @@
   "master": false,
   "gap_word": "melt",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2136,6 +2221,7 @@
   "master": false,
   "gap_word": "God",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2163,6 +2249,7 @@
   "master": false,
   "gap_word": "deadliest",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2195,6 +2282,7 @@
   "master": true,
   "gap_word": "truly",
   "gap_type": "adverb",
+  "finish_prompt": "",
   "techniques": [
    "Declarative statement",
    "Repetition",
@@ -2236,6 +2324,7 @@
   "master": false,
   "gap_word": "polar",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2267,6 +2356,7 @@
   "master": false,
   "gap_word": "stature",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2294,6 +2384,7 @@
   "master": false,
   "gap_word": "slavery",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2323,6 +2414,7 @@
   "master": false,
   "gap_word": "barred",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2350,6 +2442,7 @@
   "master": true,
   "gap_word": "caged",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [
    "Metaphor",
    "Possessive pronoun",
@@ -2395,6 +2488,7 @@
   "master": true,
   "gap_word": "intimate",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Symbolic lighting contrast / visual metaphor."
   ],
@@ -2424,6 +2518,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Symbolic lighting contrast / visual metaphor."
   ],
@@ -2453,6 +2548,7 @@
   "master": false,
   "gap_word": "cosy",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Juxtaposition / setting as characterisation."
   ],
@@ -2482,6 +2578,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2503,6 +2600,7 @@
   "master": false,
   "gap_word": "provincial",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Stage direction / linguistic class marker."
   ],
@@ -2528,6 +2626,7 @@
   "master": true,
   "gap_word": "cold",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Sensory adjective choice / emotional detachment."
   ],
@@ -2557,6 +2656,7 @@
   "master": false,
   "gap_word": "superior",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Noun phrase / social hierarchy."
   ],
@@ -2586,6 +2686,7 @@
   "master": false,
   "gap_word": "pleased",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Paired intensifiers / character baseline."
   ],
@@ -2611,6 +2712,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Triadic epithet / aristocratic social privilege."
   ],
@@ -2636,6 +2738,7 @@
   "master": true,
   "gap_word": "assertive",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Juxtaposition / psychological fracture."
   ],
@@ -2665,6 +2768,7 @@
   "master": false,
   "gap_word": "competing",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2686,6 +2790,7 @@
   "master": false,
   "gap_word": "practical",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2707,6 +2812,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Dramatic irony / emphatic repetition."
   ],
@@ -2741,6 +2847,7 @@
   "master": false,
   "gap_word": "hive",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Pejorative simile / dismissive colloquial tone."
   ],
@@ -2770,6 +2877,7 @@
   "master": true,
   "gap_word": "business",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2791,6 +2899,7 @@
   "master": false,
   "gap_word": "duty",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Subversion of the abstract noun “duty” / capitalist ideology."
   ],
@@ -2820,6 +2929,7 @@
   "master": false,
   "gap_word": "earth",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Idiomatic hyperbole / authoritarian phrasing."
   ],
@@ -2849,6 +2959,7 @@
   "master": false,
   "gap_word": "earth",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Juxtaposition / dynamic verb contrast."
   ],
@@ -2880,6 +2991,7 @@
   "master": false,
   "gap_word": "beauty",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Childish vocative / commercial materialism."
   ],
@@ -2905,6 +3017,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Imperative verbs / patriarchal infantilisation."
   ],
@@ -2936,6 +3049,7 @@
   "master": false,
   "gap_word": "destroying",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -2957,6 +3071,7 @@
   "master": true,
   "gap_word": "labour",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Direct semantic contrast / humanising correction."
   ],
@@ -2982,6 +3097,7 @@
   "master": false,
   "gap_word": "power",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3003,6 +3119,7 @@
   "master": false,
   "gap_word": "hysterically",
   "gap_type": "adverb",
+  "finish_prompt": "",
   "techniques": [
    "Stage direction / sharp colloquial address."
   ],
@@ -3028,6 +3145,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Homophonic wordplay / supernatural allusion."
   ],
@@ -3057,6 +3175,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Adverbial stage direction / dynamic authority."
   ],
@@ -3082,6 +3201,7 @@
   "master": false,
   "gap_word": "weightily",
   "gap_type": "adverb",
+  "finish_prompt": "",
   "techniques": [
    "Paired adverbs / forensic cadence."
   ],
@@ -3111,6 +3231,7 @@
   "master": false,
   "gap_word": "chain",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Metaphor / mechanistic imagery."
   ],
@@ -3142,6 +3263,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Allegorical onomastics (name symbolism)."
   ],
@@ -3171,6 +3293,7 @@
   "master": true,
   "gap_word": "disinfectant",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Visceral sensory imagery / graphic physical description."
   ],
@@ -3200,6 +3323,7 @@
   "master": false,
   "gap_word": "desperate",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Asyndetic listing / emotive adjectives."
   ],
@@ -3229,6 +3353,7 @@
   "master": false,
   "gap_word": "dingy",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Visual imagery / didactic appeal for radical empathy."
   ],
@@ -3258,6 +3383,7 @@
   "master": true,
   "gap_word": "privileges",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Balanced antithesis / didactic maxim."
   ],
@@ -3287,6 +3413,7 @@
   "master": true,
   "gap_word": "body",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Biblical allusion (1 Corinthians 12) / organic metaphor."
   ],
@@ -3320,6 +3447,7 @@
   "master": true,
   "gap_word": "impression",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Foils (Sheila and Mr Birling)",
    "Juxtaposition (the two generations’ values)"
@@ -3356,6 +3484,7 @@
   "master": true,
   "gap_word": "impressionable",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Generational antithesis / patronising epithet vs moral validation."
   ],
@@ -3387,6 +3516,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Allegorical onomastics (name symbolism)."
   ],
@@ -3416,6 +3546,7 @@
   "master": false,
   "gap_word": "help",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3437,6 +3568,7 @@
   "master": true,
   "gap_word": "fairy",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3464,6 +3596,7 @@
   "master": true,
   "gap_word": "refuse",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3489,6 +3622,7 @@
   "master": true,
   "gap_word": "animal",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3516,6 +3650,7 @@
   "master": true,
   "gap_word": "killed",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3537,6 +3672,7 @@
   "master": true,
   "gap_word": "millions",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3564,6 +3700,7 @@
   "master": true,
   "gap_word": "anguish",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [
    "Imagery – “fire and blood and anguish”: Violent, painful images of war warn of the suffering that will follow if people ignore the lesson.",
@@ -3601,6 +3738,7 @@
   "master": true,
   "gap_word": "responsibility",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3622,6 +3760,7 @@
   "master": true,
   "gap_word": "blame",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3643,6 +3782,7 @@
   "master": false,
   "gap_word": "misery",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3664,6 +3804,7 @@
   "master": false,
   "gap_word": "massiveness",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -3685,6 +3826,7 @@
   "master": false,
   "gap_word": "antique",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Adjective"
   ],
@@ -3715,6 +3857,7 @@
   "master": true,
   "gap_word": "Ozymandias",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Repetition",
    "Noun phrase"
@@ -3750,6 +3893,7 @@
   "master": true,
   "gap_word": "despair",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [
    "Imperative",
    "Irony"
@@ -3784,6 +3928,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Short sentence",
    "Contrast"
@@ -3810,6 +3955,7 @@
   "master": true,
   "gap_word": "level",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Imagery",
    "Alliteration"
@@ -3845,6 +3991,7 @@
   "master": false,
   "gap_word": "colossal",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Juxtaposition"
   ],
@@ -3874,6 +4021,7 @@
   "master": false,
   "gap_word": "sneer",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Adjective",
    "Alliteration"
@@ -3906,6 +4054,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Adjective",
    "Repetition",
@@ -3941,6 +4090,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Metaphor",
    "Noun choice"
@@ -3974,6 +4124,7 @@
   "master": true,
   "gap_word": "palace",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Imagery",
    "Symbolism"
@@ -4008,6 +4159,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Adjective choice",
    "Symbolism"
@@ -4040,6 +4192,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Symbolism"
   ],
@@ -4069,6 +4222,7 @@
   "master": true,
   "gap_word": "glittering",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [
    "Symbolism",
    "Sibilance"
@@ -4104,6 +4258,7 @@
   "master": true,
   "gap_word": "grim",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Personification",
    "Imagery"
@@ -4141,6 +4296,7 @@
   "master": true,
   "gap_word": "trouble",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Adjective choice",
    "Symbolism"
@@ -4175,6 +4331,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Possessive pronoun",
    "Adjective",
@@ -4208,6 +4365,7 @@
   "master": true,
   "gap_word": "Duchess",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Possessive pronoun",
    "Title"
@@ -4238,6 +4396,7 @@
   "master": true,
   "gap_word": "commands",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Euphemism",
    "Caesura"
@@ -4272,6 +4431,7 @@
   "master": true,
   "gap_word": "Neptune",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Symbolism",
    "Imperative"
@@ -4306,6 +4466,7 @@
   "master": true,
   "gap_word": "Hell",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Metaphor",
    "Symbolism"
@@ -4342,6 +4503,7 @@
   "master": true,
   "gap_word": "noble",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Repetition",
    "Adjective choice"
@@ -4376,6 +4538,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Juxtaposition",
    "Verb choice"
@@ -4408,6 +4571,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Collective pronoun",
    "Verb choice"
@@ -4442,6 +4606,7 @@
   "master": true,
   "gap_word": "merciless",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Personification",
    "Verb choice"
@@ -4476,6 +4641,7 @@
   "master": true,
   "gap_word": "ice",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Metaphor",
    "Symbolism"
@@ -4512,6 +4678,7 @@
   "master": true,
   "gap_word": "squat",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -4533,6 +4700,7 @@
   "master": true,
   "gap_word": "savage",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Simile",
    "Juxtaposition"
@@ -4567,6 +4735,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Plosive consonants",
    "Semantic field of war"
@@ -4599,6 +4768,7 @@
   "master": true,
   "gap_word": "Bombarded",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [
    "Violent verb",
    "Symbolism"
@@ -4631,6 +4801,7 @@
   "master": true,
   "gap_word": "dignity",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Juxtaposition",
    "Noun choice"
@@ -4665,6 +4836,7 @@
   "master": true,
   "gap_word": "awoke",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [
    "Adverb choice",
    "Verb choice"
@@ -4699,6 +4871,7 @@
   "master": true,
   "gap_word": "dynamite",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Metaphor",
    "Adjective choice"
@@ -4732,6 +4905,7 @@
   "master": false,
   "gap_word": "hare",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Hellish imagery",
    "Violent imagery",
@@ -4765,6 +4939,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Symbolism",
    "Metaphor"
@@ -4800,6 +4975,7 @@
   "master": true,
   "gap_word": "armed",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Juxtaposition",
    "Adverb choice"
@@ -4834,6 +5010,7 @@
   "master": true,
   "gap_word": "guts",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Verb choice",
    "Imagery",
@@ -4871,6 +5048,7 @@
   "master": false,
   "gap_word": "bursts",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [
    "Symbolism",
    "Enjambment",
@@ -4909,6 +5087,7 @@
   "master": false,
   "gap_word": "story",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Volta"
   ],
@@ -4938,6 +5117,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "In media res"
   ],
@@ -4963,6 +5143,7 @@
   "master": true,
   "gap_word": "spasms",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Metaphor",
    "Adjective choice"
@@ -4997,6 +5178,7 @@
   "master": true,
   "gap_word": "blackthorns",
   "gap_type": "noun",
+  "finish_prompt": "The gelled",
   "techniques": [
    "Symbolism"
   ],
@@ -5029,6 +5211,7 @@
   "master": true,
   "gap_word": "nightmare",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Imagery",
    "Symbolism"
@@ -5065,6 +5248,7 @@
   "master": true,
   "gap_word": "darkroom",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Symbolism",
    "Juxtaposition"
@@ -5102,6 +5286,7 @@
   "master": true,
   "gap_word": "spools",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Extended metaphor"
   ],
@@ -5134,6 +5319,7 @@
   "master": false,
   "gap_word": "Beirut",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Caesura",
    "Plosive consonants",
@@ -5169,6 +5355,7 @@
   "master": false,
   "gap_word": "living",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Declarative statement",
    "Collective pronoun"
@@ -5201,6 +5388,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5222,6 +5410,7 @@
   "master": true,
   "gap_word": "daylight",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Semantic field"
   ],
@@ -5251,6 +5440,7 @@
   "master": true,
   "gap_word": "transparent",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5272,6 +5462,7 @@
   "master": true,
   "gap_word": "country",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Past tense",
    "Caesura"
@@ -5302,6 +5493,7 @@
   "master": true,
   "gap_word": "tyrants",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Juxtaposition",
    "Metaphor"
@@ -5337,6 +5529,7 @@
   "master": true,
   "gap_word": "evidence",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Symbolism",
    "Metaphor"
@@ -5371,6 +5564,7 @@
   "master": false,
   "gap_word": "docile",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5392,6 +5586,7 @@
   "master": true,
   "gap_word": "Bandage",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [
    "Metaphor",
    "Creole dialect"
@@ -5422,6 +5617,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Pronoun",
    "Repetition"
@@ -5454,6 +5650,7 @@
   "master": true,
   "gap_word": "carving",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [
    "Metaphor"
   ],
@@ -5483,6 +5680,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [
    "Lesson slide: “What does this symbol suggest?”"
@@ -5510,6 +5708,7 @@
   "master": false,
   "gap_word": "healing",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [
    "Lesson slide: “What does this symbol suggest?” (about Mary Seacole)."
@@ -5537,6 +5736,7 @@
   "master": true,
   "gap_word": "incantations",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [
    "Metaphor",
    "Adjective choice"
@@ -5571,6 +5771,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [
    "Symbolism",
    "Adjective choice"
@@ -5606,6 +5807,7 @@
   "master": true,
   "gap_word": "better",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [
    "Juxtaposition",
    "Rhetorical question"
@@ -5640,6 +5842,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Subtitle on the title page | Frankenstein lesson 1.",
@@ -5665,6 +5868,7 @@
   "master": true,
   "gap_word": "frozen",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5686,6 +5890,7 @@
   "master": true,
   "gap_word": "emaciated",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5707,6 +5912,7 @@
   "master": true,
   "gap_word": "wildness",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"wildness, and even madness\" | Frankenstein lessons 3 and 7: windows to the soul; Victor’s mind is broken.",
@@ -5732,6 +5938,7 @@
   "master": false,
   "gap_word": "caresses",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5753,6 +5960,7 @@
   "master": true,
   "gap_word": "idol",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 4: asked of the class.",
@@ -5778,6 +5986,7 @@
   "master": false,
   "gap_word": "bounds",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5799,6 +6008,7 @@
   "master": false,
   "gap_word": "species",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5820,6 +6030,7 @@
   "master": true,
   "gap_word": "hiding",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 5: nature is presented as prey to be hunted; Victor hunts down nature’s secrets.",
@@ -5847,6 +6058,7 @@
   "master": false,
   "gap_word": "shunned",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5868,6 +6080,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 7: childbirth imagery for the Creature’s birth.",
@@ -5893,6 +6106,7 @@
   "master": true,
   "gap_word": "breathless",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 7: Victor’s horror and disgust.",
@@ -5918,6 +6132,7 @@
   "master": false,
   "gap_word": "maker",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"all the portion of happiness that it was in my power to bestow\"",
@@ -5939,6 +6154,7 @@
   "master": false,
   "gap_word": "slave",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"the slave of my creature\" (teacher: \"a slave to my creature\")",
@@ -5960,6 +6176,7 @@
   "master": false,
   "gap_word": "master",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -5981,6 +6198,7 @@
   "master": false,
   "gap_word": "miserable",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6002,6 +6220,7 @@
   "master": false,
   "gap_word": "desolate",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6023,6 +6242,7 @@
   "master": false,
   "gap_word": "execution",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6044,6 +6264,7 @@
   "master": false,
   "gap_word": "murderer",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"I, not in deed, but in effect, was the true murderer\" (also \"But I, the true murderer\" earlier in Chapter 8)",
@@ -6065,6 +6286,7 @@
   "master": false,
   "gap_word": "hell",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6086,6 +6308,7 @@
   "master": false,
   "gap_word": "archangel",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6107,6 +6330,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 7: nightmarish imagery.",
@@ -6132,6 +6356,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [
    "Metaphor – “vile insect”: The Creature is compared to an insect, showing Victor sees him as disgusting and beneath him.",
@@ -6162,6 +6387,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Victor uses \"monster\" many times; first in Chapter 5",
@@ -6183,6 +6409,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "\"fiend\" is used many times (e.g. Chapters 9, 16, 20)",
@@ -6204,6 +6431,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "1818 text spells it \"dæmon\" (e.g. Chapter 7); used many times",
@@ -6225,6 +6453,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "William says \"ogre\" in Chapter 16",
@@ -6246,6 +6475,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"good spirit, wonderful\" (the cottagers' words; Creature overhears)",
@@ -6267,6 +6497,7 @@
   "master": false,
   "gap_word": "benevolent",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6288,6 +6519,7 @@
   "master": false,
   "gap_word": "stretched",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6309,6 +6541,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6330,6 +6563,7 @@
   "master": false,
   "gap_word": "barbarity",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6351,6 +6585,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6372,6 +6607,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6393,6 +6629,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"carpeted it with clean straw\"",
@@ -6414,6 +6651,7 @@
   "master": false,
   "gap_word": "Whence",
   "gap_type": "adverb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6435,6 +6673,7 @@
   "master": true,
   "gap_word": "blot",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"Was I, then, a monster, a blot upon the earth\"",
@@ -6456,6 +6695,7 @@
   "master": false,
   "gap_word": "mother",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6477,6 +6717,7 @@
   "master": true,
   "gap_word": "Adam",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [
    "Metaphor – “the fallen angel”: The Creature compares himself to Satan cast out of Heaven: once good, now abandoned.",
@@ -6508,6 +6749,7 @@
   "master": false,
   "gap_word": "link",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6529,6 +6771,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6550,6 +6793,7 @@
   "master": false,
   "gap_word": "alone",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"Shall each man, find a wife for his bosom, and each beast have his mate, and I be alone?\"",
@@ -6571,6 +6815,7 @@
   "master": false,
   "gap_word": "crimes",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6592,6 +6837,7 @@
   "master": true,
   "gap_word": "hell",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [
    "Metaphor – “a hell within me”: His inner torment and guilt are compared to Hell.",
@@ -6622,6 +6868,7 @@
   "master": true,
   "gap_word": "hellish",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"my heart swelled with exultation and hellish triumph\" | Frankenstein lesson 17.",
@@ -6647,6 +6894,7 @@
   "master": true,
   "gap_word": "desolation",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 17: “too” suggests he realises he is like others.",
@@ -6672,6 +6920,7 @@
   "master": false,
   "gap_word": "fearless",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6693,6 +6942,7 @@
   "master": false,
   "gap_word": "impulse",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Sheet says The Creature, but in the novel it is Victor speaking (about his urge for revenge), so speaker changed to Victor Frankenstein",
@@ -6714,6 +6964,7 @@
   "master": false,
   "gap_word": "remorse",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6735,6 +6986,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6756,6 +7008,7 @@
   "master": true,
   "gap_word": "purpose",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6777,6 +7030,7 @@
   "master": false,
   "gap_word": "bitterly",
   "gap_type": "adverb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6798,6 +7052,7 @@
   "master": false,
   "gap_word": "brother",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6819,6 +7074,7 @@
   "master": true,
   "gap_word": "knowledge",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"for the acquirement of the knowledge which I sought\" (teacher: \"for the knowledge which I sought\")",
@@ -6840,6 +7096,7 @@
   "master": false,
   "gap_word": "curiosity",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6861,6 +7118,7 @@
   "master": false,
   "gap_word": "dared",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Creature watching the De Lacey family; check wording against the teacher sheet (not found word-for-word)",
@@ -6882,6 +7140,7 @@
   "master": false,
   "gap_word": "consternation",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6903,6 +7162,7 @@
   "master": true,
   "gap_word": "laughing",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 7: William’s eyes show innocence.",
@@ -6928,6 +7188,7 @@
   "master": false,
   "gap_word": "unprejudiced",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6949,6 +7210,7 @@
   "master": false,
   "gap_word": "ogre",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6970,6 +7232,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -6991,6 +7254,7 @@
   "master": false,
   "gap_word": "fiend",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -7012,6 +7276,7 @@
   "master": false,
   "gap_word": "condemned",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -7033,6 +7298,7 @@
   "master": false,
   "gap_word": "tortures",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -7054,6 +7320,7 @@
   "master": true,
   "gap_word": "monster",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"I almost began to think that I was the monster that he said I was\" (the confessor, not the interrogator, says it)",
@@ -7075,6 +7342,7 @@
   "master": true,
   "gap_word": "thirsting",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 9: said after Justine’s execution; shows Elizabeth’s realisation that society is cruel.",
@@ -7100,6 +7368,7 @@
   "master": false,
   "gap_word": "ghastly",
   "gap_type": "adjective",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -7121,6 +7390,7 @@
   "master": false,
   "gap_word": "victim",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Novel: \"Clerval, my friend and dearest companion, had fallen a victim to me and the monster of my creation\"",
@@ -7142,6 +7412,7 @@
   "master": true,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Frankenstein lesson 4: treats Elizabeth as an object.",
@@ -7169,6 +7440,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -7190,6 +7462,7 @@
   "master": false,
   "gap_word": "mine",
   "gap_type": "other",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -7211,6 +7484,7 @@
   "master": false,
   "gap_word": "wedding",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Appears more than once in the novel; chapter shown is the first.",
@@ -7232,6 +7506,7 @@
   "master": false,
   "gap_word": "jeer",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -7253,6 +7528,7 @@
   "master": false,
   "gap_word": "sickened",
   "gap_type": "verb",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -7274,6 +7550,7 @@
   "master": false,
   "gap_word": "devils",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -7295,6 +7572,7 @@
   "master": false,
   "gap_word": "wickedness",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -7316,6 +7594,7 @@
   "master": false,
   "gap_word": "grin",
   "gap_type": "noun",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "",
@@ -7337,6 +7616,7 @@
   "master": false,
   "gap_word": "",
   "gap_type": "",
+  "finish_prompt": "",
   "techniques": [],
   "technique_notes": [],
   "context": "Appears more than once in the novel; chapter shown is the first. | Frankenstein lesson 7: childbirth imagery for the Creature’s birth.",

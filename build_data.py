@@ -198,6 +198,8 @@ def build_quotes():
             "master": r["master"].strip().lower() == "yes",
             "gap_word": r["gap_word"].strip(),
             "gap_type": r.get("gap_type", "").strip().lower(),
+            # Optional: the words shown in "Finish the quote" (otherwise the first half of the quote).
+            "finish_prompt": r.get("finish_prompt", "").strip(),
             "techniques": split(r["techniques"], ";"),
             "technique_notes": split(r["technique_notes"], "|"),
             "context": r["context"].strip(),
@@ -211,6 +213,12 @@ def build_quotes():
         gap = r["gap_word"].strip()
         if gap and gap.lower() not in [t.lower() for t in re.findall(r"[^\W_]+", r["quote"])]:
             problems.append(f"{where}: gap word '{gap}' is not in the quote")
+        fp = r.get("finish_prompt", "").strip()
+        if fp:
+            quote_words = r["quote"].split()
+            fp_words = fp.split()
+            if fp_words != quote_words[:len(fp_words)] or len(fp_words) >= len(quote_words):
+                problems.append(f"{where}: finish_prompt '{fp}' must be the start of the quote and shorter than it")
         gap_type = r.get("gap_type", "").strip().lower()
         if gap and gap_type not in GAP_TYPES:
             problems.append(f"{where}: gap word '{gap}' needs a gap_type (noun, verb, adjective, adverb or other)")

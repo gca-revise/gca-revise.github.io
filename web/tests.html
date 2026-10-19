@@ -386,6 +386,9 @@ const pool = [
     { id: "a4", text: "macbeth", master: true, speaker: "Macbeth", quote: "Out out brief candle", gap_word: "", note: "", technique_matches: ["Verb"] },
   ];
   check("splitQuote shows the first half", QuoteTools.splitQuote("one two three four five six").prompt === "one two three" && QuoteTools.splitQuote("one two three four five six").rest === "four five six");
+  const own = QuoteTools.splitQuote("The gelled blackthorns of your hair", "The gelled");
+  check("a quote can set its own Finish the quote prompt", own.prompt === "The gelled" && own.rest === "blackthorns of your hair");
+  check("a prompt that is not the start of the quote is ignored", QuoteTools.splitQuote("one two three four five six", "two three").prompt === "one two three");
   check("splitQuote rounds the prompt down", QuoteTools.splitQuote("one two three four five six seven").prompt === "one two three" && QuoteTools.splitQuote("Stay you imperfect speakers, tell me more").prompt === "Stay you imperfect");
   check("an exact ending is right", QuoteTools.checkEnding("Is my mind dear wife", "is my mind dear wife") === "right");
   check("capitals and punctuation do not matter", QuoteTools.checkEnding("IS MY MIND, DEAR WIFE!", "is my mind dear wife") === "right");
