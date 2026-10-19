@@ -242,7 +242,7 @@ const Screens = {
       ${Screens.pageHead("Coming soon", "This practice style is being built.", NAVY, NAVY_TINT)}
       <main class="wrap" style="--accent:${NAVY};--tint:${NAVY_TINT}">
         <div class="card"><p>This part of GCA Revise isn't ready yet.</p>
-        <div class="pills"><a class="pill primary" href="${backHref}">${esc(backLabel)}</a></div></div>
+        <div class="pills"><a class="pill primary" href="${esc(backHref)}">${esc(backLabel)}</a></div></div>
       </main>`;
   },
 

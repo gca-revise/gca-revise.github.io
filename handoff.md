@@ -62,6 +62,8 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 
 - **Privacy checker agent (19 Oct):** `.claude/agents/privacy-checker.md` (read-only; writes `privacy-report.md`). First run: no secrets, no student files or copyrighted texts in git, row rules on, device-only pilot stores nothing on a server. Open items: UK GDPR paperwork before any sign-in (high), test accounts still to delete, teacher's first name in `feedback.md`/`handoff.md` (low), crest OK. Re-run before sign-in goes live or when the school's DPO asks.
 
+- **Security review (19 Oct):** whole-repo review found nothing serious. Fixed: escaped the back link built from the web address; added a Content-Security-Policy `<meta>` in `web/index.html` (if a new outside domain or inline script is ever added, update it); progress codes now capped at 1 MB unpacked and reject `__proto__`-style keys. New agent `.claude/agents/security-reviewer.md` (run it before pushes). Still open: update `web/vendor/supabase.js` (2.45.4) when building Microsoft sign-in; pin GitHub Actions versions.
+
 ## Next steps
 1. The user tries the lessons on a phone and Chromebook, then asks teachers what they think of them (length, order of steps, set choices).
 2. User/teacher: check all the sets (which quotes and words sit where; Claude's first draft). Every quote and every key word is now in at least one set.
