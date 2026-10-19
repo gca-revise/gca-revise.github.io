@@ -667,6 +667,36 @@ const QuoteTools = {
     return items;
   },
 
+  // Items for the Choose it step of a set's lesson: one per quote in the set. For poetry (no speakers),
+  // a quote can be asked two ways, "fill the gap" or "which poem?", so it keeps both versions and
+  // `variantOptionsFor` picks one each time. Quotes with no gap word are only asked as "which poem?".
+  lessonQuoteItems(quotes, textId, quoteIds) {
+    const gaps = QuoteTools.items(quotes, textId, "gap").filter((i) => quoteIds.has(i.id));
+    if (textId !== "power-conflict") return gaps;
+    const whos = QuoteTools.items(quotes, textId, "who").filter((i) => quoteIds.has(i.id));
+    const gapById = Object.fromEntries(gaps.map((i) => [i.id, i]));
+    return whos.map((who) => {
+      const gap = gapById[who.id];
+      const variants = { who: { word: who.word, answerId: who.answerId, type: "" } };
+      if (gap) variants.gap = { word: gap.word, answerId: gap.answerId, type: gap.type };
+      return { ...who, variants, variant: "who" };
+    });
+  },
+
+  // Options for items that have `variants`: pick one version at random, then build its options.
+  // Items without variants are just "fill the gap" questions.
+  variantOptionsFor(gapPool, whoPool, random = Math.random) {
+    const gapOptions = QuoteTools.optionsFor(gapPool, random);
+    const whoOptions = QuoteTools.optionsFor(whoPool, random);
+    return (item) => {
+      if (!item.variants) return gapOptions(item);
+      const names = Object.keys(item.variants);
+      const pick = names[Math.floor(random() * names.length)];
+      Object.assign(item, item.variants[pick], { variant: pick });
+      return (pick === "who" ? whoOptions : gapOptions)(item);
+    };
+  },
+
   // Groups of techniques that overlap so much that one should not be offered as a wrong answer for another.
   closeTechniques: [["Oxymoron", "Juxtaposition", "Antithesis", "Paradox"]],
 

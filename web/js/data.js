@@ -137,7 +137,7 @@ const Data = {
   lessonSteps(set) {
     const quoteIds = new Set(set.quotes);
     const words = set.vocab.map((id) => this.vocab.find((w) => w.id === id)).filter(Boolean);
-    const gapItems = QuoteTools.items(this.quotes, set.text, "gap").filter((i) => quoteIds.has(i.id));
+    const gapItems = QuoteTools.lessonQuoteItems(this.quotes, set.text, quoteIds);
     const typed = QuoteTools.masterItems(this.quotes, set.text, "mgap", this.techniques, quoteIds);
     const finish = QuoteTools.masterItems(this.quotes, set.text, "mfinish", this.techniques, quoteIds);
     const steps = [
@@ -151,8 +151,11 @@ const Data = {
 
   // Options for the Choose it step: quotes get their gap-word options, vocab gets other words of the text.
   lessonChooseOptions(textId) {
-    const pool = QuoteTools.optionPool(this.quotes, textId, "gap", (this.characters || {})[textId] || []);
-    const quoteOptions = QuoteTools.optionsFor(pool);
+    const chars = (this.characters || {})[textId] || [];
+    const quoteOptions = QuoteTools.variantOptionsFor(
+      QuoteTools.optionPool(this.quotes, textId, "gap", chars),
+      QuoteTools.optionPool(this.quotes, textId, "who", chars),
+    );
     const words = this.wordsFor(textId);
     return (item) => (item.quote ? quoteOptions(item) : Engine.makeChoices(item, words, [], 4));
   },

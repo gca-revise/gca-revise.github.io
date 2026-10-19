@@ -23,9 +23,13 @@
    "scientific-ambition",
    "enterprise",
    "laborious",
+   "inexhaustible",
    "fervent",
+   "penetrate",
+   "invulnerable",
    "pioneer",
    "charnel-houses",
+   "immutable-laws",
    "infuse"
   ]
  },
@@ -52,7 +56,10 @@
   ],
   "vocab": [
    "traumatised",
+   "encompassed",
+   "assailed",
    "fatigue",
+   "insensible",
    "wretched",
    "grievously",
    "irresolute",
@@ -84,7 +91,9 @@
   ],
   "vocab": [
    "benevolent",
+   "refuge",
    "hovel",
+   "innumerable-chinks",
    "barbarity",
    "virtuous",
    "disowned",
@@ -93,6 +102,7 @@
    "consternation",
    "benevolence",
    "unprejudiced",
+   "imbibed",
    "loaded-me-with-epithets"
   ]
  },
@@ -114,6 +124,7 @@
    "fk-2-16a",
    "fk-2-16b",
    "fk-2-18",
+   "fk-2-20",
    "fk-4-06",
    "fk-5-05"
   ],
@@ -180,6 +191,7 @@
    "caresses",
    "idol",
    "serene",
+   "miniature",
    "virtuous",
    "amiable",
    "ogre",
@@ -241,6 +253,7 @@
    "marginalise",
    "sense-of-self",
    "dehumanise",
+   "inherited",
    "disowned",
    "benefactor"
   ]
@@ -296,10 +309,13 @@
    "fk-5-10"
   ],
   "vocab": [
+   "embodiment",
    "dehumanise",
    "livid",
    "inarticulate",
    "demoniacal",
+   "base",
+   "blot",
    "blot-upon-the-earth",
    "wretch",
    "ogre",
@@ -359,6 +375,32 @@
    "demoniacal",
    "abhorred",
    "fitter-emblem-of-my-condition"
+  ]
+ },
+ {
+  "id": "fk-t-creation",
+  "text": "frankenstein",
+  "kind": "theme",
+  "name": "The night of creation",
+  "blurb": "Chapter 5: the moment the dream turns to horror.",
+  "order": 13,
+  "quotes": [
+   "fk-1-09",
+   "fk-1-10",
+   "fk-2-01a",
+   "fk-2-05",
+   "fk-6-01"
+  ],
+  "vocab": [
+   "pivotal-moment",
+   "charnel-houses",
+   "ecstasy",
+   "livid",
+   "infuse",
+   "convulsive",
+   "lustrous",
+   "inarticulate",
+   "demoniacal"
   ]
  },
  {
@@ -546,6 +588,7 @@
    "exploitation",
    "class-system",
    "upper-class",
+   "middle-class",
    "working-class",
    "exploit",
    "abuse-of-power"
@@ -647,6 +690,7 @@
    "jh-2-03",
    "jh-2-08",
    "jh-2-09",
+   "jh-3-01",
    "jh-4-09"
   ],
   "vocab": [
@@ -742,6 +786,7 @@
   "blurb": "Two witnesses to the horror.",
   "order": 5,
   "quotes": [
+   "jh-1-09",
    "jh-1-10",
    "jh-4-01",
    "jh-4-04",
@@ -1104,7 +1149,8 @@
    "devious",
    "deception",
    "facade",
-   "conjuration"
+   "conjuration",
+   "embodiment"
   ]
  },
  {
@@ -1200,6 +1246,382 @@
    "falling-action",
    "resolution",
    "anagnorisis"
+  ]
+ },
+ {
+  "id": "pc-g-oz-lo",
+  "text": "power-conflict",
+  "kind": "character",
+  "name": "Ozymandias and London",
+  "blurb": "Rulers who fall, and a city in chains.",
+  "order": 1,
+  "quotes": [
+   "pc-oz-01",
+   "pc-oz-02",
+   "pc-oz-03",
+   "pc-oz-04",
+   "pc-oz-05",
+   "pc-oz-06",
+   "pc-oz-07",
+   "pc-lo-01",
+   "pc-lo-02",
+   "pc-lo-03",
+   "pc-lo-04",
+   "pc-lo-05"
+  ],
+  "vocab": [
+   "tyrant",
+   "hubris",
+   "omnipotent",
+   "volta",
+   "transience",
+   "oppression",
+   "power"
+  ]
+ },
+ {
+  "id": "pc-g-ml-lb",
+  "text": "power-conflict",
+  "kind": "character",
+  "name": "My Last Duchess and The Charge of the Light Brigade",
+  "blurb": "Men in command, and the people who pay.",
+  "order": 2,
+  "quotes": [
+   "pc-ml-01",
+   "pc-ml-02",
+   "pc-ml-03",
+   "pc-ml-04",
+   "pc-lb-01",
+   "pc-lb-02",
+   "pc-lb-03"
+  ],
+  "vocab": [
+   "patriarchal",
+   "disempowered",
+   "cannon-fodder",
+   "ballad",
+   "patriotism",
+   "disposable",
+   "power"
+  ]
+ },
+ {
+  "id": "pc-g-nature",
+  "text": "power-conflict",
+  "kind": "character",
+  "name": "The Prelude, Storm on the Island and Exposure",
+  "blurb": "Nature as a force that humbles people.",
+  "order": 3,
+  "quotes": [
+   "pc-pr-01",
+   "pc-pr-02",
+   "pc-pr-03",
+   "pc-ex-01",
+   "pc-ex-02",
+   "pc-ex-03",
+   "pc-so-01",
+   "pc-so-02",
+   "pc-so-03",
+   "pc-so-04"
+  ],
+  "vocab": [
+   "the-sublime",
+   "romantic-movement",
+   "epic-poem",
+   "fragility",
+   "conflict",
+   "power",
+   "romanticism"
+  ]
+ },
+ {
+  "id": "pc-g-soldiers",
+  "text": "power-conflict",
+  "kind": "character",
+  "name": "Bayonet Charge and Remains",
+  "blurb": "Soldiers in the moment, and soldiers afterwards.",
+  "order": 4,
+  "quotes": [
+   "pc-bc-01",
+   "pc-bc-02",
+   "pc-bc-03",
+   "pc-bc-04",
+   "pc-re-01",
+   "pc-re-02",
+   "pc-re-03",
+   "pc-re-04",
+   "pc-re-05",
+   "pc-re-06"
+  ],
+  "vocab": [
+   "consumed",
+   "futile",
+   "cannon-fodder",
+   "disillusioned",
+   "post-traumatic-stress-disorder-ptsd",
+   "delusional",
+   "disposable",
+   "war-veteran",
+   "trauma",
+   "guilt"
+  ]
+ },
+ {
+  "id": "pc-g-aftermath",
+  "text": "power-conflict",
+  "kind": "character",
+  "name": "Poppies, War Photographer and Kamikaze",
+  "blurb": "War seen from home, from behind a camera, and from the sky.",
+  "order": 5,
+  "quotes": [
+   "pc-pp-01",
+   "pc-pp-02",
+   "pc-wp-01",
+   "pc-wp-02",
+   "pc-wp-03",
+   "pc-wp-04",
+   "pc-wp-05",
+   "pc-ka-01",
+   "pc-ka-02",
+   "pc-ka-03"
+  ],
+  "vocab": [
+   "photojournalist",
+   "complicit",
+   "apathy",
+   "grief",
+   "direct-victims-of-war",
+   "indirect-victims-of-war",
+   "memory"
+  ]
+ },
+ {
+  "id": "pc-g-identity",
+  "text": "power-conflict",
+  "kind": "character",
+  "name": "Tissue, The Emigree and Checking Out Me History",
+  "blurb": "Who we are, where we come from, and what we are told.",
+  "order": 6,
+  "quotes": [
+   "pc-ti-01",
+   "pc-ti-02",
+   "pc-ti-03",
+   "pc-em-01",
+   "pc-em-02",
+   "pc-em-03",
+   "pc-em-04",
+   "pc-co-01",
+   "pc-co-02",
+   "pc-co-03",
+   "pc-co-04",
+   "pc-co-05"
+  ],
+  "vocab": [
+   "nationalism",
+   "transience",
+   "oppression",
+   "colonisation",
+   "identity",
+   "memory"
+  ]
+ },
+ {
+  "id": "pc-t-rulers",
+  "text": "power-conflict",
+  "kind": "theme",
+  "name": "The power of rulers",
+  "blurb": "Kings, dukes and the people they crush.",
+  "order": 7,
+  "quotes": [
+   "pc-oz-02",
+   "pc-oz-03",
+   "pc-oz-04",
+   "pc-oz-07",
+   "pc-lo-02",
+   "pc-lo-03",
+   "pc-lo-04",
+   "pc-ml-02",
+   "pc-ml-03",
+   "pc-ml-04",
+   "pc-lb-03"
+  ],
+  "vocab": [
+   "tyrant",
+   "hubris",
+   "patriarchal",
+   "omnipotent",
+   "disempowered",
+   "oppression",
+   "power"
+  ]
+ },
+ {
+  "id": "pc-t-nature",
+  "text": "power-conflict",
+  "kind": "theme",
+  "name": "The power of nature",
+  "blurb": "Storms, sands and stars.",
+  "order": 8,
+  "quotes": [
+   "pc-oz-05",
+   "pc-oz-06",
+   "pc-pr-01",
+   "pc-pr-02",
+   "pc-pr-03",
+   "pc-ex-02",
+   "pc-ex-03",
+   "pc-so-01",
+   "pc-so-02",
+   "pc-so-03",
+   "pc-so-04"
+  ],
+  "vocab": [
+   "the-sublime",
+   "romantic-movement",
+   "fragility",
+   "transience",
+   "power",
+   "romanticism"
+  ]
+ },
+ {
+  "id": "pc-t-battle",
+  "text": "power-conflict",
+  "kind": "theme",
+  "name": "The reality of battle",
+  "blurb": "Fear, cold and chaos on the front line.",
+  "order": 9,
+  "quotes": [
+   "pc-lb-01",
+   "pc-lb-03",
+   "pc-ex-01",
+   "pc-ex-02",
+   "pc-ex-03",
+   "pc-bc-01",
+   "pc-bc-02",
+   "pc-bc-03",
+   "pc-bc-04",
+   "pc-re-02",
+   "pc-re-03"
+  ],
+  "vocab": [
+   "futile",
+   "cannon-fodder",
+   "ballad",
+   "disillusioned",
+   "delusional",
+   "disposable",
+   "conflict"
+  ]
+ },
+ {
+  "id": "pc-t-memory",
+  "text": "power-conflict",
+  "kind": "theme",
+  "name": "Memory and trauma",
+  "blurb": "What stays in the mind after the war.",
+  "order": 10,
+  "quotes": [
+   "pc-re-01",
+   "pc-re-04",
+   "pc-re-05",
+   "pc-re-06",
+   "pc-wp-01",
+   "pc-wp-02",
+   "pc-wp-03",
+   "pc-wp-04",
+   "pc-ka-02",
+   "pc-ka-03"
+  ],
+  "vocab": [
+   "post-traumatic-stress-disorder-ptsd",
+   "war-veteran",
+   "photojournalist",
+   "complicit",
+   "trauma",
+   "guilt",
+   "memory"
+  ]
+ },
+ {
+  "id": "pc-t-duty",
+  "text": "power-conflict",
+  "kind": "theme",
+  "name": "Duty, honour and patriotism",
+  "blurb": "Doing what you are told, and what it costs.",
+  "order": 11,
+  "quotes": [
+   "pc-lb-01",
+   "pc-lb-02",
+   "pc-lb-03",
+   "pc-bc-01",
+   "pc-bc-02",
+   "pc-wp-05",
+   "pc-ka-01",
+   "pc-ka-03"
+  ],
+  "vocab": [
+   "cannon-fodder",
+   "delusional",
+   "patriotism",
+   "nationalism",
+   "disposable",
+   "indoctrinated"
+  ]
+ },
+ {
+  "id": "pc-t-identity",
+  "text": "power-conflict",
+  "kind": "theme",
+  "name": "Identity and culture",
+  "blurb": "Language, history and belonging.",
+  "order": 12,
+  "quotes": [
+   "pc-ti-02",
+   "pc-ti-03",
+   "pc-em-01",
+   "pc-em-02",
+   "pc-em-03",
+   "pc-em-04",
+   "pc-co-01",
+   "pc-co-02",
+   "pc-co-03",
+   "pc-co-04",
+   "pc-co-05"
+  ],
+  "vocab": [
+   "nationalism",
+   "oppression",
+   "colonisation",
+   "identity",
+   "memory"
+  ]
+ },
+ {
+  "id": "pc-t-family",
+  "text": "power-conflict",
+  "kind": "theme",
+  "name": "Families, loss and the home front",
+  "blurb": "The people left behind.",
+  "order": 13,
+  "quotes": [
+   "pc-pp-01",
+   "pc-pp-02",
+   "pc-wp-04",
+   "pc-wp-05",
+   "pc-ti-01",
+   "pc-ka-01",
+   "pc-ka-02",
+   "pc-ka-03"
+  ],
+  "vocab": [
+   "apathy",
+   "grief",
+   "fragility",
+   "transience",
+   "direct-victims-of-war",
+   "indirect-victims-of-war",
+   "indirect-effects"
   ]
  }
 ]
