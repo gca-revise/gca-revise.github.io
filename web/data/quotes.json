@@ -1436,7 +1436,7 @@
   "master": false,
   "gap_word": "world",
   "gap_type": "noun",
-  "finish_prompt": "",
+  "finish_prompt": "I was coming home",
   "techniques": [],
   "technique_notes": [],
   "context": "",
