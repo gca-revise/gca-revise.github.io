@@ -583,9 +583,12 @@ const QuoteTools = {
 
   // A quote cut in half: the start is shown, the rest is what the student types.
   // The start is the smaller half (an odd quote gives the student the longer ending).
-  splitQuote(quote) {
+  // A quote can name its own prompt (the `finish_prompt` column), e.g. "The gelled" so the key word is typed.
+  splitQuote(quote, prompt = "") {
     const words = quote.trim().split(/\s+/);
-    const cut = Math.floor(words.length / 2);
+    const promptWords = String(prompt).trim().split(/\s+/).filter(Boolean);
+    const custom = promptWords.length > 0 && promptWords.length < words.length && promptWords.every((w, i) => w === words[i]);
+    const cut = custom ? promptWords.length : Math.floor(words.length / 2);
     return { prompt: words.slice(0, cut).join(" "), rest: words.slice(cut).join(" ") };
   },
 
@@ -651,7 +654,7 @@ const QuoteTools = {
         }
       } else if (game === "mfinish") {
         if (q.quote.trim().split(/\s+/).length >= 6) {
-          const { prompt, rest } = QuoteTools.splitQuote(q.quote);
+          const { prompt, rest } = QuoteTools.splitQuote(q.quote, q.finish_prompt);
           items.push({
             ...base, id: "mf:" + q.id, word: rest, prompt, rest,
             check: (typed) => QuoteTools.checkEnding(typed, rest) === "right",

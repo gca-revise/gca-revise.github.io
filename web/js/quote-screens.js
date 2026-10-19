@@ -20,7 +20,7 @@ Object.assign(Screens, {
       }).join("");
     }
     if (run.game === "mfinish") {
-      const { prompt, rest } = QuoteTools.splitQuote(q.quote);
+      const { prompt, rest } = QuoteTools.splitQuote(q.quote, q.finish_prompt);
       return reveal
         ? `${esc(prompt)} <strong class="gap-filled">${esc(rest)}</strong>`
         : `${esc(prompt)} <span class="gap-ellipsis" aria-label="the rest of the quote">&hellip;</span>`;
