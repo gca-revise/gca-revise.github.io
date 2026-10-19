@@ -1,0 +1,13 @@
+id,text,kind,name,blurb,order,teacher_checked
+mac-c-rise,Macbeth,character,Macbeth: the rise (Acts 1–2),From brave soldier to murderer.,1,no
+mac-c-fall,Macbeth,character,Macbeth: the downfall (Acts 3–5),"Paranoia, tyranny and the end.",2,no
+mac-c-lady,Macbeth,character,Lady Macbeth,"Persuader, plotter, and then broken.",3,no
+mac-c-scots,Macbeth,character,"Macduff, Malcolm and the Scots",The people who stand against Macbeth.,4,no
+mac-c-witches,Macbeth,character,The Witches and Banquo,"Prophecy, temptation and doubt.",5,no
+mac-t-ambition,Macbeth,theme,Ambition and power,The desire that drives the play.,6,no
+mac-t-guilt,Macbeth,theme,Guilt and conscience,"Blood, sleep and the mind coming apart.",7,no
+mac-t-appearance,Macbeth,theme,Appearance and reality,Fair is foul: nothing is as it seems.,8,no
+mac-t-gender,Macbeth,theme,Gender and power,"Manliness, motherhood and control.",9,no
+mac-t-kingship,Macbeth,theme,Kingship and the natural order,"A good king, a tyrant, and a country in pain.",10,no
+mac-t-fate,Macbeth,theme,Fate and the supernatural,"Prophecy, free will and the witches.",11,no
+mac-t-structure,Macbeth,theme,Tragic structure,The shape of a tragedy (vocab only for now).,12,no

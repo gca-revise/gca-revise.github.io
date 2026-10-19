@@ -1,0 +1,317 @@
+[
+ {
+  "id": "mac-c-rise",
+  "text": "macbeth",
+  "kind": "character",
+  "name": "Macbeth: the rise (Acts 1–2)",
+  "blurb": "From brave soldier to murderer.",
+  "order": 1,
+  "quotes": [
+   "mac-1-02",
+   "mac-1-03",
+   "mac-1-04",
+   "mac-1-06",
+   "mac-1-07",
+   "mac-1-11",
+   "mac-2-01",
+   "mac-2-02",
+   "mac-2-03",
+   "mac-2-04",
+   "mac-2-07",
+   "mac-2-08"
+  ],
+  "vocab": [
+   "hamartia",
+   "embodiment-of-masculinity",
+   "tragic-hero",
+   "thane",
+   "soliloquy",
+   "hallucination"
+  ]
+ },
+ {
+  "id": "mac-c-fall",
+  "text": "macbeth",
+  "kind": "character",
+  "name": "Macbeth: the downfall (Acts 3–5)",
+  "blurb": "Paranoia, tyranny and the end.",
+  "order": 2,
+  "quotes": [
+   "mac-3-01",
+   "mac-3-02",
+   "mac-3-05",
+   "mac-3-06",
+   "mac-3-08",
+   "mac-3-09",
+   "mac-3-10",
+   "mac-4-02",
+   "mac-5-03",
+   "mac-5-04",
+   "mac-5-05",
+   "mac-5-07"
+  ],
+  "vocab": [
+   "paranoid",
+   "tyrant",
+   "hubris",
+   "desensitised",
+   "nihilistic",
+   "anagnorisis",
+   "nihilism"
+  ]
+ },
+ {
+  "id": "mac-c-lady",
+  "text": "macbeth",
+  "kind": "character",
+  "name": "Lady Macbeth",
+  "blurb": "Persuader, plotter, and then broken.",
+  "order": 3,
+  "quotes": [
+   "mac-1-08",
+   "mac-1-09",
+   "mac-1-10",
+   "mac-1-12",
+   "mac-2-05",
+   "mac-2-06",
+   "mac-2-10",
+   "mac-3-03",
+   "mac-3-04",
+   "mac-5-01",
+   "mac-5-02"
+  ],
+  "vocab": [
+   "subvert-gender-expectations",
+   "emasculate",
+   "belittle",
+   "consumed",
+   "suppress"
+  ]
+ },
+ {
+  "id": "mac-c-scots",
+  "text": "macbeth",
+  "kind": "character",
+  "name": "Macduff, Malcolm and the Scots",
+  "blurb": "The people who stand against Macbeth.",
+  "order": 4,
+  "quotes": [
+   "mac-2-09",
+   "mac-2-11",
+   "mac-2-12",
+   "mac-4-03",
+   "mac-4-04",
+   "mac-4-05",
+   "mac-4-06",
+   "mac-4-07",
+   "mac-4-08",
+   "mac-4-09",
+   "mac-5-06",
+   "mac-5-08"
+  ],
+  "vocab": [
+   "the-divine-right-to-rule",
+   "kinsman",
+   "the-natural-order",
+   "tyrant",
+   "body-politic"
+  ]
+ },
+ {
+  "id": "mac-c-witches",
+  "text": "macbeth",
+  "kind": "character",
+  "name": "The Witches and Banquo",
+  "blurb": "Prophecy, temptation and doubt.",
+  "order": 5,
+  "quotes": [
+   "mac-1-01",
+   "mac-1-04",
+   "mac-1-05",
+   "mac-3-07",
+   "mac-3-08",
+   "mac-4-01"
+  ],
+  "vocab": [
+   "fate",
+   "free-will",
+   "inevitable",
+   "prophecy",
+   "conjuration",
+   "supernatural"
+  ]
+ },
+ {
+  "id": "mac-t-ambition",
+  "text": "macbeth",
+  "kind": "theme",
+  "name": "Ambition and power",
+  "blurb": "The desire that drives the play.",
+  "order": 6,
+  "quotes": [
+   "mac-1-04",
+   "mac-1-06",
+   "mac-1-07",
+   "mac-1-11",
+   "mac-3-01",
+   "mac-3-02",
+   "mac-3-03",
+   "mac-5-03"
+  ],
+  "vocab": [
+   "ambition",
+   "hamartia",
+   "conspire",
+   "tragic-hero",
+   "catalyst",
+   "hubris"
+  ]
+ },
+ {
+  "id": "mac-t-guilt",
+  "text": "macbeth",
+  "kind": "theme",
+  "name": "Guilt and conscience",
+  "blurb": "Blood, sleep and the mind coming apart.",
+  "order": 7,
+  "quotes": [
+   "mac-2-01",
+   "mac-2-03",
+   "mac-2-04",
+   "mac-2-05",
+   "mac-3-04",
+   "mac-3-08",
+   "mac-3-09",
+   "mac-3-10",
+   "mac-5-01",
+   "mac-5-02"
+  ],
+  "vocab": [
+   "hallucination",
+   "consumed",
+   "suppress",
+   "psychological-unravelling",
+   "desensitised"
+  ]
+ },
+ {
+  "id": "mac-t-appearance",
+  "text": "macbeth",
+  "kind": "theme",
+  "name": "Appearance and reality",
+  "blurb": "Fair is foul: nothing is as it seems.",
+  "order": 8,
+  "quotes": [
+   "mac-1-01",
+   "mac-1-05",
+   "mac-1-10",
+   "mac-2-01",
+   "mac-2-09",
+   "mac-2-10",
+   "mac-3-05",
+   "mac-5-07"
+  ],
+  "vocab": [
+   "conspire",
+   "devious",
+   "deception",
+   "facade",
+   "conjuration"
+  ]
+ },
+ {
+  "id": "mac-t-gender",
+  "text": "macbeth",
+  "kind": "theme",
+  "name": "Gender and power",
+  "blurb": "Manliness, motherhood and control.",
+  "order": 9,
+  "quotes": [
+   "mac-1-07",
+   "mac-1-08",
+   "mac-1-09",
+   "mac-1-12",
+   "mac-2-06",
+   "mac-3-06",
+   "mac-5-08"
+  ],
+  "vocab": [
+   "embodiment-of-masculinity",
+   "subvert-gender-expectations",
+   "emasculate",
+   "belittle",
+   "patriarchal"
+  ]
+ },
+ {
+  "id": "mac-t-kingship",
+  "text": "macbeth",
+  "kind": "theme",
+  "name": "Kingship and the natural order",
+  "blurb": "A good king, a tyrant, and a country in pain.",
+  "order": 10,
+  "quotes": [
+   "mac-2-07",
+   "mac-2-08",
+   "mac-2-11",
+   "mac-2-12",
+   "mac-4-03",
+   "mac-4-04",
+   "mac-4-05",
+   "mac-4-06",
+   "mac-4-08",
+   "mac-4-09",
+   "mac-5-08"
+  ],
+  "vocab": [
+   "the-divine-right-to-rule",
+   "duties-of-hospitality",
+   "kinsman",
+   "the-natural-order",
+   "tyrant",
+   "body-politic"
+  ]
+ },
+ {
+  "id": "mac-t-fate",
+  "text": "macbeth",
+  "kind": "theme",
+  "name": "Fate and the supernatural",
+  "blurb": "Prophecy, free will and the witches.",
+  "order": 11,
+  "quotes": [
+   "mac-1-01",
+   "mac-1-04",
+   "mac-1-05",
+   "mac-2-02",
+   "mac-3-02",
+   "mac-4-01",
+   "mac-5-07"
+  ],
+  "vocab": [
+   "fate",
+   "free-will",
+   "inevitable",
+   "prophecy",
+   "supernatural",
+   "self-fulfilling-prophecy"
+  ]
+ },
+ {
+  "id": "mac-t-structure",
+  "text": "macbeth",
+  "kind": "theme",
+  "name": "Tragic structure",
+  "blurb": "The shape of a tragedy (vocab only for now).",
+  "order": 12,
+  "quotes": [],
+  "vocab": [
+   "exposition",
+   "rising-action",
+   "pivotal-moment",
+   "falling-action",
+   "resolution",
+   "anagnorisis"
+  ]
+ }
+]
