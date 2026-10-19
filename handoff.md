@@ -67,6 +67,7 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 - **Paperwork started (19 Oct):** `paperwork/privacy-notice-draft.md` (student-facing) and `paperwork/data-protection-pack.md` (for the school DPO: data map, roles, risks, retention, breach plan, questions). Drafts with [brackets] for the school to fill. Teacher's first name removed from current files (still in 3 old commits). Test accounts NOT yet deleted (user to delete in Supabase dashboard, Authentication, Users). Commit-email rewrite: waiting on user's decision.
 
 ## Next steps
+0. **REMIND THE USER FIRST (20 Oct):** (a) delete the two test accounts in the Supabase dashboard (Authentication, Users), or add an `execute_sql` permission rule so Claude can; (b) give Claude the GitHub noreply email (Settings, Emails) for future commits; (c) decide whether to rewrite old git history to remove the Gmail address and teacher's name (Claude advises no); (d) fill in the [brackets] in `paperwork/` and send to the school DPO.
 0. Optional: run the `privacy-checker` agent for a baseline report. Find the stray 404 seen in the browser console (a missing file; harmless).
 1. The user tries the lessons on a phone and Chromebook, then asks teachers what they think of them (length, order of steps, set choices).
 2. User/teacher: check all the sets (which quotes and words sit where; Claude's first draft). Every quote and every key word is now in at least one set.
