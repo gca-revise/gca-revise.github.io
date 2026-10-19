@@ -56,7 +56,7 @@ Object.assign(Screens, {
     const learned = s.learnedCount();
     const pct = total ? Math.round((learned / total) * 100) : 0;
     const lessonTitle = run.lesson
-      ? `${Data.setById(run.lesson.setId).name} · Step ${run.lesson.index + 1} of ${run.lesson.count}: ${run.lesson.name}${run.lesson.revise ? " (revising)" : ""}`
+      ? `${Data.setById(run.lesson.setId).name} · Step ${run.lesson.section + 1} of ${run.lesson.sections}: ${run.lesson.name}${run.lesson.revise ? " (revising)" : ""}`
       : null;
     const title = lessonTitle || `${run.textId === "techniques" ? `Techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " · " + Data.techniqueSet(run.setId).name}` : `${t.name} · ${run.subject === "quote" ? (run.level === "master" ? "Quotes · Master it" : "Quotes") : "Key vocab"}`}${s.mode === "free" ? " (revise everything)" : ""}`;
     // Revising (nothing is saved): no progress bar, just how it is going this visit.

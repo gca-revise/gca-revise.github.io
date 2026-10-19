@@ -130,25 +130,73 @@ const Data = {
     return this.sets.find((s) => s.id === id);
   },
 
-  STEP_NAMES: { choose: "Choose it", match: "Match it", type: "Type the gap", finish: "Finish the quote", typeword: "Type it" },
+  // The sections a lesson is shown as (each holds one or more parts, played one after the other).
+  SECTION_NAMES: { choose: "Choose it", qmatch: "Match the quote", type: "Type the gap", typeit: "Type it" },
+  PART_SECTION: { choose: "choose", match: "choose", qmatch: "qmatch", type: "type", finish: "typeit", typeword: "typeit" },
 
-  // The steps of a set's lesson, in order, each with the items it asks about.
-  // A step with nothing to ask is left out (e.g. Match it needs two or more key vocab words).
+  // The labels a quote can be matched to: who said it, and where it is from.
+  quoteWho(q) {
+    return q.text === "power-conflict" ? "" : (q.speaker || "").trim();
+  },
+  quoteWhere(q) {
+    if (q.poem) return q.poem;
+    if (q.act) return `Act ${q.act}${q.scene ? " Scene " + q.scene : ""}`;
+    if (q.chapter && q.chapter !== "Various") return /^\d+$/.test(q.chapter) ? "Chapter " + q.chapter : q.chapter;
+    return "";
+  },
+
+  // Items for "Match the quote": each quote is paired with whichever of who-said-it / where-it-is-from
+  // is the less shared in this set (so the pairs are easier to tell apart). The label is shown on the left.
+  quoteMatchItems(quotes) {
+    const count = (list) => list.reduce((m, l) => (l ? m.set(l, (m.get(l) || 0) + 1) : m), new Map());
+    const who = count(quotes.map((q) => this.quoteWho(q)));
+    const where = count(quotes.map((q) => this.quoteWhere(q)));
+    const items = [];
+    for (const q of quotes) {
+      const a = this.quoteWho(q), b = this.quoteWhere(q);
+      const useWho = a && (!b || who.get(a) < where.get(b));
+      const label = useWho ? a : b;
+      if (label) items.push({ id: "qm:" + q.id, word: label, definition: q.quote, quote: q, kind: useWho ? "who" : "where" });
+    }
+    return new Set(items.map((i) => i.word)).size >= 2 ? items : [];
+  },
+
+  // The parts of a set's lesson, in order, each with the items it asks about. A part with nothing to ask
+  // is left out (e.g. the vocab match needs two or more key words). Parts are grouped into sections:
+  //   1 Choose it (multiple choice, then match the key vocab)   2 Match the quote
+  //   3 Type the gap                                            4 Type it (finish the quote, then type the key vocab)
+  // `flag` marks a part saved as done by a flag (matching never retires anything).
   lessonSteps(set) {
     const quoteIds = new Set(set.quotes);
     const words = set.vocab.map((id) => this.vocab.find((w) => w.id === id)).filter(Boolean);
+    const setQuotes = this.quotes.filter((q) => q.text === set.text && quoteIds.has(q.id));
     const gapItems = QuoteTools.lessonQuoteItems(this.quotes, set.text, quoteIds);
     const typed = QuoteTools.masterItems(this.quotes, set.text, "mgap", this.techniques, quoteIds);
     const finish = QuoteTools.masterItems(this.quotes, set.text, "mfinish", this.techniques, quoteIds);
-    const steps = [
+    const parts = [
       { key: "choose", items: [...gapItems, ...words] },
-      { key: "match", items: words.length >= 2 ? words : [] },
+      { key: "match", items: words.length >= 2 ? words : [], flag: "match" },
+      { key: "qmatch", items: this.quoteMatchItems(setQuotes), flag: "qmatch" },
       { key: "type", items: typed },
       { key: "finish", items: finish },
-      // Key vocab typed from the meaning, last. Own ids (tv:), so choosing a word never skips typing it.
+      // Key vocab typed from the meaning. Own ids (tv:), so choosing a word never skips typing it.
       { key: "typeword", items: words.map((w) => ({ ...w, id: "tv:" + w.id })) },
-    ];
-    return steps.filter((s) => s.items.length).map((s) => ({ ...s, name: this.STEP_NAMES[s.key] }));
+    ].filter((x) => x.items.length);
+    const order = [];
+    for (const x of parts) {
+      x.sectionId = this.PART_SECTION[x.key];
+      if (!order.includes(x.sectionId)) order.push(x.sectionId);
+    }
+    return parts.map((x, i) => {
+      const section = order.indexOf(x.sectionId);
+      const next = parts[i + 1];
+      return {
+        ...x, section, sections: order.length, sectionName: this.SECTION_NAMES[x.sectionId],
+        next: next ? next.key : null,
+        nextSame: !!next && this.PART_SECTION[next.key] === x.sectionId,
+        nextName: next ? this.SECTION_NAMES[this.PART_SECTION[next.key]] : "",
+      };
+    });
   },
 
   // Options for the Choose it step: quotes get their gap-word options, vocab gets other words of the text.
@@ -162,15 +210,28 @@ const Data = {
     return (item) => (item.quote ? quoteOptions(item) : Engine.makeChoices(item, words, [], 4));
   },
 
-  // How far a student is through a set: each step is done when everything in it is learned
-  // (Match it is done once its flag is saved).
+  // How far a student is through a set, section by section. A part is done when everything in it is
+  // learned (matching parts are done once their flag is saved); a section is done when all its parts are.
+  // `key` is the part to start or continue from.
   lessonProgress(set, retired, flags) {
-    const steps = this.lessonSteps(set).map((step) => {
-      const learned = step.items.filter((i) => retired.has(i.id)).length;
-      const done = step.key === "match" ? !!(flags[set.id] && flags[set.id].match) : learned === step.items.length;
-      return { key: step.key, name: step.name, total: step.items.length, learned, done };
-    });
-    const doneCount = steps.filter((s) => s.done).length;
-    return { steps, done: doneCount, total: steps.length, complete: steps.length > 0 && doneCount === steps.length };
+    const parts = this.lessonSteps(set);
+    const saved = flags[set.id] || {};
+    const sections = [];
+    for (const part of parts) {
+      let sec = sections[part.section];
+      if (!sec) sec = sections[part.section] = { id: part.sectionId, name: part.sectionName, total: 0, learned: 0, done: true, key: null, parts: [] };
+      const learned = part.flag ? (saved[part.flag] ? part.items.length : 0) : part.items.filter((i) => retired.has(i.id)).length;
+      const done = learned === part.items.length;
+      sec.total += part.items.length;
+      sec.learned += learned;
+      sec.parts.push(part.key);
+      if (!done) {
+        sec.done = false;
+        if (!sec.key) sec.key = part.key;
+      }
+    }
+    for (const sec of sections) if (!sec.key) sec.key = sec.parts[0];
+    const doneCount = sections.filter((x) => x.done).length;
+    return { steps: sections, done: doneCount, total: sections.length, complete: sections.length > 0 && doneCount === sections.length };
   },
 };

@@ -359,8 +359,9 @@ class Session {
 // A round with no slips earns one point; any slip means the round scores nothing.
 // Matching is practice only: it never retires a word.
 class MatchGame {
-  constructor({ items, mode, retiredIds = new Set(), size = 4, random = Math.random }) {
+  constructor({ items, mode, retiredIds = new Set(), size = 4, distinct = false, random = Math.random }) {
     this.items = items;
+    this.distinct = distinct;   // labels must differ within a round (quote matching: two quotes can share a speaker)
     this.mode = mode;
     this.retired = new Set(retiredIds);
     this.size = size;
@@ -407,11 +408,13 @@ class MatchGame {
     const picked = [];
     const rest = [];
     for (const w of this.bag) {
-      const clash = picked.some((p) => Engine.isCorrect(p.word, w.word) || Engine.isCorrect(w.word, p.word));
+      const clash = picked.some((p) => this.distinct
+        ? p.word.toLowerCase() === w.word.toLowerCase()
+        : Engine.isCorrect(p.word, w.word) || Engine.isCorrect(w.word, p.word));
       if (picked.length < size && !clash) picked.push(w);
       else rest.push(w);
     }
-    while (picked.length < size && rest.length) picked.push(rest.shift());
+    while (!this.distinct && picked.length < size && rest.length) picked.push(rest.shift());
     this.bag = rest;
     this.words = picked;
     this.left = Engine.shuffle(picked, this.random);

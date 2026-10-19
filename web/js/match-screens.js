@@ -16,16 +16,19 @@ Object.assign(Screens, {
   matching(run) {
     const g = run.session;
     const look = TEXT_LOOK[run.textId];
+    // Matching quotes to who said them / where they are from uses its own wording.
+    const q = g.qmatch;
+    const thing = q ? "quote" : Screens.noun(run);
     let status;
     if (g.slip) {
       status = "That is not a match. This round will not score, but keep going.";
     } else if (g.pending) {
       const found = g.words.find((w) => w.id === g.pending.id);
       status = g.pending.side === "w"
-        ? `“${found.word}” is selected. Now pick its meaning.`
-        : "A meaning is selected. Now pick its word.";
+        ? (q ? `“${found.word}” is selected. Now pick its quote.` : `“${found.word}” is selected. Now pick its meaning.`)
+        : (q ? "A quote is selected. Now pick who said it or where it is from." : "A meaning is selected. Now pick its word.");
     } else {
-      status = g.slips ? "Keep going. This round will not score." : "Pick a word, then its meaning.";
+      status = g.slips ? "Keep going. This round will not score." : (q ? "Pick a quote, then who said it or where it is from." : "Pick a word, then its meaning.");
     }
     const rows = g.left.map((w, i) => Screens.matchCell(g, "w", w) + Screens.matchCell(g, "m", g.right[i])).join("");
     return `
@@ -34,8 +37,8 @@ Object.assign(Screens, {
         <main class="run-main">
           <div class="run-left">
             <div class="m-head">
-              <h1>Match each ${Screens.noun(run)} to its meaning</h1>
-              <p>Pick a ${Screens.noun(run)}, then its meaning. No mistakes earns the point. ${g.matched.size} of ${g.words.length} matched.</p>
+              <h1>${q ? "Match each quote to who said it or where it is from" : `Match each ${thing} to its meaning`}</h1>
+              <p>${q ? "Pick a quote, then its speaker, poem, chapter or act and scene." : `Pick a ${thing}, then its meaning.`} No mistakes earns the point. ${g.matched.size} of ${g.words.length} matched.</p>
             </div>
             <div class="m-grid">${rows}</div>
             <div class="m-status${g.slip ? " m-status-slip" : ""}" role="status"><span class="dot-sm" style="background:${g.slip ? "#B42A47" : "var(--navy)"}"></span>${esc(status)}</div>
