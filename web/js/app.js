@@ -62,7 +62,7 @@ function startMatch(textId, setId) {
   drawRun();
 }
 
-// One step of a set's lesson (choose, match, type or finish). `revise` = one pass through, nothing saved.
+// One step of a set's lesson (choose, match, type, finish or typeword). `revise` = one pass through, nothing saved.
 function startLessonStep(textId, setId, stepKey, revise) {
   const set = Data.setById(setId);
   const steps = set && set.text === textId ? Data.lessonSteps(set) : [];
@@ -82,7 +82,7 @@ function startLessonStep(textId, setId, stepKey, revise) {
     game.newRound();
     run = { textId, kind: "match", session: game, phase: "question", last: null, sentence: "", lesson, covered: new Set(), wrongIds: new Set() };
   } else {
-    const typed = stepKey === "type" || stepKey === "finish";
+    const typed = stepKey === "type" || stepKey === "finish" || stepKey === "typeword";
     const session = new Session({
       items: step.items,
       mode,
@@ -94,7 +94,7 @@ function startLessonStep(textId, setId, stepKey, revise) {
       onePass: !!revise,
     });
     run = {
-      textId, kind: typed ? "type" : "choose", subject: typed ? "quote" : undefined, level: "know",
+      textId, kind: typed ? "type" : "choose", subject: typed && stepKey !== "typeword" ? "quote" : undefined, level: "know",
       game: stepKey === "type" ? "mgap" : stepKey === "finish" ? "mfinish" : undefined,
       session, phase: "question", last: null, sentence: "", lesson,
     };

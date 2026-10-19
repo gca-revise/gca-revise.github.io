@@ -130,7 +130,7 @@ const Data = {
     return this.sets.find((s) => s.id === id);
   },
 
-  STEP_NAMES: { choose: "Choose it", match: "Match it", type: "Type the gap", finish: "Finish the quote" },
+  STEP_NAMES: { choose: "Choose it", match: "Match it", type: "Type the gap", finish: "Finish the quote", typeword: "Type it" },
 
   // The steps of a set's lesson, in order, each with the items it asks about.
   // A step with nothing to ask is left out (e.g. Match it needs two or more key vocab words).
@@ -145,6 +145,8 @@ const Data = {
       { key: "match", items: words.length >= 2 ? words : [] },
       { key: "type", items: typed },
       { key: "finish", items: finish },
+      // Key vocab typed from the meaning, last. Own ids (tv:), so choosing a word never skips typing it.
+      { key: "typeword", items: words.map((w) => ({ ...w, id: "tv:" + w.id })) },
     ];
     return steps.filter((s) => s.items.length).map((s) => ({ ...s, name: this.STEP_NAMES[s.key] }));
   },

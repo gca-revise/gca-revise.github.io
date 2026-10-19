@@ -7,6 +7,7 @@ const STEP_HELP = {
   match: "Match each key vocab word to its meaning.",
   type: "Type the missing word in each quote.",
   finish: "Finish each quote from memory.",
+  typeword: "Type each key vocab word from its meaning.",
 };
 
 Object.assign(Screens, {
@@ -129,7 +130,7 @@ Object.assign(Screens, {
     if (!saved) return "";
     const ids = new Set();
     for (const list of Object.values(saved)) {
-      for (const id of list) ids.add(id.replace(/^(mg|mf):/, ""));
+      for (const id of list) ids.add(id.replace(/^(mg|mf|tv):/, ""));
     }
     const quotes = set.quotes.filter((id) => ids.has(id)).map((id) => Data.quotes.find((q) => q.id === id)).filter(Boolean);
     const words = set.vocab.filter((id) => ids.has(id)).map((id) => Data.vocab.find((w) => w.id === id)).filter(Boolean);
