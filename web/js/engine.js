@@ -702,6 +702,8 @@ const QuoteTools = {
     ["Oxymoron", "Juxtaposition", "Antithesis", "Paradox"],
     // Repeated consonant sounds overlap: a quote with one of them is never offered another as a wrong answer.
     ["Alliteration", "Consonance", "Sibilance", "Fricative", "Plosive"],
+    // Repeated words and patterns overlap too.
+    ["Repetition", "Chiasmus", "Anaphora"],
   ],
 
   // Wrong options for "Spot the technique": other techniques, preferring the same kind

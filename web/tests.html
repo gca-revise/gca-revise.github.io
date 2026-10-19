@@ -450,6 +450,16 @@ const pool = [
     if (opts.some((o) => ["Consonance", "Sibilance", "Fricative", "Plosive"].includes(o.word))) overlap = true;
   }
   check("overlapping sound techniques are never wrong options for an Alliteration quote", !overlap);
+  // Repetition overlaps with Chiasmus and Anaphora.
+  const repTechs = ["Repetition", "Chiasmus", "Anaphora", "Metaphor", "Simile", "Hyperbole", "Imagery"].map((n) => ({ name: n, category: "Literary techniques" }));
+  const repQuote = { id: "r1", text: "macbeth", master: true, speaker: "Witches", quote: "Fair is foul and foul is fair", gap_word: "foul", technique_matches: ["Chiasmus"], technique_primary: ["Chiasmus"], technique_notes: [] };
+  const repOpts = QuoteTools.techOptionsFor(repTechs);
+  let repShown = false;
+  for (let i = 0; i < 80; i++) {
+    const it = QuoteTools.masterItems([repQuote], "macbeth", "mtech", repTechs)[0];
+    if (repOpts(it).some((o) => ["Repetition", "Anaphora"].includes(o.word))) repShown = true;
+  }
+  check("Repetition and Anaphora are never wrong options for a Chiasmus quote", !repShown);
   // Terms that are not devices are kept out of Spot the technique.
   const withTerms = techniques.concat([{ name: "Theme", category: "Literary techniques", spot: false }, { name: "Narrative voice", category: "Literary techniques", spot: true }]);
   const termQuote = { id: "t1", text: "macbeth", master: true, quote: "A quote with only a theme", gap_word: "", technique_matches: ["Theme"] };
