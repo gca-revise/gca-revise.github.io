@@ -71,6 +71,19 @@ const Store = {
     this.save(state);
   },
 
+  // What was got wrong the last time each lesson step was finished: {setId: {step: [ids]}}.
+  lessonWrong(setId) {
+    const all = this.load().lessonWrong || {};
+    return all[setId] || null;
+  },
+
+  setLessonWrong(setId, step, ids) {
+    const state = this.load();
+    state.lessonWrong = state.lessonWrong || {};
+    state.lessonWrong[setId] = Object.assign({}, state.lessonWrong[setId], { [step]: ids });
+    this.save(state);
+  },
+
   // Ids of words the student has learned (retired).
   retiredIds() {
     return new Set(this.load().retired || []);

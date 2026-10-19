@@ -582,9 +582,10 @@ const QuoteTools = {
   // ---- Master it: the core quotes (master = yes) ----
 
   // A quote cut in half: the start is shown, the rest is what the student types.
+  // The start is the smaller half (an odd quote gives the student the longer ending).
   splitQuote(quote) {
     const words = quote.trim().split(/\s+/);
-    const cut = Math.ceil(words.length / 2);
+    const cut = Math.floor(words.length / 2);
     return { prompt: words.slice(0, cut).join(" "), rest: words.slice(cut).join(" ") };
   },
 

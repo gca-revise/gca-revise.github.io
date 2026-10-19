@@ -53,6 +53,8 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 - Tested in headless Chromium (every set of every text played through all four steps to "Set complete!"): a full lesson (all four steps to "Set complete!") for two sets, revise mode, no console errors; `/tests.html` 170 checks pass.
 - Not done yet: points across lessons and a learning path (see `ideas.md`); a "Set complete" celebration; revisit the "Got wrong last time" card once sets are in use.
 
+- 19 Oct (later): Revise everything top bar shows right/wrong, no progress bar; Finish the quote shows the smaller half as the prompt; set page has a "Got wrong last time" card (saved per set and step as `lessonWrong`) and a richer "What is in this set" (quotes with speaker and act/scene, vocab tap-for-meaning); Spot the technique fixes for "Fair is foul" (Fricative, Repetition) and close-technique groups.
+
 ## Next steps
 1. The user tries the lessons on a phone and Chromebook, then asks teachers what they think of them (length, order of steps, set choices).
 2. User/teacher: check all the sets (which quotes and words sit where; Claude's first draft). Every quote and every key word is now in at least one set.

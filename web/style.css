@@ -786,3 +786,15 @@ a.link-btn { display: inline-flex; align-items: center; }
   .set-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
   .set-card { padding: 18px 20px; border-top: 8px solid var(--accent); border-radius: 20px; }
 }
+
+/* ---------- Items inside a set (quotes with their source, vocab with a tap-for-meaning) ---------- */
+.set-quotes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.set-quote { display: flex; flex-direction: column; gap: 2px; padding-left: 12px; border-left: 4px solid var(--accent); }
+.set-quote-text { font-weight: 600; }
+.set-quote-src { font-size: 13px; color: var(--muted); }
+.set-word-list { display: flex; flex-direction: column; gap: 6px; }
+.set-word-item { border: 1.5px solid var(--line); border-radius: 12px; background: #fff; }
+.set-word-item summary { cursor: pointer; padding: 10px 14px; min-height: 44px; display: flex; align-items: center; font-weight: 700; }
+.set-word-item p { padding: 0 14px 12px; color: var(--muted); }
+.set-word-item[open] { border-color: var(--accent); background: var(--tint); }
+.set-tip { font-weight: 500; color: var(--muted); font-size: 13px; }

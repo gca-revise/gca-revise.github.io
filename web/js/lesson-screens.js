@@ -85,7 +85,6 @@ Object.assign(Screens, {
          <p class="set-note">One quick pass through each step. Your progress is not changed.</p>`
       : `<a class="pill primary big" href="#/text/${set.text}/set/${set.id}/${status.next.key}">${status.done === 0 ? "Start" : "Continue"}: step ${status.nextIndex + 1}, ${esc(status.next.name)}</a>`;
     const words = set.vocab.map((id) => Data.vocab.find((w) => w.id === id)).filter(Boolean);
-    const short = (q) => (q.length > 80 ? q.slice(0, 77) + "..." : q);
     const quotes = set.quotes.map((id) => Data.quotes.find((q) => q.id === id)).filter(Boolean);
     return `
       ${Screens.setHead(set)}
@@ -95,14 +94,47 @@ Object.assign(Screens, {
           <ol class="steps">${rows}</ol>
           ${action}
         </section>
+        ${Screens.setWrongCard(set)}
         <section class="card">
           <details class="set-contents">
             <summary>What is in this set</summary>
-            ${words.length ? `<p class="revisit-title">Key vocab</p><p class="set-words">${words.map((w) => `<span class="set-word">${esc(w.word)}</span>`).join("")}</p>` : ""}
-            ${quotes.length ? `<p class="revisit-title">Quotes</p><ul class="revisit-list">${quotes.map((q) => `<li>${esc(short(q.quote))}</li>`).join("")}</ul>` : ""}
+            ${Screens.setItems(words, quotes)}
           </details>
         </section>
       </main>`;
+  },
+
+  // The quotes (with who said them and where) and the key vocab (tap a word for its meaning).
+  setItems(words, quotes) {
+    const quoteRows = quotes.map((q) => {
+      const speaker = q.text === "power-conflict" || !q.speaker ? "" : `${esc(q.speaker)}, `;
+      return `<li class="set-quote"><span class="set-quote-text">“${esc(q.quote)}”</span><span class="set-quote-src">${speaker}${esc(Screens.quoteSource(q))}</span></li>`;
+    }).join("");
+    const wordRows = words.map((w) =>
+      `<details class="set-word-item"><summary>${esc(w.word)}</summary><p>${esc(w.definition)}</p></details>`).join("");
+    return `
+      ${wordRows ? `<p class="revisit-title">Key vocab <span class="set-tip">(tap a word to see its meaning)</span></p><div class="set-word-list">${wordRows}</div>` : ""}
+      ${quoteRows ? `<p class="revisit-title">Quotes</p><ul class="set-quotes">${quoteRows}</ul>` : ""}`;
+  },
+
+  // What was got wrong the last time each step of the lesson was finished.
+  setWrongCard(set) {
+    const saved = Store.lessonWrong(set.id);
+    if (!saved) return "";
+    const ids = new Set();
+    for (const list of Object.values(saved)) {
+      for (const id of list) ids.add(id.replace(/^(mg|mf):/, ""));
+    }
+    const quotes = set.quotes.filter((id) => ids.has(id)).map((id) => Data.quotes.find((q) => q.id === id)).filter(Boolean);
+    const words = set.vocab.filter((id) => ids.has(id)).map((id) => Data.vocab.find((w) => w.id === id)).filter(Boolean);
+    const count = quotes.length + words.length;
+    return `
+      <section class="card">
+        <div class="card-top"><h2>Got wrong last time</h2><span class="count">${count ? `${count} to look at` : "none"}</span></div>
+        ${count
+          ? `<p class="level-hint">What you missed the last time you finished a step in this lesson.</p>${Screens.setItems(words, quotes)}`
+          : `<p class="level-hint">Nothing missed the last time. Brilliant.</p>`}
+      </section>`;
   },
 
   // Between steps: "Step done!" with a button to the next step, or "Set complete!" after the last.
