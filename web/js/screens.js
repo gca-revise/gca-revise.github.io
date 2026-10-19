@@ -34,10 +34,16 @@ const penIcon = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" str
 const Screens = {
   // This week's and lifetime points (kept on this device).
   pointsCard() {
+    const r = Points.rank();
     return `
       <section class="points-card" aria-label="Your points">
         <div class="points-box"><div class="points-num">${Points.weekly()}</div><div class="points-label">Points this week</div></div>
         <div class="points-box"><div class="points-num">${Points.lifetime()}</div><div class="points-label">Lifetime points</div></div>
+        <div class="points-box rank-box">
+          <div class="points-num">${esc(r.name)}</div>
+          <div class="points-label">${r.next ? `${plural(r.toNext, "point")} to ${esc(r.next)}` : "Top rank!"}</div>
+          ${progressBar(r.pct, 100)}
+        </div>
       </section>`;
   },
 

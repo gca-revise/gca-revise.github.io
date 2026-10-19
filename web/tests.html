@@ -596,6 +596,9 @@ check("celebration milestones are 5, 10, 20, 50, 100, then every 50 up to 5000",
   const packed = Backup.pack({ retired: [], stats: {}, pts: { life: 12, week: "2026-10-19", wk: 4 } });
   const un = Backup.unpack(JSON.parse(JSON.stringify(packed)));
   check("points survive the save code", un && un.pts.life === 12 && un.pts.wk === 4 && un.pts.week === "2026-10-19");
+  check("ranks: 0 points is Wood, 50 is Plate, 3000+ is Platinum", Points.rank(0).name === "Wood" && Points.rank(49).name === "Wood" && Points.rank(50).name === "Plate" && Points.rank(99999).name === "Platinum");
+  const r = Points.rank(100);
+  check("rank shows points to the next rank and progress", r.next === "Ivory" && r.toNext === 50 && r.pct === 50 && Points.rank(99999).next === null);
   Store.save(saved);
 }
 

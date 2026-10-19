@@ -6,6 +6,27 @@
 //   a perfect Match them round earns +1 if it holds a word that has not earned a point this week
 //   nothing in "Revise everything"; a wrong answer never takes points away
 const Points = {
+  // Ranks by lifetime points: [name, points needed]. Edit the numbers to make ranks easier or harder.
+  RANKS: [
+    ["Wood", 0], ["Plate", 50], ["Ivory", 150], ["Stone", 300], ["Iron", 500],
+    ["Bronze", 800], ["Silver", 1200], ["Gold", 2000], ["Platinum", 3000],
+  ],
+
+  // The rank for a lifetime score, and how far through it the student is.
+  // {name, number, of, next (name or null), toNext (points), pct (0 to 100)}
+  rank(life = this.lifetime()) {
+    let i = 0;
+    while (i + 1 < this.RANKS.length && life >= this.RANKS[i + 1][1]) i += 1;
+    const next = this.RANKS[i + 1];
+    const from = this.RANKS[i][1];
+    return {
+      name: this.RANKS[i][0], number: i + 1, of: this.RANKS.length,
+      next: next ? next[0] : null,
+      toNext: next ? next[1] - life : 0,
+      pct: next ? Math.round(((life - from) / (next[1] - from)) * 100) : 100,
+    };
+  },
+
   // The Monday of the current week as "YYYY-MM-DD", using the device's own clock.
   weekKey(date = new Date()) {
     const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
@@ -36,6 +57,9 @@ const Points = {
     const state = Store.load();
     state.pts = { life: p.life + n, week: p.week, wk: p.wk + n, earned: Array.from(new Set([...p.earned, ...ids])) };
     Store.save(state);
+    // Reaching a new rank gets its own banner (it replaces a streak banner if both happen at once).
+    const before = this.rank(p.life).name, after = this.rank(p.life + n);
+    if (after.name !== before) Celebrate.display(`New rank: <span class="celebrate-num">${after.name}</span>!`, 100);
     return n;
   },
 

@@ -806,3 +806,5 @@ a.link-btn { display: inline-flex; align-items: center; }
 .points-label { font-size: 13px; color: var(--muted); margin-top: 2px; }
 .points-line { text-align: center; color: var(--muted); margin: 4px 0 14px; }
 .points-line b { color: var(--navy); }
+.rank-box { flex: 1.3; }
+@media (max-width: 560px) { .points-card { flex-wrap: wrap; } .rank-box { flex: 1 1 100%; } }
