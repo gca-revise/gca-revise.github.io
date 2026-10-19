@@ -25,7 +25,12 @@ const Backup = {
   pack(state) {
     const stats = {};
     for (const [id, s] of Object.entries(state.stats || {})) stats[id] = [s.right || 0, s.wrong || 0, s.choiceRight || 0];
-    return { v: 1, r: state.retired || [], s: stats };
+    // Lesson steps saved as done (Match it): a list of "setId:step".
+    const l = [];
+    for (const [setId, flags] of Object.entries(state.lessons || {})) {
+      for (const key of Object.keys(flags)) if (flags[key]) l.push(`${setId}:${key}`);
+    }
+    return l.length ? { v: 1, r: state.retired || [], s: stats, l } : { v: 1, r: state.retired || [], s: stats };
   },
 
   // Checks a restored code really is progress data, and turns it back into a saved state.
@@ -41,7 +46,16 @@ const Backup = {
       stats[id] = { right: s[0], wrong: s[1] };
       if (s[2]) stats[id].choiceRight = s[2];
     }
-    return { retired: Array.from(new Set(data.r)), stats };
+    const out = { retired: Array.from(new Set(data.r)), stats };
+    if (data.l !== undefined) {
+      if (!Array.isArray(data.l) || !data.l.every((x) => typeof x === "string" && /^[\w-]{1,80}:[\w-]{1,40}$/.test(x))) return null;
+      out.lessons = {};
+      for (const x of data.l) {
+        const [setId, key] = x.split(":");
+        out.lessons[setId] = Object.assign({}, out.lessons[setId], { [key]: true });
+      }
+    }
+    return out;
   },
 
   // The student's progress as one line of text.

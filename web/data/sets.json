@@ -1,0 +1,1205 @@
+[
+ {
+  "id": "fk-c-victor-creator",
+  "text": "frankenstein",
+  "kind": "character",
+  "name": "Victor: the creator",
+  "blurb": "From a happy childhood to the creation of life.",
+  "order": 1,
+  "quotes": [
+   "fk-1-03",
+   "fk-1-04",
+   "fk-1-05",
+   "fk-1-06",
+   "fk-1-07",
+   "fk-1-08",
+   "fk-1-09",
+   "fk-1-10",
+   "fk-2-05",
+   "fk-6-01"
+  ],
+  "vocab": [
+   "ambition",
+   "scientific-ambition",
+   "enterprise",
+   "laborious",
+   "fervent",
+   "pioneer",
+   "charnel-houses",
+   "infuse"
+  ]
+ },
+ {
+  "id": "fk-c-victor-guilt",
+  "text": "frankenstein",
+  "kind": "character",
+  "name": "Victor: guilt and loss",
+  "blurb": "What the creation costs him.",
+  "order": 2,
+  "quotes": [
+   "fk-1-14",
+   "fk-1-15",
+   "fk-1-16",
+   "fk-1-17",
+   "fk-1-18",
+   "fk-1-19",
+   "fk-2-19",
+   "fk-4-07",
+   "fk-4-08",
+   "fk-5-01",
+   "fk-5-02",
+   "fk-5-07"
+  ],
+  "vocab": [
+   "traumatised",
+   "fatigue",
+   "wretched",
+   "grievously",
+   "irresolute",
+   "despair",
+   "vengeance",
+   "desolate"
+  ]
+ },
+ {
+  "id": "fk-c-creature-reject",
+  "text": "frankenstein",
+  "kind": "character",
+  "name": "The Creature: innocence and rejection",
+  "blurb": "Born good, shunned by everyone.",
+  "order": 3,
+  "quotes": [
+   "fk-2-02",
+   "fk-2-06a",
+   "fk-2-06b",
+   "fk-2-07a",
+   "fk-2-07b",
+   "fk-2-07c",
+   "fk-2-08a",
+   "fk-2-08b",
+   "fk-2-09",
+   "fk-3-08",
+   "fk-3-09",
+   "fk-4-02"
+  ],
+  "vocab": [
+   "benevolent",
+   "hovel",
+   "barbarity",
+   "virtuous",
+   "disowned",
+   "deserted",
+   "amiable",
+   "consternation",
+   "benevolence",
+   "unprejudiced",
+   "loaded-me-with-epithets"
+  ]
+ },
+ {
+  "id": "fk-c-creature-revenge",
+  "text": "frankenstein",
+  "kind": "character",
+  "name": "The Creature: revenge",
+  "blurb": "From misery to threats.",
+  "order": 4,
+  "quotes": [
+   "fk-1-13",
+   "fk-2-10",
+   "fk-2-11",
+   "fk-2-12",
+   "fk-2-13",
+   "fk-2-14",
+   "fk-2-15",
+   "fk-2-16a",
+   "fk-2-16b",
+   "fk-2-18",
+   "fk-4-06",
+   "fk-5-05"
+  ],
+  "vocab": [
+   "wretch",
+   "vengeance",
+   "interchange-of-sympathies",
+   "insurmountable-barriers",
+   "submission-of-abject-slavery",
+   "inextinguishable",
+   "supplication",
+   "abhorred"
+  ]
+ },
+ {
+  "id": "fk-c-walton",
+  "text": "frankenstein",
+  "kind": "character",
+  "name": "Robert Walton",
+  "blurb": "The explorer who frames the story.",
+  "order": 5,
+  "quotes": [
+   "fk-1-02a",
+   "fk-1-02b",
+   "fk-1-02c",
+   "fk-3-01",
+   "fk-3-02",
+   "fk-3-03",
+   "fk-3-04",
+   "fk-3-05"
+  ],
+  "vocab": [
+   "frame-narrative",
+   "desolation",
+   "solitudes",
+   "satiate",
+   "bitterly",
+   "emaciated",
+   "decaying-frame",
+   "rambles",
+   "longing",
+   "elude-all-pursuit"
+  ]
+ },
+ {
+  "id": "fk-c-innocents",
+  "text": "frankenstein",
+  "kind": "character",
+  "name": "Elizabeth, Justine and William",
+  "blurb": "The innocent people caught up in it.",
+  "order": 6,
+  "quotes": [
+   "fk-2-01f",
+   "fk-4-01",
+   "fk-4-03",
+   "fk-4-05",
+   "fk-4-09",
+   "fk-4-10",
+   "fk-5-03a",
+   "fk-5-03b",
+   "fk-5-04"
+  ],
+  "vocab": [
+   "caresses",
+   "idol",
+   "serene",
+   "virtuous",
+   "amiable",
+   "ogre",
+   "unjust"
+  ]
+ },
+ {
+  "id": "fk-t-ambition",
+  "text": "frankenstein",
+  "kind": "theme",
+  "name": "Ambition and the pursuit of knowledge",
+  "blurb": "The danger of wanting to know too much.",
+  "order": 7,
+  "quotes": [
+   "fk-1-01",
+   "fk-1-05",
+   "fk-1-06",
+   "fk-1-07",
+   "fk-1-19",
+   "fk-3-01",
+   "fk-3-02",
+   "fk-3-05",
+   "fk-3-06"
+  ],
+  "vocab": [
+   "ambition",
+   "transgress",
+   "romantic-movement",
+   "appropriate-divine-power",
+   "sense-of-superiority",
+   "scientific-ambition",
+   "enlightenment",
+   "cautionary-tale",
+   "pioneer"
+  ]
+ },
+ {
+  "id": "fk-t-creator",
+  "text": "frankenstein",
+  "kind": "theme",
+  "name": "Creator and creation",
+  "blurb": "What a maker owes what they make.",
+  "order": 8,
+  "quotes": [
+   "fk-1-11",
+   "fk-1-12",
+   "fk-1-13",
+   "fk-2-03",
+   "fk-2-09",
+   "fk-2-10",
+   "fk-5-07",
+   "fk-5-08",
+   "fk-5-09"
+  ],
+  "vocab": [
+   "entitled",
+   "absolute-power",
+   "displace",
+   "marginalise",
+   "sense-of-self",
+   "dehumanise",
+   "disowned",
+   "benefactor"
+  ]
+ },
+ {
+  "id": "fk-t-isolation",
+  "text": "frankenstein",
+  "kind": "theme",
+  "name": "Isolation and loneliness",
+  "blurb": "Everyone in the novel is alone.",
+  "order": 9,
+  "quotes": [
+   "fk-1-15",
+   "fk-2-07a",
+   "fk-2-07b",
+   "fk-2-08a",
+   "fk-2-11",
+   "fk-2-12",
+   "fk-2-13",
+   "fk-3-03",
+   "fk-3-08"
+  ],
+  "vocab": [
+   "marginalise",
+   "isolation",
+   "desolation",
+   "solitudes",
+   "deserted",
+   "desolate",
+   "interchange-of-sympathies",
+   "insurmountable-barriers"
+  ]
+ },
+ {
+  "id": "fk-t-monster",
+  "text": "frankenstein",
+  "kind": "theme",
+  "name": "Who is the monster?",
+  "blurb": "Names, looks and actions.",
+  "order": 10,
+  "quotes": [
+   "fk-1-10",
+   "fk-2-01a",
+   "fk-2-01b",
+   "fk-2-01c",
+   "fk-2-01d",
+   "fk-2-01e",
+   "fk-2-01f",
+   "fk-2-08b",
+   "fk-4-03",
+   "fk-4-09",
+   "fk-4-10",
+   "fk-5-10"
+  ],
+  "vocab": [
+   "dehumanise",
+   "livid",
+   "inarticulate",
+   "demoniacal",
+   "blot-upon-the-earth",
+   "wretch",
+   "ogre",
+   "countenances"
+  ]
+ },
+ {
+  "id": "fk-t-justice",
+  "text": "frankenstein",
+  "kind": "theme",
+  "name": "Justice and guilt",
+  "blurb": "Who is blamed, and who is guilty.",
+  "order": 11,
+  "quotes": [
+   "fk-1-16",
+   "fk-1-17",
+   "fk-4-05",
+   "fk-4-07",
+   "fk-4-08",
+   "fk-4-09",
+   "fk-5-02"
+  ],
+  "vocab": [
+   "miscarriage-of-justice",
+   "justice-system",
+   "justice",
+   "injustice",
+   "unjust",
+   "just",
+   "humanity"
+  ]
+ },
+ {
+  "id": "fk-t-gothic",
+  "text": "frankenstein",
+  "kind": "theme",
+  "name": "Religion, the devil and the Gothic",
+  "blurb": "Angels, fiends and hell.",
+  "order": 12,
+  "quotes": [
+   "fk-1-18",
+   "fk-1-19",
+   "fk-2-01a",
+   "fk-2-01d",
+   "fk-2-10",
+   "fk-2-15",
+   "fk-2-16a",
+   "fk-5-06",
+   "fk-5-08",
+   "fk-5-10"
+  ],
+  "vocab": [
+   "gothic-literature",
+   "imagery",
+   "charnel-houses",
+   "profane",
+   "demoniacal",
+   "abhorred",
+   "fitter-emblem-of-my-condition"
+  ]
+ },
+ {
+  "id": "aic-c-birling",
+  "text": "inspector",
+  "kind": "character",
+  "name": "Mr Birling",
+  "blurb": "Confident, selfish and wrong about almost everything.",
+  "order": 1,
+  "quotes": [
+   "aic-1-04",
+   "aic-1-05",
+   "aic-2-01",
+   "aic-2-02",
+   "aic-2-03",
+   "aic-2-04",
+   "aic-2-05",
+   "aic-2-06",
+   "aic-2-07",
+   "aic-3-02"
+  ],
+  "vocab": [
+   "rose-tinted-spectacles",
+   "ignorant",
+   "capitalism",
+   "class-system",
+   "exploit",
+   "conservative"
+  ]
+ },
+ {
+  "id": "aic-c-mrs",
+  "text": "inspector",
+  "kind": "character",
+  "name": "Mrs Birling and Gerald",
+  "blurb": "Pride, prejudice and keeping up appearances.",
+  "order": 2,
+  "quotes": [
+   "aic-1-06",
+   "aic-1-07",
+   "aic-1-09",
+   "aic-5-03",
+   "aic-6-03"
+  ],
+  "vocab": [
+   "facade",
+   "upper-class",
+   "conservative",
+   "prejudice",
+   "discrimination"
+  ]
+ },
+ {
+  "id": "aic-c-young",
+  "text": "inspector",
+  "kind": "character",
+  "name": "Sheila and Eric: the younger generation",
+  "blurb": "Two people who change.",
+  "order": 3,
+  "quotes": [
+   "aic-1-08",
+   "aic-1-10",
+   "aic-3-01",
+   "aic-3-03",
+   "aic-3-04",
+   "aic-3-06",
+   "aic-5-04",
+   "aic-6-01",
+   "aic-6-02",
+   "aic-6-05",
+   "aic-6-09"
+  ],
+  "vocab": [
+   "anagnorisis",
+   "socialism",
+   "vulnerable",
+   "sin",
+   "progressive",
+   "accountable"
+  ]
+ },
+ {
+  "id": "aic-c-inspector",
+  "text": "inspector",
+  "kind": "character",
+  "name": "Inspector Goole",
+  "blurb": "The voice that questions everyone.",
+  "order": 4,
+  "quotes": [
+   "aic-2-08",
+   "aic-3-05",
+   "aic-4-01",
+   "aic-4-02",
+   "aic-4-03",
+   "aic-4-04",
+   "aic-4-08",
+   "aic-5-01",
+   "aic-5-02",
+   "aic-6-07",
+   "aic-6-08"
+  ],
+  "vocab": [
+   "inspect",
+   "omnipotent",
+   "omniscient",
+   "didactic-message",
+   "morality-play",
+   "accountable"
+  ]
+ },
+ {
+  "id": "aic-c-eva",
+  "text": "inspector",
+  "kind": "character",
+  "name": "Eva Smith",
+  "blurb": "The girl at the centre of it all.",
+  "order": 5,
+  "quotes": [
+   "aic-4-05",
+   "aic-4-06",
+   "aic-4-07",
+   "aic-5-05",
+   "aic-6-04",
+   "aic-6-06",
+   "aic-6-10"
+  ],
+  "vocab": [
+   "exploitation",
+   "vulnerable",
+   "disempowered",
+   "working-class",
+   "degrade",
+   "abuse-of-power"
+  ]
+ },
+ {
+  "id": "aic-t-responsibility",
+  "text": "inspector",
+  "kind": "theme",
+  "name": "Responsibility and community",
+  "blurb": "We are members of one body.",
+  "order": 6,
+  "quotes": [
+   "aic-2-02",
+   "aic-2-04",
+   "aic-2-05",
+   "aic-4-04",
+   "aic-5-01",
+   "aic-5-02",
+   "aic-6-06",
+   "aic-6-07",
+   "aic-6-08",
+   "aic-6-09"
+  ],
+  "vocab": [
+   "morality",
+   "socialism",
+   "didactic-message",
+   "sin",
+   "morality-play",
+   "accountable"
+  ]
+ },
+ {
+  "id": "aic-t-class",
+  "text": "inspector",
+  "kind": "theme",
+  "name": "Class, power and exploitation",
+  "blurb": "Who has power, and who pays for it.",
+  "order": 7,
+  "quotes": [
+   "aic-1-04",
+   "aic-1-07",
+   "aic-2-01",
+   "aic-2-06",
+   "aic-2-07",
+   "aic-2-08",
+   "aic-3-02",
+   "aic-3-04",
+   "aic-3-05",
+   "aic-6-04"
+  ],
+  "vocab": [
+   "capitalism",
+   "exploitation",
+   "class-system",
+   "upper-class",
+   "working-class",
+   "exploit",
+   "abuse-of-power"
+  ]
+ },
+ {
+  "id": "aic-t-women",
+  "text": "inspector",
+  "kind": "theme",
+  "name": "Gender and the treatment of women",
+  "blurb": "How the women in the play are seen and treated.",
+  "order": 8,
+  "quotes": [
+   "aic-1-06",
+   "aic-3-03",
+   "aic-3-04",
+   "aic-3-05",
+   "aic-4-07",
+   "aic-6-02",
+   "aic-6-03",
+   "aic-6-04",
+   "aic-6-10"
+  ],
+  "vocab": [
+   "vulnerable",
+   "disempowered",
+   "degrade",
+   "prejudice",
+   "discrimination"
+  ]
+ },
+ {
+  "id": "aic-t-generations",
+  "text": "inspector",
+  "kind": "theme",
+  "name": "The older and younger generations",
+  "blurb": "Who can change, and who will not.",
+  "order": 9,
+  "quotes": [
+   "aic-1-08",
+   "aic-1-10",
+   "aic-3-01",
+   "aic-3-02",
+   "aic-5-03",
+   "aic-5-04",
+   "aic-6-02",
+   "aic-6-05",
+   "aic-6-09"
+  ],
+  "vocab": [
+   "facade",
+   "rose-tinted-spectacles",
+   "ignorant",
+   "progressive",
+   "conservative"
+  ]
+ },
+ {
+  "id": "aic-t-stagecraft",
+  "text": "inspector",
+  "kind": "theme",
+  "name": "Stagecraft and dramatic irony",
+  "blurb": "Lighting, stage directions and what the audience knows.",
+  "order": 10,
+  "quotes": [
+   "aic-1-01",
+   "aic-1-02",
+   "aic-1-03",
+   "aic-2-01",
+   "aic-2-03",
+   "aic-4-01",
+   "aic-4-02",
+   "aic-4-03",
+   "aic-6-11"
+  ],
+  "vocab": [
+   "resolution",
+   "anagnorisis",
+   "set",
+   "stage-directions",
+   "dramatic-irony",
+   "omniscient",
+   "cliff-hanger",
+   "circular-narrative"
+  ]
+ },
+ {
+  "id": "jh-c-hyde",
+  "text": "jekyll-hyde",
+  "kind": "character",
+  "name": "Mr Hyde",
+  "blurb": "How people describe the man they cannot name.",
+  "order": 1,
+  "quotes": [
+   "jh-1-06",
+   "jh-1-07",
+   "jh-1-08",
+   "jh-2-02",
+   "jh-2-03",
+   "jh-2-08",
+   "jh-2-09",
+   "jh-4-09"
+  ],
+  "vocab": [
+   "embodiment",
+   "physiognomy",
+   "transgress",
+   "the-abject",
+   "satanic",
+   "atavism"
+  ]
+ },
+ {
+  "id": "jh-c-jekyll",
+  "text": "jekyll-hyde",
+  "kind": "character",
+  "name": "Dr Jekyll",
+  "blurb": "A respected man with a secret.",
+  "order": 2,
+  "quotes": [
+   "jh-2-05",
+   "jh-2-06",
+   "jh-2-07",
+   "jh-3-04",
+   "jh-3-05",
+   "jh-3-07",
+   "jh-3-08",
+   "jh-3-09",
+   "jh-3-10"
+  ],
+  "vocab": [
+   "facade",
+   "hubris",
+   "anagnorisis",
+   "duality",
+   "transgress",
+   "addiction"
+  ]
+ },
+ {
+  "id": "jh-c-confession",
+  "text": "jekyll-hyde",
+  "kind": "character",
+  "name": "Jekyll's full statement",
+  "blurb": "Chapter 10: Jekyll tells his own story.",
+  "order": 3,
+  "quotes": [
+   "jh-4-07",
+   "jh-4-08",
+   "jh-4-09",
+   "jh-4-10",
+   "jh-5-01"
+  ],
+  "vocab": [
+   "hubris",
+   "vicarious-pleasure",
+   "duality",
+   "inherent",
+   "epistolary",
+   "addiction"
+  ]
+ },
+ {
+  "id": "jh-c-utterson",
+  "text": "jekyll-hyde",
+  "kind": "character",
+  "name": "Mr Utterson and the lawyers' world",
+  "blurb": "The respectable men who investigate.",
+  "order": 4,
+  "quotes": [
+   "jh-1-01",
+   "jh-1-02",
+   "jh-1-05",
+   "jh-2-01",
+   "jh-2-02",
+   "jh-2-03",
+   "jh-2-04",
+   "jh-3-06"
+  ],
+  "vocab": [
+   "third-person-limited",
+   "narration",
+   "focalisation",
+   "detective-novel",
+   "graphology",
+   "virtue"
+  ]
+ },
+ {
+  "id": "jh-c-lanyon",
+  "text": "jekyll-hyde",
+  "kind": "character",
+  "name": "Dr Lanyon and Mr Poole",
+  "blurb": "Two witnesses to the horror.",
+  "order": 5,
+  "quotes": [
+   "jh-1-10",
+   "jh-4-01",
+   "jh-4-04",
+   "jh-4-05",
+   "jh-4-06"
+  ],
+  "vocab": [
+   "gothic-literature",
+   "heresy",
+   "traumatised",
+   "pious",
+   "blasphemy",
+   "epistolary"
+  ]
+ },
+ {
+  "id": "jh-t-duality",
+  "text": "jekyll-hyde",
+  "kind": "theme",
+  "name": "Duality and the divided self",
+  "blurb": "Man is not truly one, but truly two.",
+  "order": 6,
+  "quotes": [
+   "jh-2-06",
+   "jh-2-10",
+   "jh-3-10",
+   "jh-4-07",
+   "jh-4-08",
+   "jh-4-09",
+   "jh-4-10",
+   "jh-5-01"
+  ],
+  "vocab": [
+   "facade",
+   "embodiment",
+   "vicarious-pleasure",
+   "duality",
+   "inherent"
+  ]
+ },
+ {
+  "id": "jh-t-reputation",
+  "text": "jekyll-hyde",
+  "kind": "theme",
+  "name": "Reputation and Victorian morality",
+  "blurb": "Respectability, secrets and sin.",
+  "order": 7,
+  "quotes": [
+   "jh-1-01",
+   "jh-1-02",
+   "jh-2-03",
+   "jh-2-04",
+   "jh-2-07",
+   "jh-3-05",
+   "jh-3-09",
+   "jh-3-10",
+   "jh-4-03"
+  ],
+  "vocab": [
+   "facade",
+   "heresy",
+   "seven-deadly-sins",
+   "virtue",
+   "satanic",
+   "pious",
+   "blasphemy"
+  ]
+ },
+ {
+  "id": "jh-t-science",
+  "text": "jekyll-hyde",
+  "kind": "theme",
+  "name": "Science and ambition",
+  "blurb": "What happens when science goes too far.",
+  "order": 8,
+  "quotes": [
+   "jh-1-10",
+   "jh-2-05",
+   "jh-2-07",
+   "jh-3-09",
+   "jh-4-04",
+   "jh-4-08",
+   "jh-4-10"
+  ],
+  "vocab": [
+   "hubris",
+   "anagnorisis",
+   "transgress",
+   "heresy",
+   "addiction"
+  ]
+ },
+ {
+  "id": "jh-t-gothic",
+  "text": "jekyll-hyde",
+  "kind": "theme",
+  "name": "London and the Gothic setting",
+  "blurb": "Fog, doors and a city with two faces.",
+  "order": 9,
+  "quotes": [
+   "jh-1-03",
+   "jh-1-04",
+   "jh-1-05",
+   "jh-3-02",
+   "jh-3-03",
+   "jh-4-02",
+   "jh-4-11"
+  ],
+  "vocab": [
+   "narration",
+   "focalisation",
+   "detective-novel",
+   "gothic-literature",
+   "hellish-imagery",
+   "epistolary"
+  ]
+ },
+ {
+  "id": "jh-t-fear",
+  "text": "jekyll-hyde",
+  "kind": "theme",
+  "name": "Fear and the monstrous",
+  "blurb": "Hyde as something not quite human.",
+  "order": 10,
+  "quotes": [
+   "jh-1-06",
+   "jh-1-07",
+   "jh-1-08",
+   "jh-2-02",
+   "jh-2-08",
+   "jh-2-09",
+   "jh-3-04",
+   "jh-3-07",
+   "jh-3-08",
+   "jh-4-04",
+   "jh-4-06"
+  ],
+  "vocab": [
+   "physiognomy",
+   "traumatised",
+   "the-abject",
+   "satanic",
+   "atavism"
+  ]
+ },
+ {
+  "id": "mac-c-rise",
+  "text": "macbeth",
+  "kind": "character",
+  "name": "Macbeth: the rise (Acts 1–2)",
+  "blurb": "From brave soldier to murderer.",
+  "order": 1,
+  "quotes": [
+   "mac-1-02",
+   "mac-1-03",
+   "mac-1-04",
+   "mac-1-06",
+   "mac-1-07",
+   "mac-1-11",
+   "mac-2-01",
+   "mac-2-02",
+   "mac-2-03",
+   "mac-2-04",
+   "mac-2-07",
+   "mac-2-08"
+  ],
+  "vocab": [
+   "hamartia",
+   "embodiment-of-masculinity",
+   "tragic-hero",
+   "thane",
+   "soliloquy",
+   "hallucination"
+  ]
+ },
+ {
+  "id": "mac-c-fall",
+  "text": "macbeth",
+  "kind": "character",
+  "name": "Macbeth: the downfall (Acts 3–5)",
+  "blurb": "Paranoia, tyranny and the end.",
+  "order": 2,
+  "quotes": [
+   "mac-3-01",
+   "mac-3-02",
+   "mac-3-05",
+   "mac-3-06",
+   "mac-3-08",
+   "mac-3-09",
+   "mac-3-10",
+   "mac-4-02",
+   "mac-5-03",
+   "mac-5-04",
+   "mac-5-05",
+   "mac-5-07"
+  ],
+  "vocab": [
+   "paranoid",
+   "tyrant",
+   "hubris",
+   "desensitised",
+   "nihilistic",
+   "anagnorisis",
+   "nihilism"
+  ]
+ },
+ {
+  "id": "mac-c-lady",
+  "text": "macbeth",
+  "kind": "character",
+  "name": "Lady Macbeth",
+  "blurb": "Persuader, plotter, and then broken.",
+  "order": 3,
+  "quotes": [
+   "mac-1-08",
+   "mac-1-09",
+   "mac-1-10",
+   "mac-1-12",
+   "mac-2-05",
+   "mac-2-06",
+   "mac-2-10",
+   "mac-3-03",
+   "mac-3-04",
+   "mac-5-01",
+   "mac-5-02"
+  ],
+  "vocab": [
+   "subvert-gender-expectations",
+   "emasculate",
+   "belittle",
+   "consumed",
+   "suppress"
+  ]
+ },
+ {
+  "id": "mac-c-scots",
+  "text": "macbeth",
+  "kind": "character",
+  "name": "Macduff, Malcolm and the Scots",
+  "blurb": "The people who stand against Macbeth.",
+  "order": 4,
+  "quotes": [
+   "mac-2-09",
+   "mac-2-11",
+   "mac-2-12",
+   "mac-4-03",
+   "mac-4-04",
+   "mac-4-05",
+   "mac-4-06",
+   "mac-4-07",
+   "mac-4-08",
+   "mac-4-09",
+   "mac-5-06",
+   "mac-5-08"
+  ],
+  "vocab": [
+   "the-divine-right-to-rule",
+   "kinsman",
+   "the-natural-order",
+   "tyrant",
+   "body-politic"
+  ]
+ },
+ {
+  "id": "mac-c-witches",
+  "text": "macbeth",
+  "kind": "character",
+  "name": "The Witches and Banquo",
+  "blurb": "Prophecy, temptation and doubt.",
+  "order": 5,
+  "quotes": [
+   "mac-1-01",
+   "mac-1-04",
+   "mac-1-05",
+   "mac-3-07",
+   "mac-3-08",
+   "mac-4-01"
+  ],
+  "vocab": [
+   "fate",
+   "free-will",
+   "inevitable",
+   "prophecy",
+   "conjuration",
+   "supernatural"
+  ]
+ },
+ {
+  "id": "mac-t-ambition",
+  "text": "macbeth",
+  "kind": "theme",
+  "name": "Ambition and power",
+  "blurb": "The desire that drives the play.",
+  "order": 6,
+  "quotes": [
+   "mac-1-04",
+   "mac-1-06",
+   "mac-1-07",
+   "mac-1-11",
+   "mac-3-01",
+   "mac-3-02",
+   "mac-3-03",
+   "mac-5-03"
+  ],
+  "vocab": [
+   "ambition",
+   "hamartia",
+   "conspire",
+   "tragic-hero",
+   "catalyst",
+   "hubris"
+  ]
+ },
+ {
+  "id": "mac-t-guilt",
+  "text": "macbeth",
+  "kind": "theme",
+  "name": "Guilt and conscience",
+  "blurb": "Blood, sleep and the mind coming apart.",
+  "order": 7,
+  "quotes": [
+   "mac-2-01",
+   "mac-2-03",
+   "mac-2-04",
+   "mac-2-05",
+   "mac-3-04",
+   "mac-3-08",
+   "mac-3-09",
+   "mac-3-10",
+   "mac-5-01",
+   "mac-5-02"
+  ],
+  "vocab": [
+   "hallucination",
+   "consumed",
+   "suppress",
+   "psychological-unravelling",
+   "desensitised"
+  ]
+ },
+ {
+  "id": "mac-t-appearance",
+  "text": "macbeth",
+  "kind": "theme",
+  "name": "Appearance and reality",
+  "blurb": "Fair is foul: nothing is as it seems.",
+  "order": 8,
+  "quotes": [
+   "mac-1-01",
+   "mac-1-05",
+   "mac-1-10",
+   "mac-2-01",
+   "mac-2-09",
+   "mac-2-10",
+   "mac-3-05",
+   "mac-5-07"
+  ],
+  "vocab": [
+   "conspire",
+   "devious",
+   "deception",
+   "facade",
+   "conjuration"
+  ]
+ },
+ {
+  "id": "mac-t-gender",
+  "text": "macbeth",
+  "kind": "theme",
+  "name": "Gender and power",
+  "blurb": "Manliness, motherhood and control.",
+  "order": 9,
+  "quotes": [
+   "mac-1-07",
+   "mac-1-08",
+   "mac-1-09",
+   "mac-1-12",
+   "mac-2-06",
+   "mac-3-06",
+   "mac-5-08"
+  ],
+  "vocab": [
+   "embodiment-of-masculinity",
+   "subvert-gender-expectations",
+   "emasculate",
+   "belittle",
+   "patriarchal"
+  ]
+ },
+ {
+  "id": "mac-t-kingship",
+  "text": "macbeth",
+  "kind": "theme",
+  "name": "Kingship and the natural order",
+  "blurb": "A good king, a tyrant, and a country in pain.",
+  "order": 10,
+  "quotes": [
+   "mac-2-07",
+   "mac-2-08",
+   "mac-2-11",
+   "mac-2-12",
+   "mac-4-03",
+   "mac-4-04",
+   "mac-4-05",
+   "mac-4-06",
+   "mac-4-08",
+   "mac-4-09",
+   "mac-5-08"
+  ],
+  "vocab": [
+   "the-divine-right-to-rule",
+   "duties-of-hospitality",
+   "kinsman",
+   "the-natural-order",
+   "tyrant",
+   "body-politic"
+  ]
+ },
+ {
+  "id": "mac-t-fate",
+  "text": "macbeth",
+  "kind": "theme",
+  "name": "Fate and the supernatural",
+  "blurb": "Prophecy, free will and the witches.",
+  "order": 11,
+  "quotes": [
+   "mac-1-01",
+   "mac-1-04",
+   "mac-1-05",
+   "mac-2-02",
+   "mac-3-02",
+   "mac-4-01",
+   "mac-5-07"
+  ],
+  "vocab": [
+   "fate",
+   "free-will",
+   "inevitable",
+   "prophecy",
+   "supernatural",
+   "self-fulfilling-prophecy"
+  ]
+ },
+ {
+  "id": "mac-t-structure",
+  "text": "macbeth",
+  "kind": "theme",
+  "name": "Tragic structure",
+  "blurb": "The shape of a tragedy (vocab only for now).",
+  "order": 12,
+  "quotes": [],
+  "vocab": [
+   "exposition",
+   "rising-action",
+   "pivotal-moment",
+   "falling-action",
+   "resolution",
+   "anagnorisis"
+  ]
+ }
+]

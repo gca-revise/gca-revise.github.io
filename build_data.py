@@ -252,6 +252,53 @@ def build_techniques(quotes):
     return out
 
 
+def build_sets(vocab, quotes):
+    """Sets (lessons) inside each text: by character or theme. Each lists its quote ids and vocab ids.
+    Membership comes from the `sets` column (semicolon-separated set ids) of quotes.csv and vocab.csv."""
+    rows = read("sets")
+    check_unique(rows, "id", "sets")
+    sets = []
+    by_id = {}
+    for r in rows:
+        where = f"set '{r['id']}'"
+        text = TEXT_IDS.get(r["text"], r["text"])
+        if text not in {t["id"] for t in TEXTS}:
+            problems.append(f"{where}: unknown text '{r['text']}'")
+        if r["kind"].strip() not in ("character", "theme"):
+            problems.append(f"{where}: kind must be character or theme")
+        entry = {
+            "id": r["id"], "text": text, "kind": r["kind"].strip(), "name": r["name"].strip(),
+            "blurb": r["blurb"].strip(), "order": int(r["order"] or 0), "quotes": [], "vocab": [],
+        }
+        sets.append(entry)
+        by_id[r["id"]] = entry
+    for r in read("quotes"):
+        for sid in split(r.get("sets", ""), ";"):
+            entry = by_id.get(sid)
+            if entry is None:
+                problems.append(f"quote '{r['id']}': unknown set '{sid}'")
+            elif TEXT_IDS.get(r["text"].split(";")[0].strip(), r["text"]) != entry["text"]:
+                problems.append(f"quote '{r['id']}': set '{sid}' belongs to another text")
+            else:
+                entry["quotes"].append(r["id"])
+    ids = {w["id"]: w for w in vocab}
+    for r in read("vocab"):
+        for sid in split(r.get("sets", ""), ";"):
+            entry = by_id.get(sid)
+            word = ids.get(r["id"])
+            if entry is None:
+                problems.append(f"vocab '{r['id']}': unknown set '{sid}'")
+            elif word is None or entry["text"] not in word["texts"]:
+                problems.append(f"vocab '{r['id']}': set '{sid}' belongs to a text the word is not tagged to")
+            else:
+                entry["vocab"].append(r["id"])
+    for entry in sets:
+        if not entry["quotes"] and not entry["vocab"]:
+            problems.append(f"set '{entry['id']}': has no quotes and no vocab")
+    sets.sort(key=lambda e: (e["text"], e["order"]))
+    return sets
+
+
 def build_characters():
     """Extra character names for 'Who said it?' wrong options: {text id: [names]}."""
     out = {}
@@ -277,10 +324,12 @@ def main():
     vocab = build_vocab()
     missing_sentences = attach_sentences(vocab)
     attach_tags(vocab)
+    quotes = build_quotes()
     data = {
         "texts": TEXTS,
         "vocab": vocab,
-        "quotes": build_quotes(),
+        "quotes": quotes,
+        "sets": build_sets(vocab, quotes),
         "poems": build_poems(),
         "techniques": build_techniques(read("quotes")),
         "symbols": build_symbols(),
@@ -299,6 +348,9 @@ def main():
     for t in TEXTS:
         n = sum(1 for w in vocab if t["id"] in w["texts"])
         print(f"  {t['name']}: {n} words")
+    for st in data["sets"]:
+        note = " (check: 2+ vocab words make a Match it step)" if len(st["vocab"]) < 2 else ""
+        print(f"  set {st['id']}: {len(st['quotes'])} quotes, {len(st['vocab'])} words{note}")
     print(f"  high-level sentences: {sum(len(w['examples_high']) for w in vocab)} "
           f"(word/text pairs still without one: {len(missing_sentences)})")
     print(f"  words with an approved sentence: {sum(1 for w in vocab if w['examples_approved'])}; "

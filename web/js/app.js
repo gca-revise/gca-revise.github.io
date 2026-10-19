@@ -62,6 +62,47 @@ function startMatch(textId, setId) {
   drawRun();
 }
 
+// One step of a set's lesson (choose, match, type or finish). `revise` = one pass through, nothing saved.
+function startLessonStep(textId, setId, stepKey, revise) {
+  const set = Data.setById(setId);
+  const steps = set && set.text === textId ? Data.lessonSteps(set) : [];
+  const index = steps.findIndex((st) => st.key === stepKey);
+  if (index < 0) {
+    location.hash = `#/text/${textId}`;
+    return;
+  }
+  const step = steps[index];
+  const lesson = {
+    setId, key: stepKey, index, count: steps.length, revise: !!revise, name: step.name,
+    next: steps[index + 1] ? steps[index + 1].key : null,
+  };
+  const mode = revise ? "free" : "learn";
+  if (stepKey === "match") {
+    const game = new MatchGame({ items: step.items, mode, retiredIds: Store.retiredIds() });
+    game.newRound();
+    run = { textId, kind: "match", session: game, phase: "question", last: null, sentence: "", lesson, covered: new Set() };
+  } else {
+    const typed = stepKey === "type" || stepKey === "finish";
+    const session = new Session({
+      items: step.items,
+      mode,
+      kind: typed ? "type" : "choose",
+      retiredIds: Store.retiredIds(),
+      missedIds: Store.missedIds(),
+      choiceCounts: Store.choiceCounts(),
+      optionsFor: stepKey === "choose" ? Data.lessonChooseOptions(textId) : null,
+      onePass: !!revise,
+    });
+    run = {
+      textId, kind: typed ? "type" : "choose", subject: typed ? "quote" : undefined, level: "know",
+      game: stepKey === "type" ? "mgap" : stepKey === "finish" ? "mfinish" : undefined,
+      session, phase: "question", last: null, sentence: "", lesson,
+    };
+    run.phase = session.next() ? "question" : "complete";
+  }
+  drawRun();
+}
+
 // A sentence about the text being practised, with the key word in bold when it is drawn.
 function pickSentence(word, textId) {
   const forThisText = word.examples_high.filter((e) => e.text === textId).map((e) => e.sentence);
@@ -99,6 +140,11 @@ function route() {
     return;
   } else if (parts[0] === "text" && parts[2] === "vocab-match" && Data.text(parts[1])) {
     startMatch(parts[1]);
+    return;
+  } else if (parts[0] === "text" && parts[2] === "set" && parts.length === 4 && Data.setById(parts[3])) {
+    html = Screens.setOverview(parts[3]);
+  } else if (parts[0] === "text" && parts[2] === "set" && [5, 6].includes(parts.length) && Data.text(parts[1])) {
+    startLessonStep(parts[1], parts[3], parts[4], parts[5] === "revise");
     return;
   } else if (parts[0] === "text" && parts.length === 3) {
     html = Screens.comingSoon(`#/text/${parts[1]}`, "Back to the text");
@@ -149,6 +195,13 @@ app.addEventListener("click", (event) => {
   const action = event.target.closest("[data-action]");
   if (!action || !run) return;
   if (action.dataset.action === "round") {
+    // The last round of a lesson's Match it step: every word has been matched, so the step is done.
+    if (run.lesson && run.covered.size >= run.session.items.length) {
+      if (!run.lesson.revise) Store.setLessonFlag(run.lesson.setId, "match");
+      run.phase = "complete";
+      drawRun();
+      return;
+    }
     run.session.newRound();
     run.phase = "question";
     drawRun();
@@ -209,6 +262,7 @@ app.addEventListener("click", (event) => {
     if (outcome === "match") Sound.ding();
     // A perfect round adds one to the streak; celebrate a milestone.
     if (outcome === "match" && run.session.roundDone && run.session.slips === 0) Celebrate.check(run.session.streak);
+    if (run.session.roundDone && run.lesson) run.session.words.forEach((w) => run.covered.add(w.id));
     if (run.session.roundDone) run.phase = "done";
     drawRun(run.phase === "question");
   }

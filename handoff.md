@@ -46,11 +46,18 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 - Master it: the progress bar counts finished games, finished games show ticks, clearer "Set complete" message.
 - **Claude CAN test in a browser here (if the Linux container was reset, reinstall first):** `sudo apt-get install -y nodejs npm chromium` (sudo needs no password), then `npm i playwright-core` in the scratchpad, start `python3 -m http.server 8765` in `web/`, and launch `/usr/bin/chromium` with `--no-sandbox`. Re-done on 18 Oct: `/tests.html` passes all 160 checks. Real-device checks by the user are still wanted (phone, school computer, sound).
 
+## Built 19 Oct: sets (lessons by character and theme) - on the branch, NOT yet merged
+- User decisions (19 Oct): sets inside each text by **character and theme**; each set is a lesson: **Choose it** (quotes + key vocab) then **Match it** (key vocab) then **Type the gap** then **Finish the quote**, then the set is complete. Sets hold quotes plus key vocab; typed steps cover every quote in the set (core quotes stay as the separate "Master it" card). Claude drafts the sets, the user edits. Backup reminder (old step 2) skipped. "Got wrong last time" card: leave for now. Plan: `plan-sets.md`.
+- Data: `sets.csv` (id, text, kind, name, blurb, order, teacher_checked) and a `sets` column (semicolon-separated set ids) on `quotes.csv` and `vocab.csv`. `build_data.py` writes `web/data/sets.json` and prints each set's size. **Drafted for Macbeth (12 sets), An Inspector Calls (10), Jekyll and Hyde (10) and Frankenstein (12); no sets for Power and Conflict yet** (poetry was left out on purpose). Each text has character sets and theme sets of about 5-12 quotes and 5-11 key words (Macbeth also has a vocab-only "Tragic structure" set). **The teacher must check all the sets** (which quotes and words sit where); the choices are Claude's first draft.
+- Code: `web/js/lesson-screens.js` (sets list on a text's page, set overview, step-done and set-complete screens), `Data.lessonSteps / lessonProgress / lessonChooseOptions` in `data.js`, `startLessonStep` in `app.js`, `Session` option `onePass` (revising: each item once, nothing saved), `QuoteTools.masterItems(..., only)`. Routes: `#/text/<id>/set/<setId>` (overview) and `.../<step>[/revise]` where step is choose, match, type or finish. A step with nothing to ask is skipped (Match it needs 2+ words; Finish the quote needs 6+ word quotes). Progress is shared with Know it / Master it (same learned ids); the only new saved thing is a "Match it done" flag per set (`lessons` in the saved state, kept by sign-in merge and by the save code).
+- Tested in headless Chromium: a full lesson (all four steps to "Set complete!") for two sets, revise mode, no console errors; `/tests.html` 170 checks pass.
+- Not done yet: sets for Power and Conflict (poems); points across lessons and a learning path (see `ideas.md`); a "Set complete" celebration; revisit the "Got wrong last time" card once sets are in use.
+
 ## Next steps
-1. Check IT's reply (github.io and *.supabase.co unblocked? route to Microsoft sign-in?). Cannot do sign-in until then.
-2. Backup reminder: a short, occasional "Save your code before you go" prompt at the end of a session, linking to the save screen (school computers wipe progress).
-3. Check on a phone: top bar "learned / right so far" (#9), "Got wrong last time" card (#10), the ellipsis in Finish the quote. Then ask teachers for the next batch of feedback.
-4. Teacher checks waiting: Claude-drafted technique notes (28 quotes, plus aic-5-03, jh-1-06, jh-2-03, jh-2-09), the new Foil technique, and the earlier list above.
-5. Decide, then build: smaller sets per text by character or theme (first step of the Duolingo-style plan in `ideas.md`; the user was to draft the Macbeth sets); more blanks per quote (#4); theme tags (#1).
-6. Possible follow-ups: "Practise these" button for quotes and techniques; split the remaining general technique notes; Microsoft sign-in (Entra steps for IT, then a hidden button).
+1. Merge the sets branch (after the user has looked at it), then ask teachers what they think of the lessons.
+2. User/teacher: check the sets for the four novels and plays. Then decide how to do Power and Conflict (poems have no characters; sets by poem or theme?).
+3. Check IT's reply (github.io and *.supabase.co unblocked? route to Microsoft sign-in?). Sign-in cannot start until then.
+4. Teacher checks waiting: Claude-drafted technique notes, the Foil technique, sentences, gap words, word-type labels, definitions.
+5. Decide, then build: points across lessons, then a learning path (`ideas.md`); more blanks per quote (#4); theme tags are now covered by the theme sets (#1).
+6. Possible follow-ups: Microsoft sign-in (Entra steps for IT, then a hidden button); "Practise these" for quotes and techniques.
 7. Pitch list (see `ideas.md`): model paragraphs (teacher-written), cloze activities, images, dual coding.

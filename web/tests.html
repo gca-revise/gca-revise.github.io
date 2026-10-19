@@ -540,6 +540,40 @@ check("celebration milestones are 5, 10, 20, 50, 100", JSON.stringify(Celebrate.
   check("a streak of 5 celebrates, 4 does not", none && shown);
 }
 
+// ---- Sets / lessons ----
+{
+  // Revising a step: each item once, then it finishes, and nothing is retired.
+  const s = new Session({ items: words(4), mode: "free", onePass: true });
+  const seen = [];
+  let guard = 0;
+  while (s.next() && guard++ < 20) { seen.push(s.current.id); s.answer(s.current.word); }
+  check("revising a step asks each item exactly once", seen.length === 4 && new Set(seen).size === 4);
+  check("revising a step then finishes", s.isComplete());
+  check("revising a step retires nothing", s.retired.size === 0);
+  const learn = new Session({ items: words(2), mode: "learn" });
+  check("a learn-mode step is not complete while items remain", !learn.isComplete());
+}
+{
+  const quotes = [
+    { id: "q1", text: "t", master: true, quote: "Out damned spot out I say", gap_word: "spot" },
+    { id: "q2", text: "t", master: false, quote: "Blood will have blood", gap_word: "will" },
+    { id: "q3", text: "t", master: false, quote: "Fair is foul and foul is fair", gap_word: "foul" },
+  ];
+  const core = QuoteTools.masterItems(quotes, "t", "mgap");
+  check("Master it uses core quotes only", core.length === 1 && core[0].id === "mg:q1");
+  const set = QuoteTools.masterItems(quotes, "t", "mgap", [], new Set(["q2", "q3"]));
+  check("a set's lesson uses every quote in the set, core or not", set.length === 2 && set.every((i) => i.id.startsWith("mg:")));
+  const finish = QuoteTools.masterItems(quotes, "t", "mfinish", [], new Set(["q2", "q3"]));
+  check("Finish the quote skips very short quotes in a set", finish.length === 1 && finish[0].id === "mf:q3");
+}
+
+// ---- Saved lesson steps travel in the progress code ----
+{
+  const round = Backup.unpack(Backup.pack({ retired: ["w1"], stats: {}, lessons: { "mac-c-lady": { match: true } } }));
+  check("a finished Match it step survives save and restore", round && round.lessons["mac-c-lady"].match === true);
+  check("a bad lesson entry is refused", Backup.unpack({ v: 1, r: [], s: {}, l: ["<script>"] }) === null);
+}
+
 // ---- Show results ----
 const failed = results.filter((r) => !r.ok).length;
 document.getElementById("summary").textContent =

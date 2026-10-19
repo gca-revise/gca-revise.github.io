@@ -750,3 +750,39 @@ a.link-btn { display: inline-flex; align-items: center; }
 
 .revisit-title { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
 .revisit-list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 15px; }
+
+/* ---------- Sets (lessons by character or theme) ---------- */
+.sets-intro { color: var(--muted); font-size: 15px; }
+.set-grid { display: flex; flex-direction: column; gap: 10px; }
+.set-card {
+  display: flex; flex-direction: column; gap: 8px;
+  background: #fff; border: 2px solid var(--line); border-radius: 18px; padding: 14px 16px;
+}
+.set-card:hover { border-color: var(--accent); }
+.set-card.is-complete { border-color: #17724B; }
+.set-name { font: 700 18px 'Bricolage Grotesque', sans-serif; }
+.set-blurb { font-size: 14px; color: var(--muted); }
+.set-meta { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: 13px; font-weight: 600; color: var(--muted); }
+.set-status { display: inline-flex; align-items: center; gap: 4px; color: var(--ink); }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.step-row { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 14px; background: #fff; }
+.step-row.is-next { border-color: var(--accent); background: var(--tint); }
+.step-row.is-done { background: #E9F6EF; border-color: #BFE3CF; }
+.step-num {
+  flex: none; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: var(--accent); color: #fff; font-weight: 700;
+}
+.step-row.is-done .step-num { background: #17724B; }
+.step-body { flex: 1; display: flex; flex-direction: column; }
+.step-name { font-weight: 700; }
+.step-help { font-size: 13px; color: var(--muted); }
+.step-count { font-size: 13px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.pill.big { min-height: 52px; font-size: 17px; justify-content: center; text-align: center; }
+.set-note { font-size: 13px; color: var(--muted); }
+.set-contents summary { cursor: pointer; font-weight: 700; min-height: 44px; display: flex; align-items: center; }
+.set-words { display: flex; flex-wrap: wrap; gap: 6px; }
+.set-word { background: var(--tint); border-radius: 999px; padding: 4px 12px; font-size: 14px; font-weight: 600; }
+@media (min-width: 760px) {
+  .set-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .set-card { padding: 18px 20px; border-top: 8px solid var(--accent); border-radius: 20px; }
+}

@@ -1,0 +1,169 @@
+// Screens for sets (lessons by character or theme): the list on a text's page, a set's overview,
+// and the "Step done" / "Set complete" screens between steps.
+// A set is a lesson of up to four steps: Choose it, Match it, Type the gap, Finish the quote.
+
+const STEP_HELP = {
+  choose: "Pick the right answer for each quote and key vocab word.",
+  match: "Match each key vocab word to its meaning.",
+  type: "Type the missing word in each quote.",
+  finish: "Finish each quote from memory.",
+};
+
+Object.assign(Screens, {
+  // Where a student is in a set: steps done, which step is next.
+  setStatus(set) {
+    const progress = Data.lessonProgress(set, Store.retiredIds(), Store.lessonFlags());
+    const nextIndex = progress.steps.findIndex((s) => !s.done);
+    return { ...progress, nextIndex, next: nextIndex >= 0 ? progress.steps[nextIndex] : null };
+  },
+
+  setCard(set) {
+    const status = Screens.setStatus(set);
+    const pct = status.total ? Math.round((status.done / status.total) * 100) : 0;
+    const label = status.complete ? "Complete" : status.done === 0 ? "Not started" : `Next: step ${status.nextIndex + 1}, ${status.next.name}`;
+    const counts = [
+      set.quotes.length ? plural(set.quotes.length, "quote") : "",
+      set.vocab.length ? plural(set.vocab.length, "key word") : "",
+    ].filter(Boolean).join(" · ");
+    return `
+      <a class="set-card${status.complete ? " is-complete" : ""}" href="#/text/${set.text}/set/${set.id}">
+        <div class="set-name">${esc(set.name)}</div>
+        <div class="set-blurb">${esc(set.blurb)}</div>
+        <div class="bar" role="img" aria-label="${status.done} of ${status.total} steps done"><span style="width:${pct}%"></span></div>
+        <div class="set-meta"><span>${esc(counts)}</span><span class="set-status">${status.complete ? checkIconSmall.replace('stroke="#FFFFFF"', 'stroke="#17724B"') : ""}${esc(label)}</span></div>
+      </a>`;
+  },
+
+  // The sets on a text's page, grouped by character and by theme.
+  setsSection(textId) {
+    const sets = Data.setsFor(textId);
+    if (!sets.length) return "";
+    const group = (title, kind) => {
+      const list = sets.filter((s) => s.kind === kind);
+      return list.length ? `<h2 class="label">${title}</h2><div class="set-grid">${list.map(Screens.setCard).join("")}</div>` : "";
+    };
+    return `
+      <p class="sets-intro">Work through a set one step at a time: choose, match, type the gap, then finish the quote.</p>
+      ${group("Lessons by character", "character")}
+      ${group("Lessons by theme", "theme")}`;
+  },
+
+  setHead(set) {
+    const look = TEXT_LOOK[set.text];
+    return `
+      <header class="page-head" style="--accent:${look.colour};--tint:${look.tint}">
+        <div class="wrap head-inner">
+          <div class="head-top">
+            <a class="back" href="#/text/${set.text}" aria-label="Back to ${esc(Data.text(set.text).name)}">${backIcon}</a>
+            <a class="brand-link" href="#/" aria-label="GCA Revise home">
+              <img class="crest-small" src="img/crest.png" alt="School crest">
+              <span class="head-brand">GCA Revise</span>
+            </a>
+          </div>
+          <h1>${esc(set.name)}</h1>
+          <p class="sub">${esc(set.blurb)}</p>
+        </div>
+      </header>`;
+  },
+
+  setOverview(setId) {
+    const set = Data.setById(setId);
+    const look = TEXT_LOOK[set.text];
+    const status = Screens.setStatus(set);
+    const rows = status.steps.map((st, i) => `
+      <li class="step-row${st.done ? " is-done" : ""}${i === status.nextIndex ? " is-next" : ""}">
+        <span class="step-num">${st.done ? checkIconSmall : i + 1}</span>
+        <span class="step-body">
+          <span class="step-name">${esc(st.name)}</span>
+          <span class="step-help">${esc(STEP_HELP[st.key])}</span>
+        </span>
+        <span class="step-count">${st.key === "match" ? (st.done ? "Done" : plural(st.total, "word")) : `${st.learned} of ${st.total}`}</span>
+      </li>`).join("");
+    const first = status.steps[0] ? status.steps[0].key : "choose";
+    const action = status.complete
+      ? `<a class="pill primary big" href="#/text/${set.text}/set/${set.id}/${first}/revise">Revise this set again</a>
+         <p class="set-note">One quick pass through each step. Your progress is not changed.</p>`
+      : `<a class="pill primary big" href="#/text/${set.text}/set/${set.id}/${status.next.key}">${status.done === 0 ? "Start" : "Continue"}: step ${status.nextIndex + 1}, ${esc(status.next.name)}</a>`;
+    const words = set.vocab.map((id) => Data.vocab.find((w) => w.id === id)).filter(Boolean);
+    const short = (q) => (q.length > 80 ? q.slice(0, 77) + "..." : q);
+    const quotes = set.quotes.map((id) => Data.quotes.find((q) => q.id === id)).filter(Boolean);
+    return `
+      ${Screens.setHead(set)}
+      <main class="wrap" style="--accent:${look.colour};--tint:${look.tint}">
+        <section class="card">
+          <div class="card-top"><h2>Your lesson</h2><span class="count">${status.done} of ${status.total} steps done</span></div>
+          <ol class="steps">${rows}</ol>
+          ${action}
+        </section>
+        <section class="card">
+          <details class="set-contents">
+            <summary>What is in this set</summary>
+            ${words.length ? `<p class="revisit-title">Key vocab</p><p class="set-words">${words.map((w) => `<span class="set-word">${esc(w.word)}</span>`).join("")}</p>` : ""}
+            ${quotes.length ? `<p class="revisit-title">Quotes</p><ul class="revisit-list">${quotes.map((q) => `<li>${esc(short(q.quote))}</li>`).join("")}</ul>` : ""}
+          </details>
+        </section>
+      </main>`;
+  },
+
+  // Between steps: "Step done!" with a button to the next step, or "Set complete!" after the last.
+  lessonStepDone(run) {
+    const s = run.session;
+    const lesson = run.lesson;
+    const set = Data.setById(lesson.setId);
+    const last = !lesson.next;
+    const isMatch = run.kind === "match";
+    const played = isMatch ? s.rounds > 0 : s.right + s.wrong > 0;
+    const tile = (num, label, colour) =>
+      `<div class="tile"><div class="tile-num"${colour ? ` style="color:${colour}"` : ""}>${num}</div><div class="tile-label">${label}</div></div>`;
+    const tiles = !played ? "" : !isMatch
+      ? `${tile(s.points, "Points")}${tile(s.bestStreak, "Best streak")}${tile(s.right, "Right", "#17724B")}${tile(s.wrong, "Wrong along the way", "#B42A47")}`
+      : `${tile(s.points, "Points")}${tile(s.bestStreak, "Best streak")}${tile(s.perfectRounds, "Perfect rounds", "#17724B")}${tile(s.rounds, "Rounds")}`;
+    const base = `#/text/${run.textId}/set/${lesson.setId}`;
+    const tail = lesson.revise ? "/revise" : "";
+    const heading = last ? (lesson.revise ? "Revision finished!" : "Set complete!") : `Step ${lesson.index + 1} done!`;
+    const nextName = lesson.next ? Data.STEP_NAMES[lesson.next] : "";
+    const message = last
+      ? (lesson.revise
+        ? `That was one more pass through ${esc(set.name)}.`
+        : `You've finished every step of ${esc(set.name)}. Well done.`)
+      : (played
+        ? `${esc(lesson.name)} is finished. Next up: ${esc(nextName)}.`
+        : `You already know all of these, so there was nothing to ask. Next up: ${esc(nextName)}.`);
+    const buttons = last
+      ? `<a class="done-main-btn" href="${base}/choose/revise">Revise this set again</a>
+         <a class="done-outline" href="#/text/${run.textId}">Back to ${esc(Data.text(run.textId).name)}</a>
+         <a class="done-plain" href="${base}">See the set</a>`
+      : `<a class="done-main-btn" href="${base}/${lesson.next}${tail}">Next: ${esc(nextName)}</a>
+         <a class="done-outline" href="${base}">Back to the set</a>
+         <a class="done-plain" href="#/text/${run.textId}">Back to ${esc(Data.text(run.textId).name)}</a>`;
+    return `
+      <div class="run done">
+        <main class="done-main">
+          <div class="done-head">
+            <a href="#/" aria-label="GCA Revise home"><img src="img/crest.png" alt="School crest" class="done-crest"></a>
+            <div>
+              <h1>${heading}</h1>
+              <p>${message}</p>
+            </div>
+          </div>
+          ${tiles ? `<div class="done-grid"><div class="tiles">${tiles}</div></div>` : ""}
+          <div class="done-btns">${buttons}</div>
+        </main>
+      </div>`;
+  },
+});
+
+// Hand lesson runs to the lesson screens where needed; everything else is unchanged.
+(function () {
+  const otherScreens = Screens.run;
+  Screens.run = (run) => {
+    if (!run.lesson) return otherScreens(run);
+    if (run.phase === "complete") return Screens.lessonStepDone(run);
+    // Choose it mixes quotes and key vocab: draw each question with the right kind of screen.
+    if (run.lesson.key === "choose" && run.session.current) {
+      const isQuote = !!run.session.current.quote;
+      return otherScreens({ ...run, subject: isQuote ? "quote" : undefined, game: isQuote ? "gap" : undefined });
+    }
+    return otherScreens(run);
+  };
+})();
