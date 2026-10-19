@@ -107,8 +107,14 @@ Object.assign(Screens, {
   // The quotes (with who said them and where) and the key vocab (tap a word for its meaning).
   setItems(words, quotes) {
     const quoteRows = quotes.map((q) => {
-      const speaker = q.text === "power-conflict" || !q.speaker ? "" : `${esc(q.speaker)}, `;
-      return `<li class="set-quote"><span class="set-quote-text">“${esc(q.quote)}”</span><span class="set-quote-src">${speaker}${esc(Screens.quoteSource(q))}</span></li>`;
+      // Everything in a set is from the same text, so the text's name is left out.
+      const place = q.poem ? `${q.poem}${q.poet ? ", " + q.poet : ""}`
+        : q.act ? `Act ${q.act}${q.scene ? " Scene " + q.scene : ""}`
+        : q.chapter && q.chapter !== "Various" ? (/^\d+$/.test(q.chapter) ? "Chapter " + q.chapter : q.chapter)
+        : "";
+      const who = q.text === "power-conflict" ? "" : q.speaker;
+      const source = [who, place].filter(Boolean).join(", ");
+      return `<li class="set-quote"><span class="set-quote-text">“${esc(q.quote)}”</span>${source ? `<span class="set-quote-src">${esc(source)}</span>` : ""}</li>`;
     }).join("");
     const wordRows = words.map((w) =>
       `<details class="set-word-item"><summary>${esc(w.word)}</summary><p>${esc(w.definition)}</p></details>`).join("");
