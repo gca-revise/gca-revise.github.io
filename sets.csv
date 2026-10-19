@@ -11,3 +11,35 @@ mac-t-gender,Macbeth,theme,Gender and power,"Manliness, motherhood and control."
 mac-t-kingship,Macbeth,theme,Kingship and the natural order,"A good king, a tyrant, and a country in pain.",10,no
 mac-t-fate,Macbeth,theme,Fate and the supernatural,"Prophecy, free will and the witches.",11,no
 mac-t-structure,Macbeth,theme,Tragic structure,The shape of a tragedy (vocab only for now).,12,no
+aic-c-birling,An Inspector Calls,character,Mr Birling,"Confident, selfish and wrong about almost everything.",1,no
+aic-c-mrs,An Inspector Calls,character,Mrs Birling and Gerald,"Pride, prejudice and keeping up appearances.",2,no
+aic-c-young,An Inspector Calls,character,Sheila and Eric: the younger generation,Two people who change.,3,no
+aic-c-inspector,An Inspector Calls,character,Inspector Goole,The voice that questions everyone.,4,no
+aic-c-eva,An Inspector Calls,character,Eva Smith,The girl at the centre of it all.,5,no
+aic-t-responsibility,An Inspector Calls,theme,Responsibility and community,We are members of one body.,6,no
+aic-t-class,An Inspector Calls,theme,"Class, power and exploitation","Who has power, and who pays for it.",7,no
+aic-t-women,An Inspector Calls,theme,Gender and the treatment of women,How the women in the play are seen and treated.,8,no
+aic-t-generations,An Inspector Calls,theme,The older and younger generations,"Who can change, and who will not.",9,no
+aic-t-stagecraft,An Inspector Calls,theme,Stagecraft and dramatic irony,"Lighting, stage directions and what the audience knows.",10,no
+jh-c-hyde,Jekyll and Hyde,character,Mr Hyde,How people describe the man they cannot name.,1,no
+jh-c-jekyll,Jekyll and Hyde,character,Dr Jekyll,A respected man with a secret.,2,no
+jh-c-confession,Jekyll and Hyde,character,Jekyll's full statement,Chapter 10: Jekyll tells his own story.,3,no
+jh-c-utterson,Jekyll and Hyde,character,Mr Utterson and the lawyers' world,The respectable men who investigate.,4,no
+jh-c-lanyon,Jekyll and Hyde,character,Dr Lanyon and Mr Poole,Two witnesses to the horror.,5,no
+jh-t-duality,Jekyll and Hyde,theme,Duality and the divided self,"Man is not truly one, but truly two.",6,no
+jh-t-reputation,Jekyll and Hyde,theme,Reputation and Victorian morality,"Respectability, secrets and sin.",7,no
+jh-t-science,Jekyll and Hyde,theme,Science and ambition,What happens when science goes too far.,8,no
+jh-t-gothic,Jekyll and Hyde,theme,London and the Gothic setting,"Fog, doors and a city with two faces.",9,no
+jh-t-fear,Jekyll and Hyde,theme,Fear and the monstrous,Hyde as something not quite human.,10,no
+fk-c-victor-creator,Frankenstein,character,Victor: the creator,From a happy childhood to the creation of life.,1,no
+fk-c-victor-guilt,Frankenstein,character,Victor: guilt and loss,What the creation costs him.,2,no
+fk-c-creature-reject,Frankenstein,character,The Creature: innocence and rejection,"Born good, shunned by everyone.",3,no
+fk-c-creature-revenge,Frankenstein,character,The Creature: revenge,From misery to threats.,4,no
+fk-c-walton,Frankenstein,character,Robert Walton,The explorer who frames the story.,5,no
+fk-c-innocents,Frankenstein,character,"Elizabeth, Justine and William",The innocent people caught up in it.,6,no
+fk-t-ambition,Frankenstein,theme,Ambition and the pursuit of knowledge,The danger of wanting to know too much.,7,no
+fk-t-creator,Frankenstein,theme,Creator and creation,What a maker owes what they make.,8,no
+fk-t-isolation,Frankenstein,theme,Isolation and loneliness,Everyone in the novel is alone.,9,no
+fk-t-monster,Frankenstein,theme,Who is the monster?,"Names, looks and actions.",10,no
+fk-t-justice,Frankenstein,theme,Justice and guilt,"Who is blamed, and who is guilty.",11,no
+fk-t-gothic,Frankenstein,theme,"Religion, the devil and the Gothic","Angels, fiends and hell.",12,no

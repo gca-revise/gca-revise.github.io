@@ -15,7 +15,7 @@
 - `sets.csv`: id, text, kind (character or theme), name, blurb, order, teacher_checked.
 - A `sets` column (semicolon-separated set ids) on `quotes.csv` and `vocab.csv`. A quote or word can be in several sets.
 - `build_data.py` writes `web/data/sets.json` and checks that every set id exists and that sets have enough items.
-- Macbeth is drafted first; the other texts follow once the user has looked at Macbeth.
+- Drafted 19 Oct for Macbeth, An Inspector Calls, Jekyll and Hyde and Frankenstein (all Claude's first draft, teacher to check). Power and Conflict (poems) is left until the user decides how to split it.
 
 ## How a lesson works
 - Each step is a normal game over the set's items, in "Learn the set" mode (a step is done when all its items are learned: typed correct once, multiple choice right twice). Progress uses the same ids as the existing games, so learning is shared with Know it and Master it.
