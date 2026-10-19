@@ -612,13 +612,14 @@ const QuoteTools = {
     return d[a.length][b.length];
   },
 
-  // "right" if the ending is close enough (about 1 word in 7 may be off), "near" for a fair attempt, else "wrong".
+  // "right" only if every word matches (capitals, punctuation, word endings and one-letter spelling slips
+  // are forgiven); "near" if one word is off (a few more in a long ending); otherwise "wrong".
   checkEnding(typed, expected) {
     if (!Engine.normalise(typed)) return "wrong";
     const n = Engine.normalise(expected).split(" ").filter(Boolean).length;
     const slips = QuoteTools.wordDistance(typed, expected);
-    if (slips <= Math.floor(n * 0.15)) return "right";
-    if (slips <= Math.floor(n * 0.35)) return "near";
+    if (slips === 0) return "right";
+    if (slips <= Math.max(1, Math.floor(n * 0.2))) return "near";
     return "wrong";
   },
 
