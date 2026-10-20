@@ -34,15 +34,36 @@ const penIcon = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" str
 const Screens = {
   // This week's and lifetime points (kept on this device).
   pointsCard() {
-    const r = Points.rank();
     return `
       <section class="points-card" aria-label="Your points">
         <div class="points-box"><div class="points-num">${Points.weekly()}</div><div class="points-label">Points this week</div></div>
         <div class="points-box"><div class="points-num">${Points.lifetime()}</div><div class="points-label">Lifetime points</div></div>
-        <div class="points-box rank-box">
-          <div class="points-num">${esc(r.name)}</div>
-          <div class="points-label">${r.next ? `${plural(r.toNext, "point")} to ${esc(r.next)}` : "Top rank!"}</div>
+      </section>`;
+  },
+
+  // A gem picture for a league, coloured by league (number 1 = Wood ... 9 = Diamond).
+  LEAGUE_COLOURS: ["#9A6B3F", "#8C9199", "#C7803A", "#B7BEC9", "#E3B72F", "#2FAF7A", "#2F6FD6", "#D6334F", "#6FD3F2"],
+  leagueGem(number) {
+    const c = Screens.LEAGUE_COLOURS[number - 1] || Screens.LEAGUE_COLOURS[0];
+    return `<svg class="league-gem" viewBox="0 0 64 64" aria-hidden="true">
+      <polygon points="32,6 54,24 32,58 10,24" fill="${c}" stroke="#222C69" stroke-width="3" stroke-linejoin="round"/>
+      <polygon points="32,6 44,24 32,58 20,24" fill="#fff" opacity=".28"/>
+      <polyline points="10,24 54,24" stroke="#222C69" stroke-width="2.5" fill="none" opacity=".5"/>
+    </svg>`;
+  },
+
+  // The student's league, shown at the bottom of the home screen.
+  leagueCard() {
+    const r = Points.rank();
+    return `
+      <section class="league-card" aria-label="Your league">
+        ${Screens.leagueGem(r.number)}
+        <div class="league-body">
+          <div class="league-kicker">League ${r.number} of ${r.of}</div>
+          <div class="league-name">${esc(r.name)} League</div>
+          <div class="points-label">${r.next ? `${plural(r.toNext, "point")} to reach the ${esc(r.next)} League` : "You are in the top league!"}</div>
           ${progressBar(r.pct, 100)}
+          <p class="league-help">Earn points to climb the leagues, from Wood up to Diamond.</p>
         </div>
       </section>`;
   },
@@ -87,6 +108,8 @@ const Screens = {
           ${progressBar(techLearned, techItems.length)}
           <div class="tc-learned">${techLearned} of ${techItems.length} learned</div>
         </a>
+        <h2 class="label">Your league</h2>
+        ${Screens.leagueCard()}
       </main>
       <footer class="home-foot">
         ${typeof Account !== "undefined" && Account.html() || "<span>Your progress is saved only on this device.</span>"}

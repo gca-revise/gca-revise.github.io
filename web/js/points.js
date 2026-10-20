@@ -59,7 +59,7 @@ const Points = {
     Store.save(state);
     // Reaching a new rank gets its own banner (it replaces a streak banner if both happen at once).
     const before = this.rank(p.life).name, after = this.rank(p.life + n);
-    if (after.name !== before) Celebrate.display(`New rank: <span class="celebrate-num">${after.name}</span>!`, 100);
+    if (after.name !== before) Celebrate.display(`New league: <span class="celebrate-num">${after.name} League</span>!`, 100);
     return n;
   },
 
