@@ -210,6 +210,16 @@ const Data = {
     return (item) => (item.quote ? quoteOptions(item) : Engine.makeChoices(item, words, [], 4));
   },
 
+  // A quote or key word from an item id used in the games (mg:, mf:, qm:, tv: are prefixes of the quote and
+  // typed-word ids); null if it is neither (e.g. a technique).
+  entryFor(id) {
+    const bare = String(id).replace(/^(mg|mf|qm|tv):/, "");
+    const quote = this.quotes.find((q) => q.id === bare);
+    if (quote) return { quote };
+    const word = this.vocab.find((w) => w.id === bare);
+    return word ? { word } : null;
+  },
+
   // How far a student is through a set, section by section. A part is done when everything in it is
   // learned (matching parts are done once their flag is saved); a section is done when all its parts are.
   // `key` is the part to start or continue from.

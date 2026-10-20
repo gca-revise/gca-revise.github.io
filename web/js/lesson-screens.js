@@ -144,6 +144,31 @@ Object.assign(Screens, {
       </section>`;
   },
 
+  // The things got wrong, as a hidden box that the Wrong tile (or the button) opens.
+  // `ids` are item ids; `items` (optional) are the game's own items, used for anything that is not a quote
+  // or key word (e.g. techniques).
+  missedBox(ids, items = []) {
+    const unique = Array.from(new Set(ids));
+    const quotes = [], words = [], others = [];
+    for (const id of unique) {
+      const entry = Data.entryFor(id);
+      if (entry && entry.quote) quotes.push(entry.quote);
+      else if (entry && entry.word) words.push(entry.word);
+      else {
+        const item = items.find((i) => i.id === id);
+        if (item && item.word) others.push(item);
+      }
+    }
+    const extra = others.length
+      ? `<p class="revisit-title">Also</p><div class="set-word-list">${others.map((o) => `<details class="set-word-item"><summary>${esc(o.word)}</summary><p>${esc(o.definition || "")}</p></details>`).join("")}</div>`
+      : "";
+    const count = quotes.length + words.length + others.length;
+    return {
+      count,
+      html: `<section class="wrong-box" id="wrong-box" hidden><p class="wrong-title">What you got wrong (${count})</p>${Screens.setItems(words, quotes)}${extra}</section>`,
+    };
+  },
+
   // Between steps: "Step done!" with a button to the next step, or "Set complete!" after the last.
   lessonStepDone(run) {
     const s = run.session;
@@ -153,10 +178,14 @@ Object.assign(Screens, {
     const isMatch = run.kind === "match";
     const c = run.carry || {};
     const played = isMatch ? s.rounds > 0 : s.right + s.wrong > 0;
-    const tile = (num, label, colour) =>
-      `<div class="tile"><div class="tile-num"${colour ? ` style="color:${colour}"` : ""}>${num}</div><div class="tile-label">${label}</div></div>`;
+    const wrongIds = (c.missed || []).concat(isMatch ? Array.from(run.wrongIds) : Object.keys(s.missed));
+    const missed = played ? Screens.missedBox(wrongIds, s.items) : { count: 0, html: "" };
+    const tile = (num, label, colour, tappable) =>
+      tappable && missed.count
+        ? `<button type="button" class="tile tile-tap" data-toggle-wrong aria-label="Show what you got wrong"><div class="tile-num" style="color:${colour}">${num}</div><div class="tile-label">${label} <span class="tile-more">tap to see</span></div></button>`
+        : `<div class="tile"><div class="tile-num"${colour ? ` style="color:${colour}"` : ""}>${num}</div><div class="tile-label">${label}</div></div>`;
     const tiles = !played ? "" : !isMatch
-      ? `${tile(s.points + (c.earned || 0), "Points")}${tile(Math.max(s.bestStreak, c.bestStreak || 0), "Best streak")}${tile(s.right + (c.right || 0), "Right", "#17724B")}${tile(s.wrong + (c.wrong || 0), "Wrong along the way", "#B42A47")}`
+      ? `${tile(s.points + (c.earned || 0), "Points")}${tile(Math.max(s.bestStreak, c.bestStreak || 0), "Best streak")}${tile(s.right + (c.right || 0), "Right", "#17724B")}${tile(s.wrong + (c.wrong || 0), "Wrong along the way", "#B42A47", true)}`
       : `${tile(s.points + (c.earned || 0), "Points")}${tile(Math.max(s.bestStreak, c.bestStreak || 0), "Best streak")}${tile(s.perfectRounds, "Perfect rounds", "#17724B")}${tile(s.rounds, "Rounds")}`;
     const base = `#/text/${run.textId}/set/${lesson.setId}`;
     const tail = lesson.revise ? "/revise" : "";
@@ -192,6 +221,7 @@ Object.assign(Screens, {
             </div>
           </div>
           ${tiles ? `<div class="done-grid"><div class="tiles">${tiles}</div></div>` : ""}
+          ${missed.count ? `<button type="button" class="wrong-toggle" data-toggle-wrong>See what you got wrong (${missed.count})</button>${missed.html}` : ""}
           ${lesson.revise ? "" : `<p class="points-line">Points this week: <b>${Points.weekly()}</b> · Lifetime: <b>${Points.lifetime()}</b></p>`}
           <div class="done-btns">${buttons}</div>
         </main>
