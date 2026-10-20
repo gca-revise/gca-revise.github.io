@@ -197,6 +197,13 @@ const Engine = {
     return Engine.shuffle([word, ...wrong], random);
   },
 
+  // A matching cell's data-m value is "<side>:<id>", e.g. "w:qm:mac-1-04". An id can contain colons
+  // (quote ids do), so only the first colon separates the side from the id.
+  parseCell(value) {
+    const cut = String(value).indexOf(":");
+    return { side: value.slice(0, cut), id: value.slice(cut + 1) };
+  },
+
   // A fair shuffle (Fisher-Yates). `random` can be swapped in for testing.
   shuffle(list, random = Math.random) {
     const copy = list.slice();

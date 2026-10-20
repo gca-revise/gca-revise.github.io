@@ -292,7 +292,7 @@ app.addEventListener("click", (event) => {
   if (option) chooseOption(option.dataset.choice);
   const cell = event.target.closest("[data-m]");
   if (cell && run && run.kind === "match" && run.phase === "question") {
-    const [side, id] = cell.dataset.m.split(":");
+    const { side, id } = Engine.parseCell(cell.dataset.m);
     const outcome = run.session.select(side, id);
     if (outcome === "slip" && run.lesson) {
       run.wrongIds.add(run.session.slip.wordId);
