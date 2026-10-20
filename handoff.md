@@ -73,6 +73,8 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 
 - **20 Oct: leagues on the home screen.** Ranks are now called leagues ("Wood League"). Home top shows only weekly and lifetime points; a "Your league" card with a gem picture (inline SVG, coloured per league, `Screens.leagueGem`) sits at the bottom, above the footer, with points to the next league. Banner reads "New league: X League!". Gem is a first draft: user may want a different image.
 
+- **20 Oct: Match the quote bug fixed** (PR #16): quote ids contain colons (`qm:...`) and the click handler split on every colon, so no quote pair could match (it dinged, nothing changed). `Engine.parseCell` now cuts at the first colon only; all 45 sets with quote matching were played with real clicks. **Cache busting** (PR #17): the publish workflow adds `?v=<commit>` to scripts, styles and data in the published copy, because a phone kept running the old cached files after the fix (worked in a private tab). If something works in a private tab but not a normal one, it is a cached copy. Test matching with real clicks (not only by calling `select`), because ids with odd characters only fail through the DOM.
+
 ## Next steps
 0. Hold off printing posters until IT unblocks the site on school devices and the domain is settled.
 0. **REMIND THE USER FIRST (20 Oct):** (a) delete the two test accounts in the Supabase dashboard (Authentication, Users), or add an `execute_sql` permission rule so Claude can; (b) give Claude the GitHub noreply email (Settings, Emails) for future commits; (c) decide whether to rewrite old git history to remove the Gmail address and teacher's name (Claude advises no); (d) fill in the [brackets] in `paperwork/` and send to the school DPO.
