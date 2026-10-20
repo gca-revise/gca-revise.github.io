@@ -30,6 +30,14 @@ jobs:
           mkdir site
           cp -r web/. site/
           rm -f site/tests.html
+      - name: Make browsers fetch the new files after every publish
+        # Adds ?v=<commit> to the script, style and data addresses, so a phone or school computer never
+        # keeps running an old copy of the site after an update.
+        run: |
+          V="${GITHUB_SHA::7}"
+          sed -i -E "s#(src|href)=\"((js|vendor)/[^\"]+\.js|style\.css)\"#\1=\"\2?v=$V\"#g" site/index.html
+          sed -i 's#data/${name}.json#data/${name}.json?v='"$V"'#' site/js/data.js
+          grep -c "?v=$V" site/index.html site/js/data.js
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
