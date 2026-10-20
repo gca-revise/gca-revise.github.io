@@ -665,6 +665,10 @@ check("celebration milestones are 5, 10, 20, 50, 100, then every 50 up to 5000",
   check("other texts are unchanged (fill the gap only)", other.length === 1 && !other[0].variants);
 }
 
+// ---- Matching cells: ids can contain colons ----
+check("a plain cell value splits into side and id", Engine.parseCell("w:ambition").side === "w" && Engine.parseCell("w:ambition").id === "ambition");
+check("a quote id with colons keeps the whole id", Engine.parseCell("m:qm:mac-1-04").side === "m" && Engine.parseCell("m:qm:mac-1-04").id === "qm:mac-1-04");
+
 // ---- Show results ----
 const failed = results.filter((r) => !r.ok).length;
 document.getElementById("summary").textContent =
