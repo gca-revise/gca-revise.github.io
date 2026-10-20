@@ -134,6 +134,7 @@ function drawRun(keepScroll) {
       setId: l.setId, key: l.next, revise: l.revise,
       earned: (prev.earned || 0) + (s.points || 0), bestStreak: Math.max(prev.bestStreak || 0, s.bestStreak || 0),
       right: (prev.right || 0) + (isMatch ? 0 : s.right), wrong: (prev.wrong || 0) + (isMatch ? 0 : s.wrong),
+      missed: (prev.missed || []).concat(isMatch ? Array.from(run.wrongIds) : Object.keys(s.missed)),
     };
     location.hash = `#/text/${run.textId}/set/${l.setId}/${l.next}${l.revise ? "/revise" : ""}`;
     return;
@@ -207,6 +208,12 @@ document.addEventListener("click", (event) => {
 });
 
 app.addEventListener("click", (event) => {
+  // On a finished screen: tap Wrong (or the button) to show or hide what was got wrong.
+  if (event.target.closest("[data-toggle-wrong]")) {
+    const box = document.getElementById("wrong-box");
+    if (box) box.hidden = !box.hidden;
+    return;
+  }
   if (event.target.closest("[data-reset]")) {
     if (window.confirm("Reset your progress?\n\nThis clears everything you have learned on this device. It cannot be undone.")) {
       Store.reset();

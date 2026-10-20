@@ -183,8 +183,11 @@ Object.assign(Screens, {
     const t = Data.text(run.textId);
     const total = s.items.length;
     const played = s.right + s.wrong > 0;
-    const tile = (num, label, colour) =>
-      `<div class="tile"><div class="tile-num"${colour ? ` style="color:${colour}"` : ""}>${num}</div><div class="tile-label">${label}</div></div>`;
+    const missed = played ? Screens.missedBox(Object.keys(s.missed), s.items) : { count: 0, html: "" };
+    const tile = (num, label, colour, tappable) =>
+      tappable && missed.count
+        ? `<button type="button" class="tile tile-tap" data-toggle-wrong aria-label="Show what you got wrong"><div class="tile-num" style="color:${colour}">${num}</div><div class="tile-label">${label} <span class="tile-more">tap to see</span></div></button>`
+        : `<div class="tile"><div class="tile-num"${colour ? ` style="color:${colour}"` : ""}>${num}</div><div class="tile-label">${label}</div></div>`;
     const tricky = s.trickiest(3);
     const trickyRows = tricky.length
       ? tricky.map((x) => `<div class="tricky-row"><span>${esc(x.word)}</span><span>missed ${x.times} time${x.times === 1 ? "" : "s"}</span></div>`).join("")
@@ -205,10 +208,11 @@ Object.assign(Screens, {
               ${tile(s.points, "Points")}
               ${tile(s.bestStreak, "Best streak")}
               ${tile(s.right, "Right", "#17724B")}
-              ${tile(s.wrong, "Wrong along the way", "#B42A47")}
+              ${tile(s.wrong, "Wrong along the way", "#B42A47", true)}
             </div>
             <div class="tricky"><div class="side-label">Your trickiest words</div>${trickyRows}</div>
-          </div>` : ""}
+          </div>
+          ${missed.count ? `<button type="button" class="wrong-toggle" data-toggle-wrong>See what you got wrong (${missed.count})</button>${missed.html}` : ""}` : ""}
           ${s.mode === "learn" ? `<p class="points-line">Points this week: <b>${Points.weekly()}</b> · Lifetime: <b>${Points.lifetime()}</b></p>` : ""}
           <div class="done-btns">
             <button type="button" class="done-main-btn" data-action="again">${run.textId === "techniques" ? "Practise techniques again" : `Practise ${esc(t.name)} ${run.subject === "quote" ? "quotes" : "vocab"} again`}</button>
