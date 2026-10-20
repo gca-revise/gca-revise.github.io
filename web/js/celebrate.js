@@ -1,7 +1,7 @@
-// A little celebration (banner + confetti) when a streak reaches 5, 10, 20, 50 or 100 in a row.
+// A little celebration (banner + confetti) when a streak reaches 5, 10, 20, 50 or 100 in a row, then every 50 up to 5,000.
 // Drawn on top of the page and removed after a few seconds, so it never gets in the way of playing.
 const Celebrate = {
-  MILESTONES: [5, 10, 20, 50, 100],
+  MILESTONES: [5, 10, 20, 50, 100, ...Array.from({ length: 98 }, (_, i) => 150 + i * 50)],
   COLOURS: ["#222C69", "#FDE006", "#8E1F37", "#12707E", "#3E5A4F", "#8A5316", "#FFFFFF"],
   timer: null,
 
@@ -15,14 +15,23 @@ const Celebrate = {
   },
 
   show(streak) {
+    this.display(`<span class="celebrate-num">${streak}</span> in a row!`, streak);
+  },
+
+  // Finishing every step of a set: a banner and a big burst of confetti.
+  setComplete() {
+    this.display("Set complete!", 50);
+  },
+
+  display(bannerHtml, size) {
     this.clear();
     const layer = document.createElement("div");
     layer.id = "celebrate";
     layer.setAttribute("role", "status");
-    layer.innerHTML = `<div class="celebrate-banner"><span class="celebrate-num">${streak}</span> in a row!</div>`;
+    layer.innerHTML = `<div class="celebrate-banner">${bannerHtml}</div>`;
     document.body.appendChild(layer);
     if (typeof Sound !== "undefined") Sound.cheer();
-    if (!this.reducedMotion()) this.confetti(layer, streak);
+    if (!this.reducedMotion()) this.confetti(layer, size);
     this.timer = setTimeout(() => this.clear(), 3200);
   },
 
@@ -46,7 +55,7 @@ const Celebrate = {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
     ctx.scale(ratio, ratio);
-    const count = { 5: 70, 10: 100, 20: 140, 50: 190, 100: 260 }[streak] || 100;
+    const count = { 5: 70, 10: 100, 20: 140, 50: 190, 100: 260 }[streak] || (streak > 100 ? 260 : 100);
     const pieces = Array.from({ length: count }, () => ({
       x: width * (0.5 + (Math.random() - 0.5) * 0.4),
       y: height * 0.35,

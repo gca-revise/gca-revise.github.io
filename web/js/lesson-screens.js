@@ -2,11 +2,12 @@
 // and the "Step done" / "Set complete" screens between steps.
 // A set is a lesson of up to four steps: Choose it, Match it, Type the gap, Finish the quote.
 
+// Help text for each section of a lesson (by section id).
 const STEP_HELP = {
-  choose: "Pick the right answer for each quote and key vocab word.",
-  match: "Match each key vocab word to its meaning.",
+  choose: "Pick the right answer for each quote and key vocab word, then match each key word to its meaning.",
+  qmatch: "Match each quote to who said it or where it is from.",
   type: "Type the missing word in each quote.",
-  finish: "Finish each quote from memory.",
+  typeit: "Finish each quote from memory, then type each key vocab word from its meaning.",
 };
 
 Object.assign(Screens, {
@@ -43,7 +44,7 @@ Object.assign(Screens, {
       return list.length ? `<h2 class="label">${title}</h2><div class="set-grid">${list.map(Screens.setCard).join("")}</div>` : "";
     };
     return `
-      <p class="sets-intro">Work through a set one step at a time: choose, match, type the gap, then finish the quote.</p>
+      <p class="sets-intro">Work through a set one step at a time: choose it and match it, match the quotes, type the gap, then type it.</p>
       ${group("Lessons by character", "character")}
       ${group("Lessons by theme", "theme")}`;
   },
@@ -75,11 +76,11 @@ Object.assign(Screens, {
         <span class="step-num">${st.done ? checkIconSmall : i + 1}</span>
         <span class="step-body">
           <span class="step-name">${esc(st.name)}</span>
-          <span class="step-help">${esc(STEP_HELP[st.key])}</span>
+          <span class="step-help">${esc(STEP_HELP[st.id])}</span>
         </span>
-        <span class="step-count">${st.key === "match" ? (st.done ? "Done" : plural(st.total, "word")) : `${st.learned} of ${st.total}`}</span>
+        <span class="step-count">${st.learned} of ${st.total}</span>
       </li>`).join("");
-    const first = status.steps[0] ? status.steps[0].key : "choose";
+    const first = status.steps[0] ? status.steps[0].parts[0] : "choose";
     const action = status.complete
       ? `<a class="pill primary big" href="#/text/${set.text}/set/${set.id}/${first}/revise">Revise this set again</a>
          <p class="set-note">One quick pass through each step. Your progress is not changed.</p>`
@@ -129,7 +130,7 @@ Object.assign(Screens, {
     if (!saved) return "";
     const ids = new Set();
     for (const list of Object.values(saved)) {
-      for (const id of list) ids.add(id.replace(/^(mg|mf):/, ""));
+      for (const id of list) ids.add(id.replace(/^(mg|mf|tv|qm):/, ""));
     }
     const quotes = set.quotes.filter((id) => ids.has(id)).map((id) => Data.quotes.find((q) => q.id === id)).filter(Boolean);
     const words = set.vocab.filter((id) => ids.has(id)).map((id) => Data.vocab.find((w) => w.id === id)).filter(Boolean);
@@ -150,16 +151,22 @@ Object.assign(Screens, {
     const set = Data.setById(lesson.setId);
     const last = !lesson.next;
     const isMatch = run.kind === "match";
+    const c = run.carry || {};
     const played = isMatch ? s.rounds > 0 : s.right + s.wrong > 0;
     const tile = (num, label, colour) =>
       `<div class="tile"><div class="tile-num"${colour ? ` style="color:${colour}"` : ""}>${num}</div><div class="tile-label">${label}</div></div>`;
     const tiles = !played ? "" : !isMatch
-      ? `${tile(s.points, "Points")}${tile(s.bestStreak, "Best streak")}${tile(s.right, "Right", "#17724B")}${tile(s.wrong, "Wrong along the way", "#B42A47")}`
-      : `${tile(s.points, "Points")}${tile(s.bestStreak, "Best streak")}${tile(s.perfectRounds, "Perfect rounds", "#17724B")}${tile(s.rounds, "Rounds")}`;
+      ? `${tile(s.points + (c.earned || 0), "Points")}${tile(Math.max(s.bestStreak, c.bestStreak || 0), "Best streak")}${tile(s.right + (c.right || 0), "Right", "#17724B")}${tile(s.wrong + (c.wrong || 0), "Wrong along the way", "#B42A47")}`
+      : `${tile(s.points + (c.earned || 0), "Points")}${tile(Math.max(s.bestStreak, c.bestStreak || 0), "Best streak")}${tile(s.perfectRounds, "Perfect rounds", "#17724B")}${tile(s.rounds, "Rounds")}`;
     const base = `#/text/${run.textId}/set/${lesson.setId}`;
     const tail = lesson.revise ? "/revise" : "";
-    const heading = last ? (lesson.revise ? "Revision finished!" : "Set complete!") : `Step ${lesson.index + 1} done!`;
-    const nextName = lesson.next ? Data.STEP_NAMES[lesson.next] : "";
+    // Celebrate once per run (the screen can be drawn more than once).
+    if (last && !lesson.revise && !run.celebrated) {
+      run.celebrated = true;
+      Celebrate.setComplete();
+    }
+    const heading = last ? (lesson.revise ? "Revision finished!" : "Set complete!") : `Step ${lesson.section + 1} done!`;
+    const nextName = lesson.nextName || "";
     const message = last
       ? (lesson.revise
         ? `That was one more pass through ${esc(set.name)}.`
@@ -185,6 +192,7 @@ Object.assign(Screens, {
             </div>
           </div>
           ${tiles ? `<div class="done-grid"><div class="tiles">${tiles}</div></div>` : ""}
+          ${lesson.revise ? "" : `<p class="points-line">Points this week: <b>${Points.weekly()}</b> · Lifetime: <b>${Points.lifetime()}</b></p>`}
           <div class="done-btns">${buttons}</div>
         </main>
       </div>`;

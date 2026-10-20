@@ -2,6 +2,9 @@
 // Nothing is sent anywhere. The code holds only learned items and right/wrong counts, no names.
 const Backup = {
   PREFIX: "GCA1:",
+  MAX_BYTES: 1000000,
+  // Names that must never be used as keys in restored data.
+  BAD_KEYS: ["__proto__", "constructor", "prototype"],
 
   // Text <-> bytes <-> web-safe text.
   toBase64Url(bytes) {
@@ -18,7 +21,22 @@ const Backup = {
   async squash(bytes, direction) {
     const stream = new Blob([bytes]).stream().pipeThrough(
       direction === "in" ? new CompressionStream("deflate-raw") : new DecompressionStream("deflate-raw"));
-    return new Uint8Array(await new Response(stream).arrayBuffer());
+    if (direction === "in") return new Uint8Array(await new Response(stream).arrayBuffer());
+    // Unpacking: stop if a code swells far beyond any real progress (a real one is well under 1 MB).
+    const reader = stream.getReader();
+    const parts = [];
+    let total = 0;
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      total += value.length;
+      if (total > this.MAX_BYTES) { reader.cancel(); throw new Error("code too big"); }
+      parts.push(value);
+    }
+    const out = new Uint8Array(total);
+    let at = 0;
+    for (const p of parts) { out.set(p, at); at += p.length; }
+    return out;
   },
 
   // The saved state in its smallest form: learned ids, and [right, wrong, choiceRight] per id.
@@ -30,14 +48,18 @@ const Backup = {
     for (const [setId, flags] of Object.entries(state.lessons || {})) {
       for (const key of Object.keys(flags)) if (flags[key]) l.push(`${setId}:${key}`);
     }
-    return l.length ? { v: 1, r: state.retired || [], s: stats, l } : { v: 1, r: state.retired || [], s: stats };
+    const out = { v: 1, r: state.retired || [], s: stats };
+    if (l.length) out.l = l;
+    // Points: [lifetime, week (Monday), this week].
+    if (state.pts) out.p = [state.pts.life || 0, state.pts.week || "", state.pts.wk || 0];
+    return out;
   },
 
   // Checks a restored code really is progress data, and turns it back into a saved state.
   // Returns null if it is not.
   unpack(data) {
     if (!data || data.v !== 1 || !Array.isArray(data.r) || typeof data.s !== "object" || !data.s) return null;
-    const goodId = (id) => typeof id === "string" && id.length > 0 && id.length <= 120;
+    const goodId = (id) => typeof id === "string" && id.length > 0 && id.length <= 120 && !this.BAD_KEYS.includes(id);
     const goodCount = (n) => Number.isInteger(n) && n >= 0 && n <= 100000;
     if (!data.r.every(goodId)) return null;
     const stats = {};
@@ -52,8 +74,14 @@ const Backup = {
       out.lessons = {};
       for (const x of data.l) {
         const [setId, key] = x.split(":");
+        if (this.BAD_KEYS.includes(setId) || this.BAD_KEYS.includes(key)) return null;
         out.lessons[setId] = Object.assign({}, out.lessons[setId], { [key]: true });
       }
+    }
+    if (data.p !== undefined) {
+      const p = data.p;
+      if (!Array.isArray(p) || p.length !== 3 || !goodCount(p[0]) || !goodCount(p[2]) || !/^(\d{4}-\d{2}-\d{2})?$/.test(p[1])) return null;
+      out.pts = { life: p[0], week: p[1], wk: p[2], earned: [] };
     }
     return out;
   },

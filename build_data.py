@@ -222,7 +222,28 @@ def build_quotes():
         gap_type = r.get("gap_type", "").strip().lower()
         if gap and gap_type not in GAP_TYPES:
             problems.append(f"{where}: gap word '{gap}' needs a gap_type (noun, verb, adjective, adverb or other)")
+    set_default_finish_prompts(out)
     return out
+
+
+def set_default_finish_prompts(quotes):
+    """Finish the quote shows only enough of the start to identify the quote, so students type as much as possible.
+    Default: the first two words, or more if another quote in the same text starts the same way.
+    A teacher's own finish_prompt (in quotes.csv) always wins."""
+    def norm(words):
+        return [re.sub(r"[^\w]", "", w).lower() for w in words]
+    for q in quotes:
+        if q["finish_prompt"]:
+            continue
+        words = q["quote"].split()
+        if len(words) < 6:
+            continue
+        others = [norm(o["quote"].split()) for o in quotes if o["text"] == q["text"] and o is not q]
+        most = len(words) // 2
+        n = min(2, most)
+        while n < most and any(o[:n] == norm(words)[:n] for o in others):
+            n += 1
+        q["finish_prompt"] = " ".join(words[:n])
 
 
 def build_poems():

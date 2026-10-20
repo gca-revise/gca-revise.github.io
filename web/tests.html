@@ -15,9 +15,11 @@
 <h1>Rule checks</h1>
 <div id="summary">Running...</div>
 <ul id="results"></ul>
+<script src="js/storage.js"></script>
 <script src="js/engine.js"></script>
 <script src="js/backup.js"></script>
 <script src="js/celebrate.js"></script>
+<script src="js/points.js"></script>
 <script>
 const results = [];
 function check(name, condition) { results.push({ name, ok: !!condition }); }
@@ -557,7 +559,8 @@ const pool = [
 }
 
 // ---- Streak celebration ----
-check("celebration milestones are 5, 10, 20, 50, 100", JSON.stringify(Celebrate.MILESTONES) === "[5,10,20,50,100]");
+const ms = Celebrate.MILESTONES;
+check("celebration milestones are 5, 10, 20, 50, 100, then every 50 up to 5000", JSON.stringify(ms.slice(0, 6)) === "[5,10,20,50,100,150]" && ms[ms.length - 1] === 5000 && ms.length === 103 && !ms.includes(125));
 {
   Celebrate.check(4);
   const none = !document.getElementById("celebrate");
@@ -565,6 +568,38 @@ check("celebration milestones are 5, 10, 20, 50, 100", JSON.stringify(Celebrate.
   const shown = !!document.getElementById("celebrate");
   Celebrate.clear();
   check("a streak of 5 celebrates, 4 does not", none && shown);
+}
+{
+  Celebrate.setComplete();
+  const layer = document.getElementById("celebrate");
+  check("finishing a set celebrates with a banner", !!layer && layer.textContent.includes("Set complete!"));
+  Celebrate.clear();
+}
+
+// ---- Points (weekly and lifetime) ----
+{
+  const saved = Store.load();
+  Store.save({});
+  check("a week starts on Monday", Points.weekKey(new Date(2026, 9, 21)) === "2026-10-19" && Points.weekKey(new Date(2026, 9, 25)) === "2026-10-19" && Points.weekKey(new Date(2026, 9, 26)) === "2026-10-26");
+  check("first-attempt right answer scores 1", Points.forAnswer("w1", true, true, 1) === 1);
+  check("same word again this week scores 0", Points.forAnswer("w1", true, true, 1) === 0);
+  check("a retry scores 0", Points.forAnswer("w2", true, false, 1) === 0);
+  check("a wrong answer scores 0 and takes nothing away", Points.forAnswer("w3", false, true, 0) === 0 && Points.weekly() === 1);
+  check("streak of 5 adds a bonus point", Points.forAnswer("w4", true, true, 5) === 2 && Points.weekly() === 3 && Points.lifetime() === 3);
+  check("a perfect match round scores 1, a repeat 0", Points.forMatchRound(["a", "b"], 1) === 1 && Points.forMatchRound(["a", "b"], 1) === 0);
+  const old = Store.load();
+  old.pts = { life: 10, week: "2000-01-03", wk: 7, earned: ["w1"] };
+  Store.save(old);
+  check("a new week resets the weekly score, not the lifetime score", Points.weekly() === 0 && Points.lifetime() === 10 && Points.forAnswer("w1", true, true, 1) === 1);
+  const m = Points.merge({ life: 5, week: "2026-10-19", wk: 2, earned: ["a"] }, { life: 9, week: "2026-10-19", wk: 1, earned: ["b"] });
+  check("merging points keeps the higher totals", m.life === 9 && m.wk === 2 && m.earned.length === 2);
+  const packed = Backup.pack({ retired: [], stats: {}, pts: { life: 12, week: "2026-10-19", wk: 4 } });
+  const un = Backup.unpack(JSON.parse(JSON.stringify(packed)));
+  check("points survive the save code", un && un.pts.life === 12 && un.pts.wk === 4 && un.pts.week === "2026-10-19");
+  check("ranks: 0 points is Wood, 50 is Stone, 3000+ is Diamond", Points.rank(0).name === "Wood" && Points.rank(49).name === "Wood" && Points.rank(50).name === "Stone" && Points.rank(99999).name === "Diamond");
+  const r = Points.rank(100);
+  check("rank shows points to the next rank and progress", r.next === "Bronze" && r.toNext === 50 && r.pct === 50 && Points.rank(99999).next === null);
+  Store.save(saved);
 }
 
 // ---- Sets / lessons ----

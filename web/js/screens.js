@@ -32,6 +32,21 @@ const backIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" st
 const penIcon = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222C69" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11a2.1 2.1 0 0 0-3-3L5 16l-1 4z"></path></svg>`;
 
 const Screens = {
+  // This week's and lifetime points (kept on this device).
+  pointsCard() {
+    const r = Points.rank();
+    return `
+      <section class="points-card" aria-label="Your points">
+        <div class="points-box"><div class="points-num">${Points.weekly()}</div><div class="points-label">Points this week</div></div>
+        <div class="points-box"><div class="points-num">${Points.lifetime()}</div><div class="points-label">Lifetime points</div></div>
+        <div class="points-box rank-box">
+          <div class="points-num">${esc(r.name)}</div>
+          <div class="points-label">${r.next ? `${plural(r.toNext, "point")} to ${esc(r.next)}` : "Top rank!"}</div>
+          ${progressBar(r.pct, 100)}
+        </div>
+      </section>`;
+  },
+
   home() {
     const retired = Store.retiredIds();
     const cards = Data.texts.map((t) => {
@@ -61,6 +76,7 @@ const Screens = {
         </a>
       </header>
       <main class="wrap">
+        ${Screens.pointsCard()}
         <h2 class="label">Your texts</h2>
         <div class="text-grid">${cards}</div>
         <h2 class="label">Across all texts</h2>
@@ -226,7 +242,7 @@ const Screens = {
       ${Screens.pageHead("Coming soon", "This practice style is being built.", NAVY, NAVY_TINT)}
       <main class="wrap" style="--accent:${NAVY};--tint:${NAVY_TINT}">
         <div class="card"><p>This part of GCA Revise isn't ready yet.</p>
-        <div class="pills"><a class="pill primary" href="${backHref}">${esc(backLabel)}</a></div></div>
+        <div class="pills"><a class="pill primary" href="${esc(backHref)}">${esc(backLabel)}</a></div></div>
       </main>`;
   },
 

@@ -3,6 +3,8 @@ const app = document.getElementById("app");
 
 // The game currently being played (null when not playing).
 let run = null;
+// What the first part of a lesson section scored, handed to the next part (see drawRun).
+let lessonCarry = null;
 
 function pick(list) {
   return list.length ? list[Math.floor(Math.random() * list.length)] : "";
@@ -62,29 +64,31 @@ function startMatch(textId, setId) {
   drawRun();
 }
 
-// One step of a set's lesson (choose, match, type or finish). `revise` = one pass through, nothing saved.
-function startLessonStep(textId, setId, stepKey, revise) {
+// One part of a set's lesson (choose, match, qmatch, type, finish or typeword). `revise` = one pass through, nothing saved.
+// `carry` holds what the earlier part of the same section scored, so the section's end screen adds it up.
+function startLessonStep(textId, setId, stepKey, revise, carry) {
   const set = Data.setById(setId);
-  const steps = set && set.text === textId ? Data.lessonSteps(set) : [];
-  const index = steps.findIndex((st) => st.key === stepKey);
-  if (index < 0) {
+  const parts = set && set.text === textId ? Data.lessonSteps(set) : [];
+  const part = parts.find((x) => x.key === stepKey);
+  if (!part) {
     location.hash = `#/text/${textId}`;
     return;
   }
-  const step = steps[index];
   const lesson = {
-    setId, key: stepKey, index, count: steps.length, revise: !!revise, name: step.name,
-    next: steps[index + 1] ? steps[index + 1].key : null,
+    setId, key: stepKey, flag: part.flag, section: part.section, sections: part.sections, revise: !!revise,
+    name: part.sectionName, next: part.next, nextName: part.nextName, nextSame: part.nextSame,
   };
   const mode = revise ? "free" : "learn";
-  if (stepKey === "match") {
-    const game = new MatchGame({ items: step.items, mode, retiredIds: Store.retiredIds() });
+  const carried = carry && carry.setId === setId && carry.key === stepKey && carry.revise === !!revise ? carry : null;
+  if (part.flag) {
+    const game = new MatchGame({ items: part.items, mode, retiredIds: Store.retiredIds(), distinct: stepKey === "qmatch" });
+    game.qmatch = stepKey === "qmatch";
     game.newRound();
-    run = { textId, kind: "match", session: game, phase: "question", last: null, sentence: "", lesson, covered: new Set(), wrongIds: new Set() };
+    run = { textId, kind: "match", session: game, phase: "question", last: null, sentence: "", lesson, covered: new Set(), wrongIds: new Set(), carry: carried };
   } else {
-    const typed = stepKey === "type" || stepKey === "finish";
+    const typed = stepKey !== "choose";
     const session = new Session({
-      items: step.items,
+      items: part.items,
       mode,
       kind: typed ? "type" : "choose",
       retiredIds: Store.retiredIds(),
@@ -94,9 +98,9 @@ function startLessonStep(textId, setId, stepKey, revise) {
       onePass: !!revise,
     });
     run = {
-      textId, kind: typed ? "type" : "choose", subject: typed ? "quote" : undefined, level: "know",
+      textId, kind: typed ? "type" : "choose", subject: typed && stepKey !== "typeword" ? "quote" : undefined, level: "know",
       game: stepKey === "type" ? "mgap" : stepKey === "finish" ? "mfinish" : undefined,
-      session, phase: "question", last: null, sentence: "", lesson,
+      session, phase: "question", last: null, sentence: "", lesson, carry: carried,
     };
     run.phase = session.next() ? "question" : "complete";
   }
@@ -122,6 +126,18 @@ function pickSentence(word, textId) {
 }
 
 function drawRun(keepScroll) {
+  // Parts of one section run back to back: no "Step done" screen between them.
+  if (run && run.lesson && run.phase === "complete" && run.lesson.nextSame) {
+    const l = run.lesson, s = run.session, prev = run.carry || {};
+    const isMatch = run.kind === "match";
+    lessonCarry = {
+      setId: l.setId, key: l.next, revise: l.revise,
+      earned: (prev.earned || 0) + (s.points || 0), bestStreak: Math.max(prev.bestStreak || 0, s.bestStreak || 0),
+      right: (prev.right || 0) + (isMatch ? 0 : s.right), wrong: (prev.wrong || 0) + (isMatch ? 0 : s.wrong),
+    };
+    location.hash = `#/text/${run.textId}/set/${l.setId}/${l.next}${l.revise ? "/revise" : ""}`;
+    return;
+  }
   app.innerHTML = Screens.run(run);
   if (!keepScroll) window.scrollTo(0, 0);
   // Put the cursor where the student needs it: the answer box, or the Next button.
@@ -155,7 +171,8 @@ function route() {
   } else if (parts[0] === "text" && parts[2] === "set" && parts.length === 4 && Data.setById(parts[3])) {
     html = Screens.setOverview(parts[3]);
   } else if (parts[0] === "text" && parts[2] === "set" && [5, 6].includes(parts.length) && Data.text(parts[1])) {
-    startLessonStep(parts[1], parts[3], parts[4], parts[5] === "revise");
+    startLessonStep(parts[1], parts[3], parts[4], parts[5] === "revise", lessonCarry);
+    lessonCarry = null;
     return;
   } else if (parts[0] === "text" && parts.length === 3) {
     html = Screens.comingSoon(`#/text/${parts[1]}`, "Back to the text");
@@ -208,7 +225,7 @@ app.addEventListener("click", (event) => {
   if (action.dataset.action === "round") {
     // The last round of a lesson's Match it step: every word has been matched, so the step is done.
     if (run.lesson && run.covered.size >= run.session.items.length) {
-      if (!run.lesson.revise) Store.setLessonFlag(run.lesson.setId, "match");
+      if (!run.lesson.revise) Store.setLessonFlag(run.lesson.setId, run.lesson.flag);
       run.phase = "complete";
       recordLessonResult();
       drawRun();
@@ -233,6 +250,11 @@ app.addEventListener("click", (event) => {
 function finishAnswer(result, choiceCount) {
   const word = run.session.current;
   Store.recordAnswer(word.id, result.correct, result.retiredNow, choiceCount);
+  // Points: nothing in Revise everything; a retry after a miss scores nothing.
+  const session = run.session;
+  const gained = session.mode === "learn" ? Points.forAnswer(word.id, result.correct, !session.missed[word.id], session.streak) : 0;
+  run.earned = (run.earned || 0) + gained;
+  session.points = run.earned;
   if (result.correct) {
     Sound.ding();
     Celebrate.check(run.session.streak);
@@ -278,7 +300,11 @@ app.addEventListener("click", (event) => {
     }
     if (outcome === "match") Sound.ding();
     // A perfect round adds one to the streak; celebrate a milestone.
-    if (outcome === "match" && run.session.roundDone && run.session.slips === 0) Celebrate.check(run.session.streak);
+    if (outcome === "match" && run.session.roundDone && run.session.slips === 0) {
+      if (run.session.mode === "learn") run.earned = (run.earned || 0) + Points.forMatchRound(run.session.words.map((w) => w.id), run.session.streak);
+      run.session.points = run.earned || 0;
+      Celebrate.check(run.session.streak);
+    }
     if (run.session.roundDone && run.lesson) run.session.words.forEach((w) => run.covered.add(w.id));
     if (run.session.roundDone) run.phase = "done";
     drawRun(run.phase === "question");
