@@ -55,7 +55,11 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 
 - 19 Oct (later): Revise everything top bar shows right/wrong, no progress bar; Finish the quote shows the smaller half as the prompt; set page has a "Got wrong last time" card (saved per set and step as `lessonWrong`) and a richer "What is in this set" (quotes with speaker and act/scene, vocab tap-for-meaning); Spot the technique fixes for "Fair is foul" (Fricative, Repetition) and close-technique groups.
 
+## Built 20 Oct: QR code and poster
+- `python3 make_qr.py` (needs `pip install segno`) writes `web/qr/gca-revise-qr.svg` and `.png` and the A4 poster `web/poster.html` (live at /poster.html; open and print). The user tested the code with a phone and it works. It points at https://gca-revise.github.io/; if we move to a new domain, change `URL` in the script, rerun, and reprint. Crest left off the poster until the school agrees.
+
 ## Next steps
+0. Hold off printing posters until IT unblocks the site on school devices and the domain is settled.
 1. The user tries the lessons on a phone and Chromebook, then asks teachers what they think of them (length, order of steps, set choices).
 2. User/teacher: check all the sets (which quotes and words sit where; Claude's first draft). Every quote and every key word is now in at least one set.
 3. Check IT's reply (github.io and *.supabase.co unblocked? route to Microsoft sign-in?). Sign-in cannot start until then.
