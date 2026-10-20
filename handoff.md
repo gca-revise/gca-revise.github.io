@@ -75,6 +75,8 @@ Short on purpose. Replace the "Now" and "Next steps" sections each session; do n
 
 - **20 Oct: Match the quote bug fixed** (PR #16): quote ids contain colons (`qm:...`) and the click handler split on every colon, so no quote pair could match (it dinged, nothing changed). `Engine.parseCell` now cuts at the first colon only; all 45 sets with quote matching were played with real clicks. **Cache busting** (PR #17): the publish workflow adds `?v=<commit>` to scripts, styles and data in the published copy, because a phone kept running the old cached files after the fix (worked in a private tab). If something works in a private tab but not a normal one, it is a cached copy. Test matching with real clicks (not only by calling `select`), because ids with odd characters only fail through the DOM.
 
+- **20 Oct (PR #19): finished screens show what you got wrong.** A "See what you got wrong (N)" button (and the Wrong tile) opens a list of the missed quotes (with speaker and act/scene) and key words (tap for meaning); a section counts all its parts (`carry.missed`, `Screens.missedBox`, `Data.entryFor`). Also fixed the unreadable points line on the dark finished screens. User checked: all good.
+
 ## Next steps
 0. Hold off printing posters until IT unblocks the site on school devices and the domain is settled.
 0. **REMIND THE USER FIRST (20 Oct):** (a) delete the two test accounts in the Supabase dashboard (Authentication, Users), or add an `execute_sql` permission rule so Claude can; (b) give Claude the GitHub noreply email (Settings, Emails) for future commits; (c) decide whether to rewrite old git history to remove the Gmail address and teacher's name (Claude advises no); (d) fill in the [brackets] in `paperwork/` and send to the school DPO.
