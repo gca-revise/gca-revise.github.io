@@ -67,3 +67,4 @@ A student made their own version of the revision app and put it on Netlify (a fr
 
 ## Model paragraph at the end of most sets (user's vision, 21 Oct)
 Most sets would end with a high-level model paragraph using one or two quotes and some key vocab from that set, as a "Complete the paragraph" part (gaps = the set's vocab). Needs: a `set` column in `models.csv`; a build check that the model's quotes and gap words belong to the set; a lesson part that is skipped when the set has no model. Open questions: who writes the roughly 58 paragraphs (user, Claude draft for the teacher to edit, or a mix); whether it counts toward Set complete and the +20 bonus.
+- Decided (user, 21 Oct): finishing the set's model paragraph earns a +15 bonus after Set complete (separate from the +20 set bonus). Still open: once per set or weekly; who writes the paragraphs; optional tap-a-word click version as an easier first pass.
