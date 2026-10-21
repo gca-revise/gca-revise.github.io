@@ -180,13 +180,19 @@ Object.assign(Screens, {
     const played = isMatch ? s.rounds > 0 : s.right + s.wrong > 0;
     const wrongIds = (c.missed || []).concat(isMatch ? Array.from(run.wrongIds) : Object.keys(s.missed));
     const missed = played ? Screens.missedBox(wrongIds, s.items) : { count: 0, html: "" };
+    // Finishing every step of a set (typed steps included) pays a one-off bonus.
+    if (last && !lesson.revise && !run.bonusChecked) {
+      run.bonusChecked = true;
+      if (Screens.setStatus(set).complete) run.bonus = Points.setBonus(set.id);
+    }
+    const bonus = run.bonus || 0;
     const tile = (num, label, colour, tappable) =>
       tappable && missed.count
         ? `<button type="button" class="tile tile-tap" data-toggle-wrong aria-label="Show what you got wrong"><div class="tile-num" style="color:${colour}">${num}</div><div class="tile-label">${label} <span class="tile-more">tap to see</span></div></button>`
         : `<div class="tile"><div class="tile-num"${colour ? ` style="color:${colour}"` : ""}>${num}</div><div class="tile-label">${label}</div></div>`;
     const tiles = !played ? "" : !isMatch
-      ? `${tile(s.points + (c.earned || 0), "Points")}${tile(Math.max(s.bestStreak, c.bestStreak || 0), "Best streak")}${tile(s.right + (c.right || 0), "Right", "#17724B")}${tile(s.wrong + (c.wrong || 0), "Wrong along the way", "#B42A47", true)}`
-      : `${tile(s.points + (c.earned || 0), "Points")}${tile(Math.max(s.bestStreak, c.bestStreak || 0), "Best streak")}${tile(s.perfectRounds, "Perfect rounds", "#17724B")}${tile(s.rounds, "Rounds")}`;
+      ? `${tile(s.points + (c.earned || 0) + bonus, "Points")}${tile(Math.max(s.bestStreak, c.bestStreak || 0), "Best streak")}${tile(s.right + (c.right || 0), "Right", "#17724B")}${tile(s.wrong + (c.wrong || 0), "Wrong along the way", "#B42A47", true)}`
+      : `${tile(s.points + (c.earned || 0) + bonus, "Points")}${tile(Math.max(s.bestStreak, c.bestStreak || 0), "Best streak")}${tile(s.perfectRounds, "Perfect rounds", "#17724B")}${tile(s.rounds, "Rounds")}`;
     const base = `#/text/${run.textId}/set/${lesson.setId}`;
     const tail = lesson.revise ? "/revise" : "";
     // Celebrate once per run (the screen can be drawn more than once).
@@ -199,7 +205,7 @@ Object.assign(Screens, {
     const message = last
       ? (lesson.revise
         ? `That was one more pass through ${esc(set.name)}.`
-        : `You've finished every step of ${esc(set.name)}. Well done.`)
+        : `You've finished every step of ${esc(set.name)}. Well done.${bonus ? ` Bonus: +${bonus} points for completing the set!` : ""}`)
       : (played
         ? `${esc(lesson.name)} is finished. Next up: ${esc(nextName)}.`
         : `You already know all of these, so there was nothing to ask. Next up: ${esc(nextName)}.`);

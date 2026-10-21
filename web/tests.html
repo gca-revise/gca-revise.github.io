@@ -588,6 +588,11 @@ check("celebration milestones are 5, 10, 20, 50, 100, then every 50 up to 5000",
   check("a retry scores 0", Points.forAnswer("w2", true, false, 1) === 0);
   check("a wrong answer scores 0 and takes nothing away", Points.forAnswer("w3", false, true, 0) === 0 && Points.weekly() === 1);
   check("streak of 5 adds a bonus point", Points.forAnswer("w4", true, true, 5) === 2 && Points.weekly() === 3 && Points.lifetime() === 3);
+  const beforeBonus = Points.lifetime();
+  check("completing a set pays the bonus once", Points.setBonus("some-set") === Points.SET_BONUS && Points.lifetime() === beforeBonus + Points.SET_BONUS);
+  check("the same set never pays twice", Points.setBonus("some-set") === 0 && Points.lifetime() === beforeBonus + Points.SET_BONUS);
+  check("another set pays its own bonus", Points.setBonus("other-set") === Points.SET_BONUS);
+  check("the bonus record survives a merge", Points.merge({ sets: ["a"], life: 1, week: "x" }, { sets: ["b"], life: 2, week: "x" }).sets.length === 2);
   check("a perfect match round scores 1, a repeat 0", Points.forMatchRound(["a", "b"], 1) === 1 && Points.forMatchRound(["a", "b"], 1) === 0);
   const old = Store.load();
   old.pts = { life: 10, week: "2000-01-03", wk: 7, earned: ["w1"] };
