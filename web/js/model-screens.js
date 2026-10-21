@@ -37,13 +37,13 @@ Object.assign(Screens, {
       <main class="wrap" style="--accent:${look.colour};--tint:${look.tint}">
         <form id="model-form" class="model-box model-gaps" autocomplete="off"${lesson ? " data-lesson" : ""}>
           <p class="model-title">Word bank (alphabetical, each used once)</p>
-          <p class="bank-help">Type into the gaps, or drag a word into a gap, or tap a word and then tap a gap. Tap a placed word to take it back.</p>
+          <p class="bank-help">Type into the gaps, or drag a word into a gap, or tap a word and then tap a gap. Double-tap a gap to empty it.</p>
           <p class="word-bank">${bank}</p>
           ${parts}
           <p id="model-result" class="model-result" role="status"></p>
           <div class="model-actions">
             <button type="submit" class="check-btn">Check</button>
-            <button type="button" class="pill" data-model-show>${lesson ? "Show answers (the step stays to do)" : "Show answers"}</button>
+            <button type="button" class="pill" data-model-show>Give up and reveal answers</button>
             ${lesson
               ? `<button type="button" class="check-btn" data-model-continue hidden>Finish this step</button>
                  <a class="pill" href="#/text/${textId}/set/${lesson.setId}">Back to the set</a>`
@@ -58,6 +58,7 @@ app.addEventListener("submit", (event) => {
   const form = event.target.closest("#model-form");
   if (!form) return;
   event.preventDefault();
+  if (form.dataset.shown) return;  // answers were revealed: no checking after that
   const inputs = [...form.querySelectorAll(".gap-input")];
   let right = 0;
   let firstBad = null;
@@ -84,6 +85,8 @@ app.addEventListener("submit", (event) => {
   if (cont && right === inputs.length && !form.dataset.shown) cont.hidden = false;
 });
 
+const lessonNote = (form) => form.hasAttribute("data-lesson");
+
 app.addEventListener("click", (event) => {
   if (event.target.closest("[data-model-continue]")) {
     finishModelStep();
@@ -99,7 +102,15 @@ app.addEventListener("click", (event) => {
     input.classList.add("gap-ok");
     input.readOnly = true;
   }
-  form.querySelector("#model-result").textContent = "Here are the answers. Read the paragraph through, then try again another day.";
+  form.querySelector("#model-result").textContent = lessonNote(form)
+    ? "Here are the answers. This step is still to do, so read the paragraph through and come back to try it again."
+    : "Here are the answers. Read the paragraph through, then try again another day.";
+  // No more checking: the Check and reveal buttons give way to the way back.
+  form.querySelector(".check-btn:not([data-model-continue])").hidden = true;
+  show.hidden = true;
+  const cont = form.querySelector("[data-model-continue]");
+  if (cont) cont.hidden = true;
+  form.querySelector(".model-actions .pill:not([data-model-show])").classList.add("primary");
 });
 
 // The word bank: drag a word into a gap, or tap a word and then tap a gap. Typing in a gap still works.
@@ -128,14 +139,28 @@ app.addEventListener("click", (event) => {
     chip.classList.add("used");
     choose(null);
   };
-  const gapAt = (x, y) => {
-    const el = document.elementFromPoint(x, y);
-    return el ? el.closest(".gap-input") : null;
+  // The gap being touched: the one the dragged word overlaps most (a little slack all round), so the word
+  // drops in when it touches any part of the gap, not just when the pointer is exactly on it.
+  const SLACK = 8;
+  const gapAt = (ghost, x, y) => {
+    const box = ghost ? ghost.getBoundingClientRect() : { left: x, right: x, top: y, bottom: y };
+    let best = null, bestArea = -1, bestDist = Infinity;
+    for (const g of app.querySelectorAll(".gap-input")) {
+      if (g.readOnly) continue;
+      const r = g.getBoundingClientRect();
+      const w = Math.min(box.right, r.right + SLACK) - Math.max(box.left, r.left - SLACK);
+      const h = Math.min(box.bottom, r.bottom + SLACK) - Math.max(box.top, r.top - SLACK);
+      if (w < 0 || h < 0) continue;
+      const area = w * h;
+      const dist = Math.hypot((box.left + box.right) / 2 - (r.left + r.right) / 2, (box.top + box.bottom) / 2 - (r.top + r.bottom) / 2);
+      if (area > bestArea || (area === bestArea && dist < bestDist)) { best = g; bestArea = area; bestDist = dist; }
+    }
+    return best;
   };
-  const overGap = (x, y) => {
+  const overGap = (ghost, x, y) => {
     for (const g of app.querySelectorAll(".gap-over")) g.classList.remove("gap-over");
-    const g = gapAt(x, y);
-    if (g && !g.readOnly) g.classList.add("gap-over");
+    const g = gapAt(ghost, x, y);
+    if (g) g.classList.add("gap-over");
   };
 
   app.addEventListener("pointerdown", (event) => {
@@ -164,7 +189,7 @@ app.addEventListener("click", (event) => {
     }
     drag.ghost.style.left = event.clientX + "px";
     drag.ghost.style.top = event.clientY + "px";
-    overGap(event.clientX, event.clientY);
+    overGap(drag.ghost, event.clientX, event.clientY);
   });
 
   const endDrag = (event, dropped) => {
@@ -173,11 +198,12 @@ app.addEventListener("click", (event) => {
     drag = null;
     for (const g of app.querySelectorAll(".gap-over")) g.classList.remove("gap-over");
     if (!ghost) return;  // it was a tap: the click handler deals with it
+    const target = dropped ? gapAt(ghost, event.clientX, event.clientY) : null;
     ghost.remove();
     chip.classList.remove("dragging");
     justDragged = true;
     setTimeout(() => { justDragged = false; }, 0);
-    if (dropped) place(chip, gapAt(event.clientX, event.clientY));
+    place(chip, target);
   };
   document.addEventListener("pointerup", (event) => endDrag(event, true));
   document.addEventListener("pointercancel", (event) => endDrag(event, false));
@@ -194,6 +220,16 @@ app.addEventListener("click", (event) => {
       return;
     }
     choose(selected === chip ? null : chip);
+  });
+
+  // Double-click or double-tap a gap to empty it (its word goes back to the bank).
+  app.addEventListener("dblclick", (event) => {
+    const input = event.target.closest(".gap-input");
+    if (!input || input.readOnly) return;
+    input.value = "";
+    free(input._chip);
+    input._chip = null;
+    input.classList.remove("gap-bad", "gap-near");
   });
 
   // Typing over a placed word sends that word back to the bank.

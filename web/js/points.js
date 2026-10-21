@@ -81,6 +81,9 @@ const Points = {
   },
 
   // The extra bonus for a set that ends with a model paragraph: paid once per set, when the whole set is done.
+  modelBonusPaid(setId) {
+    return this.read().sets.includes(setId + ":model");
+  },
   modelBonus(setId) {
     const key = setId + ":model";
     if (this.read().sets.includes(key)) return 0;
