@@ -19,6 +19,10 @@ This file is public, so the list is kept short and general. The detailed report 
 - **Switch steps** (the user does the GitHub settings; Claude does the rest): (1) rename this project from `gca-revise.github.io` to `gca-revise-work` (the site goes offline); (2) Claude creates the new public `gca-revise.github.io` and publishes with the script; (3) user turns on Pages there (Settings, Pages, Source: GitHub Actions); (4) user makes `gca-revise-work` private (Settings, General, Danger Zone, Change visibility); (5) Claude deletes `.github/workflows/pages.yml` from this project (Pages cannot publish a private project on the free plan) and fixes the notes. Status: prepared, the switch has not been done yet.
 - Afterwards: start new Claude sessions with `gca-revise-work` selected; on the Chromebook run `git remote set-url origin https://github.com/gca-revise/gca-revise-work.git`. The Supabase settings and the QR code do not change (same site address).
 
+## Student-friendly quote notes (21 Oct)
+- "About this quote" now comes from the `student_note` column in `quotes.csv` (written by Claude from the teacher note, technique note and context; blank for 4 poem quotes with no good source). `sheet_note` stays in the CSV for the teacher but is never published.
+- **Teacher to check** the notes. Still undecided (user has not chosen yet): phone keyboard jumping/covering the quote, and the typing exercise being too hard (see the options given in the 21 Oct session).
+
 ## Now
 - **Live at https://gca-revise.github.io/** (repo gca-revise/gca-revise.github.io, public). Soft launch with teachers. Pushing to `main` republishes the site in about a minute.
 - Plain HTML/CSS/JavaScript in `web/`. Run locally: `cd web && python3 -m http.server 8765`, then http://localhost:8765 (rule checks at /tests.html).

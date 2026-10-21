@@ -203,7 +203,7 @@ def build_quotes():
             "techniques": split(r["techniques"], ";"),
             "technique_notes": split(r["technique_notes"], "|"),
             "context": r["context"].strip(),
-            "note": r["sheet_note"].strip(),
+            "note": r["student_note"].strip(),
             # Techniques from techniques.csv named in this quote's labels (for "Spot the technique").
             "technique_matches": [name for name, rx in patterns if rx.search(labels)],
             # The ones in the `techniques` column (the teacher's own analysis) are the answers in
