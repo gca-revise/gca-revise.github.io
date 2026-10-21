@@ -3,7 +3,7 @@
 Open this only when choosing the next feature. Nothing here is decided. When the user decides, move the line to `handoff.md` (as a next step) or mark it "dropped".
 
 ## From the teacher pitch (16 Oct)
-- Model paragraphs (teacher-written)
+- Model paragraphs (teacher-written): six build options in `brainstorm-model-paragraphs.md` (21 Oct)
 - Cloze activities (fill the gaps in a longer passage)
 - Images (character pictures on quotes; check copyright, keep one consistent style)
 - Dual coding (words paired with visuals; builds on images)
