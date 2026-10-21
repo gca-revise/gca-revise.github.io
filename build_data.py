@@ -355,11 +355,14 @@ def blank_gaps(parts, gaps, where):
     def quoted(text, pos):
         return text[:pos].count('"') % 2 == 1
     for word in gaps:
+        # A leading * lets the gap sit inside a quotation (and it may be several words).
+        in_quotes = word.startswith("*")
+        word = word.lstrip("*").strip()
         rx = re.compile(r"(?<![\w'])" + re.escape(word) + r"(?![\w'])", re.I)
         found = False
         for i, p in enumerate(parts):
             for m in rx.finditer(p["text"]):
-                if quoted(p["text"], m.start()):
+                if not in_quotes and quoted(p["text"], m.start()):
                     continue
                 spans.append((i, m.start(), m.end()))
                 found = True
@@ -410,8 +413,8 @@ def build_models(quotes, drafts):
                 problems.append(f"{where}: each part needs 'Label :: text'")
                 continue
             parts.append({"label": label.strip(), "text": text.strip()})
-        gaps = split(r.get("gaps", ""), ";")
-        blank_gaps(parts, gaps, where)
+        gaps = [g.lstrip("*").strip() for g in split(r.get("gaps", ""), ";")]
+        blank_gaps(parts, split(r.get("gaps", ""), ";"), where)
         out.append({"id": r["id"], "text": r["text"].strip(), "title": r["title"].strip(),
                     "quotes": ids, "parts": parts, "gaps": gaps})
     return out
