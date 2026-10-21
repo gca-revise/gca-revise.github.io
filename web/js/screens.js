@@ -229,6 +229,7 @@ const Screens = {
         ${Screens.setsSection(id)}
         ${Data.setsFor(id).length ? `<h2 class="label">Practise everything</h2>` : ""}
         ${Screens.modeSwitch(Store.getMode())}
+        ${Screens.modelCard(id)}
         <div class="card-grid">
           ${Screens.revisitCard(id)}
           ${Screens.quotesCard(id, quotesLearned, quotes.length, retired)}

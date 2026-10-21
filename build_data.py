@@ -348,6 +348,42 @@ def build_symbols():
     } for r in read("symbols")]
 
 
+def blank_gaps(parts, gaps, where):
+    """Add `pieces` to each part: the text cut into plain text and gaps ({"gap": word}) for "Complete the paragraph".
+    Each gap word blanks its first appearance outside quotation marks and not already blanked."""
+    spans = []  # (part index, start, end, word) already chosen
+    def quoted(text, pos):
+        return text[:pos].count('"') % 2 == 1
+    for word in gaps:
+        rx = re.compile(r"(?<![\w'])" + re.escape(word) + r"(?![\w'])", re.I)
+        found = False
+        for i, p in enumerate(parts):
+            for m in rx.finditer(p["text"]):
+                if quoted(p["text"], m.start()):
+                    continue
+                spans.append((i, m.start(), m.end()))
+                found = True
+                break
+            if found:
+                break
+        if not found:
+            problems.append(f"{where}: gap word '{word}' not found outside the quotes")
+    for i, p in enumerate(parts):
+        mine = sorted((a, b) for j, a, b in spans if j == i)
+        pieces, pos = [], 0
+        for a, b in mine:
+            if a < pos:
+                problems.append(f"{where}: two gaps overlap in part '{p['label']}'")
+                continue
+            if a > pos:
+                pieces.append({"text": p["text"][pos:a]})
+            pieces.append({"gap": p["text"][a:b]})
+            pos = b
+        if pos < len(p["text"]):
+            pieces.append({"text": p["text"][pos:]})
+        p["pieces"] = pieces
+
+
 def build_models(quotes, drafts):
     """The teacher's model paragraphs, keyed by quote id. models.csv is private (git-ignored); only rows
     marked teacher_approved = yes are published, unless the script is run with --drafts (local testing only)."""
@@ -374,8 +410,10 @@ def build_models(quotes, drafts):
                 problems.append(f"{where}: each part needs 'Label :: text'")
                 continue
             parts.append({"label": label.strip(), "text": text.strip()})
+        gaps = split(r.get("gaps", ""), ";")
+        blank_gaps(parts, gaps, where)
         out.append({"id": r["id"], "text": r["text"].strip(), "title": r["title"].strip(),
-                    "quotes": ids, "parts": parts})
+                    "quotes": ids, "parts": parts, "gaps": gaps})
     return out
 
 

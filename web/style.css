@@ -406,6 +406,19 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outlin
 .model-part { margin: 8px 0 0; }
 .model-label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
 .model-box mark { background: #FFE88A; color: inherit; border-radius: 3px; padding: 0 2px; }
+.model-gaps { max-width: 760px; margin: 16px 0; background: #fff; line-height: 2.1; }
+.model-gaps .model-part { margin: 12px 0 0; }
+.word-bank { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 8px; line-height: 1.4; }
+.bank-word { background: var(--tint, #eee); border-radius: 999px; padding: 2px 12px; font-weight: 600; }
+.gap-input {
+  font: inherit; padding: 1px 6px; border: 0; border-bottom: 2px solid var(--muted); border-radius: 4px 4px 0 0;
+  background: rgba(0, 0, 0, 0.04); text-align: center; min-width: 4ch;
+}
+.gap-ok { border-bottom-color: #1E7B4F; background: #DFF3E8; }
+.gap-near { border-bottom-color: #C47A00; background: #FFF0D0; }
+.gap-bad { border-bottom-color: #B3261E; background: #FBE0DD; }
+.model-result { font-weight: 700; margin: 14px 0 4px; line-height: 1.4; }
+.model-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 8px; }
 .mc-fb .model-box { max-width: none; }
 .fb-btn { width: 100%; max-width: 420px; color: #fff; }
 .right .fb-btn { background: #17724B; }

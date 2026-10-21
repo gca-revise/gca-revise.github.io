@@ -192,6 +192,8 @@ function route() {
     startLessonStep(parts[1], parts[3], parts[4], parts[5] === "revise", lessonCarry);
     lessonCarry = null;
     return;
+  } else if (parts[0] === "text" && parts[2] === "model" && parts.length === 4) {
+    html = Screens.modelGaps(parts[1], parts[3]);
   } else if (parts[0] === "text" && parts.length === 3) {
     html = Screens.comingSoon(`#/text/${parts[1]}`, "Back to the text");
   } else if (parts[0] === "backup" && parts.length === 1) {
