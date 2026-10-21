@@ -91,7 +91,7 @@ Object.assign(Screens, {
       <details class="model-box">
         <summary>See a model paragraph</summary>
         <p class="model-title">${esc(m.title)}</p>
-        ${m.parts.map((p) => `<p class="model-part"><span class="model-label">${esc(p.label)}</span>${mark(p.text)}</p>`).join("")}
+        ${m.parts.map((p) => `<p class="model-part">${p.label ? `<span class="model-label">${esc(p.label)}</span>` : ""}${mark(p.text)}</p>`).join("")}
       </details>`).join("");
   },
 

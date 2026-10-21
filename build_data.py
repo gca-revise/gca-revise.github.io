@@ -387,7 +387,7 @@ def blank_gaps(parts, gaps, where):
         p["pieces"] = pieces
 
 
-def build_models(quotes, drafts):
+def build_models(quotes, sets, drafts):
     """The teacher's model paragraphs, keyed by quote id. models.csv is private (git-ignored); only rows
     marked teacher_approved = yes are published, unless the script is run with --drafts (local testing only)."""
     path = ROOT / "models.csv"
@@ -408,15 +408,28 @@ def build_models(quotes, drafts):
                 problems.append(f"{where}: unknown quote id '{qid}'")
         parts = []
         for seg in split(r["parts"], "|"):
+            # "Label :: text" shows a label; plain text is an unlabelled paragraph.
             label, sep, text = seg.partition("::")
-            if not sep or not label.strip() or not text.strip():
-                problems.append(f"{where}: each part needs 'Label :: text'")
+            if not sep:
+                label, text = "", seg
+            if not text.strip():
+                problems.append(f"{where}: empty part")
                 continue
             parts.append({"label": label.strip(), "text": text.strip()})
+        # A model that ends a set may only use that set's quotes.
+        set_id = r.get("set", "").strip()
+        if set_id:
+            members = next((st["quotes"] for st in sets if st["id"] == set_id), None)
+            if members is None:
+                problems.append(f"{where}: unknown set '{set_id}'")
+            else:
+                for qid in ids:
+                    if qid not in members:
+                        problems.append(f"{where}: quote '{qid}' is not in set '{set_id}'")
         gaps = [g.lstrip("*").strip() for g in split(r.get("gaps", ""), ";")]
         blank_gaps(parts, split(r.get("gaps", ""), ";"), where)
         out.append({"id": r["id"], "text": r["text"].strip(), "title": r["title"].strip(),
-                    "quotes": ids, "parts": parts, "gaps": gaps})
+                    "quotes": ids, "set": set_id, "parts": parts, "gaps": gaps})
     return out
 
 
@@ -427,16 +440,17 @@ def main():
     missing_sentences = attach_sentences(vocab)
     attach_tags(vocab)
     quotes = build_quotes()
+    sets = build_sets(vocab, quotes)
     data = {
         "texts": TEXTS,
         "vocab": vocab,
         "quotes": quotes,
-        "sets": build_sets(vocab, quotes),
+        "sets": sets,
         "poems": build_poems(),
         "techniques": build_techniques(read("quotes")),
         "symbols": build_symbols(),
         "characters": build_characters(),
-        "models": build_models(quotes, drafts),
+        "models": build_models(quotes, sets, drafts),
     }
     for name, value in data.items():
         with open(OUT / f"{name}.json", "w", encoding="utf-8") as f:

@@ -28,7 +28,7 @@ Object.assign(Screens, {
         return `<input class="gap-input" type="text" data-answer="${esc(piece.gap)}" size="${size}" aria-label="Gap ${++n}"
           autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">`;
       }).join("");
-      return `<p class="model-part"><span class="model-label">${esc(p.label)}</span>${body}</p>`;
+      return `<p class="model-part">${p.label ? `<span class="model-label">${esc(p.label)}</span>` : ""}${body}</p>`;
     }).join("");
     const bank = m.gaps.slice().sort((a, b) => a.localeCompare(b)).map((w) => `<span class="bank-word">${esc(w)}</span>`).join("");
     return `
