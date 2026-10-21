@@ -399,8 +399,10 @@ const pool = [
   check("two words off in a short ending is wrong", QuoteTools.checkEnding("is my head dear husband", "is my mind dear wife") === "wrong");
   check("a different ending is wrong", QuoteTools.checkEnding("something else entirely", "is my mind dear wife") === "wrong");
   check("blank is wrong", QuoteTools.checkEnding("   ", "is my mind dear wife") === "wrong");
-  check("a missing word is never fully right", QuoteTools.checkEnding("i have almost forgot the taste of fear", "i have almost forgot the taste of fears and") === "near");
-  check("a missing word in a short ending is 'near', not right", QuoteTools.checkEnding("living and they do not", "living and they do not care") === "near");
+  check("one wrong word in a long ending (6+ words) is forgiven", QuoteTools.checkEnding("i have almost forgot the taste of fear", "i have almost forgot the taste of fears and") === "right");
+  check("a missing word in a short ending is 'near', not right", QuoteTools.checkEnding("is my mind dear", "is my mind dear wife") === "near");
+  check("students never type more than 8 words", QuoteTools.splitQuote("a b c d e f g h i j k l m n o p q r s t").rest.split(" ").length === 8 && QuoteTools.splitQuote("a b c d e f g h i j k l", "a b").prompt === "a b c d");
+  check("a quote of 8 words or fewer is split as before", QuoteTools.splitQuote("one two three four five six seven eight").prompt === "one two three four");
   check("two words out in a long ending is not right", QuoteTools.checkEnding("i have almost forgot taste of fears", "i have almost forgot the taste of fears and") !== "right");
 
   const gapItems = QuoteTools.masterItems(quotes, "macbeth", "mgap", techniques);

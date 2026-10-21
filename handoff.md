@@ -21,7 +21,7 @@ This file is public, so the list is kept short and general. The detailed report 
 
 ## Student-friendly quote notes (21 Oct)
 - "About this quote" now comes from the `student_note` column in `quotes.csv` (written by Claude from the teacher note, technique note and context; blank for 4 poem quotes with no good source). `sheet_note` stays in the CSV for the teacher but is never published.
-- **Teacher to check** the notes. Still undecided (user has not chosen yet): phone keyboard jumping/covering the quote, and the typing exercise being too hard (see the options given in the 21 Oct session).
+- **Teacher to check** the notes. Also done 21 Oct: the keyboard no longer hides the quote (page scrolls the quote to the top when the answer box opens) and Finish the quote has an 8-word typing cap (`QuoteTools.MAX_TYPED_WORDS`) plus one word of forgiveness in endings of 6+ words. Check on a real phone.
 
 ## Now
 - **Live at https://gca-revise.github.io/** (repo gca-revise/gca-revise.github.io, public). Soft launch with teachers. Pushing to `main` republishes the site in about a minute.
