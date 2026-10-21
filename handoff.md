@@ -3,7 +3,7 @@
 Short on purpose. Replace the "Now" and "Next steps" sections each session; do not add a diary. History and the reasons behind old decisions: `handoff-archive.md` (open only when needed). Possible features not yet agreed: `ideas.md`.
 
 ## PRIORITY: weak spots to fix (from the 21 Oct privacy and security check)
-This file is public, so the list is kept short and general. The detailed report is kept private (not in the repo); to get a fresh one, run the `privacy-checker` agent.
+This file is public, so the list is kept short and general. The detailed report is kept private: on 21 Oct it was removed from the repo and `privacy-report*.md` is now git-ignored (the 19 and 21 Oct versions are still in the public git history). To get a fresh one, run the `privacy-checker` agent; it will save `privacy-report.md` locally and git will ignore it.
 1. **Supabase settings (the dashboard, Authentication):** the Redirect URLs list only the real site (and localhost for testing), with no wildcards; the email rate limits stay on; when Microsoft sign-in goes in, turn off open email sign-up so only school accounts can sign up. A copy of the site could otherwise use our Supabase project as its own back end.
 2. **Delete the two test accounts** in Supabase (one is a school email address). Deleting a user also deletes their progress row.
 3. **School paperwork before any student signs in:** processor contract with the school, who is controller and who is processor, school IT and data protection officer sign-off, a decision on a data protection impact assessment. Drafts are in `paperwork/`; send them to the DPO.
