@@ -25,6 +25,11 @@ This file is public, so the list is kept short and general. The detailed report 
 
 - Points: +20 bonus once per set when every step incl. the typed ones is done (`Points.SET_BONUS` in `points.js`). Backup codes don't carry which sets were paid.
 
+## End of 21 Oct session (all merged to `main` and live)
+- Done: student-friendly quote notes (`student_note`, teacher to check), phone keyboard keeps the quote in view, Finish the quote capped at 8 typed words with one word forgiven in long endings, +20 set-complete bonus (typed steps required).
+- Next: model paragraphs. Options and suggested order (1 see-a-model button, 3 fill-the-gaps, 2 colour-coded) are in `brainstorm-model-paragraphs.md`. The source `model-writing-*.md` files are only on the Chromebook, so start that build there; user picks the text first. Fix the Jekyll/Hyde "Jekyll for Lanyon" slip first.
+- Still waiting: the repo switch (user to rename to `gca-revise-work`), IT unblocking, school data-protection paperwork, teacher checks.
+
 ## Now
 - **Live at https://gca-revise.github.io/** (repo gca-revise/gca-revise.github.io, public). Soft launch with teachers. Pushing to `main` republishes the site in about a minute.
 - Plain HTML/CSS/JavaScript in `web/`. Run locally: `cd web && python3 -m http.server 8765`, then http://localhost:8765 (rule checks at /tests.html).
