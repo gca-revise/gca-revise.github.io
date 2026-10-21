@@ -4771,5 +4771,27 @@
   "examples_approved": true,
   "core": false,
   "tags": []
+ },
+ {
+  "id": "the-great-chain-of-being",
+  "word": "The great chain of being",
+  "definition": "The Jacobean belief that everything has a fixed place on a ladder, with God at the top, then the king, then everyone else, down to animals and plants.",
+  "texts": [
+   "macbeth"
+  ],
+  "topic": "The Natural Order",
+  "examples": [
+   "Macbeth breaks the great chain of being when he kills Duncan, because the king sits just below God.",
+   "In the great chain of being, everyone had a fixed place, so wanting to rise above it was seen as a sin."
+  ],
+  "examples_high": [
+   {
+    "text": "macbeth",
+    "sentence": "Macbeth’s regicide breaks the great chain of being, because Duncan, as king, stands directly beneath God."
+   }
+  ],
+  "examples_approved": false,
+  "core": false,
+  "tags": []
  }
 ]
