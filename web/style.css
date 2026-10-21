@@ -789,7 +789,9 @@ a.link-btn { display: inline-flex; align-items: center; }
 .set-meta { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: 13px; font-weight: 600; color: var(--muted); }
 .set-status { display: inline-flex; align-items: center; gap: 4px; color: var(--ink); }
 .steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-.step-row { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 14px; background: #fff; }
+.step-row { border: 1.5px solid var(--line); border-radius: 14px; background: #fff; }
+.step-link { display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: inherit; text-decoration: none; border-radius: 14px; }
+.step-link:hover, .step-link:focus-visible { background: rgba(0, 0, 0, 0.03); }
 .step-row.is-next { border-color: var(--accent); background: var(--tint); }
 .step-row.is-done { background: #E9F6EF; border-color: #BFE3CF; }
 .step-num {
@@ -855,3 +857,4 @@ a.link-btn { display: inline-flex; align-items: center; }
 /* The points line sits on the dark "done" screens: light text, bright numbers. */
 .run.done .points-line { color: #DDE1F8; }
 .run.done .points-line b { color: var(--yellow); }
+.model-actions [hidden] { display: none !important; }

@@ -18,6 +18,11 @@ const Data = {
     ]);
   },
 
+  // The model paragraph that ends a set (none for most sets).
+  modelForSet(setId) {
+    return this.models.find((m) => m.set === setId) || null;
+  },
+
   // The teacher's model paragraphs that use a quote (usually none).
   modelsFor(quoteId) {
     return this.models.filter((m) => m.quotes.includes(quoteId));
@@ -137,8 +142,8 @@ const Data = {
   },
 
   // The sections a lesson is shown as (each holds one or more parts, played one after the other).
-  SECTION_NAMES: { choose: "Choose it", qmatch: "Match the quote", type: "Type the gap", typeit: "Type it" },
-  PART_SECTION: { choose: "choose", match: "choose", qmatch: "qmatch", type: "type", finish: "typeit", typeword: "typeit" },
+  SECTION_NAMES: { choose: "Choose it", qmatch: "Match the quote", type: "Type the gap", typeit: "Type it", model: "Complete the paragraph" },
+  PART_SECTION: { choose: "choose", match: "choose", qmatch: "qmatch", type: "type", finish: "typeit", typeword: "typeit", model: "model" },
 
   // The labels a quote can be matched to: who said it, and where it is from.
   quoteWho(q) {
@@ -179,6 +184,7 @@ const Data = {
     const gapItems = QuoteTools.lessonQuoteItems(this.quotes, set.text, quoteIds);
     const typed = QuoteTools.masterItems(this.quotes, set.text, "mgap", this.techniques, quoteIds);
     const finish = QuoteTools.masterItems(this.quotes, set.text, "mfinish", this.techniques, quoteIds);
+    const model = this.modelForSet(set.id);
     const parts = [
       { key: "choose", items: [...gapItems, ...words] },
       { key: "match", items: words.length >= 2 ? words : [], flag: "match" },
@@ -187,6 +193,8 @@ const Data = {
       { key: "finish", items: finish },
       // Key vocab typed from the meaning. Own ids (tv:), so choosing a word never skips typing it.
       { key: "typeword", items: words.map((w) => ({ ...w, id: "tv:" + w.id })) },
+      // The teacher's model paragraph for the set (typed gaps). Done when every gap is typed right; saved by a flag.
+      { key: "model", items: model ? [{ id: "model:" + model.id, model }] : [], flag: "model" },
     ].filter((x) => x.items.length);
     const order = [];
     for (const x of parts) {

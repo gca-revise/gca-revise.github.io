@@ -10,6 +10,7 @@
 const Points = {
   // Bonus for completing a set. Edit the number to make finishing a set worth more or less.
   SET_BONUS: 20,
+  MODEL_BONUS: 15,
 
   // Ranks by lifetime points: [name, points needed]. Edit the numbers to make ranks easier or harder.
   RANKS: [
@@ -77,6 +78,13 @@ const Points = {
   setBonus(setId) {
     if (this.read().sets.includes(setId)) return 0;
     return this.add(this.SET_BONUS, [], setId);
+  },
+
+  // The extra bonus for a set that ends with a model paragraph: paid once per set, when the whole set is done.
+  modelBonus(setId) {
+    const key = setId + ":model";
+    if (this.read().sets.includes(key)) return 0;
+    return this.add(this.MODEL_BONUS, [], key);
   },
 
   // A right answer: 1 point if it was the first attempt and the word has not scored this week.

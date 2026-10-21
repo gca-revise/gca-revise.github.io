@@ -33,6 +33,9 @@ This file is public, so the list is kept short and general. The detailed report 
 
 - Points: +20 bonus once per set when every step incl. the typed ones is done (`Points.SET_BONUS` in `points.js`). Backup codes don't carry which sets were paid.
 
+## 21 Oct (later): model paragraph is step 5; steps in any order
+- A set with an approved model (`set` column in `models.csv`) gets a 5th step, "Complete the paragraph" (`model` part in `Data.lessonSteps`, saved by the `model` flag; done only when every gap is typed right; Show answers does not count). Every step on the set page is now a link (any order); done steps open as revision. The big button still goes to the first step not done, and each "Step done" screen points to the first step still to do. Set complete (and the bonus) only when every step is done. Bonus: +20 as before, plus +15 (`Points.MODEL_BONUS`, once per set) for sets with a model, paid together at completion (+35). Tested in headless Chromium.
+
 ## End of 21 Oct (second session): model paragraphs, live for testing
 - Done: "See a model paragraph" fold-out on quote answers; "Complete the paragraph" typed-gap screen (card on the Macbeth page); two approved Macbeth models live (Ambition and power; Fate and the supernatural); `model-style-guide.md`; `models.csv` (private, git-ignored) with a `set` column and a build check that quotes belong to the set; added key word "The great chain of being" and put natural order and divine right in the Ambition set; British spelling rule (CLAUDE.md); two American spellings fixed.
 - Waiting on the user: test the two models on the live site (phone and Chromebook) and report back; decide whether the Fate model gets the light vocab trim; check the great chain of being definition and sentences (Claude-drafted).

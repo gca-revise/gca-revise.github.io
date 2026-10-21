@@ -78,6 +78,13 @@ function startLessonStep(textId, setId, stepKey, revise, carry) {
     setId, key: stepKey, flag: part.flag, section: part.section, sections: part.sections, revise: !!revise,
     name: part.sectionName, next: part.next, nextName: part.nextName, nextSame: part.nextSame,
   };
+  if (stepKey === "model") {
+    // A different kind of step: the model paragraph's typed gaps (no questions to ask, so no Session).
+    const stub = { right: 0, wrong: 0, points: 0, bestStreak: 0, rounds: 0, items: [], missed: {} };
+    run = { textId, kind: "model", model: part.items[0].model, session: stub, phase: "question", last: null, sentence: "", lesson, carry: null };
+    drawRun();
+    return;
+  }
   const mode = revise ? "free" : "learn";
   const carried = carry && carry.setId === setId && carry.key === stepKey && carry.revise === !!revise ? carry : null;
   if (part.flag) {
@@ -104,6 +111,14 @@ function startLessonStep(textId, setId, stepKey, revise, carry) {
     };
     run.phase = session.next() ? "question" : "complete";
   }
+  drawRun();
+}
+
+// The model paragraph step is finished (every gap typed right): save it, then show the "Step done" screen.
+function finishModelStep() {
+  if (!run || run.kind !== "model") return;
+  if (!run.lesson.revise) Store.setLessonFlag(run.lesson.setId, "model");
+  run.phase = "complete";
   drawRun();
 }
 

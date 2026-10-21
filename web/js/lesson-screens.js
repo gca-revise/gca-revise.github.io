@@ -8,6 +8,7 @@ const STEP_HELP = {
   qmatch: "Match each quote to who said it or where it is from.",
   type: "Type the missing word in each quote.",
   typeit: "Finish each quote from memory, then type each key vocab word from its meaning.",
+  model: "Read a model paragraph and type the missing words. Get every gap right to finish.",
 };
 
 Object.assign(Screens, {
@@ -44,7 +45,7 @@ Object.assign(Screens, {
       return list.length ? `<h2 class="label">${title}</h2><div class="set-grid">${list.map(Screens.setCard).join("")}</div>` : "";
     };
     return `
-      <p class="sets-intro">Work through a set one step at a time: choose it and match it, match the quotes, type the gap, then type it.</p>
+      <p class="sets-intro">Work through a set one step at a time: choose it and match it, match the quotes, type the gap, then type it. Sets with a model paragraph finish with that.</p>
       ${group("Lessons by character", "character")}
       ${group("Lessons by theme", "theme")}`;
   },
@@ -71,14 +72,18 @@ Object.assign(Screens, {
     const set = Data.setById(setId);
     const look = TEXT_LOOK[set.text];
     const status = Screens.setStatus(set);
+    // Every step can be opened in any order. A finished step opens as a revision pass (nothing saved).
+    const base = `#/text/${set.text}/set/${set.id}`;
     const rows = status.steps.map((st, i) => `
       <li class="step-row${st.done ? " is-done" : ""}${i === status.nextIndex ? " is-next" : ""}">
-        <span class="step-num">${st.done ? checkIconSmall : i + 1}</span>
-        <span class="step-body">
-          <span class="step-name">${esc(st.name)}</span>
-          <span class="step-help">${esc(STEP_HELP[st.id])}</span>
-        </span>
-        <span class="step-count">${st.learned} of ${st.total}</span>
+        <a class="step-link" href="${base}/${st.key}${st.done ? "/revise" : ""}">
+          <span class="step-num">${st.done ? checkIconSmall : i + 1}</span>
+          <span class="step-body">
+            <span class="step-name">${esc(st.name)}</span>
+            <span class="step-help">${esc(STEP_HELP[st.id])}</span>
+          </span>
+          <span class="step-count">${st.id === "model" ? (st.done ? "Done" : "To do") : `${st.learned} of ${st.total}`}</span>
+        </a>
       </li>`).join("");
     const first = status.steps[0] ? status.steps[0].parts[0] : "choose";
     const action = status.complete
@@ -93,6 +98,7 @@ Object.assign(Screens, {
         <section class="card">
           <div class="card-top"><h2>Your lesson</h2><span class="count">${status.done} of ${status.total} steps done</span></div>
           <ol class="steps">${rows}</ol>
+          <p class="set-note">You can open any step, but the bonus points come only when every step is done. Doing them in order works best.</p>
           ${action}
         </section>
         ${Screens.setWrongCard(set)}
@@ -174,8 +180,17 @@ Object.assign(Screens, {
     const s = run.session;
     const lesson = run.lesson;
     const set = Data.setById(lesson.setId);
-    const last = !lesson.next;
+    const isModel = run.kind === "model";
     const isMatch = run.kind === "match";
+    // Steps can be played in any order, so what comes next is the first step still to do. The set is
+    // complete when none is left. (Revision just walks on through the steps.)
+    let next = lesson.next, nextName = lesson.nextName || "";
+    let last = !lesson.next;
+    if (!lesson.revise) {
+      const pending = Screens.setStatus(set).steps.find((x) => !x.done);
+      last = !pending;
+      if (pending) { next = pending.key; nextName = pending.name; }
+    }
     const c = run.carry || {};
     const played = isMatch ? s.rounds > 0 : s.right + s.wrong > 0;
     const wrongIds = (c.missed || []).concat(isMatch ? Array.from(run.wrongIds) : Object.keys(s.missed));
@@ -183,7 +198,10 @@ Object.assign(Screens, {
     // Finishing every step of a set (typed steps included) pays a one-off bonus.
     if (last && !lesson.revise && !run.bonusChecked) {
       run.bonusChecked = true;
-      if (Screens.setStatus(set).complete) run.bonus = Points.setBonus(set.id);
+      if (Screens.setStatus(set).complete) {
+        run.bonus = Points.setBonus(set.id);
+        if (Data.modelForSet(set.id)) run.bonus += Points.modelBonus(set.id);
+      }
     }
     const bonus = run.bonus || 0;
     const tile = (num, label, colour, tappable) =>
@@ -201,19 +219,20 @@ Object.assign(Screens, {
       Celebrate.setComplete();
     }
     const heading = last ? (lesson.revise ? "Revision finished!" : "Set complete!") : `Step ${lesson.section + 1} done!`;
-    const nextName = lesson.nextName || "";
     const message = last
       ? (lesson.revise
         ? `That was one more pass through ${esc(set.name)}.`
         : `You've finished every step of ${esc(set.name)}. Well done.${bonus ? ` Bonus: +${bonus} points for completing the set!` : ""}`)
-      : (played
+      : (isModel
+        ? `You completed the paragraph. Next up: ${esc(nextName)}.`
+        : played
         ? `${esc(lesson.name)} is finished. Next up: ${esc(nextName)}.`
         : `You already know all of these, so there was nothing to ask. Next up: ${esc(nextName)}.`);
     const buttons = last
       ? `<a class="done-main-btn" href="${base}/choose/revise">Revise this set again</a>
          <a class="done-outline" href="#/text/${run.textId}">Back to ${esc(Data.text(run.textId).name)}</a>
          <a class="done-plain" href="${base}">See the set</a>`
-      : `<a class="done-main-btn" href="${base}/${lesson.next}${tail}">Next: ${esc(nextName)}</a>
+      : `<a class="done-main-btn" href="${base}/${next}${tail}">Next: ${esc(nextName)}</a>
          <a class="done-outline" href="${base}">Back to the set</a>
          <a class="done-plain" href="#/text/${run.textId}">Back to ${esc(Data.text(run.textId).name)}</a>`;
     return `
@@ -241,6 +260,7 @@ Object.assign(Screens, {
   Screens.run = (run) => {
     if (!run.lesson) return otherScreens(run);
     if (run.phase === "complete") return Screens.lessonStepDone(run);
+    if (run.kind === "model") return Screens.modelGaps(run.textId, run.model.id, run.lesson);
     // Choose it mixes quotes and key vocab: draw each question with the right kind of screen.
     if (run.lesson.key === "choose" && run.session.current) {
       const isQuote = !!run.session.current.quote;

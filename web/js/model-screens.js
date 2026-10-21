@@ -15,7 +15,8 @@ Object.assign(Screens, {
       </section>`;
   },
 
-  modelGaps(textId, modelId) {
+  // `lesson` (optional) is the set's lesson step: then the page is a step, and finishing it moves the lesson on.
+  modelGaps(textId, modelId, lesson = null) {
     const t = Data.text(textId);
     const m = Data.models.find((x) => x.id === modelId && x.text === textId);
     if (!t || !m) return Screens.notFound();
@@ -34,15 +35,18 @@ Object.assign(Screens, {
     return `
       ${Screens.pageHead("Complete the paragraph", m.title, look.colour, look.tint)}
       <main class="wrap" style="--accent:${look.colour};--tint:${look.tint}">
-        <form id="model-form" class="model-box model-gaps" autocomplete="off">
+        <form id="model-form" class="model-box model-gaps" autocomplete="off"${lesson ? " data-lesson" : ""}>
           <p class="model-title">Word bank (in alphabetical order, each used once)</p>
           <p class="word-bank">${bank}</p>
           ${parts}
           <p id="model-result" class="model-result" role="status"></p>
           <div class="model-actions">
             <button type="submit" class="check-btn">Check</button>
-            <button type="button" class="pill" data-model-show>Show answers</button>
-            <a class="pill" href="#/text/${textId}">Back to ${esc(t.name)}</a>
+            <button type="button" class="pill" data-model-show>${lesson ? "Show answers (the step stays to do)" : "Show answers"}</button>
+            ${lesson
+              ? `<button type="button" class="check-btn" data-model-continue hidden>Finish this step</button>
+                 <a class="pill" href="#/text/${textId}/set/${lesson.setId}">Back to the set</a>`
+              : `<a class="pill" href="#/text/${textId}">Back to ${esc(t.name)}</a>`}
           </div>
         </form>
       </main>`;
@@ -74,12 +78,20 @@ app.addEventListener("submit", (event) => {
     ? `All ${inputs.length} right. Well done! Read the whole paragraph once more, out loud if you can.`
     : `${right} of ${inputs.length} right. Fill any empty gaps and fix the red and orange ones (orange means almost: check the spelling), then check again.`;
   if (firstBad) firstBad.focus();
+  // In a lesson, getting every gap right finishes the step.
+  const cont = form.querySelector("[data-model-continue]");
+  if (cont && right === inputs.length && !form.dataset.shown) cont.hidden = false;
 });
 
 app.addEventListener("click", (event) => {
+  if (event.target.closest("[data-model-continue]")) {
+    finishModelStep();
+    return;
+  }
   const show = event.target.closest("[data-model-show]");
   if (!show) return;
   const form = show.closest("#model-form");
+  form.dataset.shown = "yes";  // answers were revealed, so this try cannot finish a lesson step
   for (const input of form.querySelectorAll(".gap-input")) {
     if (!Engine.isCorrect(input.value, input.dataset.answer)) input.value = input.dataset.answer;
     input.classList.remove("gap-bad", "gap-near");
