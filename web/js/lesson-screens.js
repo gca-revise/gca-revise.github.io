@@ -98,7 +98,7 @@ Object.assign(Screens, {
         <section class="card">
           <div class="card-top"><h2>Your lesson</h2><span class="count">${status.done} of ${status.total} steps done</span></div>
           <ol class="steps">${rows}</ol>
-          <p class="set-note">You can open any step, but the bonus points come only when every step is done. Doing them in order works best.</p>
+          <p class="set-note">You can open any step, but the set bonus comes only when every step is done. Doing them in order works best.</p>
           ${action}
         </section>
         ${Screens.setWrongCard(set)}
@@ -195,13 +195,15 @@ Object.assign(Screens, {
     const played = isMatch ? s.rounds > 0 : s.right + s.wrong > 0;
     const wrongIds = (c.missed || []).concat(isMatch ? Array.from(run.wrongIds) : Object.keys(s.missed));
     const missed = played ? Screens.missedBox(wrongIds, s.items) : { count: 0, html: "" };
+    // Finishing the model paragraph pays its own one-off bonus straight away, whatever order the steps were done in.
+    if (isModel && !lesson.revise && !run.modelChecked) {
+      run.modelChecked = true;
+      run.modelBonus = Points.modelBonus(set.id);
+    }
     // Finishing every step of a set (typed steps included) pays a one-off bonus.
     if (last && !lesson.revise && !run.bonusChecked) {
       run.bonusChecked = true;
-      if (Screens.setStatus(set).complete) {
-        run.bonus = Points.setBonus(set.id);
-        if (Data.modelForSet(set.id)) run.bonus += Points.modelBonus(set.id);
-      }
+      if (Screens.setStatus(set).complete) run.bonus = Points.setBonus(set.id);
     }
     const bonus = run.bonus || 0;
     const tile = (num, label, colour, tappable) =>
@@ -214,9 +216,11 @@ Object.assign(Screens, {
     const base = `#/text/${run.textId}/set/${lesson.setId}`;
     const tail = lesson.revise ? "/revise" : "";
     // Celebrate once per run (the screen can be drawn more than once).
-    if (last && !lesson.revise && !run.celebrated) {
+    if (!lesson.revise && !run.celebrated && (last || isModel)) {
       run.celebrated = true;
-      Celebrate.setComplete();
+      if (isModel && last) Celebrate.display(`Set complete! <span class="celebrate-num">+${(run.bonus || 0) + (run.modelBonus || 0)} points</span>`, 50);
+      else if (isModel) Celebrate.modelComplete(run.modelBonus || 0);
+      else Celebrate.setComplete();
     }
     const heading = last ? (lesson.revise ? "Revision finished!" : "Set complete!") : `Step ${lesson.section + 1} done!`;
     const message = last
@@ -245,6 +249,7 @@ Object.assign(Screens, {
               <p>${message}</p>
             </div>
           </div>
+          ${isModel && run.modelBonus ? `<p class="bonus-sign">+${run.modelBonus} points for the model paragraph!</p>` : ""}
           ${tiles ? `<div class="done-grid"><div class="tiles">${tiles}</div></div>` : ""}
           ${missed.count ? `<button type="button" class="wrong-toggle" data-toggle-wrong>See what you got wrong (${missed.count})</button>${missed.html}` : ""}
           ${lesson.revise ? "" : `<p class="points-line">Points this week: <b>${Points.weekly()}</b> · Lifetime: <b>${Points.lifetime()}</b></p>`}

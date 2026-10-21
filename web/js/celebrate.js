@@ -23,6 +23,11 @@ const Celebrate = {
     this.display("Set complete!", 50);
   },
 
+  // Finishing a set's model paragraph: a banner (with the bonus, if it was just won) and confetti.
+  modelComplete(bonus) {
+    this.display(bonus ? `Paragraph complete! <span class="celebrate-num">+${bonus} points</span>` : "Paragraph complete!", 50);
+  },
+
   display(bannerHtml, size) {
     this.clear();
     const layer = document.createElement("div");
