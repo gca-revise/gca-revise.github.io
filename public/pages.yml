@@ -1,0 +1,46 @@
+# Publishes the website (the web/ folder) with GitHub Pages every time main is updated,
+# or when started by hand (Actions tab > "Publish website" > Run workflow).
+# The rule-check page (tests.html) is left out of the published site.
+name: Publish website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copy the website (leaving out the rule-check page)
+        run: |
+          mkdir site
+          cp -r web/. site/
+          rm -f site/tests.html
+      - name: Make browsers fetch the new files after every publish
+        # Adds ?v=<commit> to the script, style and data addresses, so a phone or school computer never
+        # keeps running an old copy of the site after an update.
+        run: |
+          V="${GITHUB_SHA::7}"
+          sed -i -E "s#(src|href)=\"((js|vendor)/[^\"]+\.js|style\.css)\"#\1=\"\2?v=$V\"#g" site/index.html
+          sed -i 's#data/${name}.json#data/${name}.json?v='"$V"'#' site/js/data.js
+          grep -c "?v=$V" site/index.html site/js/data.js
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
