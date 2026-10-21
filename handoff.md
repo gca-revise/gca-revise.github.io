@@ -33,6 +33,12 @@ This file is public, so the list is kept short and general. The detailed report 
 
 - Points: +20 bonus once per set when every step incl. the typed ones is done (`Points.SET_BONUS` in `points.js`). Backup codes don't carry which sets were paid.
 
+## End of 21 Oct (second session): model paragraphs, live for testing
+- Done: "See a model paragraph" fold-out on quote answers; "Complete the paragraph" typed-gap screen (card on the Macbeth page); two approved Macbeth models live (Ambition and power; Fate and the supernatural); `model-style-guide.md`; `models.csv` (private, git-ignored) with a `set` column and a build check that quotes belong to the set; added key word "The great chain of being" and put natural order and divine right in the Ambition set; British spelling rule (CLAUDE.md); two American spellings fixed.
+- Waiting on the user: test the two models on the live site (phone and Chromebook) and report back; decide whether the Fate model gets the light vocab trim; check the great chain of being definition and sentences (Claude-drafted).
+- Next: (1) fix whatever testing finds; (2) per-set lesson part "Complete the paragraph" at the end of a set, with a +15 bonus after Set complete (once per set or weekly: open); (3) Claude drafts models for the other sets a few at a time, following `model-style-guide.md`, teacher edits and approves; only quotes from the set; (4) the repo switch is still not done; (5) consider changing the catalyst definition to "speeds up a change without causing it" (user not yet asked/decided).
+- Remember: do not commit `models.csv` or `--drafts` output while the repo is public; run `python3 build_data.py` (no flag) before committing.
+
 ## End of 21 Oct session (all merged to `main` and live)
 - Done: student-friendly quote notes (`student_note`, teacher to check), phone keyboard keeps the quote in view, Finish the quote capped at 8 typed words with one word forgiven in long endings, +20 set-complete bonus (typed steps required).
 - Next: model paragraphs. Options and suggested order (1 see-a-model button, 3 fill-the-gaps, 2 colour-coded) are in `brainstorm-model-paragraphs.md`. The source `model-writing-*.md` files are only on the Chromebook, so start that build there; user picks the text first. Fix the Jekyll/Hyde "Jekyll for Lanyon" slip first.
@@ -123,5 +129,5 @@ This file is public, so the list is kept short and general. The detailed report 
 4. Teacher checks waiting: Claude-drafted technique notes (including the new Fricative note on mac-1-01), the Foil technique, sentences, gap words, word-type labels, definitions.
 5. Decide, then build: a learning path (points done, stage 1); leaderboard later (needs sign-in + school OK; weekly points are the number to rank) (`ideas.md`); more blanks per quote (#4); theme tags are now covered by the theme sets (#1).
 6. Possible follow-ups: Microsoft sign-in (Entra steps for IT, then a hidden button); "Practise these" for quotes and techniques.
-7. **Next build (user to choose the text):** a "Model paragraph" button on a quote's answer screen, then a fill-the-gaps paragraph activity, then the vocab example sentences. Use the private `model-writing-*.md` files as the source; keep published data free of anything the user has not approved.
+7. **Model paragraphs:** the button and the typed-gap screen are built (see the 21 Oct second-session section). Still to do: the per-set lesson part, models for the other sets, then the vocab example sentences. Use the private `model-writing-*.md` files as the source; keep published data free of anything the user has not approved.
 8. Pitch list (see `ideas.md`): images, dual coding.
