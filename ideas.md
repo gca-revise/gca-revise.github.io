@@ -21,6 +21,29 @@ Why this order: each step builds on the one before. Steps 1 and 3 can be tested 
 ## Leaderboards and leagues: who competes with whom (user unsure, 19 Oct)
 Decide after sign-in and the school's data-protection OK; nothing to build before. Options: (1) class leagues (safest, teacher controls, small groups); (2) year-group leagues (more energy, but bottom of a big table is demoralising and raises safeguarding questions); (3) **both**: class board by default, year-group as a second tab, each student sees the top 10 plus their own position (recommended); (4) Duolingo-style small mixed groups of about 30 by similar weekly points, top few move up (fairest for motivation, least teacher control). Prepare now: store each student's class and year group at sign-in (Microsoft may supply them). Any option is then a different view of the same weekly points. Safeguards for all: nicknames or first name plus initial only; school or teacher can switch leaderboards off per class. To decide: ask 2 or 3 teachers "your class's ranking or the whole year's?", and see after a few weeks of points-only whether students ask to compare.
 
+## From a student's own version of the site (read 21 Oct)
+A student made their own version of the revision app and put it on Netlify (a free website host). It could not be opened from Claude's environment, so this comes from reading the file's code, not from seeing it on screen.
+
+**How it differs from ours**
+- It is one single file with its own set of questions. It is not connected to our data, and it does not contact Supabase or anything else online.
+- Progress is saved only in the student's own browser (like ours today).
+- The footer has a credit link back to our repo.
+- It has its own "G" logo, not the school crest.
+- Different look: a bold green-on-dark colour scheme.
+
+**What the student added (ideas worth borrowing)**
+- **Streak splash:** a celebration screen when you get several in a row. *We already have this (banner and confetti at 5, 10, 20, 50, 100).*
+- **Points ("XP") for the last 7 days.** *We already have weekly and lifetime points.*
+- **"Mastered" counts per subject** (for example "3 / 8 mastered" on each subject card) plus an overall progress dashboard. *We show "X of N learned" on each card; an overall dashboard is new.*
+- **Flip cards for key terms,** with "I know this" and "next" buttons. *New.*
+- **Search box** to filter subjects. *New.*
+- **Settings panel:** dark mode, and switches to turn animation off (helps students who find motion distracting). *New. We only follow the device's "reduce motion" setting automatically; a dark mode is not built.*
+- **Look and feel:** a scroll progress bar, sections that animate in as you scroll, and the green-on-dark scheme. *New; cosmetic.*
+
+**Possible next steps**
+- A short, friendly message to the student (through the school).
+- Decide which of the new ideas suit the app: flip cards and a settings panel (dark mode, animation off) look the most useful for revision.
+
 ## Quick wins
 - "Which act / chapter?" question for Know it
 - Technique analysis: after Spot the technique, show the technique's effect (the booklet has an `effect` for each) as a model answer
