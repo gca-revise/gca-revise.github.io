@@ -417,6 +417,18 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outlin
 .gap-ok { border-bottom-color: #1E7B4F; background: #DFF3E8; }
 .gap-near { border-bottom-color: #C47A00; background: #FFF0D0; }
 .gap-bad { border-bottom-color: #B3261E; background: #FBE0DD; }
+.bank-help { font-size: 14px; color: var(--muted); margin: 0 0 6px; line-height: 1.4; }
+.bank-word { font: inherit; font-weight: 600; border: 0; color: inherit; cursor: grab; user-select: none; -webkit-user-select: none; touch-action: none; }
+.bank-word:hover { filter: brightness(0.95); }
+.bank-word.picked { outline: 3px solid var(--accent); }
+.bank-word.used { opacity: 0.35; cursor: pointer; }
+.bank-word.dragging { opacity: 0.35; }
+.bank-ghost {
+  position: fixed; z-index: 50; pointer-events: none; transform: translate(-50%, -120%);
+  background: var(--accent, #222C69); color: #fff; border-radius: 999px; padding: 4px 14px; font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+.gap-over { outline: 3px solid var(--accent); background: #fff6cc; }
 .model-result { font-weight: 700; margin: 14px 0 4px; line-height: 1.4; }
 .model-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 8px; }
 .mc-fb .model-box { max-width: none; }

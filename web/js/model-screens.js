@@ -31,12 +31,13 @@ Object.assign(Screens, {
       }).join("");
       return `<p class="model-part">${p.label ? `<span class="model-label">${esc(p.label)}</span>` : ""}${body}</p>`;
     }).join("");
-    const bank = m.gaps.slice().sort((a, b) => a.localeCompare(b)).map((w) => `<span class="bank-word">${esc(w)}</span>`).join("");
+    const bank = m.gaps.slice().sort((a, b) => a.localeCompare(b)).map((w) => `<button type="button" class="bank-word" data-word="${esc(w)}">${esc(w)}</button>`).join("");
     return `
       ${Screens.pageHead("Complete the paragraph", m.title, look.colour, look.tint)}
       <main class="wrap" style="--accent:${look.colour};--tint:${look.tint}">
         <form id="model-form" class="model-box model-gaps" autocomplete="off"${lesson ? " data-lesson" : ""}>
-          <p class="model-title">Word bank (in alphabetical order, each used once)</p>
+          <p class="model-title">Word bank (alphabetical, each used once)</p>
+          <p class="bank-help">Type into the gaps, or drag a word into a gap, or tap a word and then tap a gap. Tap a placed word to take it back.</p>
           <p class="word-bank">${bank}</p>
           ${parts}
           <p id="model-result" class="model-result" role="status"></p>
@@ -100,3 +101,104 @@ app.addEventListener("click", (event) => {
   }
   form.querySelector("#model-result").textContent = "Here are the answers. Read the paragraph through, then try again another day.";
 });
+
+// The word bank: drag a word into a gap, or tap a word and then tap a gap. Typing in a gap still works.
+(function () {
+  let selected = null;
+  let drag = null;
+  let justDragged = false;
+
+  const free = (chip) => chip && chip.classList.remove("used");
+  const choose = (chip) => {
+    if (selected) selected.classList.remove("picked");
+    selected = chip;
+    if (chip) chip.classList.add("picked");
+  };
+  // Put a bank word in a gap. The gap's old word goes back to the bank; so does this word's old gap.
+  const place = (chip, input) => {
+    if (!chip || !input || input.readOnly) return;
+    const form = input.closest("#model-form");
+    free(input._chip);
+    for (const other of form.querySelectorAll(".gap-input")) {
+      if (other !== input && other._chip === chip) { other.value = ""; other._chip = null; other.classList.remove("gap-bad", "gap-near"); }
+    }
+    input.value = chip.dataset.word;
+    input._chip = chip;
+    input.classList.remove("gap-bad", "gap-near");
+    chip.classList.add("used");
+    choose(null);
+  };
+  const gapAt = (x, y) => {
+    const el = document.elementFromPoint(x, y);
+    return el ? el.closest(".gap-input") : null;
+  };
+  const overGap = (x, y) => {
+    for (const g of app.querySelectorAll(".gap-over")) g.classList.remove("gap-over");
+    const g = gapAt(x, y);
+    if (g && !g.readOnly) g.classList.add("gap-over");
+  };
+
+  app.addEventListener("pointerdown", (event) => {
+    const chip = event.target.closest(".bank-word");
+    if (chip && !chip.classList.contains("used") && event.button === 0) {
+      drag = { chip, x: event.clientX, y: event.clientY, ghost: null, id: event.pointerId };
+      return;
+    }
+    // A word is picked and a gap is tapped: fill it (and keep the keyboard closed).
+    const input = event.target.closest(".gap-input");
+    if (input && selected && !input.readOnly) {
+      event.preventDefault();
+      place(selected, input);
+    }
+  });
+
+  document.addEventListener("pointermove", (event) => {
+    if (!drag || event.pointerId !== drag.id) return;
+    if (!drag.ghost) {
+      if (Math.hypot(event.clientX - drag.x, event.clientY - drag.y) < 6) return;
+      drag.ghost = document.createElement("div");
+      drag.ghost.className = "bank-ghost";
+      drag.ghost.textContent = drag.chip.dataset.word;
+      document.body.appendChild(drag.ghost);
+      drag.chip.classList.add("dragging");
+    }
+    drag.ghost.style.left = event.clientX + "px";
+    drag.ghost.style.top = event.clientY + "px";
+    overGap(event.clientX, event.clientY);
+  });
+
+  const endDrag = (event, dropped) => {
+    if (!drag || event.pointerId !== drag.id) return;
+    const { chip, ghost } = drag;
+    drag = null;
+    for (const g of app.querySelectorAll(".gap-over")) g.classList.remove("gap-over");
+    if (!ghost) return;  // it was a tap: the click handler deals with it
+    ghost.remove();
+    chip.classList.remove("dragging");
+    justDragged = true;
+    setTimeout(() => { justDragged = false; }, 0);
+    if (dropped) place(chip, gapAt(event.clientX, event.clientY));
+  };
+  document.addEventListener("pointerup", (event) => endDrag(event, true));
+  document.addEventListener("pointercancel", (event) => endDrag(event, false));
+
+  app.addEventListener("click", (event) => {
+    const chip = event.target.closest(".bank-word");
+    if (!chip || justDragged) return;
+    if (chip.classList.contains("used")) {
+      // Tap a placed word to take it back out of its gap.
+      for (const g of app.querySelectorAll(".gap-input")) {
+        if (g._chip === chip && !g.readOnly) { g.value = ""; g._chip = null; g.classList.remove("gap-bad", "gap-near"); }
+      }
+      free(chip);
+      return;
+    }
+    choose(selected === chip ? null : chip);
+  });
+
+  // Typing over a placed word sends that word back to the bank.
+  app.addEventListener("input", (event) => {
+    const input = event.target.closest(".gap-input");
+    if (input && input._chip) { free(input._chip); input._chip = null; }
+  });
+})();
