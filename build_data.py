@@ -348,7 +348,39 @@ def build_symbols():
     } for r in read("symbols")]
 
 
+def build_models(quotes, drafts):
+    """The teacher's model paragraphs, keyed by quote id. models.csv is private (git-ignored); only rows
+    marked teacher_approved = yes are published, unless the script is run with --drafts (local testing only)."""
+    path = ROOT / "models.csv"
+    if not path.exists():
+        return []
+    rows = read("models")
+    check_unique(rows, "id", "models")
+    quote_ids = {q["id"] for q in quotes}
+    out = []
+    for r in rows:
+        where = f"model '{r['id']}'"
+        approved = r["teacher_approved"].strip().lower() == "yes"
+        if not approved and not drafts:
+            continue
+        ids = split(r["quote_ids"], ";")
+        for qid in ids:
+            if qid not in quote_ids:
+                problems.append(f"{where}: unknown quote id '{qid}'")
+        parts = []
+        for seg in split(r["parts"], "|"):
+            label, sep, text = seg.partition("::")
+            if not sep or not label.strip() or not text.strip():
+                problems.append(f"{where}: each part needs 'Label :: text'")
+                continue
+            parts.append({"label": label.strip(), "text": text.strip()})
+        out.append({"id": r["id"], "text": r["text"].strip(), "title": r["title"].strip(),
+                    "quotes": ids, "parts": parts})
+    return out
+
+
 def main():
+    drafts = "--drafts" in sys.argv
     OUT.mkdir(parents=True, exist_ok=True)
     vocab = build_vocab()
     missing_sentences = attach_sentences(vocab)
@@ -363,6 +395,7 @@ def main():
         "techniques": build_techniques(read("quotes")),
         "symbols": build_symbols(),
         "characters": build_characters(),
+        "models": build_models(quotes, drafts),
     }
     for name, value in data.items():
         with open(OUT / f"{name}.json", "w", encoding="utf-8") as f:
@@ -380,6 +413,9 @@ def main():
     for st in data["sets"]:
         note = " (check: 2+ vocab words make a Match it step)" if len(st["vocab"]) < 2 else ""
         print(f"  set {st['id']}: {len(st['quotes'])} quotes, {len(st['vocab'])} words{note}")
+    if drafts:
+        print("  WARNING: --drafts used, so models.json holds unapproved paragraphs. Do not commit or publish it.")
+    print(f"  model paragraphs published: {len(data['models'])}")
     print(f"  high-level sentences: {sum(len(w['examples_high']) for w in vocab)} "
           f"(word/text pairs still without one: {len(missing_sentences)})")
     print(f"  words with an approved sentence: {sum(1 for w in vocab if w['examples_approved'])}; "

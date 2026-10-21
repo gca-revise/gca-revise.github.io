@@ -13,6 +13,11 @@ This file is public, so the list is kept short and general. The detailed report 
 7. **Old library:** update `web/vendor/supabase.js` when building Microsoft sign-in.
 8. **Student's copy of the site (Netlify):** see `ideas.md`. It is the student's own copy and does not touch our data, but tell staff the one real address, and have the conversation through the school (not as a punishment).
 
+## Model paragraphs, stage 1 (21 Oct, Macbeth)
+- Built the "See a model paragraph" fold-out on the quote answer screens (`Screens.modelBox` in `quote-screens.js`; quote highlighted). Data: private, git-ignored `models.csv` (id, text, title, quote_ids, parts as `Label :: text | ...`, `teacher_approved`). `build_data.py` publishes only rows marked `yes` to `web/data/models.json`; `python3 build_data.py --drafts` includes the rest for local testing only (never commit that output; rebuild without the flag before committing).
+- Two Macbeth drafts are in `models.csv`, both `no`: the floating-dagger PETAL paragraph (quote mac-2-02) and the hamartia answer (mac-1-06). **Teacher: approve (set `teacher_approved` to `yes`) before they go live.** Nothing is live yet. Models for the other texts come next; Frankenstein and Power and Conflict have the most.
+- `models.csv` is git-ignored only because this repo is public; once the working repo is private it can be committed.
+
 ## Public site project and private working project (set up 21 Oct)
 - **Plan (user chose "option 2"):** this project (the working one) becomes **private** and holds everything: lesson content, notes, planning, paperwork. A separate **public** project named `gca-revise.github.io` holds only the built website (`web/`), the publish workflow and a short README, so the site address `https://gca-revise.github.io/` does not change.
 - **Publishing:** `python3 publish_public.py <path to a clone of the public project>` rebuilds the data, copies `web/`, `public/pages.yml` (the publish workflow) and `public/README.md` into the clone, makes a neutral commit and pushes it; the site updates about a minute later. Pushing to this private project does NOT update the site any more.

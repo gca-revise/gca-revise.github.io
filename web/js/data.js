@@ -5,6 +5,7 @@ const Data = {
   quotes: [],
   techniques: [],
   sets: [],
+  models: [],
 
   async load() {
     const get = (name) =>
@@ -12,9 +13,14 @@ const Data = {
         if (!r.ok) throw new Error(`Could not load ${name}.json`);
         return r.json();
       });
-    [this.texts, this.vocab, this.quotes, this.techniques, this.characters, this.sets] = await Promise.all([
-      get("texts"), get("vocab"), get("quotes"), get("techniques"), get("characters"), get("sets"),
+    [this.texts, this.vocab, this.quotes, this.techniques, this.characters, this.sets, this.models] = await Promise.all([
+      get("texts"), get("vocab"), get("quotes"), get("techniques"), get("characters"), get("sets"), get("models"),
     ]);
+  },
+
+  // The teacher's model paragraphs that use a quote (usually none).
+  modelsFor(quoteId) {
+    return this.models.filter((m) => m.quotes.includes(quoteId));
   },
 
   // "techniques" is treated like a text so the same games work on it.

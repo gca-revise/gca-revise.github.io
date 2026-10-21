@@ -75,6 +75,26 @@ Object.assign(Screens, {
       </div>`;
   },
 
+  // A fold-out "See a model paragraph" for quotes the teacher has written a model for.
+  // The quote is highlighted wherever it appears in the paragraph.
+  modelBox(q) {
+    const models = Data.modelsFor(q.id);
+    if (!models.length) return "";
+    const words = q.quote.replace(/[.,;:!?…\s]+$/, "").split(/\s+/).map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+    const rx = new RegExp(words.join("[\\s,.;:]*").replace(/['\u2019]/g, "['\u2019]"), "i");
+    const mark = (text) => {
+      const m = rx.exec(text);
+      if (!m) return esc(text);
+      return esc(text.slice(0, m.index)) + `<mark>${esc(m[0])}</mark>` + esc(text.slice(m.index + m[0].length));
+    };
+    return models.map((m) => `
+      <details class="model-box">
+        <summary>See a model paragraph</summary>
+        <p class="model-title">${esc(m.title)}</p>
+        ${m.parts.map((p) => `<p class="model-part"><span class="model-label">${esc(p.label)}</span>${mark(p.text)}</p>`).join("")}
+      </details>`).join("");
+  },
+
   quoteFeedback(run) {
     const s = run.session;
     const r = run.last;
@@ -131,6 +151,7 @@ Object.assign(Screens, {
             </div>
             <div class="choices">${rows}</div>
             ${note}
+            ${Screens.modelBox(q)}
             ${chips}
             <p class="fb-note mc-note">${message}</p>
             <div class="mc-actions">
@@ -225,6 +246,7 @@ Object.assign(Screens, {
             <p class="fb-source">${speaker}${esc(Screens.quoteSource(q))}</p>
           </div>
           ${note}
+          ${Screens.modelBox(q)}
           ${chips}
           <p class="fb-note">${message}</p>
           <button type="button" class="fb-btn" data-action="next">${finished ? "See your results" : "Next quote"}</button>

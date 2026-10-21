@@ -5,6 +5,8 @@ source/power-conflict-poems.txt
 
 # Private: built from school files, never publish
 model-writing-*.md
+# Teacher's model paragraphs: only approved ones reach web/data/models.json
+models.csv
 
 # Private: lists weak spots, so it stays out of the public repo
 privacy-report*.md

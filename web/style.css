@@ -397,6 +397,16 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outlin
 .right .chip { border-color: transparent; color: #155E3E; }
 .fb-note { font-size: 14px; font-weight: 600; margin-top: auto; padding-top: 12px; }
 .right .fb-note { color: #2D4A3C; }
+.model-box {
+  background: rgba(255, 255, 255, 0.7); border-radius: 16px; padding: 12px 16px;
+  font-size: 16px; max-width: 520px; text-align: left;
+}
+.model-box summary { cursor: pointer; font-weight: 700; }
+.model-title { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 10px 0 4px; }
+.model-part { margin: 8px 0 0; }
+.model-label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.model-box mark { background: #FFE88A; color: inherit; border-radius: 3px; padding: 0 2px; }
+.mc-fb .model-box { max-width: none; }
 .fb-btn { width: 100%; max-width: 420px; color: #fff; }
 .right .fb-btn { background: #17724B; }
 .wrong .fb-btn, .near .fb-btn { background: var(--navy); }
