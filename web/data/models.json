@@ -1,1 +1,181 @@
-[]
+[
+ {
+  "id": "mac-model-ambition",
+  "text": "macbeth",
+  "title": "Ambition and power: Macbeth's hamartia",
+  "quotes": [
+   "mac-1-11",
+   "mac-1-06"
+  ],
+  "set": "mac-t-ambition",
+  "parts": [
+   {
+    "label": "",
+    "text": "Initially, it seems that the witches cause Macbeth to murder Duncan, because their prophecy plants the idea of becoming king. However, upon closer inspection, Shakespeare suggests that Macbeth's hamartia was already within him, and that the witches only act as a catalyst, speeding up what was already there. In Act 1 Scene 7, Macbeth admits that his only motive for murder is \"vaulting ambition, which overleaps itself and falls\". This metaphor of a rider who leaps too far personifies ambition as a force that carries him beyond his limits, and so he is not a passive victim but a man who understands the danger and is hungry for power anyway. He shows the same secrecy earlier, in Act 1 Scene 4, when Duncan names his son as heir and Macbeth says, \"Stars hide your fires, let not light see my black and deep desires.\" The imperative \"hide\" shows him commanding the stars, and the stars symbolise God, which suggests that he wants to hide his plan from God because he knows the evil already within him is sinful. This shows that Macbeth understands that his desires are a sin against God, yet instead of resisting them, he asks for darkness to cover them, which suggests that his conscience is already losing to his ambition. The contrast between \"light\" and \"black\" presents good and evil as opposites, and by choosing the dark, Macbeth deliberately turns away from goodness. The adjective \"black\" reinforces how dark his desires are. Furthermore, in the great chain of being, God sits above the king, so Macbeth's wish to take Duncan's place threatens the natural order. Despite appearing to be a loyal soldier, he is already prepared to conspire against his king. Although he is brave and respected at this point, his hubris ultimately turns him into a tragic hero, and as a result of his own choices, he is destroyed. Shakespeare wants to teach the audience that the greatest danger is not an outside force but unchecked ambition, because it can destroy even a respected man from within.",
+    "pieces": [
+     {
+      "text": "Initially, it seems that the witches cause Macbeth to murder Duncan, because their prophecy plants the idea of becoming king. However, upon closer inspection, Shakespeare suggests that Macbeth's "
+     },
+     {
+      "gap": "hamartia"
+     },
+     {
+      "text": " was already within him, and that the witches only act as a "
+     },
+     {
+      "gap": "catalyst"
+     },
+     {
+      "text": ", speeding up what was already there. In Act 1 Scene 7, Macbeth admits that his only motive for murder is \"vaulting ambition, which overleaps itself and falls\". This metaphor of a rider who leaps too far "
+     },
+     {
+      "gap": "personifies"
+     },
+     {
+      "text": " ambition as a force that carries him beyond his limits, and so he is not a passive victim but a man who understands the danger and is hungry for power anyway. He shows the same secrecy earlier, in Act 1 Scene 4, when Duncan names his son as heir and Macbeth says, \"Stars hide your fires, let not light see my black and deep desires.\" The "
+     },
+     {
+      "gap": "imperative"
+     },
+     {
+      "text": " \"hide\" shows him commanding the stars, and the stars "
+     },
+     {
+      "gap": "symbolise"
+     },
+     {
+      "text": " God, which suggests that he wants to hide his plan from God because he knows the evil already within him is sinful. This shows that Macbeth understands that his desires are a sin against God, yet instead of resisting them, he asks for darkness to cover them, which suggests that his conscience is already losing to his ambition. The "
+     },
+     {
+      "gap": "contrast"
+     },
+     {
+      "text": " between \"light\" and \"black\" presents good and evil as opposites, and by choosing the dark, Macbeth deliberately turns away from goodness. The adjective \"black\" reinforces how dark his desires are. Furthermore, in the "
+     },
+     {
+      "gap": "great chain of being"
+     },
+     {
+      "text": ", God sits above the king, so Macbeth's wish to take Duncan's place threatens the natural order. Despite appearing to be a loyal soldier, he is already prepared to conspire against his king. Although he is brave and respected at this point, his "
+     },
+     {
+      "gap": "hubris"
+     },
+     {
+      "text": " ultimately turns him into a "
+     },
+     {
+      "gap": "tragic hero"
+     },
+     {
+      "text": ", and as a result of his own choices, he is destroyed. Shakespeare wants to "
+     },
+     {
+      "gap": "teach"
+     },
+     {
+      "text": " the audience that the greatest danger is not an outside force but unchecked ambition, because it can destroy even a respected man from within."
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   "catalyst",
+   "hamartia",
+   "personifies",
+   "imperative",
+   "symbolise",
+   "contrast",
+   "great chain of being",
+   "hubris",
+   "tragic hero",
+   "teach"
+  ]
+ },
+ {
+  "id": "mac-model-fate",
+  "text": "macbeth",
+  "title": "Fate and the supernatural: Banquo as a foil",
+  "quotes": [
+   "mac-1-04",
+   "mac-1-05"
+  ],
+  "set": "mac-t-fate",
+  "parts": [
+   {
+    "label": "",
+    "text": "Initially, it seems that fate controls Macbeth, because the witches' prophecy makes his rise to the throne appear inevitable. However, upon closer inspection, Shakespeare uses Banquo as a foil to show that the prophecy can only come true if Macbeth chooses to act. Macbeth reacts with the imperative \"Stay you imperfect speakers, tell me more\", which shows him commanding the witches and desperate for more, and so he is already hooked by their promise. In contrast, Banquo warns that \"Instruments of darkness tell us truths to… betray us\". The metaphor of \"instruments\" suggests that the supernatural uses small truths as tools, and \"darkness\" connotes evil, which suggests that the prophecy is a trap. Despite hearing the same prophecy, Banquo is suspicious while Macbeth is eager, so the contrast between their reactions shows that each man has free will. Although the prophecy could have stayed a harmless promise, Macbeth ultimately chooses to act, and as a result it becomes a self-fulfilling prophecy. Shakespeare wants to teach the audience that evil cannot force us to act; the supernatural can only tempt us, and we are responsible for our choices.",
+    "pieces": [
+     {
+      "text": "Initially, it seems that fate controls Macbeth, because the witches' "
+     },
+     {
+      "gap": "prophecy"
+     },
+     {
+      "text": " makes his rise to the throne appear "
+     },
+     {
+      "gap": "inevitable"
+     },
+     {
+      "text": ". However, upon closer inspection, Shakespeare uses Banquo as a "
+     },
+     {
+      "gap": "foil"
+     },
+     {
+      "text": " to show that the prophecy can only come true if Macbeth chooses to act. Macbeth reacts with the "
+     },
+     {
+      "gap": "imperative"
+     },
+     {
+      "text": " \"Stay you imperfect speakers, tell me more\", which shows him commanding the witches and desperate for more, and so he is already hooked by their promise. In contrast, Banquo warns that \"Instruments of darkness tell us truths to… betray us\". The "
+     },
+     {
+      "gap": "metaphor"
+     },
+     {
+      "text": " of \"instruments\" suggests that the supernatural uses small truths as tools, and \"darkness\" "
+     },
+     {
+      "gap": "connotes"
+     },
+     {
+      "text": " evil, which suggests that the prophecy is a trap. Despite hearing the same prophecy, Banquo is suspicious while Macbeth is eager, so the contrast between their reactions shows that each man has "
+     },
+     {
+      "gap": "free will"
+     },
+     {
+      "text": ". Although the prophecy could have stayed a harmless promise, Macbeth ultimately chooses to act, and as a result it becomes a "
+     },
+     {
+      "gap": "self-fulfilling prophecy"
+     },
+     {
+      "text": ". Shakespeare wants to "
+     },
+     {
+      "gap": "teach"
+     },
+     {
+      "text": " the audience that evil cannot force us to act; the supernatural can only tempt us, and we are responsible for our choices."
+     }
+    ]
+   }
+  ],
+  "gaps": [
+   "prophecy",
+   "foil",
+   "imperative",
+   "metaphor",
+   "connotes",
+   "free will",
+   "self-fulfilling prophecy",
+   "inevitable",
+   "teach"
+  ]
+ }
+]
