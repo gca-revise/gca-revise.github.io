@@ -4,8 +4,13 @@
 //   +1 extra at each streak milestone (5, 10, 20, 50, 100, then every 50 up to 5,000)
 
 //   a perfect Match them round earns +1 if it holds a word that has not earned a point this week
+//   +20 once for each set, the first time every step of it is done (the typed steps included, so
+//   multiple choice alone cannot earn it); the bonus is remembered for good and never repeats
 //   nothing in "Revise everything"; a wrong answer never takes points away
 const Points = {
+  // Bonus for completing a set. Edit the number to make finishing a set worth more or less.
+  SET_BONUS: 20,
+
   // Ranks by lifetime points: [name, points needed]. Edit the numbers to make ranks easier or harder.
   RANKS: [
     ["Wood", 0], ["Stone", 50], ["Bronze", 150], ["Silver", 300], ["Gold", 500],
@@ -45,6 +50,7 @@ const Points = {
       week,
       wk: sameWeek ? saved.wk || 0 : 0,
       earned: sameWeek ? saved.earned || [] : [],
+      sets: saved.sets || [],   // sets whose completion bonus has been paid (kept for good)
     };
   },
 
@@ -52,15 +58,25 @@ const Points = {
   lifetime() { return this.read().life; },
 
   // Adds `n` points (and marks `ids` as having earned this week). Returns n.
-  add(n, ids = []) {
+  add(n, ids = [], setId = "") {
     const p = this.read();
     const state = Store.load();
-    state.pts = { life: p.life + n, week: p.week, wk: p.wk + n, earned: Array.from(new Set([...p.earned, ...ids])) };
+    state.pts = {
+      life: p.life + n, week: p.week, wk: p.wk + n, earned: Array.from(new Set([...p.earned, ...ids])),
+      sets: setId ? Array.from(new Set([...p.sets, setId])) : p.sets,
+    };
     Store.save(state);
     // Reaching a new rank gets its own banner (it replaces a streak banner if both happen at once).
     const before = this.rank(p.life).name, after = this.rank(p.life + n);
     if (after.name !== before) Celebrate.display(`New league: <span class="celebrate-num">${after.name} League</span>!`, 100);
     return n;
+  },
+
+  // The bonus for completing a set: paid once per set, ever. Returns the points won (0 if already paid).
+  // The caller checks that every step of the set is done.
+  setBonus(setId) {
+    if (this.read().sets.includes(setId)) return 0;
+    return this.add(this.SET_BONUS, [], setId);
   },
 
   // A right answer: 1 point if it was the first attempt and the word has not scored this week.
@@ -90,9 +106,10 @@ const Points = {
   merge(a = {}, b = {}) {
     const newer = (a.week || "") === (b.week || "") ? null : ((a.week || "") > (b.week || "") ? a : b);
     const life = Math.max(a.life || 0, b.life || 0);
-    if (newer) return { life, week: newer.week, wk: newer.wk || 0, earned: newer.earned || [] };
+    const sets = Array.from(new Set([...(a.sets || []), ...(b.sets || [])]));
+    if (newer) return { life, week: newer.week, wk: newer.wk || 0, earned: newer.earned || [], sets };
     return {
-      life, week: a.week || b.week || "", wk: Math.max(a.wk || 0, b.wk || 0),
+      sets, life, week: a.week || b.week || "", wk: Math.max(a.wk || 0, b.wk || 0),
       earned: Array.from(new Set([...(a.earned || []), ...(b.earned || [])])),
     };
   },
