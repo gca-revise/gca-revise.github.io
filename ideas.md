@@ -64,3 +64,6 @@ A student made their own version of the revision app and put it on Netlify (a fr
 ## Avoid for now
 - Logins before the learning path is decided (the Duolingo-style plan above puts a leaderboard last, after sign-in)
 - New content before the teacher checks are done
+
+## Model paragraph at the end of most sets (user's vision, 21 Oct)
+Most sets would end with a high-level model paragraph using one or two quotes and some key vocab from that set, as a "Complete the paragraph" part (gaps = the set's vocab). Needs: a `set` column in `models.csv`; a build check that the model's quotes and gap words belong to the set; a lesson part that is skipped when the set has no model. Open questions: who writes the roughly 58 paragraphs (user, Claude draft for the teacher to edit, or a mix); whether it counts toward Set complete and the +20 bonus.
