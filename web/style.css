@@ -285,6 +285,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outlin
   display: flex;
   flex-direction: column;
 }
+.q-card { scroll-margin-top: 8px; }
 .run.right { --run-bg: #E3F4EB; --run-line: #BFE3D0; --run-fill: #17724B; --run-count: #155E3E; }
 .run.wrong { --run-bg: #FCEBEE; --run-line: #F2C9D1; --run-fill: var(--navy); }
 .run.near { --run-bg: #FFF6D6; --run-line: #F1DE9C; --run-fill: var(--navy); }

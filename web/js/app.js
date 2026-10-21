@@ -143,7 +143,24 @@ function drawRun(keepScroll) {
   if (!keepScroll) window.scrollTo(0, 0);
   // Put the cursor where the student needs it: the answer box, or the Next button.
   const target = app.querySelector("#answer") || app.querySelector("[data-action='next']");
-  if (target) target.focus();
+  if (target) target.focus({ preventScroll: true });
+  if (target && target.id === "answer") keepQuoteInView();
+}
+
+// On a phone the keyboard covers half the screen. Scroll so the quote sits at the top of what is left,
+// now and again when the keyboard has finished opening (the visible area changes size).
+function keepQuoteInView() {
+  const show = () => {
+    const card = app.querySelector(".q-card");
+    if (card && document.activeElement && document.activeElement.id === "answer") card.scrollIntoView({ block: "start" });
+  };
+  show();
+  setTimeout(show, 350);
+  if (window.visualViewport) {
+    const once = () => { window.visualViewport.removeEventListener("resize", once); show(); };
+    window.visualViewport.addEventListener("resize", once);
+    setTimeout(() => window.visualViewport.removeEventListener("resize", once), 2000);
+  }
 }
 
 function route() {

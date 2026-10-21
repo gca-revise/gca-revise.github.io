@@ -591,6 +591,8 @@ const QuoteTools = {
 
   // ---- Master it: the core quotes (master = yes) ----
 
+  MAX_TYPED_WORDS: 8,
+
   // A quote cut in half: the start is shown, the rest is what the student types.
   // The start is the smaller half (an odd quote gives the student the longer ending).
   // A quote can name its own prompt (the `finish_prompt` column), e.g. "The gelled" so the key word is typed.
@@ -598,7 +600,9 @@ const QuoteTools = {
     const words = quote.trim().split(/\s+/);
     const promptWords = String(prompt).trim().split(/\s+/).filter(Boolean);
     const custom = promptWords.length > 0 && promptWords.length < words.length && promptWords.every((w, i) => w === words[i]);
-    const cut = custom ? promptWords.length : Math.floor(words.length / 2);
+    let cut = custom ? promptWords.length : Math.floor(words.length / 2);
+    // Students never type more than this many words: a long quote shows more of its start.
+    cut = Math.max(cut, words.length - QuoteTools.MAX_TYPED_WORDS);
     return { prompt: words.slice(0, cut).join(" "), rest: words.slice(cut).join(" ") };
   },
 
@@ -622,14 +626,14 @@ const QuoteTools = {
     return d[a.length][b.length];
   },
 
-  // "right" only if every word matches (capitals, punctuation, word endings and one-letter spelling slips
-  // are forgiven); "near" if one word is off (a few more in a long ending); otherwise "wrong".
+  // "right" if every word matches (capitals, punctuation, word endings and one-letter spelling slips are
+  // forgiven; one wrong word is forgiven too in an ending of 6+ words); "near" if a little more is off; otherwise "wrong".
   checkEnding(typed, expected) {
     if (!Engine.normalise(typed)) return "wrong";
     const n = Engine.normalise(expected).split(" ").filter(Boolean).length;
     const slips = QuoteTools.wordDistance(typed, expected);
-    if (slips === 0) return "right";
-    if (slips <= Math.max(1, Math.floor(n * 0.2))) return "near";
+    if (slips === 0 || (n >= 6 && slips <= 1)) return "right";   // a long ending forgives one word
+    if (slips <= Math.max(1, Math.floor(n * 0.35))) return "near";
     return "wrong";
   },
 
