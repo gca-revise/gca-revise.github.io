@@ -2,6 +2,17 @@
 
 Short on purpose. Replace the "Now" and "Next steps" sections each session; do not add a diary. History and the reasons behind old decisions: `handoff-archive.md` (open only when needed). Possible features not yet agreed: `ideas.md`.
 
+## PRIORITY: weak spots to fix (from the 21 Oct privacy and security check)
+This file is public, so the list is kept short and general. The detailed report is kept private (not in the repo); to get a fresh one, run the `privacy-checker` agent.
+1. **Supabase settings (the dashboard, Authentication):** the Redirect URLs list only the real site (and localhost for testing), with no wildcards; the email rate limits stay on; when Microsoft sign-in goes in, turn off open email sign-up so only school accounts can sign up. A copy of the site could otherwise use our Supabase project as its own back end.
+2. **Delete the two test accounts** in Supabase (one is a school email address). Deleting a user also deletes their progress row.
+3. **School paperwork before any student signs in:** processor contract with the school, who is controller and who is processor, school IT and data protection officer sign-off, a decision on a data protection impact assessment. Drafts are in `paperwork/`; send them to the DPO.
+4. **Crest and content ownership:** the school approved the crest for this public site only. Ask the student (through the school) to remove the crest from their copy; agree who owns the lesson content and crest; add a licence or "all rights reserved" line.
+5. **Progress record check:** the database accepts any JSON up to 200 KB in a person's own row. Add a check that rejects unexpected fields.
+6. **Commit email:** use the GitHub noreply address from now on (a personal address is on about 100 public commits; the history is not being rewritten, by decision).
+7. **Old library:** update `web/vendor/supabase.js` when building Microsoft sign-in.
+8. **Student's copy of the site (Netlify):** see `ideas.md`. It is the student's own copy and does not touch our data, but tell staff the one real address, and have the conversation through the school (not as a punishment).
+
 ## Now
 - **Live at https://gca-revise.github.io/** (repo gca-revise/gca-revise.github.io, public). Soft launch with teachers. Pushing to `main` republishes the site in about a minute.
 - Plain HTML/CSS/JavaScript in `web/`. Run locally: `cd web && python3 -m http.server 8765`, then http://localhost:8765 (rule checks at /tests.html).
