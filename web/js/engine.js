@@ -41,9 +41,12 @@ const Engine = {
     return word;
   },
 
+  // Everyday words that mean the same thing as the word in the answer ("rose-tinted glasses" = "rose-tinted spectacles").
+  SAME_WORDS: { glasses: "spectacles" },
+
   // The words of an answer, with lead-in words dropped (not stemmed).
   plainTokens(text) {
-    const tokens = Engine.normalise(text).split(" ").filter(Boolean);
+    const tokens = Engine.normalise(text).split(" ").filter(Boolean).map((t) => Engine.SAME_WORDS[t] || t);
     while (tokens.length > 1 && Engine.ARTICLES.includes(tokens[0])) tokens.shift();
     return tokens;
   },
@@ -422,7 +425,14 @@ class MatchGame {
       else rest.push(w);
     }
     while (!this.distinct && picked.length < size && rest.length) picked.push(rest.shift());
-    this.bag = rest;
+    // Quote matching: if what is left in the bag only has labels already used, top up from the whole pool
+    // so a round is never a single pair.
+    if (this.distinct && picked.length < size) {
+      for (const w of Engine.shuffle(pool.filter((p) => !picked.includes(p)), this.random)) {
+        if (picked.length < size && !picked.some((p) => p.word.toLowerCase() === w.word.toLowerCase())) picked.push(w);
+      }
+    }
+    this.bag = rest.filter((w) => !picked.includes(w));
     this.words = picked;
     this.left = Engine.shuffle(picked, this.random);
     this.right = Engine.shuffle(picked, this.random);
