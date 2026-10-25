@@ -50,6 +50,11 @@ This file is public, so the list is kept short and general. The detailed report 
 - Next: model paragraphs. Options and suggested order (1 see-a-model button, 3 fill-the-gaps, 2 colour-coded) are in `brainstorm-model-paragraphs.md`. The source `model-writing-*.md` files are only on the Chromebook, so start that build there; user picks the text first. Fix the Jekyll/Hyde "Jekyll for Lanyon" slip first.
 - Still waiting: the repo switch (user to rename to `gca-revise-work`), IT unblocking, school data-protection paperwork, teacher checks.
 
+## 25 Oct: playtest fixes (live on `main`)
+- "Glasses" now accepted for "spectacles" (`Engine.SAME_WORDS`). Quote matching rounds always have 2+ pairs. Sets with fewer than 6 different speakers/places (most Inspector Calls sets) now match each quote to its student note ("what it shows"); poem and larger sets keep who/where.
+- Still to check with the user: key vocab typed in step 4 "not previously tested" (all set vocab is already in step 1, so we need to know the path they took).
+- Pushing to `main` publishes the site (user confirmed 25 Oct); `publish_public.py` is no longer needed.
+
 ## Now
 - **Live at https://gca-revise.github.io/** (repo gca-revise/gca-revise.github.io, public). Soft launch with teachers. Pushing to `main` republishes the site in about a minute.
 - Plain HTML/CSS/JavaScript in `web/`. Run locally: `cd web && python3 -m http.server 8765`, then http://localhost:8765 (rule checks at /tests.html).

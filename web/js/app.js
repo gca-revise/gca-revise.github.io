@@ -90,6 +90,7 @@ function startLessonStep(textId, setId, stepKey, revise, carry) {
   if (part.flag) {
     const game = new MatchGame({ items: part.items, mode, retiredIds: Store.retiredIds(), distinct: stepKey === "qmatch" });
     game.qmatch = stepKey === "qmatch";
+    game.qmeaning = game.qmatch && part.items.every((i) => i.kind === "meaning");   // quotes matched to what they show
     game.newRound();
     run = { textId, kind: "match", session: game, phase: "question", last: null, sentence: "", lesson, covered: new Set(), wrongIds: new Set(), carry: carried };
   } else {

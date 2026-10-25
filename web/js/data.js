@@ -169,6 +169,12 @@ const Data = {
       const label = useWho ? a : b;
       if (label) items.push({ id: "qm:" + q.id, word: label, definition: q.quote, quote: q, kind: useWho ? "who" : "where" });
     }
+    if (new Set(items.map((i) => i.word)).size >= 6) return items;
+    // Too few different speakers or places (a character set: nearly every quote is by the same person),
+    // so match each quote to what it shows (its student note) instead. Every pair is then different.
+    const meanings = quotes.filter((q) => (q.note || "").trim())
+      .map((q) => ({ id: "qm:" + q.id, word: q.note.trim(), definition: q.quote, quote: q, kind: "meaning" }));
+    if (meanings.length >= 2) return meanings;
     return new Set(items.map((i) => i.word)).size >= 2 ? items : [];
   },
 

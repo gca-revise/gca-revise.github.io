@@ -5,7 +5,7 @@
 // Help text for each section of a lesson (by section id).
 const STEP_HELP = {
   choose: "Pick the right answer for each quote and key vocab word, then match each key word to its meaning.",
-  qmatch: "Match each quote to who said it or where it is from.",
+  qmatch: "Match each quote to who said it, where it is from, or what it shows.",
   type: "Type the missing word in each quote.",
   typeit: "Finish each quote from memory, then type each key vocab word from its meaning.",
   model: "Read a model paragraph and type the missing words. Get every gap right to finish.",
