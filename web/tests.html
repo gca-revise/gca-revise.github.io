@@ -39,6 +39,7 @@ check("bracket optional", Engine.isCorrect("post traumatic stress disorder", "Po
 check("bracket included also fine", Engine.isCorrect("post-traumatic stress disorder (ptsd)", "Post-traumatic stress disorder (PTSD)"));
 check("spelling mistake is wrong", !Engine.isCorrect("ambigous", "ambiguous"));
 check("blank is wrong", !Engine.isCorrect("   ", "ambiguous"));
+check("glasses accepted for spectacles", Engine.isCorrect("rose tinted glasses", "Rose-tinted spectacles"));
 
 // ---- Leniency: lead-in words, word forms, near misses ----
 check("lead-in 'the' can be left out", Engine.isCorrect("natural order", "The natural order"));
@@ -313,6 +314,19 @@ const pool = [
     if (ids.includes("nihilism") && ids.includes("nihilistic")) together = true;
   }
   check("nihilism and nihilistic are never in the same round", !together);
+}
+{
+  // Quote matching with few labels (a character set): every round still has two pairs.
+  const labelled = [
+    ...Array.from({ length: 8 }, (_, i) => ({ id: `qm:b${i}`, word: "Mr Birling", definition: `quote ${i}` })),
+    ...Array.from({ length: 2 }, (_, i) => ({ id: `qm:s${i}`, word: "Stage direction", definition: `direction ${i}` })),
+  ];
+  let small = false;
+  for (let i = 0; i < 100; i++) {
+    const g = new MatchGame({ items: labelled, mode: "free", distinct: true });
+    for (let r = 0; r < 6; r++) if (g.newRound().length < 2) small = true;
+  }
+  check("quote matching never has a round of one pair", !small);
 }
 
 // ---- Quotes (Know it level) ----
