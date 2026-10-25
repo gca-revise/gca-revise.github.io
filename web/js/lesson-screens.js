@@ -68,6 +68,31 @@ Object.assign(Screens, {
       </header>`;
   },
 
+  // The "do the earlier step first?" screen, or "" if no earlier step is waiting (or this step is not in the set).
+  stepNudge(textId, setId, stepKey) {
+    const set = Data.setById(setId);
+    if (!set || set.text !== textId) return "";
+    const part = Data.lessonSteps(set).find((x) => x.key === stepKey);
+    if (!part) return "";
+    const status = Screens.setStatus(set);
+    const waiting = status.steps.findIndex((s, i) => i < part.section && !s.done);
+    if (waiting < 0) return "";
+    const look = TEXT_LOOK[set.text];
+    const base = `#/text/${set.text}/set/${set.id}`;
+    const earlier = status.steps[waiting];
+    return `
+      ${Screens.pageHead("Before you start", set.name, look.colour, look.tint)}
+      <main class="wrap" style="--accent:${look.colour};--tint:${look.tint}">
+        <div class="card">
+          <p>Step ${waiting + 1}, <strong>${esc(earlier.name)}</strong>, is not finished yet. It introduces the key words and quotes that this step asks about, so it works best in order.</p>
+          <div class="pills">
+            <a class="pill primary big" href="${base}/${earlier.key}">Go to step ${waiting + 1}, ${esc(earlier.name)}</a>
+            <a class="pill" href="${base}/${stepKey}/go">Carry on with this step</a>
+          </div>
+        </div>
+      </main>`;
+  },
+
   setOverview(setId) {
     const set = Data.setById(setId);
     const look = TEXT_LOOK[set.text];

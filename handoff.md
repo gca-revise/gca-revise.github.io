@@ -52,7 +52,7 @@ This file is public, so the list is kept short and general. The detailed report 
 
 ## 25 Oct: playtest fixes (live on `main`)
 - "Glasses" now accepted for "spectacles" (`Engine.SAME_WORDS`). Quote matching rounds always have 2+ pairs. Sets with fewer than 6 different speakers/places (most Inspector Calls sets) now match each quote to its student note ("what it shows"); poem and larger sets keep who/where.
-- Still to check with the user: key vocab typed in step 4 "not previously tested" (all set vocab is already in step 1, so we need to know the path they took).
+- Skipping ahead (e.g. opening step 4 before step 1) now shows a "Before you start" nudge with "Go to step 1" or "Carry on with this step" (`Screens.stepNudge`; `/go` on the link skips it). The in-lesson next button always skips it.
 - Pushing to `main` publishes the site (user confirmed 25 Oct); `publish_public.py` is no longer needed.
 
 ## Now

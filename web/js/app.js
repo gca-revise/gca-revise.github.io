@@ -152,7 +152,7 @@ function drawRun(keepScroll) {
       right: (prev.right || 0) + (isMatch ? 0 : s.right), wrong: (prev.wrong || 0) + (isMatch ? 0 : s.wrong),
       missed: (prev.missed || []).concat(isMatch ? Array.from(run.wrongIds) : Object.keys(s.missed)),
     };
-    location.hash = `#/text/${run.textId}/set/${l.setId}/${l.next}${l.revise ? "/revise" : ""}`;
+    location.hash = `#/text/${run.textId}/set/${l.setId}/${l.next}${l.revise ? "/revise" : "/go"}`;
     return;
   }
   app.innerHTML = Screens.run(run);
@@ -205,9 +205,15 @@ function route() {
   } else if (parts[0] === "text" && parts[2] === "set" && parts.length === 4 && Data.setById(parts[3])) {
     html = Screens.setOverview(parts[3]);
   } else if (parts[0] === "text" && parts[2] === "set" && [5, 6].includes(parts.length) && Data.text(parts[1])) {
-    startLessonStep(parts[1], parts[3], parts[4], parts[5] === "revise", lessonCarry);
-    lessonCarry = null;
-    return;
+    // Gentle nudge: starting a later step while an earlier one is not done (".../go" means "carry on anyway").
+    const nudge = parts[5] ? null : Screens.stepNudge(parts[1], parts[3], parts[4]);
+    if (nudge) {
+      html = nudge;
+    } else {
+      startLessonStep(parts[1], parts[3], parts[4], parts[5] === "revise", lessonCarry);
+      lessonCarry = null;
+      return;
+    }
   } else if (parts[0] === "text" && parts[2] === "model" && parts.length === 4) {
     html = Screens.modelGaps(parts[1], parts[3]);
   } else if (parts[0] === "text" && parts.length === 3) {
