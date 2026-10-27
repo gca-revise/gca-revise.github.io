@@ -8,7 +8,7 @@ This file is public, so the list is kept short and general. The detailed report 
 2. **Delete the two test accounts** in Supabase (one is a school email address). Deleting a user also deletes their progress row.
 3. **School paperwork before any student signs in:** processor contract with the school, who is controller and who is processor, school IT and data protection officer sign-off, a decision on a data protection impact assessment. Drafts are in `paperwork/`; send them to the DPO.
 4. **Crest and content ownership:** the school approved the crest for this public site only. Ask the student (through the school) to remove the crest from their copy; agree who owns the lesson content and crest; add a licence or "all rights reserved" line.
-5. **Progress record check:** the database accepts any JSON up to 200 KB in a person's own row. Add a check that rejects unexpected fields.
+5. **Progress record check:** the database accepts any JSON up to 200 KB in a person's own row. Add a check that rejects unexpected fields. Draft written 27 Oct in `supabase/drafts/progress_field_check.sql`, NOT applied (the field list must match the app's saved fields; apply it with the user's say-so).
 6. **Commit email:** use the GitHub noreply address from now on (a personal address is on about 100 public commits; the history is not being rewritten, by decision).
 7. ~~Old library~~: updated 27 Oct.
 8. **Student's copy of the site (Netlify):** see `ideas.md`. It is the student's own copy and does not touch our data, but tell staff the one real address, and have the conversation through the school (not as a punishment).
@@ -54,6 +54,14 @@ This file is public, so the list is kept short and general. The detailed report 
 - "Glasses" now accepted for "spectacles" (`Engine.SAME_WORDS`). Quote matching rounds always have 2+ pairs. Sets with fewer than 6 different speakers/places (most Inspector Calls sets) now match each quote to its student note ("what it shows"); poem and larger sets keep who/where.
 - Skipping ahead (e.g. opening step 4 before step 1) now shows a "Before you start" nudge with "Go to step 1" or "Carry on with this step" (`Screens.stepNudge`; `/go` on the link skips it). The in-lesson next button always skips it.
 - Pushing to `main` publishes the site (user confirmed 25 Oct); `publish_public.py` is no longer needed.
+
+## 27 Oct: Microsoft sign-in prepared; waiting on IT
+- Built hidden "Sign in with Microsoft" (only with `?signin=on`; the email-link option was removed the same day). Supabase library updated to 2.118.0. Live and checked on the site. Not testable until IT registers the app.
+- Steps: `microsoft-signin-setup.md` (Part A for IT, Part B for the teacher's Supabase dashboard). A separate IT-only copy, `for-it-microsoft-signin.md`, is for attaching to the email and is not committed.
+- The teacher is sending IT one email: whitelist `gca-revise.github.io` and `flfywjedhwbvdiukvkoo.supabase.co` (exact address, not a wildcard; Microsoft login pages are already allowed), approve the Entra app, and name the DPO. Waiting on IT's reply and the four values (client ID, tenant ID, secret, secret expiry).
+- Checked 27 Oct: a pupil's progress row deletes automatically with the user. Supabase advisors: no performance issues; one security warning (leaked-password protection is off), not relevant while sign-in is Microsoft only.
+- `paperwork/` is in the public repo; the user wants it private. Decide: stop tracking it, or do the private-repo switch. Two small edits to those files are uncommitted. Fill in school, DPO and contact names on the copy sent out, not in the repo.
+- Sessions on auto mode block `git push` (the user pushes by hand with `git push`, or switches mode).
 
 ## Now
 - **Microsoft sign-in built, hidden (27 Oct).** `web/js/account.js` has a "Sign in with Microsoft" button (Supabase `azure` provider, shown only with `?signin=on`; email link kept as a small second option). Return errors show plain-English lines. `web/vendor/supabase.js` updated to 2.118.0. Setup steps for school IT (Part A) and the teacher (Part B) are in `microsoft-signin-setup.md`. Tested in headless Chromium: site, /tests.html, button goes to the Supabase authorize address. **Untested: a real Microsoft login** (blocked on IT creating the Entra app and the DPO/paperwork). Nothing changed in the Supabase project.
