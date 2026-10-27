@@ -10,7 +10,7 @@ This file is public, so the list is kept short and general. The detailed report 
 4. **Crest and content ownership:** the school approved the crest for this public site only. Ask the student (through the school) to remove the crest from their copy; agree who owns the lesson content and crest; add a licence or "all rights reserved" line.
 5. **Progress record check:** the database accepts any JSON up to 200 KB in a person's own row. Add a check that rejects unexpected fields.
 6. **Commit email:** use the GitHub noreply address from now on (a personal address is on about 100 public commits; the history is not being rewritten, by decision).
-7. **Old library:** update `web/vendor/supabase.js` when building Microsoft sign-in.
+7. ~~Old library~~: updated 27 Oct.
 8. **Student's copy of the site (Netlify):** see `ideas.md`. It is the student's own copy and does not touch our data, but tell staff the one real address, and have the conversation through the school (not as a punishment).
 
 ## Model paragraphs, stage 1 (21 Oct, Macbeth)
@@ -56,6 +56,8 @@ This file is public, so the list is kept short and general. The detailed report 
 - Pushing to `main` publishes the site (user confirmed 25 Oct); `publish_public.py` is no longer needed.
 
 ## Now
+- **Microsoft sign-in built, hidden (27 Oct).** `web/js/account.js` has a "Sign in with Microsoft" button (Supabase `azure` provider, shown only with `?signin=on`; email link kept as a small second option). Return errors show plain-English lines. `web/vendor/supabase.js` updated to 2.118.0. Setup steps for school IT (Part A) and the teacher (Part B) are in `microsoft-signin-setup.md`. Tested in headless Chromium: site, /tests.html, button goes to the Supabase authorize address. **Untested: a real Microsoft login** (blocked on IT creating the Entra app and the DPO/paperwork). Nothing changed in the Supabase project.
+- Next: send Part A to IT; when the four values arrive, do Part B, test, then turn off open email sign-up and make sign-in visible to everyone (small code change).
 - **Live at https://gca-revise.github.io/** (repo gca-revise/gca-revise.github.io, public). Soft launch with teachers. Pushing to `main` republishes the site in about a minute.
 - Plain HTML/CSS/JavaScript in `web/`. Run locally: `cd web && python3 -m http.server 8765`, then http://localhost:8765 (rule checks at /tests.html).
 - Change content: edit the CSVs, run `python3 build_data.py` (it reports problems and rewrites `web/data/*.json`), commit, push.

@@ -22,6 +22,7 @@ const Account = {
       this.enabled = false;
     }
     if (!this.enabled || !window.supabase) return;
+    this.readReturnError();
     // "pkce" makes the email link come back as ?code=..., which does not clash with the #/ page addresses.
     this.client = window.supabase.createClient(this.URL, this.KEY, { auth: { flowType: "pkce" } });
     this.client.auth.onAuthStateChange((event, session) => {
@@ -34,6 +35,30 @@ const Account = {
         this.draw();
       }
     });
+  },
+
+  // If Microsoft (or Supabase) sent the person back with an error, show a plain-English line.
+  // The error text in the address is never shown as it is (anyone can type anything there).
+  readReturnError() {
+    const params = new URLSearchParams(location.search);
+    const hash = new URLSearchParams(location.hash.replace(/^#\/?/, "").replace(/^[^?]*\?/, ""));
+    const code = params.get("error_code") || params.get("error") || hash.get("error_code") || hash.get("error");
+    if (!code) return;
+    const text = ((params.get("error_description") || hash.get("error_description") || "") + " " + code + " " + (params.get("error") || hash.get("error") || "")).toLowerCase();
+    if (code === "access_denied" || text.includes("denied") || text.includes("cancel")) {
+      this.message = "Sign-in was cancelled, or your school account is not allowed to use this yet.";
+    } else if (text.includes("provider") && text.includes("enabled")) {
+      this.message = "Microsoft sign-in is not switched on yet. Your progress is still saved on this device.";
+    } else {
+      this.message = "Sign-in did not work. Please try again. Your progress is still saved on this device.";
+    }
+    // Tidy the address bar so a refresh does not show the message again.
+    try {
+      const keep = new URLSearchParams(location.search);
+      ["error", "error_code", "error_description"].forEach((k) => keep.delete(k));
+      const qs = keep.toString();
+      history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + (/^#\//.test(location.hash) ? location.hash : ""));
+    } catch (e) {}
   },
 
   // Joins two saved states: nothing learned on either device is lost.
@@ -84,6 +109,20 @@ const Account = {
     this.pushTimer = setTimeout(() => this.push(state), 1500);
   },
 
+  async signInWithMicrosoft() {
+    this.message = "Taking you to Microsoft...";
+    this.draw();
+    const { error } = await this.client.auth.signInWithOAuth({
+      provider: "azure",
+      options: { scopes: "email", redirectTo: location.origin + location.pathname },
+    });
+    // On success the browser leaves this page for Microsoft, so we only get here on a problem.
+    if (error) {
+      this.message = "Could not start Microsoft sign-in. Please try again. Your progress is still saved on this device.";
+      this.draw();
+    }
+  },
+
   async sendLink(email) {
     this.message = "Sending...";
     this.draw();
@@ -107,7 +146,7 @@ const Account = {
     if (this.user) {
       return `<span class="account" data-account>Signed in. Your progress is saved to your account. <button type="button" class="link-btn" data-signout>Sign out</button></span>`;
     }
-    return `<span class="account" data-account><form data-signin-form><input type="email" name="email" placeholder="Your email" required aria-label="Your email"> <button type="submit" class="link-btn">Email me a sign-in link</button></form><span class="account-msg">${this.message}</span></span>`;
+    return `<span class="account" data-account><button type="button" class="link-btn" data-signin-microsoft>Sign in with Microsoft</button><br><form data-signin-form><input type="email" name="email" placeholder="Your email" required aria-label="Your email"> <button type="submit" class="link-btn">Or email me a sign-in link</button></form><span class="account-msg">${this.message}</span></span>`;
   },
 
   // Redraw just the sign-in area (keeps the rest of the page as it is).
@@ -127,4 +166,5 @@ document.addEventListener("submit", (event) => {
 });
 document.addEventListener("click", (event) => {
   if (event.target.closest("[data-signout]")) Account.signOut();
+  if (event.target.closest("[data-signin-microsoft]")) Account.signInWithMicrosoft();
 });
