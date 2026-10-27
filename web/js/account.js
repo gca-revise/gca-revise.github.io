@@ -123,17 +123,6 @@ const Account = {
     }
   },
 
-  async sendLink(email) {
-    this.message = "Sending...";
-    this.draw();
-    const { error } = await this.client.auth.signInWithOtp({
-      email,
-      options: { emailRedirectTo: location.origin + location.pathname },
-    });
-    this.message = error ? "Could not send the link. Check the address and try again." : "Check your email and click the link. You can close this tab.";
-    this.draw();
-  },
-
   async signOut() {
     await this.client.auth.signOut();
     this.user = null;
@@ -146,7 +135,7 @@ const Account = {
     if (this.user) {
       return `<span class="account" data-account>Signed in. Your progress is saved to your account. <button type="button" class="link-btn" data-signout>Sign out</button></span>`;
     }
-    return `<span class="account" data-account><button type="button" class="link-btn" data-signin-microsoft>Sign in with Microsoft</button><br><form data-signin-form><input type="email" name="email" placeholder="Your email" required aria-label="Your email"> <button type="submit" class="link-btn">Or email me a sign-in link</button></form><span class="account-msg">${this.message}</span></span>`;
+    return `<span class="account" data-account><button type="button" class="link-btn" data-signin-microsoft>Sign in with Microsoft</button><br><span class="account-msg">${this.message}</span></span>`;
   },
 
   // Redraw just the sign-in area (keeps the rest of the page as it is).
@@ -158,12 +147,6 @@ const Account = {
 
 Account.init();
 
-document.addEventListener("submit", (event) => {
-  const form = event.target.closest("[data-signin-form]");
-  if (!form) return;
-  event.preventDefault();
-  Account.sendLink(form.elements.email.value.trim());
-});
 document.addEventListener("click", (event) => {
   if (event.target.closest("[data-signout]")) Account.signOut();
   if (event.target.closest("[data-signin-microsoft]")) Account.signInWithMicrosoft();
