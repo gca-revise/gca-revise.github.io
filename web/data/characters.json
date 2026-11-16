@@ -1,0 +1,51 @@
+{
+ "macbeth": [
+  "Macbeth",
+  "Lady Macbeth",
+  "Banquo",
+  "Duncan",
+  "Macduff",
+  "Malcolm",
+  "Ross",
+  "Lennox",
+  "Donalbain",
+  "Fleance",
+  "Lady Macduff",
+  "Porter",
+  "Hecate",
+  "Witches"
+ ],
+ "inspector": [
+  "Inspector Goole",
+  "Mr Birling",
+  "Mrs Birling",
+  "Sheila",
+  "Eric",
+  "Gerald",
+  "Edna",
+  "Stage direction"
+ ],
+ "jekyll-hyde": [
+  "Mr Utterson",
+  "Dr Jekyll",
+  "Mr Hyde",
+  "Dr Lanyon",
+  "Mr Enfield",
+  "Mr Poole",
+  "Mr Guest",
+  "Sir Danvers Carew",
+  "Narrator"
+ ],
+ "frankenstein": [
+  "Victor Frankenstein",
+  "The Creature",
+  "Walton",
+  "Elizabeth",
+  "Justine",
+  "William",
+  "Henry Clerval",
+  "Alphonse Frankenstein",
+  "Victor’s mother",
+  "De Lacey"
+ ]
+}

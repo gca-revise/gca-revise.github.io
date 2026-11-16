@@ -1,0 +1,22 @@
+[
+ {
+  "id": "macbeth",
+  "name": "Macbeth"
+ },
+ {
+  "id": "inspector",
+  "name": "An Inspector Calls"
+ },
+ {
+  "id": "jekyll-hyde",
+  "name": "Jekyll and Hyde"
+ },
+ {
+  "id": "frankenstein",
+  "name": "Frankenstein"
+ },
+ {
+  "id": "power-conflict",
+  "name": "Power and Conflict"
+ }
+]

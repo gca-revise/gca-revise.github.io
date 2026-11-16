@@ -1,0 +1,276 @@
+// Drawing each screen. Each function returns a piece of HTML as text.
+
+// Each text's badge letters and accent colour (from the approved design).
+const TEXT_LOOK = {
+  "macbeth": { badge: "M", colour: "#8E1F37", tint: "#F6E6EA" },
+  "inspector": { badge: "IC", colour: "#8A5316", tint: "#F7EBDD" },
+  "jekyll-hyde": { badge: "JH", colour: "#3E5A4F", tint: "#E5EEEA" },
+  "frankenstein": { badge: "F", colour: "#12707E", tint: "#DFF0F2" },
+  "power-conflict": { badge: "P&C", colour: "#555C6B", tint: "#E8EAEE" },
+  "techniques": { badge: "T", colour: "#222C69", tint: "#E3E7F6" },
+};
+const NAVY = "#222C69";
+const NAVY_TINT = "#E3E7F6";
+
+// Make any text safe to put on the page (data can contain & < > and quotes).
+function esc(value) {
+  return String(value).replace(/[&<>"']/g, (c) => (
+    { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]
+  ));
+}
+
+function plural(n, word) {
+  return `${n} ${word}${n === 1 ? "" : "s"}`;
+}
+
+function progressBar(done, total) {
+  const pct = total ? Math.round((done / total) * 100) : 0;
+  return `<div class="bar" role="img" aria-label="${done} of ${total} learned"><span style="width:${pct}%"></span></div>`;
+}
+
+const backIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>`;
+const penIcon = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222C69" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11a2.1 2.1 0 0 0-3-3L5 16l-1 4z"></path></svg>`;
+
+const Screens = {
+  // This week's and lifetime points (kept on this device).
+  pointsCard() {
+    return `
+      <section class="points-card" aria-label="Your points">
+        <div class="points-box"><div class="points-num">${Points.weekly()}</div><div class="points-label">Points this week</div></div>
+        <div class="points-box"><div class="points-num">${Points.lifetime()}</div><div class="points-label">Lifetime points</div></div>
+      </section>`;
+  },
+
+  // A gem picture for a league, coloured by league (number 1 = Wood ... 9 = Diamond).
+  LEAGUE_COLOURS: ["#9A6B3F", "#8C9199", "#C7803A", "#B7BEC9", "#E3B72F", "#2FAF7A", "#2F6FD6", "#D6334F", "#6FD3F2"],
+  leagueGem(number) {
+    const c = Screens.LEAGUE_COLOURS[number - 1] || Screens.LEAGUE_COLOURS[0];
+    return `<svg class="league-gem" viewBox="0 0 64 64" aria-hidden="true">
+      <polygon points="32,6 54,24 32,58 10,24" fill="${c}" stroke="#222C69" stroke-width="3" stroke-linejoin="round"/>
+      <polygon points="32,6 44,24 32,58 20,24" fill="#fff" opacity=".28"/>
+      <polyline points="10,24 54,24" stroke="#222C69" stroke-width="2.5" fill="none" opacity=".5"/>
+    </svg>`;
+  },
+
+  // The student's league, shown at the bottom of the home screen.
+  leagueCard() {
+    const r = Points.rank();
+    return `
+      <section class="league-card" aria-label="Your league">
+        ${Screens.leagueGem(r.number)}
+        <div class="league-body">
+          <div class="league-kicker">League ${r.number} of ${r.of}</div>
+          <div class="league-name">${esc(r.name)} League</div>
+          <div class="points-label">${r.next ? `${plural(r.toNext, "point")} to reach the ${esc(r.next)} League` : "You are in the top league!"}</div>
+          ${progressBar(r.pct, 100)}
+          <p class="league-help">Earn points to climb the leagues, from Wood up to Diamond.</p>
+        </div>
+      </section>`;
+  },
+
+  home() {
+    const retired = Store.retiredIds();
+    const cards = Data.texts.map((t) => {
+      const look = TEXT_LOOK[t.id];
+      const words = Data.wordsFor(t.id);
+      const learned = words.filter((w) => retired.has(w.id)).length;
+      return `
+        <a class="text-card" href="#/text/${t.id}" style="--accent:${look.colour}">
+          <div class="badge">${esc(look.badge)}</div>
+          <div class="tc-name">${esc(t.name)}</div>
+          <div class="tc-tag">Quotes + vocab</div>
+          ${progressBar(learned, words.length)}
+          <div class="tc-learned">${learned} of ${plural(words.length, "word")} learned</div>
+        </a>`;
+    }).join("");
+
+    const techItems = Data.techniqueItems();
+    const techLearned = techItems.filter((w) => retired.has(w.id)).length;
+    return `
+      <header class="home-head">
+        <a class="home-link" href="#/" aria-label="GCA Revise home">
+          <img class="crest" src="img/crest.png" alt="School crest">
+          <div>
+            <h1>GCA Revise</h1>
+            <p class="sub">Pick a text and start revising.</p>
+          </div>
+        </a>
+      </header>
+      <main class="wrap">
+        ${Screens.pointsCard()}
+        <h2 class="label">Your texts</h2>
+        <div class="text-grid">${cards}</div>
+        <h2 class="label">Across all texts</h2>
+        <a class="tech-card" href="#/techniques">
+          <div class="tech-icon">${penIcon}</div>
+          <div class="tech-name">Techniques</div>
+          <div class="tech-tag">simile, metaphor...</div>
+          ${progressBar(techLearned, techItems.length)}
+          <div class="tc-learned">${techLearned} of ${techItems.length} learned</div>
+        </a>
+        <h2 class="label">Your league</h2>
+        ${Screens.leagueCard()}
+      </main>
+      <footer class="home-foot">
+        ${typeof Account !== "undefined" && Account.html() || "<span>Your progress is saved only on this device.</span>"}
+        <a class="link-btn" href="#/backup">Save or restore my progress</a>
+        <button type="button" class="link-btn" data-reset>Reset my progress</button>
+      </footer>`;
+  },
+
+  // Header shared by "inside a text" and Techniques.
+  pageHead(title, subtitle, colour, tint) {
+    return `
+      <header class="page-head" style="--accent:${colour};--tint:${tint}">
+        <div class="wrap head-inner">
+          <div class="head-top">
+            <a class="back" href="#/" aria-label="Back to all texts">${backIcon}</a>
+            <a class="brand-link" href="#/" aria-label="GCA Revise home">
+              <img class="crest-small" src="img/crest.png" alt="School crest">
+              <span class="head-brand">GCA Revise</span>
+            </a>
+          </div>
+          <h1>${esc(title)}</h1>
+          <p class="sub">${esc(subtitle)}</p>
+        </div>
+      </header>`;
+  },
+
+  modeSwitch(mode) {
+    const btn = (value, label) =>
+      `<button type="button" class="mode-btn${mode === value ? " on" : ""}" data-mode="${value}" aria-pressed="${mode === value}">${label}</button>`;
+    const help = mode === "learn"
+      ? "Learn the set: asks only about what you haven’t learned yet."
+      : "Revise everything: asks about all of them, even ones you know. Your progress isn’t affected.";
+    return `<div class="mode-wrap"><div class="mode-switch">${btn("learn", "Learn the set")}${btn("free", "Revise everything")}</div><p class="mode-help">${help}</p></div>`;
+  },
+
+  // A card with a heading, a progress bar and a row of practice buttons.
+  modeCard(title, learned, total, unit, buttons) {
+    const links = buttons.map(([label, href], i) =>
+      `<a class="pill${i === 0 ? " primary" : ""}" href="${href}">${esc(label)}</a>`).join("");
+    return `
+      <section class="card">
+        <div class="card-top"><h2>${esc(title)}</h2><span class="count">${learned} of ${plural(total, unit)} learned</span></div>
+        ${progressBar(learned, total)}
+        <div class="pills">${links}</div>
+      </section>`;
+  },
+
+  // The Quotes card: Know it (every quote) and Master it (the core quotes).
+  quotesCard(id, knowLearned, knowTotal, retired) {
+    const master = Data.masterProgress(id, retired);
+    const pills = (buttons) => buttons.map(([label, href, finished], i) =>
+      `<a class="pill${i === 0 ? " primary" : ""}" href="${href}">${esc(label)}${finished ? " \u2713" : ""}</a>`).join("");
+    // The Master it bar counts finished games (a quote is mastered once it is done in all three).
+    const block = (title, hint, done, total, unit, buttons, barDone = done, barTotal = total) => `
+      <div class="level">
+        <div class="card-top"><h3>${title}</h3><span class="count">${done} of ${plural(total, unit)} ${unit === "quote" && title === "Master it" ? "mastered" : "learned"}</span></div>
+        <p class="level-hint">${hint}</p>
+        ${progressBar(barDone, barTotal)}
+        <div class="pills">${pills(buttons)}</div>
+      </div>`;
+    const know = block("Know it", "Every quote. Pick the answer.", knowLearned, knowTotal, "quote", [
+      ["Fill the gap", `#/text/${id}/quotes-gap`],
+      [id === "power-conflict" ? "Which poem?" : "Who said it?", `#/text/${id}/quotes-who`],
+    ]);
+    const mastery = master.total
+      ? block("Master it", "Your core quotes. Do all three games to master a quote.", master.mastered, master.total, "quote", [
+        ["Type the gap", `#/text/${id}/master-gap`, master.games.mgap.total > 0 && master.games.mgap.done === master.games.mgap.total],
+        ["Finish the quote", `#/text/${id}/master-finish`, master.games.mfinish.total > 0 && master.games.mfinish.done === master.games.mfinish.total],
+        ["Spot the technique", `#/text/${id}/master-tech`, master.games.mtech.total > 0 && master.games.mtech.done === master.games.mtech.total],
+      ], master.stepsDone, master.stepsTotal)
+      : "";
+    return `<section class="card"><div class="card-top"><h2>Quotes</h2></div>${know}${mastery}</section>`;
+  },
+
+  // "Got wrong last time": vocab words and core quotes whose latest answer was wrong.
+  revisitCard(id) {
+    const missed = Store.missedIds();
+    if (!missed.size) return "";
+    const words = Data.wordsFor(id).filter((w) => missed.has(w.id));
+    const seen = new Set();
+    const quotes = [];
+    for (const game of ["mgap", "mfinish", "mtech"]) {
+      for (const item of Data.masterGame(id, game).items) {
+        if (missed.has(item.id) && !seen.has(item.quote.id)) { seen.add(item.quote.id); quotes.push(item.quote.quote); }
+      }
+    }
+    if (!words.length && !quotes.length) return "";
+    const short = (q) => (q.length > 70 ? q.slice(0, 67) + "..." : q);
+    const list = (title, entries) => entries.length
+      ? `<p class="revisit-title">${title}</p><ul class="revisit-list">${entries.map((e) => `<li>${esc(e)}</li>`).join("")}</ul>`
+      : "";
+    const button = words.length
+      ? `<div class="pills"><a class="pill primary" href="#/text/${id}/vocab-revisit">Practise these words</a></div>`
+      : "";
+    return `
+      <section class="card">
+        <div class="card-top"><h2>Got wrong last time</h2><span class="count">${words.length + quotes.length} to revisit</span></div>
+        <p class="level-hint">These come first the next time you practise.</p>
+        ${list("Key vocab", words.map((w) => w.word))}
+        ${list("Core quotes", quotes.map(short))}
+        ${button}
+      </section>`;
+  },
+
+  text(id) {
+    const t = Data.text(id);
+    if (!t) return Screens.notFound();
+    const look = TEXT_LOOK[id];
+    const retired = Store.retiredIds();
+    const words = Data.wordsFor(id);
+    const quotes = Data.quoteItemsAll(id);
+    const quotesLearned = quotes.filter((qi) => retired.has(qi.id)).length;
+    const learned = words.filter((w) => retired.has(w.id)).length;
+    return `
+      ${Screens.pageHead(t.name, "What do you want to practise?", look.colour, look.tint)}
+      <main class="wrap" style="--accent:${look.colour};--tint:${look.tint}">
+        ${Screens.setsSection(id)}
+        ${Data.setsFor(id).length ? `<h2 class="label">Practise everything</h2>` : ""}
+        ${Screens.modeSwitch(Store.getMode())}
+        ${Screens.modelCard(id)}
+        <div class="card-grid">
+          ${Screens.revisitCard(id)}
+          ${Screens.quotesCard(id, quotesLearned, quotes.length, retired)}
+          ${Screens.modeCard("Key vocab", learned, words.length, "word", [
+            ["Type it", `#/text/${id}/vocab-type`],
+            ["Choose it", `#/text/${id}/vocab-choose`],
+            ["Match them", `#/text/${id}/vocab-match`],
+          ])}
+        </div>
+        <div class="later"><strong>Coming later: technique analysis</strong><span>Learn the technique used in each ${esc(t.name)} quote.</span></div>
+      </main>`;
+  },
+
+  techniques() {
+    const retired = Store.retiredIds();
+    const cards = Data.techniqueSets().map((set) =>
+      Screens.modeCard(set.name, set.items.filter((t) => retired.has(t.id)).length, set.items.length, "technique", [
+        ["Type it", `#/techniques/${set.id}/type`],
+        ["Choose it", `#/techniques/${set.id}/choose`],
+        ["Match them", `#/techniques/${set.id}/match`],
+      ])).join("");
+    return `
+      ${Screens.pageHead("Techniques", "Useful for every text.", NAVY, NAVY_TINT)}
+      <main class="wrap" style="--accent:${NAVY};--tint:${NAVY_TINT}">
+        ${Screens.modeSwitch(Store.getMode())}
+        <div class="card-grid">${cards}</div>
+        <div class="later"><strong>Coming later: spot the technique</strong><span>Name the technique used in a quote from any of your texts.</span></div>
+      </main>`;
+  },
+
+  // Shown for practice modes that are not built yet.
+  comingSoon(backHref, backLabel) {
+    return `
+      ${Screens.pageHead("Coming soon", "This practice style is being built.", NAVY, NAVY_TINT)}
+      <main class="wrap" style="--accent:${NAVY};--tint:${NAVY_TINT}">
+        <div class="card"><p>This part of GCA Revise isn't ready yet.</p>
+        <div class="pills"><a class="pill primary" href="${esc(backHref)}">${esc(backLabel)}</a></div></div>
+      </main>`;
+  },
+
+  notFound() {
+    return Screens.comingSoon("#/", "Back to home");
+  },
+};
