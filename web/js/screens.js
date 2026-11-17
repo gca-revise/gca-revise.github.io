@@ -68,6 +68,75 @@ const Screens = {
       </section>`;
   },
 
+  // "Due today" on the home screen: how many items are ready for review, or when the next review is.
+  // Hidden until the student has learned something (since this feature started).
+  dueCard() {
+    if (typeof Review === "undefined" || !Review.hasAny()) return "";
+    const all = Review.dueCount();
+    const n = Math.min(all, Review.DAILY_CAP);
+    if (!n) {
+      const next = Review.nextDue(Review.read());
+      const days = next ? Review.daysBetween(Review.today(), next) : 0;
+      const when = days <= 1 ? "tomorrow" : `in ${days} days`;
+      return `
+      <section class="card due-card" style="--accent:${NAVY}" aria-label="Due today">
+        <div class="card-top"><h2>Due today: 0</h2><span class="count">All done</span></div>
+        <p class="level-hint">Next review: ${when}.</p>
+      </section>`;
+    }
+    const minutes = Math.max(1, Math.round(n / 4));
+    const later = all - n;
+    return `
+      <section class="card due-card" style="--accent:${NAVY}" aria-label="Due today">
+        <div class="card-top"><h2>Due today: ${n}</h2><span class="count">About ${plural(minutes, "minute")}</span></div>
+        <p class="level-hint">A quick check on things you have learned, so you don’t forget them.${later > 0 ? ` ${later} more will wait until tomorrow.` : ""}</p>
+        <div class="pills"><a class="pill primary" href="#/review">Start</a></div>
+      </section>`;
+  },
+
+  // The note after a Due today answer: when the item comes back.
+  reviewNote(right, run) {
+    const entry = Review.read()[run.session.current.id];
+    const days = entry ? Review.daysBetween(Review.today(), entry.d) : 1;
+    const gap = days === 1 ? "tomorrow" : days === 7 ? "in a week" : `in ${days} days`;
+    return right ? `Well remembered. You’ll see this again ${gap}.` : "This one comes back tomorrow. No points this time.";
+  },
+
+  // The end of a Due today review: a short summary, in the same style as the end of a lesson step.
+  reviewDone(run) {
+    const s = run.session;
+    const wrongIds = Object.keys(s.missed).map((id) => id.replace(/^mt:/, ""));
+    const missed = Screens.missedBox(wrongIds, s.items);
+    const tile = (num, label, colour, tappable) =>
+      tappable && missed.count
+        ? `<button type="button" class="tile tile-tap" data-toggle-wrong aria-label="Show what you got wrong"><div class="tile-num" style="color:${colour}">${num}</div><div class="tile-label">${label} <span class="tile-more">tap to see</span></div></button>`
+        : `<div class="tile"><div class="tile-num"${colour ? ` style="color:${colour}"` : ""}>${num}</div><div class="tile-label">${label}</div></div>`;
+    const total = s.right + s.wrong;
+    const message = s.wrong
+      ? `You got ${s.right} of ${total} right. The ones you missed come back tomorrow.`
+      : `You got all ${plural(total, "item")} right. Brilliant.`;
+    return `
+      <div class="run done">
+        <main class="done-main">
+          <div class="done-head">
+            <a href="#/" aria-label="GCA Revise home"><img src="img/crest.png" alt="School crest" class="done-crest"></a>
+            <div>
+              <h1>Review done!</h1>
+              <p>${message}</p>
+            </div>
+          </div>
+          <div class="done-grid"><div class="tiles">
+            ${tile(s.points, "Points")}${tile(s.bestStreak, "Best streak")}${tile(s.right, "Right", "#17724B")}${tile(s.wrong, "To look at again", "#B42A47", true)}
+          </div></div>
+          ${missed.count ? `<button type="button" class="wrong-toggle" data-toggle-wrong>See what to look at again (${missed.count})</button>${missed.html}` : ""}
+          <p class="points-line">Points this week: <b>${Points.weekly()}</b> · Lifetime: <b>${Points.lifetime()}</b></p>
+          <div class="done-btns">
+            <a class="done-main-btn" href="#/">Back to home</a>
+          </div>
+        </main>
+      </div>`;
+  },
+
   home() {
     const retired = Store.retiredIds();
     const cards = Data.texts.map((t) => {
@@ -97,6 +166,7 @@ const Screens = {
         </a>
       </header>
       <main class="wrap">
+        ${Screens.dueCard()}
         ${Screens.pointsCard()}
         <h2 class="label">Your texts</h2>
         <div class="text-grid">${cards}</div>

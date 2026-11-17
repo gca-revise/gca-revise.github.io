@@ -7,6 +7,7 @@
 //   +20 once for each set, the first time every step of it is done (the typed steps included, so
 //   multiple choice alone cannot earn it); the bonus is remembered for good and never repeats
 //   nothing in "Revise everything"; a wrong answer never takes points away
+//   "Due today" review answers earn points in the same way as "Learn the set"
 const Points = {
   // Bonus for completing a set. Edit the number to make finishing a set worth more or less.
   SET_BONUS: 20,
@@ -53,6 +54,12 @@ const Points = {
       earned: sameWeek ? saved.earned || [] : [],
       sets: saved.sets || [],   // sets whose completion bonus has been paid (kept for good)
     };
+  },
+
+  // Do answers in this game mode earn points? "learn" (Learn the set) and "review" (Due today) do;
+  // "free" (Revise everything) does not.
+  counts(mode) {
+    return mode === "learn" || mode === "review";
   },
 
   weekly() { return this.read().wk; },

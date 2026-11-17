@@ -118,6 +118,8 @@ const Store = {
     if (choiceCount !== undefined) entry.choiceRight = choiceCount;
     if (retiredNow) {
       state.retired = Array.from(new Set([...(state.retired || []), id]));
+      // Start the "Due today" clock: first review tomorrow (see review.js).
+      if (typeof Review !== "undefined") Review.onLearned(id, state);
     }
     this.save(state);
   },

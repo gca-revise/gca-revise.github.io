@@ -115,6 +115,28 @@ function startLessonStep(textId, setId, stepKey, revise, carry) {
   drawRun();
 }
 
+// "Due today": up to 10 due items from every text, in random order, each asked once in its own game.
+function startReview() {
+  const items = Engine.shuffle(Review.dueItems().map((id) => Review.buildItem(id)).filter(Boolean));
+  if (!items.length) {
+    location.hash = "#/";
+    return;
+  }
+  const session = new ReviewSession({ items });
+  run = { review: true, session, phase: "question", last: null, sentence: "" };
+  session.next();
+  useReviewItem();
+  drawRun();
+}
+
+// A review mixes texts and games: point the run at the current item's text and game.
+function useReviewItem() {
+  const item = run.session.current;
+  if (!item) return;
+  const r = item.review;
+  Object.assign(run, { textId: r.textId, kind: r.kind, subject: r.subject, game: r.game, level: r.level, setId: undefined });
+}
+
 // The model paragraph step is finished (every gap typed right): save it, then show the "Step done" screen.
 function finishModelStep() {
   if (!run || run.kind !== "model") return;
@@ -155,7 +177,7 @@ function drawRun(keepScroll) {
     location.hash = `#/text/${run.textId}/set/${l.setId}/${l.next}${l.revise ? "/revise" : "/go"}`;
     return;
   }
-  app.innerHTML = Screens.run(run);
+  app.innerHTML = run.review && run.phase === "complete" ? Screens.reviewDone(run) : Screens.run(run);
   if (!keepScroll) window.scrollTo(0, 0);
   // Put the cursor where the student needs it: the answer box, or the Next button.
   const target = app.querySelector("#answer") || app.querySelector("[data-action='next']");
@@ -185,6 +207,9 @@ function route() {
   let html;
   if (parts.length === 0) {
     html = Screens.home();
+  } else if (parts[0] === "review" && parts.length === 1) {
+    startReview();
+    return;
   } else if (parts[0] === "text" && parts.length === 2) {
     html = Screens.text(parts[1]);
   } else if (parts[0] === "text" && parts[2] === "vocab-type" && Data.text(parts[1])) {
@@ -287,6 +312,7 @@ app.addEventListener("click", (event) => {
   } else if (action.dataset.action === "next") {
     run.phase = run.session.next() ? "question" : "complete";
     if (run.phase === "complete") recordLessonResult();
+    if (run.review) useReviewItem();
     drawRun();
   } else if (action.dataset.action === "again") {
     // Starting again after finishing a set goes to "Revise everything", so learned words stay learned.
@@ -300,9 +326,11 @@ app.addEventListener("click", (event) => {
 function finishAnswer(result, choiceCount) {
   const word = run.session.current;
   Store.recordAnswer(word.id, result.correct, result.retiredNow, choiceCount);
+  // A Due today answer moves the item up the ladder (right) or back to 1 day (wrong).
+  if (run.review) Review.onReviewAnswer(word.id, result.correct);
   // Points: nothing in Revise everything; a retry after a miss scores nothing.
   const session = run.session;
-  const gained = session.mode === "learn" ? Points.forAnswer(word.id, result.correct, !session.missed[word.id], session.streak) : 0;
+  const gained = Points.counts(session.mode) ? Points.forAnswer(word.id, result.correct, !session.missed[word.id], session.streak) : 0;
   run.earned = (run.earned || 0) + gained;
   session.points = run.earned;
   if (result.correct) {

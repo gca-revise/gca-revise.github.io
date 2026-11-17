@@ -11,6 +11,7 @@ const flameIcon = `<svg width="16" height="16" viewBox="0 0 24 24" fill="#B8790A
 Object.assign(Screens, {
   // Where the back arrow and "Stop for now" go.
   backHref(run) {
+    if (run.review) return "#/";
     if (run.lesson) return `#/text/${run.textId}/set/${run.lesson.setId}`;
     return run.textId === "techniques" ? "#/techniques" : `#/text/${run.textId}`;
   },
@@ -58,19 +59,22 @@ Object.assign(Screens, {
     const lessonTitle = run.lesson
       ? `${Data.setById(run.lesson.setId).name} · Step ${run.lesson.section + 1} of ${run.lesson.sections}: ${run.lesson.name}${run.lesson.revise ? " (revising)" : ""}`
       : null;
-    const title = lessonTitle || `${run.textId === "techniques" ? `Techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " · " + Data.techniqueSet(run.setId).name}` : `${t.name} · ${run.subject === "quote" ? (run.level === "master" ? "Quotes · Master it" : "Quotes") : "Key vocab"}`}${s.mode === "free" ? " (revise everything)" : ""}`;
+    const reviewTitle = run.review ? `Due today · Question ${Math.min(s.asked.size, total)} of ${total}` : null;
+    const title = reviewTitle || lessonTitle || `${run.textId === "techniques" ? `Techniques${Data.techniqueSet(run.setId).id === "all" ? "" : " · " + Data.techniqueSet(run.setId).name}` : `${t.name} · ${run.subject === "quote" ? (run.level === "master" ? "Quotes · Master it" : "Quotes") : "Key vocab"}`}${s.mode === "free" ? " (revise everything)" : ""}`;
     // Revising (nothing is saved): no progress bar, just how it is going this visit.
     const revising = s.mode === "free";
-    const counts = typeof s.right === "number"
+    const counts = run.review
+      ? `<span class="run-count-main">${s.right} <span class="run-count-label">right</span></span><span class="run-count-sub">${s.wrong} wrong</span>`
+      : typeof s.right === "number"
       ? (revising
         ? `<span class="run-count-main">${s.right} <span class="run-count-label">right</span></span><span class="run-count-sub">${s.wrong} wrong</span>`
         : `<span class="run-count-main">${learned}/${total} <span class="run-count-label">learned</span></span><span class="run-count-sub">${s.right} right so far</span>`)
       : (revising
         ? `<span class="run-count-main"><span class="run-count-label">Revising</span></span>`
         : `<span class="run-count-main">${learned}/${total} <span class="run-count-label">learned</span></span>`);
-    const track = revising
+    const track = revising && !run.review
       ? ""
-      : `<div class="run-track" role="img" aria-label="${learned} of ${total} learned"><span style="width:${pct}%"></span></div>`;
+      : `<div class="run-track" role="img" aria-label="${learned} of ${total} ${run.review ? "answered" : "learned"}"><span style="width:${pct}%"></span></div>`;
     const back = withBack
       ? `<a class="back-sq" href="${Screens.backHref(run)}" aria-label="Back to ${esc(t.name)}">${backIcon}</a>`
       : "";
@@ -116,7 +120,7 @@ Object.assign(Screens, {
             </form>
           </div>
           <aside class="run-side">
-            <div class="side-card"><div class="side-label">Learned</div><div class="side-big">${s.learnedCount()} of ${total}</div></div>
+            <div class="side-card"><div class="side-label">${run.review ? "Answered" : "Learned"}</div><div class="side-big">${s.learnedCount()} of ${total}</div></div>
             <div class="side-two">
               <div class="side-card"><div class="side-label">Streak</div><div class="side-num">${s.streak}</div></div>
               <div class="side-card"><div class="side-label">Points</div><div class="side-num">${s.points}</div></div>
@@ -144,7 +148,9 @@ Object.assign(Screens, {
       ? `<div class="chips"><span class="chip">+1 point</span><span class="chip">Streak ${s.streak}</span></div>`
       : "";
     let note;
-    if (right) {
+    if (run.review) {
+      note = Screens.reviewNote(right, run);
+    } else if (right) {
       note = s.mode === "learn"
         ? "This word is learned. You won't see it again in this set."
         : "Nice one. Revise everything keeps going until you stop.";
@@ -246,9 +252,11 @@ Object.assign(Screens, {
     return `
       <aside class="run-side">
         <div class="side-card">
-          <div class="side-label">${learn ? "This word needs" : "Revise everything"}</div>
+          <div class="side-label">${learn ? "This word needs" : run.review ? "Due today" : "Revise everything"}</div>
           ${learn
             ? `<div class="side-need">${have} of ${needed} right answers ${Screens.dots(have, needed, "var(--run-fill)", "var(--run-line)")}</div>`
+            : run.review
+            ? `<div class="side-need">Each one is asked once. Get it right and it comes back later.</div>`
             : `<div class="side-need">Asks about everything. Your progress isn’t affected.</div>`}
         </div>
         <div class="side-two">
@@ -276,7 +284,7 @@ Object.assign(Screens, {
           <div class="run-left">
             <div class="mc-row">
               <span class="mc-chip">Choose the answer${learn ? Screens.dots(have, Session.CHOICES_TO_LEARN, "var(--run-fill)", "var(--run-line)") : ""}</span>
-              <span class="mc-hint">${learn ? "Get it right twice to learn it" : "Revising everything"}</span>
+              <span class="mc-hint">${learn ? "Get it right twice to learn it" : run.review ? "Due today review" : "Revising everything"}</span>
             </div>
             <section class="q-card">
               <div class="q-label">Which ${Screens.noun(run)} means</div>
@@ -315,7 +323,9 @@ Object.assign(Screens, {
       : "";
     const sentence = Screens.sentenceBox(run, w, sentenceHtml);
     let note;
-    if (right && learn) {
+    if (run.review) {
+      note = Screens.reviewNote(right, run);
+    } else if (right && learn) {
       note = r.retiredNow
         ? "This word is learned. You won't see it again in this set."
         : `${needed - have === 1 ? "One more right answer" : `${needed - have} more right answers`} and “${esc(w.word)}” is learned.`;

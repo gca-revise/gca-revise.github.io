@@ -20,6 +20,7 @@
 <script src="js/backup.js"></script>
 <script src="js/celebrate.js"></script>
 <script src="js/points.js"></script>
+<script src="js/review.js"></script>
 <script>
 const results = [];
 function check(name, condition) { results.push({ name, ok: !!condition }); }
@@ -689,6 +690,82 @@ check("celebration milestones are 5, 10, 20, 50, 100, then every 50 up to 5000",
 // ---- Matching cells: ids can contain colons ----
 check("a plain cell value splits into side and id", Engine.parseCell("w:ambition").side === "w" && Engine.parseCell("w:ambition").id === "ambition");
 check("a quote id with colons keeps the whole id", Engine.parseCell("m:qm:mac-1-04").side === "m" && Engine.parseCell("m:qm:mac-1-04").id === "qm:mac-1-04");
+
+// ---- Due today: the review ladder ----
+{
+  const day = "2026-11-16";
+  let e = Review.learnedEntry(day);
+  check("learning an item sets step 1, due tomorrow", e.s === 1 && e.d === "2026-11-17");
+  const gaps = [];
+  for (let i = 0; i < 4; i++) { e = Review.nextEntry(e, true, day); gaps.push(Review.daysBetween(day, e.d)); }
+  check("right answers move the gap 1 → 3 → 7 → 21 → 60 days", gaps.join(",") === "3,7,21,60" && e.s === 5);
+  e = Review.nextEntry(e, true, day);
+  check("right on the last step stays at 60 days", e.s === 5 && Review.daysBetween(day, e.d) === 60);
+  let allBack = true;
+  for (let step = 1; step <= 5; step++) {
+    const w = Review.nextEntry({ s: step, d: day }, false, day);
+    if (w.s !== 1 || w.d !== "2026-11-17") allBack = false;
+  }
+  check("a wrong answer from any step goes back to 1 day", allBack);
+}
+{
+  check("adding days across a month end", Review.addDays("2026-11-29", 3) === "2026-12-02");
+  check("adding days across a year end", Review.addDays("2026-12-30", 3) === "2027-01-02");
+  check("adding 60 days across February", Review.addDays("2027-01-15", 60) === "2027-03-16");
+  check("adding days across a leap day", Review.addDays("2028-02-28", 1) === "2028-02-29");
+  const late = new Date(2026, 11, 31, 23, 30);   // 11.30 pm on 31 December, local time
+  check("today uses the local date, not UTC", Review.today(late) === "2026-12-31" && Review.today(new Date(2027, 0, 1, 0, 15)) === "2027-01-01");
+  check("today is written as YYYY-MM-DD", /^\d{4}-\d{2}-\d{2}$/.test(Review.today()));
+}
+{
+  const day = "2026-11-16";
+  const review = {
+    a: { s: 1, d: "2026-11-16" }, b: { s: 2, d: "2026-11-10" }, c: { s: 1, d: "2026-11-17" }, d: { s: 3, d: "2026-11-14" },
+  };
+  const due = Review.dueIds(review, day);
+  check("only items due today or earlier are due", due.length === 3 && !due.includes("c"));
+  check("most overdue first", due.join(",") === "b,d,a");
+  const many = {};
+  for (let i = 0; i < 25; i++) many["x" + i] = { s: 1, d: Review.addDays("2026-10-01", i) };
+  const capped = Review.dueIds(many, day, Review.DAILY_CAP);
+  check("the daily list is capped at 10", Review.DAILY_CAP === 10 && capped.length === 10);
+  check("the cap keeps the 10 most overdue", capped.join(",") === "x0,x1,x2,x3,x4,x5,x6,x7,x8,x9");
+  const ties = { p: { s: 1, d: "2026-11-01" }, q: { s: 1, d: "2026-11-01" }, r: { s: 1, d: "2026-11-01" } };
+  const orders = new Set();
+  for (let i = 0; i < 40; i++) orders.add(Review.dueIds(ties, day).join(","));
+  check("ties come in random order", orders.size > 1);
+  check("an empty or missing review list has nothing due", Review.dueIds({}, day).length === 0 && Review.dueIds(undefined, day).length === 0);
+  check("the next review date is the earliest one", Review.nextDue(review) === "2026-11-10" && Review.nextDue({}) === null);
+  const m = Review.merge({ a: { s: 2, d: "2026-11-20" }, b: { s: 1, d: "2026-11-17" } }, { a: { s: 1, d: "2026-11-17" }, c: { s: 3, d: "2026-11-30" } });
+  check("merging review lists keeps every item and the higher step", m.a.s === 2 && m.b && m.c && Object.keys(m).length === 3);
+}
+{
+  const saved = Store.load();
+  Store.save({ retired: ["old1", "old2"], stats: {} });
+  check("a save with no review field loads without errors", Review.read() && Object.keys(Review.read()).length === 0 && !Review.hasAny());
+  check("items in the old learned list with no review date are never due", Review.dueIds(Review.read(), "2099-01-01").length === 0);
+  Store.recordAnswer("w-new", true, true);
+  const entry = Store.load().review["w-new"];
+  check("learning an item saves step 1, due tomorrow", entry && entry.s === 1 && entry.d === Review.addDays(Review.today(), 1));
+  check("learning one item does not backfill the old learned list", Object.keys(Store.load().review).length === 1);
+  Store.recordAnswer("w-other", true, false);
+  check("a right answer that does not learn an item starts no clock", !Store.load().review["w-other"]);
+  Review.onReviewAnswer("w-new", true);
+  check("a right review answer moves the item up and saves it", Store.load().review["w-new"].s === 2);
+  Review.onReviewAnswer("w-new", false);
+  check("a wrong review answer sends it back to step 1", Store.load().review["w-new"].s === 1);
+  check("a wrong review answer does not un-learn the item", Store.retiredIds().has("w-new"));
+  Store.save(saved);
+}
+{
+  const s = new ReviewSession({ items: words(3).map((w) => ({ ...w, review: { kind: "type" } })) });
+  const seen = [];
+  let guard = 0;
+  while (s.next() && guard++ < 10) { seen.push(s.current.id); s.answer(s.current.id === "w2" ? "nope" : s.current.word); }
+  check("a review asks each item once, with no retry loop", seen.join(",") === "w1,w2,w3" && s.isComplete());
+  check("a review retires nothing and counts right and wrong", s.retired.size === 0 && s.right === 2 && s.wrong === 1);
+  check("review answers earn points like Learn the set", Points.counts("review") && Points.counts("learn") && !Points.counts("free"));
+}
 
 // ---- Show results ----
 const failed = results.filter((r) => !r.ok).length;

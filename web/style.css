@@ -883,3 +883,7 @@ a.link-btn { display: inline-flex; align-items: center; }
   font-weight: 800; font-size: 20px; text-align: center; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 .model-actions [hidden] { display: none !important; }
+
+/* "Due today" card at the top of the home screen */
+.due-card { margin: 0 0 22px; border-color: var(--navy); }
+.due-card .pill.primary { min-width: 120px; justify-content: center; }

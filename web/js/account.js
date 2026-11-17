@@ -49,6 +49,8 @@ const Account = {
     }
     if (Object.keys(lessons).length) out.lessons = lessons;
     if (a.pts || b.pts) out.pts = Points.merge(a.pts, b.pts);
+    // "Due today" review dates from either side are kept.
+    if ((a.review || b.review) && typeof Review !== "undefined") out.review = Review.merge(a.review, b.review);
     for (const id of new Set([...Object.keys(a.stats || {}), ...Object.keys(b.stats || {})])) {
       const x = (a.stats || {})[id] || {};
       const y = (b.stats || {})[id] || {};

@@ -60,7 +60,7 @@ Object.assign(Screens, {
           <div class="run-left">
             <div class="mc-row">
               <span class="mc-chip">Choose the answer${learn ? Screens.dots(have, Session.CHOICES_TO_LEARN, "var(--run-fill)", "var(--run-line)") : ""}</span>
-              <span class="mc-hint">${learn ? "Get it right twice to learn it" : "Revising everything"}</span>
+              <span class="mc-hint">${learn ? "Get it right twice to learn it" : run.review ? "Due today review" : "Revising everything"}</span>
             </div>
             <section class="q-card">
               <div class="q-label">${Screens.quoteLabel(run)}</div>
@@ -122,7 +122,9 @@ Object.assign(Screens, {
       ? `<p class="fb-sentence"><span class="fb-sentence-label">About this quote</span><span class="fb-sentence-body">${esc(run.sentence)}</span></p>`
       : "";
     let message;
-    if (right && learn) {
+    if (run.review) {
+      message = Screens.reviewNote(right, run);
+    } else if (right && learn) {
       message = r.retiredNow
         ? `This quote is ${run.level === "master" ? "mastered" : "learned"}. You won't see it again in this set.`
         : `${needed - have === 1 ? "One more right answer" : `${needed - have} more right answers`} and you know this quote.`;
@@ -198,7 +200,7 @@ Object.assign(Screens, {
             </form>
           </div>
           <aside class="run-side">
-            <div class="side-card"><div class="side-label">Learned</div><div class="side-big">${s.learnedCount()} of ${total}</div></div>
+            <div class="side-card"><div class="side-label">${run.review ? "Answered" : "Learned"}</div><div class="side-big">${s.learnedCount()} of ${total}</div></div>
             <div class="side-two">
               <div class="side-card"><div class="side-label">Streak</div><div class="side-num">${s.streak}</div></div>
               <div class="side-card"><div class="side-label">Points</div><div class="side-num">${s.points}</div></div>
@@ -223,7 +225,9 @@ Object.assign(Screens, {
       ? `<p class="fb-sentence"><span class="fb-sentence-label">About this quote</span><span class="fb-sentence-body">${esc(run.sentence)}</span></p>`
       : "";
     let message;
-    if (right) {
+    if (run.review) {
+      message = (near ? (finish ? "So close. A few words are off. " : "So close. Check the spelling. ") : "") + Screens.reviewNote(right, run);
+    } else if (right) {
       message = learn ? "This quote is mastered. You won't see it again in this set." : "Nice one. Revise everything keeps going until you stop.";
     } else if (near) {
       message = finish ? "So close. A few words are off. " : "So close. Check the spelling. ";
